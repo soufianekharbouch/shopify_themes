@@ -1,0 +1,146 @@
+{%- comment %}<locksmith:caf1>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:caf1>{% endcomment -%}
+
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+<head>
+{{ locksmith_initializations }}
+  {% include 'shop-sheriff-amp' %}
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+ 
+  <script type="text/javascript">
+    (function e(){
+      var e=document.createElement("script");
+      e.type="text/javascript",
+        e.async=true,e.src="//staticw2.yotpo.com/iLgICNSCa7BRBbpiRSehV95uTmXJu5CVdH8eQwb3/widget.js";
+      var t=document.getElementsByTagName("script")[0];
+      t.parentNode.insertBefore(e,t)}
+    )();
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_accent }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+
+  {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
+
+  {%- if page_description -%}
+    {%- comment %}<locksmith:b44e>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+      {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+    {%- comment %}</locksmith:b44e>{% endcomment -%}
+  {%- endif -%}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  {% include 'social-meta-tags' %}
+  {% include 'style-tags', layout: 'theme' %}
+  {% include 'css-variables' %}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', '');
+
+    window.theme = {
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      },
+      moneyFormat: {{ shop.money_format | json }}
+    };
+  </script>
+
+  {% include 'script-tags', layout: 'theme' %}
+
+  {{ content_for_header }}
+  {% include 'qikify-apps' %}
+
+  {% include 'globo-megamenu-script' %}
+
+
+<!--begin-bc-sf-filter-css-->
+  {% include 'bc-sf-filter-style' %}
+<!--end-bc-sf-filter-css-->
+
+  
+  
+  
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} d-flex flex-column">
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  {% section 'header' %}
+
+  <main role="main" id="MainContent">
+    {{ content_for_layout }}
+<limespot></limespot>
+  </main>
+
+  {% section 'footer' %}
+
+  <script>
+    if(Storage !== undefined) {
+
+      var defaultLink = "/collections/all";
+
+      {% if template contains 'collection' %}
+      sessionStorage.collection = "{{ collection.url }}";
+      {% endif %}
+
+      {% if template contains 'cart' %}
+      if( !sessionStorage.collection ) {
+        sessionStorage.collection = defaultLink;
+      }
+      document.getElementById("continue-shopping").href = sessionStorage.collection;
+      {% endif %}
+
+    }
+  </script>
+  
+
+<!--begin-bc-sf-filter-js-->
+  {% include 'bc-sf-filter' %}
+<!--end-bc-sf-filter-js-->
+{% comment %} Init BC Action List {% endcomment %}
+<!--start-bc-al-init-->
+  {% include 'bc-al-init' %}
+<!--end-bc-al-init-->
+{% comment %} Init Recently Viewed Products {% endcomment %}
+<!-- start-bc-recently-viewed-product-init -->
+  {% include 'bc-recently-viewed-product-init' %}
+<!-- end-bc-recently-viewed-product-init -->
+{% comment %} Init Most Popular Widgets {% endcomment %}
+<!--start-bc-most-popular-product-init-->
+  {% include 'bc-most-popular-product-init' %}
+<!--end-bc-most-popular-product-init-->
+
+{% if template contains 'customers/account' %}
+  <script src="https://app.accentuate.io/dist/proxy.js"></script>
+  <script>
+    Accentuate($("#account_details"), () => {location.reload()}, null );
+  </script>
+{% endif %}
+  {% include 'subscription-theme-footer' %}
+</body>
+</html>

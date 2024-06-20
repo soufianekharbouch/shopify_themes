@@ -1,0 +1,291 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the collection list section
+  - Collection
+{%- endcomment -%}
+{% if section.settings.apothecary-products-enabled %}
+  <section class="featured__products container" id="featured-products">
+    <div class="row">
+
+      {% if section.settings.title != blank %}
+        <h2 class="section__title col-12">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtitle_feature %}
+        <p class="text-center col-12 marathon_products">{{ section.settings.text }}</p>
+      {% endif %}
+
+      {% for block in section.blocks %}
+        {%- assign product = all_products[block.settings.product] -%}
+        {%unless product.tags contains "Hidden"%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+        {% if product == empty %}
+          {%- assign section_onboarding = true -%}
+          {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
+        {% endif %}
+
+        <div class="col-6 col-md-3 product__wrap">
+          <div class="img__wrap">
+            {% if product.metafields.accentuate.product_label != blank %}
+              <div class="product__label">
+                {{ product.metafields.accentuate.product_label }}
+              </div>
+            {% endif %}
+            <a href="/products/{{ product.handle }}">
+              {% for image in product.images %}
+                {% if featured_image == image %}
+                  {% include 'responsive-image' with
+                    image: image,
+                    max_width: 700,
+                    max_height: 800,
+                    image_attributes: "data-product-featured-image",
+                    wrapper_class: wrapper_class,
+                    wrapper_attributes: "data-product-image-wrapper", %}
+                {% endif %}
+              {% endfor %}
+              <div class="gingham-wrap">
+                {% include 'gingham' %}
+              </div>
+            </a>
+
+            <a href="/products/{{ product.handle }}" class="view__details">View Details</a>
+            <div class="variant__count">
+              {% if product.variants.size > 1 %}
+                ({{ product.variants.size }}) Sizes Available
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="product__name">
+            <a href="/products/{{ product.handle }}">
+              {{ product.metafields.accentuate.custom_name | default: product.title }}
+            </a>
+          </div>
+          {% if product.metafields.accentuate.short_description %}
+                    <div class="short__desc">{{ product.metafields.accentuate.short_description }}</div>
+<div class="YotoStartGrid" id="yotpoStart-{{product.id}}">
+            <div  class="yotpo bottomLine" data-product-id="{{product.id }}" >
+            </div>
+          </div>
+          {% endif %}
+          <div class="to-cart__wrapper">
+            <form action="/cart/add" method="post" enctype="multipart/form-data">
+              {% unless product.has_only_default_variant %}
+                {% for option in product.options_with_values %}
+                  <div class="selector-wrapper js" style="display: none">
+                    <label for="SingleOptionSelector-{{ section.id }}-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+
+                    <select
+                        id="SingleOptionSelector-{{ section.id }}-{{ forloop.index0 }}"
+                        data-single-option-selector
+                        data-index="option{{ option.position }}">
+                      {% for value in option.values %}
+                        <option
+                            value="{{ value | escape }}"
+                            {% if option.selected_value == value %}selected="selected"{% endif %}>
+                          {{ value }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endfor %}
+              {% endunless %}
+
+              {% if product.variants.size !=1 %}
+                <select name="id" class="no-js" data-product-select>
+                  {% for variant in product.variants %}
+                    {%unless variant.metafields.secomapp.freegifts %}
+                      <option
+                          {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                          {% unless variant.available %}disabled="disabled"{% endunless %}
+                          value="{{ variant.id }}">
+                        {{ variant.title }}
+                      </option>
+                    {% endunless %}
+                  {% endfor %}
+                </select>
+              {% else %}
+                {% for variant in product.variants %}
+                  <input type="hidden" id="variant-select" name="id" value="{{ variant.id }}" />
+                {% endfor %}
+              {% endif %}
+
+              <input type="hidden" id="Quantity-{{ block.id }}" name="quantity" value="1" min="1">
+
+              <div data-price-wrapper class="price__wrap">
+                <span data-product-price>
+                  {{ current_variant.price | default: '1999' | money }} 
+                </span>
+
+                {% if product.compare_at_price_max > product.price %}
+                  <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+                  <s data-compare-price>
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      {{ current_variant.compare_at_price | money }}
+                    {% endif %}
+                  </s>
+                {% endif %}
+              </div>
+
+              <button
+                  type="submit"
+                  name="add"
+                  class="add__to"
+                  data-add-to-cart
+                  {% unless product.available %}disabled="disabled"{% endunless %}
+                  {% if section_onboarding %}disabled="disabled"{% endif %}>
+                  <span data-add-to-cart-text>
+                    {% if product.available %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% else %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endif %}
+                  </span>
+              </button>
+            </form>
+          </div>
+
+          {% unless product == empty %}
+            <script type="application/json" data-product-json></script>
+          {% endunless %}
+        </div>
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Product",
+          "name": "{{ product.title | escape }}",
+          "url": "{{ shop.url }}{{ product.url }}",
+
+
+          "image": [
+            "https:{{ product.featured_image.src | img_url: image_size }}"
+          ],
+
+          "description": "{{ product.description | strip_html | strip_newlines | escape }}",
+
+          "sku": "{{ current_variant.sku }}",
+
+          "brand": {
+            "@type": "Thing",
+            "name": "{{ product.vendor | escape }}"
+          },
+
+          "offers": [
+
+            {
+              "@type" : "Offer",
+              "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+              "price" : "{{ variant.price | divided_by: 100.00 }}",
+              "priceCurrency" : "{{ shop.currency }}",
+              "url" : "{{ shop.url }}{{ variant.url }}",
+              "itemOffered" :
+              {
+                "@type" : "Product",
+
+
+                "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
+
+
+                "name" : "{{ variant.title | escape }}",
+
+
+                "sku": "{{ variant.sku }}",
+
+
+                "weight": {
+                  "@type": "QuantitativeValue",
+
+                  "unitCode": "{{ variant.weight_unit }}",
+
+                  "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
+                },
+
+                "url": "{{ shop.url }}{{ variant.url }}"
+              }
+            }
+
+          ]
+        }
+      </script>
+            {%endunless%}
+      {% endfor %}
+
+      {% if section.blocks.size == 0 %}
+        {% include 'no-blocks' %}
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Section list",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "apothecary-products-enabled",
+        "label": "Enable this section?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Apothecary Products"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Tagline",
+        "default": "Lorem"
+      },
+      {
+        "type": "checkbox",
+        "id": "subtitle_feature",
+        "label": "Show subtitle",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Apothecary products",
+        "category": "Product",
+        "blocks": [
+          {
+            "type": "product"
+          },
+          {
+            "type": "product"
+          },
+          {
+            "type": "product"
+          },
+          {
+            "type": "product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

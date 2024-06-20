@@ -1,0 +1,438 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'microbiome-hero' %}
+      {% include 'microbiome-hero' %}
+
+    {% when 'microbiome-navigation' %}
+      {% include 'microbiome-navigation' %}
+
+    {% when 'microbiome-skincare' %}
+      {% include 'microbiome-skincare' %}
+
+    {% when 'microbiome-bloom' %}
+      {% include 'microbiome-bloom' %}
+
+    {% when 'microbiome-benefits' %}
+      {% include 'microbiome-benefits' %}
+
+    {% when 'microbiome-botanical' %}
+      {% include 'microbiome-botanical' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Microbiome Landing",
+    "blocks": [
+      {
+        "type": "microbiome-hero",
+        "name": "Microbiome Hero Video",
+        "settings": [
+          {
+            "id": "heroVideo",
+            "type": "text",
+            "label": "Video Url",
+            "info": "This is URL of uploaded video. To upload video go to Settings -> Files and upload video. Then copy URL of that video and paste here.",
+            "default": "https://cdn.shopify.com/s/files/1/0078/7945/8863/files/test-hero-video.mp4?v=1595421627"
+          },
+          {
+            "id": "heroLine1",
+            "type": "text",
+            "label": "Hero Line 1",
+            "default": "Go beyond Glow,"
+          },
+          {
+            "type": "color",
+            "id": "color_line1",
+            "label": "Hero Line 1 Color",
+            "default": "#ffffff"
+          },
+          {
+            "id": "heroLine2",
+            "type": "text",
+            "label": "Hero Line 2",
+            "default": "Make your skin Bloom."
+          },
+          {
+            "type": "color",
+            "id": "color_line2",
+            "label": "Hero Line 2 Color",
+            "default": "#ffffff"
+          }
+        ]
+      },
+      {
+        "type": "microbiome-navigation",
+        "name": "Microbiome Navigation",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu landing"
+          }
+        ]
+      },
+      {
+        "type": "microbiome-skincare",
+        "name": "Microbiome Skincare",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_img",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img",
+            "label": "Mobile Image"
+          },
+          {
+            "id": "section_ttl",
+            "type": "text",
+            "label": "Section title",
+            "default": "Effective, Clean Ingredients."
+          },
+          {
+            "id": "section_text",
+            "type": "html",
+            "label": "Section Content",
+            "default": "Introducing our NEW Clinically Kind™ skincare range."
+          }
+        ]
+      },
+      {
+        "type": "microbiome-bloom",
+        "name": "Let Skin Bloom",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_img",
+            "label": "Desktop Image - Main Background"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_ul",
+            "label": "Desktop Image - Upper Left Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_ll",
+            "label": "Desktop Image - Lower Left Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_ur",
+            "label": "Desktop Image - Upper Right Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_lr",
+            "label": "Desktop Image - Lower Right Tile"
+          },
+          {
+            "type": "color",
+            "id": "vertical_bar_color",
+            "label": "Vertical Bar Color",
+            "default": "#ffe900"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_poster",
+            "label": "Video Poster Image"
+          },
+          {
+            "id": "section_ttl",
+            "type": "text",
+            "label": "Section title",
+            "default": "Feed Your Skin. Make It Bloom."
+          },
+          {
+            "id": "video_url",
+            "type": "text",
+            "label": "Video Url",
+            "info": "Note: you need to insert embed video url!",
+            "default": "https://player.vimeo.com/video/429309118"
+          },
+          {
+            "id": "btn_text",
+            "type": "text",
+            "label": "Watch Now Button Text",
+            "default": "Watch Now"
+          }
+        ]
+      },
+      {
+        "type": "microbiome-benefits",
+        "name": "Triple Milk Complex",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_img",
+            "label": "Desktop Background Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img",
+            "label": "Mobile Background Image"
+          },
+          {
+            "id": "section_ttl",
+            "type": "text",
+            "label": "Section title",
+            "default": "The Triple Milk Complex"
+          },
+          {
+            "id": "section_subttl",
+            "type": "text",
+            "label": "Section sub-title",
+            "default": "Our proprietary blend of milk-sourced nutrients"
+          },
+          {
+            "id": "section_text",
+            "type": "html",
+            "label": "Section text",
+            "default": "With the same pH as skin, our Triple Milk Complex supports, nourishes and protects the microbiome, bringing it back into balance."
+          },
+          {
+            "id": "benefit1_ttl",
+            "type": "text",
+            "label": "Benefit 1 title",
+            "default": "Boost Skin Health"
+          },
+          {
+            "id": "benefit1_subttl",
+            "type": "text",
+            "label": "Benefit 1 sub-title",
+            "default": "balances pH of skin"
+          },
+          {
+            "id": "benefit2_ttl",
+            "type": "text",
+            "label": "Benefit 2 title",
+            "default": "Controls Oil & Clears Pores"
+          },
+          {
+            "id": "benefit2_subttl",
+            "type": "text",
+            "label": "Benefit 2 sub-title",
+            "default": "with the help of lactic acid"
+          },
+          {
+            "id": "benefit3_ttl",
+            "type": "text",
+            "label": "Benefit 3 title",
+            "default": "Long Lasting Hydration"
+          },
+          {
+            "id": "benefit3_subttl",
+            "type": "text",
+            "label": "Benefit 3 sub-title",
+            "default": "to cultivate healthy skin"
+          },
+          {
+            "id": "benefit4_ttl",
+            "type": "text",
+            "label": "Benefit 4 title",
+            "default": "Fights Dullness"
+          },
+          {
+            "id": "benefit4_subttl",
+            "type": "text",
+            "label": "Benefit 4 sub-title",
+            "default": "and uneven skin tone"
+          }
+        ]
+      },
+      {
+        "type": "microbiome-botanical",
+        "name": "Active Botanical Blend",
+        "settings": [
+          {
+            "type": "text",
+            "id": "botanical_block_title",
+            "label": "Botanical Block - Title",
+            "default": "Our Active Botanical Blend"
+          },
+          {
+            "type": "text",
+            "id": "botanical_block_subtitle",
+            "label": "Botanical Block - Subtitle",
+            "default": "So much goodness in our garden"
+          },
+          {
+            "type": "image_picker",
+            "id": "botanical_1_img",
+            "label": "Botanical 1 - Image"
+          },
+          {
+            "type": "text",
+            "id": "botanical_1_title",
+            "label": "Botanical 1 - Title",
+            "default": "Comfrey"
+          },
+          {
+            "type": "text",
+            "id": "botanical_1_subtitle",
+            "label": "Botanical 1 - Subtitle",
+            "default": "The Healer"
+          },
+          {
+            "type": "textarea",
+            "id": "botanical_1_description",
+            "label": "Botanical 1 - Description",
+            "default": "Reduces inflammation & boosts cell growth"
+          },
+          {
+            "type": "image_picker",
+            "id": "botanical_2_img",
+            "label": "Botanical 2 - Image"
+          },
+          {
+            "type": "text",
+            "id": "botanical_2_title",
+            "label": "Botanical 2 - Title",
+            "default": "Blue Thistle"
+          },
+          {
+            "type": "text",
+            "id": "botanical_2_subtitle",
+            "label": "Botanical 2 - Subtitle",
+            "default": "The Brightener"
+          },
+          {
+            "type": "textarea",
+            "id": "botanical_2_description",
+            "label": "Botanical 2 - Description",
+            "default": "Lightens dark spots & fights irritation"
+          },
+          {
+            "type": "image_picker",
+            "id": "botanical_3_img",
+            "label": "Botanical 3 - Image"
+          },
+          {
+            "type": "text",
+            "id": "botanical_3_title",
+            "label": "Botanical 3 - Title",
+            "default": "Chamomile"
+          },
+          {
+            "type": "text",
+            "id": "botanical_3_subtitle",
+            "label": "Botanical 3 - Subtitle",
+            "default": "The Calmer"
+          },
+          {
+            "type": "textarea",
+            "id": "botanical_3_description",
+            "label": "Botanical 3 - Description",
+            "default": "Calms redness & improves skin texture"
+          },
+          {
+            "type": "image_picker",
+            "id": "botanical_4_img",
+            "label": "Botanical 4 - Image"
+          },
+          {
+            "type": "text",
+            "id": "botanical_4_title",
+            "label": "Botanical 4 - Title",
+            "default": "Cucumber"
+          },
+          {
+            "type": "text",
+            "id": "botanical_4_subtitle",
+            "label": "Botanical 4 - Subtitle",
+            "default": "The Cooler"
+          },
+          {
+            "type": "textarea",
+            "id": "botanical_4_description",
+            "label": "Botanical 4 - Description",
+            "default": "Cools skin, reduces inflammation & boosts cell growth"
+          },
+          {
+            "type": "image_picker",
+            "id": "botanical_5_img",
+            "label": "Botanical 5 - Image"
+          },
+          {
+            "type": "text",
+            "id": "botanical_5_title",
+            "label": "Botanical 5 - Title",
+            "default": "Aloe"
+          },
+          {
+            "type": "text",
+            "id": "botanical_5_subtitle",
+            "label": "Botanical 5 - Subtitle",
+            "default": "The Hydrator"
+          },
+          {
+            "type": "textarea",
+            "id": "botanical_5_description",
+            "label": "Botanical 5 - Description",
+            "default": "Moisturizes & soothes skin"
+          }
+        ]
+      },
+      {
+        "type": "microbiome-kind",
+        "name": "Clinically Kind",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_img_1",
+            "label": "Desktop Image - First Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img_1",
+            "label": "Mobile Image - First Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_2",
+            "label": "Desktop Image - Second Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img_2",
+            "label": "Mobile Image - Second Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_img_3",
+            "label": "Desktop Image - Third Tile"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_img_3",
+            "label": "Mobile Image - Third Tile"
+          },
+          {
+            "id": "section_ttl",
+            "type": "text",
+            "label": "Section title",
+            "default": "Clinically kind&#8482, lab tested skincare"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+

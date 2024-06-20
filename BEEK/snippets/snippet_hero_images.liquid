@@ -1,0 +1,27 @@
+  <div class="row no-gutters">
+    <div class="d-block col-12 d-lg-none">
+      <div class="hero-section__image">
+        {% if block.settings.mobile_image != blank %}
+        {% include 'responsive-image-aspect-ratio' with
+          image: block.settings.mobile_image,
+          hero_aspect_ratio: block.settings.heroAspectRatio_mobile,
+          max_width: 1110,
+        %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+<div class="d-none d-lg-block">
+  <div class="hero-section__image">
+    {% if block.settings.desktop_image != blank %}
+    {% include 'responsive-image-aspect-ratio' with
+      image: block.settings.desktop_image,
+      hero_aspect_ratio: 45,
+      max_height: 615px,
+      max_width: 2560,
+      image_class: "desktop",
+    %}
+    {% endif %}
+  </div>
+</div>

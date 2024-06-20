@@ -1,0 +1,176 @@
+<div class="before_after_carousal page-width {{ section.settings.css }}">
+  {% if section.settings.title %}
+  <div class="before_after_carousal-slider">
+    <div class="before_after_carousal-title">{{ section.settings.title }}</div>
+  </div>
+  {% endif %}
+  <div class="swiper mySwiper-{{ section.id }}">
+    <div class="swiper-wrapper before_after_carousal-items">
+    {%- for block in section.blocks -%}
+      <div class="swiper-slide before_after_carousal-card">
+        <div class="before_after_carousal-cards">
+        <div class="before_after_carousal-card-top">
+          <img
+            src="{{ block.settings.image | img_url: 'master' }}"
+            class="before_after_carousal_img"
+          >
+        </div>
+        <div class="before_after_carousal-card-center">
+          <div class="before_after_carousal-card-title">{{ block.settings.title }}</div>
+          <p class="before_after_carousal-card-text">{{ block.settings.reviews }}</p>
+        </div>
+        <div class="before_after_carousal-card-author">{{ block.settings.name }}</div>
+       </div> 
+      </div>
+    {% endfor %}
+  </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper-{{ section.id }}", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    breakpoints: {
+      768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },      
+  });
+</script>
+
+
+{% style %}
+  {% if section.settings.center_desktop %}
+  .mySwiper-{{ section.id }} *{
+    text-align: center
+  }
+{% endif %}
+  {% if section.settings.center_mobile %}
+  @media(max-width: 768px){
+    .mySwiper-{{ section.id }} *{
+    text-align: center
+  }
+  }
+  {% endif %}
+{% endstyle %}
+<style>
+  .before_after_carousal_img {
+  width: 100%;
+  border-radius: 25px;
+}
+  .mySwiper-{{ section.id }} .before_after_carousal-card{
+    margin: unset;
+  }
+  .swiper-button-next, .swiper-button-prev{
+display: block !important;
+    width: 40px;
+  height: 40px;
+  text-align: center;
+  background: #FC95CF;
+  color: black;
+  border-radius: 50px;
+}
+ .swiper-button-next:after{
+   content: 'next';
+  font-size: 20px;
+  top: 50%;
+  position: absolute;
+  transform: translate(-30%, -50%);
+  left: 50%;
+ }
+  .swiper-button-prev:after{
+   content: 'prev';
+  font-size: 20px;
+  top: 50%;
+  position: absolute;
+  transform: translate(-65%, -50%);
+  left: 50%;
+ }
+</style>
+{% schema %}
+{
+  "name": "Before after carousal",
+  "class": "shopify-section--bordered noMargin",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Add Title Here"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_desktop",
+      "label": "Text Center Desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_mobile",
+      "label": "Text Center Mobile"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Review text"
+    },
+    {
+      "type": "text",
+      "id": "css",
+      "label": "Class Name"
+    }
+  ],
+    "blocks": [
+    {
+      "type": "Before",
+      "name": "Before after carousal",
+      "settings": [
+        {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Upload Image"
+        },
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+        },
+        {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+        },
+        {
+      "type": "richtext",
+      "id": "reviews",
+      "label": "Reviews"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Before after carousal",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

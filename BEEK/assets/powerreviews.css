@@ -1,0 +1,200 @@
+/**
+ * PowerReviews, Copyright 2020
+ * HEAD | 18304baf7 | 7/29/2020
+ */
+/*******************************************/
+/** POWER REVIEWS STYLE OVERRIDE TEMPLATE **/
+/*******************************************/
+
+/**
+ * The following high-level CSS selectors can be utilized
+ * to create a custom style theme for all PowerReviews 
+ * content.
+ *
+ * NOTE: If you wish to hide PowerReviews content,
+ * please contact your PowerReviews Client Success
+ * Representative.  
+ */
+
+
+/**
+* TYPOGRAPHY
+* --------------------------------------------------
+* Global Color & Typography Definitions
+*/
+.p-w-r,
+.p-w-r span,
+.p-w-r p,
+.p-w-r h1,
+.p-w-r h2,
+.p-w-r h3,
+.p-w-r h4,
+.p-w-r h5,
+.p-w-r h6 {
+  font-family: Avenir Next,Arial,Helvetica;
+  color: #4A5761;
+}
+.p-w-r a {
+  color: #4A5761;
+}
+
+/**
+* FORM LABELS
+* --------------------------------------------------
+* .p-w-r .pr-control-label > span // Selector that targets all field labels.
+*/
+.p-w-r .pr-control-label > span {
+    color: #4A5761;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 18px;
+    display: inline-block;
+    padding: 8px 0;
+}
+
+/**
+ * BUTTON GROUPS
+ * --------------------------------------------------
+ * .p-w-r .pr-btn // Selector that targets all buttons.
+ * .p-w-r .btn-toggle .pr-btn-default // Selector that targets all unselected toggle buttons.
+ * .p-w-r .btn-toggle .pr-btn-default.active // Selector that targets the selected toggle button.
+ * .p-w-r .pr-btn-add-tag-submit // Selector that targets the "Add" button that appears aside the custom tag text input field.
+ * .p-w-r .pr-btn-fileinput // Selector that targets the file input button.  
+ * .p-w-r .pr-btn-fileinput span // Selector that targets the file input button text.
+ * .p-w-r .pr-btn-delete // Selector that targets the image preview delete button.
+ */
+.p-w-r .pr-btn {
+}
+.p-w-r .pr-btn-add-tag-submit {
+}
+.p-w-r .pr-btn-fileinput {
+}
+.p-w-r .pr-btn-fileinput span {
+}
+.p-w-r .pr-btn-delete {
+}
+
+/**
+* STARS
+* Rating Stars can be customized by overriding the 
+* background-image property of the 5 Star-related
+* CSS classes
+* --------------------------------------------------
+* .pr-star-v4-0-filled    // Custom star image - filled 0%
+* .pr-star-v4-25-filled   // Custom star image - filled 25%
+* .pr-star-v4-50-filled   // Custom star image - filled 50%
+* .pr-star-v4-75-filled   // Custom star image - filled 75%
+* .pr-star-v4-100-filled  // Custom star image - filled 100%
+*/
+.p-w-r .pr-star-v4-0-filled {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' height='48' width='48' fill='%234A5761' xmlns='http://www.w3.org/2000/svg'><title>StarBorder icon</title><path fill='none' d='M0 0h24v24H0V0z'></path><path d='M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z'></path></svg>") !important;
+}
+.p-w-r .pr-star-v4-25-filled {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' height='48' width='48' fill='%234A5761' xmlns='http://www.w3.org/2000/svg'><path fill='none' d='M0 0h24v24H0z'></path><path d='M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z'></path></svg>") !important;
+}
+.p-w-r .pr-star-v4-50-filled {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' height='48' width='48' fill='%234A5761' xmlns='http://www.w3.org/2000/svg'><path fill='none' d='M0 0h24v24H0z'></path><path d='M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z'></path></svg>") !important;
+}
+.p-w-r .pr-star-v4-75-filled {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' height='48' width='48' fill='%234A5761' xmlns='http://www.w3.org/2000/svg'><path fill='none' d='M0 0h24v24H0z'></path><path d='M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4V6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z'></path></svg>") !important;
+}
+.p-w-r .pr-star-v4-100-filled {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' height='48' width='48' fill='%234A5761' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='none'></rect><polygon points='14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10'></polygon></svg>") !important;
+}
+
+/**
+* TEXT INPUTS
+* --------------------------------------------------
+* .p-w-r .pr-textinput  // Text Input Styles
+* .p-w-r .pr-textinput:focus // Focused Text Input Styles
+*/
+.pr-write {
+    margin-bottom: 32px;
+}
+.p-w-r .pr-textinput {
+    font-family: Century OS,Arial,Helvetica;
+    color: #4A5761;
+    border-radius: 2px;
+    margin: 0;
+    padding: 10px!important;
+}
+.p-w-r .pr-textinput:focus {
+}
+
+/**
+* TEXT AREAS
+* --------------------------------------------------
+* .p-w-r input[type="text"] // Text Area Styles
+* .p-w-r input[type="text"]:focus // Focused Text Area Styles
+*/
+.p-w-r .pr-textarea {
+    font-family: Century OS,Arial,Helvetica;
+    color: #4A5761;
+    border-radius: 2px;
+    margin: 0;
+    padding: 10px!important;
+}
+.p-w-r .pr-textarea:focus {
+}
+
+/**
+* CHECKBOX/RADIO INPUT OPTION LABELS
+* --------------------------------------------------
+* .p-w-r .tag-label // Checkbox Radio Input Label Styles
+*/
+.p-w-r .pr-tag-label {
+    font-family: Century OS,Arial,Helvetica;
+    color: #4A5761;
+    border-radius: 2px;
+    margin: 0;
+    padding: 10px!important;
+}
+
+/**
+* ERROR STATES
+* --------------------------------------------------
+* .p-w-r .pr-has-error .control-label span // Form Field Label Error State Styles
+* .p-w-r .pr-has-error .form-control // Text Input & Text Area Error State Styles
+* .p-w-r .pr-has-error input[type="text"]:focus // Focused Text Input & Text Area Error State Styles
+*/
+.p-w-r .pr-has-error .pr-control-label span {
+}
+.p-w-r .pr-has-error .form-control {
+}
+.p-w-r .pr-has-error .pr-textinput:focus,
+.p-w-r .pr-has-error .pr-textarea:focus {
+}
+
+/**
+* MOBILE STYLES
+* --------------------------------------------------
+*/
+@media screen and (max-width: 767px) {
+    /**
+    * CHECKBOX/RADIO INPUT OPTION LABELS
+    * --------------------------------------------------
+    * .p-w-r .checkbox label, .p-w-r .radio label // Unselected Styles
+    * .p-w-r .checkbox label.checked, .p-w-r .radio label.checked // Selected Styles
+    */
+    .p-w-r .checkbox label,
+    .p-w-r .radio label {
+        font-family: Century OS,Arial,Helvetica;
+        color: #4A5761;
+        border-radius: 2px;
+        margin: 0;
+        padding: 10px!important;
+    }
+    .p-w-r .checkbox label.checked,
+    .p-w-r .radio label.checked {
+    }
+    .p-w-r .checkbox label.checked span,
+    .p-w-r .radio label.checked span {
+    }
+    /**
+    * TAG GROUP 'ADD ITEM' BUTTON
+    * --------------------------------------------------
+    */
+    .p-w-r .pr-btn-add-tag a {
+    }
+}

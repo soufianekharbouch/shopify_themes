@@ -1,0 +1,379 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+<style>
+  html, body {
+    height: auto;
+  }
+</style>
+
+<div class="container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'hero-main' %}
+        {% include 'landing-hero' with additional_class: "main__hero" %}
+
+      {% when 'hero' %}
+        {% include 'landing-hero' %}
+
+      {% when 'collection-list' %}
+        {% include 'landing-collection-list' %}
+
+      {% when 'duo-featured-collection' %}
+        {% include 'landing-featured-collection' %}
+
+      {% when 'artisan-list' %}
+        {% include 'landing-artisan-list' %}
+
+      {% when 'artisans' %}
+        {% include 'landing-artisans' %}
+
+      {% when 'almanac' %}
+        {% include 'landing-almanac' %}
+
+      {% when 'featured-events' %}
+        {% include 'landing-events' %}
+
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Mercantile Landing",
+    "blocks": [
+      {
+        "type": "hero-main",
+        "name": "Hero Main Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image"
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "heroTitle",
+            "type": "text",
+            "label": "Hero Title",
+            "default": "Hero Title"
+          },
+          {
+            "id": "heroContent",
+            "type": "textarea",
+            "label": "Hero Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "More Info Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "More Info Link Text",
+            "default": "Learn More"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_merc_icon",
+            "label": "Show Mercantile Icon",
+            "default": false
+          }
+        ]
+      },
+      {
+        "type": "hero",
+        "name": "Hero Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image"
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "heroTitle",
+            "type": "text",
+            "label": "Hero Title",
+            "default": "Hero Title"
+          },
+          {
+            "id": "heroContent",
+            "type": "textarea",
+            "label": "Hero Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "More Info Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "More Info Link Text",
+            "default": "Learn More"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_merc_icon",
+            "label": "Show Mercantile Icon",
+            "default": false
+          }
+        ]
+      },
+      {
+        "type": "collection-list",
+        "name": "Collection List",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "items_centered",
+            "label": "Centered Items?",
+            "default": true
+          },
+          {
+            "label": "Collection 1",
+            "id": "collection1",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 2",
+            "id": "collection2",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 3",
+            "id": "collection3",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 4",
+            "id": "collection4",
+            "type": "collection"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Shop All"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      },
+      {
+        "type": "artisan-list",
+        "name": "Artisan List",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "items_centered",
+            "label": "Centered Items?",
+            "default": true
+          },
+          {
+            "label": "Collection 1",
+            "id": "collection1",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 2",
+            "id": "collection2",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 3",
+            "id": "collection3",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 4",
+            "id": "collection4",
+            "type": "collection"
+          }
+        ]
+      },
+      {
+        "type": "duo-featured-collection",
+        "name": "Featured Collection",
+        "settings": [
+          {
+            "type": "text",
+            "id": "collection-title",
+            "label": "Block Heading",
+            "default": "Featured Collection"
+          },
+          {
+            "type": "text",
+            "id": "left-block-title",
+            "label": "Left Block Heading",
+            "default": "Honey & Orange Blossom Hand Care Duo Caddy Set"
+          },
+          {
+            "type": "text",
+            "id": "left-block-text",
+            "label": "Left Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "featured-photo",
+            "label": "Featured Collection Photo"
+          },
+          {
+            "type": "text",
+            "id": "right-block-title",
+            "label": "Right Block Heading",
+            "default": "What's In The Duo"
+          },
+          {
+            "type": "text",
+            "id": "right-block-text",
+            "label": "Right Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "duo-image1",
+            "label": "First Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "duo-image2",
+            "label": "Second Image"
+          },
+          {
+            "type": "url",
+            "label": "Product Link",
+            "id": "duo-link"
+          },
+          {
+            "type": "text",
+            "id": "duo-link-text",
+            "label": "Link Text",
+            "default": "Shop Now"
+          }
+        ]
+      },
+      {
+        "type": "featured-events",
+        "name": "Featured Events",
+        "settings": [
+          {
+            "type": "text",
+            "id": "events-title",
+            "label": "Heading"
+          },
+          {
+            "type": "product",
+            "id": "event_product_1",
+            "label": "Event Product 1"
+          },
+          {
+            "type": "product",
+            "id": "event_product_2",
+            "label": "Event Product 2"
+          },
+          {
+            "type": "product",
+            "id": "event_product_3",
+            "label": "Event Product 3"
+          }
+        ]
+      },
+      {
+        "type": "almanac",
+        "name": "Almanac Section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image"
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "almanacTitle",
+            "type": "text",
+            "label": "Almanac Title",
+            "default": "Almanac Title"
+          },
+          {
+            "id": "almanacContent",
+            "type": "textarea",
+            "label": "Almanac Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "Subscribe Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Subscribe Link Text",
+            "default": "Subscribe"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'category-landing.js' | asset_url | script_tag }}

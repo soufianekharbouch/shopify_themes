@@ -1,0 +1,96 @@
+<section>
+    {% include 'snippet_info_page' %}
+</section>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+
+coll[0].click();
+
+</script>
+
+{% schema %}
+  {
+    "name": "Happy Place",
+    "settings": [
+      {
+        "id": "hero",
+        "type": "image_picker",
+        "label": "Hero Image"
+      },
+      {
+        "id": "hero_heading",
+        "type": "text",
+        "label": "Hero Heading",
+        "default": "Main Heading"
+      },
+      {
+        "id": "hero_subheading",
+        "type": "text",
+        "label": "Hero Subheading",
+        "default": "Subheading"
+      },
+      {
+        "id": "hero_text",
+        "type": "textarea",
+        "label": "Hero Text"
+      },
+      {
+          "id": "contact_block_heading",
+          "type": "text",
+          "label": "Contact Block - Heading"
+      },
+      {
+          "id": "contact_block_content",
+          "type": "textarea",
+          "label": "Contact Block - Content"
+      },
+      {
+          "id": "contact_block_button_label",
+          "type": "text",
+          "label": "Contact Block - Button Label"
+      },
+      {
+          "id": "contact_block_button_link",
+          "type": "url",
+          "label": "Contact Block - Button Link"
+      },
+      {
+          "id": "contact_block_message",
+          "type": "text",
+          "label": "Contact Block - Message"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "tabbed_content",
+        "name": "Content Tab",
+        "settings": [
+            {
+                "id": "item_heading",
+                "type": "text",
+                "label": "Content - Item Heading"
+            },
+            {
+                "id": "item_text",
+                "type": "textarea",
+                "label": "Content - Item Content"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

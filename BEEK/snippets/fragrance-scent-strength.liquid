@@ -1,0 +1,98 @@
+{% assign listOfScentStrength = page.metafields.accentuate.fragrance_strength_name %}
+{% assign fragranceScentStrength = page.metafields.accentuate.fragrance_scent_strength %}
+{% assign fragrances = page.metafields.accentuate.fragrance_name %}
+
+<div class="explore__scent_strengths fr__scent__wrap">
+    {%- if block.settings.scentHeading != blank -%}
+        <h2>
+            {{- block.settings.scentHeading | escape -}}
+        </h2>
+    {%- endif -%}
+    {%- if block.settings.scentDescription != blank -%}
+        <p>
+            {{- block.settings.scentDescription | escape -}}
+        </p>
+    {%- endif -%}
+
+    <div class="range__slider__wrap">
+        {% if listOfScentStrength.size > 0 %}
+            <div id="strengthSlider"></div>
+        {% endif %}
+
+        <div class="scent__strength">
+            {% assign index = 0 %}
+            {% for scent in listOfScentStrength %}
+                {% assign scentLowercase = scent | downcase %}
+                {% assign fragranceScentStrengthLowercase = fragranceScentStrength | downcase %}
+                {% assign isAvailable = fragranceScentStrengthLowercase | where: scentLowercase %}
+                {% if isAvailable.size > 0 %}
+                    <div class="item" data-index="{{ index }}" data-scent="{{ scentLowercase | replace: " ", "_" }}">
+                        <div class="strength__name">
+                            {{- scent -}}
+                        </div>
+                        <div class="strength__desc">
+                            {{- page.metafields.accentuate.fragrance_strength_description[index] -}}
+                        </div>
+                    </div>
+                {% endif %}
+                {% assign index = index | plus: 1 %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mob__description d-lg-none"></div>
+    <div class="sliders__wrapper">
+        {% for scent in listOfScentStrength %}
+            {% assign scentLowercase = scent | downcase %}
+            {% assign fragranceScentStrengthLowercase = fragranceScentStrength | downcase %}
+            {% assign isAvailable = fragranceScentStrengthLowercase | where: scentLowercase %}
+            {% if isAvailable.size > 0 %}
+                <div class="fragrances__by__strength slider__wrap {{ scentLowercase | replace: " ", "_" }}">
+                    {% for i in (0..fragrances.size) %}
+                        {% assign frScentStrengthLowercase = page.metafields.accentuate.fragrance_scent_strength[i] | downcase %}
+                        {% if scentLowercase == frScentStrengthLowercase %}
+                            <div class="frag__item">
+                                {% if page.metafields.accentuate.fragrance_image[i][0].cloudinary_src != blank %}
+                                    <div class="frag__img">
+                                        <img src="{{ page.metafields.accentuate.fragrance_image[i][0].cloudinary_src }}"
+                                             alt="{{ page.metafields.accentuate.fragrance_name[i] }}"/>
+                                    </div>
+
+                                {% endif %}
+                                <h3>{{- page.metafields.accentuate.fragrance_name[i] -}}</h3>
+                                <div class="tags">
+                                    {{ page.metafields.accentuate.fragrance_scent_note[i] }}
+                                    <span>|</span>
+                                    {{ page.metafields.accentuate.fragrance_scent_strength[i] }}
+                                </div>
+                                {% assign igredients = page.metafields.accentuate.fragrance_ingredients[i] %}
+                                {% if igredients.size > 0 %}
+                                    <div class="scent__ingredients">
+                                        {% for ing in igredients %}
+                                            <div class="ing">
+                                                <img src="{{ ing.cloudinary_src }}" alt="{{ ing.alt }}"/>
+                                                <div class="ing__name">{{ ing.alt }}</div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <p>{{- page.metafields.accentuate.fragrance_description[i] -}}</p>
+                                <a href="../collections/{{ page.metafields.accentuate.fragrance_collection_link[i] }}"
+                                   class="shop__link">Shop The Collection</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="spinner__wrap">
+        <div class="load__spinner">
+            <svg width="100%" height="100%">
+                <svg preserveAspectRatio="xMinYMin">
+                    <circle class="load__spinner-ring" cx="50%" cy="50%" r="45%"></circle>
+                </svg>
+            </svg>
+        </div>
+    </div>
+</div>

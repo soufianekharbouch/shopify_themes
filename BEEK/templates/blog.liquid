@@ -1,0 +1,105 @@
+{% section 'blog-template' %}
+
+<!--
+{% paginate blog.articles by 5 %}
+
+  {%- assign blog_title = blog.title -%}
+
+  {% if current_tags %}
+    {% capture blog_title %}{{ blog.title | link_to: blog.url }} &mdash; {{ current_tags.first }}{% endcapture %}
+  {% endif %}
+
+  <h1>{{ blog_title }}</h1>
+
+  {% if blog.all_tags.size > 0 %}
+    <h2>{{ 'blogs.general.categories' | t }}</h2>
+
+    <ul>
+      {% for tag in blog.all_tags %}
+
+        {% if current_tags contains tag %}
+          <li>{{ tag }}</li>
+        {% else %}
+          <li>{{ tag | link_to_tag: tag }}</li>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+
+  {% comment %}
+
+  Article Previews
+  ====================
+  {% endcomment %}
+
+  {%- comment %}<locksmith:6bc8>{% endcomment -%}
+    {%- assign locksmith_6eb4_forloop__size = 0 %}{% for article in blog.articles %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: article, subject_parent: blog, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_6eb4_forloop__size = locksmith_6eb4_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_6eb4_forloop__index = nil -%}
+  {%- comment %}</locksmith:6bc8>{% endcomment -%}
+  {% for article in blog.articles %}
+    {%- comment %}<locksmith:a4f0>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: article, subject_parent: blog, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_6eb4_forloop__index == nil %}{% assign locksmith_6eb4_forloop__index = 1 %}{% assign locksmith_6eb4_forloop__index0 = 0 %}{% else %}{% assign locksmith_6eb4_forloop__index = locksmith_6eb4_forloop__index | plus: 1 %}{% assign locksmith_6eb4_forloop__index0 = locksmith_6eb4_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_6eb4_forloop__index == 1 %}{% assign locksmith_6eb4_forloop__first = true %}{% else %}{% assign locksmith_6eb4_forloop__first = false %}{% endif %}{% if locksmith_6eb4_forloop__index == locksmith_6eb4_forloop__size %}{% assign locksmith_6eb4_forloop__last = true %}{% else %}{% assign locksmith_6eb4_forloop__last = false %}{% endif %}{% assign locksmith_6eb4_forloop__rindex = locksmith_6eb4_forloop__size | minus: locksmith_6eb4_forloop__index | minus: 1 %}{% assign locksmith_6eb4_forloop__rindex0 = locksmith_6eb4_forloop__size | minus: locksmith_6eb4_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:a4f0>{% endcomment -%}
+    <h3>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h3>
+
+    {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
+
+    <p>
+      {{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}
+    </p>
+
+    {% if article.image %}
+      <a href="{{ article.url }}">
+        {% include 'responsive-image' with
+          image: article.image,
+          max_width: 1024,
+          max_height: 1024
+        %}
+      </a>
+    {% endif %}
+
+    <div class="rte">
+      {% if article.excerpt.size > 0 %}
+        {{ article.excerpt }}
+      {% else %}
+        <p>
+          {{ article.content | strip_html | truncatewords: 100 }}
+        </p>
+      {% endif %}
+    </div>
+
+    {% if blog.comments_enabled? or article.tags.size > 0 %}
+      <ul>
+        {% if blog.comments_enabled? %}
+          <li>
+            <a href="{{ article.url }}#comments">
+              {{ 'blogs.comments.with_count' | t: count: article.comments_count }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if article.tags.size > 0 %}
+          {% for tag in article.tags %}
+            <li>
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+              {% unless forloop.last %}, {% endunless %}
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    {% endif %}
+
+    <p>
+      <a href="{{ article.url }}">{{ 'blogs.article.read_more' | t }} &rarr;</a>
+    </p>
+
+  {% endfor %}
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+
+{% endpaginate %} -->

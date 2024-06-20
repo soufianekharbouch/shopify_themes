@@ -1,0 +1,44 @@
+<div class="fragrance-finder-hero">
+    {%- assign heroBkg = block.settings.heroBkg -%}
+    {%- assign headingColor = block.settings.headingColor -%}
+    {%- assign colorDescription = block.settings.colorDescription -%}
+
+    <div class="hero__wrap" style="background-color: {{ heroBkg }}">
+        {% if block.settings.mobileHeroImage != blank %}
+            <span class="d-md-none">
+        <img src="{{ block.settings.mobileHeroImage | img_url: 'master' }}" alt="Fragrance Finder"/>
+      </span>
+        {% endif %}
+        {% if block.settings.desktopHeroImage != blank %}
+            <span class="d-none d-md-block">
+        <img src="{{ block.settings.desktopHeroImage | img_url: 'master' }}" alt="Fragrance Finder"/>
+      </span>
+        {% endif %}
+    </div>
+    <div class="content__area">
+        {%- if block.settings.heroHeading != blank -%}
+            <h1 style="color: {{ headingColor }};">
+                {{ block.settings.heroHeading | escape }}
+            </h1>
+        {%- endif -%}
+        {%- if block.settings.heroDescription != blank -%}
+            <p style="color: {{ colorDescription }};">
+                {{ block.settings.heroDescription | escape }}
+            </p>
+        {%- endif -%}
+        <div class="action__wrap">
+            {% if block.settings.button1Label != blank %}
+                <a href="{{ block.settings.button1Link | default: "#" }}" class="shop__by"
+                   data-scroll-to="explore__scent_strengths">
+                    {{ block.settings.button1Label | escape }}
+                </a>
+            {% endif %}
+            {% if block.settings.button2Label != blank %}
+                <a href="{{ block.settings.button2Link | default: "#" }}" class="shop__by"
+                   data-scroll-to="explore__scent_notes">
+                    {{ block.settings.button2Label | escape }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

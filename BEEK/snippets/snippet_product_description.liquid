@@ -1,0 +1,159 @@
+{% assign ingredientsId =  product.id | append: 'ingredients' %}
+{% assign directionsId =  product.id | append: 'directions' %}
+{% assign scent_notesId =  product.id | append: 'scent_notes' %}
+
+{% if product.metafields.accentuate.ingredients
+  or product.metafields.accentuate.information
+  or product.metafields.accentuate.directions
+  or product.metafields.accentuate.scent_notes
+  or product.metafields.accentuate.prod_details
+  or product.metafields.accentuate.prod_specs
+  or product.metafields.accentuate.subs_renewal %}
+
+
+
+  <div class="product-description">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>DESCRIPTION</h2>
+      </div>
+    </div>
+    <!-- Tab links -->
+    <div class="tab row no-gutters">
+      {% if product.metafields.accentuate.information %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Information')">Information</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.directions %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Directions')">Directions</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.scent_notes %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Scent_Notes')">Scent Notes</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.prod_details %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Prod_Details')">Details</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.prod_specs %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Prod_Specs')">Specifications</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.ingredients %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Ingredients')">Ingredients</button>
+        </div>
+      {% endif %}
+      {% if product.metafields.accentuate.subs_renewal %}
+        <div class="col text-center tab_title">
+          <button class="tablinks_pdp" onclick="selectTab(this, 'Subs_Renewal')">Subscribers Automatic Renewal Feature
+          </button>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Tab content -->
+    <div>
+    <div>
+    {% if product.metafields.accentuate.information %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Information" class="tabcontent">
+            <p>{{ product.metafields.accentuate.information }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.directions %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Directions" class="tabcontent">
+            <p>{{ product.metafields.accentuate.directions }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.scent_notes %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Scent_Notes" class="tabcontent">
+            <p>{{ product.metafields.accentuate.scent_notes }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.prod_details %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Prod_Details" class="tabcontent">
+            <p>{{ product.metafields.accentuate.prod_details }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.prod_specs %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Prod_Specs" class="tabcontent">
+            <p>{{ product.metafields.accentuate.prod_specs }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.ingredients %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Ingredients" class="tabcontent">
+            <p>{{ product.metafields.accentuate.ingredients }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if product.metafields.accentuate.subs_renewal %}
+      <div class="row tab_content">
+        <div class="col-12 text-center">
+          <div id="Subs_Renewal" class="tabcontent">
+            <p>{{ product.metafields.accentuate.subs_renewal }}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  </div> 
+</div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.product-description .tab_title:first-child').find('button').click();
+    });
+  </script>
+    <script>
+
+         function selectTab(evt, name) {
+          //event.stopPropagation();
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          tablinks = document.getElementsByClassName("tablinks_pdp");
+
+          for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+          }
+
+          for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(name).style.display = "block";
+          evt.className += " active";
+          
+
+      }
+      
+     
+  </script>
+{% endif %}

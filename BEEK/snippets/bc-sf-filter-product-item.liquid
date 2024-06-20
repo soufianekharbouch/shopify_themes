@@ -1,0 +1,178 @@
+{% include 'sca_freegift_price' with product %}
+{% comment %} Grid Width Class Desktop {% endcomment %}
+{% assign grid_width_class_desktop = 'col-sm-3' %}
+{% case section.settings.products_per_row %}
+  {% when 2 %}
+    {% assign grid_width_class_desktop = 'col-sm-6' %}
+  {% when 3 %}
+    {% assign grid_width_class_desktop = 'col-sm-4' %}
+  {% when 6 %}
+    {% assign grid_width_class_desktop = 'col-sm-2' %}
+{% endcase %}
+
+{% comment %} Grid Width Class Mobile {% endcomment %}
+{% assign grid_width_class_mobile = 'col-6' %}
+{% case section.settings.products_per_row_mobile %}
+  {% when 1 %}
+    {% assign grid_width_class_mobile = 'col-12' %}
+  {% when 3 %}
+    {% assign grid_width_class_mobile = 'col-4' %}
+{% endcase %}
+
+{% comment %} Soldout {% endcomment %}
+{% assign sold_out = false %}
+{% assign sold_out_class = '' %}
+{% assign sold_out_text = section.settings.soldout_label %}
+{% unless product.available %}
+  {% assign sold_out = true %}
+  {% assign sold_out_class = 'sold-out' %}
+{% endunless %}
+
+{% comment %} On Sale {% endcomment %}
+{% assign on_sale = false %}
+{% assign sale_class = '' %}
+{% assign sale_text = section.settings.sale_label %}
+{% if sca_compare_at_price > sca_price %}
+  {% assign on_sale = true %}
+  {% assign sale_class =  'on-sale' %}
+{% endif %}
+
+{% comment %} Product Image Url {% endcomment %}
+{% assign img_url = 'bc-sf-filter-no-image.gif' | asset_url %}
+{% if product.featured_image.src == blank %}
+  {% if product.images[0]%}
+    {% assign img_url = product.images[0] | img_url: 'large' %}
+  {% endif %}
+  {% if product.images[1] %}
+    {% assign swap_img_url = product.images[1] | img_url: 'large' %}
+  {% endif %}
+{% else %}
+  {% assign img_url = product.featured_image | img_url: 'large' %}
+  {% if product.images[1] %}
+    {% assign swap_img_url = product.images[1] | img_url: 'large' %}
+  {% endif %}
+{% endif %}
+
+<div data-section-type="product" class="product__wrap bc-sf-filter-product-item bc-sf-filter-product-item-grid {% if section.settings.active_image_swap and product.images[1] %} has-bc-swap-image{% endif %} {{ grid_width_class_desktop }} {{ grid_width_class_mobile }} {{ sold_out_class }} {{ sale_class }}">
+    <div class="bc-sf-filter-product-item-inner">
+
+        <div class="bc-sf-filter-product-item-image img__wrap">
+          {% if product.metafields.accentuate.product_label != blank %}
+            <div class="product__label">
+              {{ product.metafields.accentuate.product_label }}
+            </div>
+          {% endif %}
+          <a href="{{ product.url | within: collection }}" class="bc-sf-filter-product-item-image-link">
+              <div class="responsive-image__wrapper">
+                <img src="{{ img_url }}" class="responsive-image__image bc-sf-filter-product-item-main-image" alt="{{ product.featured_image.alt | escape }}" />
+                {% if section.settings.active_image_swap and product.images[1] %}
+                <img src="{{ swap_img_url }}" class="responsive-image__image bc-sf-filter-product-item-flip-image" alt="{{ product.featured_image.alt | escape }}" />
+              {% endif %}
+              </div>
+          </a>
+          <a href="{{ product.url | within: collection }}" class="view__details">View Details</a>
+        </div>
+
+        <div class="bc-sf-filter-product-bottom">
+          <a href="{{ product.url | within: collection }}" class="bc-sf-filter-product-item-title product__name">{{ product.metafields.accentuate.custom_name | default: product.title }}</a>
+
+            {% if product.metafields.accentuate.short_description %}
+                        <div class="short__desc">{{ product.metafields.accentuate.short_description }}</div>
+<div class="YotoStartGrid" id="yotpoStart-{{product.id}}">
+            <div  class="yotpo bottomLine" data-product-id="{{product.id }}" >
+            </div>
+          </div>
+            {% endif %}
+
+
+            <div class="to-cart__wrapper">
+                <form action="/cart/add" method="post" enctype="multipart/form-data">
+                    {% unless product.has_only_default_variant %}
+                        {% for option in product.options_with_values %}
+                            <div class="selector-wrapper js">
+                                <label for="SingleOptionSelector-{{ product.id }}-{{ forloop.index0 }}">
+                                    {{ option.name }}
+                                </label>
+
+                                <select
+                                        id="SingleOptionSelector-{{ product.id }}-{{ forloop.index0 }}"
+                                        data-single-option-selector
+                                        data-index="option{{ option.position }}">
+                                    {% for value in option.values %}
+                                        <option
+                                                value="{{ value | escape }}"
+                                                {% if option.selected_value == value %}selected="selected"{% endif %}>
+                                            {{ value }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        {% endfor %}
+                    {% endunless %}
+
+                    {% if product.variants.size !=1 %}
+                        <select name="id" class="no-js" data-product-select>
+                            {% for variant in product.variants %}
+                              {%unless variant.metafields.secomapp.freegifts %}
+                                <option
+                                  {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                                  {% unless variant.available %}disabled="disabled"{% endunless %}
+                                  value="{{ variant.id }}">
+                                  {{ variant.title }}
+                                </option>
+                              {% endunless %}
+                            {% endfor %}
+                        </select>
+                    {% else %}
+                        {% for variant in product.variants %}
+                            <input type="hidden" id="variant-select" name="id" value="{{ variant.id }}" />
+                        {% endfor %}
+                    {% endif %}
+
+                    <input type="hidden" id="Quantity-{{ product.id }}" name="quantity" value="1" min="1">
+
+                    <div data-price-wrapper class="price__wrap">
+                      {% if on_sale %}
+				          <s>{{ product.first_available_variant.compare_at_price | money }}</s>
+				          <span data-product-price>{{ product.first_available_variant.price | money }}</span>
+			          {% else %}
+				          {% if sca_price_varies %}
+				            {{ section.settings.from }}
+				          {% endif %}
+				          <span data-product-price>{{ sca_price | money }}</span>
+			          {% endif %}
+                    </div>
+
+                  {% if product.metafields.accentuate.is_subscription_product or product.variants.size > 1 %}
+                  	<a class="add__to" href="{{ product.url | within: collection }}">
+                      <span>
+                        View Options
+                      </span>
+                  	</a>
+                  {% else %}
+                  	<button
+                            type="submit"
+                            name="add"
+                            class="add__to"
+                            data-add-to-cart
+                            {% unless product.available %}disabled="disabled"{% endunless %}
+                            {% if section_onboarding %}disabled="disabled"{% endif %}>
+                        <span data-add-to-cart-text>
+                            {% if product.available %}
+                                {{ 'products.product.add_to_cart' | t }}
+                            {% else %}
+                                {{ 'products.product.sold_out' | t }}
+                            {% endif %}
+                        </span>
+                    </button>
+                  {% endif %}
+
+                </form>
+            </div>
+
+            {% unless product == empty %}
+                <script type="application/json" data-product-json></script>
+            {% endunless %}
+        </div>
+    </div>
+</div>

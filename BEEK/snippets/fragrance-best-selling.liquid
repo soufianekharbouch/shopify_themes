@@ -1,0 +1,45 @@
+{% assign fragrances = page.metafields.accentuate.fragrance_name %}
+
+<div class="bestselling__scents">
+    {%- if block.settings.sectionHeading != blank -%}
+        <h2>
+            {{- block.settings.sectionHeading | escape -}}
+        </h2>
+    {%- endif -%}
+    <div class="sliders__wrapper">
+        <div class="slider__wrap best__fragrances active">
+            {% for i in (0..fragrances.size) %}
+                {% if page.metafields.accentuate.is_in_best_selling[i] == 'true' %}
+                    <div class="frag__item">
+                        {% if page.metafields.accentuate.fragrance_image[i][0].cloudinary_src != blank %}
+                            <div class="frag__img">
+                                <img src="{{ page.metafields.accentuate.fragrance_image[i][0].cloudinary_src }}"
+                                     alt="{{ page.metafields.accentuate.fragrance_name[i] }}"/>
+                            </div>
+                        {% endif %}
+                        <h3>{{- page.metafields.accentuate.fragrance_name[i] -}}</h3>
+                        <div class="tags">
+                            {{ page.metafields.accentuate.fragrance_scent_note[i] }}
+                            <span>|</span>
+                            {{ page.metafields.accentuate.fragrance_scent_strength[i] }}
+                        </div>
+                        {% assign igredients = page.metafields.accentuate.fragrance_ingredients[i] %}
+                        {% if igredients.size > 0 %}
+                            <div class="scent__ingredients">
+                                {% for ing in igredients %}
+                                    <div class="ing">
+                                        <img src="{{ ing.cloudinary_src }}" alt="{{ ing.alt }}"/>
+                                        <div class="ing__name">{{ ing.alt }}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <p>{{- page.metafields.accentuate.fragrance_description[i] -}}</p>
+                        <a href="../collections/{{ page.metafields.accentuate.fragrance_collection_link[i] }}"
+                           class="shop__link">Shop The Collection</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

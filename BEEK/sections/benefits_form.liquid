@@ -1,0 +1,217 @@
+<div class="overlay-wrapper hide" id="contact_form_wrapper">
+  <div class="form-wrap">
+    {% form 'contact', id: 'popup_contact' %}
+    <a class="close-btn" onclick="document.getElementById('contact_form_wrapper').classList.add('hide')">{% include 'icon-close' %}</a>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <div class="img-wrap">
+            <img src="{{ 'chat-bubble.png' | asset_url }}">
+          </div>
+        </div>
+        <div class="col-12">
+          <h1>{{ section.settings.form_heading }}</h1>
+        </div>
+        <div class="col-12">
+          <h2>{{ section.settings.form_tagline }}</h2>
+        </div>
+        <div class="col-12 align-items-center">
+          <hr/>
+        </div>
+      </div>
+
+      {% if form.posted_successfully? %}
+      <div class="row text-center">
+        <div class="col-12">
+          <p class="form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        </div>
+        <div class="col-12">
+          {{ form.errors | default_errors }}
+        </div>
+      </div>
+
+    {% else %}
+      <div class="row text-center">
+        <div class="col-12">
+          <div class="col-12 pb-5">
+            <p>{{ section.settings.form_message }}</p>
+          </div>
+          <div class="col-12">
+            <label for="ContactFormName" class="hide">{{ 'contact.form.name' | t }}</label>
+            <input type="text"
+                   name="contact[name]"
+                   class="w-100"
+                   id="ContactFormName"
+                   placeholder="Full name*"
+                   value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                   required>
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormEmail" class="hide">{{ 'contact.form.email' | t }}</label>
+            <input type="email"
+                   name="contact[email]"
+                   onkeyup="cloneField();"
+                   id="ContactFormEmail"
+                   class="w-100"
+                   placeholder="Email address*"
+                   value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                   required
+                   spellcheck="false"
+                   autocomplete="off"
+                   autocapitalize="off">
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormReason" class="hide">
+              "Reason For Contact"
+            </label>
+            <select
+                style="background: url('{{ 'chevron-down.png' | asset_url }}');"
+                class="select-wrap"
+                name="address[province]"
+                id="ContactFormReason"
+            >
+              <option selected disabled>Reason of Contact*</option>
+              {% for option in page.metafields.accentuate.contact_reasons %}
+                <option>{{ option }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormPhone" class="hide">{{ 'contact.form.phone' | t }}</label>
+            <input type="tel"
+                   name="contact[phone]"
+                   id="ContactFormPhone"
+                   class="w-100"
+                   placeholder="{{ 'contact.form.phone' | t }}"
+                   value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                   pattern="[0-9\-]*">
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormStreet" class="hide">{{ 'contact.form.address' | t }}</label>
+            <input type="text"
+                   name="contact[address]"
+                   id="ContactFormStreet"
+                   class="w-100"
+                   placeholder="Street address"
+                   value="{% if form[address] %}{{ form.address }}{% elsif customer %}{{ customer.address }}{% endif %}"
+            >
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormCity" class="hide">{{ 'contact.form.city' | t }}</label>
+            <input type="text"
+                   name="contact[city]"
+                   id="ContactFormCity"
+                   class="w-100"
+                   placeholder="City"
+                   value="{% if form[city] %}{{ form.city }}{% elsif customer %}{{ customer.city }}{% endif %}"
+            >
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormState" class="hide">{{ 'contact.form.state' | t }}</label>
+            <select
+                style="background: url('{{ 'chevron-down.png' | asset_url }}');"
+                class="select-wrap"
+                name="contact[state]"
+                id="ContactFormState"
+                data-default="{{ form.province }}">
+              <option selected disabled>State</option>
+              {% include 'contact_form_province_options' %}
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormZip" class="hide">{{ 'contact.form.zip' | t }}</label>
+            <input type="text"
+                   name="contact[zip]"
+                   id="ContactFormZip"
+                   class="w-100"
+                   placeholder="Zip Code"
+                   value="{% if form[zip] %}{{ form.zip }}{% elsif customer %}{{ customer.zip }}{% endif %}"
+            >
+          </div>
+
+          <div class="col-12">
+            <label for="ContactFormMessage" class="hide">{{ 'contact.form.message' | t }}</label>
+            <textarea rows="10"
+                      name="contact[body]"
+                      id="ContactFormMessage"
+                      class="w-100"
+                      placeholder="Leave a Message*"
+                      required>
+                            {%- if form.body -%}
+                              {{- form.body -}}
+                            {%- endif -%}
+                            </textarea>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-left">
+            <div class="col-12 field rbtn">
+              <label>
+                Subscribe me to the Beekman 1802 Newsletter.
+              </label>
+              <div class="radio__wrap">
+                                    <span class="r__wrap">
+                                        <input type="radio" id="yesPlease" class="radio" name="customer[accepts_marketing]" checked="checked" />
+                                        <label for="yesPlease">Yes, please!</label>
+                                    </span>
+                <span class="r__wrap">
+                                        <input type="radio" class="radio" id="noThanks" name="customer[accepts_marketing]" />
+                                        <label for="noThanks">No, thanks.</label>
+                                    </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <input type="submit" class="btn" value="{{ section.settings.submit_label }}">
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "Careers Available - Form",
+  "settings": [
+  {
+  "id": "form_heading",
+  "type": "text",
+  "label": "Form Heading",
+  "default": "Hi Neighbor!"
+  },
+  {
+  "id": "form_tagline",
+  "type": "text",
+  "label": "Form - Tagline",
+  "default": "Send us a message"
+  },
+  {
+  "id": "form_message",
+  "type": "textarea",
+  "label": "Form - Message"
+  },
+  {
+  "id": "submit_label",
+  "type": "text",
+  "label": "Form - Submit Label",
+  "default": "Send Message"
+  }
+  ]
+  }
+{% endschema %}
+
+{{ 'contact.js' | asset_url | script_tag }}

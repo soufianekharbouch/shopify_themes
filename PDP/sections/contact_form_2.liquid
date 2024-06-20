@@ -1,0 +1,703 @@
+<div class="contact-us">
+  <div class="bottom---gry">
+  <div class="contact-container">
+    <div class="contact-form form-vertical">
+      {%- assign formId = 'ContactForm' -%}
+      {% form 'contact', id: formId %}
+       {%- if form.posted_successfully? -%}
+  <p class="form-message form-message--success" tabindex="-1" data-form-status>
+   Thanks for contacting us. We will get in touch soon.
+  </p>
+{%- endif -%}
+
+        <div class="row">
+          <div class="col-6">
+            <input type="text" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="Name">
+          </div>
+          <div class="col-6">
+            <input type="tel" id="{{ formId }}-phone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="Phone number">
+          </div>
+          <div class="col-6">
+         <input
+              type="email"
+              id="{{ formId }}-email"
+              placeholder="E-mail"
+              name="contact[email]"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              aria-required="true"
+              {%- if form.errors contains 'email' -%}
+                class="input--error"
+                aria-invalid="true"
+                aria-describedby="{{ formId }}-email-error"
+              {%- endif -%}
+
+              >
+            {%- if form.errors contains 'email' -%}
+              <span id="{{ formId}}-email-error" class="input-error-message">
+                <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                {% include 'icon-error' %}
+                <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+              </span>
+            {%- endif -%} </div>
+          <div class="col-6 slctd--opt" style=" position: relative; " >
+            <div class="empty--bh"></div>
+       <select name="contact[topic]" required >
+    <option value="" disabled selected>Pick a Topic</option>
+    <option value="Shipping Issues">Shipping Issues</option>
+         <option value="Returns">Returns</option>
+          <option value="International Shipping questions">International Shipping questions</option>
+          <option value="Warranty Information">Warranty Information</option>
+          <option value="Stocking questions">Stocking questions</option>
+         
+</select>
+          </div>
+        </div>
+            
+        
+
+        <textarea rows="10" id="{{ formId }}-message" name="contact['Message']" placeholder="Tell us how we can help you">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        <div class="submit-area">
+          
+          <div class="submit-btns">
+           <input type="submit" class="btn" value="submit">
+          </div>
+        </div>
+
+      {% endform %}
+    </div>
+  </div>
+</div>
+<!--  <div class="dlry--pt">
+
+ <ul>
+
+ <li>
+    <img src="https://cdn.shopify.com/s/files/1/1219/9944/files/Icon_1_8.svg?v=1669839211">
+    <h4>Shipping Claims</h4>
+    <a href="https://app.shippedapp.co/s/15/shield/sessions/new">learn more</a>
+  </li>
+
+
+
+   <li>
+    <img src="https://cdn.shopify.com/s/files/1/1219/9944/files/Icon_2_6.svg?v=1669839211">
+    <h4>Return & Refund</h4>
+    <a href="/pages/return-policy">learn more</a>
+  </li>
+
+
+
+   <li>
+    <img src="https://cdn.shopify.com/s/files/1/1219/9944/files/Icon_3_5.svg?v=1669839210">
+    <h4>Lifetime Warranty</h4>
+    <a href="/pages/lifetime-warranty">learn more</a>
+  </li>
+
+
+   <li>
+    <img src="https://cdn.shopify.com/s/files/1/1219/9944/files/Icon_4_5.svg?v=1669839211">
+    <h4>Become a Dealer</h4>
+    <a href="/pages/dealer">learn more</a>
+  </li>
+
+
+   <li>
+    <img src="https://cdn.shopify.com/s/files/1/1219/9944/files/Icon_5_1.svg?v=1669839687">
+    <h4>Financing</h4>
+    <a href="/pages/financing">learn more</a>
+  </li>
+  
+</ul>
+
+    
+  </div> -->
+  <div class="btn-banr">
+    <h4>WE OFFER <span class="brand">FREE SHIPPING</span> <br>FOR ORDERS  <span class="brand">$2499</span> & UP</h4>
+
+    
+  </div>
+  </div>
+  
+<style>
+  .contact-form {
+    max-width: 100% !important;
+}
+  p.form-message.form-message--success {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+.contact-form.form-vertical  select::-ms-expand {
+    display:none;
+  }
+  .dlry--pt ul {
+    line-height: normal;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    
+    max-width: 1600px;
+    margin: auto;
+
+}
+  .btn-banr {
+      position:relative;
+    background-image: url(https://joyfulpeter.com/cdn/shop/files/AdobeStock_62391976_9f45f1da-1fee-42fd-8f62-13bbd28bd0f6_3000x.jpg?v=1706549074);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+  }
+  .btn-banr::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+  
+  .btn-banr h4 span {
+    color: #ae0201;
+}
+  .btn-banr h4 {
+       position: relative;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 42px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+  .bottom---gry {
+    background-image: url(https://cdn.shopify.com/s/files/1/1219/9944/files/Section_2_BG.png?v=1669828045);
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+.contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text .banner-title span {
+    color: #ae0201;
+      
+      
+}
+  .contact-us .contact-banner .contact-banner-details {
+    background-image:url(https://joyfulpeter.com/cdn/shop/files/AdobeStock_62391976_9f45f1da-1fee-42fd-8f62-13bbd28bd0f6_3000x.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+}
+ .contact-us .contact-container .contact-form textarea::placeholder,.contact-us .contact-container .contact-form textarea::placeholder, .contact-us .contact-container .contact-form input::placeholder{
+    color:#4D4D4D;
+   font-size:19px;
+  
+  }
+  .contact--bg{
+    background-image:url(https://cdn.shopify.com/s/files/1/1219/9944/files/Group_34.png?v=1669826732)!important;
+    
+  
+  }
+  .contact-us .contact-banner .contact-banner-details .banner-container::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+  .contact-us .contact-banner .contact-banner-details .banner-container {
+    vertical-align: top;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: static; 
+}
+  .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text {
+    max-width: 712px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 208px 0 211px;
+        position: relative;
+}
+  .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text .banner-title {
+   
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: normal;
+    color: #fff;
+    font-weight: 900;
+    text-transform: none;
+    margin: 0 0 40px;
+    text-transform: uppercase;
+}
+  .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text p.banner-info {
+   
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: normal;
+    font-size: 20px;
+    color: #fff;
+}
+  .contact-us .contact-container {
+    max-width: 1208px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 70px 14px;
+}
+  .contact-us .contact-container .contact-form {
+   
+}
+  .contact-us .contact-container .contact-form .row {
+    display: block;
+    margin: 0 -13.5px;
+}
+  .contact-us .contact-container .contact-form .row .col-6 {
+    width: 50%;
+    float: left;
+    padding: 0 13.5px;
+}
+  .contact-us .contact-container .contact-form input {
+    outline: none!important;
+    height:60px;
+    border: 1px solid #E5E5E5;
+   
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 106px;
+  
+    color: #000;
+    letter-spacing: normal;
+        display: block;
+    width: 100%;
+    margin: 0 0 28px!important;
+    background: #FFFFFF;
+}
+  .col-6.slctd--opt select {
+    width: 95%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+      font-size: 18px;
+    line-height: 106px;
+ 
+}
+ .col-6.slctd--opt select:focus-visible{
+    outline:none !important;
+       box-shadow: none;
+
+  }
+  .slctd--opt{
+    outline: none!important;
+    height:60px;
+    border: 1px solid #E5E5E5;
+   
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 106px;
+    font-family: Poppins,sans-serif;
+    color: #000;
+    letter-spacing: normal;
+        display: block;
+    width: 100%;
+    margin: 0 0 28px!important;
+    background: #FFFFFF;
+}
+  .contact-form.form-vertical  select{
+    font-size: 19px;
+    padding-left: 13px;
+ color:#4D4D4D;
+
+  }
+  .contact-us .contact-container .contact-form input {
+    outline: none!important;
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 106px;
+    font-family: Poppins,sans-serif;
+    color: #000;
+    letter-spacing: normal;
+    margin: 0 0 28px!important;
+}
+  .contact-us .contact-container .contact-form textarea {
+    outline: none!important;
+    height: 240px;
+    border: 1px solid #e5e5e5;
+    
+    padding: 16px 30px 0;
+    font-size: 18px;
+    line-height: 26px;
+    font-family: Poppins,sans-serif;
+    color: #000;
+    letter-spacing: normal;
+    margin: 0!important;
+        display: block;
+    width: 100%;
+} 
+  .contact-us .contact-container .contact-form .submit-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+  .contact-us .contact-container .contact-form .submit-area .submit-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 365px;
+}
+ .contact-us .contact-form.form-vertical .submit-area p.submit-adress {
+   margin: 0!important;
+    font-family: Poppins,sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+    color: #8d8d8d;
+    font-weight: 400;
+    width: 100%;
+    text-transform: capitalize;
+    max-width: 190px;
+}
+  .contact-us .contact-container .contact-form .submit-area .submit-info p.submit-contact {
+    max-width: 134px;
+}
+  .contact-us .contact-container .contact-form .submit-area .submit-btns button.reset-btn {
+    border: 0;
+    background: transparent;
+    font-size: 19px;
+    line-height: 21px;
+    font-weight: 600;
+  
+    text-decoration: underline;
+    padding: 0 0px;
+    color: #000;
+    height: 64px!important;
+    outline: none!important;
+}
+  .submit-btns {
+    display: flex;
+}
+  
+  
+  .contact-us .contact-container .contact-form .submit-area .submit-btns button.reset-btn {
+    border: 0;
+    background: transparent;
+    font-size: 19px;
+    line-height: 21px;
+    font-weight: 600;
+    
+    text-decoration: underline;
+    padding: 0 0px;
+    color: #000;
+    height: 64px!important;
+    outline: none!important;
+       cursor: pointer;
+}
+  .submit-btns {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+ .contact-us .contact-container .contact-form .submit-area .submit-btns input.btn {
+    padding: 20.5px 56.5px;
+    margin: 0!important;
+    height: 55px;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #ae0201;
+    font-family: Poppins,sans-serif;
+    font-weight: 600;
+    border-radius: 0;
+    border: 1px solid transparent;
+    line-height: 13px;
+       max-width: 300px;
+   cursor: pointer;
+}
+  .dlry--pt ul li {
+    text-align: center;
+}
+  .dlry--pt a {
+    border: 1px solid #E5E5E5;
+   
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    padding: 16px 0;
+    width: 100%;
+    display: block;
+    min-width: 200px;
+    max-width: 100%;
+}
+  .dlry--pt ul h4 {
+    margin-top: 31px;
+    margin-bottom: 20px;
+ 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 28px;
+    color: #4D4D4D;
+}
+  .dlry--pt {
+    padding: 70px 5rem;
+}
+  @media screen and (max-width: 1730px){
+.contact-us .contact-banner {
+}
+  }
+
+    @media screen and (max-width: 1500px){
+/* .contact-us .contact-banner {
+      padding: 0 5rem;
+  max-width:100%;
+} */
+  }
+
+  
+   @media screen and (max-width: 1050px){
+  .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text {
+    padding: 70px 15px;
+}
+     .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text .banner-title {
+    font-size: 40px;
+}
+     .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text p.banner-info {
+    font-size: 16px;
+    line-height: 28px;
+}
+     .contact-us .contact-container .contact-form {
+    margin-top: 40px;
+}
+     .contact-us .contact-container .contact-form input {
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+    padding: 0 25px;
+}
+     .contact-us .contact-container .contact-form textarea {
+    line-height: 28px;
+    font-size: 16px;
+    padding: 25px;
+}
+     .contact-us .contact-container .contact-form .submit-area {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+}
+     .contact-us .contact-container .contact-form .submit-area .submit-info {
+    max-width: 100%;
+    margin: 0 0 13px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+       flex-direction: column-reverse;
+}
+     .contact-us .contact-container .contact-form .submit-area .submit-info p.submit-adress {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    margin: 0 0 28px!important;
+}
+     .contact-us .contact-container .contact-form .submit-area .submit-info p.submit-contact {
+    max-width: 100%;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    margin: 0 0 40px!important;
+}
+     .contact-us .contact-container .contact-form .submit-area .submit-btns {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    margin: 0 0 40px!important;
+}
+ 
+     .contact-us .contact-container .contact-form .row .col-6 {
+    width: 100%;
+}
+     .contact-us .contact-container .contact-form .submit-area .submit-btns input.btn {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 100%;
+}
+     .contact-us .contact-container .contact-form .submit-area {
+   
+    margin-bottom: 0;
+}
+   }
+@media screen and (min-width: 767px){
+   .col-6.slctd--opt {
+    position: relative;
+    width: calc(50% - 26px) !important;
+    left: 13px;
+     border-radius:4px;
+}
+}
+  @media screen and (max-width: 767px){
+   .contact-form.form-vertical select{
+     width:100%;
+     border-radius:0px;
+     background:#fff;
+   }
+.contact-us .contact-container .contact-form input {
+    height: 60px;
+    line-height: 60px;
+}
+    .contact-us .contact-container .contact-form {
+    margin-top: 0;
+}
+  .contact-us .contact-banner .contact-banner-details .banner-container .contact-banner-text .banner-title{
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        margin: auto;
+    margin-bottom: 30px;
+  }
+
+   .contact-us .contact-container .contact-form textarea::placeholder,.contact-form.form-vertical select,  .contact-us .contact-container .contact-form textarea::placeholder, .contact-us .contact-container .contact-form input::placeholder{
+    font-weight:500;
+  }
+    
+    .contact-us .contact-container .contact-form .submit-area .submit-btns input.btn {
+   
+    max-width: 250px;
+}
+
+    .dlry--pt {
+    padding: 70px 17px;
+}
+    .dlry--pt ul h4 {
+    margin-top:15px;
+    margin-bottom: 19px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4D4D4D;
+}
+    .dlry--pt ul {
+    
+       max-width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+}
+    .dlry--pt ul li {
+    text-align: center;
+    width: 45%;
+          margin-bottom: 50px;
+}
+    .dlry--pt a {
+    
+    min-width: 120px;
+    max-width: 100%;
+}
+    .btn-banr h4 {
+   
+    font-size: 30px;
+    line-height: 42px;
+    max-width: 237px;
+    margin: auto;
+}
+    .col-6.slctd--opt {
+      width: calc(100% - 26px) !important;
+    left: 13px;
+    right: 0;
+}
+    .bottom---gry {
+   
+    background-image: url(https://cdn.shopify.com/s/files/1/1219/9944/files/Section_2_BG_mobile.png?v=1669846775);
+}
+    .contact-us .contact-container .contact-form .submit-area .submit-btns{
+      margin-bottom:0 !important;
+    }
+    .dlry--pt ul li:last-child {
+    margin-bottom: 0px;
+}
+    .contact-us .contact-container .contact-form .submit-area .submit-btns button.reset-btn{
+      font-weight:500;
+    }
+    .contact-form.form-vertical select {
+    
+    padding-left: 22px;
+}
+  }
+  @supports (-webkit-touch-callout: none) {
+@media screen and (max-width : 767px){
+.contact-form.form-vertical select {
+    
+    width: 91%;
+}
+}
+}
+
+  
+</style>
+{% schema %}
+  {
+    "name": "Contact page 2",
+    "settings": [
+        
+    ],
+    "presets": [
+      {
+        "name": {
+            "en": "Contact page 2"
+        },
+        "category": {
+          "en": "Text"
+        }
+      }
+    ]
+  }
+{% endschema %}
+
+

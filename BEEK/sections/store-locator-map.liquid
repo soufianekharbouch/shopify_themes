@@ -1,0 +1,27 @@
+<div class="store_locator_map mb-5">
+  <div class="container">
+    <div class="row">
+      {{ section.settings.widget }}
+
+    </div>
+  </div>
+  {{ section.settings.script }}
+</div>
+
+{% schema %}
+  {
+    "name": "Locator map",
+    "settings": [
+      {
+        "id": "widget",
+        "type": "html",
+        "label": "HTML of widget"
+      },
+      {
+        "id": "script",
+        "type": "html",
+        "label": "Script of widget"
+      }
+    ]
+  }
+{% endschema %}

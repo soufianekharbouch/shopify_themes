@@ -1,0 +1,12 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-inspiration-page": {
+      "type": "ecom-inspiration-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ecom-inspiration-page"
+  ]
+}

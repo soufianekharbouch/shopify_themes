@@ -1,0 +1,288 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'hero-main' %}
+      {% include 'skincare-hero' %}
+
+<div class="skincare-how-it-works">
+
+  <h2>Become a Beekman Ambassador</h2>
+<p>As a Beekman 1802 Ambassador, you will receive some amazing benefits and be one of the faces to represent our brand, products, and Kindness philosophy, once you apply and are approved to be part of our Ambassador program.</p>
+ <br><br>
+
+<!--<div class="skincare-how-it-works">
+<hr><br>
+  <h2>How It Works</h2>
+  <p>Once you have R.S.V.P'd to the event, you will receive an email with an invite link to the Facebook Event Page where the LIVE video will be streamed on January 25th at 1pm EST. Please be sure to join the event so that you can receive exclusive event info, event reminders, and connect with our Kindness Council Experts. During the LIVE event will ask a question that will require you to comment in order to confirm your attendance so we can send you your complimentary products if you are one of the first 100. </p>
+  <p>The virtual conversation will be hosted by Beekman 1802 Founders, Dr. Brent Ridge and Josh Kilmer-Purcell featuring our Kindness Council Experts (learn more about them below!) centered around each pillar of kindness to give our community actionable tips for being kind respective to each pillar to create habits of kindness and the impact it makes on cultivating a kinder life.  Please note: We will cross-check the viewership of the event with the R.S.V.P. list prior to sending your complimentary products. </p>
+  <br>
+  <hr>
+</div>-->
+
+
+
+
+    {% when 'skincare-experts' %}
+      {% include 'affiliate-benefits' %}
+
+    {% when 'skincare-offer' %}
+      {% include 'skincare-offer' %}
+
+    {% when 'skincare-consultant' %}
+      {% include 'skincare-consultant' %}
+
+    {% when 'skincare-howitworks' %}
+      {% include 'skincare-howitworks' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Skincare Landing",
+    "blocks": [
+      {
+        "type": "hero-main",
+        "name": "Skincare Hero Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Hero Image"
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "heroTitle",
+            "type": "text",
+            "label": "Hero Title",
+            "default": "Hero Title"
+          },
+          {
+            "id": "heroContent",
+            "type": "textarea",
+            "label": "Hero Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "Book Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Book Link Text",
+            "default": "Book Now"
+          }
+        ]
+      },
+      {
+        "type": "skincare-offer",
+        "name": "Skincare Offer Block",
+        "settings": [
+          {
+            "id": "offerTitle",
+            "type": "text",
+            "label": "Section Title",
+            "default": "What We Offer"
+          },
+          {
+            "type": "image_picker",
+            "id": "offer1_image",
+            "label": "Offer 1 Image"
+          },
+          {
+            "id": "offer1_ttl",
+            "type": "text",
+            "label": "Offer 1 Headline",
+            "default": "Product Advice"
+          },
+          {
+            "id": "offer1_text",
+            "type": "text",
+            "label": "Offer 1 Description",
+            "default": "How to pick the perfect product for you"
+          },
+          {
+            "type": "image_picker",
+            "id": "offer2_image",
+            "label": "Offer 2 Image"
+          },
+          {
+            "id": "offer2_ttl",
+            "type": "text",
+            "label": "Offer 2 Headline",
+            "default": "Product Advice"
+          },
+          {
+            "id": "offer2_text",
+            "type": "text",
+            "label": "Offer 2 Description",
+            "default": "How to pick the perfect product for you"
+          },
+          {
+            "type": "image_picker",
+            "id": "offer3_image",
+            "label": "Offer 3 Image"
+          },
+          {
+            "id": "offer3_ttl",
+            "type": "text",
+            "label": "Offer 3 Headline",
+            "default": "Product Advice"
+          },
+          {
+            "id": "offer3_text",
+            "type": "text",
+            "label": "Offer 3 Description",
+            "default": "How to pick the perfect product for you"
+          },
+          {
+            "type": "image_picker",
+            "id": "offer4_image",
+            "label": "Offer 4 Image"
+          },
+          {
+            "id": "offer4_ttl",
+            "type": "text",
+            "label": "Offer 4 Headline",
+            "default": "Product Advice"
+          },
+          {
+            "id": "offer4_text",
+            "type": "text",
+            "label": "Offer 4 Description",
+            "default": "How to pick the perfect product for you"
+          }
+        ]
+      },
+      {
+        "type": "skincare-experts",
+        "name": "Skincare Experts",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "skincare_experts_enabled",
+            "label": "Show Skincare Experts section?",
+            "info": "To set up Experts Grid you need go to the Page -> More actions -> Custom Fields and add Skincare Expert section for each expert. Note: max 6 sections",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "experts_ttl",
+            "label": "Meet Experts Heading",
+            "default": "Meet Our Skincare Experts"
+          },
+          {
+            "type": "textarea",
+            "id": "experts_desc",
+            "label": "Meet Experts Description",
+            "default": "Lorem ipsum sit dolor..."
+          }
+        ]
+      },
+      {
+        "type": "skincare-consultant",
+        "name": "Skincare Consultant",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "cons_desk_image",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "cons_mob_image",
+            "label": "Mobile Image"
+          },
+          {
+            "id": "cons_section_ttl",
+            "type": "text",
+            "label": "Section Title",
+            "default": "Become a Skincare Consultant"
+          },
+          {
+            "id": "cons_section_info",
+            "type": "textarea",
+            "label": "Section Info",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "Apply Button Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Apply Button Text",
+            "default": "Apply Now"
+          }
+        ]
+      },
+      {
+        "type": "skincare-howitworks",
+        "name": "Skincare How It Works",
+        "settings": [
+          {
+            "id": "howitworks_ttl",
+            "type": "text",
+            "label": "Section Title",
+            "default": "How It Works"
+          },
+          {
+            "id": "howitworks_info",
+            "type": "textarea",
+            "label": "Section Info",
+            "default": "Get skincare advice from the comfort of your home lore ipsum with 3 easy steps"
+          },
+          {
+            "type": "url",
+            "label": "Book Now Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Book Now Text",
+            "default": "Book Now"
+          },
+          {
+            "type": "url",
+            "id": "video_link",
+            "label": "Video Url"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_img_link",
+            "label": "Video Image Placeholder"
+          },
+          {
+            "type": "image_picker",
+            "id": "video_img_link_mob",
+            "label": "Video Image Placeholder Mob"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'skincare-experts.js' | asset_url | script_tag }}

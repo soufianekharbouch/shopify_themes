@@ -1,0 +1,687 @@
+
+<div id="YMK-module" style="margin-top:-40px;"></div>
+  <div class="goatieMsg">
+    <span id="goatieMsgContent">Msg for 0-10 Msg for 0-10 Msg for 0-10 Msg for 0-10 Msg for 0-10 Msg for 0-10 </span>
+    <style>
+    .goatieMsg{
+      width:70%;
+      background-image:url("https://cdn.shopify.com/s/files/1/0223/7461/files/Group_4607.png?v=1649249215");
+      background-repeat: no-repeat;
+      background-position: 8px 8px;
+      padding: 2% 2% 2% 14%;
+      background-color: #FFE100;
+      border-radius: 15px;
+      display: none;
+      position: absolute;
+      top:12px;
+      z-index: 500000;
+      text-align:left;
+      margin-left:calc(50%);
+      font-size:13px;
+      font-family: "Avenir Next";
+       transform: translate(-50%,0);
+    }
+
+    </style>
+  </div>
+
+  
+  <div class="FlowerHeader">YOUR SKIN BIOME MATRIX</div>
+<div class="Header1">The higher the score, the more Goatie-approved your current skincare routine is! Don’t worry if your score is on the low side. A little more skin Kindness is just what the Goatie ordered.<br>
+</div>
+  <canvas id="myCanvas">
+  </canvas>
+  
+  <div class="ResultContainer">
+    <div class="ResultItem SkinBiom">
+      <div class="Resultlabel">Skin Biome</div>
+      <div class="ResultNumber"></div>
+    </div>
+
+    <div class="ResultItem Wrinkless">
+      <div class="Resultlabel">Wrinkles</div>
+      <div class="ResultNumber"></div>
+    </div>
+    <div class="ResultItem Texture">
+      <div class="Resultlabel">Texture</div>
+      <div class="ResultNumber"></div>
+    </div>
+    <div class="ResultItem Hydration">
+      <div class="Resultlabel">Hydration</div>
+      <div class="ResultNumber"></div>
+    </div>
+    <div class="ResultItem DarkSpots">
+      <div class="Resultlabel">Dark Spots</div>
+      <div class="ResultNumber"></div>
+    </div>
+    <div class="ResultItem Redness">
+      <div class="Resultlabel">Redness</div>
+      <div class="ResultNumber"></div>
+    </div>
+
+  </div>
+
+  <div class="goatieMsg2">
+      Goatie recommends these products to keep your microbiome balanced and healthy. Don’t forget to share your score with friends and compare your skincare tips and tricks!
+      <div class="SocialIcons">
+          <a class="fb__share" href=""
+             data-href="https://t605cv3zursshgzt-2237461.shopifypreview.com/pages/facial-app-result/?result=83-76-87-72-81-97"
+             onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(this.getAttribute('data-href')),'facebookShareDialog','width=626,height=436'); return false;"
+          >
+              {% include 'icon-facebook-fa' %}
+          </a>
+
+          <div class="b24-share-tweet twtr-component">
+            <div class="b24__wrapper twtr-spacing--pbr-700">
+              <a class="url_twitter" target="_blank" href="https://twitter.com/intent/tweet?text=I%20scanned%20my%20face%20with%20Beekman%201802!%20Check%20out%20my%20scores%20and%20try%20it%20out%20yourself&url={{shop.url}}/pages/facial-app-result/?result=83-76-87-72-81-97" >
+
+              <button class="TwitterButton"  type="button">
+                  <div class="b24__icon">
+                    <svg width="26" height="21" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="none" class="twtr-color-fill--blue-logo">
+                       <path fill-rule="evenodd" clip-rule="evenodd" d="M7.04128 17.7861C4.53883 17.7861 2.21078 17.0602 0.25 15.8165C0.596807 15.857 0.949401 15.8773 1.30683 15.8773C3.38266 15.8773 5.29282 15.1764 6.80944 14.0003C4.87 13.9646 3.23461 12.6968 2.67056 10.9547C2.94041 11.0059 3.21803 11.0338 3.50342 11.0338C3.90767 11.0338 4.2993 10.9798 4.67133 10.8796C2.64431 10.4775 1.11689 8.70468 1.11689 6.5808C1.11689 6.56156 1.11689 6.54327 1.11792 6.52489C1.71505 6.85368 2.39787 7.05133 3.12448 7.07347C1.93514 6.28783 1.15299 4.94488 1.15299 3.42361C1.15299 2.62053 1.37213 1.86754 1.75297 1.21971C3.93781 3.87277 7.20298 5.61776 10.885 5.80097C10.8091 5.47987 10.7701 5.14535 10.7701 4.80118C10.7701 2.38039 12.7543 0.416626 15.2012 0.416626C16.4753 0.416626 17.6267 0.949734 18.4351 1.80197C19.4444 1.60535 20.392 1.23997 21.2484 0.737722C20.9172 1.76154 20.2148 2.62053 19.3002 3.1633C20.1963 3.0572 21.0506 2.82194 21.8444 2.47297C21.2512 3.35223 20.4993 4.12445 19.6342 4.7433C19.643 4.93129 19.6469 5.12031 19.6469 5.31018C19.6469 11.1042 15.1905 17.7861 7.04128 17.7861Z" fill="#4a5761"></path>
+                   </svg>
+                  </div>
+              </button>
+            </a>
+
+            </div>
+            </div>
+      </div>
+    </div>
+  {%section 'facial-wrapper' %}
+  {% section 'facial-header' %}
+  {% section 'goat-sec' %}
+   <div class="new-facial-discover">
+    {% section 'new-facial-landing' %}
+   </div>
+{% section 'facial_signup' %}
+
+<div class="container" style="display: none;">
+    <div id="recommendedProducts">
+        <div class="product__grid featured__products row"></div>
+    </div>
+    <div id="clinically">
+       <img class="clinicallyImage" src="https://cdn.shopify.com/s/files/1/0223/7461/files/Clinically-Kind-Shield-Large.png?v=1616087457">
+       <div class="clinicallyContent">
+         <p>Clinically Kind is the Beekman 1802 approach to skincare that's clinicallytested, scientifically proven.
+         and mde for sensitive skin (and sensitive people).
+         Effective clean formulations that work with your skin, not against it.</p>
+       </div>
+       <a class="clinicallyLink" href="#">
+         shop all skincare products
+       </a>
+      </div>
+</div>
+
+<style>
+  .Header1{
+    display: none;
+  }
+  #clinically{
+    width:90%;
+    margin:15px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:40px;
+  }
+  .clinicallyContent{
+    text-align: center;
+    
+    max-width:360px;
+    margin:10px auto;
+    display: block;
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 15px;
+  }
+  .clinicallyImage{
+    width:140px;
+    margin:8px auto;
+    display: block;
+  }
+  .clinicallyLink{
+    background: #4A5761;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 15px 36px;
+    font-size: 14px;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 8px auto;
+    display: block;
+    text-align: center;
+    
+    max-width: 320px;
+  }
+  .clinicallyLink:hover{
+    text-decoration: none;
+  }
+  .TwitterButton{
+    background-color: transparent;
+    border-radius:15px;
+    border-width: 0px;
+  }
+  .SocialIcons{
+    width:100%;
+    margin-top:10px;
+    text-align: center;
+    display: flex;
+    margin-left:-7%;
+    align-items: center;
+    justify-content: center;
+  }
+  .SocialIcons iframe {
+    margin-right: 0px;
+  }
+  .ResultItem{
+    width:120px;
+    text-align: center;
+    position: absolute;
+    color: #4D5B65;
+  }
+
+  .fb__share {
+      margin-right: 10px;
+  }
+
+  .Resultlabel{
+   font-size:13px;
+   color: #4D5B65;
+  }
+  .ResultNumber{
+    font-size:20px;
+    line-height: 22px;
+    color: #4D5B65;
+  }
+  .ResultContainer{
+    font-family: "Avenir Next";
+    display: none;
+    padding-bottom: 20px;
+  }
+      .goatieMsg2{
+      width:90%;
+      background-image:url("https://cdn.shopify.com/s/files/1/0223/7461/files/Group_4607.png?v=1649249215");
+      background-repeat: no-repeat;
+      background-position: 8px 8px;
+      padding: 2% 3% 2% 15%;
+      background-color: #FFE100;
+      border-radius: 15px;
+      display: none;
+      text-align:left;
+      margin-left:5%;
+      font-size:13px;
+      font-family: "Avenir Next";
+      color: #4D5B65;
+    }
+  .FlowerHeader{
+    width:100%;
+    font-size:20px;
+    font-family: "Avenir Next";
+    text-align: center;
+    font-weight:500;
+    margin-top:30px;
+    margin-bottom:-8px;
+    display:none;
+  }
+ .Header1{
+    width:100%;
+    font-size:13px;
+    font-family: "Avenir Next";
+    text-align: center;
+    font-weight:400;
+    margin-top:10px;
+    margin-bottom:-8px;
+   padding: 5px;
+    
+  }
+    
+  #myCanvas{
+    display:none;
+  }
+.facial-header{
+ background: #FBF9F6;
+  padding: 60px 0;
+  text-align: center;
+}
+.qr-box ul{
+ justify-content: center;
+ display: flex;
+  list-style-type: none;
+  align-items: center;
+  grid-gap: 30px;
+  padding: 0;
+  margin: 30px 0 0 0;
+  position: relative;
+}
+.qr-box ul li{
+ min-width: 200px;
+}
+
+.qr-box ul:after{
+ position: absolute;
+      left: -30px;
+    top: -51px;
+  content: '';
+  background: url('https://cdn.shopify.com/s/files/1/0223/7461/files/noun_Arrow_2975406_cf46ba9d-1dd8-45b0-8f49-4c65575a9302.png?v=1645028239') no-repeat center;
+  background-size:contain;
+  width: 28px;
+  height: 53px;
+}
+
+.headerFacialImage{
+  background-image: url('https://cdn.shopify.com/s/files/1/0223/7461/files/myskinbiome-logo.png?v=1650813762');
+  width:286px;
+  height:200px;
+   background-repeat: no-repeat;
+  background-size: contain;
+  margin:0 auto;
+  clear: none;
+  text-align: center;
+}
+
+
+
+@media(min-width:700px) and (max-width: 980px){
+  .headerFacialImage{
+   margin:20px auto 0;
+}
+}
+  @media (max-width: 700px){
+    .headerFacialImage{
+    margin:32px auto -15px;
+    }
+  }
+
+.fh-img{
+ display: flex;
+  align-items: center;
+width: 70%;
+}
+
+  .fh-img ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: fit-content;
+    display:grid;
+    grid-gap: 20px;
+    height: fit-content;
+}
+
+
+.fh-img ul li{
+  text-align: center;
+}
+
+
+.fh-img ul li span{
+ width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  border: 3px solid #ffdc00;
+  background: #ffdc00;
+  color: #fff;
+  border-radius: 100%;
+  text-shadow: 1px 2px 2px #a5a2a2;
+    font-size: 18px;
+    font-weight: 500;
+  margin: 0 auto !important;
+}
+.fh-img ul li p{
+ color: #4A5761;
+  font-size: 13px;
+    font-weight: 500;
+  margin: 5px 0 0 0;
+  width: 90px;
+}
+.header-left-ul li:nth-child(2) span{
+  border: 3px solid #DB8BFF;
+  background: #E5BEF8;
+}
+.header-left-ul li:nth-child(3) span{
+  border: 3px solid #50E093;
+  background: #A6F0D4;
+}
+
+.header-right-ul li:nth-child(1) span{
+  border: 3px solid #3C88E1;
+  background: #AED3F7;
+}
+.header-right-ul li:nth-child(2) span{
+  border: 3px solid #FFAD2B;
+  background: #FFD17B;
+}
+.header-right-ul li:nth-child(3) span{
+  border: 3px solid #FF0014;
+  background: #FDA6A6;
+}
+.gotie-sec{
+  background: #FCF193;
+  background-image:url('https://cdn.shopify.com/s/files/1/0223/7461/files/landingpage-background-desktop.jpg?v=1649197576');
+  background-size:contain;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  position: relative;
+  margin: 0 0;
+}
+@media(max-width:800px){
+  .gotie-sec{
+  background-image:url('https://cdn.shopify.com/s/files/1/0223/7461/files/landingpage-background-mobile.jpg?v=1649197576');
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+}
+  @media(min-width:700px) and (max-width: 950px){
+  .goatieMsg2 {
+    width: 70%;
+    padding: 2% 3% 2% 8%;
+    margin-left: 15%;
+}
+  }
+.gotie-sec p{
+ background: #fff;
+    padding: 20px 20px;
+    border-radius: 20px;
+    font-family: Avenir Next;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 30px;
+    color: #4A5761;
+  position: relative;
+  z-index: 102;
+  margin-top: 30px;
+  margin-left: -10px;
+}
+
+.gotie-sec p:before{
+  position: absolute;
+  left: -34px;
+    bottom: 24px;
+  background: url('https://cdn.shopify.com/s/files/1/0223/7461/files/Path_294533.png?v=1645068315')no-repeat;
+background-size: contain;
+  width:66px;
+  height: 22px;
+  content: '';
+  z-index: -1;
+}
+
+.gotie-img{
+  width: 160px;
+  height: 160px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: #fbe11d;
+  border-radius: 100%;
+  box-shadow: 0px 0px 23px 0px #00000038;
+  position: absolute;
+  top: 20px;
+  right: -300px;
+  /*transition: .3s;*/
+}
+.gotie-img img{
+  width: 90px;
+  height: 90px;
+  object-fit: content;
+}
+.bottomPosition{
+  position: fixed;
+  top:calc(100% - 170px);
+}
+
+.gotie-img h4{
+ color: #4A5761;
+  font-family: Avenir Next,Arial,Helvetica;
+    font-weight: 300;
+    font-size: 14px;
+  padding-top: 5px;
+}
+
+
+.fh-content h1{
+   color: #4A5761;
+  font-family: Avenir Next,Arial,Helvetica;
+    font-weight: 600;
+    font-size:35px;
+  text-transform: uppercase;
+    max-width: 458px;
+  width: 100%;
+  margin: 0 auto 10px;
+}
+
+.fh-content p{
+  color: #4A5761;
+  font-family: Century OS,Arial,Helvetica;
+    font-weight: 400;
+    font-size:16px;
+   max-width: 430px;
+   width: 100%;
+   margin: 0px auto 30px;
+}
+  #recommendedProducts {
+      margin: 40px 0;
+  }
+  #recommendedProducts .facial__description {
+      font-family: Century OS,Arial,Helvetica;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: #4a5761;
+      margin-top: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding: 1.5rem 1.5rem 0;
+  }
+  #recommendedProducts .facial__description:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: 2px;
+      background: #ffe844;
+      width: 50px;
+  }
+  #recommendedProducts .action__wrap {
+      text-align: center;
+      height: 4.6rem;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+  }
+  #recommendedProducts .action__wrap .learn__more {
+      font-family: Avenir Next,Arial,Helvetica;
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.08;
+      color: #4a5761;
+      text-transform: uppercase;
+      border-bottom: 1px solid #4a5761;
+      display: inline-block;
+      text-decoration: none;
+  }
+@media(max-width: 900px){
+ .fh-content p{
+   padding:0 10px;
+ }
+
+
+.fh-img{
+  width: 62%;
+  margin-top:40px;
+}
+
+ .gotie-sec, .fa-discover-sec{
+   padding: 40px 0;
+ }
+
+
+ .facial-header{
+   padding: 40px 0 ;
+ }
+
+.fh-content h1{
+ font-size: 24px;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+
+.fh-img{
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.fh-img ul{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 20px;
+  padding:15px;
+}
+.fh-img img{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.gotie-sec{
+  margin: 0px;
+}
+}
+@media screen and (max-device-width: 1000px) and (min-device-width: 760px){
+  .fh-content h1{
+    padding-top:100px;
+    width: 368px;
+  }
+
+}
+
+
+
+@media(max-width: 575px){
+.qr-box ul:after{
+  display: none;
+}
+
+
+
+}
+
+
+</style>
+
+<style>
+  .mobileContent{
+  display:none;
+}
+@media(max-width:768px){
+  .mobileContent{
+  display:block;
+}
+.desktopContent{
+  display: none;
+}
+}
+
+
+@media(min-width: 768px){
+    #recommendedProducts .product__grid {
+        justify-content: center;
+    }
+}
+@media(max-width: 900px){
+  .fh-content a{
+   width: 60%;
+    padding: 15px 36px;
+    font-size: 14px;
+        font-family: 'Avenir Next';
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .qr-box{
+  display: none;
+}
+
+
+
+.fh-content a, .fa-discover a{
+  display: inline-block;
+}
+.header-left-ul{
+  order: 2;
+}
+.header-right-ul{
+  order: 3;
+}
+}
+  @media(max-width: 1100px){
+
+.gotie-sec .row{
+   flex-direction: column-reverse;
+  align-content:center;
+}
+
+.gotie-img{
+ margin: 0 auto;
+    left: 0px;
+}
+ .gotie-img img{
+   width: 100%;
+ }
+
+.gotie-img h4{
+  font-weight: 400;
+    font-size: 14px;
+}
+
+.gotie-sec{
+  text-align: center;
+  padding-bottom: 0px;
+}
+.gotie-sec p{
+  margin: 15px;
+  text-align: left;
+  font-size: 15px;
+    line-height: 19px;
+}
+.gotie-sec p:before{
+  	left: 70%;
+    transform: rotate(329deg);
+    bottom: -18px;
+}
+
+.gotie-sec .row img{
+  width: 60%;
+  display: block;
+  margin: -17px 0 0 35px;
+}
+
+.gotie-img{
+  display: none;
+}
+.gotie-sec .row .col-md-4:first-child{
+      z-index: 105;
+}
+
+}
+
+@media(min-width:1200px){
+  .gotie-sec .row .col-md-4:first-child{
+      margin-right:-4%;
+}
+}
+</style>
+
+
+
+
+
+
+

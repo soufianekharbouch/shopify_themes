@@ -1,0 +1,26 @@
+{% if section.settings.klaviyo_list_id != blank %}
+    <div class="klaviyo-form-{{ section.settings.klaviyo_list_id }}"></div>
+{% else %}
+    {% if section.settings.raw_embed_code %}
+        {{ section.settings.raw_embed_code }}
+    {% endif %}
+{% endif %}
+
+{% schema %}
+{
+"name":"page Settings",
+  "settings":[
+    {
+      "id":"klaviyo_list_id",
+      "type":"text",
+      "label":"Klaviyo List ID"
+    },
+    {
+      "id":"raw_embed_code",
+      "type":"textarea",
+      "label":"Raw Embed Code",
+      "info": "Note: Raw Embed Code is not shown if Klaviyo List ID is populated"
+    }
+  ]
+}
+{% endschema %}

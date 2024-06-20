@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="account_section">
+    <div class="row">
+      <div class="col-12 text-center">
+          <h1>WELCOME NEIGHBOR</h1>
+          <h2>{{ customer.first_name }}'s Account</h2>
+      </div>
+    </div>
+    <div class="row customer_info">
+      <div class="col-12 col-md-4">
+        {% assign activeTab="subscriptions"  %}
+        {% include 'account-sidebar' with activeTab %}
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="customer_info_right">
+          {% include 'account-subscriptions' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>

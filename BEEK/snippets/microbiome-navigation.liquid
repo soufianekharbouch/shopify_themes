@@ -1,0 +1,70 @@
+<div class="microbiome-navigation" id="microbiome-nav">
+  <div class="sub_nav">
+    <span class="mob_menu_trigger">Learn <span class="icon-plus" aria-hidden="true"></span></span>
+    <ul class="nav_list">
+      {% for link in linklists[block.settings.menu].links %}
+        {%- comment %}<locksmith:f174>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:f174>{% endcomment -%}
+        <li class="nav_item">
+          <a href="{{ link.url }}" class="nav_link">
+              <span class="nav_text">
+                {{ link.title }}
+              </span>
+            <span class="icon_nav">{% include 'icon-arrow-top' %}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<script>
+  var links = document.querySelectorAll('.nav_link');
+  var $topLink = $('.top_link');
+  var $wnd = $(window);
+  var $mobMenuTrigger = $('.mob_menu_trigger');
+  var $body = $('body');
+  var $navContainer = $('#microbiome-nav');
+
+  $mobMenuTrigger.on('click', function(e) {
+    e.stopPropagation();
+    $(e.currentTarget).toggleClass('active');
+    $navContainer.toggleClass('active');
+  });
+
+  links.forEach(function(link){
+    $(link).on('click', function(e) {
+      e.preventDefault();
+      var target = $(e.currentTarget);
+      target.addClass('active');
+      $('html, body').animate({
+        scrollTop: $(target.attr('href')).offset().top + 100
+      }, 500, 'swing', scrollChecker);
+    });
+  });
+
+  function debounce(f, ms) {
+    var isCooldown = false;
+    return function() {
+      if (isCooldown) return;
+      f.apply(this, arguments);
+      isCooldown = true;
+      setTimeout(() => isCooldown = false, ms);
+    };
+  }
+
+  function scrollChecker() {
+    var offset = $body.scrollTop();
+    if (offset > 500) {
+      $topLink.addClass('active');
+    } else {
+      $topLink.removeClass('active');
+    }
+  }
+
+  $wnd.on('mousewheel', debounce(scrollChecker, 200));
+
+  $topLink.on('click', function() {
+    $body.animate({'scrollTop': 0}, 500, 'swing', scrollChecker);
+  });
+</script>

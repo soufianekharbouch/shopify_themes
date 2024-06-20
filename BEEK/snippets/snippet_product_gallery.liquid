@@ -1,0 +1,53 @@
+{% assign video_id = product.metafields.accentuate.product_video__image_preload | md5 %}
+
+<div class="col-12 col-lg-7 media__wrap">
+  <div class="thumbnails d-none d-lg-block">
+    {% for image in product.images %}
+      <div class="thumb">
+        <a href="#" class="thumb__control{% if forloop.first %} active{% endif %}" data-image-id="{{ image.id }}">
+          <img src="{{ image | img_url: '100x' }}" alt="{{ product.title }}" />
+        </a>
+      </div>
+    {% endfor %}
+    {% if product.metafields.accentuate.product_video__image_preload %}
+      <div class="thumb">
+        <a
+          href="#"
+          class="thumb__control"
+          data-image-id="{{ video_id }}"
+        >
+          {% include 'icon-player' %}
+          <img src="{{ product.metafields.accentuate.product_video__image_preload }}" alt="{{ product.title }}" />
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+  {% if product.metafields.accentuate.product_label != blank %}
+    <div class="product__label">
+      {{ product.metafields.accentuate.product_label }}
+    </div>
+  {% endif %}
+    <div class="carousel__wrap">
+      {% assign counter = 0 %}
+
+      {% for image in product.images %}
+        <div class="slide{% if forloop.first %} active{% endif %}" data-slide-id="{{ counter }}" data-image-id="{{ image.id }}">
+            <img src="{{ image | img_url: '600x' }}" alt="{{ product.title }}" />
+        </div>
+        {% assign counter = counter | plus: 1 %}
+      {% endfor %}
+      {% if product.metafields.accentuate.product_video__image_preload %}
+        <div
+          class="slide"
+          data-slide-id="{{ counter }}"
+          data-image-id="{{ video_id }}"
+        >
+          <iframe class="vimeo_container" width="402" height="402" src="{{ product.metafields.accentuate.product_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        </div>
+        {% assign counter = counter | plus: 1 %}
+      {% endif %}
+    </div>
+  <div class="d-none d-lg-block d__icons">
+    {% include 'snippet_product_icon' %}
+  </div>
+</div>

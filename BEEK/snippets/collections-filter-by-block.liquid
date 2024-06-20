@@ -1,0 +1,50 @@
+<div class="col-6 filter-by-block-wrap">
+  <div class="filter-by-select">
+    <span>Filter-by</span>
+    <div class="arrow-wrap">
+      {% include 'icon-arrow-down' %}
+    </div>
+    <div class="filter-list">
+      <div class="filter-by_item">
+        <span>Concern</span>
+        <div class="arrow-wrap">
+          {% include 'icon-arrow-down' %}
+        </div>
+      </div>
+      <div class="filter-by_item">
+        <span>Recommended Age</span>
+        <div class="arrow-wrap">
+          {% include 'icon-arrow-down' %}
+        </div>
+      </div>
+      <div class="filter-by_item">
+        <span>Skin Type</span>
+        <div class="arrow-wrap">
+          {% include 'icon-arrow-down' %}
+        </div>
+      </div>
+      <div class="filter-by_item">
+        <span>Collection</span>
+        <div class="arrow-wrap">
+          {% include 'icon-arrow-down' %}
+        </div>
+      </div>
+      <div class="filter-by_item">
+        <span>Size</span>
+        <div class="arrow-wrap">
+          {% include 'icon-arrow-down' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  if ($(document).width() < 768) {
+    $(document).on('click', '.filter-by-select', function(e) {
+      if ($(e.target).hasClass('filter-by-select') || !$(e.target).parents().hasClass('filter-list')) {
+        $(this).toggleClass('active');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "disabled": true,
+      "settings": {
+        "image_darken": false,
+        "subtitle": "Subheading",
+        "width": "wide",
+        "banner_height": "medium",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "page": {
+      "type": "page-content__main",
+      "settings": {
+        "show_heading": true,
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "index__faq",
+      "blocks": {
+        "16306825309648acac-1": {
+          "type": "content",
+          "settings": {
+            "title": "How long will it take for my order to ship? When will I receive it?",
+            "answer": "<p><strong>Handling time:<\/strong> 2-3 days (Monday – Friday)<br\/><br\/><strong>Transit time:<\/strong> 5-8 days. (Monday – Friday)<\/p><p><strong>Delivery Time:<\/strong> Handling time + Transit time<\/p><p><a href=\"\/policies\/shipping-policy\" title=\"Shipping Policy\">Shpipping Policy<\/a><\/p><p>We GUARANTEE the fastest processing and shipping times in the industry, along with the most responsive customer service, period.<\/p>"
+          }
+        },
+        "16306825309648acac-2": {
+          "type": "content",
+          "settings": {
+            "title": "Which payment methods do you accept?",
+            "answer": "<ul><li>AMERICANEXPRESS<\/li><li>APPLE PAY<\/li><li>DINERS CLUB<\/li><li>DISCOVER<\/li><li>METAPAY<\/li><li>GOOGLE PAY <\/li><li>MASTERCARD<\/li><li>PAYPAL<\/li><li>SHOP PAY<\/li><li>VENMO<\/li><li>VISA<\/li><\/ul>"
+          }
+        },
+        "16306825309648acac-3": {
+          "type": "content",
+          "settings": {
+            "title": "What is your return policy?",
+            "answer": "<p>We offer a 30 Day Money Back Guarantee On All Items. Check out our 30-Day <a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Return Policy<\/a> <\/p>"
+          }
+        },
+        "16306825309648acac-5": {
+          "type": "content",
+          "settings": {
+            "title": "What is your cancellation policy?",
+            "answer": "<p>You can cancel any order for a 100% refund before it has shipped out. Please notify us immediately at <a href=\"mailto:info@joyfulpeter.com\" title=\"mailto:info@joyfulpeter.com\">info@joyfulpeter.com<\/a> if you would like to cancel your order. Once the order has shipped, it is subject to our 30-Day<a href=\"\/policies\/refund-policy\" title=\"Refund Policy\"> Return Policy.<\/a><\/p>"
+          }
+        },
+        "16306825309648acac-6": {
+          "type": "content",
+          "settings": {
+            "title": "What if my product is damaged?",
+            "answer": "<p>Please inspect the packaging of your item(s) when they arrive, if you notice any damage, even damage to the box, you should make note of it when signing for delivery. If you’re unable to open the package during delivery but suspect damage, write “suspect damage” on the delivery receipt.<\/p><p>If your item(s) do arrive damaged, please send photos to <a href=\"mailto:info@joyfulpeter.com\" title=\"mailto:info@joyfulpeter.com\">info@joyfulpeter.com<\/a> and we will process a replacement or compensation.<\/p>"
+          }
+        },
+        "content_d6r3qh": {
+          "type": "content",
+          "settings": {
+            "title": "How do I place an order?",
+            "answer": "<p>To place an order online, simply click “Add To Cart” on your preferred product and proceed to checkout. Enter your shipping and billing information and complete checkout. <\/p>"
+          }
+        },
+        "content_yapryx": {
+          "type": "content",
+          "settings": {
+            "title": "How do I know when my order will ship?",
+            "answer": "<p>Once you place your order, you will receive a confirmation email confirmation credit card authorization and shipping\/billing information.<\/p><p>We will immediately process your order and you will receive an email confirming your order has shipped with a tracking number once it leaves the warehouse. <\/p><p>If an item goes out of stock, you will be notified via email or phone within one business day. We take great measures to ensure all products listed on our website are in stock, but often times items can quickly sell out due to high demand.<\/p>"
+          }
+        },
+        "16306825309648acac-7": {
+          "type": "content",
+          "settings": {
+            "title": "Will you send an order confirmation via e-mail?",
+            "answer": "<p>An order confirmation message will be sent to the e-mail address you provide us for each order you submit. We recommend that you print and save the e-mail confirmation for your records. Please be sure to enter your e-mail address correctly to ensure that you receive your order confirmation.<\/p>"
+          }
+        },
+        "d045c10e-663d-44d4-b42f-8a9e2d8fdbeb": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "Do you charge sales tax?",
+            "answer": "<p>We are located in Wyoming and do not charge sales tax unless you are shipping the order to Wyoming. This alone can save you hundreds of dollars compared to ordering elsewhere.<\/p>"
+          }
+        },
+        "3a8a6407-ceb7-458a-90cb-51ac1521539b": {
+          "type": "content",
+          "settings": {
+            "title": "Can I change my order?",
+            "answer": "<p>Yes, you can change your order at no cost by simply emailing us at <a href=\"mailto:info@joyfulpeter.com\" title=\"mailto:info@joyfulpeter.com\">info@joyfulpeter.com<\/a> and requesting the change. Any price difference will be credited to your card or we will send you a custom invoice to pay the difference. Orders can only be changed before shipping. <\/p><p>You can get immediate assistance regarding the status of your order by emailing <a href=\"mailto:info@joyfulpeter.com\" title=\"mailto:info@joyfulpeter.com\">info@joyfulpeter.com<\/a> or calling <a href=\"tel:+12056063715\" title=\"tel:+12056063715\">+12056063715<\/a><\/p>"
+          }
+        },
+        "16306825309648acac-8": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/basketball-court-hoop-shadow.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16306825309648acac-1",
+        "16306825309648acac-2",
+        "16306825309648acac-3",
+        "16306825309648acac-5",
+        "16306825309648acac-6",
+        "content_d6r3qh",
+        "content_yapryx",
+        "16306825309648acac-7",
+        "d045c10e-663d-44d4-b42f-8a9e2d8fdbeb",
+        "3a8a6407-ceb7-458a-90cb-51ac1521539b",
+        "16306825309648acac-8"
+      ],
+      "settings": {
+        "title": "",
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "page",
+    "main"
+  ]
+}

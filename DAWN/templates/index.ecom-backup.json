@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "7c06e780-0079-4cb4-9e64-57479aa76de8": {
+      "type": "instagram",
+      "disabled": true,
+      "settings": {
+        "heading": "Our Yoopers",
+        "subheading": "#yamyoop",
+        "description": "Tag Us @yam.yoop for a chance to be featured",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "#ffe5d1",
+        "layout": "metro",
+        "images_count": 8,
+        "grid_columns": 4,
+        "gap": 30,
+        "mobile_gap": 10,
+        "profile": "https:\/\/www.instagram.com\/yam.yoop",
+        "button_label": "Scroll Instagram",
+        "padding_top": 12,
+        "padding_bottom": 100,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "7c06e780-0079-4cb4-9e64-57479aa76de8"
+  ]
+}

@@ -1,0 +1,78 @@
+<div class="skincare-offer-section">
+  {% if block.settings.offerTitle != blank %}
+    <h2 class="section__title">{{ block.settings.offerTitle | escape }}</h2>
+  {% endif %}
+  <ul class="offer__list">
+    {% if block.settings.offer1_ttl != blank %}
+      <li>
+        <div class="img__wrap">
+          {% if block.settings.offer1_image != blank %}
+            <img src="{{ block.settings.offer1_image | img_url: 'master' }}" alt="" />
+          {% endif %}
+        </div>
+        <h3>
+          {{ block.settings.offer1_ttl | escape }}
+        </h3>
+        {% if block.settings.offer1_ttl != blank %}
+          <p>
+            {{ block.settings.offer1_text | escape }}
+          </p>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    {% if block.settings.offer2_ttl != blank %}
+      <li>
+        <div class="img__wrap">
+          {% if block.settings.offer2_image != blank %}
+            <img src="{{ block.settings.offer2_image | img_url: 'master' }}" alt="" />
+          {% endif %}
+        </div>
+        <h3>
+          {{ block.settings.offer2_ttl | escape }}
+        </h3>
+        {% if block.settings.offer2_ttl != blank %}
+          <p>
+            {{ block.settings.offer2_text | escape }}
+          </p>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    {% if block.settings.offer3_ttl != blank %}
+      <li>
+        <div class="img__wrap">
+          {% if block.settings.offer3_image != blank %}
+            <img src="{{ block.settings.offer3_image | img_url: 'master' }}" alt="" />
+          {% endif %}
+        </div>
+        <h3>
+          {{ block.settings.offer3_ttl | escape }}
+        </h3>
+        {% if block.settings.offer3_ttl != blank %}
+          <p>
+            {{ block.settings.offer3_text | escape }}
+          </p>
+        {% endif %}
+      </li>
+    {% endif %}
+
+    {% if block.settings.offer4_ttl != blank %}
+      <li>
+        <div class="img__wrap">
+          {% if block.settings.offer4_image != blank %}
+            <img src="{{ block.settings.offer4_image | img_url: 'master' }}" alt="" />
+          {% endif %}
+        </div>
+        <h3>
+          {{ block.settings.offer4_ttl | escape }}
+        </h3>
+        {% if block.settings.offer4_ttl != blank %}
+          <p>
+            {{ block.settings.offer4_text | escape }}
+          </p>
+        {% endif %}
+      </li>
+    {% endif %}
+  </ul>
+</div>

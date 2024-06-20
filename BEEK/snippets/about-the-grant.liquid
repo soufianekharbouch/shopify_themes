@@ -1,0 +1,15 @@
+<div class="kindnessgrant-about-section">
+  <div class="cols__wrap">
+      <div class="col__left">
+        {%- if block.settings.section-heading != blank -%}
+          <h2 class="top__ttl">{{ block.settings.section-heading | escape }}</h2>
+        {%- endif -%}
+        {%- if block.settings.section-description != blank -%}
+          {{ block.settings.section-description }}
+        {%- endif -%}
+      </div>
+      <div class="col__right">
+        {% include 'icon-goat-bkind2' %}
+      </div>
+  </div>
+</div>

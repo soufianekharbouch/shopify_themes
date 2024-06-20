@@ -1,0 +1,10 @@
+<div id="account_subscriptions">
+    <h3 class="list_item_heading grow">SUBSCRIPTIONS</h3>
+  {% if customer.metafields.subscriptions.customer_string %}
+    <!--BeginRechargeCode-->
+        <p><a class="edit__subs" href="/tools/recurring/customer/{{customer.metafields.subscriptions.customer_string}}/subscriptions/">Manage Subscriptions</a></p>
+    <!--EndRechargeCode-->
+  {% else %}
+    <p>You don't have any subscriptions</p>
+  {% endif %}
+</div>

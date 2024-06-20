@@ -1,0 +1,80 @@
+
+
+  <div class="cust-list-section page-width">
+    <div class="week-heading">
+      <h3>Bloomie</h3>
+      <h3>Razor</h3>
+    </div>
+    <div class="week-one week-same">
+        <h3>Week 1</h3>
+        <img src="https://monbloomie.fr/cdn/shop/files/30jours_825eae4e-c5c5-4ec6-8ff1-32051339ff83.png?v=1690967098&width=750">
+        <img src="https://monbloomie.fr/cdn/shop/files/30jours_825eae4e-c5c5-4ec6-8ff1-32051339ff83.png?v=1690967098&width=750">
+      </div>
+    <div class="week-two week-same">
+        <h3>Week 2</h3>
+        <img src="https://monbloomie.fr/cdn/shop/files/30jours_825eae4e-c5c5-4ec6-8ff1-32051339ff83.png?v=1690967098&width=750">
+        <img src="https://monbloomie.fr/cdn/shop/files/30jours_825eae4e-c5c5-4ec6-8ff1-32051339ff83.png?v=1690967098&width=750">
+      </div>
+  </div>
+
+
+
+
+{% schema %}
+  {
+    "name": "Text Box",
+    "settings": [
+      {
+        "id": "custom_text_title",
+        "type": "text",
+        "label": "Text box heading",
+        "default": "Title"
+      },
+      {
+        "id": "custom_text_body",
+        "type": "richtext",
+        "label": "Add custom text below",
+        "default": "<p>Add your text here</p>"
+      }
+    ],
+     "blocks": [
+       {
+      "type": "heading",
+      "name": "Section",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "lheading",
+          "default": "Image with text",
+          "label": "Left Heading"
+        },
+        {
+          "type": "html",
+          "id": "lcontent",
+          "default": "Image with text",
+          "label": "Left Content"
+        },
+         {
+          "type": "html",
+          "id": "rheading",
+          "default": "Image with text",
+          "label": "Right Top Content"
+        },
+        {
+          "type": "html",
+          "id": "rcontent",
+          "default": "Image with text",
+          "label": "Right Bottom Content"
+        }
+      ]
+    }
+     ],
+    "presets": [
+      {
+        "name": "custweeksection",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

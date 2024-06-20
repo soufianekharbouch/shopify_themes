@@ -1,0 +1,76 @@
+<div class="cardigan__landing thank__you">
+  <div class="hero-section">
+    <div class="image-wrap">
+      {%- if page.metafields.accentuate.cardigan_hero_mob != blank -%}
+        <div class="row">
+          <div class="d-block col-12 d-lg-none">
+            <div class="hero-section__image">
+              <img src="{{ page.metafields.accentuate.cardigan_hero_mob }}" alt="">
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if page.metafields.accentuate.cardigan_hero != blank -%}
+        <div class="d-none d-lg-block">
+          <div class="hero-section__image">
+            <img src="{{ page.metafields.accentuate.cardigan_hero }}" alt="">
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if page.metafields.accentuate.cardigan_hero_logo != blank -%}
+        <div class="d-none d-lg-block hero__logo">
+          <img src="{{ page.metafields.accentuate.cardigan_hero_logo }}" alt="">
+        </div>
+      {%- endif -%}
+
+      <div class="hero-content-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              {%- if page.metafields.accentuate.cardigan_hero_title != blank -%}
+                <h2>{{ page.metafields.accentuate.cardigan_hero_title | escape }}</h2>
+              {%- endif -%}
+            </div>
+
+            <div class="col-12">
+              {%- if page.metafields.accentuate.cardigan_thanks_desc != blank -%}
+                <div class="text">
+                  {{ page.metafields.accentuate.cardigan_thanks_desc }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if settings.checkout_thankyouproducts_enable %}
+  <div class="container">
+      {% assign products = page.metafields.accentuate.thank_you_products | split: "|" %}
+      <div class="row most__loved-wrap">
+        <h2 class="section__title col-12">
+          {{ page.metafields.accentuate.thanks_products_ttl | default: 'Want More Beekman 1802?' }}
+        </h2>
+        {% assign counter = 0 %}
+        {% for item in products %}
+          {%- comment %}<locksmith:382b>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:382b>{% endcomment -%}
+          {% unless counter > 3 %}
+          {% assign counter = counter | plus:1 %}
+          {% assign product = all_products[item] %}
+            {% include 'most-loved-product-item' with product: product %}
+          {% endunless %}
+        {% endfor %}
+        {%- if page.metafields.accentuate.shop_all_link != blank -%}
+        <div class="col-12 shop__all-wrap">
+          <a href="/collections/{{ page.metafields.accentuate.shop_all_link }}" class="shop-all-item">
+            Shop All
+          </a>
+        </div>
+        {%- endif -%}
+      </div>
+  </div>
+  {%- endif -%}
+</div>

@@ -1,0 +1,76 @@
+<div
+  class="announcement-bar"
+  style=" background-color: {{ section.settings.text }}; color: {{ section.settings.text1 }} ;"
+  role="region"
+  aria-label="{{ 'sections.header.announcement' | t }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="autoplay" style="max-height:30px; overflow: hidden; ">
+    {%- for block in section.blocks -%}
+      <span>
+        {{ block.settings.text | escape }}
+        <span class="shape-circle shape--sm"></span>
+      </span>
+    {%- endfor -%}
+  </div>
+</div>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+  $('.autoplay').slick({
+        speed:8000,
+        autoplay: true,
+  infinite: true,
+        autoplaySpeed: 100,
+        cssEase: 'linear',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+   dot:false,
+        variableWidth: true
+});
+    })
+</script>
+{% schema %}
+{
+  "name": "Top Bar",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+    "settings": [
+        {
+          "type": "color",
+          "id": "text",
+          "label": "BG Color"
+        },
+      {
+          "type": "color",
+          "id": "text1",
+          "label": "Text Color"
+        }
+      ],
+
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

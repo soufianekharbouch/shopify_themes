@@ -1,0 +1,76 @@
+{%if product.tags contains "noindex" %}
+<meta name="googlebot" content="noindex">
+{%endif%}
+{%if product.tags contains {{settings.count_down_tag}} %} 
+   <div class="CountDownPdpContainer" style="width:100%;background:white;min-height:40px;">
+      {% section 'CountDown' %}
+   </div>
+{%endif%}   
+
+<div class="product-page">
+ 
+  {% section 'product' %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title | escape }}",
+  "url": "{{ shop.url }}{{ product.url }}",
+  {% if product.featured_image %}
+    {% assign image_size = product.featured_image.width | append: 'x' %}
+    "image": [
+      "https:{{ product.featured_image.src | img_url: image_size }}"
+    ],
+    {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{ product.metafields.yotpo.reviews_average }}",
+            "reviewCount": "{{ product.metafields.yotpo.reviews_count }}"
+        },
+    {% endif %}
+  {% endif %}
+  "description": "{{ product.description | strip_html | strip_newlines | escape }}",
+  {% if current_variant.sku != blank %}
+    "sku": "{{ current_variant.sku }}",
+  {% endif %}
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.vendor | escape }}"
+  },
+  {% if product.variants %}
+    "offers": [
+      {% for variant in product.variants %}
+        {
+          "@type" : "Offer",
+          "availability" : "{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : "{{ variant.price | divided_by: 100.00 }}",
+          "priceCurrency" : "{{ shop.currency }}",
+          "url" : "{{ shop.url }}{{ variant.url }}",
+          {% if variant.title != blank %}
+            "name" : "{{ variant.title | escape }}",
+          {% endif %}
+          {% if variant.sku != blank %}
+            "sku": "{{ variant.sku }}"
+          {% endif %}
+          {% if variant.image %}
+            {% assign variant_image_size = variant.image.width | append: 'x' %}
+            "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
+          {% endif %}
+        }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ]
+  {% endif %}
+}
+</script>
+
+<script async src='//asset.fwcdn3.com/js/storyblock.js'></script>
+    <fw-storyblock
+      channel="beekman_1802"
+      hashtag={{product.id}}
+      mode="pinned"  
+      captions="false"  
+      autoplay="true"                       
+    ></fw-storyblock>
+

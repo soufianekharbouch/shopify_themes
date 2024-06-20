@@ -1,0 +1,171 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+{{ 'nouislider.js' | asset_url | script_tag }}
+{{ 'nouislider.css'  | asset_url | stylesheet_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'fragrance-finder-hero' %}
+      {% include 'fragrance-finder-hero' %}
+
+    {% when 'fragrance-scent-strength' %}
+      {% include 'fragrance-scent-strength' %}
+
+    {% when 'fragrance-scent-note' %}
+      {% include 'fragrance-scent-note' %}
+
+    {% when 'fragrance-best-selling' %}
+      {% include 'fragrance-best-selling' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Fragrance Finder Landing",
+  "blocks": [
+    {
+      "type": "fragrance-finder-hero",
+      "name": "Fragrance Finder Hero",
+      "settings": [
+        {
+          "id": "desktopHeroImage",
+          "type": "image_picker",
+          "label": "Desktop Hero Image",
+          "info": "Hero Background Color will be used if image is not set."
+        },
+        {
+          "id": "mobileHeroImage",
+          "type": "image_picker",
+          "label": "Mobile Hero Image",
+          "info": "Hero Background Color will be used if image is not set."
+        },
+        {
+          "type": "color",
+          "id": "heroBkg",
+          "label": "Hero Background Color",
+          "default": "#fef395"
+        },
+        {
+          "id": "heroHeading",
+          "type": "text",
+          "label": "Hero Heading",
+          "default": "Explore Our Fragrances"
+        },
+        {
+          "type": "color",
+          "id": "headingColor",
+          "label": "Heading Color",
+          "default": "#4a5761"
+        },
+        {
+          "id": "heroDescription",
+          "type": "textarea",
+          "label": "Hero Description",
+          "default": "Not sure which fragrance lore ispum explore our scents below lorem Epsom Lorem spume copy here."
+        },
+        {
+          "type": "color",
+          "id": "colorDescription",
+          "label": "Hero Description Color",
+          "default": "#4a5761"
+        },
+        {
+          "type": "url",
+          "label": "Hero Button 1",
+          "id": "button1Link",
+          "info": "Leave this empty to have default behavior. Click on this button will scroll the page to the Scent Strength section by default."
+        },
+        {
+          "type": "text",
+          "id": "button1Label",
+          "label": "Hero Button 1 Label",
+          "default": "Shop By Strength"
+        },
+        {
+          "type": "url",
+          "label": "Hero Button 2",
+          "id": "button2Link",
+          "info": "Leave this empty to have default behavior. Click on this button will scroll the page to the Scent Note section by default."
+        },
+        {
+          "type": "text",
+          "id": "button2Label",
+          "label": "Hero Button 2 Label",
+          "default": "Shop By Scent Note"
+        }
+      ]
+    },
+    {
+      "type": "fragrance-scent-strength",
+      "name": "Fragrance Scent Strength",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Setup Info",
+          "info": "Content of this section will be dynamically rendered based on Fragrance added to the page. To setup Fragrances you need to go to Admin Panel -> Online Stores -> Pages. Find and open this page. Then click More Actions -> Custom Fields. Add Fragrances. Also don't forget to add Fragrance Scent Strengths to the page. They will be used to create Strength slider."
+        },
+        {
+          "id": "scentHeading",
+          "type": "text",
+          "label": "Section Heading",
+          "default": "Explore Fragrances by Scent Strength"
+        },
+        {
+          "id": "scentDescription",
+          "type": "textarea",
+          "label": "Section Description",
+          "default": "Drag the slider to the scent strength of your liking to view recommended scents."
+        }
+      ]
+    },
+    {
+      "type": "fragrance-scent-note",
+      "name": "Fragrance Scent Note",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Setup Info",
+          "info": "Content of this section will be dynamically rendered based on Fragrance added to the page. To setup Fragrances you need to go to Admin Panel -> Online Stores -> Pages. Find and open this page. Then click More Actions -> Custom Fields. Add Fragrances and Fragrance Scent Notes to the page."
+        },
+        {
+          "id": "scentHeading",
+          "type": "text",
+          "label": "Section Heading",
+          "default": "Explore Fragrances by Scent Note"
+        },
+        {
+          "id": "scentDescription",
+          "type": "textarea",
+          "label": "Section Description",
+          "default": "Click on a note to view our recommended scents."
+        }
+      ]
+    },
+    {
+      "type": "fragrance-best-selling",
+      "name": "Bestselling Scents",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Setup Info",
+          "info": "Content of this section will be dynamically rendered based on Fragrance added to the page. Only Fragrances marked as `Show in Best Selling section` will be displayed here. To setup Fragrances you need to go to Admin Panel -> Online Stores -> Pages. Find and open this page. Then click More Actions -> Custom Fields. Add Fragrances."
+        },
+        {
+          "id": "sectionHeading",
+          "type": "text",
+          "label": "Section Heading",
+          "default": "Explore Our Bestselling Scents"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'fragrance-finder.js' | asset_url | script_tag }}

@@ -1,0 +1,26 @@
+{% if block.settings.press_badges_enabled %}
+  <div class="press__badges">
+    {% assign badges = page.metafields.accentuate.press_badge_icon | where: "media_type", "image" %}
+    {% assign displayType = 'grid' %}
+    {% if badges.size > 6 %}
+      {% assign displayType = 'carousel' %}
+    {% endif %}
+    <div class="badges__carousel {{ displayType }}">
+      {% for badge in badges %}
+        <div class="badge__item">
+          {% if page.metafields.accentuate.badge_url[forloop.index0] != blank %}
+            <a href="{{ page.metafields.accentuate.badge_url[forloop.index0] }}" target="_blank">
+          {% endif %}
+          <img src="{{ badge.cloudinary_src }}" alt="{{ page.metafields.accentuate.badge_alt_text[forloop.index0] }}" />
+          {% if page.metafields.accentuate.badge_url[forloop.index0] != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="badges__nav" style="display: none">
+      <span class="next__btn">{% include 'icon-next' %}</span>
+      <span class="prev__btn">{% include 'icon-prev' %}</span>
+    </div>
+  </div>
+{% endif %}

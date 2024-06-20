@@ -1,0 +1,32 @@
+    <div class="tab customer_info_left">
+        <ul class="d-none d-md-block">
+            <li><a href="/account" class="tablinks{% if activeTab == 'dashboard' %} active {% endif %}">DASHBOARD</a></li>
+            <li><a href="/account?view=details" class="tablinks{% if activeTab == 'personal_details' %} active {% endif %}">PERSONAL DETAILS</a></li>
+            <li><a href="/account/addresses" class="tablinks{% if activeTab == 'address_book' %} active {% endif %}" >ADDRESS BOOK</a></li>
+           <li><a href="/account?view=activity" class="tablinks{% if activeTab == 'rewards' %} active {% endif %}" >REWARDS</a></li>
+            <li><a href="/pages/wishl-wishlist" class="tablinks{% if activeTab == 'wishlist' %} active {% endif %}">WISHLIST</a></li>
+            <li><a href="/account?view=order_history" class="tablinks{% if activeTab == 'order_history' %} active {% endif %}">ORDER HISTORY</a></li>
+            <li><a href="/account?view=subscriptions" class="tablinks{% if activeTab == 'subscriptions' %} active {% endif %}">SUBSCRIPTIONS</a></li>
+            <li><a href="/account/logout"class="tablinks{% if activeTab == 'logout' %} active {% endif %}">LOG OUT</a></li>
+        </ul>
+        <div class="select-wrap d-block d-md-none">
+            <select 
+                id="account_menu"
+                onchange="window.location=(this.value)"
+                style="background: url('{{ 'chevron-down.png' | asset_url }}');"
+            >   
+                <option {% if activeTab == 'dashboard' %} selected {% endif %} class="dropdown_option" value="/account">Dashboard</option>
+                <option {% if activeTab == 'personal_details' %} selected {% endif %}class="dropdown_option" value="/account?view=details">Personal Details</option>
+                <option {% if activeTab == 'address_book' %} selected {% endif %}class="dropdown_option" value="/account/addresses">Address Book</option>
+              <option {% if activeTab == 'rewards' %} selected {% endif %}class="dropdown_option" value="/account?view=activity">Rewards</option>
+                <option {% if activeTab == 'wishlist' %} selected {% endif %}class="dropdown_option" value="/pages/wishl-wishlist">Wishlist</option>
+                <option {% if activeTab == 'order_history' %} selected {% endif %}class="dropdown_option" value="/account?view=order_history">Order History</option>
+                <option {% if activeTab == 'subscriptions' %} selected {% endif %}class="dropdown_option" value="/account?view=subscriptions">Subscriptions</option>
+                <option {% if activeTab == 'logout' %} selected {% endif %}class="dropdown_option" value="account/logout">Logout</option>
+            </select>
+            
+        </div> 
+    </div>
+    <div class="d-block d-md-none spacing"></div>
+
+

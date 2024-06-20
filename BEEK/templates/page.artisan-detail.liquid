@@ -1,0 +1,92 @@
+<div class="category-landing-content artisan__detail">
+  <div class="container">
+    <div class="page-info">
+      <div class="row">
+        <div class="col-12">
+          {%- if page.metafields.accentuate.ad_artisan_name != blank -%}
+            <h2>{{ page.metafields.accentuate.ad_artisan_name | escape }}</h2>
+          {%- endif -%}
+          {%- if page.metafields.accentuate.ad_artisan_speciality != blank -%}
+            <h4>{{ page.metafields.accentuate.ad_artisan_speciality | escape }}</h4>
+          {%- endif -%}
+        </div>
+
+        <div class="col-12">
+          {%- if page.metafields.accentuate.ad_artisan_description != blank -%}
+            <div class="text">
+              {{ page.metafields.accentuate.ad_artisan_description }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+    {% assign products = page.metafields.accentuate.ad_artisan_products | split: "|" %}
+    <div class="row most__loved-wrap">
+      <h2 class="section__title col-12">
+        {{ page.metafields.accentuate.ad_products_title | default: 'Other Products of this Artisan' }}
+      </h2>
+      {% assign counter = 0 %}
+      {% for item in products %}
+        {%- comment %}<locksmith:8d8d>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:8d8d>{% endcomment -%}
+        {% unless counter > 3 %}
+        {% assign counter = counter | plus:1 %}
+        {% assign product = all_products[item] %}
+          {% include 'most-loved-product-item' with product: product %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% assign events = page.metafields.accentuate.artisan_events_list | split: "|" %}
+  {% if events.size > 0 %}
+  <div class="events-wrap">
+    <div class="container">
+      <div class="row">
+        {% if page.metafields.accentuate.ad_artisan_name != blank %}
+          <h2 class="section__title col-12">{{ page.metafields.accentuate.ad_artisan_name | escape }}'s Events</h2>
+        {% endif %}
+
+        {% assign counter = 0 %}
+        {% for item in events %}
+          {% unless counter > 2 %}
+          {% assign counter = counter | plus:1 %}
+          {% assign product = all_products[item] %}
+            <div class="event-list-item col-12 col-md-4">
+              <div class="event__wrap">
+                {% if product.metafields.accentuate.event_image != blank %}
+                  <div class="event__image">
+                    <img src="{{ product.metafields.accentuate.event_image }}"/>
+                  </div>
+                {% else %}
+                  <div class="event__image">
+                    <img src="https://via.placeholder.com/300"/>
+                  </div>
+                {% endif %}
+                <span class="date">
+                <span class="d_wrap">
+                  <span class="month">{{ product.metafields.accentuate.event_date | date: "%b" }}</span>
+                  <span class="day">{{ product.metafields.accentuate.event_date | date: "%d" }}</span>
+                </span>
+              </span>
+                <div class="tile_ttl">{{ product.metafields.accentuate.event_heading }}</div>
+                <div class="price">
+                  {% if product.price == 0 %}
+                    Free
+                  {% else %}
+                    {{ product.price | money }}
+                  {% endif %}
+                </div>
+                <h3>{{ product.metafields.accentuate.event_location }}</h3>
+                <a href="/pages/{{ product.metafields.accentuate.event_detail_page }}" class="learn__more">Learn More</a>
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>

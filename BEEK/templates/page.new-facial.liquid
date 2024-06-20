@@ -1,0 +1,338 @@
+{% comment %}
+
+<div class="waiting__list_wrapper">
+    <div class="hero_section">
+        <img class="d-none d-sm-block" src="{{ page.metafields.accentuate.hero_waiting_desktop_image[0].src }}" alt="">
+        <img class="d-sm-none" src="{{ page.metafields.accentuate.hero_waiting_mobile_image[0].src }}" alt="">
+        <div class="hero_text">
+            <h1>{{ page.metafields.accentuate.hero_waiting_title }}</h1>
+            <p>{{ page.metafields.accentuate.hero_waiting_text }}</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="waiting_list_inner">
+                {% section 'page' %}
+            </div>
+            <div class="featured__products">
+                {% section 'home-featured' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var $products = $('.featured__products');
+    var $banner = $('.hero_section');
+    var $content = $('.waiting_list_inner');
+    $(document).on('click', '.waiting__list_wrapper button', function () {
+      var $inputs = $('.waiting__list_wrapper').find('input[type="text"], input[type="email"]');
+      var flag = false;
+      $inputs.each(function (i, el) {
+        if ($(el).val() === "") {
+          return flag = false;
+        }
+        if (el.type === 'email') {
+          if (!validateEmail($(el).val())) {
+            return flag = false; 
+          }
+        }
+        flag = true;
+      });
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+      if (flag) {
+        setTimeout(function() {
+          $products.addClass('active');
+          $banner.addClass('hidden');
+          $content.addClass('success');
+        }, 1000);
+      }
+    })
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ page.title }}</h1>
+    </div>
+    <div class="col-12">
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endcomment %}
+
+
+ {% section 'facial-header' %}
+  {% section 'goat-sec' %}
+
+<style>
+.facial-header{
+ background: #FBF9F6;
+  padding: 60px 0;
+  text-align: center;
+}
+.qr-box ul{
+ justify-content: center;
+ display: flex;
+  list-style-type: none;
+  align-items: center;
+  grid-gap: 30px;
+  padding: 0px;
+  margin: 30px 0 0 0;
+  position: relative;
+}
+.qr-box ul li{
+ width: 128px; 
+}
+  
+.qr-box ul:after{
+ position: absolute;
+      left: 25%;
+    top: -51px;
+  content: '';
+  background: url('https://cdn.shopify.com/s/files/1/0223/7461/files/noun_Arrow_2975406_cf46ba9d-1dd8-45b0-8f49-4c65575a9302.png?v=1645028239') no-repeat center;
+  background-size:contain;
+  width: 28px;
+  height: 53px;
+}
+
+.fh-img{
+ display: flex;
+  align-items: center;
+ width: 70%;
+}
+
+  .fh-img ul{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: fit-content;
+    display:grid;
+    grid-gap: 20px;
+    height: fit-content;
+}
+  
+  
+.fh-img ul li{
+  text-align: center;
+}
+  
+  
+.fh-img ul li span{
+ width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  border: 3px solid #ffdc00;
+  background: #ffdc00;
+  color: #fff;
+  border-radius: 100%;
+  text-shadow: 1px 2px 2px #a5a2a2;
+    font-size: 18px;
+    font-weight: 500;
+  margin: 0 auto !important;
+}
+.fh-img ul li p{
+ color: #4A5761;
+  font-size: 13px;
+    font-weight: 500;
+  margin: 5px 0 0 0;
+  width: 90px;
+}
+.header-left-ul li:nth-child(2) span{
+  border: 3px solid #DB8BFF;
+  background: #E5BEF8;
+}
+.header-left-ul li:nth-child(3) span{
+  border: 3px solid #50E093;
+  background: #A6F0D4;
+}
+
+.header-right-ul li:nth-child(1) span{
+  border: 3px solid #3C88E1;
+  background: #AED3F7;
+}
+.header-right-ul li:nth-child(2) span{
+  border: 3px solid #FFAD2B;
+  background: #FFD17B;
+}
+.header-right-ul li:nth-child(3) span{
+  border: 3px solid #FF0014;
+  background: #FDA6A6;
+}
+.gotie-sec{
+  background: #FCF193;
+  padding-top: 60px;
+  position: relative;
+  margin: 0 0;
+}
+.gotie-sec p{
+ background: #fff;
+    padding: 20px 20px;
+    border-radius: 20px;
+    font-family: Avenir Next;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 30px;
+    color: #4A5761;
+  position: relative;
+  z-index: 999999;
+  margin-top: 30px;
+}
+  
+.gotie-sec p:before{
+  position: absolute;
+  left: -34px;
+    bottom: 24px;
+  background: url('https://cdn.shopify.com/s/files/1/0223/7461/files/Path_294533.png?v=1645068315')no-repeat;
+background-size: contain;
+  width:66px;
+  height: 22px;
+  content: '';
+  z-index: -1;
+}
+  
+.gotie-img{
+  width: 160px;
+  height: 160px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: #fbe11d;
+  border-radius: 100%;
+  box-shadow: 0px 0px 23px 0px #00000038;
+  position: absolute;
+  top: 60px;
+  right: -165px;
+  transition: .3s;
+}
+.gotie-img img{
+  width: 90px;
+  height: 90px;
+  object-fit: content;
+}
+  
+.gotie-img h4{
+ color: #4A5761;
+  font-family: Avenir Next,Arial,Helvetica;
+    font-weight: 300;
+    font-size: 14px;
+  padding-top: 5px;
+}
+  
+
+.fh-content h1{
+   color: #4A5761;
+  font-family: Avenir Next,Arial,Helvetica;
+    font-weight: 600;
+    font-size:35px;
+  text-transform: uppercase;
+    max-width: 458px;
+  width: 100%;
+  margin: 0 auto 10px;
+}
+  
+.fh-content p{
+  color: #4A5761;
+  font-family: Century OS,Arial,Helvetica;
+    font-weight: 400;
+    font-size:16px;
+   max-width: 430px;
+   width: 100%;
+   margin: 0px auto 30px;
+}
+@media(max-width: 900px){
+ .fh-content p{
+   padding:0 10px;
+ }
+  
+  
+.fh-img{
+  width: 62%;
+  margin-top:40px;
+}
+  
+ .gotie-sec, .fa-discover-sec{
+   padding: 40px 0;
+ }
+  
+
+ .facial-header{
+   padding: 40px 0 ;
+ }
+  
+.fh-content h1{
+ font-size: 24px;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+  
+.fh-img{
+  width: 100%;
+  flex-wrap: wrap;
+}
+ 
+.fh-img ul{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 20px;
+}
+.fh-img img{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+  
+.gotie-sec{
+  margin: 0px;
+}
+ 
+@media screen 
+ and (max-device-width: 1000px) 
+ and (min-device-width: 760px){
+  .fh-content h1{
+    padding-top:100px;
+    width: 368px;
+  }
+
+}
+  
+  
+  
+@media(max-width: 575px){
+.qr-box ul:after{
+  display: none;
+}
+  
+
+  
+}
+  
+ 
+</style>
+ 
+<style>
+  .mobileContent{
+  display:none;
+}  
+@media(max-width:768px){
+  .mobileContent{
+  display:block;
+}
+.desktopContent{
+  display: none;
+}
+}
+</style>
+
+
+
+

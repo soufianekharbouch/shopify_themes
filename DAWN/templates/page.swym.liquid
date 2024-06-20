@@ -1,0 +1,74 @@
+{{ page.content }}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+   // const guest =  document.querySelector('#swym-user-login-status-btn .swym-user-text');
+   //  guest.innerHTML ="hello";
+
+    const guest = document.querySelector('.swym-user-login-status');
+    console.log(guest)
+    console.log('hello')
+  })
+</script>
+
+<style>
+        #swym-user-login-status-btn,#swym-user-login-status-btn::before  {
+          font-size : 1.5rem;
+
+        }
+
+        .swym-ui-component .swym-user-login-status::before {
+          content: '  crée votre compte';
+
+
+        }
+        #swym-user-login-status-btn span {
+          display:none;
+        }
+
+        #swym-wishlist-render-container {
+          padding:1rem 0;
+        }
+
+        .swym-wishlist-container-title-bar.swym-bg-1.swym-bg-2.swym-color-4::before {
+            content: "Mes Favories";
+           font-size : 1.5rem;
+            color: black;
+
+        }
+
+      }
+      .swym-wishlist-main-title.swym-heading.swym-heading-1 {
+        display:none !important;
+    }
+    .swym-wishlist-main-title.swym-heading.swym-heading-1 {
+      display: none !important;
+  }
+
+
+        /* .swym-wishlist-main-title::before {
+          position:absolute;
+          top:0;
+          left:0;
+          width:300px;
+
+          background-color:white;
+          content: 'Mes favories';
+        } */
+
+
+
+
+        /* .hx {
+          position:absolute;
+          top:4.5rem;
+          right:5rem;
+          width:800px;
+          background-color:red;
+          font-size:7rem;
+          color:white;
+          display:block;
+
+        } */
+</style>

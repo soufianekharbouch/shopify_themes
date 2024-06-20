@@ -1,0 +1,14 @@
+{{ 'youtube-embed.css' | asset_url | stylesheet_tag }}
+<div class="row no-gutters">
+    <div class="d-block col-12">
+        <div class="hero-section__image">
+            {% assign uri_params = video_id | append: "?autoplay=" | append: autoplay | append: "&controls=" | append: controls %}
+            <div class='embed-container'>
+                <iframe
+                        src='https://www.youtube.com/embed/{{ uri_params }}'
+                        allow="fullscreen gyroscope">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{% layout none %}
+{
+"CustomName":"{{ product.metafields.accentuate.custom_name }}",
+"ShortDescription":"{{ product.metafields.accentuate.short_description }}",
+"InventoryManagement":"{{ product.variants[0].inventory_management }}",
+"InventoryPolicy":"{{ product.variants[0].inventory_policy }}",
+"InventoryQuantity":{{ product.variants[0].inventory_quantity }}
+}

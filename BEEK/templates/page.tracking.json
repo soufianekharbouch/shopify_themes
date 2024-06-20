@@ -1,0 +1,169 @@
+{
+  "sections": {
+    "6d5ed62c-3661-47ef-8aa2-3c876ad78a65": {
+      "type": "custom-html",
+      "blocks": {
+        "template--14494899961891__6d5ed62c-3661-47ef-8aa2-3c876ad78a65-1678905220cd9bbab8-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div style=\"text-align:center; padding-top:60px;\"><h2 style=\"font-size: 43px!important; color:#4a5761;\">Your Order Status<\/h2><\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14494899961891__6d5ed62c-3661-47ef-8aa2-3c876ad78a65-1678905220cd9bbab8-0"
+      ],
+      "settings": {}
+    },
+    "1678904625a8c46113": {
+      "type": "apps",
+      "blocks": {
+        "a7b30050-711d-42b9-8860-9fe5cf929060": {
+          "type": "shopify:\/\/apps\/wonderment\/blocks\/wonderBlock\/89d63369-6ee7-4097-ac41-8229c6f90001",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "a7b30050-711d-42b9-8860-9fe5cf929060"
+      ],
+      "settings": {}
+    },
+    "faq": {
+      "type": "wonderment-faq",
+      "blocks": {
+        "shipping-heading": {
+          "type": "section_heading",
+          "settings": {
+            "title": "FAQs"
+          }
+        },
+        "when-shipping-question": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order ship?",
+            "text": "<p>We ship Monday-Friday, 9am-5pm EST; weekends or US holidays do not count as business days. <\/p>"
+          }
+        },
+        "when-arriving-question": {
+          "type": "question",
+          "settings": {
+            "title": "When will my order arrive?",
+            "text": "<p>Expected delivery for Standard Shipping is 5-6 business days from the time the order is shipped. Expedited orders ship within 2-3 business days.<\/p>"
+          }
+        },
+        "return-policy-question": {
+          "type": "question",
+          "settings": {
+            "title": "What is your return policy?",
+            "text": "<p>We want every customer (or as we call you, Neighbor) to be entirely thrilled with their Beekman 1802 purchase. But if you’re not thrilled, we are happy to accept returns from purchases made at Beekman1802.com or from the Beekman 1802 Kindness Shop in Sharon Springs, NY.<br\/><br\/>Beekman 1802 accepts returns of items purchased directly from beekman1802.com within 30 days of the delivery date. To start the return process with Beekman 1802, reach out to <a href=\"mailto:Neighborservices@beekman1802.com\">Neighborservices@beekman1802.com<\/a>. The Neighbor Services Team will email you a shipping label to print off and provide you with a return authorization number.<\/p>"
+          }
+        },
+        "ship-international-question": {
+          "type": "question",
+          "settings": {
+            "title": "Can I visit\/tour the farm?",
+            "text": "<p>The farm is open occasionally for tours. Please sign up for our email newsletter for announcements on future tours. Because Beekman 1802 Farm is a private residence and working farm, we must restrict access to Farm Tour dates only.<\/p>"
+          }
+        },
+        "shipping-cost-question": {
+          "type": "question",
+          "settings": {
+            "title": "Where is the Beekman 1802 Kindness Shop?",
+            "text": "<p>Beekman 1802 Kindness Shop is located at 187 Main Street in Sharon Springs, NY 13459. We are open 7 days a week from 10 AM- 6 PM (except Christmas, Thanksgiving & New Years.)<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping-heading",
+        "when-shipping-question",
+        "when-arriving-question",
+        "return-policy-question",
+        "ship-international-question",
+        "shipping-cost-question"
+      ],
+      "custom_css": [
+        "h2 {color:#4a5761;}"
+      ],
+      "settings": {
+        "show_answers": false,
+        "text_size": 100,
+        "alignment": "center",
+        "text_color": "#4a5761",
+        "background_color": "linear-gradient(184deg, rgba(255, 255, 255, 1) 7%, rgba(255, 255, 255, 1) 94%)",
+        "border_color": "#4a5761",
+        "base_width": 80,
+        "max_width": "",
+        "inner_padding": 100,
+        "outer_margin": 0,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "sans-serif"
+      }
+    },
+    "products": {
+      "type": "wonderment-featured-collection",
+      "blocks": {
+        "2c50ab76-37b9-4fcf-b3cc-47b84eeb1e16": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "title": "You May Also Like",
+            "visible_products": 8,
+            "button_label": "View all products",
+            "button_label_color": "#4B4949",
+            "button_background_color": "rgba(0,0,0,0)",
+            "button_radius": 0
+          }
+        }
+      },
+      "block_order": [
+        "2c50ab76-37b9-4fcf-b3cc-47b84eeb1e16"
+      ],
+      "settings": {
+        "per_row": 3,
+        "show_arrows": true,
+        "show_product_title": true,
+        "show_product_price": true,
+        "show_product_label": true,
+        "text_size": 100,
+        "heading_color": "#4a5761",
+        "text_color": "#4a5761",
+        "background_color": "linear-gradient(360deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "base_width": 95,
+        "max_width": "",
+        "inner_padding": 40,
+        "outer_margin": 0,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "sans-serif"
+      }
+    },
+    "rebuy": {
+      "type": "wonderment-rebuy",
+      "disabled": true,
+      "settings": {
+        "rebuy-widget-id": ""
+      }
+    },
+    "fairing": {
+      "type": "wonderment-fairing",
+      "disabled": true,
+      "settings": {
+        "fairing-key": "",
+        "fairing-padding": 25
+      }
+    }
+  },
+  "order": [
+    "6d5ed62c-3661-47ef-8aa2-3c876ad78a65",
+    "1678904625a8c46113",
+    "faq",
+    "products",
+    "rebuy",
+    "fairing"
+  ]
+}

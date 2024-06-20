@@ -1,0 +1,207 @@
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'kindnessgrant-hero' %}
+      {% include 'kindnessgrant-hero' %}
+
+    {% when 'about-the-grant' %}
+      {% include 'about-the-grant' %}
+
+    {% when 'how-it-works' %}
+      {% include 'how-it-works' %}
+
+    {% when 'kindnessgrant-form' %}
+      {% include 'kindnessgrant-form' %}
+
+    {% when 'kindnessgrant-ripple' %}
+      {% include 'kindnessgrant-ripple' %}
+
+      {% when 'kindnessgrant-terms' %}
+        {% include 'kindnessgrant-terms' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Kindness Grant Landing",
+    "blocks": [
+      {
+        "type": "kindnessgrant-hero",
+        "name": "Kindness Grant Hero Video",
+        "settings": [
+          {
+            "id": "heroVideo",
+            "type": "text",
+            "label": "Video Url",
+            "info": "This is URL of uploaded video. To upload video go to Settings -> Files and upload video. Then copy URL of that video and paste here.",
+            "default": "https://cdn.shopify.com/s/files/1/0078/7945/8863/files/milkdrop2.mov?v=1614870701"
+          },
+          {
+            "id": "heroLine1",
+            "type": "text",
+            "label": "Hero Line 1",
+            "default": "Beekman 1802 Kindness"
+          },
+          {
+            "type": "color",
+            "id": "color_line1",
+            "label": "Hero Line 1 Color",
+            "default": "#4a5761"
+          },
+          {
+            "id": "heroLine2",
+            "type": "text",
+            "label": "Hero Line 2",
+            "default": "Foundation Lorem"
+          },
+          {
+            "type": "color",
+            "id": "color_line2",
+            "label": "Hero Line 2 Color",
+            "default": "#4a5761"
+          },
+          {
+            "id": "heroDescription",
+            "type": "textarea",
+            "label": "Hero Description",
+            "default": "We’re supporting community-level  acts of Kindness that start small, but can product profound ripple effect. Calculate your act of kindness below."
+          },
+          {
+            "type": "color",
+            "id": "color_description",
+            "label": "Hero Description Color",
+            "default": "#4a5761"
+          },
+          {
+            "type": "url",
+            "label": "Hero Button",
+            "id": "button_link",
+            "info": "If no link is specified then this button will scroll the page to the bottom form"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Hero Button Text",
+            "default": "Get Started"
+          }
+        ]
+      },
+      {
+        "type": "about-the-grant",
+        "name": "About The Grant",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section-heading",
+            "label": "Section Heading",
+            "default": "About The Grant"
+          },
+          {
+            "type": "richtext",
+            "id": "section-description",
+            "label": "Section Description",
+            "default": "<p>Beekman 1802 believes that there is beauty in Kindness. We are committed to helping Neighbors be Kind to their skin, Kind to themselves, Kind to their community and Kind to the Earth. Research shows that acts of Kindness can improve ones health, and we all know that they can improve the health of your Neighborhood.<p>Do you want to spread Kindness?</p><p>Whether you’re looking to get art supplies for your classroom or to help local nurses with a lunch, or drive an elderly Neighbor to a doctor’s appointment, we want to help make that happen!</p></p>"
+          }
+        ]
+      },
+      {
+        "type": "how-it-works",
+        "name": "How It Works",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section-list-title",
+            "label": "Section List Title",
+            "default": "How It Works"
+          },
+          {
+            "type": "textarea",
+            "id": "list-item1-text",
+            "label": "List Item 1 Text",
+            "default": "Think of an act of Kindness we can help you perform that can make the greatest impact for $500 or less."
+          },
+          {
+            "type": "textarea",
+            "id": "list-item2-text",
+            "label": "List Item 2 Text",
+            "default": "Fill out and submit the questionnaire below. Tell us how your Kindness act can cause a Kindness ripple effect!"
+          },
+          {
+            "type": "textarea",
+            "id": "list-item3-text",
+            "label": "List Item 3 Text",
+            "default": "The grant cycle happens monthly.  There are lots of submissions, so if you don’t get selected this month, please submit again next month."
+          },
+          {
+            "type": "url",
+            "label": "Section Button",
+            "id": "button_link",
+            "info": "If no link is specified then this button will scroll the page to the bottom form"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Section Button Text",
+            "default": "Get Started"
+          }
+        ]
+      },
+      {
+        "type": "kindnessgrant-ripple",
+        "name": "Calculate Ripple Effect",
+        "settings": [
+          {
+            "type": "text",
+            "id": "sectionHeading",
+            "label": "Section Heading",
+            "default": "Thank You For Your Submission!"
+          },
+          {
+            "type": "textarea",
+            "id": "effectNote",
+            "label": "Ripple Effect Note",
+            "default": "Your act of kindness could effect:"
+          }
+        ]
+      },
+      {
+        "type": "kindnessgrant-form",
+        "name": "Kindness Grant Form",
+        "settings": [
+          {
+            "type": "text",
+            "id": "section-heading",
+            "label": "Section Heading",
+            "default": "What Act of Kindness Can We Help You Accomplish?"
+          },
+          {
+            "type": "textarea",
+            "id": "section-description",
+            "label": "Section Description",
+            "default": "Submit your idea in the simple questionnaire below.  When you hit submit, our proprietary calculator will estimate the ripple effect of your single act of Kindness."
+          }
+        ]
+      },
+      {
+        "type": "kindnessgrant-terms",
+        "name": "Kindness Grant Terms",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "section-terms-text",
+            "label": "Kindness Grant Terms Text",
+            "default": "All contributions are by Beekman 1802 in its discretion. Beekman 1802 reserves the right to determine which organizations and acts of kindness to support. No guarantee is made that any particular organization or proposed act of kindness will be funded. No portion of any contribution is tax-deductible to the person proposing the act of kindness. If fewer than the expected number of eligible proposals are received, Beekman 1802 may apply the unused funds toward the general projects of the Kindness Fund."
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'kindness-grant.js' | asset_url | script_tag }}

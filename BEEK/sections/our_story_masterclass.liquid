@@ -1,0 +1,201 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<section id="beekman_the_goats">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-lg-none">
+                {% include 'responsive-image-aspect-ratio' with
+                    image: section.settings.hero_mobile,
+                    hero_aspect_ratio: 75,
+                    max_width: 2000,
+                    max_height: 2000,
+                %}
+            </div>
+            <div class="col-12 d-none d-lg-block">
+              {% include 'responsive-image-aspect-ratio' with
+                  image: section.settings.hero_desktop,
+                  hero_aspect_ratio:47,
+                  bgPosition: 'contain',
+                  max_width: 2000,
+                  max_height: 2000,
+              %}
+            </div>
+            <div class="col-12 text-center">
+                <div class="goat-wrap">
+                    {% include 'icon-big-goat' %}
+                </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <h1>{{ section.settings.hero_heading }}</h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 col-lg-8 text-center">
+                <p>{{ section.settings.hero_text }}</p>
+            </div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+        </div>
+        <div class="row">
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 col-lg-8">
+                <div class="vimeo-embed-wrapper">
+                    <iframe allowfullscreen webkitallowfullscreen mozallowfullscreen src="{{ section.settings.livefeed_link }}" frameborder="0" width="720" height="576"></iframe>
+                    <!--<iframe width="560" height="315" src="{{ settings.goat_feed_youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                </div>
+            </div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <h1>{{ section.settings.video_heading }}</h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 col-lg-8 text-center">
+                <p>{{ section.settings.video_text }}</p>
+            </div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 text-center">
+                <a class="contact_link" href="{{ section.settings.video_button_link }}" target="_blank">{{ section.settings.video_button_label }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-lg-center carousel_row">
+      <div class="col-12">
+        <div class="container">
+          <div class="row">
+            <div class="col-2 d-lg-none"></div>
+            <div class="col-8 text-center d-lg-none">
+                <h1>{{ section.settings.benefits_heading }}</h1>
+            </div>
+            <div class="col-2 d-lg-none"></div>
+            <div class="col-12 col-lg-6">
+                {% include 'responsive-image-aspect-ratio' with
+                    image: section.settings.benefits_banner,
+                    hero_aspect_ratio: 75,
+                    max_width: 2000,
+                    max_height: 2000,
+                %}
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="container h-100">
+                    <div class="row h-100">
+                      <div class="col-lg-2 col-xl-3 d-none d-lg-block h-50 pt-5"></div>
+                      <div class="col-12 col-lg-8 col-xl-6 text-center d-none d-lg-block align-self-end mb-5">
+                        <div class="h-100 header-wrap">
+                          <h1>{{ section.settings.benefits_heading }}</h1>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 col-xl-3 d-none d-lg-block h-50"></div>
+                      <div class="col-12 text-center h-50 align-self-start">
+                          <div class="goats_carousel_wrap">
+                              {% for block in section.blocks %}
+                                  <div class="slide">
+                                      <h3 class="d-lg-none">{{ block.settings.carousel_title }}</h3>
+                                      <p class="px-lg-5">{{ block.settings.carousel_text }}</p>
+                                  </div>
+                              {% endfor %}
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<div class="slider_nav">
+    <span class="customNextBtn">{% include 'icon-chevron-right' %}</span>
+    <span class="customPrevBtn">{% include 'icon-chevron-left' %}</span>
+</div>
+
+{% schema %}
+  {
+    "name": "The Goats",
+    "settings": [
+      {
+        "id": "hero_mobile",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      },
+      {
+        "id": "hero_desktop",
+        "type": "image_picker",
+        "label": "Desktop Hero Image"
+      },
+      {
+        "id": "hero_heading",
+        "type": "text",
+        "label": "Hero Heading",
+        "default": "Meet The Goats"
+      },
+      {
+        "id": "hero_text",
+        "type": "text",
+        "label": "Hero Text",
+        "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        "type": "url",
+        "id": "livefeed_link",
+        "label": "Nest Live Stream Link"
+      },
+      {
+        "id": "video_heading",
+        "type": "text",
+        "label": "Video Heading",
+        "default": "Book A Tour"
+      },
+      {
+        "id": "video_text",
+        "type": "text",
+        "label": "Video Text",
+        "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        "id": "video_button_label",
+        "type": "text",
+        "label": "Button - Label",
+        "default": "CONTACT US"
+      },
+      {
+        "id": "video_button_link",
+        "type": "url",
+        "label": "Button - Link"
+      },
+      {
+        "id": "benefits_heading",
+        "type": "text",
+        "label": "Benefits Heading",
+        "default": "Goat Milk Benefits"
+      },
+      {
+        "id": "benefits_banner",
+        "type": "image_picker",
+        "label": "Benefits Banner Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "benefits_carousel",
+        "name": "The Goats - Benefits",
+        "settings": [
+            {
+                "id": "carousel_title",
+                "type": "text",
+                "label": "Benefits - Title"
+            },
+            {
+                "id": "carousel_text",
+                "type": "textarea",
+                "label": "Benefits - Text"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'about_goats.js' | asset_url | script_tag }}

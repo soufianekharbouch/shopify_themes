@@ -1,0 +1,210 @@
+{% if section.settings.show_related_products == true %}
+  <div class="recommended-products">
+
+    {% comment %}
+      Heading.
+      Leave blank if you don't need one.
+    {% endcomment %}
+
+    {% assign heading = section.settings.related_title %}
+
+    {% comment %}
+      Set either or both to true, if you want
+      to limit yourself to items with same vendor, and/or type.
+    {% endcomment %}
+
+    {% assign same_vendor = false %}
+    {% assign same_type = true %}
+
+    {% comment %}
+      Collections to ignore.
+      Never pick related items from those.
+    {% endcomment %}
+
+    {% assign exclusions = 'frontpage,all' | split: ',' %}
+
+    {% comment %}
+      Looking for a relevant collection.
+    {% endcomment %}
+
+    {% if product.metafields.c_f['Related Products'] %}
+      {% assign collection = collections[product.metafields.c_f['Related Products']] %}
+    {% endif %}
+
+    {% assign found_a_collection = false %}
+    {% if collection and collection.all_products_count > 1 %}
+      {% unless exclusions contains collection.handle %}
+      {% assign found_a_collection = true %}
+      {% endunless %}
+    {% endif %}
+    {% unless found_a_collection %}
+      {% for c in product.collections %}
+        {%- comment %}<locksmith:23a1>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: c, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:23a1>{% endcomment -%}
+        {% unless exclusions contains c.handle or c.all_products_count < 2 %}
+        {% assign found_a_collection = true %}
+        {% assign collection = c %}
+        {% break %}
+        {% endunless %}
+      {% endfor %}
+    {% endunless %}
+
+    {% comment %}
+      If we have a relevant collection.
+    {% endcomment %}
+      {% assign products_other = product.metafields.accentuate.other_related_products | split: "|" %}
+    {% if found_a_collection %}
+
+      {% assign current_product = product %}
+
+      {% capture related_items %}
+        {% assign counter = 0 %}
+          {% if products_other %}
+            {% for item in products_other %}
+            {%- comment %}<locksmith:4e43>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:4e43>{% endcomment -%}
+            {% unless counter > 3 %}
+            {% assign counter = counter | plus:1 %}
+            {% assign product_related = all_products[item] %}
+            {% include 'sca_freegift_price' with product_related %}
+              {% if product_related.available and product_related.id != "" %}
+                <div class="col-6 col-md-4 col-lg-3 text-center">
+                  <a href="{{ product_related.url | within: collection }}">
+                    <div class="img-bg">
+                      {% if product_related.metafields.accentuate.product_label != blank %}
+                        <div class="product__label">
+                          {{ product_related.metafields.accentuate.product_label }}
+                        </div>
+                      {% endif %}
+                      {% unless product_related.featured_image == blank %}
+                        {% include 'responsive-image-aspect-ratio' with
+                          image: product_related.featured_image,
+                          hero_aspect_ratio: 134,
+                          bgPosition: 'contain',
+                          max_width: 300,
+                          max_height: 300 %}
+                      {% endunless %}
+                    </div>
+                    <h1>{{ product_related.metafields.accentuate.custom_name | default: product_related.title }}</h1>
+                    <span>{{ product_related.metafields.accentuate.short_description }}</span>
+                    <p class="price">{{ sca_price | money }}</p>
+                  </a>
+                  {% form 'product', product_related, data-productid: product_related.id, data-product-form: '', data-product-handle: product_related.handle, data-enable-history-state: 'true' %}
+                    <select name="id" class="variants__selector" data-productid="{{ product_related.id }}"
+                            style="display:none">
+                      {% for variant in product_related.variants %}
+                        <option
+                            {% if variant == current_variant %}selected="selected"{% endif %}
+                            {% unless variant.available %}disabled="disabled"{% endunless %}
+                            value="{{ variant.id }}">
+                          {{ variant.title }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                    <button type="submit" name="add" data-submit-button>
+                      <span data-submit-button-text>
+                        add to cart
+                      </span>
+                    </button>
+                  {% endform %}
+                </div>
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
+        {% if products_other.size < 4 %}
+          {% for product in collection.products %}
+            {%- comment %}<locksmith:aedd>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:aedd>{% endcomment -%}
+            {% include 'sca_freegift_price' with product %}
+            {% unless product.handle == current_product.handle %}
+              {% unless counter > 3 %}
+                {% unless same_vendor and current_product.vendor != product.vendor %}
+                  {% unless same_type and current_product.type != product.type %}
+                  {% assign counter = counter | plus:1 %}
+                    {% if product.available %}
+                      <div class="col-6 col-md-4 col-lg-3 text-center">
+                        <a href="{{ product.url | within: collection }}">
+                          <div class="img-bg">
+                            {% if product.metafields.accentuate.product_label != blank %}
+                              <div class="product__label">
+                                {{ product.metafields.accentuate.product_label }}
+                              </div>
+                            {% endif %}
+                            {% unless product.featured_image == blank %}
+                              {% include 'responsive-image-aspect-ratio' with
+                                image: product.featured_image,
+                                hero_aspect_ratio: 134,
+                                bgPosition: 'contain',
+                                max_width: 300,
+                                max_height: 300 %}
+                            {% endunless %}
+                          </div>
+                          <h1>{{ product.metafields.accentuate.custom_name | default: product.title }}</h1>
+                          <span>{{ product.metafields.accentuate.short_description }}</span>
+                          <p class="price">{{ sca_price | money }}</p>
+                        </a>
+                        {% if product.metafields.accentuate.is_subscription_product or product.variants.size > 1 %}
+                          <a class="add__to" href="{{ product.url }}">
+                    <span>
+                      View Options
+                    </span>
+                          </a>
+                        {% else %}
+                          {% form 'product', product, data-productid: product.id, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+                            <select name="id" class="variants__selector" data-productid="{{ product.id }}"
+                                    style="display:none">
+                              {% for variant in product.variants %}
+                                <option
+                                    {% if variant == current_variant %}selected="selected"{% endif %}
+                                    {% unless variant.available %}disabled="disabled"{% endunless %}
+                                    value="{{ variant.id }}">
+                                  {{ variant.title }}
+                                </option>
+                              {% endfor %}
+                            </select>
+                            <button
+                                type="submit"
+                                name="add"
+                                data-submit-button>
+                          <span data-submit-button-text>
+                              add to cart
+                          </span>
+                            </button>
+                          {% endform %}
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  {% endunless %}
+                {% endunless %}
+              {% endunless %}
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
+      {% endcapture %}
+
+      {% assign related_items = related_items | trim %}
+
+      {% unless related_items == blank %}
+
+        <div class="container">
+          <div class="row">
+            {% unless heading == blank %}
+              <header class="section-header col-12">
+                <h2 class="section-header__title">{{ product.metafields.accentuate.ymal_title | default: heading }}</h2>
+              </header>
+            {% endunless %}
+          </div>
+          <div class="row">
+            {{ related_items }}
+          </div>
+        </div>
+
+      {% endunless %}
+    {% endif %}
+
+  </div>
+{% endif %}

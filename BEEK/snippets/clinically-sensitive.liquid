@@ -1,0 +1,233 @@
+<div class="sensitive-wrap">
+
+ {% comment %} Define variables {% endcomment %}
+{%- assign titleSection1 = block.settings.title_section1 -%}
+{%- assign titleSection2 = block.settings.title_section2 -%}
+{%- assign titleSection3 = block.settings.title_section3 -%}
+
+{% comment %} Section heading title and description {% endcomment %}
+{%- if block.settings.title_heading != blank -%}
+  <h2>{{ block.settings.title_heading }}</h2>
+{%- endif -%}
+{%- if block.settings.title_desc != blank -%}
+  <p class="desc">{{ block.settings.title_desc }}</p>
+{%- endif -%}
+
+{% comment %} Buttons logic {% endcomment %}
+  <div class="actions-block">
+  {%- if titleSection1 != blank -%}
+    <button 
+      class="solution-item js-button active" 
+      id="section-0">{{ titleSection1 }}
+    </button>
+  {%- endif -%}
+  {%- if titleSection2 != blank -%}
+    <button 
+      class="solution-item js-button {%- if titleSection1 == blank -%}active{%- endif -%}" 
+      id="section-1">{{ titleSection2 }}
+    </button>
+  {%- endif -%}
+  {%- if titleSection3 != blank -%}
+    <button 
+      class="solution-item js-button {%- if titleSection2 == blank -%}active{%- endif -%}" 
+      id="section-2">{{ titleSection3 }}
+    </button>
+  {%- endif -%}
+  </div>
+
+  {% comment %} Main info sections {% endcomment %}
+  {% comment %} Section 1 {% endcomment %}
+  {%- if titleSection1 != blank -%}
+  <div class="main-info-block-wrap section-info-0 js-section active">
+    <div class="main-info-block">
+    {%- if block.settings.left_image_section1 != blank -%}
+      <div class="img-wrap">
+        <img src="{{ block.settings.left_image_section1 | img_url: 'master' }}" alt="{{ titleSection1 }}">
+      </div>
+    {%- endif -%}
+      <div class="info-wrap beyond">
+        <h3>{{ titleSection1 }}</h3>
+        {%- if block.settings.main_text_section1 != blank -%}
+          {{ block.settings.main_text_section1 }}
+        {%- endif -%}
+        {%- if block.settings.bottom_image_section1 != blank -%}
+        <img src="{{ block.settings.bottom_image_section1 | img_url: 'master' }}" alt="{{ titleSection1 }}">
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="notes-block">
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+        {%- if block.settings.title_desc1_section1 != blank -%}
+        <span class="notes-title">{{ block.settings.title_desc1_section1 }}</span>
+        {%- endif -%}
+        {%- if block.settings.text_desc1_section1 != blank -%}
+        {{ block.settings.text_desc1_section1 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc2_section1 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc2_section1 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc2_section1 != blank -%}
+          {{ block.settings.text_desc2_section1 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc3_section1 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc3_section1 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc3_section1 != blank -%}
+          {{ block.settings.text_desc3_section1 }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+{% comment %} Section 2 {% endcomment %}
+{%- if titleSection2 != blank -%}
+  <div class="main-info-block-wrap section-info-1 js-section">
+    <div class="main-info-block">
+    {%- if block.settings.left_image_section2 != blank -%}
+      <div class="img-wrap">
+        <img src="{{ block.settings.left_image_section2 | img_url: 'master' }}" alt="{{ titleSection2 }}">
+      </div>
+      {%- endif -%}
+      <div class="info-wrap ingredients">
+        <h3>{{ titleSection2 }}</h3>
+        {%- if block.settings.main_text_section2 != blank -%}
+          {{ block.settings.main_text_section2 }}
+        {%- endif -%}
+        {%- if block.settings.bottom_image_section2 != blank -%}
+        <img src="{{ block.settings.bottom_image_section2 | img_url: 'master' }}" alt="{{ titleSection2 }}">
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="notes-block">
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc1_section2 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc1_section2 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc1_section2 != blank -%}
+          {{ block.settings.text_desc1_section2 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc2_section2 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc2_section2 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc2_section2 != blank -%}
+          {{ block.settings.text_desc2_section2 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc3_section2 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc3_section2 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc3_section2 != blank -%}
+          {{ block.settings.text_desc3_section2 }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+{% comment %} Section 3 {% endcomment %}
+{%- if titleSection3 != blank -%}
+  <div class="main-info-block-wrap section-info-2 js-section">
+    <div class="main-info-block">
+    {%- if block.settings.left_image_section3 != blank -%}
+      <div class="img-wrap">
+        <img src="{{ block.settings.left_image_section3 | img_url: 'master' }}" alt="{{ titleSection3 }}">
+      </div>
+      {%- endif -%}
+      <div class="info-wrap scincare">
+        <h3>{{ titleSection3 }}</h3>
+        {%- if block.settings.main_text_section3 != blank -%}
+          {{ block.settings.main_text_section3 }}
+        {%- endif -%}
+        {%- if block.settings.bottom_image_section3 != blank -%}
+        <img src="{{ block.settings.bottom_image_section3 | img_url: 'master' }}" alt="{{ titleSection3 }}">
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="notes-block">
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc1_section3 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc1_section3 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc1_section3 != blank -%}
+          {{ block.settings.text_desc1_section3 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc2_section3 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc2_section3 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc2_section3 != blank -%}
+          {{ block.settings.text_desc2_section3 }}
+        </div>
+        {%- endif -%}
+      </div>
+      <div class="single-note">
+        <div class="plus-icon"></div>
+        <div class="notes-descr">
+          {%- if block.settings.title_desc3_section3 != blank -%}
+            <span class="notes-title">{{ block.settings.title_desc3_section3 }}</span>
+          {%- endif -%}
+          {%- if block.settings.text_desc3_section3 != blank -%}
+          {{ block.settings.text_desc3_section3 }}
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {%- endif -%}
+
+  <script>
+    $(document).ready(function () {
+      $('.js-button').on('click', function () {
+        $(this).parent('.actions-block').children('.js-button').removeClass('active');
+        $(this).addClass('active');
+        var currentButtonId = $(this).attr('id').split('-')[1];
+        $('.js-section').each(function (index) {
+          if (index === +currentButtonId) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+        /* scroll Down to proper active section */
+        if ($(document).width() < 1024) {
+          $('html, body').animate({
+            /* document.body.scrollTop - current scroll position; 70 - sticky header. */
+            scrollTop: $(".section-info-" + currentButtonId).offset().top + document.body.scrollTop - 70
+          }, 1000);
+        }
+      })
+    })
+  </script>
+</div>

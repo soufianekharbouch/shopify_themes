@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": false,
+        "page_width": "xs"
+      }
+    },
+    "0579ffd4-218e-4cad-835a-22f25fd0f9a5": {
+      "type": "lookbook-gallery",
+      "blocks": {
+        "cffbe60d-4dd1-4e1c-8cda-92fb4d730863": {
+          "type": "Collection-Repeter",
+          "settings": {
+            "img_url": "shopify:\/\/shop_images\/341A3792_1_750x800_475950b4-0044-46ab-af7c-3c1465ea0247.jpg",
+            "product_text": "demo test",
+            "product_url": "shopify:\/\/collections\/all",
+            "product": "capri-tencel-shirt-men"
+          }
+        },
+        "84621dbc-e9e7-4ef1-9893-b53ab9df07f2": {
+          "type": "Collection-Repeter",
+          "settings": {
+            "img_url": "shopify:\/\/shop_images\/2_892cc855-0464-4eba-a4be-3ba3d9fb721d.jpg",
+            "product_text": "test 2",
+            "product_url": "shopify:\/\/collections\/top-men",
+            "product": "flow-t-shirt-men"
+          }
+        },
+        "4ff1fa3a-d8c3-43a6-a10f-4b4df4112357": {
+          "type": "Collection-Repeter",
+          "settings": {
+            "img_url": "shopify:\/\/shop_images\/2_c0b1649b-e4ff-41a7-8dd3-e50dc9e4ad9a.jpg",
+            "product_text": "test 3",
+            "product_url": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "cffbe60d-4dd1-4e1c-8cda-92fb4d730863",
+        "84621dbc-e9e7-4ef1-9893-b53ab9df07f2",
+        "4ff1fa3a-d8c3-43a6-a10f-4b4df4112357"
+      ],
+      "settings": {
+        "load_caption": "Shop the look",
+        "coll_name": "demo"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0579ffd4-218e-4cad-835a-22f25fd0f9a5"
+  ]
+}

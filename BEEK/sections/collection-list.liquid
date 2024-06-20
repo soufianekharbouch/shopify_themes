@@ -1,0 +1,104 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the collection list section
+  - Collection
+{%- endcomment -%}
+<section class="collection-list container">
+  <div class="row">
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <div class="col-6 col-lg-3">
+        <a href="{{ collection.url | default: "#" }}" class="collection-list-item" {{ block.shopify_attributes }}>
+          <div class="img-wrap">
+            <div class="gingham-wrap">
+              {% include 'gingham' %} 
+            </div>
+              <div class="view_details"><span class="box">VIEW DETAILS</span></div>
+              {% if collection.metafields.accentuate.mercantile_image != blank %}
+                <div class="collection-list__image">
+                  <img src="{{ collection.metafields.accentuate.mercantile_image }}" alt="" loading="lazy">
+                </div>
+                {% elsif collection == empty %}
+                {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+              {% endif %}
+              </div>
+            {%- assign default_label = 'homepage.onboarding.collection_title' | t -%}
+          <p>{{ collection.title | default: default_label }}</p>
+
+          <span class="divider"></span>
+          {% assign collection_tags =collection.metafields.accentuate.collection_tags | split: "|" %}
+          <p class="tags"><span>{% for tag in collection_tags %}{% unless forloop.first %},{% endunless %} {{ tag }}{% endfor %}</span> and more. </p>
+          {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+            <button href="{{ block.settings.button_link }}">
+              {{ block.settings.button_label | escape }}
+            </button>
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if section.blocks.size == 0 %}
+      {% include 'no-blocks' %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collection list"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Add to cart"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection list",
+        "category": "Collection",
+        "blocks": [
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

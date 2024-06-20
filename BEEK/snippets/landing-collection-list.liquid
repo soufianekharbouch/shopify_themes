@@ -1,0 +1,113 @@
+<div class="collection-list" id="mercCollectionList">
+  <div class="row"
+      {% if block.settings.items_centered %}
+    style="justify-content: center"
+      {% endif %}>
+    {% if block.settings.collection1 %}
+      {%- assign collection1 = collections[block.settings.collection1] -%}
+      <div class="col-6 col-lg-3">
+        <a href="{{ collection1.url | default: "#" }}" class="collection-list-item">
+          <div class="img-wrap">
+            <div class="view_details"><span class="box">View Details</span></div>
+            {% if collection1.metafields.accentuate.mercantile_image != blank %}
+              <div class="collection-list__image">
+                <img src="{{ collection1.metafields.accentuate.mercantile_image }}" alt="" loading="lazy">
+              </div>
+            {% else %}
+              <img src="https://via.placeholder.com/300"/>
+            {% endif %}
+          </div>
+          <p>{{ collection1.title }}</p>
+          <span class="divider"></span>
+
+          {% assign collection_tags = collection1.metafields.accentuate.collection_tags | split: "|" %}
+          {% if collection_tags != blank %}
+            <p class="tags"><span>{% for tag in collection_tags %}{% unless forloop.first %},{% endunless %} {{ tag }}{% endfor %}</span> and more. </p>
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection2 %}
+      {%- assign collection2 = collections[block.settings.collection2] -%}
+      <div class="col-6 col-lg-3">
+        <a href="{{ collection2.url | default: "#" }}" class="collection-list-item">
+          <div class="img-wrap">
+            <div class="view_details"><span class="box">View Details</span></div>
+            {% if collection2.metafields.accentuate.mercantile_image != blank %}
+              <div class="collection-list__image">
+                <img src="{{ collection2.metafields.accentuate.mercantile_image }}" alt="" loading="lazy" loading="lazy">
+              </div>
+            {% else %}
+              <img src="https://via.placeholder.com/300"/>
+            {% endif %}
+          </div>
+          <p>{{ collection2.title }}</p>
+          <span class="divider"></span>
+
+          {% assign collection_tags = collection2.metafields.accentuate.collection_tags | split: "|" %}
+          {% if collection_tags != blank %}
+            <p class="tags"><span>{% for tag in collection_tags %}{% unless forloop.first %},{% endunless %} {{ tag }}{% endfor %}</span> and more. </p>
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection3 %}
+      {%- assign collection3 = collections[block.settings.collection3] -%}
+      <div class="col-6 col-lg-3">
+        <a href="{{ collection3.url | default: "#" }}" class="collection-list-item">
+          <div class="img-wrap">
+            <div class="view_details"><span class="box">View Details</span></div>
+            {% if collection3.metafields.accentuate.mercantile_image != blank %}
+              <div class="collection-list__image">
+                <img src="{{ collection3.metafields.accentuate.mercantile_image }}" alt="" loading="lazy">
+              </div>
+            {% else %}
+              <img src="https://via.placeholder.com/300"/>
+            {% endif %}
+          </div>
+          <p>{{ collection3.title }}</p>
+          <span class="divider"></span>
+
+          {% assign collection_tags = collection3.metafields.accentuate.collection_tags | split: "|" %}
+          {% if collection_tags != blank %}
+            <p class="tags"><span>{% for tag in collection_tags %}{% unless forloop.first %},{% endunless %} {{ tag }}{% endfor %}</span> and more. </p>
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection4 %}
+      {%- assign collection4 = collections[block.settings.collection4] -%}
+      <div class="col-6 col-lg-3">
+        <a href="{{ collection4.url | default: "#" }}" class="collection-list-item">
+          <div class="img-wrap">
+            <div class="view_details"><span class="box">View Details</span></div>
+            {% if collection4.metafields.accentuate.mercantile_image != blank %}
+              <div class="collection-list__image">
+                <img src="{{ collection4.metafields.accentuate.mercantile_image }}" alt="" loading="lazy">
+              </div>
+            {% else %}
+              <img src="https://via.placeholder.com/300"/>
+            {% endif %}
+          </div>
+          <p>{{ collection4.title }}</p>
+          <span class="divider"></span>
+
+          {% assign collection_tags = collection4.metafields.accentuate.collection_tags | split: "|" %}
+          {% if collection_tags != blank %}
+            <p class="tags"><span>{% for tag in collection_tags %}{% unless forloop.first %},{% endunless %} {{ tag }}{% endfor %}</span> and more. </p>
+          {% endif %}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+  <div class="shop__all-wrap">
+    {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+      <a href="{{ block.settings.button_link }}" class="shop-all-item">
+        {{ block.settings.button_label | escape }}
+      </a>
+    {% endif %}
+  </div>
+</div>

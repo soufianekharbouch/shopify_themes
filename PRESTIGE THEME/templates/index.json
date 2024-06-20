@@ -1,0 +1,367 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "image_HyjNNa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_2_f617db7a-1646-49f3-8251-25e531fc0fe8.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/notstitch-14131_mobile.jpg",
+            "subheading": "For the love of Palestine",
+            "title": "Palestine Quarter Zip",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/products\/palestine-quarter-zip",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "link",
+            "button_2_background": "rgba(0,0,0,0)",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        },
+        "slide-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/notstitch-14131.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/notstitch-14134_1.jpg",
+            "subheading": "SAVE UP TO 50%",
+            "title": "SUPER SALE",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/on-sale",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "shopify:\/\/collections\/accessories",
+            "button_2_style": "link",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        },
+        "02d6aff4-d55a-417e-991d-a50e73bda0b1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/341A6873_banner_2562x1500_89e6375d-722a-47fa-b26e-d24bb1953063.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/341A6873_mobile_banner.jpg",
+            "subheading": "Timeless minimalism reinvented",
+            "title": "fall\/winter 2023",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/fall-winter-2023",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "shopify:\/\/collections\/accessories",
+            "button_2_style": "link",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "image_HyjNNa",
+        "slide-1",
+        "02d6aff4-d55a-417e-991d-a50e73bda0b1"
+      ],
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "9098ae18-d04b-40b9-9724-dd005b927b6a": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16289061175464__9098ae18-d04b-40b9-9724-dd005b927b6a-image-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner_16.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/banner1.jpg",
+            "subheading": "Featured collection",
+            "title": "Tops",
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/cap-bucket-hat-women",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "Shop Now",
+            "button_2_link": "shopify:\/\/collections\/college-capsule-2023",
+            "button_2_style": "link",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--16289061175464__9098ae18-d04b-40b9-9724-dd005b927b6a-image-1"
+      ],
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "on-sale",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-1"
+      ],
+      "settings": {
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.3,
+        "vertical_spacing_factor": 0.3,
+        "subheading": ""
+      }
+    },
+    "983ec20f-3e3c-4f66-a50b-61896e481cf2": {
+      "type": "featured-collections",
+      "blocks": {
+        "c446e194-6743-4a60-8491-bd0fc9687cc6": {
+          "type": "collection",
+          "settings": {
+            "collection": "home-page-collection-1",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "c446e194-6743-4a60-8491-bd0fc9687cc6"
+      ],
+      "settings": {
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.3,
+        "vertical_spacing_factor": 0.3,
+        "subheading": ""
+      }
+    },
+    "b9592f12-7129-4800-b420-753f9d31867b": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16289061175464__b9592f12-7129-4800-b420-753f9d31867b-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/341A3792_1_1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/341A3792_1_750x970_82589a9b-77c9-4b34-98ee-21af1c710ac9.jpg",
+            "subheading": "A Hint Of summer",
+            "title": "Summer 2023",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/summer-drop-23",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "shopify:\/\/collections\/accessories",
+            "button_2_style": "link",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--16289061175464__b9592f12-7129-4800-b420-753f9d31867b-image-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "ff7e4efe-eddc-4420-8a96-e481f2bef6ab": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--16289061175464__ff7e4efe-eddc-4420-8a96-e481f2bef6ab-collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "summer-drop-23",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16289061175464__ff7e4efe-eddc-4420-8a96-e481f2bef6ab-collection-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.3,
+        "vertical_spacing_factor": 0.3,
+        "subheading": ""
+      }
+    },
+    "7871a629-d098-49d7-83e4-4ff074a1b41a": {
+      "type": "slideshow",
+      "blocks": {
+        "template--16289061175464__7871a629-d098-49d7-83e4-4ff074a1b41a-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/341A0341_1_2562x1500_198a58a5-1260-4236-992b-8f416e264bc9.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/341A0341_1750x970_61fb9fd3-acca-449e-bc01-a6f17954c69e.jpg",
+            "subheading": "Protect Your Peace",
+            "title": "Wellness Capsule",
+            "mobile_text_position": "place-self-end-start text-start",
+            "desktop_text_position": "sm:place-self-end-start sm:text-start",
+            "content_max_width": 780,
+            "button_1_text": "Shop Now",
+            "button_1_link": "shopify:\/\/collections\/wellness-collection",
+            "button_1_style": "link",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#000000",
+            "button_2_text": "",
+            "button_2_link": "shopify:\/\/collections\/cap-bucket-hat-women",
+            "button_2_style": "link",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#000000",
+            "background": "",
+            "background_opacity": 50,
+            "text_color": "#ffffff",
+            "border_color": "",
+            "gradient_overlay": "linear-gradient(180deg, rgba(54, 54, 54, 0.2), rgba(4, 4, 4, 0.65) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "template--16289061175464__7871a629-d098-49d7-83e4-4ff074a1b41a-image-1"
+      ],
+      "settings": {
+        "allow_transparent_header": true,
+        "show_next_section_button": false,
+        "media_size": "auto",
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "0ca86b09-47bd-4583-96f5-e720fe01a34c": {
+      "type": "featured-collections",
+      "blocks": {
+        "template--16289061175464__0ca86b09-47bd-4583-96f5-e720fe01a34c-collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "wellness-collection",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16289061175464__0ca86b09-47bd-4583-96f5-e720fe01a34c-collection-1"
+      ],
+      "settings": {
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.3,
+        "vertical_spacing_factor": 0.3,
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "9098ae18-d04b-40b9-9724-dd005b927b6a",
+    "featured-collections",
+    "983ec20f-3e3c-4f66-a50b-61896e481cf2",
+    "b9592f12-7129-4800-b420-753f9d31867b",
+    "ff7e4efe-eddc-4420-8a96-e481f2bef6ab",
+    "7871a629-d098-49d7-83e4-4ff074a1b41a",
+    "0ca86b09-47bd-4583-96f5-e720fe01a34c"
+  ]
+}

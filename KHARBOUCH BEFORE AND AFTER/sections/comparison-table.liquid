@@ -1,0 +1,260 @@
+<div class="comptable {{ section.settings.css }}">
+  <div class="comptable-content ">
+     {% if section.settings.heading-name != blank %}
+      <div class="comptable-content1">
+           <h2>{{ section.settings.heading-name }}</h2>
+      </div>
+    {% endif %}
+    <div class="comptable-content2">
+        <table>
+            <thead>
+              {% if section.settings.top-image != blank %}
+              <tr class="product-names">
+                <th></th>
+                <th class="colr-bet imgs "><img  src="{{ section.settings.top-image  | img_url: 'master' }}"></th>
+                <th></th>
+              </tr>
+              {% endif %}
+              {% if section.settings.main-prod-name != blank  or section.settings.compare-prod-name != blank or section.settings.points != blank  %}
+              <tr class="product-names">
+                <th>{{ section.settings.points }}</th>
+                <th class="colr-bet">{{ section.settings.main-prod-name }}</th>
+                <th>{{ section.settings.compare-prod-name }}</th>
+              </tr>
+               {% endif %}
+            </thead>
+            <tbody>
+               {% for block in section.blocks %}
+              <tr>
+                <td class="colr">{{ block.settings.point-des }}</td>
+                 <td class="colr-bet"> <img  src="{{ block.settings.check-img | img_url: 'master' }}"></td>
+                 <td  class="colr1"> <img  src="{{ block.settings.cross-img | img_url: 'master' }}"></td>
+              </tr>
+                {% endfor %}
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<style>
+  .comptable {
+    background:transparent;
+    margin-top:36px;
+    margin-bottom:36px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .comptable .comptable-content {
+    /* max-width:600px;
+    margin:0 auto; */
+    display:flex;
+    align-items:center;
+    padding: 0 5rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    
+  }
+  .comptable  .comptable-content1 {
+    padding: 20px;
+    width: 65%;
+  }
+  .comptable  .comptable-content2 {
+    padding: 20px;
+    width: 45%;
+  }
+  .comptable  .comptable-content1 h2 {
+    font-size:36px;
+    font-weight:700;
+    line-height:46px;
+    color:#000;
+    text-align:center;
+     width:100%;
+      margin: 0;
+}
+  .comptable  .comptable-content2 {
+    display:flex;
+    justify-content:center;
+  }
+  .comptable table {
+    border:none;
+     border-collapse: collapse;
+    box-shadow:none;
+  }
+  .comptable table tr {
+    background-color: transparent;
+    padding: .35em;
+}
+  .comptable table th,
+  .comptable table td {
+    border:none !important;
+  }
+  .comptable table tbody tr:first-child td:first-child {
+    border-top-left-radius:10px;
+  }
+  .comptable table tbody tr:first-child td:last-child {
+    border-top-right-radius:10px;
+  }
+  .comptable table tbody tr:last-child td:first-child {
+    border-bottom-left-radius:10px;
+  }
+  .comptable table tbody tr:last-child td:last-child {
+    border-bottom-right-radius:10px;
+  }
+  .comptable .colr,
+  .comptable .colr1 {
+    background:#574f62;
+    color:#fff;
+  }
+  .comptable .product-names th {
+    padding:0px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    padding: 5px;
+    padding-bottom: 15px;
+  }
+   .comptable .product-names th:nth-child(2) {
+     color:#fff;
+   }
+  .comptable .colr-bet {
+    background:#9362e7;
+  }
+  
+  .comptable .colr,
+  .comptable .colr1, 
+  .comptable .colr-bet {
+    text-align:center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    width: 180px;
+    text-align:center;
+  }
+  .comptable .colr-bet.imgs {
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    max-width:180px;
+  }
+  .comptable tbody .colr-bet img,
+  .comptable tbody .colr1 img{
+    width:25px;
+    height:25px;
+  }
+  .comptable .colr-bet.imgs img{
+    width: 60%;
+    position: relative;
+    transform: translateY(-20%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+   @media screen and (min-width:768px) and (max-width:1024px) {
+     .comptable  .comptable-content1 {
+        padding: 20px;
+        width: 40%;
+      }
+      .comptable  .comptable-content2 {
+        padding: 20px;
+        width: 60%;
+      }
+   }
+   @media screen and (max-width:767px) {
+     .comptable .comptable-content {
+        flex-direction: column;
+        padding: 0px;
+    }
+     .comptable  .comptable-content1 {
+        padding: 0px;
+        width: 100%;
+      }
+      .comptable  .comptable-content2 {
+        padding: 0px;
+        width: 100%;
+      }
+    .comptable .comptable-content1 h2 {
+       font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 30px;
+    }
+    .comptable .colr,
+    .comptable .colr1,
+    .comptable .colr-bet {
+      font-size:16px;
+      line-height:20px;
+      padding: 15px;
+    }
+  }
+  
+</style>
+{% schema %}
+  {
+    "name": "comparison table",
+    "tag": "section",
+			"settings": [
+              {
+                  "type": "text",
+                  "id": "css",
+                  "label": "css name"
+                },
+                {
+                  "type": "text",
+                  "id": "heading-name",
+                  "label": "Header"
+                },
+                {
+                     "type": "image_picker",
+                     "id": "top-image",
+                     "label": "Top Image"
+                },
+                {
+                    "type": "text",
+                    "id": "points",
+                    "label": "Points"
+                  },
+                {
+                    "type": "text",
+                    "id": "main-prod-name", 
+                    "label": "Main Product Name"
+                  },
+                {
+                    "type": "text",
+                    "id": "compare-prod-name",
+                    "label": "Compare Product Name"
+                  }
+              ],
+      "blocks": [
+                  {
+                    "type": "heading",
+                    "name": "Points",
+                    "limit": 5,
+                    "settings": [
+                  {
+                    "type": "text",
+                    "id": "point-des",
+                    "label": "Point Description"
+                    
+                  },
+                      {
+                     "type": "image_picker",
+                     "id": "check-img",
+                     "label": "choose check or cross image"
+                },
+                {
+                     "type": "image_picker",
+                     "id": "cross-img",
+                     "label": "choose check or cross image"
+                }
+              ]
+            }
+        ],
+    "presets": [
+      {
+        "name": "comparison table",
+        "blocks": [
+            {
+              "type": "heading"
+            }
+          ]
+      }
+    ]
+  }
+{% endschema %}

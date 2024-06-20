@@ -1,0 +1,57 @@
+{% if events == blank %}
+  {% assign events = product.metafields.accentuate.featured_events_list | split: "|" %}
+{% endif %}
+{% if events.size > 0 %}
+  <div class="events-wrap">
+    <div class="container">
+      <div class="row">
+        <h2 class="section__title col-12">
+          {% if event_ttl == blank %}
+            Featured Events
+          {% else %}
+            {{ event_ttl }}
+          {% endif %}
+        </h2>
+      </div>
+      <div class="row">
+        {% assign counter = 0 %}
+        {% for item in events %}
+          {% unless counter > 2 %}
+          {% assign counter = counter | plus:1 %}
+          {% assign product = all_products[item] %}
+            {% include 'sca_freegift_price' with product %}
+            <div class="event-list-item col-12 col-md-4">
+              <div class="event__wrap">
+                {% if product.metafields.accentuate.event_image != blank %}
+                  <div class="event__image">
+                    <img src="{{ product.metafields.accentuate.event_image }}"/>
+                  </div>
+                {% else %}
+                  <div class="event__image">
+                    <img src="https://via.placeholder.com/300"/>
+                  </div>
+                {% endif %}
+                <span class="date">
+                <span class="d_wrap">
+                  <span class="month">{{ product.metafields.accentuate.event_date | date: "%b" }}</span>
+                  <span class="day">{{ product.metafields.accentuate.event_date | date: "%d" }}</span>
+                </span>
+              </span>
+                <div class="tile_ttl">{{ product.metafields.accentuate.event_heading }}</div>
+                <div class="price">
+                  {% if sca_price == 0 %}
+                    Free
+                  {% else %}
+                    {{ sca_price | money }}
+                  {% endif %}
+                </div>
+                <h3>{{ product.metafields.accentuate.event_location }}</h3>
+                <a href="/products/{{ product.handle }}" class="learn__more">Learn More</a>
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

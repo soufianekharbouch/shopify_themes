@@ -1,0 +1,201 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="hero-wrap">
+          <span class="d-md-none">
+            {% include 'responsive-image-aspect-ratio' with
+              image: section.settings.hero_mobile,
+              hero_aspect_ratio: 75,
+              bgPosition: 'cover',
+              max_width: 2000,
+              max_height: 2000,
+            %}
+          </span>
+          <span class="d-none d-md-block">
+            {% include 'responsive-image-aspect-ratio' with
+              image: section.settings.hero_desktop,
+              hero_aspect_ratio: 43,
+              bgPosition: 'cover',
+              max_width: 2000,
+              max_height: 2000,
+            %}
+          </span>
+          <div class="heading">
+            <h1>{{ section.settings.hero_heading }}</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-12 pt-3 pt-md-2">
+        {% form 'contact' %}
+          {% if form.posted_successfully? %}
+            {% include 'popup-confirmation' message={{ section.settings.confirmation_message }} %}
+          {% endif %}
+        {% endform %}
+        <h4>{{ section.settings.welcome_tagline }}</h4>
+      </div>
+      <div class="welcome_wrap">
+        <div class="col-12 py-5 pt-md-0 pb-md-4">
+          <h2>{{ section.settings.welcome_heading }}</h2>
+        </div>
+        <div class="col-12">
+          <p>{{ section.settings.welcome_text }}</p>
+        </div>
+      </div>
+      {% if section.settings.signature %}
+      <div class="col-12 mt-5 mt-md-3">
+        <div class="signature-wrap">
+          {% include 'responsive-image-aspect-ratio' with
+            image: section.settings.signature,
+            hero_aspect_ratio: 37,
+            bgPosition: 'cover',
+            max_width: 2000,
+            max_height: 2000,
+          %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="bg">
+    <div class="container">
+      <div class="row py-5 px-3 px-md-5">
+        <div class="col-12 pt-5 pb-3 pb-md-4">
+          <h3>{{ section.settings.help_heading }}</h3>
+        </div>
+        {% for block in section.blocks %}
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-img-top">
+                {% include 'responsive-image-aspect-ratio' with
+                  image: block.settings.help_card_img,
+                  hero_aspect_ratio: 100,
+                  bgPosition: 'cover',
+                  max_width: 2000,
+                  max_height: 2000,
+                %}
+              </div>
+              <div class="card-body my-2">
+                <h3 class="card-title pb-2">{{ block.settings.help_card_title }}</h3>
+                <hr/>
+                <p class="px-lg-5 py-4 card-text">{{ block.settings.help_card_text }}</p>
+                <a class="btn mb-3" href="{{block.settings.help_card_cta_link}}">{{ block.settings.help_card_cta_label }}</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="col-12 my-5 pt-md-5">
+          <h3>{{ section.settings.help_footer }}</h3>
+        </div>
+        <div class="col-12 mb-5 pb-md-5">
+          <a class="btn" onclick="document.getElementById('contact_form_wrapper').classList.remove('hide')">{{ section.settings.help_cta_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Contact Us",
+    "settings": [
+      {
+        "id": "hero_mobile",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      },
+      {
+        "id": "hero_desktop",
+        "type": "image_picker",
+        "label": "Desktop Hero Image"
+      },
+      {
+        "id": "hero_heading",
+        "type": "text",
+        "label": "Hero Heading",
+        "default": "Contact Us"
+      },
+      {
+        "id": "welcome_tagline",
+        "type": "text",
+        "label": "Welcome Tagline",
+        "default": "WELCOME TO NEIGHBOR SERVICES"
+      },
+      {
+        "id": "welcome_heading",
+        "type": "text",
+        "label": "Welcome Heading",
+        "default": "THE BEEKMAN PROMISE"
+      },
+      {
+        "id": "welcome_text",
+        "type": "richtext",
+        "label": "Welcome Text"
+      },
+      {
+        "id": "signature",
+        "type": "image_picker",
+        "label": "Signature"
+      },
+      {
+        "id": "help_heading",
+        "type": "text",
+        "label": "How Can We Help? - Heading",
+        "default": "WHAT CAN WE HELP YOU WITH TODAY?"
+      },
+      {
+        "id": "help_footer",
+        "type": "text",
+        "label": "How Can We Help? - Footer",
+        "default": "DIDN’T FIND WHAT YOU NEED?"
+      },
+      {
+        "id": "help_cta_label",
+        "type": "text",
+        "label": "How Can We Help? - Call To Action(label)",
+        "default": "SEND US A MESSAGE"
+      },
+      {
+        "id": "confirmation_message",
+        "type": "richtext",
+        "label": "Confirmation Popup Message",
+        "default": "<p>Thank you for your message!</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_with_caption",
+        "name": "Help - Card",
+        "settings": [
+            {
+                "id": "help_card_img",
+                "type": "image_picker",
+                "label": "Card - Image"
+            },
+            {
+                "id": "help_card_title",
+                "type": "text",
+                "label": "Card - Title"
+            },
+            {
+                "id": "help_card_text",
+                "type": "textarea",
+                "label": "Card - Text"
+            },
+            {
+                "id": "help_card_cta_label",
+                "type": "text",
+                "label": "Card - Label"
+            },
+            {
+                "id": "help_card_cta_link",
+                "type": "url",
+                "label": "Card - Link"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

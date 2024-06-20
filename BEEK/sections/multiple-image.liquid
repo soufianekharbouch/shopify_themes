@@ -1,0 +1,185 @@
+<div class="container multiple-images-container category-landing-content">
+    <div class="multiple-images">
+        {% for block in section.blocks %}
+       <div class="single-image">
+        <a href="{{ block.settings.url }}">
+          <img src="{{ block.settings.image | img_url: '2000x'}}" alt="">
+          <div class="image-text" style="background-color:{{ block.settings.bg_color }} ;">
+                <h1>{{ block.settings.title }}</h1>
+                <p>{{ block.settings.text }}</p>
+                <span class="link">{{ block.settings.btn_text }}</span>
+          </div></a>
+        </div>
+        {% endfor %}
+     
+    </div>
+</div>
+<style>
+    
+    .multiple-images-container
+    {
+        max-width: 1500px;
+        padding-bottom: 5rem;
+        padding-top: 0;
+
+    }
+    .multiple-images
+    {
+       display: flex;
+       gap: 15px;
+       position: relative;
+    }
+    .multiple-images > div
+    {
+        width: 50%;
+        position: relative;
+
+    }
+    .multiple-images .image-text
+    {
+         position: absolute;
+       bottom: 40px;
+         right: 0;
+         left: 0;
+         margin: auto;
+         width: fit-content;
+         text-align: center;
+         padding: 25px;
+    }
+    .multiple-images .single-image img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .multiple-images .single-image h1
+    {
+        margin: 0;
+        color: #4a5761;
+    }
+    .multiple-images .single-image p
+    {
+        margin-bottom: 20px;
+        color: #4a5761;
+      font-family: 'Century OS'
+    }
+    .multiple-images .single-image  .link
+    {
+        background: white;
+        padding: 10px; 
+        text-transform: uppercase;
+        Text-decoration: underline;
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: .26px;
+        
+        color: #4a5761;
+    }
+    @media only screen and (max-width: 768px)
+    {
+        .multiple-images .image-text
+        {
+            position: relative;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+  .multiple-images
+   {
+    display: block;
+   }
+   .multiple-images > div
+   {
+    width: 100%;
+   }
+   .multiple-images .image-text
+   {
+    padding: 6px 15px;
+   }
+   .multiple-images .single-image h1
+   {
+    font-size: 24px;
+   }
+   
+   .multiple-images .single-image p{
+    font-size: 16px;
+    margin-bottom: 5px;
+   }
+   .multiple-images .image-text
+   {
+    bottom: 25px;
+   }
+   .multiple-images .single-image .link
+   {
+    font-size: 13px;
+   }
+    }
+    @media only screen and (max-width: 330px)
+    {
+        .multiple-images .single-image h1
+        {
+         font-size: 20px;
+        }
+        
+        .multiple-images .single-image p{
+         font-size: 15px;
+         margin-bottom: 5px;
+        }
+        .multiple-images .image-text
+        {
+         bottom: 20px;
+        }
+        .multiple-images .single-image .link
+        {
+         font-size: 13px;
+        }
+    }
+</style>
+{% schema %}
+    {
+        "name": "Multiple Images",      
+        "blocks": [
+            {
+                "name": "image",
+                "type": "Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "text",
+                        "label": "Text"
+                    },
+                    {
+                        "type": "text",
+                        "id": "btn_text",
+                        "label": "Button text",
+                        "default": "Shop Now"
+                    },
+                    {
+                        "type": "url",
+                        "id": "url",
+                        "label": "Button Link"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_color",
+                        "label": "Text Background"
+                    }
+                ]
+            }
+        ],
+                "presets": [{
+                    "name": "Multiple Images"
+                    
+                }]
+    }
+{% endschema %}

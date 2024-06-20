@@ -1,0 +1,373 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="page-width after_before_heading">
+  <div class="heading_after">
+    <h2>{{ section.settings.head }}</h2>
+      <p>{{ section.settings.pera }}</p>
+  </div>
+</div>
+<div class="page-width after_before">
+<div class="left_icon">
+  <div class="left_icon_first">
+    <img src="{{ section.settings.image1 | img_url: 'master' }}" />
+    <h2>{{ section.settings.title1 }}</h2>
+    <p>{{ section.settings.richtext1 }}</p>
+  </div>
+  <div class="left_icon_second">
+    <img src="{{ section.settings.image2 | img_url: 'master'}}">
+    <h2>{{ section.settings.title2 }}</h2>
+    <p>{{ section.settings.richtext2 }}</p>
+  </div>
+</div>
+
+
+
+<div class="ba-slider">
+                   
+  <img class="beforeAfterImage lazyloaded" src="{{ section.settings.imagefirst | img_url: 'master'}}"  alt="Original Image">
+  <div class="resize" style="width: 50%;">
+    <img class="beforeAfterImage2 lazyloaded" src="{{ section.settings.imagesnd | img_url: 'master'}}" alt="Modified Image" style="width: 216.2px;">
+  </div>
+  <span class="handle" style="left: 50%;"></span>
+  <span class="handle2 handle" style="left: 50%;"></span>
+  <div class="handle3 handle" style="left: 50%;">
+    <div><i class="fa-solid fa-caret-left"></i>
+    <i class="fa-solid fa-caret-right"></i></div>
+
+  </div>
+</div>
+
+
+  <div class="left_icon">
+  <div class="left_icon_first">
+    <img src="{{ section.settings.image3 | img_url: 'master'}}">
+    <h2>{{ section.settings.title3 }}</h2>
+    <p>{{ section.settings.richtext3 }}</p>
+  </div>
+  <div class="left_icon_second">
+    <img src="{{ section.settings.image4 | img_url: 'master'}}">
+    <h2>{{ section.settings.title4 }}</h2>
+    <p>{{ section.settings.richtext4 }}</p>
+  </div>
+</div>
+
+ </div>
+
+ <style>
+  .ba-slider {
+      position: relative;
+      overflow: hidden;
+      width:80%;
+      max-width: 450px;
+      margin:auto;
+      border-radius:49%;
+  }
+   
+  .ba-slider img {
+    width: 100%;
+    display:block;
+    max-width: inherit
+  }
+   
+  .resize {
+      position: absolute;
+      top:0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+  }
+  
+  
+  .handle{ 
+    position:absolute; 
+    left:50%;
+    top:0;
+    height:45%;
+    width:4px;
+    margin-left:-3px;
+    background: #fff;
+    cursor: ew-resize;
+  }
+  .handle2 { 
+    position:absolute; 
+    left:50%;
+    top:auto;
+    bottom:0;
+    height:45%;
+    width:4px;
+    margin-left:-3px;
+    background: #fff;
+    cursor: ew-resize;
+  }
+  .handle3 { 
+    position:absolute; 
+    left:50%;
+    top:45%;
+    bottom:auto;
+    height:45px;
+    width:45px;
+    margin-left:-22.5px;
+    cursor: ew-resize;
+    background:transparent;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .handle3 div{ 
+    display:flex;
+    gap:10px;
+    color:white;
+    justify-content:center;
+  }
+  </style>
+  <script>
+
+  $(document).ready(function(){
+    $('.ba-slider').each(function(){
+      var cur = $(this);
+      var width = cur.width()+'px';
+      cur.find('.resize img').css('width', width);
+      drags(cur.find('.handle'), cur.find('.resize'), cur);
+    });
+
+
+  });
+  $('.resize').css({width:"0%"});
+  $('.handle').css({left:"1%"});
+  $(window).on('scroll', function () {
+    if(Number($(window).scrollTop()-$('.ba-slider').position().top)>-340){
+      var hg=Number($('.ba-slider').position().top+$('.ba-slider').height());
+      var progress=Number($(window).scrollTop()-$('.ba-slider').position().top+340);
+      
+      
+      var percent=Number(0+Number(progress/2));
+      console.log(percent);
+      $('.resize').css({width:percent+"%"})
+      
+      if(percent<100){
+        $('.handle').css({left:percent+"%"})
+      }
+      
+  
+  }
+    
+  });
+  
+  function drags(dragElement, resizeElement, container) {
+     dragElement.on('mousedown touchstart', function(e) {
+        dragElement.addClass('draggable2');
+        resizeElement.addClass('resizable');
+        var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+        var dragWidth = dragElement.outerWidth(),
+        posX = dragElement.offset().left + dragWidth - startX,
+        containerOffset = container.offset().left,
+        containerWidth = container.outerWidth();
+        minLeft = containerOffset + 5;
+        maxLeft = containerOffset + containerWidth - dragWidth - 5;
+        dragElement.parents().on("mousemove touchmove", function(e) {
+        var moveX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+        leftValue = moveX + posX - dragWidth;
+        if ( leftValue < minLeft) {
+          leftValue = minLeft;
+        } else if (leftValue > maxLeft) {
+          leftValue = maxLeft;
+        }
+        
+        widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
+        console.log(widthValue+"lllllllllllllll")
+        $('.draggable2').css('left', widthValue).on('mouseup touchend touchcancel', function () {
+          $(this).removeClass('draggable2');
+          resizeElement.removeClass('resizable');
+        });
+        $('.resizable').css('width', widthValue);
+      }).on('mouseup touchend touchcancel', function(){
+        dragElement.removeClass('draggable2');
+        resizeElement.removeClass('resizable');
+      });
+      e.preventDefault();
+    }).on('mouseup touchend touchcancel', function(e){
+      dragElement.removeClass('draggable2');
+      resizeElement.removeClass('resizable');
+    });
+  }
+  
+  
+  
+  </script>
+
+
+  <style>
+.container {
+  max-width: 800px;
+}
+    
+.page-width.after_before_heading {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.page-width.after_before_heading .heading_after {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+.after_before_heading h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height:46px;
+    margin-bottom: 10px;
+}
+.after_before_heading p {
+  font-weight: normal;
+    font-size: 16px;
+  line-height: 29px;
+    margin-bottom: 10px; 
+}
+.left_icon {
+    width: 30%;
+    position: relative;
+    text-align: center;
+}
+.left_icon img {
+    width: auto;
+    height: 60px;
+    position: relative;
+    display: block;
+    margin: 0 auto 15px;
+}
+.left_icon h2 {
+    font-weight: 700;
+    font-size: 18px;
+}
+.left_icon p {
+    padding: 0 5%;
+}
+.page-width.after_before {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom:50px;
+  padding-top:10px;
+  align-items:center;
+}
+
+
+
+  
+ @media screen and (max-width:749px){
+   .page-width.after_before {
+     flex-wrap:wrap;
+      padding: 10px 15px 50px;
+   }
+
+   
+   .left_icon {
+     width:100%;
+   }
+
+   
+   .after_before_heading h2 {
+     margin-top:0px;
+     font-size:28px;
+     line-height:38px;
+   }
+ }
+ </style>
+
+  {% schema %}
+{
+	"name": "Before After",
+	"tag": "section",
+	"class": "spaced-section",
+			"settings": [
+              {
+      "type": "text",
+      "id": "head",
+      "label": "Heading"
+    },
+              {
+      "type": "text",
+      "id": "pera",
+      "label": "Content"
+    },
+              {
+      "type": "image_picker",
+      "id": "imagefirst",
+      "label": "Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "imagesnd",
+      "label": "After Image"
+    },
+     {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "First Icon Image"
+    },
+      {
+      "type": "text",
+      "id": "title1",
+      "label": "Heading 1"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext1",
+      "label": "Content 1"
+    },
+     {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "First Icon Image"
+    },
+     {
+      "type": "text",
+      "id": "title2",
+      "label": "Heading 2"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext2",
+      "label": "Content 2"
+    },
+     {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "First Icon Image"
+    },
+     {
+      "type": "text",
+      "id": "title3",
+      "label": "Heading 3"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext3",
+      "label": "Content 3"
+    },
+     {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "First Icon Image"
+    },
+     {
+      "type": "text",
+      "id": "title4",
+      "label": "Heading 4"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext4",
+      "label": "Content 4"
+    }
+
+	],
+	"presets": [
+		{ "name": "Before After" }
+	]
+}
+{% endschema %}

@@ -1,0 +1,109 @@
+{% if block.settings.skincare_experts_enabled %}
+<div class="skincare__experts">
+    {%- if block.settings.experts_ttl != blank -%}
+      <h2>{{ block.settings.experts_ttl | escape }}</h2>
+    {%- endif -%}
+
+    {%- if block.settings.experts_desc != blank -%}
+      <p>{{ block.settings.experts_desc | escape }}</p>
+    {%- endif -%}
+
+    <div class="collection-list experts">
+      <div class="row experts__grid expr-{{ page.metafields.accentuate.expert_name.size }}">
+        {% for expert in page.metafields.accentuate.expert_name %}
+          <div class="col-6 col-sm-4 expert__wrap order-{{ forloop.index0 | plus: 1 }}">
+            <!--<div class="img-wrap">
+              {% if page.metafields.accentuate.expert_photo[forloop.index0] != blank %}
+                <div class="collection-list__image">
+                  <img src="{{ page.metafields.accentuate.expert_photo[forloop.index0][0].src }}" alt="">
+                </div>
+              {% else %}
+                <img src="https://via.placeholder.com/300"/>
+              {% endif %}
+            </div>-->
+            <span class="expert__name">
+              {% if page.metafields.accentuate.expert_name[forloop.index0] != blank %}
+                {{ page.metafields.accentuate.expert_name[forloop.index0] }}
+              {% endif %}
+            </span>
+            <span class="expert__title">
+              {% if page.metafields.accentuate.expert_title[forloop.index0] != blank %}
+                {{ page.metafields.accentuate.expert_title[forloop.index0] }}
+              {% endif %}
+            </span>
+            {% if page.metafields.accentuate.expert_book_now_link[forloop.index0] != blank %}
+              <a href="{{ page.metafields.accentuate.expert_book_now_link[forloop.index0] }}" class="book__now">Book Now</a>
+            {% endif %}
+            {% if page.metafields.accentuate.expert_bio[forloop.index0] != blank %}
+              <a href="" class="view__products">Learn More</a>
+            {% endif %}
+          </div>
+          {% if forloop.index < 3 %}
+            {% assign prod_order = 3 %}
+          {% elsif forloop.index > 2 and forloop.index < 5 %}
+            {% assign prod_order = 5 %}
+          {% elsif forloop.index > 4 and forloop.index < 7 %}
+            {% assign prod_order = 7 %}
+          {% endif %}
+          {% if forloop.index == 1 or forloop.index == 3 or forloop.index == 5 %}
+            {% assign arrow = "xs_left" %}
+          {% else %}
+            {% assign arrow = "xs_right" %}
+          {% endif %}
+          {% if forloop.index == 1 or forloop.index == 2 or forloop.index == 3 %}
+            {% assign prod_order_md = 4 %}
+          {% else %}
+            {% assign prod_order_md = 7 %}
+          {% endif %}
+          {% if forloop.index == 1 or forloop.index == 4 %}
+            {% assign arrow_md = "_left" %}
+          {% elsif forloop.index == 2 or forloop.index == 5 %}
+            {% assign arrow_md = "_center" %}
+          {% else %}
+            {% assign arrow_md = "_right" %}
+          {% endif %}
+          <div class="products-wrap col-12 order-{{ prod_order }} order-sm-{{ prod_order_md }}" style="display: none">
+            <div class="inner_content {{ arrow }} {{ arrow_md }} expert-{{ forloop.index0 | plus: 1 }}">
+              <span class="expert__name">
+                {% if page.metafields.accentuate.expert_name[forloop.index0] != blank %}
+                  {{ page.metafields.accentuate.expert_name[forloop.index0] }}
+                {% endif %}
+              </span>
+              <span class="expert__title">
+                {% if page.metafields.accentuate.expert_title[forloop.index0] != blank %}
+                  {{ page.metafields.accentuate.expert_title[forloop.index0] }}
+                {% endif %}
+              </span>
+              <p class="expert__bio">
+                {% if page.metafields.accentuate.expert_bio[forloop.index0] != blank %}
+                  {{ page.metafields.accentuate.expert_bio[forloop.index0] }}
+                {% endif %}
+              </p>
+              {% if page.metafields.accentuate.expert_book_now_link[forloop.index0] != blank %}
+                <a href="{{ page.metafields.accentuate.expert_book_now_link[forloop.index0] }}" class="book__now">Book Now</a>
+              {% endif %}
+              {% if page.metafields.accentuate.expert_related_products[forloop.index0] != blank %}
+              <div class="products__ttl">
+                Favorite Products
+              </div>
+                <div class="product__list">
+                  {% assign products = page.metafields.accentuate.expert_related_products[forloop.index0] | split: "|" %}
+                  <div class="product__carousel row">
+                    {% for product in products %}
+                      {%- comment %}<locksmith:c526>{% endcomment -%}
+                        {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                      {%- comment %}</locksmith:c526>{% endcomment -%}
+                      <div class="product__item col-12 col-sm-4">
+                        {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

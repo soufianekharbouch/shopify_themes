@@ -1,0 +1,39 @@
+{% if product.metafields.accentuate.title != null and product.metafields.accentuate.percents.size >= 1 and product.metafields.accentuate.background_color != null %}
+    <div class="section_statistics" style="background: {{product.metafields.accentuate.background_color}}">
+        <div class="container">
+            <h2>{{ product.metafields.accentuate.title }}</h2>
+            <div class="statistics_table">
+                <div class="single_statistic_row">
+                    <div class="single_statistic_block">
+                        {% for percent in product.metafields.accentuate.percents %}
+                            <p class="percent">{{percent}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="single_statistic_row">
+                    <div class="single_statistic_block">
+                        {% for percent in product.metafields.accentuate.percents %}
+                            <p class="benefit">{{product.metafields.accentuate.benefits[forloop.index0]}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="single_statistic_row">
+                    <div class="single_statistic_block">
+                        {% for percent in product.metafields.accentuate.percents %}
+                            <em class="explanation">{{product.metafields.accentuate.explanation[forloop.index0]}}</em>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="statistics_inner d-md-none">
+                {% for percent in product.metafields.accentuate.percents %}
+                    <div class="single_statistic_block">
+                        <p class="percent">{{percent}}</p>
+                        <p class="benefit">{{product.metafields.accentuate.benefits[forloop.index0]}}</p>
+                        <em class="explanation">{{product.metafields.accentuate.explanation[forloop.index0]}}</em>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

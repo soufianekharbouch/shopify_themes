@@ -1,0 +1,179 @@
+<div data-address class="customer_info_form toggle">
+  <div class="row">
+    <div class="col-12">
+      <button type="button" data-address-toggle>
+        {{ 'customer.addresses.edit' | t }}
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div data-address class="col-12">
+          <div data-address-form class="customer_info_form hide">
+            {% form 'customer_address', address  %}
+              <div data-address-fields class="row">
+              <!-- Mandatory id field -->
+              <div class="col-12">
+                <h4>{{ 'customer.addresses.edit_address' | t }}</h4>
+                <input type="hidden" name="customer[id]" value="{{ customer.id }}" />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="AddressFirstName_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.first_name' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[first_name]"
+                  id="AddressFirstName_{{ form.id }}"
+                  placeholder="First Name*"
+                  value="{{ address.first_name }}"
+                  autocapitalize="words"
+                  required
+                >
+              </div>
+            
+              <div class="col-12 col-md-6">
+                <label for="AddressLastName_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.last_name' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[last_name]"
+                  id="AddressLastName_{{ form.id }}"
+                  placeholder="Last Name*"
+                  value="{{ address.last_name }}"
+                  autocapitalize="words"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressCompany_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.company' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[company]"
+                  id="AddressCompany_{{ form.id }}"
+                  placeholder="Company"
+                  value="{{ address.company }}"
+                  autocapitalize="words"
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressAddress1_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.address1' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[address1]"
+                  id="AddressAddress1_{{ form.id }}"
+                  placeholder="Address 1*"
+                  value="{{ address.address1 }}"
+                  autocapitalize="words"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressAddress2_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.address2' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[address2]"
+                  id="AddressAddress2_{{ form.id }}"
+                  placeholder="Address 2"
+                  value="{{ address.address2 }}"
+                  autocapitalize="words"
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressCity_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.city' | t }}
+                </label>
+                <input 
+                  type="text"
+                  name="address[city]"
+                  id="AddressCity_{{ form.id }}"
+                  placeholder="City*"
+                  value="{{ address.city }}"
+                  autocapitalize="words"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressCountry_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <select
+                  style="background: url('{{ 'chevron-down.png' | asset_url }}');"
+                  class="select-wrap"
+                  name="address[country]"
+                  id="AddressCountry_{{ form.id }}"
+                  data-default="{{ address.country_code }}"
+                  required
+                  >
+                    <option selected disabled>{{ 'customer.addresses.country' | t }}*</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressProvince_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.province' | t }}
+                </label>
+                <select
+                  style="background: url('{{ 'chevron-down.png' | asset_url }}');"
+                  class="select-wrap"
+                  name="address[province]"
+                  id="AddressProvince_{{ form.id }}"
+                  data-default="{{ address.province_code }}"
+                  >
+                    <option selected disabled>{{ 'customer.addresses.province' | t }}*</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressZip_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.zip' | t }}
+                </label>
+                <input 
+                      type="text"
+                      name="address[zip]"
+                      id="AddressZip_{{ form.id }}"
+                      placeholder="Zipcode"
+                      value="{{ address.zip }}"
+                      autocapitalize="characters"
+                      required>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="AddressPhone_{{ form.id }}" class="hide">
+                  {{ 'customer.addresses.phone' | t }}
+                </label>
+                <input 
+                  type="tel"
+                  name="address[phone]"
+                  id="AddressPhone_{{ form.id }}"
+                  placeholder="Phone"
+                  value="{{ address.phone }}"
+                  pattern="[0-9\-]*"
+                >
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <button type="submit">{{ 'customer.addresses.update' | t }}</button>
+              </div>
+            </div>
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "timer": "5:00",
+        "timer_con": "Votre panier est réservé pendant",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        },
+        "15002437-e599-42be-b732-c361f0d65c9a": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "🔒 Paiement 100% sécurisé"
+          }
+        },
+        "190c67d8-54c9-4929-a88d-ad06493245e8": {
+          "type": "paymenticon",
+          "settings": {
+            "paymenticon": "shopify:\/\/shop_images\/payment_options_92c75487-da10-463e-a960-3cd2a1110bb0.png"
+          }
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons",
+        "15002437-e599-42be-b732-c361f0d65c9a",
+        "190c67d8-54c9-4929-a88d-ad06493245e8"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer"
+  ]
+}

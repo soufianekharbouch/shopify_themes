@@ -1,0 +1,94 @@
+<div class="icon-wrap">
+  <div class="row">
+    {% assign icons = product.metafields.accentuate.attribute_icons | split: "|" %}
+    {% for icon in icons %}
+      {% case icon %}
+      {% when "biodegradable" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-biodegradable' %}
+        </div>
+      {% when "clinically proven" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-clinically-proven' %}
+        </div>
+      {% when "peta cruelty free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-cruelty-free' %}
+        </div>
+      {% when "certified clinically kind" %} 
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-certified-clinically-kind' %}
+        </div>
+      {% when "microbiome friendly" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-microbiome-friendly' %}
+        </div>
+      {% when "leaping bunny certified" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-leaping-bunny-certified' %}
+        </div>
+      {% when "mineral oil free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-mineral-oil-free' %}
+        </div>
+      {% when "paraben free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-paraben-free' %}
+        </div>
+      {% when "sulfate free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-sulfate-free' %}
+        </div>
+      {% when "triple milled" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-triple-milled' %}
+        </div>
+      {% when "alcohol free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-alcohol-free' %}
+        </div>
+      {% when "fragrance free" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-fragrance-free' %}
+        </div>
+      {% when "color safe" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-color-safe' %}
+        </div>
+      {% when "vegetable base" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-vegetable-base' %}
+        </div>
+      {% when "ewg verified" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-ewg-verified' %}
+        </div>
+      {% when "hypoallergenic" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-hypoallergenic' %}
+        </div>
+      {% when "free of synthetic colorantis" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-free-of-synthetic' %}
+        </div>
+      {% when "free of chemical sunscreens" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-free-of-chemical' %}
+        </div>
+      {% when "Ready to Ship" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-Ready-to-Ship' %}
+        </div>
+     {% when "Safe for sensitive skin" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-safe-sensitive-skin' %}
+        </div>
+    {% when "Dermatologist-Approved" %}
+        <div class="svg-wrap col-4 text-center">
+          {% include 'icon-dermatologist-approved' %}
+        </div>
+      {% endcase %}
+    {% endfor %}
+     
+  </div>
+</div>

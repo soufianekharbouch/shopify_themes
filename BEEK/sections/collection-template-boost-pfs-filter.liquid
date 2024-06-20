@@ -1,0 +1,1332 @@
+
+{%- comment -%} VERSION: 0.0.3 Please do not delete this line. {%- endcomment -%}
+{%- liquid
+	assign products_per_page = section.settings.products_per_page
+	if shop.metafields.boostpfs-settings.labelTranslations.type != nil 
+assign boost_translations = shop.metafields.boostpfs-settings.labelTranslations.value
+else
+assign boost_translations = shop.metafields.boostpfs-settings.labelTranslations
+endif
+	assign current_locale = request.locale.iso_code
+	assign primary_locale = current_locale
+	for locale in shop.published_locales
+		if locale.primary
+			assign primary_locale = locale.iso_code
+			break
+		endif
+	endfor
+	assign label_toolbar_viewas = boost_translations[current_locale].defaultTheme.toolbarViewAs | default:  boost_translations[primary_locale].defaultTheme.toolbarViewAs | escape
+	assign label_items_with_count_one = boost_translations[current_locale].defaultTheme.toolbarProduct | default:  boost_translations[primary_locale].defaultTheme.toolbarProduct | escape
+	assign label_items_with_count_other = boost_translations[current_locale].defaultTheme.toolbarProducts | default:  boost_translations[primary_locale].defaultTheme.toolbarProducts | escape
+	assign label_sale = boost_translations[current_locale].defaultTheme.productItemSale | default:  boost_translations[primary_locale].defaultTheme.productItemSale | escape
+	assign label_soldout = boost_translations[current_locale].defaultTheme.productItemSoldOut | default:  boost_translations[primary_locale].defaultTheme.productItemSoldOut | escape
+	assign label_from = boost_translations[current_locale].defaultTheme.productItemFrom | default:  boost_translations[primary_locale].defaultTheme.productItemFrom | escape
+	assign switch_layout_filter = section.settings.switch_layout_filter
+	assign enable_filter_sticky = section.settings.enable_filter_sticky
+	assign toolbar_filter_sticky_mobile = section.settings.toolbar_filter_sticky_mobile
+	assign filter_layout = section.settings.filter_layout
+	assign layout_type = section.settings.layout_type
+	assign show_toolbar_view_as = section.settings.show_toolbar_view_as
+	assign show_toolbar_product_count = section.settings.show_toolbar_product_count
+	assign show_toolbar_sort_by = section.settings.show_toolbar_sort_by
+	assign show_toolbar_view_as_mobile = section.settings.show_toolbar_view_as_mobile
+	assign show_toolbar_product_count_mobile = section.settings.show_toolbar_product_count_mobile
+	assign show_toolbar_sort_by_mobile = section.settings.show_toolbar_sort_by_mobile
+	assign view_as_type = section.settings.view_as_type
+	assign products_per_row = section.settings.products_per_row
+	assign products_per_row_mobile = section.settings.products_per_row_mobile
+	assign show_details_when_hovering = section.settings.show_details_when_hovering
+	assign show_vendor = section.settings.show_vendor
+	assign show_price = section.settings.show_price
+	assign show_sold_out_label = section.settings.show_sold_out_label
+	assign show_sale_label = section.settings.show_sale_label
+	assign show_sale_percent = section.settings.show_sale_percent
+	assign product_label_type = section.settings.product_label_type
+	assign product_label_has_border_radius = section.settings.product_label_has_border_radius
+	assign active_image_swap = section.settings.active_image_swap
+	assign show_product_review = section.settings.show_product_review
+	assign display_item_swatch = section.settings.display_item_swatch
+	assign swatch_color_display_type = section.settings.swatch_color_display_type
+	assign swatch_color_event_change_image = section.settings.swatch_color_event_change_image
+	assign swatches_color_shape = section.settings.swatches_color_shape
+	assign display_item_swatch_size = section.settings.display_item_swatch_size
+	assign equal_height = section.settings.equal_height
+	assign ratio_width_height_other = section.settings.ratio_width_height_other
+	assign equal_height_crop_image_position = section.settings.equal_height_crop_image_position
+	assign show_label_by_tag = section.settings.show_label_by_tag
+	assign show_product_label_image = section.settings.show_product_label_image
+	assign product_label_image_sale = section.settings.product_label_image_sale
+	assign product_label_image_sold_out = section.settings.product_label_image_sold_out
+	assign product_item_type = section.settings.product_item_type
+    assign tag_label_enable = shop.metafields.pfs-default-theme.tag_label_enable | default: false
+-%}
+{%- liquid
+  assign filter_tree_vertical_style = shop.metafields.bc-sf-filter.settings | split: 'general":' | last | split: 'filterTreeVerticalStyle":"' | last | split: '","' | first | strip | escape
+
+  if shop.metafields.bc-sf-filter.settings contains 'filterTreeHorizontalStyle'
+  	assign filter_tree_horizontal_style = shop.metafields.bc-sf-filter.settings | split: 'general":' | last | split: 'filterTreeHorizontalStyle":"' | last | split: '","' | first | strip | escape
+  else
+   assign filter_tree_horizontal_style = 'style1'
+  endif
+
+  if shop.metafields.bc-sf-filter.settings contains 'stickyFilterOnDesktop'
+  	assign enable_filter_sticky_d = shop.metafields.bc-sf-filter.settings | split: 'general":' | last | split: 'stickyFilterOnDesktop":' | last | split: ',' | first | strip | escape
+  else
+   assign enable_filter_sticky_d = false
+  endif
+
+	assign enable_filter_sticky_m = shop.metafields.bc-sf-filter.settings | split: 'general":' | last | split: 'stickyFilterOnMobile":' | last | split: ',' | first |  split: '}}' | first | strip | escape
+
+  assign switch_layout_filter = 'switch_layout_filter_vertical'
+
+  assign verticalStyleOffCanvas = false
+  if switch_layout_filter == 'switch_layout_filter_vertical' and filter_tree_vertical_style == 'style-off-canvas'
+  assign verticalStyleOffCanvas = true
+  endif
+
+  assign verticalStyleExpand = false
+  if switch_layout_filter == 'switch_layout_filter_vertical' and filter_tree_vertical_style == 'style-expand'
+    assign verticalStyleExpand = true
+  endif
+
+  assign horizontalStyleExpand = false
+  if switch_layout_filter == 'switch_layout_filter_horizontal' and filter_tree_horizontal_style == 'style-expand'
+    assign horizontalStyleExpand = true
+  endif
+
+  assign enable_filter_tree_button_desktop = false
+  if verticalStyleOffCanvas == true or verticalStyleExpand == true or horizontalStyleExpand == true
+    assign enable_filter_tree_button_desktop = true
+  endif
+
+	if shop.metafields.boostpfs-settings.labelTranslations.type != nil
+   assign boost_translations = shop.metafields.boostpfs-settings.labelTranslations.value
+  else
+   assign boost_translations = shop.metafields.boostpfs-settings.labelTranslations
+  endif
+  assign boost_settings = shop.metafields.bc-sf-filter.settings
+	assign boost_in_collection_search = boost_settings | split: 'enableCollectionSearch":' | last | split: ',"' | first | split: '}' | first | strip
+	assign current_locale = request.locale.iso_code
+	assign primary_locale = current_locale
+	for locale in shop.published_locales
+		if locale.primary
+			assign primary_locale = locale.iso_code
+			break
+		endif
+	endfor
+	assign label_toolbar_viewas = boost_translations[current_locale].defaultTheme.toolbarViewAs | default:  boost_translations[primary_locale].defaultTheme.toolbarViewAs | escape
+	assign label_items_with_count_one = boost_translations[current_locale].defaultTheme.toolbarProduct | default:  boost_translations[primary_locale].defaultTheme.toolbarProduct | escape
+	assign label_items_with_count_other = boost_translations[current_locale].defaultTheme.toolbarProducts | default:  boost_translations[primary_locale].defaultTheme.toolbarProducts | escape
+	assign label_sale = boost_translations[current_locale].defaultTheme.productItemSale | default:  boost_translations[primary_locale].defaultTheme.productItemSale | escape
+	assign label_soldout = boost_translations[current_locale].defaultTheme.productItemSoldOut | default:  boost_translations[primary_locale].defaultTheme.productItemSoldOut | escape
+	assign label_from = boost_translations[current_locale].defaultTheme.productItemFrom | default:  boost_translations[primary_locale].defaultTheme.productItemFrom | escape
+  assign label_sale_percent = 'percent' | escape
+
+	assign layout_type = shop.metafields.pfs-default-theme.layout_type | default: 'box'
+  assign show_collection_image = shop.metafields.pfs-default-theme.show_collection_image
+  assign show_collection_des = shop.metafields.pfs-default-theme.show_collection_des
+  assign collection_header_bg = shop.metafields.pfs-default-theme.collection_header_bg | default: ''
+  assign collection_header_text = shop.metafields.pfs-default-theme.collection_header_text | default: ''
+
+	assign show_view_as = shop.metafields.pfs-default-theme.show_view_as
+	assign show_product_count = shop.metafields.pfs-default-theme.show_product_count
+	assign show_sort_by = shop.metafields.pfs-default-theme.show_sort_by
+	assign show_view_as_m = shop.metafields.pfs-default-theme.show_view_as_m
+	assign show_product_count_m = shop.metafields.pfs-default-theme.show_product_count_m
+	assign show_sort_by_m = shop.metafields.pfs-default-theme.show_sort_by_m
+	assign view_as_type = shop.metafields.pfs-default-theme.view_as_type | default: 'view_as_type_list_grid_multi_col'
+
+  assign product_item_type = shop.metafields.pfs-default-theme.product_item_type | default: 'grid'
+  assign product_item_layout = shop.metafields.pfs-default-theme.product_item_layout | default: 'no-border'
+  assign text_alignment = shop.metafields.pfs-default-theme.text_alignment | default: 'left'
+	assign show_vendor = shop.metafields.pfs-default-theme.show_vendor
+	assign show_price = shop.metafields.pfs-default-theme.show_price
+  assign show_product_review = shop.metafields.pfs-default-theme.show_product_review | default: false
+  assign show_detail_when_hover = shop.metafields.pfs-default-theme.show_detail_when_hover | default: false
+  assign active_image_swap = shop.metafields.pfs-default-theme.active_image_swap
+
+  assign aspect_ratio = shop.metafields.pfs-default-theme.aspect_ratio | default: 'auto'
+	assign aspect_ratio_other = shop.metafields.pfs-default-theme.aspect_ratio_other | default: ''
+	assign product_img_crop = shop.metafields.pfs-default-theme.product_img_crop | default: 'none'
+
+  assign products_per_page = shop.metafields.pfs-default-theme.products_per_page | default: 15
+  assign products_per_row = shop.metafields.pfs-default-theme.products_per_row | default: 3
+	assign products_per_row_m = shop.metafields.pfs-default-theme.products_per_row_m | default: 2
+
+  assign product_title_color = shop.metafields.pfs-default-theme.product_title_color
+  assign product_title_font = shop.metafields.pfs-default-theme.product_title_font
+  assign product_title_size = shop.metafields.pfs-default-theme.product_title_size
+  assign product_title_transform = shop.metafields.pfs-default-theme.product_title_transform
+
+  assign product_vendor_color = shop.metafields.pfs-default-theme.product_vendor_color
+  assign product_vendor_font = shop.metafields.pfs-default-theme.product_vendor_font
+  assign product_vendor_size = shop.metafields.pfs-default-theme.product_vendor_size
+  assign product_vendor_transform = shop.metafields.pfs-default-theme.product_vendor_transform
+
+  assign product_price_color = shop.metafields.pfs-default-theme.product_price_color
+  assign product_old_price_color = shop.metafields.pfs-default-theme.product_old_price_color
+  assign product_sale_price_color = shop.metafields.pfs-default-theme.product_sale_price_color
+  assign product_price_font = shop.metafields.pfs-default-theme.product_price_font
+  assign product_price_size = shop.metafields.pfs-default-theme.product_price_size
+
+  assign product_des_color = shop.metafields.pfs-default-theme.product_des_color
+  assign product_des_font = shop.metafields.pfs-default-theme.product_des_font
+  assign product_des_size = shop.metafields.pfs-default-theme.product_des_size
+
+  assign swatch_enable = shop.metafields.pfs-default-theme.swatch_enable
+  assign show_swatch_tooltip = shop.metafields.pfs-default-theme.show_swatch_tooltip
+  assign swatch_change_img = shop.metafields.pfs-default-theme.swatch_change_img | default: 'hover'
+  assign swatch_by_color_apply = shop.metafields.pfs-default-theme.swatch_by_color_apply
+  assign swatch_by_color_apply_name = shop.metafields.pfs-default-theme.swatch_by_color_apply_name
+  assign swatch_by_color_shape = shop.metafields.pfs-default-theme.swatch_by_color_shape | default: 'circle'
+  assign swatch_by_img_apply = shop.metafields.pfs-default-theme.swatch_by_img_apply
+  assign swatch_by_img_apply_name = shop.metafields.pfs-default-theme.swatch_by_img_apply_name
+  assign swatch_by_img_shape = shop.metafields.pfs-default-theme.swatch_by_img_shape | default: 'circle'
+  assign swatch_by_pro_img_apply = shop.metafields.pfs-default-theme.swatch_by_pro_img_apply
+  assign swatch_by_pro_img_apply_name = shop.metafields.pfs-default-theme.swatch_by_pro_img_apply_name
+  assign swatch_by_pro_img_shape = shop.metafields.pfs-default-theme.swatch_by_pro_img_shape | default: 'circle'
+  assign swatch_by_text_apply = shop.metafields.pfs-default-theme.swatch_by_text_apply
+  assign swatch_by_text_apply_name = shop.metafields.pfs-default-theme.swatch_by_text_apply_name
+  assign swatch_by_text_shape = shop.metafields.pfs-default-theme.swatch_by_text_shape | default: 'square'
+  assign swatch_by_text_bg = shop.metafields.pfs-default-theme.swatch_by_text_bg
+  assign swatch_by_text_color = shop.metafields.pfs-default-theme.swatch_by_text_color
+  assign swatch_by_text_border = shop.metafields.pfs-default-theme.swatch_by_text_border
+
+  assign label_position = shop.metafields.pfs-default-theme.label_position | default: 'bottom_right'
+  assign label_type = shop.metafields.pfs-default-theme.label_type | default: 'rectangle'
+  assign sale_label_enable = shop.metafields.pfs-default-theme.sale_label_enable
+  assign sale_label_display = shop.metafields.pfs-default-theme.sale_label_display | default: 'text'
+  assign sale_label_bg = shop.metafields.pfs-default-theme.sale_label_bg
+  assign sale_label_text = shop.metafields.pfs-default-theme.sale_label_text
+  assign sale_label_img = shop.metafields.pfs-default-theme.sale_label_img
+
+	assign sold_out_enable = shop.metafields.pfs-default-theme.sold_out_enable
+  assign sold_out_display = shop.metafields.pfs-default-theme.sold_out_display | default: 'text'
+  assign sold_out_bg = shop.metafields.pfs-default-theme.sold_out_bg
+  assign sold_out_text = shop.metafields.pfs-default-theme.sold_out_text
+  assign sold_out_img = shop.metafields.pfs-default-theme.sold_out_img
+
+  assign tag_label_enable = shop.metafields.pfs-default-theme.tag_label_enable | default: false
+  assign tag_label_bg = shop.metafields.pfs-default-theme.tag_label_bg
+  assign tag_label_text = shop.metafields.pfs-default-theme.tag_label_text
+-%}
+
+{% capture products_item_settings %}
+	{% if section.settings.equal_height == 'auto' %}boost-pfs-filter-product-item-equal-height-auto {% endif %} {% if section.settings.show_item_swatch_tooltip %}boost-pfs-filter-product-item-show-swatch-tooltip {% endif %} {% if section.settings.show_product_label_image %}boost-pfs-filter-product-item-label-use-img{% endif %} boost-pfs-filter-product-item-label-type-{{ section.settings.product_label_type }} {% if section.settings.product_label_has_border_radius %} boost-pfs-filter-product-item-label-has-border{% endif %} boost-pfs-filter-product-item-show-details-{{ section.settings.show_details_when_hovering }} boost-pfs-filter-product-item-layout-{{ section.settings.product_item_layout }} boost-pfs-filter-product-item-label-{{ section.settings.product_item_label_position }} boost-pfs-filter-product-item-{{ section.settings.swatch_color_display_type }} boost-pfs-filter-swatch-shape-{{ section.settings.swatches_color_shape}} boost-pfs-filter-product-item-text-alignment-{{ section.settings.text_alignment}}  
+{% endcapture %}
+
+
+{% assign products_per_page = section.settings.products_per_page %}
+
+
+<style>
+  {% if collection_header_text != blank %}
+  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description,
+  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-description p,
+  .boost-pfs-filter-collection-header-wrapper .boost-pfs-filter-collection-header,
+  .boost-pfs-search-container .boost-pfs-search-result-header {
+    color: {{ collection_header_text }};
+  }
+  {% endif %}
+
+  {% if collection_header_bg != blank %}
+  .boost-pfs-filter-collection-header-wrapper {
+    background-color: {{ collection_header_bg }};
+  }
+  {% endif %}
+
+  {% if product_title_color != blank or product_title_font != blank or product_title_size != blank or product_title_transform != blank  %}
+    .boost-pfs-filter-product-item-title {
+      {% if product_title_color != blank %}
+          color: {{ product_title_color }};
+      {% endif %}
+
+      {% if product_title_font != blank %}
+      font-family: {{ product_title_font.family }};
+      font-weight: {{ product_title_font.weight }};
+      font-style: {{ product_title_font.style }};
+      {% endif %}
+
+      {% if product_title_transform != blank %}
+      text-transform: {{ product_title_transform }};
+      {% endif %}
+    }
+    {% if product_title_size != blank %}
+      @media (min-width: 768px){
+        .boost-pfs-filter-product-item-title {
+          font-size: {{ product_title_size }}px;
+        }
+      }
+    {% endif %}
+  {% endif %}
+
+  {% if product_vendor_color != blank or product_vendor_size != blank or product_vendor_font != blank or product_vendor_transform != blank  %}
+    .boost-pfs-filter-product-item-vendor {
+      {% if product_vendor_color != blank %}
+      color: {{ product_vendor_color }};
+      {% endif %}
+
+      {% if product_vendor_font != blank %}
+      font-family: {{ product_vendor_font.family }};
+      font-weight: {{ product_vendor_font.weight }};
+      font-style: {{ product_vendor_font.style }};
+      {% endif %}
+
+      {% if product_vendor_transform != blank %}
+      text-transform: {{ product_vendor_transform }};
+      {% endif %}
+    }
+    {% if product_vendor_size != blank %}
+      @media (min-width: 768px){
+        .boost-pfs-filter-product-item-vendor {
+          font-size: {{ product_vendor_size }}px;
+        }
+      }
+    {% endif %}
+  {% endif %}
+  {% if product_price_color != blank or product_price_size != blank or product_price_font != blank or product_price_size != blank   %}
+    .boost-pfs-filter-product-item-price {
+      {% if product_price_color != blank %}
+      color: {{ product_price_color }};
+      {% endif %}
+
+      {% if product_price_font != blank %}
+      font-family: {{ product_price_font.family }};
+      font-weight: {{ product_price_font.weight }};
+      font-style: {{ product_price_font.style }};
+      {% endif %}
+    }
+    {% if product_price_size != blank %}
+      @media (min-width: 768px){
+        .boost-pfs-filter-product-item-price {
+          font-size: {{ product_price_size }}px;
+        }
+      }
+    {% endif %}
+  {% endif %}
+
+  {% if product_old_price_color != blank %}
+  .boost-pfs-filter-product-item-price s {
+    color: {{ product_old_price_color }};
+  }
+  {% endif %}
+
+  {% if product_sale_price_color != blank %}
+  .boost-pfs-filter-product-item-price .boost-pfs-filter-product-item-sale-price {
+    color: {{ product_sale_price_color }};
+  }
+  {% endif %}
+
+  {% if product_des_color != blank or product_des_size != blank or product_des_font != blank %}
+    .boost-pfs-filter-product-item-list .boost-pfs-filter-des {
+      {% if product_des_color != blank %}
+      color: {{ product_des_color }};
+      {% endif %}
+
+      {% if product_des_font != blank %}
+      {% assign product_des_font = product_des_font %}
+      font-family: "{{ product_des_font.family }}";
+      font-weight: {{ product_des_font.weight }};
+      font-style: {{ product_des_font.style }};
+      {% endif %}
+    }
+    {% if product_des_size != blank %}
+      @media (min-width: 768px){
+        .boost-pfs-filter-product-item-list .boost-pfs-filter-des {
+          font-size: {{ product_des_size }}px;
+        }
+      }
+    {% endif %}
+  {% endif %}
+
+  {% if sale_label_bg != blank or sale_label_text != blank %}
+  .boost-pfs-filter-product-item-label .sale {
+    {% if sale_label_bg != blank %}
+    background-color: {{ sale_label_bg }};
+    {% endif %}
+
+    {% if sale_label_text != blank %}
+    color: {{ sale_label_text }};
+    {% endif %}
+  }
+  {% endif %}
+
+  {% if sold_out_bg != blank or sold_out_text != blank %}
+  .boost-pfs-filter-product-item-label .soldout {
+    {% if sold_out_bg != blank %}
+    background-color: {{ sold_out_bg }};
+    {% endif %}
+
+    {% if sold_out_text != blank %}
+    color: {{ sold_out_text }};
+    {% endif %}
+  }
+  {% endif %}
+
+  {% if tag_label_bg != blank or tag_label_text != blank %}
+  .boost-pfs-filter-product-item-label .tag {
+    {% if tag_label_bg != blank %}
+    background-color: {{ tag_label_bg }};
+    {% endif %}
+
+    {% if tag_label_text != blank %}
+    color: {{ tag_label_text }};
+    {% endif %}
+  }
+  {% endif %}
+
+  {% if swatch_by_text_bg != blank or swatch_by_text_color != blank or swatch_by_text_border != blank %}
+  .boost-pfs-filter-item-swatch-type-text>li:not(.boost-pfs-filter-item-swatch-more) {
+    {% if swatch_by_text_bg != blank %}
+    background-color: {{ swatch_by_text_bg }};
+    {% endif %}
+
+    {% if swatch_by_text_color != blank %}
+    color: {{ swatch_by_text_color }};
+    {% endif %}
+
+    {% if swatch_by_text_border != blank %}
+    border-color: {{ swatch_by_text_border }};
+    {% endif %}
+  }
+  {% endif %}
+
+</style>
+
+{% paginate collection.products by products_per_page %}
+<div class="page-width boost-pfs-filter-wrapper-page">
+  {% comment %} TOOLBAR {% endcomment %}
+ 
+  <div class="boost-pfs-filter-default-toolbar">
+    <div class="row no-gutters">
+      <div class="col-12">
+        <div class="boost-pfs-filter-default-toolbar-inner">
+          <div class="row w-100 row no-gutters">
+            <div class="col-12">
+              <div class="sorting-panel">
+                <div class="row no-gutters">
+                  <div class="col-6 col-sm-10 filter-by-block-wrap">
+                    <div class="filter-by-select">
+                      <div class="small-hide">
+                        <span>Filter by</span>
+                        <div class="arrow-wrap">
+                          {% include 'icon-arrow-down' %}
+                        </div>
+                      </div>
+                      <div class="boost-pfs-filter-tree boost-pfs-filter-tree-h filter-list" data-is-desktop>
+                        {%- render 'boost-pfs-filter-skeleton', type: 'filter-tree-h' -%}
+                      </div>
+                      <div class="boost-pfs-filter-tree-mobile-button">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-2 sort-by-select-wap">
+                    <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-custom-sorting boost-pfs-filter-top-sorting">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</div>
+                    <div class="boost-pfs-filter-top-sorting boost-pfs-filter-top-sorting-mobile boost-pfs-filter-custom-sorting">{%- render 'boost-pfs-filter-skeleton', type: 'button' -%}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% comment %} END TOOLBAR {% endcomment %}
+
+
+  {%comment%}   COUNT DOWN FILTER  {%endcomment%}
+  {%if collection.handle==settings.count_down_collection%}
+  {{ 'count_down.css' | asset_url | stylesheet_tag }}
+  <div class="countDown2" class="landing_hero_container">
+	  <div class="landing_left_hero">   
+			   <div class="landing_count_down">
+				   <div class="landing_count_down_text">
+						<span class="landing_days_text lnd">--</span>
+						<div class="landing_label" > DAYS </div>
+				  </div>
+  
+				  <div class="landing_count_down_text">
+						<span class="landing_hours_text lnd" >--</span>
+						<div class="landing_label" > HRS </div>
+				  </div> 
+  
+				  <div class="landing_count_down_text">
+						<span class="landing_minutes_text lnd" >--</span>
+						<div class="landing_label" > MINS </div>
+				  </div>
+  
+				  <div class="landing_count_down_text">
+						<span class="landing_seconds_text lnd" >--</span>
+						<div class="landing_label" > SECS </div>
+				  </div>
+			   </div>
+				<div class="landing_count_down in-live">
+				   <div class="sub-in-live">
+					 <span><a href="#">We are live!</a> </span>
+				   </div>  
+			   </div>
+  
+	  </div>
+	  </div>
+  </div>
+  <script>
+	if(!{{section.settings.show_count_down}}){
+		$(".countDown2").remove();
+	}
+	$('#CountDownCollaction').html($(".countDown2").html());
+	function runTimer(){
+    var mnt="{{section.settings.start_month}}";
+    var ddy="{{section.settings.start_day}}";
+    var hrr="{{section.settings.start_hours}}";
+    var mnn="{{section.settings.start_minute}}";
+    if (mnt.length == 1) mnt="0"+mnt;
+    if (ddy.length == 1) ddy="0"+ddy;
+    if (hrr.length == 1) hrr="0"+hrr;
+    if (mnn.length == 1) mnn="0"+mnn;
+    var dtt="{{section.settings.start_year}}-"+mnt+"-"+ddy+"T"+hrr+":"+mnn+":00"; 
+    var countDownDate = new Date(dtt).getTime();
+    var nowdt='{{"now" | date: "%Y-%m-%dT%H:%M:%S" }}';
+    var x2 = setInterval(function() {
+    var now = new Date(nowdt)
+    now.setSeconds(now.getSeconds() + 1);
+    nowdt=now;
+    var distance = countDownDate - now; 
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    days=""+days+""; hours=""+hours+""; minutes=""+minutes+""; seconds=""+seconds+"";
+    if (days.length == 1) days="0"+days;
+    if (hours.length == 1) hours="0"+hours;
+    if (minutes.length == 1) minutes="0"+minutes;
+    if (seconds.length == 1) seconds="0"+seconds;
+    $(".countDown2").find('.landing_days_text').html(days);
+    $(".countDown2").find('.landing_hours_text').html(hours);
+    $(".countDown2").find('.landing_minutes_text').html(minutes);
+    $(".countDown2").find('.landing_seconds_text').html(seconds);
+    if (distance < 0) {
+    clearInterval(x2);
+ $("#countDown2").find('.landing_days_text').html("00");
+  $("#countDown2").find('.landing_hours_text').html("00");
+  $("#countDown2").find('.landing_minutes_text').html("00");
+  $("#countDown2").find('.landing_seconds_text').html("00");
+  $('.landing_count_down').addClass('alertt')
+    }
+	
+    }, 1000);
+}
+runTimer();
+</script>
+<style>
+	.countDown2 {
+	  margin-bottom: 5px;
+	  margin-top: -5px;
+	}
+  </style>
+{%endif%}
+   {%comment%}  END COUNT DOWN FILTER  {%endcomment%}
+
+
+  <div class="boost-pfs-filter-wrapper">
+    <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v" data-is-mobile></div>
+    <div class="boost-pfs-filter-products asfand  row" data-bc-sort="{{ collection.default_sort_by }}">
+      {% for product in collection.products %}
+        {%- comment %}<locksmith:2a50>{% endcomment -%}
+          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+        {%- comment %}</locksmith:2a50>{% endcomment -%}
+        {% include 'wishl-wishlist', wishl_adder: 'atomic' %}
+          <div class="yotpo bottomLine"
+     data-appkey="x1sQMKFVib1i7wSiNv2wRrMyEgWN75ksizzqyBDD"
+     data-domain="{{shop.permanent_domain | escape }}"
+     data-product-id="{{ product.id }}"
+     data-product-models="{{ product.id }}"
+     data-name="{{ product.title | escape }}"
+     data-url="{{ shop.url }}{{ product.url }}"
+     data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+     data-description="{{ product.description | escape }}"
+     data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+  {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+  {%- assign time_now = 'now' | date: '%s' %}
+  {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+  {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+  {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+  {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+  {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+    {%- assign yotpo_bottomline_obsolete = false %}
+  {%- else %}
+    {%- assign yotpo_bottomline_obsolete = true %}
+  {%- endif %}
+  {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+    {{ product.metafields.yotpo.bottomline }}
+  {%- endif %}
+</div>
+      {% endfor %}
+    </div>
+    <div class="boost-pfs-filter-bottom-pagination boost-pfs-filter-bottom-pagination-default"></div>
+    <div class="boost-pfs-filter-load-more"></div>
+
+    {%- comment -%} start-bc-most-popular-template {%- endcomment -%}
+	<div class="boost-pfs-most-popular-products-wrapper boost-pfs-widget-slider-wrapper boost-pfs-container-default-{{ layout_type }} {{ products_item_settings }}">
+		{%- comment -%} <div class="boost-pfs-most-popular"></div> {%- endcomment -%}
+	</div>
+	{%- comment -%} end-bc-most-popular-template {%- endcomment -%}
+	{%- comment -%} start-bc-recently-viewed-template {%- endcomment -%}
+	<div class="boost-pfs-recent-products-wrapper boost-pfs-widget-slider-wrapper boost-pfs-container-default-{{ layout_type }} {{ products_item_settings }}">
+		{%- comment -%} <div class="boost-pfs-recently-viewed"></div> {%- endcomment -%}
+	</div>
+	{%- comment -%} end-bc-recently-viewed-template {%- endcomment -%}
+
+  </div>
+</div>
+{% endpaginate %}
+
+{%- render 'boost-pfs-theme-config',
+	enable_filter_sticky: enable_filter_sticky,
+	view_as_type: view_as_type,
+	products_per_page: products_per_page,
+	products_per_row: products_per_row,
+	products_per_row_mobile: products_per_row_mobile,
+	show_details_when_hovering: show_details_when_hovering,
+	show_vendor: show_vendor,
+	show_price: show_price,
+	show_sold_out_label: show_sold_out_label,
+	show_sale_label: show_sale_label,
+  	show_sale_percent: show_sale_percent,
+	product_label_type: product_label_type,
+	product_label_has_border_radius: product_label_has_border_radius,
+	active_image_swap: active_image_swap,
+	show_product_review: show_product_review,
+	display_item_swatch: display_item_swatch,
+	swatch_color_display_type: swatch_color_display_type,
+	swatch_color_event_change_image: swatch_color_event_change_image,
+	swatches_color_shape: swatches_color_shape,
+	display_item_swatch_size: display_item_swatch_size,
+	equal_height: equal_height,
+	ratio_width_height_other: ratio_width_height_other,
+	equal_height_crop_image_position: equal_height_crop_image_position,
+	show_label_by_tag: show_label_by_tag,
+	show_product_label_image: show_product_label_image,
+	product_label_image_sale: product_label_image_sale,
+	product_label_image_sold_out: product_label_image_sold_out,
+	product_item_type: product_item_type,
+	label_soldout: label_soldout,
+	label_sale: label_sale,
+	label_from: label_from,
+	label_toolbar_viewas: label_toolbar_viewas,
+	label_items_with_count_one: label_items_with_count_one,
+	label_items_with_count_other: label_items_with_count_other,
+    tag_label_enable: tag_label_enable
+-%}
+
+{% schema %}
+ {
+	"name": "Collection pages",
+	"settings": [
+		{
+			"type": "header",
+			"content": "For Filter"
+		},
+		{
+			"type": "radio",
+			"id": "switch_layout_filter",
+			"label": "Switch Layout Filter",
+			"options": [
+				{
+					"value": "switch_layout_filter_vertical",
+					"label": "Vertical Filter"
+				},
+				{
+					"value": "switch_layout_filter_horizontal",
+					"label": "Horizonal Filter"
+				}
+			],
+			"default": "switch_layout_filter_horizontal"
+		},
+    	{
+			"type": "checkbox",
+			"id": "enable_filter_sticky",
+			"label": "Enable Filter Sticky on Desktop",
+			"default": false
+		},
+    	{
+			"type": "checkbox",
+			"id": "toolbar_filter_sticky_mobile",
+			"label": "Enable Filter Toolbar Sticky on Mobile",
+			"default": true
+		},
+    	{
+			"type": "radio",
+			"id": "filter_layout",
+			"label": "Filter Layout",
+			"options": [
+				{
+					"value": "filter_layout_default",
+					"label": "Filter Layout Default"
+				},
+				{
+					"value": "filter_layout_collapse",
+					"label": "Filter Layout Collapse"
+				},
+				{
+					"value": "filter_layout_slide",
+					"label": "Filter Layout Slide (Only work on Vertical Layout)"
+				}
+			],
+			"default": "filter_layout_default"
+		},
+    	{
+			"type": "header",
+			"content": "For Layout Page"
+		},
+		{
+			"type": "radio",
+			"id": "layout_type",
+			"label": "Layout Type",
+			"options": [
+				{
+				"value": "box",
+				"label": "Box"
+				},
+				{
+				"value": "fullwidth",
+				"label": "Full Width"
+				}
+			],
+			"default": "box"
+		},
+		{
+			"type": "header",
+			"content": "Collection Header"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_collection_image",
+			"label": "Show Collection Image",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_collection_des",
+			"label": "Show Collection Description",
+			"default": true
+		},
+		{
+			"type": "color",
+			"id": "collection_header_bg_color",
+			"label": "Collection Header Background Color"
+		},
+		{
+			"type": "color",
+			"id": "collection_header_text_color",
+			"label": "Collection Header Text Color"
+		},
+    	{
+			"type": "header",
+			"content": "Toolbar"
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_view_as",
+			"label": "Show - View As",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_product_count",
+			"label": "Show - Product Count",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_sort_by",
+			"label": "Show - Sort By",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_view_as_mobile",
+			"label": "Show - View As - Mobile",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_product_count_mobile",
+			"label": "Show - Product Count - Mobile",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_toolbar_sort_by_mobile",
+			"label": "Show - Sort By - Mobile",
+			"default": true
+		},
+		{
+			"type": "radio",
+			"id": "view_as_type",
+			"label": "View As Type",
+			"options": [
+				{
+				"value": "view_as_type_grid_list",
+				"label": "Grid/List"
+				},
+				{
+				"value": "view_as_type_list_grid_multi_col",
+				"label": "List/Grid Multi Column (Only works on Desktop)"
+				}
+			],
+			"default": "view_as_type_grid_list"
+		},
+		{
+			"type": "header",
+			"content": "Product List"
+		},
+		{
+			"type": "range",
+			"id": "products_per_page",
+			"label": "Products per page",
+			"min": 2,
+			"max": 50,
+			"step": 1,
+			"default": 24
+		},
+		{
+			"type": "range",
+			"id": "products_per_row",
+			"label": "Products per row on Desktop",
+			"min": 2,
+			"max": 6,
+			"step": 1,
+			"default": 4
+		},
+		{
+			"type": "range",
+			"id": "products_per_row_mobile",
+			"label": "Products per row on Mobile",
+			"min": 1,
+			"max": 3,
+			"step": 1,
+			"default": 2
+		},
+		{
+			"type": "header",
+			"content": "Product Item"
+		},
+		{
+			"type": "select",
+			"id": "product_item_type",
+			"label": "Product Item Type",
+			"options": [
+			{
+				"value": "grid",
+				"label": "Grid"
+			},
+			{
+				"value": "list",
+				"label": "List"
+			}],
+			"default": "grid"
+		},
+		{
+			"type": "select",
+			"id": "product_item_layout",
+			"label": "Product Item Layout",
+			"options": [
+				{
+					"value": "no-border",
+					"label": "No Border (Default)"
+				},
+				{
+					"value": "border-no-padding",
+					"label": "Border No Padding"
+				},
+				{
+					"value": "border-no-padding-img",
+					"label": "Border No Padding Image"
+				},
+				{
+					"value": "border-has-padding",
+					"label": "Border Has Padding"
+				}
+			],
+			"default": "no-border"
+		},
+		{
+			"type": "select",
+			"id": "text_alignment",
+			"label": "Text alignment",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "left",
+			"info": "Use this setting for Product type Grid"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_details_when_hovering",
+			"label": "Show details when hovering",
+			"default": false,
+			"info": "This setting only works on Desktop"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_vendor",
+			"label": "Show product vendor",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_price",
+			"label": "Show price",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "active_image_swap",
+			"label": "Active image swap",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_product_review",
+			"label": "Show product review",
+			"default": false,
+			"info": "Use this setting when store has product reviews integration"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Label"
+		},
+		
+		{
+			"type": "checkbox",
+			"id": "show_sold_out_label",
+			"label": "Show sold out label",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_sale_label",
+			"label": "Show sale label",
+			"default": true
+		},
+    	{
+			"type": "checkbox",
+			"id": "show_sale_percent",
+			"label": "Show sale Percent",
+			"default": false
+		},
+		{
+			"type": "checkbox",
+			"id": "product_label_has_border_radius",
+			"label": "Has Border Radius",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_label_by_tag",
+			"label": "Enable the Custom Label By Tag",
+			"default": false,
+			"info": "Please refer [this link](https:\/\/help.boostcommerce.net\/article\/475-how-to-create-custom-label-by-tag-in-the-default-theme) to create a Custom Label By Tag!"
+		},
+		{
+			"type": "select",
+			"id": "product_item_label_position",
+			"label": "Product Label Position",
+			"default": "center",
+			"options": [
+			{
+				"value": "top_left",
+				"label": "Top Left"
+			},
+			{
+				"value": "top_right",
+				"label": "Top Right"
+			},
+			{
+				"value": "bottom_left",
+				"label": "Bottom Left"
+			},
+			{
+				"value": "bottom_right",
+				"label": "Bottom Right"
+			}],
+			"default": "top_left"
+		},
+		{
+			"type": "select",
+			"id": "product_label_type",
+			"label": "Product Label Type",
+			"options": [
+				{
+					"value": "rectangle",
+					"label": "Rectangle"
+				},
+				{
+					"value": "circle",
+					"label": "Circle"
+				}
+			],
+			"default": "rectangle"
+		},
+		{
+			"type": "color",
+			"id": "product_item_label_bg_color",
+			"label": "Background Color"
+		},
+		{
+			"type": "color",
+			"id": "product_item_label_text_color",
+			"label": "Text Color"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_product_label_image",
+			"label": "Use Product Label Image",
+			"default": false
+		},
+	 	{
+			"type": "image_picker",
+			"id": "product_label_image_sale",
+			"label": "Upload Product Label Sale"
+		},
+		{
+			"type": "image_picker",
+			"id": "product_label_image_sold_out",
+			"label": "Upload Product Label Sold Out "
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Title"
+		},
+		{
+			"type": "color",
+			"id": "product_item_title_color",
+			"label": "Title",
+			"default": "#3d4246"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_title_font",
+			"label": "Font",
+			"default": "poppins_n6"
+		},
+		{
+			"type": "range",
+			"id": "product_item_title_font_size",
+			"label": "Product Item Title - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Vendor"
+		},
+		{
+			"type": "color",
+			"id": "product_item_vendor_color",
+			"label": "Vendor",
+			"default": "#969595"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_vendor_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_vendor_font_size",
+			"label": "Product Item Vendor - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 12,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Price"
+		},
+		{
+			"type": "color",
+			"id": "product_item_price_color",
+			"label": "Price",
+			"default": "#222"
+		},
+		{
+			"type": "color",
+			"id": "product_item_old_price_color",
+			"label": "Old Price",
+			"default": "#969595"
+		},
+		{
+			"type": "color",
+			"id": "product_item_sale_price_color",
+			"label": "Sale Price",
+			"default": "#f30000"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_price_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_price_font_size",
+			"label": "Product Item Price - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Description"
+		},
+		{
+			"type": "color",
+			"id": "product_item_des_color",
+			"label": "Description Color",
+			"default": "#3a3a3a"
+		},
+		{
+			"type": "font_picker",
+			"id": "product_item_des_font",
+			"label": "Font",
+			"default": "poppins_n4"
+		},
+		{
+			"type": "range",
+			"id": "product_item_des_font_size",
+			"label": "Product Item Description - Font Size",
+			"min": 10,
+			"max": 30,
+			"step": 1,
+			"default": 14,
+			"unit": "px"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Swatch Color"
+		},
+		{
+			"type": "checkbox",
+			"id": "display_item_swatch",
+			"label": "Enable Display Item Swatch",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_item_swatch_tooltip",
+			"label": "Show Item Swatch Tooltip",
+			"default": true
+		},
+		{
+			"type": "radio",
+			"id": "swatch_color_display_type",
+			"label": "Display Type",
+			"options": [
+				{
+					"value": "swatch_color_display_type_color",
+					"label": "Color"
+				},
+				{
+					"value": "swatch_color_display_type_image_color",
+					"label": "Color Image"
+				},
+				{
+					"value": "swatch_color_display_type_image_product",
+					"label": "Product Image"
+				}
+			],
+			"default": "swatch_color_display_type_image_product",
+			"info": "Please refer [this link](https:\/\/help.boostcommerce.net\/article\/417-how-to-config-the-product-item-layout-in-our-default-theme#a5) about 3 display types of Color swatches!"
+		},
+		{
+			"type": "radio",
+			"id": "swatch_color_event_change_image",
+			"label": "Change Image When Hovering swatch icon",
+			"options": [
+				{
+					"value": "none",
+					"label": "None"
+				},
+				{
+					"value": "hover",
+					"label": "Hover"
+				},
+				{
+					"value": "click",
+					"label": "Click"
+				}
+			],
+			"default": "hover"
+		},
+		{
+			"type": "radio",
+			"id": "swatches_color_shape",
+			"label": "Swatch shape",
+			"options": [
+				{
+					"value": "circle",
+					"label": "Circle"
+				},
+				{
+					"value": "square",
+					"label": "Square"
+				}
+			],
+			"default": "circle"
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Swatch Size"
+		},
+		{
+			"type": "checkbox",
+			"id": "display_item_swatch_size",
+			"label": "Display Swatch Size",
+			"default": false
+		},
+		{
+			"type": "header",
+			"content": "Product Item - Equal Height"
+		},
+		{
+			"type": "select",
+			"id": "equal_height",
+			"label": "Product image aspect ratio (Width x Height)",
+			"options": [
+        {
+          "value": "false",
+          "label": "Disabled"
+        },
+        {
+          "value": "auto",
+          "label": "Auto"
+        },
+        {
+          "value": "1:1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "2:3",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "4:3",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "other",
+          "label": "Manual ratio below"
+        }
+			],
+			"default": "auto",
+			"info": "For best results [all product photos should be the same ratio](https:\/\/help.shopify.com\/manual\/productivity-tools\/image-editor#image-aspect-ratio)"
+		},
+		{
+			"type": "text",
+			"id": "ratio_width_height_other",
+			"label": "Example: 6:7",
+			"info": "If the ratios above is not suitable for your store, could you please enter your aspect ratio (Width x Height) in the form below?"
+		},
+		{
+			"type": "select",
+			"id": "equal_height_crop_image_position",
+			"label": "Equal Height Crop Image Position",
+			"options": [
+				{
+					"value": "top",
+					"label": "Top"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "bottom",
+					"label": "Bottom"
+				}
+			],
+			"default": "center"
+		},
+		{
+			"type": "header",
+			"content": "Start date for COUNTDOWN"
+		  },
+		{
+		  "type": "range",
+		  "id": "start_year",
+		  "label": "Year",
+			"min": 2021,
+			"max": 2030,
+			"step": 1,
+		  "default": 2022
+		},
+		{
+		  "type": "range",
+		  "id": "start_month",
+		  "label": "Month",
+			"min": 1,
+			"max": 12,
+			"step": 1,
+		  "default": 10
+		},
+	   {
+		  "type": "range",
+		  "id": "start_day",
+		  "label": "Day",
+			"min": 1,
+			"max": 31,
+			"step": 1,
+		  "default": 6
+		},
+	   {
+		  "type": "range",
+		  "id": "start_hours",
+		  "label": "Hours",
+			"min": 0,
+			"max": 23,
+			"step": 1,
+		  "default": 22
+		},
+	   {
+		  "type": "range",
+		  "id": "start_minute",
+		  "label": "Minute",
+			"min": 0,
+			"max": 60,
+			"step": 1,
+		  "default":38
+		},
+		 {
+		  "type": "checkbox",
+		  "id": "show_count_down",
+		  "label": "Show count down",
+		  "default": true
+		},
+		  {
+		  "type": "url",
+		  "id": "live-link",
+		  "label": "Live URL"
+		}  
+	]
+}
+{% endschema %}

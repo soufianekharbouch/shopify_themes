@@ -1,0 +1,286 @@
+<div class="landing_hero_container">
+
+    <div class="landing_left_hero">
+    
+        {%if section.settings.show_count_down %}
+             <div class="landing_count_down">
+                <div class="landing_count_down_text_label">
+                  Next live<br>show in:
+                </div>
+
+                 <div class="landing_count_down_text">
+                      <span class="landing_days_text lnd">--</span>
+                      <div class="landing_label" > DAYS </div>
+                </div>
+
+                <div class="landing_count_down_text">
+                      <span class="landing_hours_text lnd" >--</span>
+                      <div class="landing_label" > HRS </div>
+                </div> 
+
+                <div class="landing_count_down_text">
+                      <span class="landing_minutes_text lnd" >--</span>
+                      <div class="landing_label" > MINS </div>
+                </div>
+
+                <div class="landing_count_down_text">
+                      <span class="landing_seconds_text lnd" >--</span>
+                      <div class="landing_label" > SECS </div>
+                </div>
+             </div>
+              <div class="landing_count_down in-live">
+                 <div class="sub-in-live">
+                   <span><a href="{{section.settings.live-link}}">We are live!</a> </span>
+                 </div>  
+             </div>
+        {%else%}
+             <div class="landing_count_down">
+                 <div class="sub-in-off">
+                   <span><a href="{{section.settings.live-link}}">{{section.settings.custom_text}}</a> </span>
+                 </div> 
+             </div>
+        {%endif%}
+
+           <div class="landing_button_text">
+              <div class="landing_logo_text">
+              </div>
+              <div class="landing_logo_text_content-hero h_strhead">
+                  {{section.settings.content}}<br>
+                 <a href="{{section.settings.link}}">
+                     <button class="landing_hero_btn h_str" >
+                         {{section.settings.btn_setreminder_text}}
+                     </button>
+                 </a>
+              </div>
+
+           </div>
+           
+    </div>
+
+
+
+
+    <div class="landing_right_hero">
+      
+<div class="owl-one owl-carousel owl-theme">
+ {% for block in section.blocks %}
+     <div class="item item-hero" style="background:url('{{block.settings.image_slide | img_url: '4000x' }}');background-size:100% 100%;" ></div>
+ {%endfor%}
+</div>
+
+     
+</div>
+
+
+    </div>
+    
+   
+</div>
+
+<script>
+ $('.owl-one').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:5000,
+    smartSpeed: 2000,
+     autoplayHoverPause:true,
+    navText:["<div class='nav-btn prev-slide'><svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z'/></svg></div>","<div class='nav-btn next-slide'><svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z'/></svg></div>"],
+    responsive:{
+        0:{
+            items:1
+        },
+         320:{
+            items:1
+        },
+         375:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+         768:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
+</script>
+
+
+<style>
+.landing_logo_text{
+     background:url("{{section.settings.image_logo | img_url: '1000x'}}");
+}
+</style>
+
+{%if section.settings.show_count_down %}
+<script>
+   var mnt="{{section.settings.start_month}}";
+    var ddy="{{section.settings.start_day}}";
+    var hrr="{{section.settings.start_hours}}";
+    var mnn="{{section.settings.start_minute}}";
+    if (mnt.length == 1) mnt="0"+mnt;
+    if (ddy.length == 1) ddy="0"+ddy;
+    if (hrr.length == 1) hrr="0"+hrr;
+    if (mnn.length == 1) mnn="0"+mnn;
+   var dtt="{{section.settings.start_year}}-"+mnt+"-"+ddy+"T"+hrr+":"+mnn+":00";
+   // var dtt="2021-10-13T12:25:00";
+var countDownDate = new Date(dtt).getTime();
+var nowdt='{{"now" | date: "%Y-%m-%dT%H:%M:%S" }}';
+
+//var countDownDate = new Date("2022-10-10T18:35:00").getTime();
+var x = setInterval(function() {
+ 
+  // Get today's date and time 
+  var now = new Date(nowdt)
+  now.setSeconds(now.getSeconds() + 1);
+  nowdt=now;
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now; 
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  days=""+days+""; hours=""+hours+""; minutes=""+minutes+""; seconds=""+seconds+"";
+
+  if (days.length == 1) days="0"+days;
+    if (hours.length == 1) hours="0"+hours;
+    if (minutes.length == 1) minutes="0"+minutes;
+    if (seconds.length == 1) seconds="0"+seconds;
+ $('.landing_days_text').html(days);
+ $('.landing_hours_text').html(hours);
+ $('.landing_minutes_text').html(minutes);
+ $('.landing_seconds_text').html(seconds);
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+ $('.landing_days_text').html("00");
+ $('.landing_hours_text').html("00");
+ $('.landing_minutes_text').html("00");
+ $('.landing_seconds_text').html("00");
+  }
+}, 1000);
+
+</script>
+{%endif%}
+
+{% schema %}
+{
+  "name": "HERO LANDING PAGE",
+  "settings": [ 
+     {
+        "type": "header",
+        "content": "Start date for COUNTDOWN"
+      },
+         {
+      "type": "image_picker",
+      "id": "image_logo",
+      "label": "Image Logo" 
+    },
+    {
+      "type": "range",
+      "id": "start_year",
+      "label": "Year",
+        "min": 2021,
+        "max": 2030,
+        "step": 1,
+      "default": 2021
+    },
+    {
+      "type": "range",
+      "id": "start_month",
+      "label": "Month",
+        "min": 1,
+        "max": 12,
+        "step": 1,
+      "default": 10
+    },
+   {
+      "type": "range",
+      "id": "start_day",
+      "label": "Day",
+        "min": 1,
+        "max": 31,
+        "step": 1,
+      "default": 6
+    },
+   {
+      "type": "range",
+      "id": "start_hours",
+      "label": "Hours",
+        "min": 0,
+        "max": 23,
+        "step": 1,
+      "default": 22
+    },
+   {
+      "type": "range",
+      "id": "start_minute",
+      "label": "Minute",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+      "default":38
+    },
+     {
+      "type": "checkbox",
+      "id": "show_count_down",
+      "label": "Show count down",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_text",
+      "label": "Text if count down Off",
+      "default": "Default custom text when count down is off!"
+    },
+      {
+      "type": "url",
+      "id": "live-link",
+      "label": "Live URL"
+    },
+  
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Text",
+      "default": "Americas #1 most watched livestream skincare show."
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button URL"
+    },
+     {
+      "type": "text",
+      "id": "btn_setreminder_text",
+      "label": "Button Text",
+      "default": "SET REMINDER"
+    }
+    
+  ],
+    "blocks": [
+    {
+      "type": "feature",
+      "name": "Slide Show",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_slide",
+          "label": "Image"
+        }
+    
+      ]
+    }
+  ]
+}
+{% endschema %}
+

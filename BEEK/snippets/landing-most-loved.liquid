@@ -1,0 +1,58 @@
+{% if block.settings.most-loved-enabled %}
+  <div class="row most__loved-wrap">
+    {% if block.settings.most-loved-title != blank %}
+      <h2 class="section__title col-12">{{ block.settings.most-loved-title | escape }}</h2>
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product1] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product2] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product3] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product4] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product5] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' with additional_class: "mobile_hidden" %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product6] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' with additional_class: "mobile_hidden" %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product7] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' with additional_class: "mobile_hidden" %}
+    {% endif %}
+
+    {%- assign product = all_products[block.settings.product8] -%}
+    {% if product.title.size > 0 %}
+      {% include 'most-loved-product-item' with additional_class: "mobile_hidden" %}
+    {% endif %}
+
+    <div class="col-12 shop__all-wrap">
+      <a href="{{ block.settings.url | default: "#" }}" class="shop-all-item">
+        {% if block.settings.btn_text != blank %}
+          <p>{{ block.settings.btn_text | escape }}</p>
+        {% else %}
+          <p>Shop All</p>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+{% endif %}
+<link type="text/css" href="{{ 'custom_css_wishl_icon.css' | asset_url }}" rel="stylesheet">

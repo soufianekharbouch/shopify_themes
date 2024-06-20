@@ -1,0 +1,361 @@
+{% comment %}
+This is a required section for the Shopify Theme Store.
+It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+
+{% for block in section.blocks %}
+    {% case block.type %}
+
+      {% when 'new-facial-discover' %}
+        {% include 'new-facial-discover' %}
+
+        {% when 'new-facial-how-it-works' %}
+            {% include 'new-facial-how-it-works' %}
+
+    {% endcase %}
+  {% endfor %}
+
+  {% schema %}
+    {
+      "name": "New Facial Landing",
+      "blocks": [
+        {
+          "type": "new-facial-discover",
+          "name": "New Facial Discover",
+          "settings": [
+            {
+              "id":"desktop_hero_image",
+              "type":"image_picker",
+              "label":"Desktop Hero Image"
+            },
+            {
+              "id":"mobile_hero_image",
+              "type":"image_picker",
+              "label":"Mobile Hero Image"
+            },
+            {
+              "id":"discover_heading",
+              "type":"text",
+              "label":"Discover Heading",
+              "default":"Discover the power of goat milk skincare"
+            },
+            {
+              "id":"discover_text",
+              "type":"text",
+              "label":"Discover Text",
+              "default":"Your skin deservs better. STOP using products that sensitize your skin and START using products that nourish your skin’s microbiome."
+            },
+            {
+              "type": "url",
+              "id": "discover_button_link",
+              "label": "Mobile Button URL"
+            },
+            {
+              "type": "text",
+              "id": "discover_button_label",
+              "label": "Mobile Button Label",
+              "default": "Get Started"
+            }
+          ]
+        },
+        {
+          "type": "new-facial-how-it-works",
+          "name": "New Facial How It Works",
+          "settings": [
+            {
+              "id":"hiw_section_heading",
+              "type":"text",
+              "label":"Section Heading",
+              "default":"How It Works"
+            },
+            {
+              "id":"hiw_section_desc",
+              "type":"text",
+              "label":"Section Description",
+              "default":"This tool will assess your skin’s microbiome  and curate a list of all the Beekman 1802 products you’ll need for optimal skin health."
+            },
+            {
+              "id":"hiw_step1_image",
+              "type":"image_picker",
+              "label":"Setp 1 Image"
+            },
+            {
+              "id":"hiw_step1_title",
+              "type":"text",
+              "label":"Step 1 Title",
+              "default":"Step 1: take a selfie"
+            },
+            {
+              "id":"hiw_step1_text1",
+              "type":"text",
+              "label":"Step 1 Text1",
+              "default":"Your selfie will be taken directly in the app, you can not upload an image."
+            },
+            {
+              "id":"hiw_step1_text2",
+              "type":"text",
+              "label":"Step 1 Text2",
+              "default":"You need good lighting, clean skin, neutral expression and eyes open."
+            },
+            {
+              "id":"hiw_step2_image",
+              "type":"image_picker",
+              "label":"Setp 2 Image"
+            },
+            {
+              "id":"hiw_step2_title",
+              "type":"text",
+              "label":"Step 2 Title",
+              "default":"Step 2: Review Results"
+            },
+            {
+              "id":"hiw_step2_text1",
+              "type":"text",
+              "label":"Step 2 Text1",
+              "default":"Review your skin health and uncover opportunities to balance your microbiome."
+            },
+            {
+              "id":"hiw_step2_text2",
+              "type":"text",
+              "label":"Step 2 Text2",
+              "default":"Select the skin concern you would like to focus on and review your skin biome matrix and  products tailored for your needs."
+            },
+            {
+              "id":"hiw_step3_image",
+              "type":"image_picker",
+              "label":"Setp 3 Image"
+            },
+            {
+              "id":"hiw_step3_title",
+              "type":"text",
+              "label":"Step 3 Title",
+              "default":"Step 3: Review Products"
+            },
+            {
+              "id":"hiw_step3_text1",
+              "type":"text",
+              "label":"Step 3 Text1",
+              "default":"Review your skin health and uncover opportunities to balance your microbiome."
+            }
+          ]
+        }
+      ]
+  }
+  {% endschema %}
+
+  {% stylesheet %}
+@media (max-width: 1440px){
+.new-facial-bottom-hero .hero-wrap {
+margin-top: -100px;
+}
+}
+  .new-facial-bottom-hero .hero-wrap {
+      position: relative
+  }
+  .new-facial-bottom-hero .hero-wrap img {
+      width: 100%;
+      max-height: 344px;
+      min-height:290px;
+  }
+  .new-facial-bottom-hero .content__area {
+      position: absolute;
+      top: 6.5rem;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100%;
+      padding: 0 2rem;
+      text-align: center;
+  }
+  .new-facial-bottom-hero .content-area-heading .discover-heading-text {
+      color: #4a5761;
+      font-family: Avenir Next,Arial,Helvetica;
+      font-size: 24px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      line-height: 2.9rem;
+      text-align: center;
+      margin: 0 auto 1.5rem;
+      display: block;
+  }
+  .new-facial-bottom-hero .content-area-heading .discover-desc-text {
+      color: #4a5761;
+      font-family: Century OS,Arial,Helvetica;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      margin: 0 auto 1.5rem;
+
+  }
+  .content-area-heading {
+      max-width: 545px;
+  }
+  .new-facial-spacer {
+      margin-top: 40px;
+  }
+
+  .new-facial-bottom-hero .action__wrap .get-started-button {
+      width: 31rem;
+      height: 6.5rem;
+      line-height: 6.5rem;
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: .48px;
+      display: inline-block;
+      text-transform: uppercase;
+      width: 22.3rem;
+      height: 4.5rem;
+      line-height: 4.5rem;
+      font-size: 1.4rem;
+      letter-spacing: .56px;
+      color: #fff;
+      background: #4a5761;
+      text-decoration: none;
+      text-align: center;
+  }
+  .new-facial-bottom-hero .action__wrap {
+      margin-top: 20px;
+  }
+
+  .new-facial-step-title {
+  	background: #FFE900;
+	margin-bottom: 20px;
+  }
+
+  .new-facial-step-desc {
+	position: absolute;
+    background: white;
+    top: 67%;
+	padding: 0 50px 0 50px;
+	height: 200px;
+    left: 0;
+  }
+
+  .new-facial-hiw-section {
+padding-bottom:3%;
+  }
+
+  .new-facial-hiw-section .container {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .new-facial-step-desc-text {
+    display: flex;
+    align-items: flex-start;
+font-family: Century OS;
+  }
+  .new-facial-step-desc-text img {
+    margin-right: 7px;
+  }
+
+  .new-facial-hiw-section h2 {
+	font-family: Avenir Next,Arial,Helvetica;
+	font-size: 30px;
+	font-weight: 500;
+	color: #4a5761;
+letter-spacing: 1px;
+ }
+
+  .new-facial-hiw-section p {
+	font-size: 16px;
+	color: #4a5761;
+	margin: 0 auto 50px;
+	max-width: 500px;
+font-family: century OS;
+ }
+
+  .new-facial-hiw-section .new-facial-container {
+	margin-top: 25px;
+ }
+
+  .new-facial-hiw-section .new-facial-heading-p {
+	margin-top: 10px;
+ }
+
+  .new-facial-step-desc-text .list-heading {
+	font-size: 18px;
+	color: #4a5761;
+	font-family: Avenir Next,Arial,Helvetica;
+
+ }
+  .new-facial-step-title {
+	font-family: Avenir Next,Arial,Helvetica;
+	font-size: 18px;
+	color: #4a5761;
+	line-height: 2;
+letter-spacing: 1px;
+ }
+
+  @media (min-width: 1024px) {
+      .new-facial-bottom-hero .content__area {
+          top: 16.5rem;
+          transform: translate(-50%, -50%)
+      }
+
+      .new-facial-bottom-hero .content-area-heading .discover-heading-text {
+          font-size: 30px;
+          line-height: 1.1;
+          margin: 0 auto 2.5rem;
+          max-width: 50rem
+font-weight: 500;
+      }
+
+      .new-facial-bottom-hero .action__wrap .get-started-button {
+          display: none;
+      }
+  }
+
+  @media (max-width: 1920px) {
+	.new-facial-step-desc {
+		padding: 0 50px;
+  	}
+  }
+
+ @media (max-width: 1670px) {
+	.new-facial-step-desc {
+		padding: 0 25px;
+  	}
+  }
+
+  @media (max-width: 1450px) {
+    .new-facial-hiw-section .new-facial-container .col-lg-3 {
+      padding-right: 15px !important;
+    }
+  }
+ @media (max-width: 1450px) {
+	.new-facial-hiw-section  .new-facial-container {
+		padding-bottom: 100px;
+ }
+  }
+
+  @media (max-width: 780px) {
+    .new-facial-hiw-section  .new-facial-container {
+      padding-bottom: 0px;
+   }
+    }
+    
+ @media (max-width: 991px) {
+    .new-facial-container .col-lg-4{
+        margin-bottom: 50px;
+    }
+ }
+ @media (max-width: 1280px) {
+	.new-facial-step-desc {
+		padding: 0;
+  	}
+  }
+
+ @media (max-width: 1280px) {
+	.new-facial-step-desc {
+		width: 100%;
+    	padding: 0px 25px;
+  	}
+ }
+
+  {% endstylesheet %}
+
+  {% javascript %}
+  {% endjavascript %}

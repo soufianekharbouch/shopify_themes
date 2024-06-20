@@ -1,0 +1,883 @@
+<div class="product-single__tab-group">
+<div class="tab-1 tab-title" style="display:none">
+<p>Delivery & Returns<span>X</span></p>
+</div>
+<div class="tab-1 tab-description" style="display:none">
+<div class="product-single__shippingReturns">
+  <p class="product-single__info">We aim to dispatch all orders within 24 business hours.</p>
+  <div class="shippingReturns-group">
+    <h4 class="shippingReturns-title">UAE</h4>
+    <ul class="shippingReturns-ul">
+      <li class="shippingReturns-list">
+        <img src="https://live.arigatocdn.com/26068fb05ba6d04a18c19754f0a7be7679924fc7/assets/svg/right-arrow-b.svg" alt="Arrow">
+        <div>
+          <span class="product-single__span-content">FREE shipping on all orders above AED 399 (Credit Card).
+AED 30 on orders below AED 399. Next working day delivery.
+</span>
+<!--               <a target="_blank" rel="noopener noreferrer" class="link" href="/pages/shipping-delivery">Read more on Shipping</a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="shippingReturns-group">
+    <h4 class="shippingReturns-title">KSA </h4>
+    <ul class="shippingReturns-ul">
+      <li class="shippingReturns-list">
+        <img src="https://live.arigatocdn.com/26068fb05ba6d04a18c19754f0a7be7679924fc7/assets/svg/right-arrow-b.svg" alt="Arrow">
+        <div>
+          <span class="product-single__span-content">3-4 Working Days - 40 AED (Credit Card).
+All Duties and taxes are paid by Notstitched.
+</span>
+<!--               <a target="_blank" rel="noopener noreferrer" class="link" href="/pages/shipping-delivery">Read more on Returns</a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="shippingReturns-group">
+    <h4 class="shippingReturns-title">All Other GCC Countries</h4>
+    <ul class="shippingReturns-ul">
+      <li class="shippingReturns-list">
+        <img src="https://live.arigatocdn.com/26068fb05ba6d04a18c19754f0a7be7679924fc7/assets/svg/right-arrow-b.svg" alt="Arrow">
+        <div>
+          <span class="product-single__span-content">3-4 Working Days - 50 AED (Credit Card).
+All Duties and taxes are paid by Notstitched.
+</span>
+<!--               <a target="_blank" rel="noopener noreferrer" class="link" href="/pages/shipping-delivery">Read more on Shipping</a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="shippingReturns-group">
+    <h4 class="shippingReturns-title">Rest of the world </h4>
+    <ul class="shippingReturns-ul">
+      <li class="shippingReturns-list">
+        <img src="https://live.arigatocdn.com/26068fb05ba6d04a18c19754f0a7be7679924fc7/assets/svg/right-arrow-b.svg" alt="Arrow">
+        <div>
+          <span class="product-single__span-content">Express Delivery (Credit Card): 5-7 Working Days - 50 AED
+Unless stated above, some other international shipments may have tax and duties applied at the destination country. Customs duties are non refundable once charged.
+</span>
+<!--               <a target="_blank" rel="noopener noreferrer" class="link" href="/pages/shipping-delivery">Read more on Shipping</a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="tab-2 tab-title" style="display:none">
+<p>Sizing & Care <span>X</span></p>
+</div>
+<div class="tab-2 tab-description">
+<div class="product-single__size-guide">
+  <div class="product-single__size content">
+    {% render 'size-chart' %}
+    <div class="description">Measurements in Inches<br><br>
+<!--     Oversized Zip-Up Hoodie (GREY)     -->
+      {% if product.tags contains 'Luna' %} 
+      Luna is 170cm/5’6, she is wearing a size S (Grey) <br>
+      Luna is 170cm/5’6, she is wearing a size M (Navy Blue)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black)
+      {% endif %}
+      {% if product.tags contains 'Pourha' %} 
+      Pourha is 188/6’2, he is wearing a size M (Grey) (Navy Blue)<br>
+      Levi is 180/5’9, he is wearing a size S (Black)
+      {% endif %}
+<!--    Oversized Zip-Up Hoodie Navy Blue     -->
+      {% if product.tags contains 'Tosin' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Navy Blue) <br>
+      Nina is 163cm/5’4, she is wearing a size S (Black)<br>
+      Luna is 170cm/5’6, she is wearing a size S (Grey) 
+      {% endif %}
+<!--     Oversized Zip-Up Hoodie (BLACK)      -->
+      {% if product.tags contains 'Nina' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black)<br>
+      Luna is 170cm/5’6, she is wearing a size S (Grey) <br>
+      Luna is 170cm/5’6, she is wearing a size M (Navy Blue)
+      {% endif %}
+      {% if product.tags contains 'Levi' %} 
+      Levi is 180/5’9, he is wearing a size S (Black)<br>
+      Pourha is 188/6’2, he is wearing a size M (Grey) (Navy Blue)
+      {% endif %}
+<!-- Relaxed Cuffed Joggers (GREY)  -->
+      {% if product.tags contains 'Tosin-Joggers' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Grey)<br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+      {% if product.tags contains 'Pourha-Joggers' %} 
+      Pourha is 188/6’2, he is wearing a size L (Grey) (Navy Blue)<br>
+      Levi is 180/5’9, he is wearing a size L (Black)
+      {% endif %}
+<!--    Relaxed Cuffed Joggers (NAVY BLUE)      -->
+       {% if product.tags contains 'Luna-Joggers' %} 
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Grey)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+<!--      Relaxed Cuffed Joggers (BLACK)    -->
+      {% if product.tags contains 'Nina-Joggers' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black)<br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Grey)
+      {% endif %}
+      {% if product.tags contains 'Levi-Joggers' %} 
+      Levi is 180/5’9, he is wearing a size L (Black)<br>
+      Pourha is 188/6’2, he is wearing a size L (Grey) (Navy Blue)
+      {% endif %}
+<!--     Draped Shoulder Sweater  - Grey   -->
+      {% if product.tags contains 'Tosin-Sweater' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Grey)<br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black)
+      {% endif %}
+      {% if product.tags contains 'Levi-Sweater' %} 
+      Levi is 180/5’9, he is wearing a size S (Grey)<br>
+      Pourha is 188/6’2, he is wearing a size M (Navy Blue)<br>
+      Levi is 180/5’9, he is wearing a size L (Black)  
+      {% endif %}
+<!--    Draped Shoulder Sweater (NAVY BLUE)    -->
+      {% if product.tags contains 'Pourha-Sweater' %} 
+      Pourha is 188/6’2, he is wearing a size M (Navy Blue)<br>
+      Levi is 180/5’9, he is wearing a size S (Grey)<br>
+      Levi is 180/5’9, he is wearing a size L (Black)  
+      {% endif %}
+<!--    Draped Shoulder Sweater (BLACK)    -->
+      {% if product.tags contains 'Nina-Sweater' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Grey)<br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)
+      {% endif %}
+<!--    French Terry Cotton Shorts (GREY)     -->
+      {% if product.tags contains 'Luna-Shorts' %} 
+      Luna is 170cm/5’6, she is wearing a size S (Grey)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Mahnaz is 161cm/5’3, she is wearing a size L (Black)
+      {% endif %}
+      {% if product.tags contains 'Pourha-Shorts' %} 
+      Pourha is 188/6’2, he is wearing a size L (Grey)<br>
+      Levi is 180/5’9, he is wearing a size M (Navy Blue)<br>
+      Levi is 180/5’9, he is wearing a size M (Black)
+      {% endif %}
+<!--    French Terry Cotton Shorts (NAVY BLUE)    -->
+      {% if product.tags contains 'Tosin-Shorts' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Luna is 170cm/5’6, she is wearing a size S (Grey)<br>
+      Mahnaz is 161cm/5’3, she is wearing a size L (Black)
+      {% endif %}
+      {% if product.tags contains 'Levi-Shorts' %} 
+      Levi is 180/5’9, he is wearing a size M (Navy Blue)<br>
+      Pourha is 188/6’2, he is wearing a size L (Grey)<br>
+      Levi is 180/5’9, he is wearing a size M (Black)
+      {% endif %}
+<!--    French Terry Cotton Shorts (BLACK)     -->
+      {% if product.tags contains 'Mahnaz-Shorts' %} 
+      Mahnaz is 161cm/5’3, she is wearing a size L (Black)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Luna is 170cm/5’6, she is wearing a size S (Grey)
+      {% endif %}
+<!--    Freedom Sports Bra (CHARCOAL GREY)     -->
+      {% if product.tags contains 'Tosin-Bra' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey)<br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+<!--    Freedom Sports Bra (NAVY BLUE)     -->
+    {% if product.tags contains 'Mahnaz-Bra' %} 
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey)<br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+{% comment %}    Freedom Sports Bra (BLACK)     {% endcomment %}
+      {% if product.tags contains 'Nina-Bra' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black) <br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey)
+      {% endif %}
+<!--    Airbrushed Leggings (CHARCOAL GREY)     -->
+      {% if product.tags contains 'Tosin-Leggings' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey) <br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue) <br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+<!--    Airbrushed Leggings (NAVY BLUE)     -->
+      {% if product.tags contains 'Mahnaz-Leggings' %} 
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey) <br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+<!--    Airbrushed Leggings (BLACK)     -->
+      {% if product.tags contains 'Nina-Leggings' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black) <br>
+      Rhiana is 178cm/5’8, she is wearing a size S (Navy Blue)<br>
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey)<br>
+      Michelle is 156cm/5’1, she is wearing a size S (Charcoal Grey)
+      {% endif %}
+<!--   Classic Crop (CHARCOAL GREY)      -->
+      {% if product.tags contains 'Tosin-Crop' %} 
+      Tosin is 178cm/5’8, she is wearing a size XS/S (Charcoal Grey) (Navy Blue) <br>
+      Nina is 163cm/5’4, she is wearing a size XS/S (Black)
+      {% endif %}
+<!--    Classic Crop (BLACK)      -->
+      {% if product.tags contains 'Nina-Crop' %} 
+      Nina is 163cm/5’4, she is wearing a size XS/S (Black)<br>
+      Tosin is 178cm/5’8, she is wearing a size XS/S (Charcoal Grey) (Navy Blue) 
+      {% endif %}
+<!--     Knee-high Biker Shorts (CHARCOAL GREY)    -->
+      {% if product.tags contains 'Tosin-Biker-Shorts' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey) (Navy Blue) <br>
+      Nina is 163cm/5’4, she is wearing a size S (Black) 
+      {% endif %}
+<!--    Knee-high Biker Shorts (BLACK)     -->
+      {% if product.tags contains 'Nina-Biker-Shorts' %} 
+      Nina is 163cm/5’4, she is wearing a size S (Black) <br>
+     Tosin is 178cm/5’8, she is wearing a size S (Charcoal Grey) (Navy Blue) 
+      {% endif %}
+<!-- Soft Logo-print T-Shirt (WHITE)  -->
+    {% if product.tags contains 'Tosin-Soft' %} 
+      Tosin is 178cm/5’8, she is wearing a size S (White)<br>
+      Mahnaz is 161cm/5’3, she is wearing a size L (Black) 
+      {% endif %}
+      {% if product.tags contains 'Pourha-Soft' %} 
+      Pourha is 188cm/6’2, he is wearing a size M (White) (Black)
+      {% endif %}
+      <!-- Soft Logo-print T-Shirt (BLACK)  -->
+    {% if product.tags contains 'Mahnaz-Soft' %} 
+    Mahnaz is 161cm/5’3, she is wearing a size L (Black) <br>
+      Tosin is 178cm/5’8, she is wearing a size S (White)
+      {% endif %}
+      <!-- Deform Logo-print T- Shirt (NAVY BLUE) -->
+      {% if product.tags contains 'Luna-Deform' %} 
+      Luna is 170cm/5’6, she is wearing a size S 
+      {% endif %}
+      {% if product.tags contains 'Levi-Deform' %} 
+      Levi is 180cm/5’9, he is wearing a size S  
+      {% endif %}
+      <!-- YOU Oversized zip-up hoodie (FOREST GREEN)  -->
+      {% if product.tags contains 'Luna-You' %} 
+      Luna is 170cm/5’6, she is wearing a size S 
+      {% endif %}
+      {% if product.tags contains 'Levi-You' %} 
+      Levi is 180cm/5’9, he is wearing a size L 
+      {% endif %}
+      <!-- YOU Relaxed Cuffed Joggers (FOREST GREEN) -->
+      {% if product.tags contains 'Pourha-YouJoggers' %} 
+      Pourha is 188/6’2, he is wearing a size L 
+      {% endif %}
+      {% if product.tags contains 'Tosin-YouJoggers' %}
+      {%endif%}
+      <!-- YOU Draped shoulder sweater (FOREST GREEN)  --> 
+      {% if product.tags contains 'Luna-YouSweater' %} 
+      Luna is 170cm/5’6, she is wearing a size S 
+      {% endif %}
+      {% if product.tags contains 'Pourha-YouSweater' %} 
+      Pourha is 188/6’2, he is wearing a size M 
+      {% endif %}
+      <!-- YOU French terry cotton shorts (FOREST GREEN) -->
+      {% if product.tags contains 'You-Luna-Shorts' %} 
+      Luna is 170cm/5’6, she is wearing a size S  
+      {% endif %}
+      {% if product.tags contains 'You-Levi-Shorts' %} 
+      Levi is 180/5’9, he is wearing a size L 
+      {% endif %}
+      <!-- YOU Logo-print T-shirt (FOREST GREEN) -->
+      {% if product.tags contains 'Tosin-You' %} 
+      Tosin is 178cm/5’8, she is wearing a size S
+      {% endif %}
+      {% if product.tags contains 'YOU Logo-print T-shirt-Levi' %} 
+      Levi is 180cm/5’9, he is wearing a size M 
+      {% endif %}
+      <!--  -->
+      {% if product.tags contains 'Pourha-Loos_SS' %} 
+      Pourha is 188cm/6’2, he is wearing a size L 
+      {% endif %}
+      <!--  -->
+      {% if product.tags contains 'Pourha-Classic' %} 
+      Pourha is 188cm/6’2, he is wearing a size L 
+      {% endif %}
+      <!-- Drop Trousers (Faded Blue)  -->
+      {% if product.tags contains 'Drop Trouser' %} 
+      Pourha is 188cm/6’2, he is wearing a size L 
+      {% endif %}
+      <!-- Long Sleeveless Knit Dress (Faded Blue) -->
+      {% if product.tags contains 'Luna-Long' %} 
+      Luna is 170cm/5’6, she is wearing a size XS  
+      {% endif %}
+      <!-- SS Tank Dress (Faded Blue)  -->
+      {% if product.tags contains 'Luna-Tank' %} 
+      Luna is 170cm/5’6, she is wearing a size XS  
+      {% endif %}
+      <!-- Signature Crop Tee (Faded Blue)  -->
+      {% if product.tags contains 'Luna-Signature' %} 
+      Luna is 170cm/5’6, she is wearing a size S  
+      {% endif %}
+            <!-- LS Oversized Shirt (White)   -->
+      {% if product.tags contains 'Luna-LS' %} 
+      Luna is 170cm/5’6, she is wearing a size XS  
+      {% endif %}
+       <!-- Deconstructed Cropped Shirt    -->
+      {% if product.tags contains 'Luna-Deconstructed' %} 
+      Luna is 170cm/5’6, she is wearing a size S  
+      {% endif %}
+      <!-- Wide Leg Pocket Trousers    -->
+      {% if product.tags contains 'Luna-Wide' %} 
+      Luna is 170cm/5’6, she is wearing a size S/M  
+      {% endif %}
+      <!-- Socks    -->
+      {% if product.tags contains 'Socks' %} 
+      One Size  
+      {% endif %}
+      <!-- Logo Cap    -->
+      {% if product.tags contains 'Logo-Cap' %} 
+      One Size  
+      {% endif %}
+      <!-- Logo Bucket Hat     -->
+      {% if product.tags contains 'Logo-Bucket' %} 
+      One Size  
+      {% endif %}
+      {% if product.tags contains 'College Tote Bag' or product.tags contains 'Wellness Tote Bag'%} 
+      One Size  
+      {% endif %}
+      <!-- Essential Hoodie for Women    -->
+      {% if product.tags contains 'Essential Hoodie' and product.tags contains 'women' %} 
+       Rhiana is 178cm/5’8, she is wearing a size S
+      {% endif %}
+      <!-- Essential Hoodie for Men    -->
+      {% if product.tags contains 'Essential Hoodie' and product.tags contains 'men' %} 
+       Pourha is 188/6’2, he is wearing a size L 
+      {% endif %}
+       <!-- Cropped Sweatshirt for Women    -->
+      {% if product.tags contains 'Cropped Sweatshirt' %} 
+       Rhiana is 178cm/5’8, she is wearing a size XS/S 
+      {% endif %}
+      <!-- Stitched Turtleneck Sweater for Men    -->
+      {% if product.tags contains 'Stitched Turtleneck Sweater' %} 
+       Pourha is 188/6’2, he is wearing a size L/XL
+      {% endif %}
+       <!-- Stitched Turtleneck Sweater for Women    -->
+       {% if product.tags contains 'Stitched Turtleneck Sweater Women' %} 
+         Rhiana is 178cm/5’8, she is wearing a size S/M
+      {% endif %}
+      <!-- Logo T-shirt for Women    -->
+      {% if product.tags contains 'Logo T-shirt' and product.tags contains 'women' %} 
+       Rhiana is 178cm/5’8, she is wearing a size S
+      {% endif %}
+      <!-- Logo T-shirt for Men    -->
+      {% if product.tags contains 'Logo T-shirt' and product.tags contains 'men' %} 
+       Pourha is 188/6’2, he is wearing a size L
+      {% endif %}
+      <!-- Cropped Boxy T-shirt for Women    -->
+      {% if product.tags contains 'Cropped Boxy T-shirt' %} 
+       Rhiana is 178cm/5’8, she is wearing a size XS/S
+      {% endif %}
+      <!-- Classic Longsleeve for Women    -->
+      {% if product.tags contains 'Classic Longsleeve' and product.tags contains 'women' %} 
+       Rhiana is 178cm/5’8, she is wearing a size S
+      {% endif %}
+      <!-- Classic Longsleeve for Men    -->
+      {% if product.tags contains 'Classic Longsleeve' and product.tags contains 'men' %} 
+       Pourha is 188/6’2, he is wearing a size L
+      {% endif %}
+      <!-- Cuffed Sweatpants for Men    -->
+      {% if product.tags contains 'Cuffed Sweatpants' %} 
+       Pourha is 188/6’2, he is wearing a size L
+      {% endif %}
+      <!-- Army Field Cargos for Men    -->
+      {% if product.tags contains 'Army Field Cargos' %} 
+       Pourha is 188/6’2, he is wearing a size L
+      {% endif %}
+      <!-- Loose Sweatpants for Women    -->
+      {% if product.tags contains 'Loose Sweatpants' %} 
+       Rhiana is 178cm/5’8, she is wearing a size S
+      {% endif %}
+      <!-- Parachute Pants for Women    -->
+      {% if product.tags contains 'Parachute Pants' %} 
+       Rhiana is 178cm/5’8, she is wearing a size XS/S
+      {% endif %}
+      <!-- Notstitched Shorts for Men    -->
+      {% if product.tags contains 'Notstitched Shorts' %} 
+       Pourha is 188/6’2, he is wearing a size L
+      {% endif %}
+      <!-- The Modern Cargos for Women    -->
+      {% if product.tags contains 'The Modern Cargos' %} 
+       Rhiana is 178cm/5’8, she is wearing a size S
+      {% endif %}
+
+       
+        <!-- The College Quarter Zip for Women    -->
+      {% if product.tags contains 'College Quarter Zip' and product.tags contains 'women' %} 
+        Milena is 173cm/5’7, she is wearing a size S/M
+     {% endif %}
+
+      <!-- The College Quarter Zip for MEN    -->
+       {% if product.tags contains 'College Quarter Zip' and product.tags contains 'men' %} 
+       Talal is 185/6’1, he is wearing a size S/M 
+       {% endif %}
+
+
+    <!-- The College College T-shirt Women    -->
+      {% if product.tags contains 'College T-shirt' and product.tags contains 'women' %} 
+      Milena is 173cm/5’7, she is wearing a size S
+   {% endif %}
+
+    <!-- The College T-shirt for MEN    -->
+     {% if product.tags contains 'College T-shirt' and product.tags contains 'men' %} 
+     Talal is 185/6’1, he is wearing a size M 
+     {% endif %}
+
+         <!-- The College College T-shirt Women    -->
+         {% if product.tags contains 'College Sweatpants' and product.tags contains 'women' %} 
+         Milena is 173cm/5’7, she is wearing a size S
+      {% endif %}
+   
+       <!-- The College T-shirt for MEN    -->
+        {% if product.tags contains 'College Sweatpants' and product.tags contains 'men' %} 
+        Talal is 185/6’1, he is wearing a size M 
+        {% endif %}
+
+          <!-- The College Shorts T-shirt Women    -->
+          {% if product.tags contains 'College Shorts' and product.tags contains 'women' %} 
+          Milena is 173cm/5’7, she is wearing a size S
+       {% endif %}
+    
+        <!-- The College Shorts for MEN    -->
+         {% if product.tags contains 'College Shorts' and product.tags contains 'men' %} 
+         Talal is 185/6’1, he is wearing a size M 
+         {% endif %}
+         
+      
+         {% if product.tags contains 'Pourha_L' %} 
+           Pourha is 188/6’2, he is wearing a L
+         {% endif %}
+
+         {% if product.tags contains 'Pourha_M' %} 
+           Pourha is 188/6’2, he is wearing a M
+         {% endif %}
+
+         {% if product.tags contains 'Pourha_M_L' %} 
+           Pourha is 188/6’2, he is wearing a M/L
+         {% endif %}
+
+         {% if product.tags contains 'Pourha_L_XL' %} 
+           Pourha is 188/6’2, he is wearing a L/XL
+         {% endif %}
+
+
+         {% if product.tags contains 'Barbara_S_M' %} 
+           Barbara is 177/5’8, she is wearing a size S/M
+         {% endif %}
+
+         {% if product.tags contains 'Barbara_S' %} 
+           Barbara is 173/5’7, she is wearing a size S
+         {% endif %}
+
+         {% if product.tags contains 'Barbara_M' %} 
+           Barbara is 177/5’8, she is wearing a size M
+         {% endif %}
+
+         {% if product.tags contains 'Barbara_XS' %} 
+           Barbara is 177/5’8, she is wearing a size XS
+         {% endif %}
+
+         {% if product.tags contains 'Barbara_XS_S' %} 
+           Barbara is 177/5’8, she is wearing a size XS/S
+         {% endif %}
+
+         {% if product.tags contains 'Milena_M_L' %} 
+           Milena is 173/5’7, she is wearing a size M/L
+         {% endif %}
+
+          {% if product.tags contains 'Milena_XS_S' %} 
+             Milena is 173/5’7, she is wearing a size XS/S
+          {% endif %}
+          
+          {% if product.tags contains 'Milena_S' %} 
+             Milena is 173/5’7, she is wearing a size S
+          {% endif %}
+
+          {% if product.tags contains 'Milena_XS' %} 
+             Milena is 173/5’7, she is wearing a size XS
+          {% endif %}
+
+          {% if product.tags contains 'Dinara_XS' %} 
+            Dinara is 170/5’6, she is wearing a size XS
+          {% endif %}
+          {% if product.tags contains 'Reza_L' %} 
+            Reza is 183/6’0, he is wearing a L
+          {% endif %}
+          {% if product.tags contains 'Dinara_S' %} 
+           Dinara is 170/5’6, she is wearing a size S
+          {% endif %}
+    </div><br>
+
+    {% if product.tags contains 'College Shorts' %} 
+    <div class="description">
+      <p><b>Composition</b><br>51% Cotton<br>
+      49% Polyester
+      </p>
+      <p><b>Care instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    
+    {% if product.tags contains 'College Tote Bag' or product.tags contains 'Wellness Tote Bag' %}  
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton Canvas</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+
+
+    {% if product.tags contains 'College Sweatpants' %} 
+    <div class="description">
+      <p><b>Composition</b><br>51% Cotton 49% Polyester</p>
+      <p><b>Care instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+
+    {% if product.tags contains 'Zip-Up Hoodie' or product.tags contains 'Palestine-Quarter' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'College T-shirt' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+  {% if product.tags contains 'Relaxed Cuffed Joggers' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+     {% if product.tags contains 'Sweater' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'French Terry Cotton Shorts' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Freedom Sports Bra' %} 
+    <div class="description">
+      <p><b>Composition</b><br>75% Polyester<br>25% Spandex </p>
+      <p><b>Care instructions</b><br>Gentle wash with similar colors. Wash inside out. No bleach. Do not tumble dry. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+     {% if product.tags contains 'Airbrushed Leggings' %} 
+    <div class="description">
+      <p><b>Composition</b><br>75% Polyester<br>25% Spandex </p>
+      <p><b>Care instructions</b><br>Gentle wash with similar colors. Wash inside out. No bleach. Do not tumble dry. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Classic Crop' %} 
+    <div class="description">
+      <p><b>Composition</b><br>75% Polyester<br>25% Spandex </p>
+      <p><b>Care instructions</b><br>Gentle wash with similar colors. Wash inside out. No bleach. Do not tumble dry. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Knee-High Biker Shorts' %} 
+    <div class="description">
+      <p><b>Composition</b><br>75% Polyester<br>25% Spandex </p>
+      <p><b>Care instructions</b><br>Gentle wash with similar colors. Wash inside out. No bleach. Do not tumble dry. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+     {% if product.tags contains 'Deform-Logo-Print T-shirt' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Organic Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Iron with low heat</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'YOU Oversized Zip-Up Hoodie' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton </p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    
+    {% if product.tags contains 'You-Sweater' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% French Terry Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Tosin-You' or product.tags contains 'YOU Logo-print T-shirt-Levi' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Organic Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Iron with low heat</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+        {% if product.tags contains 'Mahnaz-Soft' or product.tags contains 'Pourha-Soft' or product.tags contains 'Tosin-Soft'%} 
+    <div class="description">
+      <p><b>Composition</b><br>80% Cotton<br>20% Polyester</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Iron with low heat</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Pourha-Loos_SS' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Iron with low heat</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+      {% if product.tags contains 'Pourha-Classic' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Organic Cotton<br>100% Hemp</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Iron with low heat</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Drop Trouser' %} 
+    <div class="description">
+      <p><b>Composition</b><br>95% Cotton<br>5 %Lycra</p>
+      <p><b>Care instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. Do not bleach. Iron with low heat. Gentle cycle.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-Long' %} 
+    <div class="description">
+      <p><b>Composition</b><br>95% Polyester<br>5% Spandex</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Steam iron if needed. Tumble dry low.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-Tank' %} 
+    <div class="description">
+      <p><b>Composition</b><br>95% Polyester<br>5% Spandex</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Low iron if needed. </p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-Signature' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Low iron if needed.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-LS' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Low iron if needed.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-Deconstructed' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Low iron if needed.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Luna-Wide' %} 
+    <div class="description">
+      <p><b>Composition</b><br>95% Cotton<br>5% Lycra</p>
+      <p><b>Care instructions</b><br>Machine wash cold. Wash inside out. Do not bleach. Low iron if needed.</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Socks' %} 
+    <div class="description">
+      <p><b>Care instructions</b><br>Machine wash cold. Do not bleach. Tumble dry</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Logo-Cap' %} 
+    <div class="description">
+      <p><b>Care instructions</b><br>Spot clean only</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Logo-Bucket' %} 
+    <div class="description">
+      <p><b>Care instructions</b><br>Spot clean only</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Essential Hoodie' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care Instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags.</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Cropped Sweatshirt' %} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'College Quarter Zip' %} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Stitched Turtleneck Sweater' or product.tags contains 'Stitched Turtleneck Sweater Women'%} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Logo T-shirt' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care Instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Cropped Boxy T-shirt' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care Instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Classic Longsleeve' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care Instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Cuffed Sweatpants' %} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Army Field Cargos' %} 
+    <div class="description">
+      <p><b>Composition</b><br>20% Cotton<br>80% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Warm iron. Dry promptly</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Loose Sweatpants' %} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Parachute Pants' %} 
+    <div class="description">
+      <p><b>Composition</b><br>100% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Warm iron. Dry promptly</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'Notstitched Shorts' %} 
+    <div class="description">
+      <p><b>Composition</b><br>80.7% Cotton<br>19.3% Polyester</p>
+      <p><b>Care Instructions</b><br>Wash with like colors. Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'The Modern Cargos' %} 
+     <div class="description">
+      <p><b>Composition</b><br>100% Cotton</p>
+      <p><b>Care Instructions</b><br>Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean</p>
+      <p><b>Packaging</b><br>For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags</p>
+     </div>
+    {% endif %}
+
+    {% if product.tags contains 'products06-2023' or product.tags contains 'products10-2023' %} 
+    <div class="description">
+     
+     {% if product.tags contains '100Polyester' %}
+     <p><b>Composition</b><br>
+        100% Polyester</p>
+        <p><b>Care Instructions</b><br>
+        Machine wash on cold cycle only. Do not soak. Do not bleach. Do not tumble dry. Wash with like colors only. Dry away from direct sunlight. Cool iron only
+        </p>
+     {%endif%}
+
+     {% if product.tags contains '100Cotton' %} 
+     <p><b>Composition</b><br>
+        100% Cotton</p>
+        <p><b>Care Instructions</b><br>
+        Wash separately before use. Warm gentle machine wash. Wash with like colors only. Do not soak. Do not bleach. Do not hang in direct sunlight. Warm iron
+        </p>
+      {%endif%}
+
+
+     {% if product.tags contains '100CottonCanvas' %} 
+     <p><b>Composition</b><br>
+          100% Cotton canvas</p>
+          <p><b>Care Instructions</b><br>
+          Machine wash cold. Wash inside out. No chlorine bleaches. Do not tumble dry. Medium heat iron. Do not dry clean
+          </p>
+      {%endif%}
+
+
+     {% if product.tags contains '94Cotton_6Spandex' %} 
+     <p><b>Composition</b><br>
+       94% Cotton/ 6% Spandex</p>
+       <p><b>Care Instructions</b><br>
+       Warm gentle machine wash. Do not bleach. Wash with like colors only. Tumble dry low. Warm iron
+       </p>
+    {%endif%}
+
+    {% if product.tags contains '62Cotton_35Nylon_35Spandex' %} 
+    <p><b>Composition</b><br>
+      62% Cotton/ 35% Nylon/ 35% Spandex</p>
+      <p><b>Care Instructions</b><br>
+      Warm gentle machine wash. Do not bleach. Do not soak. Wash with like colors only. Tumble dry low. Warm iron
+      </p>
+    {%endif%}
+
+
+    {% if product.tags contains '100Tencel' %} 
+    <p><b>Composition</b><br>
+      100% Tencel</p>
+      <p><b>Care Instructions</b><br>
+      Warm gentle machine wash. Wash with like colors. do not bleach. Do not tumble dry. Dry away from direct sunlight. Iron low
+      </p>
+    {%endif%}
+
+
+     
+     <p>
+      <b>Packaging</b>
+      <br>
+      For every product, you have a sustainable packaging material with zero tendency for environmental pollution. Each item you buy is packaged in our zero-plastic, 100% cotton knitted, reusable drawstring bags
+      </p>
+    </div>
+   {% endif %}
+    
+  </div>
+</div>
+</div>
+
+</div>

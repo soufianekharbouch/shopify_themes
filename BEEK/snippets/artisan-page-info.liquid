@@ -1,0 +1,17 @@
+<div class="page-info">
+  <div class="row">
+    <div class="col-12">
+      {%- if block.settings.title != blank -%}
+        <h2>{{ block.settings.title | escape }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="col-12">
+      {%- if block.settings.description != blank -%}
+        <div class="text">
+          {{ block.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

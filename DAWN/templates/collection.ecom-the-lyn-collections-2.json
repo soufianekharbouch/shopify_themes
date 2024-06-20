@@ -1,0 +1,12 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-the-lyn-collections-2-collection": {
+      "type": "ecom-the-lyn-collections-2-collection",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ecom-the-lyn-collections-2-collection"
+  ]
+}

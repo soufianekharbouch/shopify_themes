@@ -1,0 +1,52 @@
+<div class="container hero-section">
+    <div class="row">
+
+        <div class="col-12 col-md-8 text-center">
+            <div class="d-block col-12 d-lg-none">
+                <div class="hero-section__image">
+                {% if block.settings.community_image != blank %}
+                {% include 'responsive-image-aspect-ratio' with
+                    image: block.settings.community_image,
+                    max_width: 1110,
+                    hero_aspect_ratio: block.settings.communityAspectRatio_mobile
+                %}
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+            </div>
+            <div class="d-none col-12 d-lg-block">
+                <div class="hero-section__image">
+                {% if block.settings.community_image != blank %}
+                {% include 'responsive-image-aspect-ratio' with
+                    image: block.settings.community_image,
+                    max_width: 1110,
+                    hero_aspect_ratio: block.settings.communityAspectRatio_desktop
+                %}
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 text-center align-self-center">
+            <div class="row">
+                <div class="col-12">
+                    <h2>{{ block.settings.community_header }}</h2>
+                </div>
+
+                <div class="col-12">
+                    <div class="divider">
+                        {% include 'divider' %}
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="text">{{ block.settings.community_content }}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

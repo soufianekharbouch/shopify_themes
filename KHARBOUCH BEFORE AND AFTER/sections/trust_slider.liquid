@@ -1,0 +1,157 @@
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<div id="scroll_trustme" class="trust-slider-main page-width">
+  <div class="trustpilot-box-before-slider">
+    <div class="trustpilot-box-title">{{ section.settings.title }}</div>
+    <img
+      src="{{ section.settings.imagestar | img_url: 'master' }}"
+      class="trustpilot-box-stars"
+    >
+    <div class="trustpilot-box-review">
+      Basé sur <strong class="trustpilot-box-review-bold">{{ section.settings.review_text }}</strong>
+    </div>
+    <img
+      src="{{ section.settings.imagelogo | img_url: 'master' }}"
+      class="trustpilot-box-logo"
+    >
+  </div>
+  <div class="multiple-items">
+    {%- for block in section.blocks -%}
+      <div class="trustpilot-slider-card">
+        <div class="trustpilot-slider-card-top">
+          <img
+            src="{{ block.settings.image | img_url: 'master' }}"
+            class="trustpilot-stars"
+          >
+          <div class="verified-badge-wrapper">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0739/2729/5275/files/verified-badge-svg.png?v=1680084614"
+              class="verified-icon"
+            >
+            <div class="verified-text">Vérifié</div>
+          </div>
+        </div>
+        <div class="trustpilot-slider-card-center">
+          <div class="trustpilot-slider-card-title">{{ block.settings.title }}</div>
+          <p class="trustpilot-slider-card-text">{{ block.settings.reviews }}</p>
+        </div>
+        <div class="trustpilot-slider-card-author">{{ block.settings.name }} {% if block.settings.date != blank %}, <span>{{ block.settings.date }}</span>{% endif %}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+     {{ 'jquery.min.js' | asset_url | script_tag }}      {{ 'slick.min.js' | asset_url | script_tag }}
+
+  <script>
+          $('.multiple-items').slick({
+              infinite: true,
+              slidesToShow: 3,
+            arrows: true,
+              slidesToScroll: 1,
+             responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+            });
+  /*
+     $('.trustpilot-slider-mask').slick({
+              infinite: true,
+              slidesToShow: 2,
+            arrows: true,
+              slidesToScroll: 1,
+             responsive: [ 
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+            }); */
+          $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
+    });
+  </script>
+{% schema %}
+{
+  "name": "trust slider",
+  "class": "shopify-section--bordered noMargin",
+  "settings": [
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Review text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "imagelogo",
+      "label": "Review Logo Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "imagestar",
+      "label": "Star Image"
+    }
+  ],
+    "blocks": [
+    {
+      "type": "Review",
+      "name": "Review",
+      "settings": [
+        {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Upload Image"
+        },
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Title"
+        },
+        {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+        },
+        {
+      "type": "text",
+      "id": "date",
+      "label": "Date"
+        },
+        {
+      "type": "richtext",
+      "id": "reviews",
+      "label": "Reviews"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "trust slider",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+<div id="create_account">
+  <div class="container">
+    <div class="row flex-column">
+      <div class="col-12 text-center">
+        <h1>{{ 'customer.register.title' | t }}</h1>
+        <div class="create_account__block text-md-left">
+          <p class="create_account__text">
+            Welcome new neighbor!
+            <span></span>
+            Please fill out the below form to create an account.
+          </p>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="create_account__form">
+        {% form 'create_customer' %}
+          {{ form.errors | default_errors }}
+          <div class="d-flex flex-column">
+            <label for="FirstName" class="label-hidden">
+              {{ 'customer.register.first_name' | t }}
+            </label>
+            <input type="text"
+              name="customer[first_name]"
+              id="FirstName"
+              placeholder="{{ 'customer.register.first_name' | t }}*"
+              autofocus
+              {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+              required>
+
+            <label for="LastName" class="label-hidden">
+              {{ 'customer.register.last_name' | t }}
+            </label>
+            <input type="text"
+              name="customer[last_name]"
+              id="LastName"
+              placeholder="{{ 'customer.register.last_name' | t }}*"
+              {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+              required>
+
+            <label for="newEmail" class="label-hidden">
+              {{ 'customer.register.email' | t }}
+            </label>
+            <input type="email"
+              name="customer[email]"
+              id="newEmail"
+              class="{% if form.errors contains 'email' %}input-error{% endif %}"
+              placeholder="{{ 'customer.register.email' | t }}*"
+              value="{% if form.email %}{{ form.email }}{% endif %}"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              required>
+
+            <label for="CreatePassword" class="label-hidden">
+              {{ 'customer.register.password' | t }}
+            </label>
+            <input type="password"
+              name="customer[password]"
+              id="CreatePassword"
+              class="{% if form.errors contains 'password' %}input-error{% endif %}"
+              placeholder="{{ 'customer.register.password' | t }}*"
+              required>
+
+              <span id="password-match" class="hide">Passwords Do Not Match</span>
+              <label for="ConfirmPassword" class="label-hidden">
+                {{ 'customer.register.password' | t }} Confirmation
+              </label>
+              <input type="password"
+                value=""
+                name="customer[password_confirmation]"
+                id="CreatePasswordConfirm"
+                placeholder="Confirm password*"
+              />
+
+              <div class="row">
+                <div class="col">
+                  <p class="checkbox-wrap">
+                    <input type="checkbox"> Remember me
+                  </p>
+                </div>
+                <div class="col text-right">
+                  <a href="/account/login"><p> < Back</p></a>
+                </div>
+              </div>
+              <p class="checkbox-wrap">
+                <input type="hidden" name="customer[accepts_marketing]" value="" />
+                <input type="checkbox" name="customer[accepts_marketing]" checked="checked" />
+                <span>
+                  I would like to sign up to receive e-mail updates
+                  from Beekman 1802. See 
+                  <a href="/pages/privacy-policy">Privacy Policy.</a>
+                <span>
+              </p>
+                <button type="submit" value="{{ 'customer.register.submit' | t }} ACCOUNT"> Create Account </button>
+          </div>
+        {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ 'account.js' | asset_url | script_tag }}

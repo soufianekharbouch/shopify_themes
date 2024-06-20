@@ -1,0 +1,65 @@
+<div class="row f__artisan-wrap">
+  {% if block.settings.artisan-title != blank %}
+    <h2 class="section__title col-12">{{ block.settings.artisan-title | escape }}</h2>
+  {% endif %}
+
+  <div class="col-12 col-md-6">
+    <div class="inner_wrap">
+      {% if block.settings.left-block-title != blank %}
+        <h2 class="section__title col-12">{{ block.settings.left-block-title | escape }}</h2>
+      {% endif %}
+      {% if block.settings.left-block-text != blank %}
+        <p class="f__col-text">{{ block.settings.left-block-text | escape }}</p>
+      {% endif %}
+      {% if block.settings.featured-photo != blank %}
+        {% include 'responsive-image' with
+          image: block.settings.featured-photo,
+          max_width: 545,
+          max_height: 545 %}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <div class="inner_wrap">
+      {% if block.settings.right-block-title != blank %}
+        <h2 class="section__title col-12">{{ block.settings.right-block-title | escape }}</h2>
+      {% endif %}
+      {% if block.settings.right-block-text != blank %}
+        <p class="f__col-text">{{ block.settings.right-block-text | escape }}</p>
+      {% endif %}
+
+      <div class="carousel__wrap">
+        <div class="slide">
+          {% if block.settings.artisan-image1 != blank %}
+            {% include 'responsive-image' with
+              image: block.settings.artisan-image1,
+              max_width: 545,
+              max_height: 545 %}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+        <div class="slide">
+          {% if block.settings.artisan-image2 != blank %}
+            {% include 'responsive-image' with
+              image: block.settings.artisan-image2,
+              max_width: 545,
+              max_height: 545 %}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      </div>
+      <a href="{{ block.settings.artisan-link | default: "#" }}" class="shop-all-item">
+        {% if block.settings.artisan-link-text != blank %}
+          <p>{{ block.settings.artisan-link-text | escape }}</p>
+        {% else %}
+          <p>Shop Now</p>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</div>

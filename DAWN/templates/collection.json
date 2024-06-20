@@ -1,0 +1,306 @@
+{
+  "sections": {
+    "5aa54118-6c1b-4cb6-81ef-599e179348c9": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>",
+        "custom_class": ""
+      }
+    },
+    "collection-header": {
+      "type": "collection-page-header",
+      "blocks": {
+        "aa15f45f-f252-4307-ad50-adefb64b7306": {
+          "type": "banner",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "aa15f45f-f252-4307-ad50-adefb64b7306"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "layout": "without_breadcrumb",
+        "header_height": "medium",
+        "text_alignment": "center",
+        "vertical_alignment": "center",
+        "text_color": "dark",
+        "bg_color": "#ffffff",
+        "enable_parallax": false,
+        "upper_title": false,
+        "show_desc": false,
+        "collection_all_desc": ""
+      }
+    },
+    "f9546821-26da-409c-aa49-18030eb8dd20": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/banner-colllllll-1.webp",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Faire de chez soi le plus bel endroit du monde.",
+        "sub_title": "",
+        "text": "<h3>Avec ses meubles inspirés de ce que les cultures du monde ont de plus beau, Lyn Home Harmony vous propose de faire de chez vous un espace d'évasion, où le confort de l'intimité se mêle à des pièces d'art intérieur uniques. Fabriqués par des artisans marocains, héritiers d'un savoir-faire réputé à travers le monde pour sa finesse, les meubles Lyn Home Harmony sont des pièces rares, robustes et fonctionnelles destinées à illuminer les espaces du quotidien d'une douce touche d'audace.<\/h3>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Découvrir",
+        "button_link": "shopify:\/\/collections\/accessoires",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "b32c2cfe-1ea8-4d19-be9f-6e5745fcb1a8": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "#fef7ec",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/banner-colllllll-3.webp",
+        "link": "",
+        "layout": "right",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Cultiver l'harmonie intérieure",
+        "sub_title": "",
+        "text": "<h3>En puisant son inspiration des traditions artistiques du monde entier, Artisan Haven crée une collection de meubles qui transforme votre domicile en une enclave culturelle. Chaque pièce, conçue avec un respect profond pour l'artisanat, est façonnée par des experts d'Amérique du Sud, offrant une fusion unique de fonctionnalité et de créativité. Ces meubles, confectionnés avec une passion héritée des maîtres artisans, apportent à votre espace de vie une esthétique remarquable, capturant l'esprit global dans chaque détail.<\/h3>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Découvrir",
+        "button_link": "shopify:\/\/collections\/tables",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "ece49d29-cee3-4c0f-9836-524bd9e35b35": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/banner-colllllll-2.webp",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Choisir l'excellence intérieure",
+        "sub_title": "",
+        "text": "<h3>Laissez-vous emporter par l'élégance intemporelle de Nature's Retreat, où des meubles d'exception fusionnent l'authenticité des savoir-faire ancestraux avec une esthétique moderne. Confectionnées par des artistes japonais, héritiers d'une tradition artisanale millénaire, ces pièces transforment votre espace en un sanctuaire de sérénité. Chaque meuble, façonné avec une précision méticuleuse, incarne l'essence même de la sophistication, offrant à votre foyer une atmosphère harmonieuse imprégnée de l'âme artistique de l'Extrême-Orient.<\/h3>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Découvrir",
+        "button_link": "shopify:\/\/collections\/c",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "ace35ac7-ca37-47d8-85de-77f87e307a7a": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"sections-container989\">\n  <div class=\"section989\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/Table-banner.webp');\">\n    <h2>Meubles <br>& Mirroir<\/h2>\n    <a href=\"https:\/\/thelynproject.myshopify.com\/collections\/tables\" class=\"button989\">Découvrir<\/a>\n  <\/div>\n\n  <div class=\"section989\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/3_4a4f1d05-4f09-4060-9811-01b105bc8440.webp');\">\n    <h2>Buffets <br>& Consoles<\/h2>\n    <a href=\"https:\/\/thelynproject.myshopify.com\/collections\/c\" class=\"button989\">Découvrir<\/a>\n  <\/div>\n\n  <div class=\"section989\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/2.webp');\">\n    <h2>Articles<br> Exclusives<\/h2>\n    <a href=\"https:\/\/thelynproject.myshopify.com\/collections\/accessoires\" class=\"button989\">Découvrir<\/a>\n  <\/div>\n<\/div>\n<style>\n.section989 {\n      position: relative;\n      width: 100%;\n      height: 300px; \/* Adjust the height as needed *\/\n      background-size: cover;\n      background-position: center;\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-end;\n      color: white;\n      padding: 40px 20px;\n      box-sizing: border-box;\n    }\n\n    .section989 h2 {\n      margin: 0;\ncolor:white;\n      font-size: 40px;\n      text-align: left;\n      text-decoration: underline;\n    }\n\n    .button989 {\n      margin-top: 10px;\n      font-size: 16px;\n      color: white;\n      text-decoration: none;\n      display: inline-block;\n      border: 1px solid white;\nwidth:25%;\n      padding: 5px 10px;\n      border-radius: 5px;\n    }\n\n    @media (min-width: 768px) {\n      \/* Desktop styles *\/\n      .sections-container989 {\n        display: flex;\n      }\n\n      .section989 {\n        width: 33.33%;\n      }\n    }\n<\/style>",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_4T3aHV": {
+      "type": "featured-collection",
+      "custom_css": [
+        "a.sf__btn.sf__btn-primary {border-radius: 0px !important; display: flex; flex-direction: row !important; padding-right: 45px !important; padding-left: 45px !important;}",
+        ".section__description {font-family: \"Questrial\" !important; font-size: 17px !important; color: black !important;}"
+      ],
+      "settings": {
+        "heading": "World Harmony Collection",
+        "subheading": "",
+        "description": "La collection World Harmony met en avant la synergie culturelle en célébrant le design marocain et en rendant hommage aux aspirations pacifiques de la Keffieh palestinienne. \nChaque pièce de cette collection incarne 190 ans de tradition et d'innovation dans l'artisanat marocain <br> mettant en lumière l'importance du savoir-faire ancestral de la poterie marocaine avec un partenaire unique : les Poteries Serghini. <br>Ces créations exclusives symbolisent l'unité, la diversité et la quête mondiale de la paix.\n<br>\n  <a href=\"https:\/\/poterieserghini.com\/fabrication\/\" target=\"_blank\">En savoir plus sur le savoir-faire ancestral des Poteries Serghini<\/a>",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "collection": "act-for-life",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 12,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "button_type": "link",
+        "button_text": "",
+        "button_style": "sf__btn-primary",
+        "button_size": "",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "26ef6509-772d-4c44-bd90-efc089bd9355": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "button",
+            "title": "Size",
+            "filtergroup": "XS,S,M,L,XL",
+            "show_label": false,
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "e12de6da-eab8-4abe-967c-06d0d959a18a": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "color",
+            "title": "Colors",
+            "filtergroup": "Blue, Red, White ,Black ,Pink ,Silver,Purple,Brown,Yellow,Grey,Green,Tan,Violet,Dark Grey,Beige,Light Blue, Dark Blue, Light Grey, Light Pink, Mint, Rose Gold, Night Blue, Copper, Coral, Rosy Brown",
+            "show_label": false,
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "fa31a837-9c99-4c92-8cfe-0527ffbe7b15": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Prices",
+            "filtergroup": "$0-$50,$50-$100,$100-$150,$150-$200,$200-$300,$300-$400",
+            "show_label": false,
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "4903963a-90f0-4fe1-be23-ee4f8749e483": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "inrow",
+            "title": "Brands",
+            "filtergroup": "Minimog,Retrolie,Abby,Brook,Learts,Vagabond",
+            "show_label": false,
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "00b3badd-1613-4230-85d8-f87f04306aaa": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "inrow",
+            "title": "Tags",
+            "filtergroup": "Dress,Tops,Shirts,Fashion,Hats,Sandal,Belt,Bags,Snacker,Denim,Minimog,Vagabond,Sunglasses, Beachwear,Vintage",
+            "show_label": false,
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "26ef6509-772d-4c44-bd90-efc089bd9355",
+        "e12de6da-eab8-4abe-967c-06d0d959a18a",
+        "fa31a837-9c99-4c92-8cfe-0527ffbe7b15",
+        "4903963a-90f0-4fe1-be23-ee4f8749e483",
+        "00b3badd-1613-4230-85d8-f87f04306aaa"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": true,
+        "pagination_limit": 12,
+        "paginate_type": "paginate",
+        "show_sorting": true,
+        "show_filter": false,
+        "filters_type": "tags_filter",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": false,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe"
+      }
+    },
+    "image_with_text_2_ETkATg": {
+      "type": "image-with-text-2",
+      "custom_css": [
+        "a.sf__btn.sf__btn-primary {border-radius: 0px !important; display: flex; flex-direction: row !important; padding-right: 45px !important; padding-left: 45px !important;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "hero_size": "medium",
+        "show_overlay": false,
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-04_at_16.56.39.jpg",
+        "bg_position": "center top",
+        "image_link": "https:\/\/lynhomeharmony.ma\/collections\/the-lyn-collections?view=ecom-the-lyn-collections-2",
+        "parallax": false,
+        "content_in_container": false,
+        "content_position": "center top",
+        "text_alignment": "center",
+        "text_size": "medium",
+        "text_color": "white",
+        "title": "Geometrics by LYN",
+        "subtitle": "DÉCOUVREZ NOS AUTRES COLLECTIONS",
+        "text": "<p>Une collection au croisement des influences de la péninsule ibérique et<\/p><p>du Maghreb de la civilisation d’Al-Andalus du VIII au XVème siècle à nos jours.<\/p>",
+        "button_label": "DÉCOUVRIR",
+        "button_link": "https:\/\/lynhomeharmony.ma\/collections\/the-lyn-collections?view=ecom-the-lyn-collections-2",
+        "button_style": "sf__btn-primary",
+        "button_size": "",
+        "use_content_above": false,
+        "custom_class": ""
+      }
+    },
+    "a000c2d6-7d8c-4201-b718-a442c227ec54": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "5aa54118-6c1b-4cb6-81ef-599e179348c9",
+    "collection-header",
+    "f9546821-26da-409c-aa49-18030eb8dd20",
+    "b32c2cfe-1ea8-4d19-be9f-6e5745fcb1a8",
+    "ece49d29-cee3-4c0f-9836-524bd9e35b35",
+    "ace35ac7-ca37-47d8-85de-77f87e307a7a",
+    "featured_collection_4T3aHV",
+    "main",
+    "image_with_text_2_ETkATg",
+    "a000c2d6-7d8c-4201-b718-a442c227ec54"
+  ]
+}

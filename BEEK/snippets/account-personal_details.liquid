@@ -1,0 +1,64 @@
+<h3 class="list_item_heading grow">PERSONAL DETAILS</h3>
+<form id="account_details">
+  <div class="customer_info_form">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <!-- Mandatory id field -->
+          <input type="hidden" name="customer[id]" value="{{ customer.id }}" />
+
+          <div class="col-12 col-md-6">
+            <label for="FirstName" class="hide">
+                {{ 'customer.register.first_name' | t }}
+            </label>
+            <input type="text"
+                    name="customer[first_name]"
+                    id="FirstName"
+                    autofocus
+                    value="{{ customer.first_name }}"
+                    placeholder="First Name*"
+                    required>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="LastName" class="hide">
+                {{ 'customer.register.last_name' | t }}
+            </label>
+            <input type="text"
+                    name="customer[last_name]"
+                    id="LastName"
+                    value="{{ customer.last_name }}"
+                    placeholder="Last Name*"
+                    required>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label for="Email" class="hide">
+                {{ 'customer.register.email' | t }}
+            </label>
+            <input type="email"
+                    name="customer[email]"
+                    id="Email"
+                    class="{% if form.errors contains 'email' %}input-error{% endif %}"
+                    placeholder="Your {{ 'customer.register.email' | t }}*"
+                    value="{{ customer.email }}"
+                    spellcheck="false"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    placeholder="Your Email*"
+                    required>
+          </div>
+
+          {% include 'datepicker' %}
+          
+          <div class="col-12 col-md-6">
+            <div class="spacing"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" value="save updates" class="float-btn-right">save updates</button>
+      </div>
+    </div>
+  </div>
+</form>

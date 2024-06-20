@@ -1,0 +1,106 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<style>
+  html, body {
+    height: auto;
+  }
+</style>
+
+<div class="container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+    {% when 'page-info' %}
+      {% include 'artisan-page-info' %}
+
+    {% when 'shop-by-type' %}
+      {% include 'artisan-shop-by-type' %}
+
+    {% when 'artisan-list' %}
+      {% include 'artisan-collection-list' %}
+
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Artisan Collection",
+    "blocks": [
+      {
+        "type": "page-info",
+        "name": "Page Info",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Page Title",
+            "default": "Page Title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Page Description",
+            "default": "Page Description"
+          }
+        ]
+      },
+      {
+        "type": "shop-by-type",
+        "name": "Shop By Type",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Shop By Type"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      },
+      {
+        "type": "artisan-list",
+        "name": "Artisans List",
+        "settings": [
+          {
+            "label": "Collection 1",
+            "id": "collection1",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 2",
+            "id": "collection2",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 3",
+            "id": "collection3",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 4",
+            "id": "collection4",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 5",
+            "id": "collection5",
+            "type": "collection"
+          },
+          {
+            "label": "Collection 6",
+            "id": "collection6",
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'category-landing.js' | asset_url | script_tag }}
+{{ 'artisan-collection.js' | asset_url | script_tag }}

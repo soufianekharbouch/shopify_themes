@@ -1,0 +1,675 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "5b1388ee-c6a1-4335-b76a-6111769331ff": {
+      "type": "slider",
+      "blocks": {
+        "template--20354858352945__5b1388ee-c6a1-4335-b76a-6111769331ff-slider_item-1": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify:\/\/shop_images\/Amba_hero_desk.jpg",
+            "mb_background": "shopify:\/\/shop_images\/Amba_hero_mobile.jpg",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "white",
+            "subheading": "<span style=\"color:#fff;\">#YamYoop<\/span>",
+            "title": "<span style=\"color:#fff;\">Become a Brand Ambassador<\/span>",
+            "description": "",
+            "image_link": "",
+            "button_text": "GET 40% cash",
+            "button_link": "https:\/\/yamyoop.com\/pages\/become-an-ambassador",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "New Collection",
+            "footer_button": "Shop Now",
+            "footer_link": "shopify:\/\/pages\/founder-story"
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__5b1388ee-c6a1-4335-b76a-6111769331ff-slider_item-1"
+      ],
+      "settings": {
+        "container": "w-full",
+        "slideshow_height": "medium",
+        "show_overlay": true,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": true,
+        "show_arrows": false,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "use_content_above": true,
+        "custom_class": ""
+      }
+    },
+    "5585b695-2749-495d-9fbe-d2cc94b82018": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__5585b695-2749-495d-9fbe-d2cc94b82018-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "LogIn",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": "",
+            "block_custom_class": "login-amb-btn"
+          }
+        },
+        "cb0b2598-2ff9-412a-9db9-f48a247b249b": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "SignUp",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": "",
+            "block_custom_class": "signup-amb-btn"
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__5585b695-2749-495d-9fbe-d2cc94b82018-text-1",
+        "cb0b2598-2ff9-412a-9db9-f48a247b249b"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 10,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "cf0b04df-51d7-4047-9c62-9b1e2003589a": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__cf0b04df-51d7-4047-9c62-9b1e2003589a-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Brand Model Perks",
+            "subheading": "",
+            "text": "<p>As a <em><strong>YamYoop Brand Model<\/strong><\/em>, you’ll enjoy awesome perks, free products and <strong>40% cash commission<\/strong> on every qualifying purchase! <\/p><p>Oh, and your <strong>friends<\/strong>, <strong>family <\/strong>+ <strong>followers <\/strong>will get 20% off their purchase, too!<\/p>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__cf0b04df-51d7-4047-9c62-9b1e2003589a-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "w-full",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "9365d72c-0edb-4d70-bd3a-852a96e3afe7": {
+      "type": "icon-box",
+      "blocks": {
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_1.png",
+            "image_by_url": "",
+            "title": "Sweet Rewards",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-2": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_3.png",
+            "image_by_url": "",
+            "title": "Community Channels",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-3": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_6.png",
+            "image_by_url": "",
+            "title": "VIP Giveaways",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "9aa8b0a3-c2e5-4f90-ba40-2415b72de710": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_5.png",
+            "image_by_url": "",
+            "title": "Sneak Peeks",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "3eec7dc0-5b1f-4e84-b0e2-bf7a90c61b9c": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_4.png",
+            "image_by_url": "",
+            "title": "Exclusive Content",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "9c7eeb8a-673c-428a-810c-520311bd5051": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_3.png",
+            "image_by_url": "",
+            "title": "Cash Comission",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-1",
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-2",
+        "template--20354858352945__9365d72c-0edb-4d70-bd3a-852a96e3afe7-iconbox-3",
+        "9aa8b0a3-c2e5-4f90-ba40-2415b72de710",
+        "3eec7dc0-5b1f-4e84-b0e2-bf7a90c61b9c",
+        "9c7eeb8a-673c-428a-810c-520311bd5051"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "70px",
+        "content_alignment": "center",
+        "hover_effect": "zoom-in",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "padding_top": 34,
+        "padding_bottom": 40,
+        "custom_class": ""
+      }
+    },
+    "ff7cf55c-bb50-4f58-95e0-6a46d2bb5a6b": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__ff7cf55c-bb50-4f58-95e0-6a46d2bb5a6b-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "Become Ambassador",
+            "button_link": "https:\/\/yamyoop.com\/pages\/become-an-ambassador",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__ff7cf55c-bb50-4f58-95e0-6a46d2bb5a6b-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 0,
+        "use_scroll_mobile": false,
+        "gap_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "fa5c00df-b818-44a7-a6cf-169c120de4ff": {
+      "type": "icon-box",
+      "blocks": {
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/How_it_works_2.jpg",
+            "image_by_url": "",
+            "title": "Apply",
+            "description": "<p>Fill out a super-simple Brand Ambassador application so we know more about you.<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-2": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/How_it_works_3.jpg",
+            "image_by_url": "",
+            "title": "Share",
+            "description": "<p>Tell all your friends + fam about your unique ambassador code to earn commission + score free swag!<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-3": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/How_it_works_1.jpg",
+            "image_by_url": "",
+            "title": "Connect",
+            "description": "<p>Follow our Brand Ambassador social channels for all the best content. Follow our Brand<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-1",
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-2",
+        "template--20354858352945__fa5c00df-b818-44a7-a6cf-169c120de4ff-iconbox-3"
+      ],
+      "settings": {
+        "heading": "How it works",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "120px",
+        "content_alignment": "center",
+        "hover_effect": "zoom-in",
+        "enable_slider": true,
+        "show_pagination": true,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": ""
+      }
+    },
+    "d1b7ec5b-75ef-45cd-a5b9-b5b95fe9be58": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__d1b7ec5b-75ef-45cd-a5b9-b5b95fe9be58-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "Become Ambassador",
+            "button_link": "https:\/\/yamyoop.com\/pages\/become-an-ambassador",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__d1b7ec5b-75ef-45cd-a5b9-b5b95fe9be58-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 0,
+        "use_scroll_mobile": false,
+        "gap_mobile": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "1ad12ffd-8b41-47de-9d06-6e72d5eeb5a5": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__1ad12ffd-8b41-47de-9d06-6e72d5eeb5a5-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Talk about your brand",
+            "subheading": "",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__1ad12ffd-8b41-47de-9d06-6e72d5eeb5a5-text-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Custom content",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "2174c30d-222a-4bde-95d6-5c81957b8729": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__2174c30d-222a-4bde-95d6-5c81957b8729-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ambassador_happy_C.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "2c332920-3819-4f8e-b483-65ea6b36e2cf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ambassador_happy_B.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "ef8060e1-0e85-4642-8af3-8efebc3ff610": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ambassador_happy_A.jpg",
+            "link": "",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__2174c30d-222a-4bde-95d6-5c81957b8729-image-1",
+        "2c332920-3819-4f8e-b483-65ea6b36e2cf",
+        "ef8060e1-0e85-4642-8af3-8efebc3ff610"
+      ],
+      "settings": {
+        "heading": "Meet Our Ambassadors",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 68,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "904cb6bc-d68e-45f4-87cc-c78b6fa1882b": {
+      "type": "custom-content",
+      "blocks": {
+        "643f7b16-89ed-4a69-a0f4-3f33c63efa0a": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "Become Ambassador",
+            "button_link": "https:\/\/yamyoop.com\/pages\/become-an-ambassador",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "643f7b16-89ed-4a69-a0f4-3f33c63efa0a"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "2015d9fc-8fb0-420e-9e05-eb1c0936bf6d": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20354858352945__2015d9fc-8fb0-420e-9e05-eb1c0936bf6d-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Ambassador Asked Questions",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__2015d9fc-8fb0-420e-9e05-eb1c0936bf6d-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 92,
+        "padding_bottom": 26,
+        "custom_class": ""
+      }
+    },
+    "1042a553-3b7c-4abe-85a8-4d9594d49b04": {
+      "type": "page-faqs",
+      "blocks": {
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-1": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is YamYoop Brand Ambassador?",
+            "content": "<p>Someone who has signed up to the ambassadorship program and tried out our products. We see our ambassadors as part of our family and one of the many representatives of our brand’s values.<\/p>",
+            "open": false
+          }
+        },
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-2": {
+          "type": "accordion",
+          "settings": {
+            "title": "What do you get as an Ambassador?",
+            "content": "<p>✅ You get to have your own custom 25% discount code.<br\/><\/p><p>✅ You can earn money thanks to your discount code, each time someone uses it.<br\/><\/p><p>✅ You have early access to collections, sales and giveaways.<br\/><\/p><p>✅ Featured and tagged on our main Instagram feed.<br\/><\/p><p>✅ Plus a lot more :)<\/p>",
+            "open": false
+          }
+        },
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Who can become a Brand Ambassador?",
+            "content": "<p>It doesn't matter how many followers you currently have, anyone who applies and signs up on our website is welcome to become our ambassador.<\/p>",
+            "open": false
+          }
+        },
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-4": {
+          "type": "accordion",
+          "settings": {
+            "title": "How do I get paid for my sales?",
+            "content": "<p>Through Paypal or Bank Transfer. You can easily trach your sales and request payments through your portal.<\/p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-1",
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-2",
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-3",
+        "template--20354858352945__1042a553-3b7c-4abe-85a8-4d9594d49b04-accordion-4"
+      ],
+      "settings": {
+        "container": "container",
+        "menu": ""
+      }
+    },
+    "b98131ce-7e1a-4d29-ae74-aff2f122f81b": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<a href=\"https:\/\/yamyoop.com\/pages\/become-an-ambassador\"><img width=\"100%\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0801\/6900\/9457\/files\/LOOKING_FOR_AMBASSADORS_9b052ece-3280-43c2-9231-a4f9701ea652.jpg\"> \n<\/a>",
+        "custom_class": "bocem-mdl-btm-cta"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5b1388ee-c6a1-4335-b76a-6111769331ff",
+    "5585b695-2749-495d-9fbe-d2cc94b82018",
+    "cf0b04df-51d7-4047-9c62-9b1e2003589a",
+    "9365d72c-0edb-4d70-bd3a-852a96e3afe7",
+    "ff7cf55c-bb50-4f58-95e0-6a46d2bb5a6b",
+    "fa5c00df-b818-44a7-a6cf-169c120de4ff",
+    "d1b7ec5b-75ef-45cd-a5b9-b5b95fe9be58",
+    "1ad12ffd-8b41-47de-9d06-6e72d5eeb5a5",
+    "2174c30d-222a-4bde-95d6-5c81957b8729",
+    "904cb6bc-d68e-45f4-87cc-c78b6fa1882b",
+    "2015d9fc-8fb0-420e-9e05-eb1c0936bf6d",
+    "1042a553-3b7c-4abe-85a8-4d9594d49b04",
+    "b98131ce-7e1a-4d29-ae74-aff2f122f81b"
+  ]
+}

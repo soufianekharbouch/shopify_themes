@@ -1,0 +1,187 @@
+<script>
+  function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+</script>
+<center>
+   <div class="FlowerHeader"><br><br>YOUR SKIN BIOME MATRIX</div>
+<div class="Header1">The higher the score, the more Goatie-approved your current skincare routine is!<br> Don’t worry if your score is on the low side. A little more skin Kindness is just what the Goatie ordered.<br>
+</div>
+<canvas id="myCanvas">
+</canvas></center>
+<div class="ResultContainer">
+  <div class="ResultItem SkinBiom">
+    <div class="Resultlabel">Skin Biome</div>
+    <div class="ResultNumber"></div>
+  </div>
+
+  <div class="ResultItem Wrinkless">
+    <div class="Resultlabel">Wrinkles</div>
+    <div class="ResultNumber"></div>
+  </div>
+  <div class="ResultItem Texture">
+    <div class="Resultlabel">Texture</div>
+    <div class="ResultNumber"></div>
+  </div>
+  <div class="ResultItem Hydration">
+    <div class="Resultlabel">Hydration</div>
+    <div class="ResultNumber"></div>
+  </div>
+  <div class="ResultItem DarkSpots">
+    <div class="Resultlabel">Dark Spots</div>
+    <div class="ResultNumber"></div>
+  </div>
+  <div class="ResultItem Redness">
+    <div class="Resultlabel">Redness</div>
+    <div class="ResultNumber"></div>
+  </div>
+
+</div>
+
+<a class="tryScan" href="{{shop.url}}/pages/facial-app">
+  <div class="tryScan">Want to check your your Facial Skin Biome too?</div>
+</a>
+
+<div class="qrImageContainer">
+  <img class="qr_image" src="https://cdn.shopify.com/s/files/1/0223/7461/files/QRtiger_3_1.png?v=1649868288">
+</div>
+
+<span class="discover-desc-text">
+  <div class="fh-content" style="margin-top:15px">
+      <a  class="btnGetStarted" href="/pages/facial-app">
+          GET STARTED
+     </a>
+   </div>
+</span>
+<style>
+  .FlowerHeader{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .Header1{
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .fh-content{
+    text-align: center;
+    display: none;
+  }
+  .fh-content a{
+    width: 200px;
+    margin-bottom:60px;
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-block;
+    padding: 15px 36px;
+    font-size: 14px;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: #4A5761;
+    color: #fff;
+    text-decoration: none;
+  }
+@media(max-width:900px){
+  .fh-content{
+    display: block;
+  }
+  .qrImageContainer{
+    display: none;
+  }
+}
+  
+  
+  </style>
+{{ 'matric_code.js' | asset_url | script_tag }}
+
+<script>
+  var res=findGetParameter("result").split('-');
+  getMatric(res[0]||0,res[1]||0,res[2]||0,res[3]||0,res[4]||0,res[5]||0);
+</script> 
+
+
+<style>
+.qrImageContainer{
+  text-align: center;
+  padding:12px 0px;
+}
+.qr_image{
+  margin:auto;
+}
+.ImageResult{
+  width:40%;
+  height:60vh;
+  margin:auto;
+}  
+.tryScan{
+  text-align: center;
+  font-size:28px;
+  font-weight:900;
+  cursor: pointer;
+  text-decoration: none;
+  color:#4D5B65;
+}
+  @media screen and (max-width: 750px){
+    .tryScan{
+    font-size: 18px;
+      padding: 0 35px;
+  }
+  }
+.tryScan:hover{
+  text-decoration: none;
+}
+
+.ResultItem{
+    text-align: center;
+    position: absolute;
+    color:"#4D5B65";
+  }
+  .ResultItem{
+    width:120px;
+    text-align: center;
+    position: absolute;
+    color:"#4D5B65";
+  }
+
+  .Resultlabel{
+   font-size:13px;
+   color:"#4D5B65";
+   font-weight:600;
+  }
+  .ResultNumber{
+    font-size:20px;
+    line-height: 22px;
+    color:"#4D5B65";
+  }
+  .ResultContainer{
+    font-family: "Avenir Next";
+    display: none;
+  }
+</style>
+
+
+<head>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@nytimesbits" />
+  <meta name="twitter:creator" content="@nickbilton" />
+  <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
+  <meta property="twitter:title" content="Result" />
+  <meta property="twitter:description" content="" />
+ 
+    {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}{%- comment %}<locksmith:b7e3>{% endcomment -%}{%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0223/7461/files/Microbiome-Tool-Photo.jpg?v=1654006280" />{% endif -%}{%- comment %}original: <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0223/7461/files/Microbiome-Tool-Photo.jpg?v=1654006280" />{%- endcomment %}{%- comment %}</locksmith:b7e3>{% endcomment -%}{% endif -%}
+    {%- comment %}<locksmith:38a0>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0223/7461/files/Microbiome-Tool-Photo.jpg?v=1654006280" />{% endif -%}
+      {%- comment %}original: <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0223/7461/files/Microbiome-Tool-Photo.jpg?v=1654006280" />{%- endcomment %}
+    {%- comment %}</locksmith:38a0>{% endcomment -%} 
+   
+</head>

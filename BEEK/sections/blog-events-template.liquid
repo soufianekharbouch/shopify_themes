@@ -1,0 +1,329 @@
+<script type="text/javascript">
+    var ___PRIVATE_APP_URL = {{ settings.private_app_url | json }};
+</script>
+{% assign article = blog.metafields.accentuate.featured_event %}
+{% assign artObject = articles[article] %}
+<style>
+  html, body {
+    height: auto;
+  }
+</style>
+{% include 'featured-event-hero' with article: artObject %}
+
+<div class="container content__wrap">
+  <div class="row">
+    <div class="col-12 col-lg-4 filter-container">
+      <form action="#" id="blog__filters">
+        <div class="inner__wrap">
+          <div class="filter__wrap">
+            <div class="f__ttl">
+              Filter By Date
+            </div>
+            <div class="f__content">
+              <div class="select__wrap">
+                <select id="event___date" name="date">
+                  <option value="">All</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="filter__wrap">
+            <div class="f__ttl">
+              Filter By Type
+            </div>
+            <div class="f__content">
+              <div class="select__wrap">
+                <select id="event___filter" name="filter">
+                  <option value="">All</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-12 col-lg-8">
+      <div class="col-12">
+        <div id="eventsList">
+          <div class="l_heading">
+            Upcoming Events
+          </div>
+          <div id="loading">LOADING ...</div>
+          <div id="blog__content"></div>
+          <a href="#" class="load__more" id="events__loadMore" style="display:none">Load More</a>
+        </div>
+      </div>
+      <div class="col-12" id="filter__error"></div>
+    </div>
+  </div>
+</div>
+<script type="text/x-template" id="blog__content-item-template">
+  <li class="event_item">
+    <div class="time_wrap">
+      <div class="day_num">{--day--}</div>
+      <div class="day_month"><span>{--day_word--},</span> <span>{--month--}</span></div>
+      <div class="time">{--start_time--} - {--end_time--}</div>
+    </div>
+    <div class="info_wrap">
+      <div class="type">{--event_type--}</div>
+      <div class="heading">
+        <a href="{--event_link--}">{--event_title--}</a>
+      </div>
+      <div class="desc">{--event_content--}</div>
+    </div>
+  </li>
+</script>
+<script type="text/x-template" id="blog__content-template">
+  <div id="eventsList">
+    <div class="up_month">
+      {--month--}
+    </div>
+    <ul class="events-list">
+      {--items--}
+    </ul>
+  </div>
+</script>
+
+
+<script type="text/javascript">
+    (function ($) {
+        function formatDate(date, monthToIncrease) {
+            var now;
+            if (date) {
+                now = new Date(date * 1000);
+            } else {
+                now = new Date();
+            }
+            monthToIncrease = monthToIncrease || 2;
+            if (now.getMonth() === (monthToIncrease === 2 ? 10 : 11)) {
+                var nextMonth = new Date(now.getFullYear() + 1, 0, 1,0,0,0,0);
+            } else {
+                var nextMonth = new Date(now.getFullYear(), now.getMonth() + monthToIncrease, 1,0,0,0,0);
+            }
+
+            return nextMonth;
+        }
+
+        function interactiveForm() {
+            var params = $(this.form || this).serializeArray(), date, paramsToSend = {};
+
+            $.each(params, function () {
+                if(this.name === 'date') {
+                    date = this.value;
+                } else {
+                    if(this.value !== "") {
+                        paramsToSend[this.name] = this.value;
+                    }
+                }
+            });
+
+            fetchByDate(date, paramsToSend);
+        }
+
+        $(document)
+            .on('change.selectsChange', '#blog__filters select', interactiveForm)
+            .on('submit.formSubmit', '#blog__filters', interactiveForm)
+            .on('click.loadMoreEvent', '#events__loadMore', function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                fetchByDate($(this).data('nextMonth'), {}, 'append');
+            })
+            .on('click', '.f__ttl', function () {
+                $(this).parents('.filter__wrap').toggleClass('active');
+            });
+
+        var dateSelect = $('#event___date');
+        var today = new Date();
+        today = new Date(today.setMonth(today.getMonth()-1));
+        for (var i = 1; i < 12; i++) {
+          var today = new Date(today.setMonth(today.getMonth()+1));
+            (function (i) {
+               // var newDate = formatDate(false, i);
+                dateSelect.append(
+                    $('<option/>')
+                        .text(today.toLocaleString('en-US', {month: 'long', year: 'numeric'}))
+                        .val(Math.trunc(today.getTime() / 1000))
+                );
+            }(i))
+        }
+
+        var url = ___PRIVATE_APP_URL + 'events';
+
+        function fetchByDate($date, params, $manipulateFunc, isFirstLoad) {
+          $('#loading').css({display:"block"});
+            var urlToSend = url;
+            params = params || {};
+            isFirstLoad = isFirstLoad || false;
+            if($date) {
+                urlToSend += '/' + $date;
+            }
+            params['firstLoad'] = isFirstLoad;
+            $manipulateFunc = $manipulateFunc || 'html';
+            var errors = $('#filter__error');
+            console.log("link"+urlToSend);
+            $.get(urlToSend, params).done(function (data) {
+              $('#loading').css({display:"none"});
+              data= data.articles;
+                // No need to do anything except remove load more button!
+                if(!data.length) {
+                    $('#events__loadMore').hide();
+                    if ($manipulateFunc == 'html') {
+                        $('#blog__content')[$manipulateFunc]('');
+                        errors.text('No events with given criteria, please try again later.');
+                    }
+                    return;
+                }
+                errors.empty();
+                $('#blog__content')[$manipulateFunc]('');
+
+                var locationStart = location.href.split('?')[0];
+
+                var sortedData = {};
+                var monthes = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                $.each(data, function (id, inner) {
+                    var month = new Date(inner.metafields.event_time.start_timestamp * 1000).getMonth();
+                    month = monthes[month];
+                    if(typeof sortedData[month] === "undefined") {
+                        sortedData[month] = {};
+                    }
+                    sortedData[month][id] = inner;
+                });
+
+                // Build everything else
+                var i = 0, source, itemsContent = '';
+                 var count_item=0;
+                $.each(sortedData, function (mt, data) {
+                    itemsContent = '';
+                    count_item=0;
+                    $.each(data, function (id, inner) {
+                      var typeOk =true;
+                      var ev_type=inner.metafields.accentuate.event_type?inner.metafields.accentuate.event_type:"";
+                      if($('#event___filter').prop('selectedIndex') != "0" && $('#event___filter').val().toLowerCase() != ev_type.toLowerCase()){
+                        typeOk =false;
+                      }
+
+                      if(typeOk){
+                        count_item+=1;
+                        var itemContent = $('#blog__content-item-template').html();
+                        var metafields = inner.metafields,
+                            date = new Date(metafields.event_time.start_timestamp * 1000);
+
+                        if (inner.metafields && inner.metafields.accentuate && inner.metafields.accentuate.event_type) {
+                            if (!$('#event___filter').find('[value="' + inner.metafields.accentuate.event_type.toLowerCase() + '"]').length) {
+                                $('#event___filter').append(
+                                    $('<option/>')
+                                        .val(inner.metafields.accentuate.event_type.toLowerCase())
+                                        .text(inner.metafields.accentuate.event_type)
+                                );
+                            }
+                        }
+
+                        if (i++ === 0) {
+                            source = date;
+                        }
+                        $.each({
+                            day_word: new Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(date),
+                            day: date.toLocaleString('en-US', {day: 'numeric'}),
+                            month: date.toLocaleString('en-US', {month: 'long'}),
+                            start_time: date.toLocaleString('en-US', {hour12: true, hour: 'numeric', minute: 'numeric', timeZone: "America/New_York"}),
+                            end_time: (new Date(metafields.event_time.end_timestamp * 1000)).toLocaleString('en-US', {
+                                hour12: true,
+                                hour: 'numeric',
+                                minute: 'numeric',
+                                timeZone: "America/New_York"
+                            }),
+                            event_type: metafields.accentuate.event_type,
+                            event_link: (locationStart + '/' + inner.handle),
+                            event_title: inner.title,
+                            event_content: inner.body_html
+                        }, function (k, v) {
+                            itemContent = itemContent.replace('{--' + k + '--}', v);
+                        });
+                        itemsContent += itemContent;
+                      }
+                      
+                   
+                    });
+                    if(count_item == 0){
+                        $('#events__loadMore').hide();
+                        if ($manipulateFunc == 'html') {
+                        $('#blog__content')[$manipulateFunc]('');
+                        errors.text('No events with given criteria, please try again later.');
+                        }
+                         return;
+                      }
+                    var overallTemplate = $('#blog__content-template').html();
+                    overallTemplate = overallTemplate.replace('{--items--}', itemsContent);
+                    overallTemplate = overallTemplate.replace('{--month--}', mt);
+                    $('#blog__content').append(overallTemplate);
+                    overallTemplate = '';
+                    
+                });
+
+
+                if ($('#event___date').val() == '' && $('#event___filter').val() == '') {
+                    $('#events__loadMore').show();
+                } else {
+                    $('#events__loadMore').hide();
+                }
+                $('#events__loadMore').data('next-month', formatDate($date) / 1000);
+            }).catch(function () {
+                console.log(arguments, this);
+            });
+        }
+
+        fetchByDate(null, null, null, true);
+    })(jQuery);
+</script>
+
+{% assign events_list = blog.metafields.accentuate.featured_events_list | split: "|" %}
+{% include 'snippet_featured_events' with events: events_list %}
+
+
+{% schema %}
+  {
+  "name": {
+  "de": "Blogseiten",
+  "en": "Blog pages",
+  "es": "Páginas del blog",
+  "fr": "Pages du blog",
+  "it": "Pagine del blog",
+  "ja": "ブログページ",
+  "nl": "Blogpagina's",
+  "pt-BR": "Páginas do blog",
+  "zh-CN": "博客页面",
+  "zh-TW": "部落格頁面"
+  },
+  "settings": [
+  {
+  "type": "checkbox",
+  "id": "show_hero_on_desktop",
+  "label": "Show Hero on Desktop?",
+  "default": false
+  },
+  {
+  "type": "textarea",
+  "label": "Hero Statement",
+  "id": "hero_statement"
+  },
+  {
+  "type": "checkbox",
+  "id": "blog_show_date",
+  "label": {
+  "de": "Datum anzeigen",
+  "en": "Show date",
+  "es": "Mostrar fecha",
+  "fr": "Afficher la date",
+  "it": "Mostra data",
+  "ja": "日付を表示する",
+  "nl": "Datum weergeven",
+  "pt-BR": "Exibir data",
+  "zh-CN": "显示日期",
+  "zh-TW": "顯示日期"
+  },
+  "default": true
+  }
+  ]
+  }
+{% endschema %}

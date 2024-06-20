@@ -1,0 +1,761 @@
+
+<div class="page-width FeatureText__ContentWrapper multi_before_heading {{ section.settings.component-class }}">
+  <div class="multi_before_headers">
+    <h1>{{ section.settings.heads }}</h1>
+    <p>{{ section.settings.peras }}</p>
+  </div>
+
+<!-- The Slider Element-->
+  <div class="inner_multi">
+
+   <div class="ba-Slider" >   
+     <div id="comparisons">
+        <span class="sec-imgs">{{ section.settings.afters }}</span>
+        <span class="first-imgs">{{ section.settings.befores }}</span>
+        <figure style="background-image: url({{ section.settings.image | img_url: 'master'}});">
+          <div id="handle1"></div>
+          <div style="background-image: url({{ section.settings.imagea | img_url: 'master'}});" id="divisor1"></div>
+        </figure>
+        <input type="range" min="0" max="100" value="50" id="slider1" oninput="moveDivisor1()">
+      </div>
+      <div class="content_inner">
+         <h2>{{ section.settings.heading1 }}</h2>
+          <p>{{ section.settings.html }}</p>
+      </div>  
+   </div>
+    <div class="ba-Slider" >    
+  <div id="comparison2">
+     <span class="sec-imgs">{{ section.settings.afters }}</span>
+      <span class="first-imgs">{{ section.settings.befores }}</span>
+    <figure style="background-image: url({{ section.settings.image2 | img_url: 'master'}});">
+      <div id="handle2"></div>
+      <div style="background-image: url({{ section.settings.imagea2 | img_url: 'master'}});" id="divisor2"></div>
+    </figure>
+    <input type="range" min="0" max="100" value="50" id="slider2" oninput="moveDivisor2()">
+    
+  </div>
+  <div class="content_inner">
+       <h2>{{ section.settings.heading2 }}</h2>
+      <p>{{ section.settings.html2 }}</p>
+    </div>
+</div>
+
+    <div class="ba-Slider">    
+  <div id="comparison3">
+    <span class="sec-imgs">{{ section.settings.afters }}</span>
+    <span class="first-imgs">{{ section.settings.befores }}</span>
+    <figure style="background-image: url({{ section.settings.image3 | img_url: 'master'}});">
+      <div id="handle3"></div>
+      <div style="background-image: url({{ section.settings.imagea3 | img_url: 'master'}});" id="divisor3"></div>
+    </figure>
+    <input type="range" min="0" max="100" value="50" id="slider3" oninput="moveDivisor3()">
+    
+  </div>
+  <div class="content_inner">
+       <h2>{{ section.settings.heading3 }}</h2>
+      <p>{{ section.settings.html3 }}</p> 
+      
+    </div>
+</div>
+    
+  </div>
+
+</div>
+<style>
+
+</style>
+ <script>
+  var divisor1 = document.getElementById("divisor1"),
+  handle1 = document.getElementById("handle1"),
+  slider1 = document.getElementById("slider1");
+
+  function moveDivisor1() {
+    handle1.style.left = slider1.value+"%";
+    divisor1.style.width = slider1.value+"%";
+  }
+
+  window.onload = function() {
+    moveDivisor1();
+  };
+
+
+  var divisor2 = document.getElementById("divisor2"),
+  handle2 = document.getElementById("handle2"),
+  slider2 = document.getElementById("slider2");
+
+  function moveDivisor2() {
+    handle2.style.left = slider2.value+"%";
+    divisor2.style.width = slider2.value+"%";
+  }
+
+  window.onload = function() {
+    moveDivisor2();
+  };
+
+
+  var divisor3 = document.getElementById("divisor3"),
+  handle3 = document.getElementById("handle3"),
+  slider3 = document.getElementById("slider3");
+
+  function moveDivisor3() {
+    handle3.style.left = slider3.value+"%";
+    divisor3.style.width = slider3.value+"%";
+  }
+
+  window.onload = function() {
+    moveDivisor3();
+  };
+</script>
+<script>
+
+  $('.inner_multi').slick({
+    dots: false,
+    speed: 300,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay:false,
+    infinite: false,
+    responsive: [
+      
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 749,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay:true,
+          infinite: false,
+          arrows: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          infinite: false,
+          dot:true,
+          autoplay:true,
+          focusOnSelect: true,
+          pauseOnHover:false
+        }
+      }
+    ]
+  });
+</script>
+
+
+<style>
+.multi_before_heading .slick-prev:before,.multi_before_heading .slick-next:before {
+  display: block;
+  height: 20px;
+  width: 20px;
+  /*background: url('//monbloomie.fr/cdn/shop/files/Vector_4.png') no-repeat;*/
+  left:-18px;
+  color:#5b4c87;
+  font-size: 30px;
+  z-index:4;
+}
+  .multi_before_heading .slick-prev{
+    left: -25px;
+    z-index: 2;
+  }
+ .multi_before_heading .slick-next {
+    right: -17px;
+    z-index: 2;
+  }
+   
+    #comparison3 .sec-imgs,#comparison3 .first-imgs,
+    #comparison2 .sec-imgs,#comparison2 .first-imgs,
+    #comparisons .sec-imgs,#comparisons .first-imgs {
+    position: absolute;
+    width: 74px;
+    height: fit-content;
+    padding: 0px 15px;
+    background: #5b4c87;
+    color: #000;
+    font-size: 14px;
+    bottom: -12px;
+    right: 19%;
+    font-weight:600;
+    transform: translateX(19%);
+    z-index: 2;
+    color: #fff;
+    font-weight: 500;
+    text-align:center;
+    border-radius:3px;
+}
+.first-imgs {
+   left: 19%;
+    transform: translateX(-31%) !important;
+}
+   
+.multi_before_headers {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+.multi_before_headers p {
+     font-weight: normal;
+    font-size: 16px;
+    line-height: 29px;
+    margin-bottom: 10px;
+    text-align:center;
+}
+.multi_before_heading {
+    max-width: 1200px;
+    width: 100%;
+    margin: 50px  auto;
+}
+.multi_before_heading h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 36px;
+  line-height:46px;
+    margin-bottom: 5px;
+}
+.home-new-after-before .multi_before_headers {
+  max-width:100%;
+}
+.home-new-after-before .multi_before_headers h1,
+.home-new-after-before .multi_before_headers p {
+  text-align:center;
+}
+.multi_before_heading .inner_multi {
+    position: relative;
+    /*display: flex;*/
+    width: 100%;
+    box-sizing: border-box;
+   /* gap: 25px;*/
+  flex-wrap:wrap;
+}
+.multi_before_heading .ba-Slider {
+    position: relative;
+    display: block;
+    border: 0px solid white;
+    margin: 20px auto;
+    overflow: hidden;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: calc(23% - 6px);
+    flex-shrink: 0;
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.multi_before_heading .ba-Slider-child {}
+.ba-Slider h2,.ba-Slider h2,.ba-Slider h2 {
+  font-size:18px;
+  line-height:32px;
+  font-weight:600;
+  text-align:center;
+  margin-top:30px;
+}
+.ba-Slider p,.ba-Slider p,.ba-Slider p {
+  font-size:16px;
+  line-height:29px;
+  font-weight:400;
+  text-align:center;
+  margin: 0;
+}
+
+#handle1:before, #handle1:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px inset transparent;
+    position: absolute;
+    top: 53%;
+    margin-top: -6px;
+}
+#comparisons {
+    height: 400px;
+    padding-bottom: unset!important;
+    position: relative;
+    margin: 0 auto;
+  border-radius:10px;
+  
+}
+
+#comparisons figure { 
+  position: absolute;
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg);
+	background-size: cover;
+	font-size: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0; 
+    overflow:hidden;
+  border-radius:10px;
+  
+}
+  
+  #divisor1 { 
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg);
+	background-size: cover;
+	position: absolute;
+	width: 50%; 
+	box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+	bottom: 0; height: 100%;
+  display: block!important;
+   }
+ #divisor1::before,  #divisor1::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    width: 4px;
+    height: calc(50% - 23px);
+    background: white;
+    z-index: 2;
+  }
+ #divisor1::before {
+    top: 0;
+    box-shadow: 0 -3px 8px 1px rgba(0,0,0,.3);
+  }
+  #divisor1::after {
+    bottom: 0;
+    box-shadow: 0 3px 8px 1px rgba(0,0,0,.3);
+  }
+
+  #handle1 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+    
+  display: block!important;
+}
+    
+ #handle1::before {
+    border-right: 6px solid white;
+    left: 50%;
+    margin-left: -17px;
+  }
+   #handle1::after {
+    border-left: 6px solid white;
+    right: 50%;
+    margin-right: -17px;
+  }
+
+
+#comparisons input[type=range]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	position: absolute;
+	top: 50%; left: -26px;
+  transform: translateY(-50%);
+	background-color: transparent;
+	width: calc(100% + 50px); 
+  z-index: 2;
+}
+  #comparisons input[type=range]:focus,
+  #comparisons input[type=range]:active {
+    border: none;
+    outline: none;
+}
+
+#comparisons input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid white;
+  box-shadow: 0 0 8px 1px rgba(0,0,0,.3);
+}
+#comparisons input[type=range]::-moz-range-track {
+	-moz-appearance:none;
+	height:15px;
+	width: 100%;
+	background-color: transparent; 
+	position: relative;
+	outline: none;    
+}
+
+
+#handle2:before, #handle2:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px inset transparent;
+    position: absolute;
+    top: 53%;
+    margin-top: -6px;
+}
+#comparison2 {
+    height: 400px;
+    padding-bottom: unset!important;
+    position: relative;
+  border-radius:10px;
+    margin: 0 auto;
+  border-radius:10px;
+}
+
+#comparison2 figure { 
+  position: absolute;
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg);
+	background-size: cover;
+	font-size: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0; 
+  border-radius:10px;
+  overflow:hidden;
+}
+
+  #divisor2 { 
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg);
+	background-size: cover;
+	position: absolute;
+	width: 50%; 
+	box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+	bottom: 0; height: 100%;
+  display: block!important;
+   }
+ #divisor2::before,  #divisor2::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    width: 4px;
+    height: calc(50% - 23px);
+    background: white;
+    z-index: 1;
+  }
+ #divisor2::before {
+    top: 0;
+    box-shadow: 0 -3px 8px 1px rgba(0,0,0,.3);
+  }
+  #divisor2::after {
+    bottom: 0;
+    box-shadow: 0 3px 8px 1px rgba(0,0,0,.3);
+  }
+
+  #handle2 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+    
+  display: block!important;
+}
+    
+ #handle2::before {
+    border-right: 6px solid white;
+    left: 50%;
+    margin-left: -17px;
+  }
+   #handle2::after {
+    border-left: 6px solid white;
+    right: 50%;
+    margin-right: -17px;
+  }
+
+
+#comparison2 input[type=range]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	position: absolute;
+	top: 50%; left: -26px;
+  transform: translateY(-50%);
+	background-color: transparent;
+	width: calc(100% + 50px); 
+  z-index: 2;
+}
+  #comparison2 input[type=range]:focus,
+  #comparison2 input[type=range]:active {
+    border: none;
+    outline: none;
+}
+
+#comparison2 input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid white;
+  box-shadow: 0 0 8px 1px rgba(0,0,0,.3);
+}
+#comparison2 input[type=range]::-moz-range-track {
+	-moz-appearance:none;
+	height:15px;
+	width: 100%;
+	background-color: transparent; 
+	position: relative;
+	outline: none;    
+}
+
+
+#handle3:before, #handle3:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px inset transparent;
+    position: absolute;
+    top: 53%;
+    margin-top: -6px;
+}
+#comparison3 {
+    height: 400px;
+    padding-bottom: unset!important;
+    position: relative;
+    margin: 0 auto;
+  border-radius:10px;
+}
+
+#comparison3 figure { 
+  position: absolute;
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-before.jpg);
+	background-size: cover;
+	font-size: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0; 
+  border-radius:10px;
+  overflow:hidden;
+}
+
+  #divisor3 { 
+	//background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/photoshop-face-after.jpg);
+	background-size: cover;
+	position: absolute;
+	width: 50%; 
+	box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+	bottom: 0; height: 100%;
+  display: block!important;
+   }
+ #divisor3::before,  #divisor3::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    width: 4px;
+    height: calc(50% - 23px);
+    background: white;
+    z-index: 2;
+  }
+ #divisor3::before {
+    top: 0;
+    box-shadow: 0 -3px 8px 1px rgba(0,0,0,.3);
+  }
+  #divisor3::after {
+    bottom: 0;
+    box-shadow: 0 3px 8px 1px rgba(0,0,0,.3);
+  }
+
+  #handle3 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+    
+  display: block!important;
+}
+    
+ #handle3::before {
+    border-right: 6px solid white;
+    left: 50%;
+    margin-left: -17px;
+  }
+   #handle3::after {
+    border-left: 6px solid white;
+    right: 50%;
+    margin-right: -17px;
+  }
+
+
+#comparison3 input[type=range]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	position: absolute;
+	top: 50%; left: -26px;
+  transform: translateY(-50%);
+	background-color: transparent;
+	width: calc(100% + 50px); 
+  z-index: 2;
+}
+  #comparison3 input[type=range]:focus,
+  #comparison3 input[type=range]:active {
+    border: none;
+    outline: none;
+}
+
+#comparison3 input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid white;
+  box-shadow: 0 0 8px 1px rgba(0,0,0,.3);
+}
+#comparison3 input[type=range]::-moz-range-track {
+	-moz-appearance:none;
+	height:15px;
+	width: 100%;
+	background-color: transparent; 
+	position: relative;
+	outline: none;    
+}
+
+@media screen and (max-width:749px){
+    .multi_before_heading {
+      margin-top:30px;
+      padding:0px 30px;
+    }
+    .home-new-after-before .multi_before_headers h1{ font-size: 24px;}
+    .home-new-after-before .multi_before_headers h1,
+    .home-new-after-before .multi_before_headers p {
+      text-align:center;
+    }
+   .multi_before_heading .ba-Slider {
+     width:100%;
+   }
+  .ba-Slider h2, .ba-Slider h2, .ba-Slider h2 {
+    font-size:18px;
+  }
+  .multi_before_heading .slick-prev:before,.multi_before_heading .slick-next:before {
+     font-size: 30px;
+  }
+  .multi_before_heading .slick-prev{
+    left: -23px;
+  }
+  .multi_before_heading .slick-next {
+    right: -17px;
+  }
+  .multi_before_heading h1 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height:38px;
+}
+}
+ </style>
+{% schema %}
+{
+	"name": "New Multi Before After",
+	"tag": "section",
+	"class": "spaced-section",
+			"settings": [
+              {
+                "type": "text",
+                "id": "component-class",
+                "label": "Class"
+              },
+              {
+                "type": "text",
+                "id": "heads",
+                "label": "Heading"
+              },
+               {
+                "type": "text",
+                "id": "befores",
+                "label": "Edit Before Text"
+              },
+               {
+                "type": "text",
+                "id": "afters",
+                "label": "Edit After Text"
+              },
+              {
+                "type": "text",
+                "id": "peras",
+                "label": "Content"
+              },
+				{
+                 "type": "image_picker",
+                 "id": "image",
+                 "label": "Before Image use "
+                },
+              {
+                 "type": "image_picker",
+                 "id": "imagea",
+                 "label": "After Image use "
+                },
+                {
+					"type": "text",
+					"id": "heading1",
+					"label": "Heading",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				},
+				{
+					"type": "html",
+					"id": "html",
+					"label": "Content",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				},
+              {
+                 "type": "image_picker",
+                 "id": "image2",
+                 "label": "Before Image use "
+                },
+              {
+                 "type": "image_picker",
+                 "id": "imagea2",
+                 "label": "After Image "
+                },
+               {
+					"type": "text",
+					"id": "heading2",
+					"label": "Heading",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				},
+				{
+					"type": "html",
+					"id": "html2",
+					"label": "Content",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				},
+              {
+                 "type": "image_picker",
+                 "id": "image3",
+                 "label": "Before Image use "
+                },
+              {
+                 "type": "image_picker",
+                 "id": "imagea3",
+                 "label": "After Image use "
+                },
+              {
+					"type": "text",
+					"id": "heading3",
+					"label": "Heading",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				},
+				{
+					"type": "html",
+					"id": "html3",
+					"label": "Content",
+					"default": "<p> I rarely write reviews, but after doing my before and after picture, I had to share my results. Unfortunately we know that genetics plays a huge role with Neuropathy so I was skeptical at first to try this. But after using few times I started feeling better, and after so many sessions I could even feel that I have reduced some weight at my thigh area. Finally I'm SO glad I tried this product, the picture speaks for itself. Something worked so well at least! <strong>@ Kathie T.</strong></p>"
+				}
+			],
+   
+	"presets": [
+		{ 
+          "name": "New Multi Before After"
+           
+        }
+	]
+}
+{% endschema %}

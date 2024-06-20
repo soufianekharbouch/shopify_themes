@@ -1,0 +1,269 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<style>
+  html, body {
+    height: auto;
+  }
+</style>
+
+{% if article.metafields.accentuate.is_featured == 'true' %}
+  {% assign f_class = 'featured' %}
+  {% include 'featured-event-hero' with article: article %}
+{% endif %}
+
+<div class="container {{ f_class }}">
+  <div class="row top__wrap">
+    <div class="col-12 back__link">
+      <a class="back" href="/blogs/events">
+        < Back
+      </a>
+    </div>
+    <div class="col-12" id="eventInfo">
+      <div class="article__type">{{ article.metafields.accentuate.event_type }}</div>
+      {% if article.metafields.accentuate.is_featured == 'true' and article.metafields.accentuate.featured_event_logo != blank %}
+        <img src="{{ article.metafields.accentuate.featured_event_logo }}" class="event_logo" alt="">
+      {% else %}
+        <h1 class="article__title">{{ article.title }}</h1>
+      {% endif %}
+    </div>
+    <div class="col-12">
+      <div class="rte">
+        {% assign article_content = article.content | newline_to_br | split: '<br />' %}
+        {% for paragraph in article_content %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row date__location">
+    <div class="col-12 col-md-6 date__col">
+      <div class="inner__wrap">
+        <h3>DATE & TIME</h3>
+        <div class="date">
+          <div class="start_d">
+            {{ article.metafields.accentuate.start_date | date: "%A, %B %d" }} -
+          </div>
+          <div class="end_d">
+            {{ article.metafields.accentuate.end_date | date: "%A, %B %d" }}
+          </div>
+          <div class="time">
+            {{ article.metafields.accentuate.start_time  }}{{ article.metafields.accentuate.am_pm_end }}
+            - {{ article.metafields.accentuate.end_time }}{{ article.metafields.accentuate.am_pm }}
+          </div>
+        </div>
+        {% if article.metafields.accentuate.fb_events_link != blank %}
+          <a href="{{ article.metafields.accentuate.fb_events_link }}" target="_blank" class="calendar action__l">Add to Calendar</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-12 col-md-6 loc__col">
+      <div class="inner__wrap">
+        <h3>LOCATION</h3>
+        <div class="location">
+          <div class="place">
+            {{ article.metafields.accentuate.event_location }}
+          </div>
+          <div class="street">
+            {{ article.metafields.accentuate.event_location_street }}
+          </div>
+          <div class="city_state">
+            {{ article.metafields.accentuate.event_location_citystatezip }}
+          </div>
+        </div>
+        {% if article.metafields.accentuate.direction_link != blank %}
+          <a href="{{ article.metafields.accentuate.direction_link }}" target="_blank" class="directions action__l">Get Directions</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if article.metafields.accentuate.show_rsvp == 'true' %}
+  <div class="row rsvp">
+    <div class="col-12">
+      {% assign product = article.metafields.accentuate.event_product %}
+      {% assign product = all_products[product] %}
+      <p>To confirm your spot please, RSVP</p>
+      {% if article.metafields.accentuate.is_featured == 'true' %}
+        <a href="{{ product.url | within: collection }}" class="action__rsvp">PURCHASE TICKET</a>
+      {% else %}
+        <a href="{{ product.url | within: collection }}" class="action__rsvp">RSVP HERE</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if article.metafields.accentuate.is_featured == 'true' %}
+
+    {% if article.metafields.accentuate.carousel_image_desktop.size > 0 %}
+      <div class="row hero__carousel">
+        <div class="col-12 wr">
+          <div class="main__carousel">
+            {% assign it = article.metafields.accentuate.carousel_image_desktop.size | minus: 1 %}
+            {% for i in (0..it) %}
+              <div class="item">
+                <img src="{{ article.metafields.accentuate.carousel_image_mobile[i] }}" class="d-lg-none" alt="">
+                <img src="{{ article.metafields.accentuate.carousel_image_desktop[i] }}" class="d-none d-lg-block" alt="">
+              </div>
+            {% endfor %}
+          </div>
+          <div class="sl_next__btn">{% include 'icon-angle-right' %}</div>
+          <div class="sl_prev__btn">{% include 'icon-angle-left' %}</div>
+          {% if article.metafields.accentuate.fe_video_link != blank %}
+            <a href="" class="video__play video__btn" data-video="{{ article.metafields.accentuate.fe_video_link }}">Watch Video</a>
+          {% endif %}
+        </div>
+        <div class="main__info col-12">
+          <h2>{{ article.metafields.accentuate.carousel_text_block_title }}</h2>
+          <p>
+            {{ article.metafields.accentuate.carousel_text_block_desc }}
+          </p>
+          {% if article.metafields.accentuate.fe_video_link != blank %}
+            <a href="" class="video__play" data-video="{{ article.metafields.accentuate.fe_video_link }}">Watch Video</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if article.metafields.accentuate.featured_event_overview != blank %}
+      <div class="row overview">
+        <div class="inner_wr">
+          <h3 class="in__line col-12"><span>Overview</span></h3>
+          <div class="overview col-12">
+            {{ article.metafields.accentuate.featured_event_overview }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if article.metafields.accentuate.title_time.size > 0 %}
+      <div class="row event_schedule">
+        <div class="inner_wr">
+          <h3 class="in__line col-12"><span>Schedule of Events</span></h3>
+          <div class="col-12 carousel_wrap">
+            {% assign count = article.metafields.accentuate.title_time.size | minus: 1 %}
+            {% for i in (0..count) %}
+              {% if article.metafields.accentuate.title_time[i] != blank %}
+                <div class="item">
+                  <h2>
+                    {{ article.metafields.accentuate.title_time[i] }}
+                  </h2>
+                  <h3>
+                    {{ article.metafields.accentuate.sc_header[i] }}
+                  </h3>
+                  <p class="desc">
+                    {{ article.metafields.accentuate.sc_description[i] }}
+                  </p>
+                  {% assign product = article.metafields.accentuate.link_to_product[i] %}
+                  {% assign product = all_products[product] %}
+                  {% if product.url != blank %}
+                    <a href="{{ product.url | within: collection }}" class="action__rsvp">Purchase Ticket</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="sc_next__btn">{% include 'icon-angle-right' %}</div>
+          <div class="sc_prev__btn">{% include 'icon-angle-left' %}</div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if article.metafields.accentuate.featured_event_sponsors.size > 0 %}
+      <div class="row sponsors">
+        <div class="inner_wr">
+          <h3 class="in__line col-12"><span>Sponsors</span></h3>
+          <div class="sponsors__list col-12">
+            {% assign sp = article.metafields.accentuate.featured_event_sponsors.size | minus: 1 %}
+            {% for i in (0..sp) %}
+              {% if article.metafields.accentuate.featured_event_sponsors[i] != blank %}
+                <div class="item">
+                  <img src="{{ article.metafields.accentuate.featured_event_sponsors[i] }}" class="sp_logo" alt="">
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  {% endif %}
+
+  <div class="row share__wrap">
+    <div class="col-6 col-sm-3 order-2 order-sm-1 text-left">
+      <a class="paginate_links" href="{{ blog.previous_article }}">
+        <span class="arrow_wrap prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14"><path fill="#4A5761" d="M0.22248062,6.53875969 L6.61472868,0.244186047 C6.86976744,-0.0108527132 7.28217054,-0.0108527132 7.5372093,0.244186047 L7.92248062,0.629457364 C8.17751938,0.884496124 8.17751938,1.29689922 7.92248062,1.55193798 L2.37131783,7 L7.91705426,12.448062 C8.17209302,12.7031008 8.17209302,13.1155039 7.91705426,13.3705426 L7.53178295,13.755814 C7.27674419,14.0108527 6.86434109,14.0108527 6.60930233,13.755814 L0.217054264,7.46124031 C-0.0325581395,7.20620155 -0.0325581395,6.79379845 0.22248062,6.53875969 Z"/></svg>
+        </span>
+        <span class="pag">
+          Previous Event
+        </span>
+      </a>
+    </div>
+    <div class="col-12 text-center col-sm-6 order-1 order-sm-2">
+      {% if section.settings.show_share_buttons %}
+        {%- assign social_accounts = 'Facebook, Twitter, Pinterest,' | split: ', ' -%}
+        <div class="social-links">
+          <div>
+            <h3>Share this event</h3>
+          </div>
+          {% include 'social-sharing' %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-6 col-sm-3 order-3 text-right">
+      <a class="paginate_links" href="{{ blog.next_article }}">
+        <span class="pag">
+          Next Event
+        </span>
+        <span class="arrow_wrap next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14"><path fill="#4A5761" d="M7.91705426,7.46124031 L1.5248062,13.755814 C1.26976744,14.0108527 0.857364341,14.0108527 0.602325581,13.755814 L0.217054264,13.3705426 C-0.0379844961,13.1155039 -0.0379844961,12.7031008 0.217054264,12.448062 L5.76821705,7 L0.22248062,1.55193798 C-0.0325581395,1.29689922 -0.0325581395,0.884496124 0.22248062,0.629457364 L0.607751938,0.244186047 C0.862790698,-0.0108527132 1.2751938,-0.0108527132 1.53023256,0.244186047 L7.92248062,6.53875969 C8.17209302,6.79379845 8.17209302,7.20620155 7.91705426,7.46124031 Z"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% assign featured_events = article.metafields.accentuate.featured_events | split: "|" %}
+{% include 'snippet_featured_events' with events: featured_events %}
+
+{% schema %}
+{
+  "name": {
+    "de": "Posts",
+    "en": "Posts",
+    "es": "Publicaciones",
+    "fr": "Articles",
+    "it": "Articoli",
+    "ja": "投稿",
+    "nl": "Berichten",
+    "pt-BR": "Posts",
+    "zh-CN": "文章",
+    "zh-TW": "貼文"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": {
+        "de": "Buttons für Social Media anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fr": "Afficher les boutons de partage sur les médias sociaux",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャル共有ボタンを表示する",
+        "nl": "Knoppen voor sociaal delen weergeven",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+        "zh-CN": "显示社交分享按钮",
+        "zh-TW": "顯示社群分享按鈕"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+{% if article.metafields.accentuate.is_featured == 'true' %}
+  {{ 'featured-events.js' | asset_url | script_tag }}
+{% endif %}
+
+{{ 'article.js' | asset_url | script_tag }}

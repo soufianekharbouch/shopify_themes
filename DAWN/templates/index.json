@@ -1,0 +1,12 @@
+{
+  "layout": "theme",
+  "sections": {
+    "ecom-lyn-home-home": {
+      "type": "ecom-lyn-home-home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ecom-lyn-home-home"
+  ]
+}

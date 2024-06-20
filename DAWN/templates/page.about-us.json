@@ -1,0 +1,376 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-about-us",
+      "disabled": true,
+      "settings": {}
+    },
+    "maps_8kaJtj": {
+      "type": "maps",
+      "blocks": {
+        "store_location_mX7iW9": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Marrakech<\/p>",
+            "store_url": "#"
+          }
+        },
+        "store_location_XPqKCk": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>CasaBlanca<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_gCM7nX": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Rabat<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_wHmUGM": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Tanger<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_M7mbgt": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Paris<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_N6CD4B": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>NewYork City<\/p>",
+            "store_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "store_location_mX7iW9",
+        "store_location_XPqKCk",
+        "store_location_gCM7nX",
+        "store_location_wHmUGM",
+        "store_location_M7mbgt",
+        "store_location_N6CD4B"
+      ],
+      "settings": {
+        "heading": "<p>Our Stores<\/p>",
+        "iframe_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m12!1m3!1d108741.83940408906!2d-8.0314368!3d31.601459199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sma!4v1707679149632!5m2!1sen!2sma\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+        "container": "container-fluid",
+        "map_height": "medium",
+        "textx": "40.6700",
+        "texty": "-73.9400",
+        "zoom": "11",
+        "text2": "New York"
+      }
+    },
+    "custom-content": {
+      "type": "custom-content",
+      "blocks": {
+        "f1643bbc-4a36-42fe-9101-677bffb6ebd8": {
+          "type": "html",
+          "settings": {
+            "code": "<br>\n<br>\n<center><h1 style=\"font-size:50px;\">Who is LYN?<\/h1><\/center><br>",
+            "width": "100%",
+            "block_custom_class": ""
+          }
+        },
+        "be5d2488-3c71-471f-bb75-dbccb6970cb0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/N_F_Photo_Lyn.webp",
+            "link": "",
+            "width": "100%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "f5e88f1f-ff68-4d03-b686-0cb9fe62fab1": {
+          "type": "text",
+          "settings": {
+            "title": "<h3 class=\"about__block-heading\">Histoire de LYN:<\/h3>\n<p class=\"about__block-subheading\">L'histoire des Ateliers Lyn commence il y a 20 ans, dans un petit  magasin de la médina de Rabat. Spécialistes de l’ébénisterie, ils  fabriquent des meubles sur-mesure destinés à durer, pour le compte de clients attirés par les créations uniques du fondateur,  Lahcen.<\/p>",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "sf__about-block sf__about-block-text sf__about-block-text-1"
+          }
+        },
+        "9a3a8077-de29-4141-9162-b9484d4a85f8": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"sf__about-custom-list\">\n  <h3>We are proudly<br> Moroccan.<\/h3>\n  <ul>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon1.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>Soft Fabric<\/h4>\n          <p class=\"text-color-subtext\">Get complimentary ground shipping on every<br> order.Don’t love it? Send it back, on us.<\/p>\n      <\/div>\n    <\/li>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon2_daf1b6c2-ef2e-416c-ae6a-a7ddd145b6c5.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>Lightweight<\/h4>\n          <p class=\"text-color-subtext\">Join Minimog Rewards to earn gift cards<br>\nand enjoy exclusive member benefits.<\/p>\n      <\/div>\n    <\/li>\n    <li>\n      <span><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/icon3.svg?v=1627616411\"><\/span>\n      <div class=\"rte\">\n          <h4>All Day Comfort<\/h4>\n          <p class=\"text-color-subtext\">We believe getting dressed should be the<br> easiest part of your day.<\/p>\n      <\/div>\n    <\/li>\n  <\/ul>\n<\/div>",
+            "width": "50%",
+            "block_custom_class": "sf__about-custom-html"
+          }
+        },
+        "4e1fb14f-ef60-4693-b6a2-2b26063e1b70": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1408.webp",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "28e3ce35-e364-43f3-ba87-18b633233063": {
+          "type": "text",
+          "settings": {
+            "title": "<h6 class=\"about__block-heading-h6\">Au fil du temps, la passion de Lahcen pour son métier et la méticulosité de ses créations lui forgent une réputation  grandissante. Il continue à fabriquer, sans relâche, des meubles  toujours plus beaux, plus solides et plus audacieux à des clients de  plus en plus nombreux et comblés. Les Ateliers Lyn sont  aujourd’hui un véritable bijou rassemblant les techniques d'un  savoir-faire marocain ancestral et précieux.<\/h6>",
+            "subheading": "",
+            "text": "",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "sf__about-block sf__about-block-text sf__about-block-text-2"
+          }
+        },
+        "859f4ef2-676f-4587-9ae8-3a19ffa439dd": {
+          "type": "image_card",
+          "disabled": true,
+          "settings": {
+            "width": "33%",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "link": "",
+            "title": "Edward Lindgren",
+            "subtitle": "<span class=\"text-color-subtext\">CHIEF OPERATING OFFICER<\/span>",
+            "button_label": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "sf__about-card-custom"
+          }
+        },
+        "dc4597e9-ca80-4d0f-9e30-ff28c96dd3aa": {
+          "type": "image_card",
+          "disabled": true,
+          "settings": {
+            "width": "33%",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "link": "",
+            "title": "Nado Husa",
+            "subtitle": "<span class=\"text-color-subtext\">CO-FOUNDER<\/span>",
+            "button_label": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "sf__about-card-custom"
+          }
+        },
+        "a1a4a67f-c83f-4629-a006-e44f56c80bf5": {
+          "type": "image_card",
+          "disabled": true,
+          "settings": {
+            "width": "33%",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "link": "",
+            "title": "Chineze Afamefuna",
+            "subtitle": "<span class=\"text-color-subtext\">MARKETING<\/span>",
+            "button_label": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "sf__about-card-custom"
+          }
+        },
+        "6c232f2b-6f9d-4493-9972-d9611ab1e12a": {
+          "type": "html",
+          "settings": {
+            "code": "<span>Passionnées de voyages, d’art et de design Nada et Fatine créent des collections sous forme de pop-up pensées autour d'un  courant de design ou d'une région du monde, proposant ainsi, à chaque collection, une possibilité d'ouverture des intérieurs  marocains aux arts de vivre du monde.Les créatricesPassionnées d’art et de voyages, Nada et Fatine s’inspirent de ce que les cultures du monde ont de plus beau  et de plus raffiné pour proposer des meubles hors de commun.Pour elles, \"le design d'intérieur est un art où chaque élément est soigneusement sélectionné pour refléter et  correspondre au caractère, au style de vie, à l'architecture et à l'environnement des clients pour créer le chef-  d'œuvre parfait.\"Alliant style et design durables, les créatrices proposent des pièces fonctionnelles qui résistent à l’épreuve du  temps. Leur approche du design est fraîche, sophistiquée et dédiée à tous les intérieurs marocains.<\/span>",
+            "width": "100%",
+            "block_custom_class": "last-about-txt"
+          }
+        }
+      },
+      "block_order": [
+        "f1643bbc-4a36-42fe-9101-677bffb6ebd8",
+        "be5d2488-3c71-471f-bb75-dbccb6970cb0",
+        "f5e88f1f-ff68-4d03-b686-0cb9fe62fab1",
+        "9a3a8077-de29-4141-9162-b9484d4a85f8",
+        "4e1fb14f-ef60-4693-b6a2-2b26063e1b70",
+        "28e3ce35-e364-43f3-ba87-18b633233063",
+        "859f4ef2-676f-4587-9ae8-3a19ffa439dd",
+        "dc4597e9-ca80-4d0f-9e30-ff28c96dd3aa",
+        "a1a4a67f-c83f-4629-a006-e44f56c80bf5",
+        "6c232f2b-6f9d-4493-9972-d9611ab1e12a"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#ffffff",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 41,
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "custom_class": "sf__page-about"
+      }
+    },
+    "icon-box": {
+      "type": "icon-box",
+      "blocks": {
+        "c8a16382-6620-4bcf-ba3e-1bb9d69d5b77": {
+          "type": "iconbox",
+          "settings": {
+            "image_by_url": "",
+            "title": "Free Shipping",
+            "description": "<p>Free Shipping for orders over £130<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "13184979-bd7f-482c-865f-60738819a029": {
+          "type": "iconbox",
+          "settings": {
+            "image_by_url": "",
+            "title": "Money Guarantee",
+            "description": "<p>Within 30 days for an exchange.<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "c4cf2072-efce-4cb9-b184-14404b61e2a3": {
+          "type": "iconbox",
+          "settings": {
+            "image_by_url": "",
+            "title": "Online Support",
+            "description": "<p>24 hours a day, 7 days a week<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "8e15d521-c62b-4552-a64a-94ead24641e5": {
+          "type": "iconbox",
+          "settings": {
+            "image_by_url": "",
+            "title": "Flexible Payment",
+            "description": "<p>Pay with Multiple Credit Cards<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "c8a16382-6620-4bcf-ba3e-1bb9d69d5b77",
+        "13184979-bd7f-482c-865f-60738819a029",
+        "c4cf2072-efce-4cb9-b184-14404b61e2a3",
+        "8e15d521-c62b-4552-a64a-94ead24641e5"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "#ffffff",
+        "item_per_row": 4,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "horizontal",
+        "image_max_width": "30px",
+        "content_alignment": "start",
+        "hover_effect": "none",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "sf__page-about"
+      }
+    },
+    "dd86ff72-ea05-45c9-8d14-96c94bf7802d": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "heading": "Our Art Pieces",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "#fef7ec",
+        "collection": "frontpage",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 8,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "button_type": "link",
+        "button_text": "",
+        "button_style": "sf__btn-primary",
+        "button_size": "",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 64,
+        "padding_bottom": 54,
+        "custom_class": ""
+      }
+    },
+    "4814ace2-6000-4ba3-829a-5351ce661e3e": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "maps_8kaJtj",
+    "custom-content",
+    "icon-box",
+    "dd86ff72-ea05-45c9-8d14-96c94bf7802d",
+    "4814ace2-6000-4ba3-829a-5351ce661e3e"
+  ]
+}

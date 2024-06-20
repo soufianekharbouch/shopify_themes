@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ecom_woodcare_section_CgCNPi": {
+      "type": "ecom-woodcare-section",
+      "settings": {}
+    },
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "ecom_woodcare_section_CgCNPi",
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49"
+  ]
+}

@@ -1,0 +1,27 @@
+<div class="press-hero-section">
+  <div class="image-wrap">
+    <div class="d-none d-lg-block">
+      <div class="hero-section__image">
+        {% if block.settings.desktop_image != blank %}
+          <img src="{{ block.settings.desktop_image | img_url: 'master' }}" alt="" />
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="hero-content-area">
+        <div class="text-center">
+          <div class="hero__ttl">
+            {%- if block.settings.heroTitle != blank -%}
+              <h2>{{ block.settings.heroTitle | escape }}</h2>
+            {%- endif -%}
+          </div>
+
+          {%- if block.settings.heroContent != blank -%}
+            <div class="hero__text">
+              {{ block.settings.heroContent }}
+            </div>
+          {%- endif -%}
+        </div>
+    </div>
+  </div>
+</div>

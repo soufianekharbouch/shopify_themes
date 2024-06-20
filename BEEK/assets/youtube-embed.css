@@ -1,0 +1,42 @@
+.embed-container {
+    position: relative;
+    padding-bottom: 586px;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.yt-embed .hero-content-area, .yt-img-wrap, .youtube-heading-container {
+    position: relative !important;
+}
+
+.responsive-image__wrapper {
+    padding-top: 56% !important;
+}
+
+.yt-img-wrap {
+    max-height: 780px !important;
+    height: unset !important;
+}
+
+.yt-overlay {
+    padding-top: 0;
+}
+
+.yt-heading, .yt-text, .yt-btn {
+    padding-right: 0 !important;
+}
+
+@media (max-width: 992px) {
+    .embed-container {
+        padding-bottom: 300px;
+    }
+}
+

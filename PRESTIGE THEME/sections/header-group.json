@@ -1,0 +1,127 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "enable_sticky": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "desktop_font_size": 11,
+        "mobile_font_size": 10,
+        "background": "#1c1c1c",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "e773b97e-8e35-4969-aa56-090fcd07f148": {
+          "type": "header_collection",
+          "settings": {
+            "collection_title": "Shirts & T-shirts",
+            "collection_image": "shopify:\/\/shop_images\/Shirts_T-shirts_6dc3946a-a0b3-4df5-9ef3-59cf02cf4e20.jpg",
+            "collection_link": "shopify:\/\/collections\/shirts-t-shirts-men",
+            "menu_name": "Men",
+            "menu_name_ar": "رجال"
+          }
+        },
+        "a11305a8-a1a6-47b4-951a-550076305882": {
+          "type": "header_collection",
+          "settings": {
+            "collection_title": "New Arrivals",
+            "collection_image": "shopify:\/\/shop_images\/New_Arrivals_b6a0d47d-5b10-432f-a1e6-65376a2726fa.jpg",
+            "collection_link": "shopify:\/\/collections\/fall-winter-2023",
+            "menu_name": "Men",
+            "menu_name_ar": "رجال"
+          }
+        },
+        "7f37ba9d-5399-4bc3-b945-e684328314d3": {
+          "type": "header_collection",
+          "settings": {
+            "collection_title": "T-shirts & Crops",
+            "collection_image": "shopify:\/\/shop_images\/T-shirts_Crops_02844085-e71a-4669-b78a-4768bf6fef37.jpg",
+            "collection_link": "shopify:\/\/collections\/t-shirts-crops-for-women",
+            "menu_name": "Women",
+            "menu_name_ar": "نساء"
+          }
+        },
+        "65073d50-0260-4553-903c-6101d6fa4841": {
+          "type": "header_collection",
+          "settings": {
+            "collection_title": "Trousers & Sweatpants",
+            "collection_image": "shopify:\/\/shop_images\/Trousers_Sweatpants_c916f4fe-8a65-487e-b566-74a1df390caf.jpg",
+            "collection_link": "shopify:\/\/collections\/trousers-sweatpants-women",
+            "menu_name": "Women",
+            "menu_name_ar": "نساء"
+          }
+        }
+      },
+      "block_order": [
+        "e773b97e-8e35-4969-aa56-090fcd07f148",
+        "a11305a8-a1a6-47b4-951a-550076305882",
+        "7f37ba9d-5399-4bc3-b945-e684328314d3",
+        "65073d50-0260-4553-903c-6101d6fa4841"
+      ],
+      "settings": {
+        "enable_sticky": true,
+        "show_separation_border": true,
+        "reduce_padding": false,
+        "logo": "shopify:\/\/shop_images\/Not-Stitched-Final_a0822213-e370-4f3d-9e6e-640725585fe8.png",
+        "logo_max_width": 140,
+        "logo_mobile_max_width": 100,
+        "menu": "menu-2",
+        "sidebar_menu": "",
+        "menu_open_trigger": "hover",
+        "enable_search": true,
+        "sidebar_text_font": "heading",
+        "sidebar_show_dividers": true,
+        "layout": "logo_center_navigation_inline",
+        "show_icons": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": false,
+        "transparent_header_text_color": "#ffffff"
+      }
+    },
+    "1695976144cdbe08d4": {
+      "type": "apps",
+      "blocks": {
+        "0cab48e8-072c-44ab-ad69-4ac5d7fdb664": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "disabled": true,
+          "settings": {
+            "formId": "Wzs9M7"
+          }
+        }
+      },
+      "block_order": [
+        "0cab48e8-072c-44ab-ad69-4ac5d7fdb664"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "a2795712-04db-4b42-9e13-121378591fcf": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<script>\nwindow.addEventListener('load', function() {\nvar _learnq = window._learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}\/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', cart]);\n        klAjax = false;\n      }\n  }))\n};\n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}\/cart\/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch));\nvar klAjax = true;\nvar atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\nfor (var i = 0; i < atcButtons.length; i++) {\n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n}\n});\n<\/script>",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "1695976144cdbe08d4",
+    "a2795712-04db-4b42-9e13-121378591fcf"
+  ]
+}

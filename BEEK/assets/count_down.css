@@ -1,0 +1,236 @@
+
+    
+
+
+        .landing_hero_container{
+            width:100%;
+            margin-left:auto;
+            margin-right:auto;
+            background:white; 
+            box-sizing: border-box;
+    
+        }
+
+        .landing_left_hero{
+            width:100%;
+            box-sizing: border-box;
+        }
+        
+        .landing_count_down{
+            width:100%;
+            background:white;
+            font-size:34px;
+            color:#758592;
+            font-weight:900;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+        }
+        .in-live{
+          display:none;
+        }
+        .sub-in-live{
+          width:100%;
+          height:100%;
+          display:table;
+        }
+        .in-off{
+         display: table-cell;
+        }
+        .sub-in-off{
+          width:100%;
+          height:100%;
+          display:table;
+        }
+        .in-off span{
+          font-family:Century Old Style Std;
+          font-size:36px;
+          width:100%;
+          margin:auto;
+        display: table-cell;
+        vertical-align: middle;
+        line-height:initial;
+        }
+        .in-live span{
+          font-family:Century Old Style Std;
+          font-size:54px;
+          width:100%;
+          margin:auto;
+        display: table-cell;
+        vertical-align: middle;
+        line-height:initial;
+         animation-duration: .8s;
+           animation-name: clignoter;
+           animation-iteration-count: infinite;
+           transition: none;
+        }
+        @keyframes clignoter {
+          0%   { opacity:1; }
+          40%   {opacity:0; }
+          100% { opacity:1; }
+        }
+        .landing_count_down_text_label{
+            display: table-cell;
+            vertical-align: middle;
+            font-family:Century Old Style Std !important;
+            font-size:42px;
+            font-weight:bold !important;
+            /*max-width: 110px;*/
+            line-height:36px;
+        }
+        
+        .landing_count_down_text{
+            display: flex;
+            flex-direction: row;
+            padding:0px 20px 0px 20px;
+            color:#4A5761;
+        }
+        .landing_count_down_text span{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .lnd {
+            font-weight:bold;
+            font-size:25px;
+            font-family:Century Old Style Std;
+            margin-right:8px;
+        }
+        .landing_label{  
+            font-family:Avenir Next;
+            font-size: 16px;
+            font-weight:600;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+        }
+
+
+        @media(max-width:1340px){
+          .landing_count_down_text_label{ 
+            font-size:34px;
+            line-height:34px;
+          }
+          .lnd{
+          font-size:30px;
+        }
+        }
+        @media(max-width:1025px){
+        .landing_count_down_text_label{ 
+            font-size:38px;
+          }
+        .lnd{
+          font-size:20px;
+          font-family:Century Old Style Std;
+          
+        }
+        .landing_label{
+          font-size:14px;
+        }
+        }
+        
+
+        
+        @media(max-width:769px){
+        .lnd{
+          font-size:20px;/* counter (numbers) size enter 768 and 450px */
+          font-family:Century Old Style Std;
+        }
+        .landing_count_down{
+          font-size:30px;
+        
+        }
+        .landing_label{
+          font-size:16px;
+        }
+          .landing_count_down_text_label{ 
+            font-size:38px; /* next show text for size enter 768 and 450px */
+            line-height:34px;
+            padding-left:5%;
+          }
+        
+        }
+
+
+        @media(max-width:500px){
+          .landing_count_down{
+          min-height:65px;
+          padding-right:12%;
+          padding-left:12%;
+        }
+          .landing_left_hero{
+          box-sizing: border-box;
+        }
+        .landing_count_down_text{
+            padding:0px 10px;
+        }
+          .landing_button_text{
+          max-height:340px;
+          height: 100%;
+        }
+        
+        .lnd{
+          font-size:2
+          18px;
+        }
+          .landing_count_down_text_label{ 
+            font-size:21px; /* next show text for size enter 470 and 375px */
+            max-width: 40px;
+            line-height: 19px;
+          }
+        .landing_label{
+          font-size:12px;
+        }
+        }
+        
+        @media(max-width:376px){
+        .landing_count_down{
+          font-size:18px;
+        }
+        .landing_label{
+          font-size:11px;
+        }
+        .landing_count_down{
+          min-height:70px;
+          padding-right:8%;
+          padding-left:8%;
+        }
+      
+        }
+        @media(max-width:321px){
+        .landing_count_down{
+          font-size:17px;
+        }
+        
+        .landing_label{
+          font-size:10px;
+        }
+        }
+        
+        
+        .h_str{
+          margin-top: 35px;
+          padding: 12px 50px 12px 50px;
+          font-size: 20px;
+          letter-spacing: 1px;
+        }
+      
+      
+      @media(max-width:800px){
+        .h_str{
+          margin-top:20px;
+          font-size:15px;
+        }
+      }
+        .h_strhead{
+           font-size: 24px;
+           font-weight:400;
+        }
+
+        .alertt{
+          animation-duration: .8s;
+          animation-name: clignoter;
+          animation-iteration-count: infinite;
+        }

@@ -1,0 +1,33 @@
+<!-- /templates/page.liquid -->
+<div class="grid--full text-max-width">
+  <div>
+    <div class="text-center content-wrapper--horizontal section-header">
+      <div class="display-table-cell">
+        <h1>{{ page.title }}</h1>
+        {% include 'breadcrumb' %}
+      </div>
+    </div>
+  </div>
+  <hr class='hr--center'>
+  <div>
+    <div class="rte">
+      {{ page.content }}
+    </div>
+   </div>
+   <hr class="hr--center">
+  <div>
+    <div class="rte">
+
+	{% for line_item in cart.items %}{{ line_item.variant_id }}{% if forloop.last != true %},{% endif %}{% endfor %}
+	<br /><br />
+
+	TEST FOR PIXEL: https://www.bluecore.com/api/track/purchase_pixel?token=beekman_1802&email={{ customer.email | remove: ' ' | strip_newlines | downcase }}&total={{ total_price | money_without_currency | remove: "," }}&order_id={{ order_number }}&product_ids={% for line_item in cart.items %}{{ line_item.variant_id }}{% if forloop.last != true %},{% endif %}{% endfor %}
+	<br /><br />
+
+    URL FOR PIXEL: https://www.bluecore.com/api/track/purchase_pixel?token=beekman_1802&email={{ customer.email | remove: ' ' | strip_newlines | downcase }}&total={{ total_price | money_without_currency | remove: "," }}&order_id={{ order_number }}&product_ids={% for line_item in line_items %}{{ line_item.variant_id }}{% if forloop.last != true %},{% endif %}{% endfor %}
+	<br /><br />
+
+    </div>
+   </div>
+   <hr class="hr--center">
+</div>

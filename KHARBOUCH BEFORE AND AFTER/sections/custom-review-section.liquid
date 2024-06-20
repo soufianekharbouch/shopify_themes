@@ -1,0 +1,297 @@
+<section class="Section Section--spacingNormal" id="section-{{ section.id }}">
+  <div class="page-width" data-aos="logo__animation">
+    {%- if section.settings.heading != blank -%}
+      <div class="section-header">
+        <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.heading | escape }}</h2>
+      </div>
+    {%- endif -%}
+  
+    {%- if section.blocks.size > 0 -%}
+      <div class="logo-bar logo-bar--{{ section.id }}">
+        <div class="splide logo__splide" role="group" aria-label="Splide Basic HTML Example">
+          <div class="splide__track">
+            <ul class="grid-container splide__list">
+              {%- for block in section.blocks -%}
+                <li class="splide__slide">
+                  {% if block.settings.title != blank and block.settings.text != blank %}
+                    <div class="logo__details">
+                      {% if block.settings.title != blank %}
+                        <h6 class="content__title">{{ block.settings.title }}</h6>
+                        <div class="custom__review--stars">
+                          {% for i in (1..5) %}
+                            {% render 'star-icon' %}
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.text != blank %}<div class="description">{{ block.settings.text }}</div>{% endif %}
+                    </div>
+                  {% endif %}
+                  {%- if block.settings.icon != blank -%}
+                    <div class="review__image">
+                      <img class="logo-bar__image lazyload"
+                        src="{{ block.settings.icon | img_url: 'master' }}"
+                        alt="{{ block.settings.icon.alt }}">
+                    </div>
+                  {%- endif -%}
+                  {% if block.settings.customer_details != blank %}<div class="customer_details">{{ block.settings.customer_details }}</div>{% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+<style>
+  #section-{{ section.id }}.Section--spacingNormal {
+    margin: 0;
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background: {{section.settings.section_bg}};
+  }
+  #section-{{ section.id }}.Section--spacingNormal .customer_details * {
+    margin: -5px 0 0;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+  }
+  #section-{{ section.id }}.Section--spacingNormal .description * {
+    line-height: 20px;
+    font-size: 14px;
+    color: #000;
+  }
+  #section-{{ section.id }} h2.SectionHeader__Heading.Heading.u-h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #000;
+    font-weight: 900;
+  }
+  #section-{{ section.id }} .custom__review--stars svg {
+    width: 16px;
+    margin: 0px 0 -10px !important;
+  }
+  #section-{{ section.id }} .splide__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px !important;
+  }
+  #section-{{ section.id }} img.logo-bar__image.lazyload {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  a.read__reviews--link {
+    font-weight: 900;
+    text-decoration: underline;
+  }
+  #section-{{ section.id }} .review__image {
+    width: {{ section.settings.icon_width }}px;
+    height: {{ section.settings.icon_width }}px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+      #section-{{ section.id }} .review__image img {
+    max-width: 100%;
+}
+
+  #section-{{ section.id }} h6.content__title {
+    margin: 0;
+    padding-bottom: 0;
+    font-weight: 900;
+    font-size: 16px;
+    color: #000;
+  }
+  #section-{{ section.id }} .description {
+    max-width: 500px;
+  }
+  #section-{{ section.id }} button.splide__pagination__page.is-active {
+    background: #000;
+  }
+  #section-{{ section.id }} ul.splide__pagination.splide__pagination--ltr {
+    gap: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 -20px;
+  }
+  #section-{{ section.id }} button.splide__pagination__page {
+    background: #ddd;
+    width: 0;
+    height: 0;
+    border-radius: 50px;
+    font-size: 0;
+    padding: 4px;
+    border: 1px solid #000;
+  }
+  #section-{{ section.id }} .splide__arrows.splide__arrows--ltr {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 35%;
+    z-index: 1;
+  }
+  
+  #section-{{ section.id }} button.splide__arrow.splide__arrow--prev {
+    rotate: -180deg;
+    margin-left: -20px;
+  }
+  
+  #section-{{ section.id }} button.splide__arrow.splide__arrow--next {
+    margin-right: -20px;
+  }
+  
+  #section-{{ section.id }} button.splide__arrow {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid #000;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  #section-{{ section.id }} button.splide__arrow svg {
+    width: 12px;
+  }
+  {% if section.blocks.size < 4 %}
+    .grid-container.splide__list {
+      display: grid !important;
+      grid-template-columns: repeat({{ section.blocks.size }},1fr);
+    }
+  {% endif %}
+  @media (max-width: 889px) {
+    .grid-container.splide__list {
+      display: flex !important;
+    }
+  }
+  @media (max-width: 749px) {
+    #section-{{ section.id }} .splide__track {
+      padding: 0 20px !important;
+    }
+    #section-{{ section.id }} button.splide__arrow.splide__arrow--prev {
+      margin-left: 0px;
+    }
+    
+    #section-{{ section.id }} button.splide__arrow.splide__arrow--next {
+      margin-right: 0px;
+    }
+  }
+</style>
+<script>
+  $(document).ready(()=> {
+    var splide4 = new Splide( '#section-{{ section.id }} .logo__splide', {
+      type: 'loop',
+      perPage: 3,
+      snap: true,
+      arrows: true,
+      drag: true,
+      pagination: true,
+      autoplay: true,
+      {% if section.blocks.size < 4 %}
+      destroy: true,
+      {% endif %}
+      breakpoints: {
+		889: {
+          destroy: false,
+          perPage: 2,
+		},
+        576: {
+          perPage: 1,
+		}
+      }
+    });
+    splide4.mount();
+  })
+</script>
+
+{% schema %}
+{
+  "name": "Custom Review Slider",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "label": "Image Width",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Background",
+      "default": "#FFFFFF"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "column_item",
+      "name": "Column Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "customer_details",
+          "label": "Custom Details"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Review Slider"
+    }
+  ]
+}
+{% endschema %}

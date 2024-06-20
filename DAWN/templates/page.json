@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49"
+  ]
+}

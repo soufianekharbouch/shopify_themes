@@ -1,0 +1,362 @@
+<section id="beekman_our_founders">
+    <div class="d-md-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: section.settings.hero_mobile,
+                        hero_aspect_ratio: 75,
+                        max_width: 2000,
+                        max_height: 2000,
+                    %}
+                </div>
+                <div class="col-2"></div>
+                <div class="col-8 text-center">
+                    <h1>{{ section.settings.hero_heading }}</h1>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-12 text-center">
+                    <p>{{ section.settings.hero_text }}</p>
+                </div>
+            </div>
+            {% for block in section.blocks %}
+                <div class="row">
+                    <div class="col-12">
+                        <div class="colored-bg"></div>
+                        {% include 'responsive-image-aspect-ratio' with
+                            image: block.settings.caption_img_mobile,
+                            hero_aspect_ratio: 100,
+                            max_width: 2000,
+                            max_height: 2000,
+                        %}
+                    </div>
+                    <div class="col-12 text-center">
+                        <p class="caption">{{ block.settings.caption_text }}</p>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <blockquote>"{{ block.settings.quote }}"</blockquote>
+                    </div>
+                    <div class="col-12 text-center">
+                        <p class="citation">{{ block.settings.attribution }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row no-gutters">
+            <div class="col-12">
+                {% include 'responsive-image-aspect-ratio' with
+                    image: section.settings.connect_banner_mobile,
+                    hero_aspect_ratio: 133,
+                    max_width: 2000,
+                    max_height: 2000,
+                %}
+            </div>
+        </div>
+        <div class="connect">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <h3>{{ section.settings.connect_heading }}</h3>
+                            </div>
+                            <div class="col-12">
+                                <p>{{ section.settings.connect_content }}</p>
+                            </div>
+                            <div class="col-12">
+                                <a class="handle" href="{{ section.settings.connect_handle_link }}" target="_blank">{{ section.settings.connect_handle }}</a>
+                            </div>
+                            <div class="col-12">
+                                {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+                                <ul class="social-links">
+                                {% for social in social_accounts %}
+                                    {%- assign social_handle = social | handleize -%}
+                                    {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                                    {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+                                    {% if settings[social_link] != blank %}
+                                    <li>
+                                        <a target="_blank" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+                                        {% include social_icon %}
+                                        <span class="icon-fallback-text">{{ social }}</span>
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="appearances">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <h3 class="bold">{{ section.settings.appearances_heading }}</h3>
+                            </div>
+                            <div class="col-12">
+                                <p>{{ section.settings.appearances_content }}</p>
+                            </div>
+                            <div class="col-12">
+                                <button href="{{ section.settings.appearances_button_link }}">{{ section.settings.appearances_button_label }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-block desktop">
+        <div class="row">
+            <div class="col-12">
+                <div class="desktop_hero">
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: section.settings.hero_desktop,
+                        hero_aspect_ratio: 46,
+                        max_width: 2000,
+                        max_height: 2000,
+                    %}
+                </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <h1>{{ section.settings.hero_heading }}</h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-12 text-center">
+                <p>{{ section.settings.hero_text }}</p>
+            </div>
+        </div>
+        {% for block in section.blocks %}
+          {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+            <div class="bios">
+                <div class="row align-items-center">
+                    <div class="col-6 text-center {% if thecycle == 'odd'  %} order-2 {% endif %}">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <blockquote>"{{ block.settings.quote }}"</blockquote>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p class="citation">{{ block.settings.attribution }}</p>
+                            </div>
+                            <div class="col-12">
+                                <p class="caption">{{ block.settings.caption_text }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 {% if thecycle == 'odd'  %} order-1 {% endif %}">
+                        <div class="colored-bg"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    {% include 'responsive-image-aspect-ratio' with
+                                        image: block.settings.caption_img_mobile,
+                                        hero_aspect_ratio: 100,
+                                        max_width: 2000,
+                                        max_height: 2000,
+                                    %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>AS SEEN IN</h3>
+                {% include 'responsive-image-aspect-ratio' with
+                    image: section.settings.press-ribbon,
+                    bgPosition: 'contain',
+                    hero_aspect_ratio: 5,
+                    max_width: 1140,
+                    max_height: 58,
+                %}
+            </div>
+        </div>
+        <div class="connect">
+            <div class="row no-gutters">
+                <div class="col-4">
+                    <div class="relative-wrap">
+                        <div class="connect_floating_tile">
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <h3>{{ section.settings.connect_heading }}</h3>
+                                </div>
+                                <div class="col-12">
+                                    <p>{{ section.settings.connect_content }}</p>
+                                </div>
+                                <div class="col-12">
+                                    <a class="handle" href="{{ section.settings.connect_handle_link }}" target="_blank">{{ section.settings.connect_handle }}</a>
+                                </div>
+                                <div class="col-12">
+                                    {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+                                    <ul class="social-links">
+                                    {% for social in social_accounts %}
+                                        {%- assign social_handle = social | handleize -%}
+                                        {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                                        {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+                                        {% if settings[social_link] != blank %}
+                                        <li>
+                                            <a target="_blank" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+                                            {% include social_icon %}
+                                            <span class="icon-fallback-text">{{ social }}</span>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-8">
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: section.settings.connect_banner_desktop,
+                        hero_aspect_ratio: 55,
+                        max_width: 2000,
+                        max_height: 2000,
+                    %}
+                </div>
+            </div>
+        </div>
+        <div class="appearances">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <h3 class="bold">{{ section.settings.appearances_heading }}</h3>
+                            </div>
+                            <div class="col-12">
+                                <p>{{ section.settings.appearances_content }}</p>
+                            </div>
+                            <div class="col-12">
+                              <a href="{{ section.settings.appearances_button_link }}"><button>{{ section.settings.appearances_button_label }}</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "The Founders",
+    "settings": [
+      {
+        "id": "hero_mobile",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      },
+      {
+        "id": "hero_desktop",
+        "type": "image_picker",
+        "label": "Desktop Hero Image"
+      },
+      {
+        "id": "hero_heading",
+        "type": "text",
+        "label": "Hero Heading",
+        "default": "About The Founders"
+      },
+      {
+        "id": "hero_text",
+        "type": "text",
+        "label": "Hero Text",
+        "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+      },
+      {
+        "id": "press-ribbon",
+        "type": "image_picker",
+        "label": "As Seen In ..."
+      },
+      {
+        "id": "connect_banner_mobile",
+        "type": "image_picker",
+        "label": "Connect With Us - Mobile Banner Image"
+      },
+      {
+        "id": "connect_banner_desktop",
+        "type": "image_picker",
+        "label": "Connect With Us - Desktop Banner Image"
+      },
+      {
+        "id": "connect_heading",
+        "type": "text",
+        "label": "Connect With Us - Heading"
+      },
+      {
+        "id": "connect_content",
+        "type": "textarea",
+        "label": "Connect With Us - Text"
+      },
+      {
+        "id": "connect_handle",
+        "type": "text",
+        "label": "Social Handle"
+      },
+      {
+        "id": "connect_handle_link",
+        "type": "url",
+        "label": "Link - Social Handle"
+      },
+      {
+        "id": "appearances_heading",
+        "type": "text",
+        "label": "Appearances - Heading"
+      },
+      {
+        "id": "appearances_content",
+        "type": "textarea",
+        "label": "Appearances - Text"
+      }, 
+      {
+        "id": "appearances_button_label",
+        "type": "text",
+        "label": "Button - Label"
+      },
+      {
+        "id": "appearances_button_link",
+        "type": "url",
+        "label": "Button - Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_with_caption", 
+        "name": "Image With Caption",
+        "settings": [
+            {
+                "id": "caption_img_mobile",
+                "type": "image_picker",
+                "label": "Image - Mobile"
+            },
+            {
+                "id": "caption_text",
+                "type": "textarea",
+                "label": "Caption"
+            },
+            {
+                "id": "quote",
+                "type": "textarea",
+                "label": "Quote"
+            },
+            {
+                "id": "attribution",
+                "type": "text",
+                "label": "Citation"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}

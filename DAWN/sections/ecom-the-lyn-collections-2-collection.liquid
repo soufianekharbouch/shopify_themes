@@ -1,0 +1,588 @@
+{% comment %}
+ EComposer (https://ecomposer.io)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from EComposer
+ At 2024-03-05 17:16:28
+ {% endcomment %} 
+ 
+ {% assign ecom_root_url = routes.root_url %}
+ {% if ecom_root_url != '/'%}
+ {% assign ecom_root_url = routes.root_url | append: '/' %}
+ {% endif %}
+ <link rel="stylesheet" media="print" onload="this.media='all'" id="ecom-vendors-slider_css" href="https://cdn.ecomposer.app/vendors/css/ecom-swiper@11.css" /><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /><noscript><link rel="stylesheet" media="all" onload="this.media='all'" id="ecom-vendors-slider_css" href="https://cdn.ecomposer.app/vendors/css/ecom-swiper@11.css" /><link rel="stylesheet" media="all" id="ecom-vendors-css_ecomposer_base" href="https://cdn.ecomposer.app/vendors/css/ecom-base.css?v=1.6" /></noscript><script type="text/javascript" asyc="async" id="ecom-vendors-shopify_option_selection_js" src="https://cdn.ecomposer.app/vendors/js/ecomposer_option_selection.js" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-countdown_js" src="https://cdn.ecomposer.app/vendors/js/ecom-countdown.js?ver=2.0" ></script><script type="text/javascript" asyc="async" id="ecom-vendors-slider_js" src="https://cdn.ecomposer.app/vendors/js/ecom-swiper@11.0.5.js" ></script>
+{%capture section_id %}ecom-the-lyn-collections-2-collection{% endcapture%}{% if section and section_id == section.id and headless == true %}
+{{ content_for_header }}
+{% render 'ecom_header', ECOM_THEME: true %}{% endif %}<link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Be+Vietnam+Pro:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"/>
+{{'ecom-65e750f704701da6ab0ebc85.css' | asset_url | stylesheet_tag }}
+<script src="{{'ecom-65e750f704701da6ab0ebc85.js' | asset_url }}" defer="defer"></script>
+<script type="text/javascript" class="ecom-page-info">
+ window.EComposer = window.EComposer || {};
+ window.EComposer.TEMPLATE_ID="65e750f704701da6ab0ebc85";
+ window.EComposer.TEMPLATE = {"template_id":"65e750f704701da6ab0ebc85","title":"The LYN Collections","type":"collection","slug":"ecom-the-lyn-collections-2","plan_id":2};
+ </script>
+<div class="ecom-builder" id="ecom-the-lyn-collections-2"><div class="ecom-sections" data-section-id="{{section.id}}">
+ {% comment %}
+ // Reactive
+ * this.data.settings.collection
+ {% endcomment %}
+ {% liquid
+ if request.page_type != 'collection' or collection == blank
+ assign selected_collection = 'the-lyn-collections'
+ if selected_collection == blank or selected_collection == '' or collections[selected_collection] == blank
+ assign collection = collections.all
+ else
+ assign collection = collections[selected_collection]
+ if collection.id == blank
+ assign collection = collections.all
+ endif
+ endif
+ endif
+ %}
+ <section class="ecom-row ecom-core ecom-section ecom-69woyfjrccu" data-id="ecom-69woyfjrccu" style="z-index: inherit;"><div data-deep="1" class="core__row--columns"><div class="ecom-column ecom-core core__column--first core__column--last ecom-m1lgr8qwhsl"><div class="core__column--wrapper"><div class="core__blocks" index="0"><div class="core__blocks--body"><div class="ecom-block ecom-core core__block elmspace ecom-wcishxs87m7" data-core-is="block"><div class="ecom-element ecom-collection ecom-collection__product" deep="1"><div class="ecom-collection__product-wrapper"><div class="ecom-collection__product-container ecom-collection__product-container_collection"><div class="ecom-collection__product-main ecom-collection_product_template_collection" data-option-swiper="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;freeMode&quot;:false,&quot;breakpoints&quot;:{&quot;0&quot;:{&quot;slidesPerView&quot;:1},&quot;768&quot;:{&quot;slidesPerView&quot;:2},&quot;1025&quot;:{&quot;slidesPerView&quot;:4}},&quot;autoplay&quot;:{&quot;enabled&quot;:false,&quot;delay&quot;:0,&quot;pauseOnMouseEnter&quot;:false,&quot;disableOnInteraction&quot;:false,&quot;reverseDirection&quot;:false},&quot;speed&quot;:200,&quot;grabCursor&quot;:true,&quot;slideActiveClass&quot;:&quot;ecom-box-active&quot;,&quot;centeredSlides&quot;:false,&quot;watchOverflow&quot;:true,&quot;autoHeight&quot;:true,&quot;cubeEffect&quot;:{&quot;slideShadows&quot;:true,&quot;shadowOffset&quot;:20},&quot;creativeEffect&quot;:{},&quot;fadeEffect&quot;:{&quot;crossFade&quot;:true},&quot;pagination&quot;:{&quot;el&quot;:&quot;.ecom-swiper-pagination&quot;,&quot;type&quot;:&quot;bullets&quot;,&quot;clickable&quot;:true},&quot;navigation&quot;:{&quot;nextEl&quot;:&quot;.ecom-swiper-button-next&quot;,&quot;prevEl&quot;:&quot;.ecom-swiper-button-prev&quot;},&quot;spaceBetween&quot;:10}" data-pagination="default" data-week="{{ 'sections.ecom-the-lyn-collections-2-collection.text_week_wcishxs87m7_html' | t }}" data-day="{{ 'sections.ecom-the-lyn-collections-2-collection.text_day_wcishxs87m7_html' | t }}" data-hour="{{ 'sections.ecom-the-lyn-collections-2-collection.text_hour_wcishxs87m7_html' | t }}" data-minute="{{ 'sections.ecom-the-lyn-collections-2-collection.text_minute_wcishxs87m7_html' | t }}" data-second="{{ 'sections.ecom-the-lyn-collections-2-collection.text_second_wcishxs87m7_html' | t }}" data-sale="{{ 'sections.ecom-the-lyn-collections-2-collection.saleOff_wcishxs87m7_html' | t }}" data-review-platform="{%- assign review_platform = shop.metafields.ecomposer.app_review.value -%}{{-review_platform-}}" data-countdown-shows="day,hour,minute,second" data-translate="true">
+ {%- capture badge_tags -%}Hot{%- endcapture -%}
+ {%- liquid
+ assign colors = shop.metafields.ecomposer.colors
+ assign badge_tags = badge_tags | strip | split: ','
+ assign tmp_collection = collection
+ assign tmp_product = product
+ assign enable_hook = shop.metafields.ecomposer.enable_hook.value
+ -%}
+ 
+ 
+ {%- capture limit-%}8{% endcapture %}
+ {%- if limit == blank -%}
+ {% assign limit = 12 %}
+ {% else %}
+ {% assign limit = limit | plus: 0 %}
+ {%- endif-%}
+ 
+ {%- if collection != blank -%}
+ {%- paginate collection.products by limit -%}
+ {% assign products = collection.products %}
+ {% assign is_collection = true %}
+ 
+ {% capture quickshop_layout%}lite{% endcapture %}
+ {% capture product_style%}absolute{% endcapture%}
+ {%- assign view_more_only = undefined -%}
+ {% capture product_layout %}grid{% endcapture %}
+ {% assign check_min = 0%}
+ {% if products and products.size > check_min and products != blank %}
+ <div class="
+ ecom-collection__product--wrapper-items ecom-collection-product__layout-grid
+ "
+ data-grid-column="4"
+ data-grid-column-tablet="2"
+ data-grid-column-mobile="1"
+ >
+ {% assign ecom_count = 0 %}
+ {% for p in products %}
+ {% assign product = p %}
+ {% if p.handle %}
+ {% assign product = p %}
+ {% else %}
+ {% assign product = all_products[p] %}
+ {% endif %}
+ {% if product.url == blank %} {% continue %} {% endif %}
+ {% if ecom_count >= limit %}{% break %}{% endif %}
+ 
+ {% assign ecom_count = ecom_count | plus: 1 %}
+ {%- capture swatch_option -%}{{ 'sections.ecom-the-lyn-collections-2-collection.product_option_swatch_wcishxs87m7_html' | t }}{%- endcapture -%}
+ {% assign hide_quickshop = true %}
+ {% assign other_option_layout = 'hide' %}
+ {% capture product_picker%}
+ 
+ {%- if product.available and product.has_only_default_variant == false-%}
+ {% if quickshop_layout != 'full' and product.options.size > 1%}
+ {% assign hide_quickshop = false %}
+ {% endif %}
+ 
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_before_variant', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ <div class="ecom-collection__product-variants" data-picker-type="color">
+ <button class="ecom-collection__product-close"></button>
+ <form class="ecom-collection__product-form ecom-product-form" product_id="{{product.id}}" data-product_id="{{product.id}}" data-product-id="{{product.id}}" data-handle="{{product.handle}}">
+ <div class="ecom-child-element" >
+ {% assign variant_selected = product.first_available_variant%}
+ 
+ {%- capture swatch_option_temp -%}{{ 'sections.ecom-the-lyn-collections-2-collection.product_option_swatch_wcishxs87m7_html' | t }}{%- endcapture -%}
+ {%- assign swatch_option_temp = swatch_option_temp | split: ',' -%}
+ {% assign swatch_option = "" %}
+ {% for item in swatch_option_temp %}
+ {% assign normalizedItem = item | strip %}
+ {% assign swatch_option = swatch_option | append: normalizedItem %}
+ {% unless forloop.last %}
+ {% assign swatch_option = swatch_option | append: ',' %}
+ {% endunless %}
+ {% endfor %}
+ {% assign swatch_option = swatch_option | split: ',' %}
+ {% assign option_index = current_option.position | minus: 1 %}
+ {%- for option in product.options_with_values -%}
+ {%- if swatch_option contains option.name -%}
+ {% assign variant_selected = product.selected_or_first_available_variant %}
+ {% assign current_option = option %}
+ {% assign option_index = current_option.position | minus: 1 %}
+ <div class="ecom-collection__product-picker-main ecom-collection__product-picker-option-{{current_option.name | handleize }}">
+ 
+ 
+ <ul class="ecom-collection__product-picker-colors-list">
+ {%- assign index = current_option.position | prepend: 'option' -%}
+ {% assign value_key_selected = variant_selected[index] | downcase %}
+ {%- for value in current_option.values -%}
+ {% assign value_key = value | downcase | strip %}
+ <li data-option-index="{{ option_index }}" class="ecom-collection__product-swatch-item ecom-collection__product-picker-colors-item {%comment%}{% if value_key == value_key_selected %}ecom-product-swatch-item--active ecom-button-active{% endif %}{%endcomment%}" data-value="{{ value | escape }}">
+ <span class="ecom-collection__product-swatch-item--wrapper"></span>
+ <span class="ecom-collection__product-picker-colors-item--preview {% if colors and colors.value[value_key] == blank %}ecom-collection__product-picker-colors--no-color{%- endif -%}" {% if colors and colors.value[value_key] != blank %} style="{{colors.value[value_key]}}"{% endif %}>
+ </span>
+ </li>
+ {%endfor%}
+ </ul>
+ 
+ </div>
+ {% endif %}
+ {% endfor %}
+ {%- if other_option_layout != 'hide' -%}
+ <div class="ecom-collection__product-quick-shop-wrapper {% if hide_quickshop %} ecom-collection__product-quick-shop--force-show{% endif %}">
+ {%- for option in product.options_with_values -%}
+ {%- if swatch_option contains option.name -%}{% continue%}{%-endif-%}
+ {%- assign index = option.position | prepend: 'option' -%}
+ {% assign option_index = option.position | minus: 1 %}
+ <div class="ecom-collection__product-picker-other ecom-collection__product-picker-option-{{option.name | handleize }}">
+ 
+ 
+ <select class="ecom-collection__product-swatch-select ecom-collection__product-picker-hide-list" data-option-index="{{ option_index }}">
+ {% for value in option.values %}
+ <option value="{{value | escape }}" {% if value == variant_selected[index] %}selected="selected"{% endif %}>
+ {{value}}
+ </option>
+ {% endfor %}
+ </select>
+ 
+ </div>
+ {%- endfor -%}
+ </div>
+ {%- endif -%}
+ 
+ 
+ <div class="ecom-collection__product-quick-shop-wrapper {% if hide_quickshop %} ecom-collection__product-quick-shop--force-show{% endif %}">
+ <div class="ecom-collection__product-picker-selection" style="display:none;">
+ <select name="variant_id" data-product-id="{{product.id}}" id="ecom-variant-selector-{{product.id}}-ecom-wcishxs87m7">
+ {% for variant in product.variants %}
+ <option value="{{variant.id}}">{{variant.title}}</option>
+ {% endfor %}
+ </select>
+ </div>
+ </div>
+ </div>
+ {%- if product.requires_selling_plan == true and view_more_only != true -%}
+ 
+ <div
+ class="ecom-button-default ecom-collection__product-form__actions">
+ <a class="ecom-collection__product-form__actions--view-more ecom-collection__product-view-more-before ecom-child-element"
+ 
+ target=""
+ href="{%- if is_collection-%}{{- product.url | within: collection -}}{% else %}{{- product.url -}}{%-endif-%}"
+ title="{{ product.title | escape }}">
+ 
+ <span class="ecom-collection__product-view-more-text">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.view_more_text_wcishxs87m7_html' | t }}
+ </span>
+ </a>
+ </div>
+ 
+ {%- else -%}
+ <div class="ecom-collection__product-quick-shop-add-to-cart-wrapper {% if hide_quickshop or view_more_only %} ecom-collection__product-quick-shop--force-show{% endif %}">
+ 
+ </div>
+ {%- endif -%}
+ </form> {% comment %} End form {% endcomment %}
+ <script class="product-json" type="application/json">
+ {%- render "ecom_product_json", product: product -%}
+ </script>
+ </div>
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_after_variant', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ {% endif %}
+ 
+ {% endcapture%}
+ {% capture product_actions%}
+ <div class="ecom-collection__product--actions" data-layout="{{quickshop_layout}}">
+ 
+ 
+ <div
+ class="ecom-button-default ecom-collection__product-form__actions "
+ 
+ >
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_before_cart_button', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ {% if view_more_only %}
+ 
+ <a class="ecom-collection__product-form__actions--view-more ecom-collection__product-view-more-before ecom-child-element"
+ 
+ target=""
+ href="{%- if is_collection-%}{{- product.url | within: collection -}}{% else %}{{- product.url -}}{%-endif-%}"
+ title="{{ product.title | escape }}">
+ 
+ <span class="ecom-collection__product-view-more-text">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.view_more_text_wcishxs87m7_html' | t }}
+ </span>
+ </a>
+ 
+ {% elsif product.available == false %}
+ 
+ {% elsif product.has_only_default_variant %}
+ {%- if product.requires_selling_plan == true and view_more_only != true -%}
+ 
+ <div
+ class="ecom-button-default ecom-collection__product-form__actions">
+ <a class="ecom-collection__product-form__actions--view-more ecom-collection__product-view-more-before ecom-child-element"
+ 
+ target=""
+ href="{%- if is_collection-%}{{- product.url | within: collection -}}{% else %}{{- product.url -}}{%-endif-%}"
+ title="{{ product.title | escape }}">
+ 
+ <span class="ecom-collection__product-view-more-text">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.view_more_text_wcishxs87m7_html' | t }}
+ </span>
+ </a>
+ </div>
+ 
+ {%- else -%}
+ 
+ {%- endif -%}
+ {% else %}
+ 
+ 
+ 
+ {% endif %}
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_after_cart_button', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ </div>
+ </div>
+ {% endcapture %}
+ <div class="ecom-collection__product-item " data-product-handle="{{product.handle}}" data-style="{{product_style}}">
+ <div
+ class="ecom-collection__product-item--wrapper {% if product_style == 'horizontal'%} ecom-d-flex {% else %} ecom-flex-column {% endif %}">
+ <div class="ecom-collection__product-media-wrapper ecom-enable-hover--mobile {% if product_style == 'horizontal'%} ecom-d-flex{% endif %} "
+ >
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_before', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ <a href="{%- if is_collection-%}{{- product.url | within: collection -}}{% else %}{{- product.url -}}{%-endif-%}" target="" title="{{product.title | escape }}" class="ecom-collection__product-item--inner ecom-image-default">
+ {%- if product.featured_media -%}
+ {%- liquid
+ assign featured_media_aspect_ratio = product.featured_media.aspect_ratio
+ if product.featured_media.aspect_ratio == nil
+ assign featured_media_aspect_ratio = 1
+ endif
+ -%}
+ <div class="ecom-collection__product-media--container">
+ <div
+ class="ecom-child-element ecom-collection__product-media ecom-collection__product-media--adapt
+ {% if product.media[1] != nil %}ecom-collection__product-media--hover-effect{% endif %}"
+ style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
+ 
+ >
+ <img srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+ {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+ {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+ {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+ {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+ {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w{%- endif -%}"
+ src="{{ product.featured_media | img_url: '533x' }}"
+ sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+ alt="{{ product.featured_media.alt | escape }}"
+ loading='lazy'
+ class="ecom-collection__product-media-image"
+ width="{{ product.featured_media.width }}"
+ height="{{ product.featured_media.height }}"
+ />
+ 
+ {%- if product.media[1] != nil -%}
+ <img srcset="{%- if product.media[1].width >= 165 -%}{{ product.media[1] | img_url: '165x' }} 165w,{%- endif -%}
+ {%- if product.media[1].width >= 360 -%}{{ product.media[1] | img_url: '360x' }} 360w,{%- endif -%}
+ {%- if product.media[1].width >= 533 -%}{{ product.media[1] | img_url: '533x' }} 533w,{%- endif -%}
+ {%- if product.media[1].width >= 720 -%}{{ product.media[1] | img_url: '720x' }} 720w,{%- endif -%}
+ {%- if product.media[1].width >= 940 -%}{{ product.media[1] | img_url: '940x' }} 940w,{%- endif -%}
+ {%- if product.media[1].width >= 1066 -%}{{ product.media[1] | img_url: '1066x' }} 1066w{%- endif -%}"
+ src="{{ product.media[1] | img_url: '533x' }}"
+ sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+ alt="{{ product.media[1].alt | escape }}"
+ loading='lazy'
+ class="ecom-collection__product-secondary-media"
+ width="{{ product.media[1].width }}"
+ height="{{ product.media[1].height }}"
+ />
+ {%- endif -%}
+ 
+ </div>
+ </div>
+ {% else %}
+ <div class="ecom-collection__product-media--container">
+ <div class="ecom-child-element ecom-collection__product-media ecom-collection__product-media--adapt"
+ 
+ style="padding-bottom: 85%;"
+ >
+ {{ 'product-1' | placeholder_svg_tag: 'ecom-colection__product-svg-placeholder' }}
+ </div>
+ </div>
+ {% endif %}
+ 
+ <div class="ecom-collection__product-badge">
+ 
+ {%- if product.available == false -%}
+ <span class="ecom-collection__product-badge--sold-out" aria-hidden="true">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.sold_text_wcishxs87m7_html' | t }}
+ </span>
+ {%- elsif product.compare_at_price > product.price and product.available -%}
+ <span class="ecom-collection__product-badge--sale" aria-hidden="true">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.sale_text_wcishxs87m7_html' | t }}
+ </span>
+ {%- endif -%}
+ {% if badge_tags %}
+ {% for badge in badge_tags %}
+ {% for original_tag in product.tags %}
+ {% assign tag = original_tag | replace: ' ', ' ' %}
+ {% if tag == badge %}
+ <span class="ecom-collection__product-badge--custom ecom-collection__product-badge--{{ badge | handleize}}" aria-hidden="true">
+ {{ badge }}
+ </span>
+ {% endif %}
+ {% endfor %}
+ {%- assign bad = badge | strip -%}
+ {% endfor %}
+ {% endif %}
+ 
+ {%- if product.has_only_default_variant -%}
+ {%- if product.compare_at_price != null and product.compare_at_price > product.price -%}
+ {%- assign sale = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+ <span class="ecom-collection__product-price--bage-sale">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.sale_badge_wcishxs87m7_html' | t: sale:sale }}
+ </span>
+ {%- endif -%}
+ {%- else -%}
+ {%- if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
+ {%- assign sale = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round -%}
+ <span class="ecom-collection__product-price--bage-sale">
+ {{ 'sections.ecom-the-lyn-collections-2-collection.sale_badge_wcishxs87m7_html' | t: sale:sale }}
+ </span>
+ {%- endif -%}
+ {%- endif -%}
+ </div>
+ </a>
+ 
+ 
+ 
+ 
+ </div>
+ <div class="ecom-collection__product-item--information">
+ <div class="ecom-collection__product-item--information-wrapper ecom-flex ecom-column">
+ {% if product_style == 'absolute' %}
+ {{product_actions}}
+ {{ product_picker}}
+ {% endif %}
+ 
+ 
+ 
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_before_title', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ <h3
+ class="ecom-collection__product-title-tag ecom-child-element"
+ 
+ >
+ <a
+ href="{%- if is_collection-%}{{- product.url | within: collection -}}{% else %}{{- product.url -}}{%-endif-%}"
+ title="{{product.title | escape }}"
+ target=""
+ class="ecom-collection__product-item-information-title "
+ >
+ {{ product.title | strip_html}}
+ </a>
+ </h3>
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_after_title', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ 
+ 
+ <div class="ecom-collection__product-prices ecom-child-element" >
+ 
+ {%- assign target = product.selected_or_first_available_variant -%}
+ <div class="ecom-collection__product-price-wrapper">
+ <span class="ecom-collection__product-price{% if product.compare_at_price > product.price %} ecom-collection__product-price--sale{% endif %}">{% if settings.currency_code_enabled == true %} {{target.price | money_with_currency }} {% else %} {{target.price | money }} {% endif %}</span>
+ <span
+ class="ecom-collection__product-price--regular ecom-collection__product--compare-at-price"
+ {%- if product.compare_at_price == nil or product.compare_at_price <= product.price -%} style="display:none" {% endif %}
+ >
+ {% if settings.currency_code_enabled == true %} {{ target.compare_at_price | money_with_currency }} {% else %} {{ target.compare_at_price | money }} {% endif %}
+ </span>
+ </div>
+ 
+ 
+ </div>
+ 
+ {% if product_style != 'absolute'%}
+ {{ product_picker }}
+ {% endif %}
+ {% if product_style == 'horizontal' or product_style == 'vertical' or product_layout == 'list' %}
+ {{product_actions}}
+ {% endif %}
+ 
+ </div>
+ </div>
+ </div>
+ {%- if enable_hook -%}
+ {% capture the_ecom_hook %}
+ {% render 'ecom_product_loop_after', product: product %}
+ {% endcapture %}
+ {% unless the_ecom_hook contains 'Liquid error' %}
+ {{ the_ecom_hook }}
+ {% endunless %}
+ {%- endif -%}
+ </div>
+ {% endfor %}
+ </div>
+ {% else %}
+ <div class="ecom-collection__product--wrapper-items ecom-collection-product__layout-grid" >
+ <div class="ecom-collection__product-item ecom-collection__product--no-item" >
+ {{ 'sections.ecom-the-lyn-collections-2-collection.no_product_item_wcishxs87m7_html' | t }}
+ </div>
+ </div>
+ {% endif %}
+ 
+ 
+ 
+ {%- if paginate.pages > 1 -%}
+ 
+ 
+ <nav role="navigation" ecom-child-element" 
+ <ol class="ecom-pagination-navigation ecom-collection__pagination-navigation">
+ {%- if paginate.previous -%}
+ <li class="ecom-prev" style="">
+ <a class="ecom-pagination-item ecom-paginate-action" href="{{ paginate.previous.url }}">
+ <span class="ecom-paginate-action--icon"></span>
+ 
+ </a>
+ </li>
+ {%- else -%}
+ <li class="ecom-pagination-item ecom-prev ecom-paginate-action disabled" style="">
+ <span class="ecom-paginate-action--icon"></span>
+ 
+ </li>
+ {%- endif -%}
+ {%- for part in paginate.parts -%}
+ {%- if part.is_link -%}
+ <li>
+ <a class="ecom-pagination-item" href="{{ part.url }}" title="{{ part.title }}">
+ {{ part.title }}
+ </a>
+ </li>
+ {%- else -%}
+ {%- if part.title == paginate.current_page -%}
+ <li class="ecom-pagination-item ecom-button-active" aria-current="page">
+ {{ part.title }}
+ </li>
+ {%- else -%}
+ <li class="ecom-pagination-item">
+ {{ part.title }}
+ </li>
+ {%- endif -%}
+ {%- endif -%}
+ {%- endfor -%}
+ {%- if paginate.next -%}
+ <li class="ecom-next" style="">
+ <a class="ecom-paginate-action ecom-pagination-item" href="{{ paginate.next.url }}">
+ 
+ <span class="ecom-paginate-action--icon"></span>
+ </a>
+ </li>
+ {%- else -%}
+ <li class="ecom-pagination-item ecom-next ecom-paginate-action ecom-collection__pagination--disabled" style="">
+ 
+ <span class="ecom-paginate-action--icon"></span>
+ </li>
+ {%- endif -%}
+ </ol>
+ </nav>
+ 
+ {%- endif -%}
+ 
+ {% endpaginate %}
+ {% endif %}
+ 
+ {% assign collection = tmp_collection %}
+ {% assign product = tmp_product %}
+ </div></div><div class="ecom-collection__product-loading ecom-dn"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="margin: auto; background: none; display: block; shape-rendering: auto;"><path d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#0a0a0a" stroke="none"><animateTransform attributeName="transform" type="rotate" dur="0.5434782608695652s" repeatCount="indefinite" keyTimes="0;1" values="0 50 51;360 50 51"></animateTransform></path></svg></div></div></div></div> </div></div></div><div class="ecom-column__overlay"><div class="ecom-overlay"></div></div></div> </div><div class="ecom-section__overlay"><div class="ecom-overlay"></div></div> </section>
+ 
+</div></div>
+{% schema %}
+{
+ "name": "The LYN Collections",
+ "locales": {
+ "en": {
+ "product_option_swatch_wcishxs87m7_html": "Color",
+ "view_more_text_wcishxs87m7_html": "View more",
+ "sold_text_wcishxs87m7_html": "Sold",
+ "sale_text_wcishxs87m7_html": "Sale",
+ "sale_badge_wcishxs87m7_html": "{{sale}}% Off",
+ "no_product_item_wcishxs87m7_html": "There are no product yet!",
+ "text_week_wcishxs87m7_html": "[%-W] week%!W",
+ "text_day_wcishxs87m7_html": "[%-d] day%!D",
+ "text_hour_wcishxs87m7_html": "[%-H] hour%!H",
+ "text_minute_wcishxs87m7_html": "[%-M] minute%!M",
+ "text_second_wcishxs87m7_html": "[%-S] second%!S",
+ "saleOff_wcishxs87m7_html": "{{sale}}% Off"
+ }
+ },
+ "settings": [
+ {
+ "type": "header",
+ "content": "The section was generated by [Ecomposer](https:\/\/ecomposer.io).",
+ "info": "\n EComposer is a Visual Page Builder app on Shopify AppStore.\n It provides 100+ pre-built templates in library,\n so you can build unlimited pages that you can imagine with it.\n "
+ },
+ {
+ "type": "header",
+ "content": "[EDIT WITH EComposer APP \u2192](https:\/\/ecomposer.app\/shop\/builder?page=collection&id=65e750f704701da6ab0ebc85&utm_source=theme-customize)",
+ "info": "(*You must install the app to start editing this section [Learn more](https:\/\/help.ecomposer.io\/docs\/getting-started\/installation\/))"
+ }
+ ]
+}
+{% endschema %}

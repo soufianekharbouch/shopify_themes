@@ -1,0 +1,115 @@
+<style>
+  @media screen and (max-width: 789px){
+    .tab-teasers {
+    padding-left: {{section.settings.section_padding_left}}px;
+    padding-right: {{section.settings.section_padding_right}}px;
+  }
+  }
+  
+</style>
+
+<div class="tab-teasers">
+<div class="custom-text-section page-width">
+  {%- for block in section.blocks -%}
+     {% case block.type %}
+  {%- when 'heading' -%}
+    <div class="left_content">
+        <div class="left_head">
+{{ block.settings.lheading }}
+          
+        </div>
+        <div class="left_bottom_content">
+{{ block.settings.lcontent }}
+          
+        </div>
+    </div>
+  <div class="right_content">
+              <div class="right_top_content">
+{{ block.settings.rheading }}
+                
+              </div>
+        <div class="right_bottom_content">
+          {{ block.settings.rcontent }}
+        </div>
+    </div>
+  {%- endcase -%}
+  {% endfor %}
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Text Box",
+    "settings": [
+      {
+        "id": "section_padding_left",
+        "type": "range",
+        "label": "Mobile Padding Left",
+        "min": 0,
+        "max": 100,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "id": "section_padding_right",
+        "type": "range",
+        "label": "Mobile Padding Right",
+        "min": 0,
+        "max": 100,
+        "unit": "px",
+        "default": 20
+      },
+      {
+        "id": "custom_text_title",
+        "type": "text",
+        "label": "Text box heading",
+        "default": "Title"
+      },
+      {
+        "id": "custom_text_body",
+        "type": "richtext",
+        "label": "Add custom text below",
+        "default": "<p>Add your text here</p>"
+      }
+    ],
+     "blocks": [
+       {
+      "type": "heading",
+      "name": "Section",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "lheading",
+          "default": "Image with text",
+          "label": "Left Heading"
+        },
+        {
+          "type": "html",
+          "id": "lcontent",
+          "default": "Image with text",
+          "label": "Left Content"
+        },
+         {
+          "type": "html",
+          "id": "rheading",
+          "default": "Image with text",
+          "label": "Right Top Content"
+        },
+        {
+          "type": "html",
+          "id": "rcontent",
+          "default": "Image with text",
+          "label": "Right Bottom Content"
+        }
+      ]
+    }
+     ],
+    "presets": [
+      {
+        "name": "custom-text",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

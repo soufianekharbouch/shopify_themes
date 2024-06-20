@@ -1,0 +1,78 @@
+<div class="row concern-wrap"
+{% if block.settings.items_centered %}
+    style="justify-content: center"
+{% endif %}
+>
+  {% if block.settings.concern-title != blank %}
+    <h2 class="section__title col-12">{{ block.settings.concern-title | escape }}</h2>
+  {% endif %}
+
+  {% if block.settings.url1 %}
+    <a href="{{ block.settings.url1 | default: "#" }}" class="concern-list-item col-12 col-md-3">
+      {% if block.settings.concern_image1 != blank %}
+        <div class="concern__image">
+          {% include 'responsive-image' with
+            image: block.settings.concern_image1,
+            max_width: 480,
+            max_height: 480
+          %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300" />
+      {% endif %}
+      <p>{{ block.settings.title1 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url2 %}
+    <a href="{{ block.settings.url2 | default: "#" }}" class="concern-list-item col-12 col-md-3">
+      {% if block.settings.concern_image2 != blank %}
+        <div class="concern__image">
+          {% include 'responsive-image' with
+            image: block.settings.concern_image2,
+            max_width: 480,
+            max_height: 480
+          %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300" />
+      {% endif %}
+      <p>{{ block.settings.title2 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url3 %}
+    <a href="{{ block.settings.url3 | default: "#" }}" class="concern-list-item col-12 col-md-3">
+      {% if block.settings.concern_image3 != blank %}
+        <div class="concern__image">
+          {% include 'responsive-image' with
+            image: block.settings.concern_image3,
+            max_width: 480,
+            max_height: 480
+          %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300" />
+      {% endif %}
+      <p>{{ block.settings.title3 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url4 %}
+    <a href="{{ block.settings.url4 | default: "#" }}" class="concern-list-item col-12 col-md-3">
+      {% if block.settings.concern_image4 != blank %}
+        <div class="concern__image">
+          {% include 'responsive-image' with
+            image: block.settings.concern_image4,
+            max_width: 480,
+            max_height: 480
+          %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300" />
+      {% endif %}
+      <p>{{ block.settings.title4 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+</div>

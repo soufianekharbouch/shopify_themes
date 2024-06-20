@@ -1,0 +1,597 @@
+{
+  "general": {
+    "404": {
+      "title": "Oups!",
+      "button": "Aller à la maison",
+      "subtext": "Page introuvable!"
+    },
+    "accessibility": {
+      "unit_price_separator": "pour",
+      "error": "Erreur",
+      "link_messages": {
+        "new_window": "S’ouvre dans une nouvelle fenêtre."
+      },
+      "close_header": "Fermer l’en-tête",
+      "close": "Fermer"
+    },
+    "meta": {
+      "tags": "Marqué avec « {{ tags }} »",
+      "page": "Page {{ page }}"
+    },
+    "time": {
+      "days": "Jours",
+      "hrs": "Heures",
+      "hours": "Heures",
+      "mins": "Minutes",
+      "minutes": "compte-rendu",
+      "secs": "secs",
+      "seconds": "Secondes"
+    },
+    "breadcrumbs": {
+      "home": "Domicile",
+      "home_link_title": "Retour à la page d’accueil"
+    },
+    "password_page": {
+      "opening_soon": "Ouverture prochaine"
+    },
+    "search": {
+      "title": "Rechercher dans notre magasin",
+      "placeholder": "Rechercher des produits",
+      "placeholder_short": "Rechercher",
+      "popular_searches": "Recherches populaires",
+      "results_for": "résultats pour",
+      "more_results": "Plus de résultats",
+      "heading": {
+        "one": "Résultat de la recherche : « {{ terms }} »",
+        "other": "Résultats de la recherche : « {{ terms }} »"
+      },
+      "results_with_count": {
+        "one": "Résultat {{ count }} trouvé pour « {{ terms }} »",
+        "other": "Résultats {{ count }} trouvés pour « {{ terms }} »"
+      },
+      "no_results": "Aucun résultat pour",
+      "no_results_html": "Veuillez essayer un autre terme de recherche ou revenir à la page d’accueil <a href=\"\/\">page d’accueil<\/a>."
+    },
+    "newsletter_form": {
+      "confirmation": "Merci de vous être abonné"
+    },
+    "payment": {
+      "options": "Options de paiement"
+    },
+    "notifications": {
+      "item_added": "Produit ajouté au panier avec succès",
+      "required_field": "Veuillez remplir tous les champs obligatoires(*) avant d’ajouter au panier!"
+    },
+    "foxkit": {
+      "add": "Ajouter"
+    },
+    "tooltip": {
+      "not_found": "Type d’info-bulle introuvable"
+    }
+  },
+  "sections": {
+    "video": {
+      "play": "Jouer"
+    },
+    "collection_template": {
+      "from": "De",
+      "to": "À",
+      "product_count": {
+        "one": "Affichage de {{ product_count }} du produit {{ count }}",
+        "other": "Affichage des produits {{ product_count }} de {{ count }}"
+      }
+    },
+    "slider": {
+      "video": {
+        "notice": "Votre navigateur ne prend pas en charge la balise vidéo."
+      }
+    },
+    "ecom-lyn-home-home": {
+      "headingtext_9msbhwz7ooc_html": "<b>#ForLife<\/b>",
+      "headingtext_ncab0vfbedq_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_n56mqrsf5jg_html": "100% des bénéfices seront reversés à une ONG active dans la bande de Gaza*",
+      "buttoncontent_pxdsp3xxhyk_html": "ACT FOR LIFE",
+      "headingtext_7jpoq0n9ys3_html": "<b>#ForLife<\/b>",
+      "headingtext_gm6ap7xt8xf_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_r8lanro5xed_html": "Joignez-vous à nous pour une action vers un monde unifié par l'art et la culture*",
+      "buttoncontent_e7ov9uilnzn_html": "ACT FOR LIFE",
+      "headingtext_0jth2nc7wqtn_html": "<b>#ForLife<\/b>",
+      "headingtext_lv5p8s8wiuh_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_x9pof7482mj_html": "Joignez-vous à nous pour une action vers un monde unifié par l'art et la culture*",
+      "buttoncontent_m41qsfyj0ah_html": "ACT FOR LIFE",
+      "textcontent_m4p39ynh5j_html": "Dans un monde tourmenté, une vision émerge : la Collection World Harmony.",
+      "textcontent_slrm57m99h_html": "Porteuse d’une fusion culturelle, la collection World Harmony célèbre le design marocain tout en honorant les aspirations pacifiques de la Keffieh palestinienne. \u2028",
+      "textcontent_ndvl7aj2rhl_html": "En partenariat avec Poterie Serghini, chaque pièce évoque 190 ans de tradition et d'innovation dans l'artisanat marocain. Leurs designs uniques incarnent l'unité, la diversité et la quête de paix mondiale.  \u2028 ",
+      "textcontent_tomi5wfodia_html": "La collection World Harmony fusionne l'artisanat avec la solidarité et le design avec la paix.  \u2028",
+      "textcontent_9avt9dg2dwu_html": "Chaque pièce que vous choisirez contribuera à soutenir l'action humanitaire à Gaza.  \u2028 ",
+      "textcontent_7gzl2w7gndy_html": "Créons ensemble des espaces imprégnés de paix et d’harmonie. ",
+      "buttoncontent_qmyfqbl7sl_html": "Découvrir",
+      "headingtext_2b000y6lzxw_html": "Contactez-nous",
+      "textcontent_az2aeft5ffm_html": "<a  href=\"mailto:social@lynhomeharmony.ma\">social@lynhomeharmony.ma<\/a >",
+      "textcontent_hmed0ohpzmg_html": "+212 6 63 21 46 62",
+      "textcontent_7t8mp8pi4tq_html": "Copyright © 2024 Lyn Home Harmony | All Rights Reserved"
+    },
+    "ecom-footer-lyn-section": {
+      "headingtext_vmbp257sgnp_html": "Contactez-nous",
+      "textcontent_8r34fra8a8v_html": "social@lynhomeharmony.ma",
+      "textcontent_8dhj6bpupqf_html": "+212 663 246 270",
+      "textcontent_xqygxgb46ra_html": "Copyright © 2024 Lyn Home Harmony | All Rights Reserved"
+    },
+    "ecom-default-template-quickview": {
+      "textcontent_hej9vk0uggt_html": "(100+ note)",
+      "product_single_sale_text_igi21p1nxm_html": "{prix} % de réduction",
+      "product_single_sold_text_igi21p1nxm_html": "Épuisé",
+      "instock_text_phpd2kxein8_html": "26 articles restants en stock",
+      "outstock_text_phpd2kxein8_html": "Rupture de stock",
+      "inventory_text_phpd2kxein8_html": "{quantité} articles restants en stock",
+      "preorder_text_phpd2kxein8_html": "Texte de précommande",
+      "product_option_swatch_mopm0qumv6_html": "Couleur",
+      "add_to_cart_boa4cnsk0z_html": "Ajouter au panier",
+      "pre_order_boa4cnsk0z_html": "Pré-commander",
+      "product_unavailable_boa4cnsk0z_html": "Indisponible",
+      "out_stock_boa4cnsk0z_html": "Rupture de stock",
+      "added_cart_text_boa4cnsk0z_html": "Ajouté au panier",
+      "added_cart_message_boa4cnsk0z_html": "Ajouté au panier",
+      "headingtext_ke5l5ure39_html": "<b>Garantir un paiement sûr<\/b> <i>et sécurisé<\/i>",
+      "headingtext_qx9733j8ss_html": "Partager:"
+    },
+    "ecom-geo-by-lyn-section": {
+      "headingtext_cwvyupivokf_html": "Geometrics by LYN",
+      "headingtext_fkalien8qif_html": "<div>La perfection de la géométrie andalouse qui continue de rayonner à travers le monde, revisitée par Lyn Home Harmony.&nbsp;<\/div><div><br><\/div><div><\/div><div>Une collection au croisement des influences de la péninsule Ibérique et du Maghreb de la civilisation d’Al-Andalus (VIII – XVème siècle) à nos jours.<\/div>",
+      "buttoncontent_ursgocgj76_html": "Découvrir",
+      "headingtext_gz7d2nc6m2w_html": "Lyn Home Harmony",
+      "textcontent_cut5676s6ii_html": "<a  href=\"mailto:social@lynhomeharmony.ma\">social@lynhomeharmony.ma<\/a >",
+      "textcontent_6vcw9blqjqh_html": "+212 663 246 270",
+      "textcontent_yd9617dz3x_html": "Copyright © 2024 Lyn Home Harmony | All Rights Reserved"
+    },
+    "ecom-notrehistoire-lyn-section": {
+      "headingtext_ilhwp76mb4k_html": "Notre univers",
+      "textcontent_l6ny9ip5g1_html": "<div><br><\/div>Avec ses meubles inspirés de ce que les cultures du monde ont de plus beau, Lyn Home Harmony vous propose de faire de chez vous un espace d'évasion, où le confort de l'intimité se mêle à des pièces d'art intérieur uniques.&nbsp;<div><br><\/div><div>Fabriqués par des artisans marocains, héritiers d'un savoir-faire réputé à travers le monde pour sa finesse, les meubles Lyn Home Harmony sont des pièces rares, robustes et fonctionnelles destinées à illuminer les espaces du quotidien d'une douce touche d'audace.<div><div><br><\/div><\/div><\/div>",
+      "headingtext_uhp4qj0mvn_html": "Les fondatrices",
+      "headingtext_nq1mqs1fn4h_html": "\"Lyn, célébrons nos différences\".",
+      "headingtext_tlj7sk6gjpo_html": "<div>Nada et Amina<\/div>"
+    },
+    "ecom-woodcare-section": {
+      "headingtext_cwvyupivokf_html": "Your Woodcare",
+      "headingtext_yrtiwuleeeo_html": "Pour protéger votre meuble, suivez ces étapes que vous nous avons créé par amour !<div><br><\/div><div>Votre meuble en bois restera non\nseulement en bonne santé, mais il sera également prêt à briller comme une\nétoile dans votre intérieur !<div><br><strong><\/strong><div style=\"font-family:Marcellus-Regular;font-size:30px\"><strong>La Weekly routine<\/strong><\/div><\/div><div><\/div><div><\/div><div>&nbsp;<\/div><div>1. Dust Fighter :<\/div><div>Un plumeau, un chiffon doux.\n \nPrenez votre plumeau et débarrassez votre meuble de toute la poussière.\nPassez ensuite un chiffon doux pour enlever les dernières traces de poussière rebelle.&nbsp;<\/div><div><br><\/div><div><\/div><div>2. La Potion Magique :<\/div><div>Éponge douce, savon doux.\nMélangez quelques gouttes de savon doux dans de l’eau tiède. Trempez l'éponge dans votre potion et nettoyez délicatement les parties colorées de votre meuble.&nbsp;<\/div><\/div>",
+      "headingtext_hc868t8nzv_html": "<div><strong>Monthly routine : le rituel de la Cire<\/strong><\/div>",
+      "headingtext_i91czpvkv1j_html": "<div>Protectrice\nCire pour meubles, un chiffon doux.\nDonnez à votre bijou une armure brillante pour le protéger des attaques du quotidien.\nÉtalez la cire sur le meuble avec délicatesse.<br><\/div><div><br><\/div><div><\/div><div><\/div><b><div>Last but not least, pensez à protéger votre meuble si vous souhaitez y déposer des éléments trop chauds ou trop froids qui pourraient laisser des marques.<\/div><div><br><\/div><div><\/div><div><\/div><div>En suivant ces étapes, votre meuble en bois restera non seulement en bonne santé, mais il sera également prêt à briller comme une étoile dans votre intérieur !<\/div><\/b><div><\/div>"
+    },
+    "ecom-the-lyn-collections-2-collection": {
+      "product_option_swatch_wcishxs87m7_html": "Couleur",
+      "view_more_text_wcishxs87m7_html": "Voir plus",
+      "sold_text_wcishxs87m7_html": "Vendu",
+      "sale_text_wcishxs87m7_html": "Vente",
+      "sale_badge_wcishxs87m7_html": "{{sale}} % de réduction",
+      "no_product_item_wcishxs87m7_html": "Il n'y a pas encore de produit !",
+      "text_week_wcishxs87m7_html": "[%-W] semaine%!W",
+      "text_day_wcishxs87m7_html": "[%-d] jour%!D",
+      "text_hour_wcishxs87m7_html": "[%-H] heure%!H",
+      "text_second_wcishxs87m7_html": "[%-S] seconde%!S",
+      "saleOff_wcishxs87m7_html": "{{sale}} % de réduction"
+    },
+    "ecom-decouvrez-nos-autres-collectio-collection": {
+      "product_option_swatch_wcishxs87m7_html": "Couleur",
+      "view_more_text_wcishxs87m7_html": "Voir plus",
+      "sold_text_wcishxs87m7_html": "Vendu",
+      "sale_text_wcishxs87m7_html": "Vente",
+      "sale_badge_wcishxs87m7_html": "{{sale}} % de réduction",
+      "no_product_item_wcishxs87m7_html": "Il n'y a pas encore de produit !",
+      "text_week_wcishxs87m7_html": "[%-W] semaine%!W",
+      "text_day_wcishxs87m7_html": "[%-d] jour%!D",
+      "text_hour_wcishxs87m7_html": "[%-H] heure%!H",
+      "text_second_wcishxs87m7_html": "[%-S] seconde%!S",
+      "saleOff_wcishxs87m7_html": "{{sale}} % de réduction"
+    },
+    "ecom-preview-home-home": {
+      "headingtext_9msbhwz7ooc_html": "<b>#ForLife<\/b>",
+      "headingtext_ncab0vfbedq_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_n56mqrsf5jg_html": "Joignez-vous à nous pour une action vers un monde unifié par l'art et la culture*",
+      "buttoncontent_pxdsp3xxhyk_html": "ACT FOR LIFE",
+      "headingtext_7jpoq0n9ys3_html": "<b>#ForLife<\/b>",
+      "headingtext_gm6ap7xt8xf_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_r8lanro5xed_html": "Joignez-vous à nous pour une action vers un monde unifié par l'art et la culture*",
+      "buttoncontent_e7ov9uilnzn_html": "ACT FOR LIFE",
+      "headingtext_0jth2nc7wqtn_html": "<b>#ForLife<\/b>",
+      "headingtext_lv5p8s8wiuh_html": "WORLD HARMONY<div><div><\/div><\/div><div>collection<\/div>",
+      "textcontent_x9pof7482mj_html": "Joignez-vous à nous pour une action vers un monde unifié par l'art et la culture*",
+      "buttoncontent_m41qsfyj0ah_html": "ACT FOR LIFE",
+      "textcontent_m4p39ynh5j_html": "Dans un monde tourmenté, une vision émerge : la Collection World Harmony.",
+      "textcontent_slrm57m99h_html": "Porteuse d’une fusion culturelle, la collection World Harmony célèbre le design marocain tout en honorant les aspirations pacifiques de la Keffieh palestinienne. \u2028",
+      "textcontent_ndvl7aj2rhl_html": "En partenariat avec Poterie Serghini, chaque pièce évoque 190 ans de tradition et d'innovation dans l'artisanat marocain. Leurs designs uniques incarnent l'unité, la diversité et la quête de paix mondiale.  \u2028 ",
+      "textcontent_tomi5wfodia_html": "La collection World Harmony fusionne l'artisanat avec la solidarité et le design avec la paix.  \u2028",
+      "textcontent_9avt9dg2dwu_html": "Chaque pièce que vous choisirez contribuera à soutenir l'action humanitaire à Gaza.  \u2028 ",
+      "textcontent_7gzl2w7gndy_html": "Créons ensemble des espaces imprégnés de paix et d’harmonie. ",
+      "buttoncontent_qmyfqbl7sl_html": "Découvrir",
+      "headingtext_2b000y6lzxw_html": "Contactez-nous",
+      "textcontent_az2aeft5ffm_html": "<a  href=\"mailto:social@lynhomeharmony.ma\">social@lynhomeharmony.ma<\/a >",
+      "textcontent_hmed0ohpzmg_html": "+212 663 246 270",
+      "textcontent_7t8mp8pi4tq_html": "Copyright © 2024 Lyn Home Harmony | All Rights Reserved"
+    },
+    "ecom-preview-section-section": {
+      "headingtext_ilhwp76mb4k_html": "Notre univers",
+      "textcontent_l6ny9ip5g1_html": "<div><br><\/div>Avec ses meubles inspirés de ce que les cultures du monde ont de plus beau, Lyn Home Harmony vous propose de faire de chez vous un espace d'évasion, où le confort de l'intimité se mêle à des pièces d'art intérieur uniques.&nbsp;<div><br><\/div><div>Fabriqués par des artisans marocains, héritiers d'un savoir-faire réputé à travers le monde pour sa finesse, les meubles Lyn Home Harmony sont des pièces rares, robustes et fonctionnelles destinées à illuminer les espaces du quotidien d'une douce touche d'audace.<div><div><br><\/div><\/div><\/div>",
+      "headingtext_uhp4qj0mvn_html": "Les fondatrices",
+      "headingtext_nq1mqs1fn4h_html": "\"Lyn Célébrons nos différences\".",
+      "headingtext_tlj7sk6gjpo_html": "<div>Nada et Amina<\/div>"
+    }
+  },
+  "blogs": {
+    "article": {
+      "by_author": "par",
+      "posted_in": "sur",
+      "tags": "Étiquettes:",
+      "read_more": "Lire la suite",
+      "related_title": "Articles connexes",
+      "next_post": "Prochain",
+      "previous_post": "Précédent"
+    },
+    "comments": {
+      "title": "Laisser un commentaire",
+      "sub_title": "Votre adresse e-mail ne sera pas publiée.",
+      "name": "Votre nom*",
+      "email": "Votre adresse e-mail*",
+      "message": "Commentaire",
+      "post": "Soumettre maintenant",
+      "reply": "Répondre",
+      "at_time": "à",
+      "success_moderated": "Votre commentaire a été publié avec succès. Nous le publierons dans un petit moment, car notre blog est modéré.",
+      "success": "Votre commentaire a été posté avec succès! Merci!",
+      "comments_with_count": {
+        "one": "{{ count }} commentaire",
+        "other": "{{ count }} commentaires"
+      }
+    }
+  },
+  "sidebar": {
+    "clear_all": "EFFACER TOUT"
+  },
+  "cart": {
+    "general": {
+      "title": "Caddie",
+      "remove": "Enlever",
+      "note": "Instructions spéciales pour le vendeur",
+      "drawer_note": "Note",
+      "shipping": "Livraison",
+      "drawer_coupon": "Coupon",
+      "subtotal": "Sous-total",
+      "taxes_and_shipping_at_checkout": "Taxes et frais de port calculés à la caisse",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">expédition<\/a> calculée à la caisse",
+      "taxes_included_but_shipping_at_checkout": "Taxes incluses et frais de port calculés à la caisse",
+      "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">expédition<\/a> calculé à la caisse.",
+      "enter_discount_code": "Entrez le code de réduction ici",
+      "checkout": "Vérifier",
+      "viewcart": "Voir le panier",
+      "empty": "Votre panier est actuellement vide.",
+      "coupon_title": "Ajouter un code de réduction",
+      "estimate_shipping_title": "Estimer les frais d’expédition",
+      "estimate_shipping_button": "Calculer les tarifs d’expédition",
+      "note_title": "Ajouter une note pour le vendeur",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "zipcode_validate": "Le code postal ne peut pas être vide",
+      "shipping_rates_result": "Nous avons trouvé {{count}} tarif(s) d’expédition pour votre adresse",
+      "no_found_shipping_rate": "Il n’y a pas de frais d’expédition pour votre adresse.",
+      "recommend_title": "Recommandation pour vous"
+    },
+    "label": {
+      "product": "Produit",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "qty": "Qté",
+      "total": "Total",
+      "regular_total": "Total régulier",
+      "discounted_total": "Total actualisé",
+      "product_details": "Détails du produit"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_matches": "Désolé, il n’y a aucun produit dans cette collection",
+      "collection_items": "{{ title }} éléments"
+    },
+    "sidebar": {
+      "clear_all": "Effacer tout"
+    },
+    "toolbar": {
+      "show_filter": "Filtre",
+      "view_layout": "Vue",
+      "view_list": "Liste",
+      "grid_2cloumns": "2 colonnes",
+      "grid_3cloumns": "3 colonnes",
+      "grid_4cloumns": "4 colonnes",
+      "grid_5cloumns": "5 colonnes"
+    },
+    "sorting": {
+      "title": "Trier par"
+    },
+    "paginate": {
+      "load_more": "Charger plus"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "message": "Message",
+      "send": "Envoyer",
+      "post_success": "Merci de nous avoir contactés. Nous reviendrons vers vous dans les plus brefs délais.",
+      "save_infor_message": "Enregistrez mon nom, mon adresse e-mail et mon site Web dans ce navigateur pour la prochaine fois que je ferai un commentaire."
+    },
+    "ask-form": {
+      "heading": "Poser une question",
+      "name": "Votre nom",
+      "email": "Votre adresse e-mail",
+      "phone": "Votre numéro de téléphone",
+      "message": "Votre message",
+      "required-fields": "Champs obligatoires",
+      "send": "Envoyer",
+      "post_success": "Merci d’avoir posé la question. Nous reviendrons vers vous dans les plus brefs délais."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mon compte",
+      "page_title": "Compte",
+      "dashboard": "Tableau de bord",
+      "addresses": "Adresses",
+      "wishlist": "Liste de souhaits",
+      "log_out": "Se déconnecter",
+      "details": "Détails du compte",
+      "name": "Nom",
+      "email": "Email",
+      "view_addresses": "Afficher les adresses",
+      "return": "Retour aux détails du compte",
+      "greeting": "Bonjour",
+      "not": "non"
+    },
+    "activate_account": {
+      "title": "Activer le compte",
+      "subtext": "Créez votre mot de passe pour activer votre compte.",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmer le mot de passe",
+      "submit": "Activer le compte",
+      "cancel": "Refuser l’invitation"
+    },
+    "addresses": {
+      "title": "Vos adresses",
+      "your_addresses": "Vos adresses",
+      "default": "Adresse par défaut",
+      "add_new": "Ajouter une nouvelle adresse",
+      "name": "Nom",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "company": "Compagnie",
+      "address1": "Adresse",
+      "address2": "Appartement, suite, etc.",
+      "city": "Ville",
+      "country": "Pays",
+      "province": "Province",
+      "zip": "Code postal\/postal",
+      "phone": "Téléphone",
+      "set_default": "Définir comme adresse par défaut",
+      "update": "Mettre à jour l’adresse",
+      "cancel": "Annuler",
+      "edit": "Éditer",
+      "delete": "Supprimer",
+      "delete_confirm": "Êtes-vous sûr de vouloir supprimer cette adresse ?"
+    },
+    "login": {
+      "title": "S'identifier",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Vous avez oublié votre mot de passe?",
+      "sign_in": "Connexion",
+      "new_customer": "Nouveau client"
+    },
+    "orders": {
+      "title": "Historique des commandes",
+      "order_number": "Commande",
+      "date": "Date",
+      "payment_status": "Statut du paiement",
+      "fulfillment_status": "Statut d’exécution",
+      "total": "Total",
+      "make_your_first_order": "Faites votre première commande.",
+      "none": "Vous n’avez pas encore passé de commande."
+    },
+    "order": {
+      "title": "Ordre {{ name }}",
+      "date": "Placé sur {{ date }}",
+      "cancelled": "Commande annulée le {{ date }}",
+      "cancelled_reason": "Raison : {{ reason }}",
+      "billing_address": "Adresse de facturation",
+      "fulfilled_at_html": "Rempli {{ date }}",
+      "payment_status": "Statut du paiement",
+      "shipping_address": "Adresse de livraison",
+      "fulfillment_status": "Statut d’exécution",
+      "discounts": "Preferentiels",
+      "shipping": "Livraison",
+      "tax": "Taxe",
+      "product": "Produit",
+      "sku": "SKU",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "track_shipment": "Suivre l’expédition",
+      "subtotal": "Sous-total",
+      "discount": "Rabais"
+    },
+    "recover_password": {
+      "title": "Réinitialiser votre mot de passe",
+      "email": "Email",
+      "submit": "Envoyer",
+      "cancel": "Annuler",
+      "subtext": "Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.",
+      "success": "Nous vous avons envoyé un e-mail avec un lien pour mettre à jour votre mot de passe."
+    },
+    "reset_password": {
+      "title": "Réinitialiser le mot de passe du compte",
+      "subtext": "Entrez un nouveau mot de passe pour {{ email }}",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmer le mot de passe",
+      "submit": "Réinitialiser le mot de passe"
+    },
+    "register": {
+      "title": "Registre",
+      "description": "Inscrivez-vous pour bénéficier d’un accès anticipé aux soldes ainsi que de nouveaux arrivages, tendances et promotions sur mesure. Pour vous désinscrire, cliquez sur Se désabonner dans nos e-mails.",
+      "first_name": "Prénom",
+      "last_name": "Nom"
+    }
+  },
+  "homepage": {
+    "onboarding": {
+      "blog_title": "Titre de votre message",
+      "blog_excerpt": "Votre boutique n’a pas encore publié d’articles de blog. Un blog peut être utilisé pour parler de lancements de nouveaux produits, de conseils ou d’autres nouvelles que vous souhaitez partager avec vos clients.",
+      "product_title": "Exemple de titre de produit",
+      "product_description": "Cette zone est utilisée pour décrire les détails de votre produit. Informez les clients de l’apparence, de la convivialité et du style de votre produit. Ajoutez des détails sur la couleur, les matériaux utilisés, la taille et l’endroit où il a été fabriqué.",
+      "collection_title": "Exemple de titre de collection",
+      "no_content": "Cette section n’inclut actuellement aucun contenu. Ajoutez du contenu à cette section à l’aide de la barre latérale.",
+      "blog_readmore": "Lire la suite",
+      "blog_tag": "Minimog"
+    }
+  },
+  "layout": {
+    "back_to_shopping": "Retour aux achats",
+    "back": "Précédent",
+    "wishlist": {
+      "title": "Liste de souhaits",
+      "no_products": "Aucun produit n’a été ajouté à la page de la liste de souhaits."
+    },
+    "compare": {
+      "title": "Comparer",
+      "no_products": "Aucun produit n’a été ajouté à la page de comparaison."
+    },
+    "cart": {
+      "title": "Charrette"
+    },
+    "customer": {
+      "account": "Compte",
+      "log_in": "S'identifier"
+    }
+  },
+  "pages": {
+    "find_a_store": "Trouver un magasin"
+  },
+  "products": {
+    "product": {
+      "regular_price": "Prix régulier",
+      "sold_out": "Épuisé",
+      "availability": "Disponibilité",
+      "brand": "Marque",
+      "colors": "Couleurs",
+      "in_stock": "En stock",
+      "out_of_stock": "Rupture de stock",
+      "unavailable": "Indisponible",
+      "on_sale": "En vente",
+      "from_text_html": "À partir de {{ price }}",
+      "quantity": "Quantité",
+      "add_to_cart": "Ajouter au panier",
+      "add_to_wishlist": "Ajouter à la liste de souhaits",
+      "remove_from_wishlist": "Supprimer de la liste de souhaits",
+      "add_to_compare": "Comparer",
+      "add_a_question": "Poser une question",
+      "remove_from_compare": "Supprimer de comparer",
+      "quick_add": "Ajouter au panier",
+      "zoom_in": "Zoom avant",
+      "quick_view": "Vue rapide",
+      "collection": "Collection",
+      "decrease_quantity": "Diminuer la quantité de {{ title }} d’un",
+      "increase_quantity": "Augmenter la quantité de {{ title }} d’un",
+      "include_taxes": "Taxes incluses.",
+      "price": {
+        "from_price_html": "À partir de {{ price }}",
+        "regular_price": "Prix régulier",
+        "sale_price": "Prix de vente",
+        "unit_price": "Prix unitaire",
+        "save_price_html": "Enregistrer <span data-sale-value>{{ amount }}<\/span>"
+      },
+      "preorder": "Précommande",
+      "product_quantity": "Quantité de produit",
+      "product_recommendation_heading": "Vous aimerez peut-être aussi",
+      "product_reviews_heading": "Notes et avis",
+      "quantity_minimum_message": "La quantité doit être égale ou supérieure à 1",
+      "not_enough_items_message": "Pas assez d’articles disponibles. Il ne reste que {{ quantity }}.",
+      "sale_price": "Prix de vente",
+      "see_more_options": "Voir {{ count }} plus d’options",
+      "sold_out_items_message": "Le produit est déjà épuisé.",
+      "view_details": "Voir les détails",
+      "vendor": "Vendeur",
+      "type": "Type",
+      "sku": "SKU",
+      "collections": "Collections",
+      "social_share": "Partager",
+      "copy_link": "Copier le lien",
+      "unit_price_label": "Prix unitaire",
+      "size_guide": "Guide des tailles",
+      "save_html": "Enregistrer <span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}<\/span>",
+      "recently_viewed_products": "Produits récemment consultés",
+      "select_options": "Sélectionner les options",
+      "sold": "Vendu",
+      "available": "Disponible",
+      "xr_button": "Voir dans votre espace",
+      "xr_button_label": "Afficher dans votre espace, charge l’élément dans la fenêtre de réalité augmentée",
+      "pickup_availability": {
+        "view_store_info": "Afficher les informations du magasin",
+        "check_other_stores": "Vérifier la disponibilité dans d’autres magasins",
+        "pick_up_available": "Ramassage disponible",
+        "pick_up_available_at_html": "Ramassage disponible à l’adresse <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Ramassage actuellement indisponible à <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "unavailable": "Impossible de charger la disponibilité du ramassage",
+        "refresh": "Rafraîchir"
+      }
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Voici votre carte cadeau {{ value }} pour {{ shop }}!",
+      "subtext": "Votre carte cadeau",
+      "gift_card_code": "Code de carte-cadeau",
+      "shop_link": "Continuer vos achats",
+      "remaining_html": "Solde restant {{ balance }}",
+      "add_to_apple_wallet": "Ajouter à Apple Wallet",
+      "qr_image_alt": "Code QR — scannez pour utiliser la carte-cadeau",
+      "copy_code": "Copier le code",
+      "expired": "Périmé",
+      "copy_code_success": "Code copié avec succès",
+      "print_gift_card": "Imprimer"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "submit_order_button_label": "Commander",
+        "submit_for_review_button_label": "Envoyer",
+        "errors": {
+          "payment": {
+            "saved_payment_methods_cvv_verification_disabled": "Le mode de paiement sélectionné nécessite une vérification CVV qui n'est pas activée pour cette boutique. Sélectionnez un autre mode de paiement."
+          }
+        }
+      },
+      "thank_you": {
+        "breadcrumbs_submitted": "Envoyé"
+      },
+      "post_purchase": {
+        "components": {
+          "submit": "Envoyer"
+        }
+      }
+    },
+    "challenge": {
+      "submit_button_text": "Envoyer"
+    },
+    "checkpoint": {
+      "submit_button_text": "Envoyer"
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_status": {
+        "submitted_label": "Envoyé"
+      }
+    }
+  }
+}

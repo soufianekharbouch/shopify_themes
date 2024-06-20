@@ -1,0 +1,44 @@
+<div class="row shop_category-wrap">
+  <div class="col-12">
+    <div class="inner__wrap">
+      {% if block.settings.title != blank %}
+        <h2 class="section__title"><span>{{ block.settings.title | escape }}</span></h2>
+      {% endif %}
+      <div class="category__list">
+        <ul class="items">
+          {% for link in linklists[block.settings.menu].links %}
+            {%- comment %}<locksmith:06db>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:06db>{% endcomment -%}
+            {% if link.links != blank %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                  {% include 'icon-arrow-down' %}
+                </a>
+                <ul>
+                  {% for childlink in link.links %}
+                    {%- comment %}<locksmith:7889>{% endcomment -%}
+                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: childlink, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                    {%- comment %}</locksmith:7889>{% endcomment -%}
+                    <li>
+                      <a href="{{ childlink.url }}">
+                        {{ childlink.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

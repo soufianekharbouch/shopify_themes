@@ -1,0 +1,562 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
+
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
+
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
+<!-- CHECKOUT CART ITEMS -->
+<!-- {{ cart.items | json }} -->
+<!-- CHECKOUT CART ITEMS END -->
+{% assign chekout_total = cart.original_total_price  %}
+<!-- multiplying by 100 since shopify converts it's to cent -->
+{% assign free_shipping_price = section.settings.announcement_bar_overshipping_price | times: 100 %}
+{% assign diff = free_shipping_price | minus: chekout_total %}
+<div class="shipscout-placeholder"> 
+</div>
+<section data-section-id="{{ section.id }}" data-section-type="header" class="header__section">
+    {%- if section.settings.announcement_bar_enabled -%}
+        <div id="announcement__bar_text"
+             class="announcement__bar {% if section.settings.announcement_bar_desktop_only != false %}mobile-hidden{% endif %}
+      {% if section.settings.announcement_bar_close_icon != false %} js__bar{% endif %}" style="background-color: inherit;">
+
+            <div class="container announcement__bar_container">
+                    {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+              
+
+                    {% if section.settings.announcement_bar_free_shipping_indicator %}
+                        <a class="announcement-bar_link"
+                            style="color: {{ section.settings.announcement_link_color }}; margin-left: 0;"
+                            href="{{ announcement_bar_text_url }}"
+                         >
+                          {% if diff >= 0 %}
+                            You are missing {{ diff | money }} for free shipping!
+                          {% else %}
+                            You now have free shipping
+                          {% endif %}              
+              			</a>
+                    {% endif %}
+
+                    {%- if section.settings.announcement_bar_text != blank and section.settings.announcement_bar_free_shipping_indicator != true -%}
+                        {%- if section.settings.announcement_bar_apply_link -%}
+                            <a class="announcement-bar_link"
+                               style="color: {{ section.settings.announcement_link_color }}; margin-left: 0;"
+                               href="{{ section.settings.announcement_bar_text_url }}">
+                                {{ section.settings.announcement_bar_text | escape }}</a>
+                        {%- else -%}
+                            {{ section.settings.announcement_bar_text | escape }}
+                            <a class="announcement-bar_link"
+                               style="color: {{ section.settings.announcement_link_color }}; margin-left: 0;"
+                               href="{{ announcement_bar_text_url }}">
+                                {{ section.settings.announcement_link_text | escape }}</a>
+                        {%- endif -%}
+                        {%- if section.settings.announcement_bar_promo_code != blank -%}
+                            &nbsp;|&nbsp;<span class="promo">{{ section.settings.announcement_bar_promo_code | escape }}</span>
+                        {%- endif -%}
+                    {%- endif -%}
+                    {%- if section.settings.announcement_bar_link1_url != blank -%}
+                        <div class="bar_link">
+                            <i class="fas fa-{{ section.settings.announcement_bar_link1_icon }} fa-lg ml-4"></i>
+                            <a class="announcement-bar_link"
+                               style="color: {{ section.settings.announcement_link_color }}"
+                               href="{{ section.settings.announcement_bar_link1_url }}">
+                                {{ section.settings.announcement_bar_link1_text | escape }}
+                            </a>
+                        </div>
+                    {% endif %}
+                    {%- if section.settings.announcement_bar_link2_url != blank -%}
+                        <div class="bar_link">
+                            <i class="fas fa-{{ section.settings.announcement_bar_link2_icon }} fa-lg ml-4"></i>
+                            <a class="announcement-bar_link"
+                               style="color: {{ section.settings.announcement_link_color }}"
+                               href="{{ section.settings.announcement_bar_link2_url }}">
+                                {{ section.settings.announcement_bar_link2_text | escape }}
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% endif %}
+                  {%- if section.settings.announcement_bar_link3_url != blank -%}
+                        <div class="bar_link">
+                             <!-- <i class="fas fa-{{ section.settings.announcement_bar_link3_icon }} fa-lg ml-4"></i> -->
+                             <img src="{{ images['2_86fe2616-e3d0-4810-add6-d4d4119b6739.png'] | img_url: 'x40px' }}" loading="lazy" alt="" style="height: 17px; margin-bottom: 5px; margin-right: -5px;">
+                             <a class="announcement-bar_link"
+                               style="color: {{ section.settings.announcement_link_color }}"
+                               href="{{ section.settings.announcement_bar_link3_url }}">
+                                {{ section.settings.announcement_bar_link3_text | escape }}
+                            </a>
+                        </div>
+                    {% endif %}
+
+                    {%- if section.settings.announcement_bar_close_icon != false -%}
+                        <a href="" class="bar__close">
+                            {% include 'icon-close' %}
+                        </a>
+                    {%- endif -%}
+            </div>
+        </div>
+    {%- endif -%}
+
+  <header role="banner" class="header sticky-header">
+    <div class="container header__container">
+      <div class="row aligned">
+        <div class="col-3 d-md-none">
+          <a href="/" class="toggle-btn menu-icon" data-toggle-for="verticalMobileNav">
+            {% include 'icon-menu' %}
+            {% include 'icon-close' %}
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center text-md-left logo__wrap">
+          <a href="/" class="logo__link">
+            <span class="gingham xs">
+              {% include 'icon-gingham-xs' %}
+            </span>
+                        <span class="gingham md">
+              {% include 'icon-gingham-md' %}
+            </span>
+                        <span class="gingham lg">
+              {% include 'icon-gingham-lg' %}
+            </span>
+                        <span class="gingham xl">
+              {% include 'icon-gingham-xl' %}
+            </span>
+            {% if section.settings.logo != blank %}
+              <img src="{{ section.settings.logo | img_url: '300x' }}" alt="{{ shop.name }}" itemprop="logo" class="logo">
+            {% else %}
+              {{ shop.name }}
+            {% endif %}
+          </a>
+        </div>
+        <div class="col-md-6 text-center d-md-block hide-mobile" id="megaMenu">
+        
+        
+        </div>
+        {% comment %} ==========  MOBILE NAVIGATION =========== {% endcomment %}
+        <div id="overlay"></div>
+        
+        <div class="mobile-menu" id="verticalMobileNav">
+		    <ul id="not-used" style="display:none"></ul>
+                    <ul id="first-level" class="list-unstyled first-level">
+              {% for link in linklists[section.settings.menu].links %}
+                {%- comment %}<locksmith:bc72>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.menu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:bc72>{% endcomment -%}
+                <li>
+                  {% if link.links != blank %}
+                    <div class="arrow-wrap">{% include 'icon-angle-right' %}</div>
+                  {% endif %}
+                  <a class="hmenu-item menu-item-header menu-item-header-nested slide-right"
+                     href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links != blank %}
+                    <ul id="second-level" class="list-unstyled second-level">
+                      <div class="hmenu-separator"></div>
+                      <a class="hmenu-item slide-right back-link" href><div class="fas fa-sm fa-arrow-left menu-item-header-backlink"></div>{{ 'MAIN MENU' }}</a>
+                      <div class="hmenu-separator-bold"></div>
+                        <div class="second-level-header">
+                            <a href="{{ link.url }}">{{ link.title }}</a>
+                        </div>
+                      {% for sub_link in link.links %}
+                        {%- comment %}<locksmith:48ae>{% endcomment -%}
+                          {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: sub_link, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                        {%- comment %}</locksmith:48ae>{% endcomment -%}
+                        {% assign second_level_title = sub_link.title %}
+                        {% assign second_level_url = sub_link.url %}
+                        {% if sub_link.links != blank %}
+                          <div class="arrow-wrap">{% include 'icon-angle-right' %}</div>
+                        {% endif %}
+                        <a class="hmenu-item menu-item-header-nested slide-right"
+                           href="{{ sub_link.url }}">{{ second_level_title }}</a>
+                        {% if sub_link.links != blank %}
+                          <ul id="third-level" class="list-unstyled third-level hide-level">
+                            <div class="hmenu-separator"></div>
+                            <a class="hmenu-item slide-right back-link" href><div class="fas fa-sm fa-arrow-left menu-item-header-backlink"></div>{{ link.title }}</a>
+                            <div class="hmenu-separator-bold"></div>
+                            <div class="second-level-header">
+                                <a href="{{ second_level_url }}">{{ second_level_title }}</a>
+                            </div>
+                            {% for sub_sub_link in sub_link.links %}
+                              {%- comment %}<locksmith:ae71>{% endcomment -%}
+                                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: sub_sub_link, subject_parent: sub_link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                              {%- comment %}</locksmith:ae71>{% endcomment -%}
+                              <li><a class="hmenu-item" href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            {% if section.settings.promo_banner_text != blank or section.settings.promo_banner_image != blank %}
+                <div id="mobileMenuBannerWrapper" class="mnav-banner-wrap">
+                    <a class="mnav-banner-link" href="{{ section.settings.promo_banner_url }}">
+                        {% if section.settings.promo_banner_text != blank %}
+                            <div class="mnav-banner-text">{{ section.settings.promo_banner_text }}</div>
+                        {% endif %}
+                        {% if section.settings.promo_banner_image != blank %}
+                            <img src="{{ section.settings.promo_banner_image | img_url: 'large' }}" alt="promo banner"/>
+                        {% endif %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        {% comment %} ========== END MOBILE NAVIGATION =========== {% endcomment %}
+        <div class="col-3 col-md-3 text-right icons__wrap">
+          <div class="float-right icon-cart">
+            <a href="/cart" class="toggle-btn" data-toggle-for="cartOverlay" id="cartOverlay-button">
+              {% include 'icon-cart' %}
+              {% if cart.item_count > -1 %}
+                <span class="count d-none">{{ cart.item_count }}</span>
+              {% endif %}
+            </a>
+
+                        <div class="cart-overlay-block" id="cartOverlay">
+                            {% include 'cart-overlay' with cart = cart%} 
+                             
+                        </div>
+
+                    </div>
+                    <div class="float-right d-none d-md-block">
+                        {% if shop.customer_accounts_enabled %}
+                            {% if customer %}
+                                <a href="/account">
+                                    {% include 'icon-account' %}
+                                </a>
+                            {% else %}
+                                <a href="/account/login">
+                                    {% include 'icon-account' %}
+                                </a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+
+                    <div class="float-right search-icon">
+                        <a href="/" class="toggle-btn" data-toggle-for="search-popup" id="searchToggle">
+                            {% include 'icon-search' %}
+                        </a>
+                        <div id="search-popup" class="search-wrap">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form action="/search" method="get" role="search">
+                                            <div class="form__wrap">
+                                                <input
+                                                        type="search"
+                                                        name="q"
+                                                        id="Search-{{ section.id }}"
+                                                        value="{{ search.terms | escape }}"
+                                                        placeholder="SEARCH"
+                                                >
+                                                <a id="search-close" onclick="document.getElementById('searchToggle').click()">
+                                                    {% include 'icon-close' %}
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+<style>
+  .shipscout-placeholder{
+  background:#FFE844;
+    height:40px;
+    font-family: 'Avenir Next';
+    color: #4a5761;
+    padding-right: 134px;
+  }
+ @media (max-width: 900px){
+   .announcement__bar .announcement-bar_link{
+   /*display:none;*/
+  } 
+   .shipscout-placeholder{
+     padding:0;
+   }
+ }
+ }
+</style>
+{% schema %}
+{
+"name": "Header",
+"settings": [
+{
+"type": "header",
+"content": "Announcement General Setting"
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_enabled",
+"label": "Show announcement",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_free_shipping_indicator",
+"label": "Show free shipping sale",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_home_page_only",
+"label": "Show on home page only",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_desktop_only",
+"label": "Show on desktop view only",
+"default": false
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_close_icon",
+"label": "Show close icon in mobile view",
+"default": true
+},
+{
+"type": "checkbox",
+"id": "announcement_bar_apply_link",
+"label": "Apply link to announcement text",
+"default": false
+},
+{
+"type": "header",
+"content": "Announcement Left Section"
+},
+{
+"type": "text",
+"id": "announcement_bar_text",
+"label": "Announcement text",
+"default": "Announce something here"
+},
+{
+"type": "text",
+"id": "announcement_bar_overshipping_price",
+"label": "Limit price for free shipping",
+"default": "50"
+},
+{
+"type": "text",
+"id": "announcement_link_text",
+"label": "Announcement link text",
+"default": "Shop Now"
+},
+{
+"type": "url",
+"id": "announcement_bar_text_url",
+"label": "Announcement Text Link URL"
+},
+{
+"type": "text",
+"id": "announcement_link_color",
+"label": "Announcement link color",
+"default": "#4a5761"
+},
+{
+"type": "text",
+"id": "announcement_bar_promo_code",
+"label": "Announcement Promo Code",
+"default": "Promo Code here"
+},
+{
+"type": "header",
+"content": "Announcement Right Section"
+},
+{
+"type": "text",
+"id": "announcement_bar_link1_icon",
+"label": "Announcement Link 1 Icon",
+"default": "icon of a dog"
+},
+{
+"type": "text",
+"id": "announcement_bar_link1_text",
+"label": "Announcement Link 1 Text",
+"default": "Free Virtual Consultation"
+},
+{
+"type": "url",
+"id": "announcement_bar_link1_url",
+"label": "Announcement Link 1 URL"
+},
+{
+"type": "text",
+"id": "announcement_bar_link2_icon",
+"label": "Announcement Link 2 Icon",
+"default": "mail icon"
+},
+{
+"type": "text",
+"id": "announcement_bar_link2_text",
+"label": "Announcement Link 2 Text",
+"default": "Contact Us"
+},
+{
+"type": "url",
+"id": "announcement_bar_link2_url",
+"label": "Announcement Link 2 URL"
+},
+{
+"type": "text",
+"id": "announcement_bar_link3_icon",
+"label": "Announcement Link 3 Icon",
+"default": "mail icon"
+},
+{
+"type": "text",
+"id": "announcement_bar_link3_text",
+"label": "Announcement Link 3 Text",
+"default": "Contact Us"
+},
+{
+"type": "url",
+"id": "announcement_bar_link3_url",
+"label": "Announcement Link 3 URL"
+},
+
+{
+"type": "checkbox",
+"id": "show_cart_text",
+"label": "Show cart message",
+"default": false
+},
+{
+"type": "text",
+"id": "message_cart_text",
+"label":"Cart Message",
+"default": "This Is A message That will appear on cart"
+
+},
+
+
+{
+"type": "header",
+"content": "Header"
+},
+{
+"type": "image_picker",
+"id": "logo",
+"label": "Logo image"
+},
+{
+"type": "range",
+"id": "logo_max_width",
+"min": 50,
+"max": 450,
+"step": 10,
+"unit": "px",
+"label": "Custom logo width",
+"default": 250
+},
+{
+"type": "link_list",
+"id": "menu",
+"label": "Menu",
+"default": "main-menu"
+},
+  {
+  "type": "header",
+  "content": "Menu Promo Banner"
+  },
+  {
+  "type": "text",
+  "id": "promo_banner_text",
+  "label": "Text",
+  "default": "Some text for promo"
+  },
+  {
+  "type": "image_picker",
+  "id": "promo_banner_image",
+  "label": "Image",
+  "info": "Recommended image size 350x70"
+  },
+  {
+  "type": "url",
+  "id": "promo_banner_url",
+  "label": "Url"
+  }
+]
+}
+{% endschema %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "{{ shop.name }}",
+    "logo": "https:{{ section.settings.logo | img_url: image_size }}",
+    "sameAs": [
+      "{{ settings.social_twitter_link }}",
+      "{{ settings.social_facebook_link }}",
+      "{{ settings.social_pinterest_link }}",
+      "{{ settings.social_instagram_link }}",
+      "{{ settings.social_tumblr_link }}",
+      "{{ settings.social_snapchat_link }}",
+      "{{ settings.social_youtube_link }}",
+      "{{ settings.social_vimeo_link }}"
+    ],
+    "url": "{{ shop.url }}{{ page.url }}"
+  }
+</script>
+
+<!-- <script>
+  localStorage.setItem('is_enabled',{{section.settings.announcement_bar_enabled}});
+  localStorage.setItem('free_shipping',{{section.settings.announcement_bar_free_shipping_indicator}});
+</script> -->
+
+{% if template.name == 'index' %}
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+    </script>
+{% endif %}
+
+<script>
+  // click action for mobile menu
+  jQuery(".menu-item-header-nested").on("click", function(e) {
+    const nextUl = jQuery(this).next('ul');
+    if (nextUl.length > 0) {
+      e.preventDefault();
+      if (nextUl.css('left') === '0%'){
+        nextUl.css('left','100%');
+        jQuery(this).closest('ul').css('overflow-y','auto');
+      } else {
+        nextUl.css('left','0%');
+        jQuery(this).closest('ul').css('overflow-y','hidden');
+      }
+    }
+  });
+  // click action for back link in mobile menu
+  jQuery(".back-link").on("click", function(e) {
+    e.preventDefault();
+    jQuery(this).parent().css('left','100%');
+    const parentUL =jQuery(this).parent();
+    if (parentUL.parent().hasClass('second-level')) {
+      parentUL.parent().css('overflow-y','auto');
+    } else {
+      jQuery('#first-level').css('overflow-y','auto');
+    }
+  });
+</script>
+
+{{ 'header.js' | asset_url | script_tag }}
+{{ 'amount-counter.js' | asset_url | script_tag }}

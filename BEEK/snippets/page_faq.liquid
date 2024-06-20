@@ -1,0 +1,330 @@
+{% for value in page.metafields.custom.faqs %}
+{%if value != blank %}
+{%assign not_empty= true %}
+{%endif%}
+{%endfor%} 
+
+<div class="container faq__pdp">
+  <div class="row">
+    <div class="col-md-9 col-lg-12 text-center">
+      <h1> {{ 'FAQs' }}</h1>
+    </div>
+  </div>
+  <div class="row pb-5">
+    <div class="col-md-9 col-lg-12">
+        <button class="collapsible">
+        <span>How do I earn points on reviews?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Points can be earned for reviews on Verified Orders. Verified orders are review requests that are emailed to you a couple of weeks after your order was placed. From that email you can submit a review on a recent verified order. Reviews written on the website directly are not able to be verified by the Rewards system and are not eligible for Reward points.</p>
+      </div>
+      <button class="collapsible">
+        <span>How do I join?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>To join Neighbor Rewards, If you already have a beekman1802.com log-in, you’re already a Neighbor Rewards member. The Neighbor Rewards program is open to all Neighbors in the US and Canada. Some features, like free shipping are exclusive to US residents.</p> 
+      </div>
+      <button class="collapsible">
+        <span>I forgot my password! Can you help?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Happily! You can reset your password, <a href="/account/login">here.</a></p>
+      </div>
+      <button class="collapsible">
+        <span>How do I earn points?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>There are many ways to earn Neighbor Rewards points. Earn 1 point for every dollar you spend at beekman1802.com. You can also earn points if you follow us on social, book a skincare consultation, or view our Goat Cam!</p>
+      </div>
+        <button class="collapsible">
+        <span>Do my points expire?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Your points will expire after one year of inactivity.</p>
+      </div>
+        <button class="collapsible">
+        <span>How do I redeem my points?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Redeeming points is easy! Log into your account and click on Redeem My Points to turn your points into exclusive discounts on the best goat milk skincare and bodycare.</p>
+      </div>
+        <button class="collapsible">
+        <span>How many points do I have?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Log into your account to view the amount of reward points you have. Reward points start to accumulate after you create an account.</p>
+      </div>
+        <button class="collapsible">
+        <span>Does my tier level expire?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Tiers expire one year after the level is not maintained.</p>
+      </div>
+        <button class="collapsible">
+        <span>Can I earn points on past purchases?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Points cannot be earned on past purchases. Points are accumulated after an account is created.</p>
+      </div>
+        <button class="collapsible">
+        <span>Will I be charged for shipping when I redeem my points?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Shipping and applicable taxes will be applied to your order.</p>
+      </div>
+        <button class="collapsible">
+        <span>What happens to my points when I return an item?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+       <div class="content">
+        <p>Points will be deducted on any returns or store credits issued.</p>
+      </div>
+      <button class="collapsible">
+      <span>I redeemed my points, but I am not ready to use them just yet. Does the redemption disappear? </span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+      <p> No! Once you redeem your points, they will be placed in your Rewards History. Once you’re ready to use your redemption, simply copy and paste your code and add it at checkout. One code per order. </p>
+      </div>
+       <button class="collapsible">
+      <span>I have two redemptions. Can I add them both to one order? </span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+      <p>Our checkout allows one coupon code per order. If you would like to redeem larger dollar amounts with your order, we suggest saving your points until you have enough for a larger redemption. </p>
+      </div>
+       <button class="collapsible">
+      <span>I am redeeming my points on my phone, and I only see one redemption option. Are there other options? </span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+      <p>There sure are. When redeeming, swipe the screen to the side to see more redemption options. </p>
+      </div>
+        <button class="collapsible">
+        <span>My points are not showing on completed action. Can you help?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>If you do not see points on an action, please reach out to us 24 hours after the action was completed. Points on orders are added to the account once the order is fulfilled (shipped). You can contact us at neighborservices@beekman1802.com</p>
+      </div>
+        <button class="collapsible">
+        <span>Can I earn points if I purchase from a retail partner?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>We hope to offer this feature in the future with select retailers.</p>
+      </div>
+        <button class="collapsible">
+        <span>I reside outside of the United States. Am I able to participate?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Residents in the US and Canada are eligible to participate. Some features, like free ground shipping are only available in the US. We hope to grow the program in the future.</p>
+      </div>
+        <button class="collapsible">
+        <span>Can I combine accounts?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Beekman 1802 Neighbor Rewards accounts may not be combined. One account per person, please. Multiple e-mails are not eligible to be combined.</p>
+      </div>
+       <button class="collapsible">
+        <span>What is a Beekman Neighbor?</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>A Beekman Neighbor is Kindness. A Beekman Neighbor is you! To learn more about Beekman 1802 click <a href="/pages/about-us">here.</a></p>
+      </div>
+       <button class="collapsible">
+        <span>My code is not working! Can you help? </span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p>Neighbor Rewards redemption codes are valid on regular priced items and non-subscription items. Sometimes when you copy and paste a code, it natively adds a space. Try to delete those spaces (before or after the code) and try again.</p>
+      </div>
+        <button class="collapsible">
+        <span>Terms and Conditions</span>
+        {% include 'icon-chevron-down' %}
+      </button>
+      <div class="content">
+        <p> The Beekman 1802 Rewards Program is a tiered rewards program that allows Neighbors to earn points when they engage with Beekman 1802. Members receive reward points for each purchase. These points can be redeemed towards the cost of future purchases.  
+ Neighbors may also earn points for other engagements like following us on social, sharing a review on a beekman1802.com purchase, birthday points, visiting our Baby Goats, attending a skincare consultation and more.  <br><br>
+<strong><u>Neighbor Rewards Eligibility</u></strong><br><br>
+To be eligible for the Beekman 1802 Neighbor Rewards, you must be 16 years of age or older and reside in the United States or in Canada.  <br>
+Beekman 1802 Loyalty Rewards membership is 100% free. There will never be a cost to you for participating. Visit <a href="/pages/rewards"> beekman1802.com/pages/rewards </a> to get started. <br>
+Beekman 1802 accounts that are already created will be activated into the Neighbor Rewards program. To view your account, log-in <a href="/pages/rewards">here.</a> <br><br>
+
+<strong><u>Neighbor Rewards Points </u></strong><br><br> 
+Neighbors can create a Beekman 1802 Rewards account <a href="/account/register">here. </a> <br><br>
+Reward points can be earned at the<a href="/pages/the-store"> Beekman1802 Kindness Shop</a> in Sharon Springs, NY and at <a href="/">beekman1802.com. </a>Rewards points can be redeemed at the Sharon Spring Kindness Shop and at <a href="/">beekman1802.com. </a><br><br>
+Loyalty Rewards will start to accumulate on July 13, 2022. Orders placed before July 13, 2022 will not receive points. Points will not be earned on purchases made prior to opening an account. <br><br>
+
+Beekman 1802 Rewards do not have a cash value so they are not redeemable for cash.  Beekman Rewards redemption may not be combined with other coupon codes or other discounts. Neighbor Reward points are not redeemable on subscriptions and subscribe & save. Beekman Rewards is not valid at calm.beekman1802.com. Beekman 1802 Rewards is not transferable to other accounts.  <br><br>
+Once redeemed, Neighbor Reward discounts cannot be cancelled, and points cannot be reimbursed. The Rewards discount will be available in your account under the Rewards History section until you’re ready to use it. <br><br>
+ Points for purchases are added to the account once the order is fulfilled (shipped). Please allow 48 hours after fulfillment to allow the account to update.  
+<br><br> 
+Points for incentives are updated within a 24-hour period. If you feel like you have earned points but they’re not showing up in your account, you can troubleshoot with these tricks:  
+<br><br>
+-Try to refresh your browser.  <br>
+-Try to log out and then back into your account.<br><br>
+Check your rewards history in your rewards account to see if the points were added without you realizing it. Your rewards history will show you the number of points earned, how and when they were earned, as well as any redemptions of points made to your account.  
+<br><br>
+If you still feel like your points balance is not accurate you can contact us at neighborservices@beekman1802.com.  
+<br><br>
+There is not a limit to the number of points earned. There are limits (both lifetime or time limits) to certain bonus point initiatives.  
+ <br><br>
+Points expire one year after inactivity in the Beekman 1802 Rewards Program.    
+<br><br>
+Points may be earned for reviews on verified orders. Verified orders are review requests that are emailed to your email a couple of weeks after your order was placed. From that email you can submit to earn 25 points. Reviews written on the website directly are not able to be verified by the Rewards system and are not eligible for Reward points. Reviews written via email, chat, SMS, social media, via telephone are not eligible for review points.  
+<br><br>          
+If you return an entire order, we will refund you the total dollar amount spent after reward point discounts. The points used to redeem the discount will be added back to your rewards account.  Beekman reserves the right to treat refunds of rewards points on a case-by-case basis. 
+<br><br>
+You can view all of the rewards and perks right on the <a href="/pages/rewards">rewards page.</a>  
+<br><br>
+To redeem reward points, visit the <a href="/pages/rewards">rewards page</a> and log into your account and visit the redemption section.  
+<br><br>
+<strong><u>Earning Neighbor Rewards Points </u></strong><br><br>
+
+Earning Neighbor Rewards points can be done in a multitude of ways.  
+<br>
+- Sign-Up for an account <br>
+- Points per $$<br>
+- 1 point per $ <br>
+- 2 points per $ on re-charge <br>
+- Point Booster Events  <br>
+- Happy Birthday points <br>
+- 5 points to visit the Goat Cam (once every four months)  <br>
+- 10 Points to complete a My Skin Biome Scan (once every four months)  <br>
+- 10 Points to book a Skincare Consultation (once every four months) <br>
+- 25 points to leave a review on a verified beekman1802.com purchase <br>
+- 5 points to follow us on Instagram (limit once per lifetime) <br>
+- 5 points to follow us on Facebook (limit once per lifetime) <br>
+- 5 points to follow us on Tiktok (limit once per lifetime) <br>
+ 
+
+ <br>
+
+<strong><u>Neighbor Rewards Tiers  </u></strong><br><br>
+VIP Tiers are based on the total amount spent. Returns and refunds may affect the tier status. Tier status can be altered after one year of not meeting the tier limits.  
+
+ <br><br>
+Neighbors automatically receive free shipping on their orders after they enter into the G.O.A.T Tier. Orders that initiate entrance into the G.O.A.T Tier are not eligible for free shipping. Please note free shipping applies to domestic US Shipping in the United States only. Free shipping applies to ground shipping options only. Upgraded shipping is not eligible for a discount on the shipping costs. International shipping is not eligible for a discount on the shipping costs.  
+<br><br>
+<strong><u>Referrals and Bonus Initiatives </u></strong><br><br>
+Referred Friends must be first time customers for both of you to be eligible to receive the referrals rewards. The referral reward must be initiated through our rewards referral box on our rewards page or with your unique referral link to be eligible for a reward. Orders that were placed without using the referral link will not be eligible for compensation.  
+<br>
+Points will be added to your account once your friend's order is placed and fulfilled. You will receive an email confirmation to let you know a referral has been completed. The rewards history can be viewed in your account in the rewards history section.  
+<br>
+To receive Birthday Points, add your birthday under ways to earn points on the rewards page. On your Birthday, we will send you an email and upload the birthday points to your account.  
+ <br>
+To receive your birthday bonus on your birthday, you must register your birthday at least 30 days prior to your birthday.  
+ <br>
+If your birthday falls between the day you registered and the 30-day waiting period afterwards, you will receive your birthday bonus 30 days after your registration. This delay is only applicable for the first year that you are signed up. All successive birthday emails will be emailed to you on your birthday. If you registered your birthday through your rewards account any time after your birthday has passed in the current calendar year, rewards will not be added to your account until the next day of your birthday on the following year.  
+<br>
+If it has been more than 30 days since you registered for your birthday reward and you have not received the additional points in your account, please contact us at neighborservices@beekman1802.com.   
+<br><br>
+
+<strong><u>Other Terms and Conditions:  </u></strong><br><br>
+Beekman 1802 reserves the right to alter, ban or terminate the Beekman 1802 Rewards program at any time. Beekman 1802 reserves the right to alter or adjust the terms of the program at any time. Beekman 1802 may alter or limit the points awarded at any time. Accounts with separate emails may not be merged.  
+<br><br>
+A Beekman 1802 representative may close and zero out point balances for multiple accounts for abusing the program in any way. This includes, but is not limited to, wholesalers/re-sellers, opening multiple accounts per person or per address. You are responsible for the accuracy of the information you provide at registration and throughout the holdings of your account.  
+
+</p>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .faq__pdp .content p {
+    font-family: "Century OS",Arial,Helvetica;
+    font-size: 15px;
+    margin: 0;
+    padding: 10px;
+}
+  .faq__pdp .collapsible.active svg {
+    transform: translateY(-50%) rotate(180deg);
+}
+.faq__pdp .collapsible svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 7px;
+}
+.collapsible {
+  color: #4a5761;
+  text-transform: uppercase;
+
+  letter-spacing: .064rem;
+  text-align: left;
+  line-height: 4rem;
+  font-weight: 600;
+ 
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+
+}
+.collapsible:focus {
+  outline: 0;
+}
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
+}
+  .collapsible {
+    min-height: 4rem;
+    position: relative;
+    background: #faf6f2;
+    border: 0;
+    padding: 0 50px 0 10px;
+    margin: 5px 0;
+    font-size: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    .faq__pdp {
+      max-width: 750px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .faq__pdp {
+      max-width: 720px;
+    }
+  }
+
+  .faq__pdp {
+    margin: 0 auto;
+  }
+</style>
+<script>
+  const coll = document.getElementsByClassName("collapsible");
+  var i;
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+</script>

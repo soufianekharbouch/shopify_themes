@@ -1,0 +1,25 @@
+<div class="clinically-bottom-hero">
+    <div class="hero-wrap">
+        <span class="d-md-none">
+            <img src="{{ block.settings.mobile_hero_image | img_url: 'master' }}" />
+        </span>
+        <span class="d-none d-md-block">
+            <img src="{{ block.settings.desktop_hero_image | img_url: 'master' }}" />
+        </span>
+        <div class="content__area">
+            {%- assign heroHeadingColor = block.settings.hero_heading_color -%}
+            {%- if block.settings.hero_heading != blank -%}
+                <h3 style="color: {{ heroHeadingColor }};">
+                    {{ block.settings.hero_heading | escape }}
+                </h3>
+            {%- endif -%}
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                <div class="action__wrap">
+                    <a href="{{ block.settings.button_link }}" class="shop__all">
+                        {{ block.settings.button_label | escape }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

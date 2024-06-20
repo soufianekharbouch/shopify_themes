@@ -1,0 +1,442 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<section id="beekman_our_story">
+  {% include 'our_story_desktop_view' %}
+  <div class="container mobile-view">
+
+    <div class="row">
+      <div class="col-12 text-center" style="color: {{ section.settings.hero_text_color_mobile }}">
+        <h1 class="section_heading">{{ section.settings.hero_text_primary }}</h1>
+        <p class="section_text">{{ section.settings.hero_text_secondary }}</p>
+        <div class="hero-wrap" style="background-image: url('{{ section.settings.hero_mobile | img_url: 'master' }}');"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="slogan">{{ section.settings.slogan }}</h2>
+      </div>
+    </div>
+
+    {% if section.settings.farm_hero_desktop %}
+      <div class="row">
+        <div class="col-12">
+          <div class="about-section" style="background-image: url('{{ section.settings.farm_hero_mobile | img_url: 'master' }}');">
+            <div class="content-wrap">
+              <h3 class="tagline" style="color: {{ section.settings.farm_text_color_mobile }}">{{ section.settings.farm_tagline }}</h3>
+              <h2 class="secondary_heading" style="color: {{ section.settings.farm_text_color_mobile }}">{{ section.settings.farm_title }}</h2>
+              <p class="text" style="color: {{ section.settings.farm_text_color_mobile }}">{{ section.settings.farm_text }}</p>
+              <a href="{{ section.settings.farm_CTA_link }}" class="btn" style="color: {{ section.settings.farm_text_color_mobile }}; border-color: {{ section.settings.farm_text_color_mobile }};">{{ section.settings.farm_CTA_label }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.founders_hero_desktop %}
+      <div class="row">
+        <div class="col-12">
+          <div class="about-section" style="background-image: url('{{ section.settings.founders_hero_mobile | img_url: 'master' }}');">
+            <div class="content-wrap">
+              <h3 class="tagline" style="color: {{ section.settings.founders_text_color_mobile }}">{{ section.settings.founders_tagline }}</h3>
+              <h2 class="secondary_heading" style="color: {{ section.settings.founders_text_color_mobile }}">{{ section.settings.founders_title }}</h2>
+              <p class="text" style="color: {{ section.settings.founders_text_color_mobile }}">{{ section.settings.founders_text }}</p>
+              <a href="{{ section.settings.founders_CTA_link }}" class="btn" style="color: {{ section.settings.founders_text_color_mobile }}; border-color: {{ section.settings.founders_text_color_mobile }};">{{ section.settings.founders_CTA_label }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-12">
+        <div id="goats" class="bg">
+            <div class="row no-gutters h-100 align-items-md-center">
+              <div class="col-12 col-md-6 h-md-100 order-md-2">
+                <div class="carousel-container">
+                  <div class="ourStory_carousel_wrap">
+                    {% for block in section.blocks %}
+                      <div class="slide">
+                        <div class="carousel_img_wrap">
+                          {% include 'responsive-image-aspect-ratio' with
+                            image: block.settings.carousel_img,
+                            hero_aspect_ratio: 100,
+                            max_width: 2000,
+                            max_height: 2000,
+                          %}
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                  <div class="slider_nav">
+                    <button class="customNextBtn">{% include 'icon-chevron-right' %}</button>
+                    <button class="customPrevBtn">{% include 'icon-chevron-left' %}</button>
+                    <button class="customNextBtnMobi">{% include 'icon-chevron-right' %}</button>
+                    <button class="customPrevBtnMobi">{% include 'icon-chevron-left' %}</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 order-md-1">
+                <div class="content-wrap">
+                  <h3 class="tagline text-center text-md-left" style="color: {{ section.settings.goats_text_color_mobile }}">{{ section.settings.goats_tagline }}</h3>
+                  <h2 class="secondary_heading text-center text-md-left" style="color: {{ section.settings.goats_text_color_mobile }}">{{ section.settings.goats_title }}</h2>
+                  <p class="text" style="color: {{ section.settings.goats_text_color_mobile }}">{{ section.settings.goats_text }}</p>
+                  <a href="{{ section.settings.goats_CTA_link }}" class="btn" style="color: {{ section.settings.goats_text_color_mobile }}; border-color: {{ section.settings.goats_text_color_mobile }};">{{ section.settings.goats_CTA_label }}</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    {% if section.settings.milkmaidens_hero_desktop %}
+      <div class="row align-items-center">
+        <div class="col-12">
+          <div class="about-section bg" 
+            style="
+              background-image: url('{{ section.settings.milkmaidens_hero_mobile | img_url: 'master' }}');
+              background-position: center center;
+            ">
+            <div id="flowers">
+              {% include 'responsive-image-aspect-ratio' with
+                image: section.settings.milkmaidens_animated_img,
+                hero_aspect_ratio: 100,
+                bgPosition: 'contain',
+                max_width: 2000,
+                max_height: 2000,
+              %}
+            </div>
+            <div class="content-wrap milkmaidens">
+              <h3 class="tagline" style="color: {{ section.settings.milkmaidens_text_color_mobile }}">{{ section.settings.milkmaidens_tagline }}</h3>
+              <h2 class="secondary_heading" style="color: {{ section.settings.milkmaidens_text_color_mobile }}">{{ section.settings.milkmaidens_title }}</h2>
+              <p class="text" style="color: {{ section.settings.milkmaidens_text_color_mobile }}">{{ section.settings.milkmaidens_text }}</p>
+              <a href="{{ section.settings.milkmaidens_CTA_link }}" class="btn" style="color: {{ section.settings.milkmaidens_text_color_mobile }}; border-color: {{ section.settings.milkmaidens_text_color_mobile }};">{{ section.settings.milkmaidens_CTA_label }}</a>
+            </div>  
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.vimeo_link_desktop %}
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="vimeo-embed-wrapper-mobi" id="finish_animation-mobi">
+            <div class="rounded-wrapper">
+              <div id='our_story_vimeo'></div>
+            </div>
+            <img alt="hi-neighbor-gif" src="https://cdn.shopify.com/s/files/1/0078/7945/8863/files/hi-neighbor-noloop.gif?v=1580224412" />
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+          <script>
+            var options = {
+                url: "{{ section.settings.vimeo_link_mobile }}",
+                muted: true,
+                preload: true,
+                controls: true,
+                width: window.innerWidth - 30,
+            };
+
+            var videoPlayer = new Vimeo.Player('our_story_vimeo', options);
+
+            videoPlayer.on('ended', function() {
+              document.getElementById('finish_animation-mobi').classList.add('triggered');
+            });
+          </script>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+</section>
+
+{% schema %}
+  {
+	"name": "Our Story",
+	"settings": [{
+			"id": "hero_mobile",
+			"type": "image_picker",
+			"label": "Mobile Hero Image"
+		},
+		{
+			"type": "video_url",
+			"id": "hero_desktop",
+			"label": "Desktop Hero - Vimeo Link",
+			"accept": [
+				"vimeo"
+			],
+			"default": "https://vimeo.com/280815263"
+		},
+		{
+			"id": "hero_text_primary",
+			"type": "text",
+			"label": "Hero Primary Text",
+			"default": "We believe in simple things done very well."
+		},
+		{
+			"id": "hero_text_secondary",
+			"type": "text",
+			"label": "Hero Secondary Text",
+			"default": "We make life more meaningful by creating beautiful products for body, spirit and community."
+		},
+		{
+			"type": "color",
+			"id": "hero_text_color_mobile",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Hero Text Color - Mobile"
+		},
+		{
+			"type": "color",
+			"id": "hero_text_color_desktop",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Hero Text Color - Desktop"
+		},
+		{
+			"id": "slogan",
+			"type": "text",
+			"label": "Slogan",
+			"default": "Cultivate a beautiful life."
+		},
+		{
+			"id": "farm_hero_mobile",
+			"type": "image_picker",
+			"label": "Mobile Hero Image - The Farm"
+		},
+		{
+			"id": "farm_hero_desktop",
+			"type": "image_picker",
+			"label": "Desktop Hero Image - The Farm"
+		},
+		{
+			"id": "farm_tagline",
+			"type": "text",
+			"label": "The Farm - Tagline",
+			"default": "Our inspiration"
+		},
+		{
+			"id": "farm_title",
+			"type": "text",
+			"label": "The Farm - Title",
+			"default": "The Farm"
+		},
+		{
+			"id": "farm_text",
+			"type": "text",
+			"label": "The Farm - Text",
+			"default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+		},
+		{
+			"type": "color",
+			"id": "farm_text_color_mobile",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Farm Text Color - Mobile"
+		},
+		{
+			"type": "color",
+			"id": "farm_text_color_desktop",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Farm Text Color - Desktop"
+		},
+		{
+			"id": "farm_CTA_label",
+			"type": "text",
+			"label": "The Farm - Call to Action (label)",
+			"default": "Learn More"
+		},
+		{
+			"id": "farm_CTA_link",
+			"type": "url",
+			"label": "The Farm - Call to Action (link)"
+		},
+		{
+			"id": "founders_hero_mobile",
+			"type": "image_picker",
+			"label": "Mobile Hero Image - The Founders"
+		},
+		{
+			"type": "video_url",
+			"id": "founders_hero_desktop",
+			"label": "Desktop Hero - The Founders Vimeo Link",
+			"accept": [
+				"vimeo"
+			],
+			"default": "https://vimeo.com/280815263"
+		},
+		{
+			"id": "founders_tagline",
+			"type": "text",
+			"label": "The Founders - Tagline",
+			"default": "Our origin story"
+		},
+		{
+			"id": "founders_title",
+			"type": "text",
+			"label": "The Founders - Title",
+			"default": "The Founders"
+		},
+		{
+			"id": "founders_text",
+			"type": "text",
+			"label": "The Founders - Text",
+			"default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+		},
+		{
+			"type": "color",
+			"id": "founders_text_color_mobile",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Founders Text Color - Mobile"
+		},
+		{
+			"type": "color",
+			"id": "founders_text_color_desktop",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Founders Text Color - Desktop"
+		},
+		{
+			"id": "founders_CTA_label",
+			"type": "text",
+			"label": "The Founders - Call to Action (label)",
+			"default": "Learn More"
+		},
+		{
+			"id": "founders_CTA_link",
+			"type": "url",
+			"label": "The Founders - Call to Action (link)"
+		},
+		{
+			"id": "goats_tagline",
+			"type": "text",
+			"label": "The Goats - Tagline",
+			"default": "Our spirit"
+		},
+		{
+			"id": "goats_title",
+			"type": "text",
+			"label": "The Goats - Title",
+			"default": "The Goats"
+		},
+		{
+			"id": "goats_text",
+			"type": "text",
+			"label": "The Goats - Text",
+			"default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+		},
+		{
+			"type": "color",
+			"id": "goats_text_color_mobile",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Goats Text Color - Mobile"
+		},
+		{
+			"type": "color",
+			"id": "goats_text_color_desktop",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Goats Text Color - Desktop"
+		},
+		{
+			"id": "goats_CTA_label",
+			"type": "text",
+			"label": "The Goats - Call to Action (label)",
+			"default": "Learn More"
+		},
+		{
+			"id": "goats_CTA_link",
+			"type": "url",
+			"label": "The Goats - Call to Action (link)"
+		},
+		{
+			"id": "milkmaidens_hero_mobile",
+			"type": "image_picker",
+			"label": "Mobile Hero Image - Milkmaidens"
+		},
+		{
+			"type": "video_url",
+			"id": "milkmaidens_hero_desktop",
+			"label": "Desktop Hero - The Milkmaidens Vimeo Link",
+			"accept": [
+				"vimeo"
+			],
+			"default": "https://vimeo.com/280815263"
+		},
+		{
+			"id": "milkmaidens_tagline",
+			"type": "text",
+			"label": "Milkmaidens - Tagline",
+			"default": "Our muse"
+		},
+		{
+			"id": "milkmaidens_title",
+			"type": "text",
+			"label": "Milkmaidens - Title",
+			"default": "Milkmaidens"
+		},
+		{
+			"id": "milkmaidens_text",
+			"type": "text",
+			"label": "Milkmaidens - Text",
+			"default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+		},
+		{
+			"type": "color",
+			"id": "milkmaidens_text_color_mobile",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Milkmaidens Text Color - Mobile"
+		},
+		{
+			"type": "color",
+			"id": "milkmaidens_text_color_desktop",
+			"label": "Text",
+			"default": "#000000",
+			"info": "Milkmaidens Text Color - Desktop"
+		},
+		{
+			"id": "milkmaidens_CTA_label",
+			"type": "text",
+			"label": "Milkmaidens - Call to Action (label)",
+			"default": "Learn More"
+		},
+		{
+			"id": "milkmaidens_CTA_link",
+			"type": "url",
+			"label": "Milkmaidens - Call to Action (link)"
+		},
+		{
+			"type": "video_url",
+			"id": "vimeo_link_mobile",
+			"label": "Video Link - Mobile",
+			"accept": [
+				"vimeo"
+			],
+			"default": "https://vimeo.com/280815263"
+		},
+		{
+			"type": "video_url",
+			"id": "vimeo_link_desktop",
+			"label": "Video Link - Desktop",
+			"accept": [
+				"vimeo"
+			],
+			"default": "https://vimeo.com/280815263"
+		}
+	],
+	"blocks": [{
+		"type": "goat_carousel",
+		"name": "The Goats - Images",
+		"settings": [{
+			"id": "carousel_img",
+			"type": "image_picker",
+			"label": "The Goats - Image"
+		}]
+	}]
+}
+{% endschema %}
+
+{{ 'about.js' | asset_url | script_tag }}

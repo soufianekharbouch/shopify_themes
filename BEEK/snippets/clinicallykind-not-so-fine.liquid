@@ -1,0 +1,29 @@
+<div class="not-so-fine">
+    {% if block.settings.sectionHeading != blank %}
+        <h2>
+            {{ block.settings.sectionHeading }}
+        </h2>
+    {% endif %}
+
+    <div class="factors__wrap">
+        {% for i in (1..3) %}
+            {% capture currentText %}tile{{ i }}Text{% endcapture %}
+            {% capture currentImg %}tile{{ i }}Image{% endcapture %}
+
+            {% if block.settings[currentText] != blank %}
+                <div class="factor__item">
+                    <div class="factor__icon">
+                        {% if block.settings[currentImg] != blank %}
+                            <img src="{{ block.settings[currentImg] | img_url: 'master' }}" alt="Factor {{ i }}"/>
+                        {% else %}
+                            <h3>{{ i }}</h3>
+                        {% endif %}
+                    </div>
+                    <div class="factor__text">
+                        {{ block.settings[currentText] }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

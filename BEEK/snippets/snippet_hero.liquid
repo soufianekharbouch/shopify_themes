@@ -1,0 +1,78 @@
+<div class="hero-section">
+    <div class="container">
+
+        <div class="row no-gutters">
+            <div class="d-block col-12 d-lg-none">
+                <div class="hero-section__image">
+                {% if block.settings.heroImage != blank %}
+                {% include 'responsive-image-aspect-ratio' with
+                    image: block.settings.heroImage,
+                    max_width: 1110,
+                    hero_aspect_ratio: block.settings.heroAspectRatio_mobile
+                %}
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+            </div>
+            <div class="d-none col-12 d-lg-block">
+                <div class="hero-section__image">
+                {% if block.settings.heroImage != blank %}
+                {% include 'responsive-image-aspect-ratio' with
+                    image: block.settings.heroImage,
+                    max_width: 1110,
+                    hero_aspect_ratio: block.settings.heroAspectRatio_desktop
+                %}
+                {% else %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 text-center">
+                {%- if block.settings.heroTitle != blank -%}
+                <h2>{{ block.settings.heroTitle | escape }}</h2>
+                {%- endif -%}
+            </div>
+
+            {%- if block.settings.showDivider == true -%}
+                <div class="col-12">
+                    <div class="divider">
+                        {% include 'divider' %}
+                    </div>
+                </div>
+            {%- endif -%}
+
+            <div class="col-12 text-center">
+                {%- if block.settings.heroContent != blank -%}
+                <div class="text">
+                    {{ block.settings.heroContent }}
+                </div>
+                {%- endif -%}
+            </div>
+
+            <div class="col-12 text-center">
+                {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                <a href="{{ section.settings.button_link }}">
+                    {{ block.settings.button_label | escape }}
+                </a>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+                <a href="{{ section.settings.button_link }}">
+                    {{ section.settings.button_label | escape }}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>

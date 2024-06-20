@@ -1,0 +1,44 @@
+{% assign crossells = "" %}
+{%- comment %}<locksmith:97c0>{% endcomment -%}
+  {%- assign locksmith_e264_forloop__size = 0 %}{% for item in cartproducts %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_e264_forloop__size = locksmith_e264_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_e264_forloop__index = nil -%}
+{%- comment %}</locksmith:97c0>{% endcomment -%}
+{% for item in cartproducts %}
+  {%- comment %}<locksmith:56c4>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_e264_forloop__index == nil %}{% assign locksmith_e264_forloop__index = 1 %}{% assign locksmith_e264_forloop__index0 = 0 %}{% else %}{% assign locksmith_e264_forloop__index = locksmith_e264_forloop__index | plus: 1 %}{% assign locksmith_e264_forloop__index0 = locksmith_e264_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_e264_forloop__index == 1 %}{% assign locksmith_e264_forloop__first = true %}{% else %}{% assign locksmith_e264_forloop__first = false %}{% endif %}{% if locksmith_e264_forloop__index == locksmith_e264_forloop__size %}{% assign locksmith_e264_forloop__last = true %}{% else %}{% assign locksmith_e264_forloop__last = false %}{% endif %}{% assign locksmith_e264_forloop__rindex = locksmith_e264_forloop__size | minus: locksmith_e264_forloop__index | minus: 1 %}{% assign locksmith_e264_forloop__rindex0 = locksmith_e264_forloop__size | minus: locksmith_e264_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:56c4>{% endcomment -%}
+  {% assign cross = item.product.metafields.accentuate.crosssell_products %}
+
+  {% if cross.size != blank %}
+    {% assign crossells = crossells | append: cross %}
+  {% endif %}
+
+  {% if cross.size != blank and locksmith_e264_forloop__last == false %}
+    {% assign crossells = crossells | append: '|' %}
+  {% endif %}
+
+{% endfor %}
+
+{% for item in cartproducts %}
+  {%- comment %}<locksmith:40ea>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:40ea>{% endcomment -%}
+  {% assign handle = item.product.handle %}
+  {% assign crossells = crossells | replace: handle, '' %}
+{% endfor %}
+
+{% assign crossells = crossells | replace: '||', '|' %}
+{% assign crossells = crossells | replace: '||', '|' | split: '|' | sort | uniq | compact | reverse %}
+
+{% if crossells.size > 0 %}
+  <h2 class="section__title col-12">
+    Other Products You May Like
+  </h2>
+  {% assign counter = 0 %}
+  {% for item in crossells %}
+    {% unless counter > 3 %}
+    {% assign counter = counter | plus:1 %}
+    {% assign product = all_products[item] %}
+      {% include 'most-loved-product-item' with product: product %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}

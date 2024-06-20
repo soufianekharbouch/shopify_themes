@@ -1,0 +1,107 @@
+<div class="container hero-section">
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>{{ block.settings.discover_heading }}</h2>
+        </div>
+        <div class="col-12">
+            <div class="divider">
+                {% include 'divider' %}
+            </div>
+        </div>
+        <div class="col-12 text-center">
+            <div class="text">{{ block.settings.discover_content }}</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+
+        <div class="col-12 col-md-4 text-center">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <a href="{{ block.settings.block_1_link }}">
+                    {% if block.settings.block_1_image != blank %}
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: block.settings.block_1_image,
+                        hero_aspect_ratio: 100,
+                        max_width: 1110,
+                    %}
+                    {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                    </a>
+                </div>
+
+                <div class="col-12 text-center">
+                    {% if block.settings.block_1_link != blank and block.settings.block_1_link_label != blank %}
+                        <a href="{{ block.settings.block_1_link }}">
+                            {{ block.settings.block_1_link_label | escape }}
+                        </a>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="col-12 col-md-4 text-center">
+            <div class="row">
+
+                <div class="col-12">
+                    <a href="{{ block.settings.block_2_link }}">
+                    {% if block.settings.block_2_image != blank %}
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: block.settings.block_2_image,
+                        max_width: 1110,
+                        hero_aspect_ratio: 100,
+                    %}
+                    {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                    </a>
+                </div>
+
+                <div class="col-12 text-center">
+                    {% if block.settings.block_2_link != blank and block.settings.block_2_link_label != blank %}
+                        <a href="{{ block.settings.block_2_link }}">
+                            {{ block.settings.block_2_link_label | escape }}
+                        </a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 text-center">
+            <div class="row">
+
+                <div class="col-12">
+                    <a href="{{ block.settings.block_3_link }}">
+                    {% if block.settings.block_3_image != blank %}
+                    {% include 'responsive-image-aspect-ratio' with
+                        image: block.settings.block_3_image,
+                        max_width: 1110,
+                        hero_aspect_ratio: 100,
+                    %}
+                    {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                    </A>
+                </div>
+
+                <div class="col-12 text-center">
+                    {% if block.settings.block_3_link != blank and block.settings.block_3_link_label != blank %}
+                        <a href="{{ block.settings.block_3_link }}">
+                            {{ block.settings.block_3_link_label | escape }}
+                        </a>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+  </div>

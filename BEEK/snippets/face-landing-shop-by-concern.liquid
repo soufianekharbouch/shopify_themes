@@ -1,0 +1,141 @@
+<div class="concern-wrap"
+  {% if block.settings.items_centered %}
+    style="justify-content: center"
+  {% endif %}
+>
+  <div class="row">
+    {% if block.settings.concern-title != blank %}
+      <h2 class="section__title col-12">{{ block.settings.concern-title | escape }}</h2>
+    {% endif %}
+  </div>
+
+  <div class="concern__carousel row">
+    {% if block.settings.url1 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url1 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image1 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image1 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title1 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title1 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url2 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url2 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image2 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image2 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title2 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title2 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url3 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url3 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image3 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image3 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title3 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title3 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url4 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url4 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image4 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image4 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title4 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title4 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url5 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url5 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image5 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image5 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title5 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title5 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url6 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url6 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image6 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image6 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title6 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title6 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url7 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url7 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image7 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image7 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title7 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title7 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if block.settings.url8 %}
+      <div class="item col-md-3">
+        <a href="{{ block.settings.url8 | default: "#" }}" class="concern-list-item">
+          {% if block.settings.concern_image8 != blank %}
+            <div class="concern__image">
+              <img src="{{ block.settings.concern_image8 | img_url: '564x564' }}"
+                   alt="{{ block.settings.title8 | escape }}"/>
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+          <p>{{ block.settings.title8 | default: default_label }}</p>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>

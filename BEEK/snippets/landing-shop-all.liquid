@@ -1,0 +1,11 @@
+<div class="row shop__all-wrap">
+  <div class="col-12">
+      <a href="{{ block.settings.url | default: "#" }}" class="shop-all-item">
+        {% if block.settings.btn_text != blank %}
+          <p>{{ block.settings.btn_text | escape }}</p>
+        {% else %}
+          <p>Shop All</p>
+        {% endif %}
+      </a>
+  </div>
+</div>

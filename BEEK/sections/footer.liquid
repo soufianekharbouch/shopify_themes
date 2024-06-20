@@ -1,0 +1,170 @@
+{% if collection.metafields.custom.bottom_blurb != blank and template.name == "collection"  %}
+  <div class="topblurb topblurbSpacing ">
+    <p>{{collection.metafields.custom.bottom_blurb}}</p>
+  </div>
+{% endif %}
+<footer class="footer" id="footer">
+  <div class="footer-upper">
+
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="footer-header">{{ section.settings.heading }}</div>
+      </div>
+      <div class="col-12 col-xs-12 col-md-4">
+        <div class="klaviyo-form-HXRFaw klaviyo_loader"></div>
+      </div>
+      <div class="col-12 col-xs-12 col-md-4 text-center text-md-left align-items-center">
+        {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo, TikTok' | split: ', ' -%}
+        <ul class="social-links">
+          {% for social in social_accounts %}
+            {%- assign social_handle = social | handleize -%}
+            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+            {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+            {% if settings[social_link] != blank %}
+              <li>
+                <a target="_blank" href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+                  {% include social_icon %}
+                  <span class="icon-fallback-text">{{ social }}</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="col-12 text-center">
+      {%- assign footer_linklist = section.settings.footer_linklist -%}
+      {% if linklists[footer_linklist].links.size > 0 %}
+        <ul class="nav-links">
+        {% for link in linklists[footer_linklist].links %}
+          {%- comment %}<locksmith:15d0>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[footer_linklist], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:15d0>{% endcomment -%}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <div class="row">
+      <div class="divider"></div>
+    </div>
+
+  <div class="col-12 text-center">
+
+    <div class="copyright">
+      <p>&copy; {{ 'now' | date: "%Y" }} BEEKMAN 1802. All Rights Reserved. &nbsp</p>
+      <ul>
+        {%- assign footer_linklist_2 = section.settings.footer_linklist_2 -%}
+          {% if linklists[footer_linklist_2].links.size > 0 %}
+            {% for link in linklists[footer_linklist_2].links %}
+              {%- comment %}<locksmith:867d>{% endcomment -%}
+                {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[footer_linklist_2], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+              {%- comment %}</locksmith:867d>{% endcomment -%}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          {% endif %}
+      </ul>
+    </div>
+
+    {% if section.settings.show_payment_icons %}
+      {% unless shop.enabled_payment_types == empty %}
+        <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
+        <ul class="payment-icons">
+          {% for type in shop.enabled_payment_types %}
+            <li>
+              {{ type | payment_type_svg_tag: class: 'icon' }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endunless %}
+    {% endif %}
+
+  </div>
+
+  </div>
+  <script>
+
+
+$(function() { // Ensure jquery has loaded
+  var timer;
+  $("#wishl-wrapper").on("listload.wishl", function() {
+    setTimeout(function(){ $('.wishl-del').click(function(){
+       id=$(this).parent().parent().find("[name=id]").val()
+       title=$(this).attr("data-item-title")
+       $.ajax({
+        type:"POST",
+        url: 'https://1802.io',
+        data:{"email":"{{customer.email}}","itemtitle":title,"itemid":id,"remove":"yes"},
+        success: function(data){
+          console.log("removed"+data)
+        }
+      })
+      })},2000);
+     
+  });
+
+});
+
+  </script>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Footer Heading"
+      },
+      {
+        "type": "text",
+        "id" : "button_label",
+        "label": "Newsletter Button Label",
+        "default": "Subscribe"
+      },
+      {
+        "type": "text",
+        "id" : "newsletter_placeholder",
+        "label": "Newsletter Placeholder Text",
+        "default": "Your Email"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "First menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_2",
+        "label": "legal pages menu"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": false
+      },
+      {
+          "id": "confirmation_message",
+          "type": "richtext",
+          "label": "Confirmation Popup Message",
+          "default": "<p>Thank you for signing up for our newsletter!</p>"
+      }
+    ]
+  }
+
+{% endschema %}
+
+  
+  
+  
+  
+  

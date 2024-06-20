@@ -1,0 +1,46 @@
+<div class="clinicallykind-hero">
+    {%- assign heroHeadingColor = block.settings.hero_heading_color -%}
+    {%- assign headingUnderlineColor = block.settings.heading_underline_color -%}
+    {%- assign heroTextColor = block.settings.hero_text_color -%}
+    <div class="image-wrap">
+        <div class="d-lg-block">
+            <div class="hero-section__image text-center">
+                {% if block.settings.mobile_hero_image != blank %}
+                    <span class="d-md-none">
+                        <img src="{{ block.settings.mobile_hero_image | img_url: 'master' }}"
+                             alt="Clinically Kind Beekman1802"/>
+                    </span>
+                {% endif %}
+                {% if block.settings.desktop_hero_image != blank %}
+                    <span class="d-none d-md-block">
+                        <img src="{{ block.settings.desktop_hero_image | img_url: 'master' }}"
+                             alt="Clinically Kind Beekman1802"/>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="hero-content-area container">
+            <div class="row">
+                <div class="col-md-8 col-lg-12 offset-lg-0 offset-md-2">
+                    <div class="hero__heading">
+                        {%- if block.settings.hero_heading != blank -%}
+                            <span style="
+                                    border-bottom-color: {{ headingUnderlineColor }};
+                                    color: {{ heroHeadingColor }};
+                                    ">
+                                {{ block.settings.hero_heading | escape }}
+                            </span>
+                        {%- endif -%}
+                    </div>
+
+                    {%- if block.settings.hero_text != blank -%}
+                        <div class="hero__text">
+                            <p style="color: {{ heroTextColor }};">{{ block.settings.hero_text }}</p>
+                        </div>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

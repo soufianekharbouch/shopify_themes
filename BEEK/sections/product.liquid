@@ -1,0 +1,767 @@
+<script src="{{ 'owl.carousel.min.js' | asset_url }}" defer></script>
+
+<section data-section-id="{{ section.id }}" data-section-type="product" class="product-page">
+  <div class="product-top__wrap">
+    <div class="container top__container">
+      <div class="row product-header d-lg-none">
+        <div class="col-12">
+          <h1><span class="pr_name">{{ product.title }}</span>{% include 'wishl-wishlist' %}</h1>
+          <span class="subtitle">{{ product.metafields.accentuate.oz_capacity }}</span>
+          <p class="price" style="display:none">
+            {% if product.price_varies %}
+              From
+            {% endif %}
+            {{ product.price | money }}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        {% include 'snippet_product_gallery' %}
+        <div class="product_shop_info col-12 col-lg-5">
+          <div class="product-header d-none d-lg-block">
+            <h1><span class="pr_name">{{ product.title }}</span>{% include 'wishl-wishlist' %}</h1>
+            <span class="subtitle">{{ product.metafields.accentuate.oz_capacity }}</span>
+          </div>
+          <div class="yotpo bottomLine"
+     data-appkey="x1sQMKFVib1i7wSiNv2wRrMyEgWN75ksizzqyBDD"
+     data-domain="{{shop.permanent_domain | escape }}"
+     data-product-id="{{ product.id }}"
+     data-product-models="{{ product.id }}"
+     data-name="{{ product.title | escape }}"
+     data-url="{{ shop.url }}{{ product.url }}"
+     data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+     data-description="{{ product.description | escape }}"
+     data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+  {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+  {%- assign time_now = 'now' | date: '%s' %}
+  {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+  {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+  {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+  {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+  {%- if yotpo_live_time and diff_seconds_from_live < 86400 or yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+    {%- assign yotpo_bottomline_obsolete = false %}
+  {%- else %}
+    {%- assign yotpo_bottomline_obsolete = true %}
+  {%- endif %}
+  {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+    {{ product.metafields.yotpo.bottomline }}
+  {%- endif %}
+</div>
+          {% include 'snippet_product_detail' %}
+          {% include 'snippet_checkout_section' %}
+          <div class="d-lg-none">
+            {% include 'snippet_product_icon' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="product-content__wrap">
+{{ form | payment_terms }}
+    <div class="container">
+      {% include 'snippet_product_description' %}
+
+      {% if product.type == 'Publication' %}
+        {% include 'snippet_product_publication_testimonials' %}
+      {% endif %}
+      {% unless product.metafields.accentuate.wiw_image_mob == null or
+        product.metafields.accentuate.wiw_title == null or
+        product.metafields.accentuate.wiw_text == null or
+        product.metafields.accentuate.wiw_subtitle == null or
+        product.metafields.accentuate.wiw_subtext == null or
+        product.metafields.accentuate.wiw_image == null
+      %}
+        {% include 'snippet_product_why_it_works' %}
+      {% endunless %}
+
+    </div>
+
+    {% include 'snippet_product_statistics' %}
+
+    {% include 'snippet_product_photoquotevideo' %}
+
+    {% include 'snippet_product_faq' %}
+
+    <div class="container">
+
+      {% include 'snippet_product_artisan_info' %}
+
+      {% if product.type != 'Event' %}
+        {% if product.metafields.accentuate.other_artisan_products != blank %}
+          {% include 'snippet_artisan_products' %}
+        {% else %}
+          {% include 'snippet_product_recommended' %}
+        {% endif %}
+      {% else %}
+        {% include 'snippet_featured_events' %}
+      {% endif %}
+
+      <div class="limespot-frequently-bought-container"></div>
+
+     
+    </div>
+    {%include 'reviews-container'%}
+  </div>
+
+  <br/><br/>
+  <script text="text/javascript">
+    var _learnq = _learnq || [];
+
+    var item = {
+      Name: {{ product.title|json }},
+      ProductID: {{ product.id|json }},
+      Categories: {{ product.collections|map:'title'|json }},
+      ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+      URL: "{{ shop.secure_url }}{{ product.url }}",
+      Brand: {{ product.vendor|json }},
+      Price: {{ product.price|money|json }},
+      CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+    };
+
+    _learnq.push(['track', 'Viewed Product', item]);
+    _learnq.push(['trackViewedItem', {
+      Title: item.Name,
+      ItemId: item.ProductID,
+      Categories: item.Categories,
+      ImageUrl: item.ImageURL,
+      Url: item.URL,
+      Metadata: {
+        Brand: item.Brand,
+        Price: item.Price,
+        CompareAtPrice: item.CompareAtPrice
+      }
+    }]);
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_related_products",
+      "label": "Show related products",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_artisan_products",
+      "label": "Show artisan related products",
+      "default": true
+    },
+    {
+      "id": "related_title",
+      "type": "text",
+      "label": "Section title",
+      "default": "Recommended Routine"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'product-page.js' | asset_url | script_tag }}
+<div class="yotpo yotpo-main-widget" 
+ data-product-id="{{ product.id }}"
+ data-price="{{ variant.price | money_without_currency }}"
+ data-currency="{{ shop.currency }}" 
+ data-name="{{ product.title | escape }}" 
+ data-url="{{ shop.url }}{{ product.url }}" 
+ data-description="{{ product.description | escape }}" style="width:90%;margin:10px auto;">
+</div>
+
+
+
+<div class="YotpoImageText">
+  <img width="24px" src="https://cdn.shopify.com/s/files/1/0223/7461/files/2022-07-03_231512.jpg?v=1656886736"/>
+  <span>Earn points, 1review or question= 2 points!</span>
+</div>
+<div class="YotpoPercent" style="display: none;">
+  <span class="YotpoPercentValue">98%</span>
+  <span class="YotpoPercenttext">Of reviews say they would recommend this product of a friends</span>
+</div>
+<div class="YotpoPercent2">
+  <span class="YotpoPercentValue">98%</span>
+  <span class="YotpoPercenttext">Of reviews say they would recommend this product of a friends</span>
+</div>
+<div class="BeforeTabMobile">
+
+</div>
+{% if product.handle contains "time-capsule-advent-calendar" %}
+  <script>
+  function waitUntil(predicate, success, error){
+	    var int = setInterval(function(){
+	        if(predicate()){
+	            clearInterval(int);
+	            int = null;
+	            success();
+	        }
+	    }, 33);
+	    setTimeout(function(){
+	        if(int !== null){
+	            clearInterval(int);
+	            if(typeof(error) === 'function'){
+	                error();
+	            }
+	        }
+	    }, 10000);
+	}
+waitUntil(function () {
+	    return  typeof jQuery == "function" && vwo_$('.qty__wrap').length>0 && vwo_$('.checkout-section').length>0 ;
+	  }, function () {
+jQuery('.qty__wrap').before('<div class="adventcf">From our award-winning goat milk bar soap to our bestselling Clinically Kind® skincare, this deluxe calendar gifts you a special treat each day for a holiday season they’ll never want to end.</div><div class="Featuresadvent" style="display:none;"> <p>Our 2022 Time Capsule Advent Calendar is our first-ever interactive design</p> <ul> <li>Discover 24 of our most luxe and loved skin and body care bestsellers from our #1 goat milk bar soap to coveted new product launches.</li><li>Each item is individually wrapped in ready-to-gift time capsules printed with daily affirmations to remind you to make time for Kindness this season.</li><li>Receive a real, hand-blown hourglass with Goatie inside.</li><li>Advent Calendar measures 17 x 5.625 x 9.5 inches. Our biggest calendar ever!</li> </ul> </div><div id="show">..Read More</div></div>');
+jQuery(document).ready(function(){
+    jQuery('#show').click(function() {
+        if(jQuery(this).text().toLowerCase().indexOf('more')!=-1){
+jQuery(this).text('Read Less');
+        }
+        else{
+jQuery(this).text('Read More');
+        }
+      jQuery('.Featuresadvent').toggle("slide");
+    });
+    
+  
+});
+jQuery('.checkout-section').after('<div class="whatsincluded" style="cursor:pointer;"><div class="inclusionsaccord"><span class="whatinclusion">WHAT\'S INCLUDED</span><span class="plusicon" style="cursor:pointer;" >+</span></div><div class="inclusionlist" style="display:none;"><ul class="inclusion1"><li>1 hand-blown 5-minute hourglass</li><li>24 reusable time capsules </li><li>Bloom Pin</li></ul><p>SPOILER ALERT</p><ul class="inclusion2"><li>Pure Cuticle Serum</li><li>Pure Stick of Butter</li><li>Probiotic Milk Bar</li><li>Mini Dewy Eyed Serum</li><li>Mini Milk Wash Jelly Cleanser</li><li>Mini Milk Foam</li><li>Mini Bloom Cream</li><li>Mini Dream Booster</li><li>Mini Golden Booster</li><li>Mini Smooth Booster</li><li>0.5 oz. Sample Arcadia Hand Cream</li><li>0.5 oz. Sample Fig Leaf Hand Cream</li><li>0.5 oz. Sample Honeyed Grapefruit Hand Cream</li><li>Pure Lip Balm</li><li>Lavender Lip Balm</li><li>Honeyed Grapefruit Lip Balm</li><li>Fig Leaf Lip Balm</li><li>3.5 oz Pure Bar Soap</li><li>3.5 oz Vanilla Absolute Bar Soap</li><li>3.5 oz Honeyed Orange Blossom Bar Soap</li><li>3.5 oz Ylang Ylang Tuberose Bar Soap</li><li>3.5 oz Lavender Bar Soap</li></div></div>');
+jQuery(document).ready(function(){
+    jQuery('.inclusionsaccord').click(function() {
+      
+      jQuery('.inclusionlist').toggle("slide");
+    });
+  
+  
+ jQuery('.whatsincluded').click(function() {  
+                  if(jQuery(this).find('.plusicon').text().toLowerCase().indexOf('+')!=-1){
+jQuery(this).find('.plusicon').text('-');
+        }
+        else{
+jQuery(this).find('.plusicon').text('+');
+        }
+ });
+  
+});
+  });
+
+  </script>
+  {% endif %}
+<script>
+  function loadContent()
+  {
+    var tm=0;
+         setTimeout(function(){$(".dropdown-filters-container").parent().insertAfter('.free-text-search')},tm)
+         setTimeout(function(){$(".filters-container-title").html('Search Reviews')},tm)
+         var filterTitle='<div class="filters-container-title" role="heading" aria-level="2">Filter Reviews</div>'
+         setTimeout(function(){$(filterTitle).insertAfter('.free-text-search')},tm)
+         $('.filters-container-title').eq(0).addClass('yotoFirst')
+         setTimeout(function(){$("<div class='YotoRightItems'></div>").insertBefore('.yotoFirst')},tm)
+         setTimeout(function(){$(".YotoRightItems").insertBefore('.yotoFirst')},tm)
+         setTimeout(function(){$("<div class='YotoMediumItems'></div>").insertAfter('.YotoRightItems')},tm)
+         setTimeout(function(){$("<div class='YotoLeftItems'></div>").insertAfter('.YotoMediumItems')},tm)
+         setTimeout(function(){$(".filters-container-title").eq(0).appendTo('.YotoRightItems')},tm)
+         setTimeout(function(){$(".free-text-search").eq(0).appendTo('.YotoRightItems')},tm)
+         setTimeout(function(){$(".filters-container-title").eq(1).appendTo('.YotoRightItems')},tm)
+         setTimeout(function(){$(".dropdown-filters-container").parent().eq(0).appendTo('.YotoRightItems')},tm)
+         var filterTitle='<div class="filters-container-title" style="margin-bottom:12px;" role="heading" aria-level="2">Quick Filters</div>'
+         setTimeout(function(){$(filterTitle).appendTo('.YotoMediumItems')},tm)
+         setTimeout(function(){$(".suggested-topics").eq(0).appendTo('.YotoMediumItems')},tm)
+         $('.filters-container').addClass('YotoTopContainer')
+         setTimeout(function(){$("<div class='addAndWrite'></div> ").appendTo('.yotpo-nav-primary')},tm)
+         setTimeout(function(){$(".bottom-line-items").eq(0).appendTo('.addAndWrite')},tm)
+         setTimeout(function(){$(".write-question-review-buttons-container").appendTo('.addAndWrite') },tm)
+         setTimeout(function(){$(".write-question-review-buttons-container").css({display:"block"}) },tm)
+         setTimeout(function(){$("[data-selected-key='All']").html('Highest Rating')},tm)
+         setTimeout(function(){$('.YotpoImageText').appendTo('.write-question-review-buttons-container')},tm)
+         setTimeout(function(){ $('.YotpoImageText').css({display:"flex"})},tm)
+         setTimeout(function(){$(".YotpoPercent").appendTo('.YotoLeftItems')},tm)
+         //setTimeout(function(){ $('.YotpoPercent').css({display:"flex"})},tm)
+         setTimeout(function(){$('.BeforeTabMobile').append($('.bottom-line-items').eq(0))},tm)
+         setTimeout(function(){$('.BeforeTabMobile').append($('.YotpoPercent2'))},tm)
+         setTimeout(function(){$(".BeforeTabMobile").insertAfter('.yotpo-messages')},tm)
+         setTimeout(function(){$(".BeforeTabMobile").find('.bottom-line-items').eq(1).remove()},tm)
+         setTimeout(function(){$(".BeforeTabMobile").find('.YotpoPercent2').eq(1).remove()},tm)
+         
+         setTimeout(function(){
+          var oldHTML=$(".BeforeTabMobile").html();
+          var newHTML=$(".addAndWrite").html();
+          $(".BeforeTabMobile").html(oldHTML+newHTM);
+         
+        },tm+100)
+        setTimeout(function(){
+          if($( window ).width()<880)
+          {
+            $(".write-question-review-buttons-container").appendTo('.BeforeTabMobile').eq(1); 
+            $(".mobile-clear-filters-btn").appendTo(".YotoMediumItems .filters-container-title")
+          } 
+          $('.YotoRightItems .filters-container-title').eq(1).text('Filter By Rating');
+          $('.YotpoImageText span').text('Earn Points on Verified Orders');
+          },tm)
+        setTimeout(function(){
+          $('.BeforeTabMobile .write-question-review-buttons-container').first().css('display','none') },tm)
+        
+  }
+
+
+  const onChangeElement = (qSelector, cb)=>{
+    const targetNode = document.querySelector(qSelector);
+    if (targetNode){
+      const config = { attributes: true, childList: false, subtree: false };
+      const callback = function(mutationsList, observer) {
+        cb($(qSelector))
+      };
+      const observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
+    } else {
+      console.error("onChangeElement: Invalid Selector")
+    }
+  };
+
+  onChangeElement('.yotpo-main-widget', function(jqueryElement){    
+    if($(this).find('[aria-label="Browse next and previous reviews"]').length>0){   
+      if($('.NRPagination').html()==''){
+        $('.NRPagination').html('.')
+        loadContent();
+      }
+    }
+  });
+
+let inserted=false;
+$('body').on('DOMNodeInserted', '.yotpo-main-widget', function () {
+  if(!inserted)
+  {
+    $(".yotpo-main-widget").appendTo('.NewReviewsContainer');
+    inserted=true;
+  }
+});
+
+addEventListener('load', (event) => {
+ if($('.NRPagination').html()=='')
+  {
+   loadContent();
+  }
+  $(".NewReviewsContainer").css('display','block');
+});
+  
+  
+
+</script> 
+  <style>
+    {% if product.handle contains "time-capsule-advent-calendar" %}
+  .product-detail {
+display: none;
+}
+
+.adventcf {
+
+    color: #4a5761;
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+#show {
+color: #4a5761;
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Featuresadvent {
+margin-top: 12px;
+}
+
+.Featuresadvent>ul{
+    color: #4a5761;
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.Featuresadvent>ul>li{
+    line-height:20px;
+    margin-bottom: 10px;
+        }
+
+.inclusionsaccord {
+border-top: 1px solid black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 22px;
+}
+
+.whatinclusion{
+font-weight: 600;
+}
+
+.plusicon{margin-left: 59%;font-weight: 600;font-size: 18px;}
+
+.whatsincluded{
+border-bottom: 1px solid black;
+}
+
+.inclusion1{
+color: #4a5761;
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 14px;
+}
+
+.inclusion2{color: #4a5761;font-family: Century OS,Arial,Helvetica;font-size: 13px;}
+
+
+@media only screen and (max-width: 767px) {
+.whatinclusion{
+font-size: 14px;
+font-weight: bold;
+}
+    .plusicon{
+margin-left: 55%; 
+}
+
+.product_shop_info.col-12.col-lg-5{
+margin-bottom: 10px !important;
+}
+  .whatsincluded{
+    display:none;
+  }
+
+}
+      {% endif %}
+.NewReviewsContainer{
+  position: relative;
+}
+    .write-question-review-buttons-container{
+      display: none;
+    }
+    .BeforeTabMobile .YotpoPercent2
+  {
+    display: none;
+  }
+ 
+    .avg-score{
+    
+      font-weight: 600;
+    }
+    .YotpoPercentValue , .avg-score 
+    {
+      color:#39464f !important;
+    }
+    .yotpo-nav-wrapper span{
+      font-size: 18px;
+    }
+    .yotpo div, .yotpo span, .yotpo p, .yotpo a, .yotpo img, .yotpo i, .yotpo strong, .yotpo sup, .yotpo ul, .yotpo li, .yotpo form, .yotpo label
+    {
+      font-family: 'Avenir Next' !important;
+    }
+   
+    .more-filters-btn
+    {
+      display: none !important;
+    }
+    .reviews .yotpo-nav-primary
+    {
+      padding-top: 20px;
+    }
+.filters-container .filters-container-title
+{
+  color: #39464f;
+font-size: 18px !important;
+}
+.filters-container .free-text-search-input
+{
+  font-size: 15px !important;
+}
+.suggested-topics-row .suggested-topic .suggested-topic-text
+{
+  font-size: 15px !important;
+}
+.suggested-topics-row .suggested-topic
+{
+  line-height: 48px;
+}
+.addAndWrite .yotpo-icon
+{
+  font-size: 25.5px !important;
+}
+.suggested-topics-component .suggested-topics-row 
+{line-height: 3;
+  display: unset;
+}
+
+    .BeforeTabMobile{
+     display: none;
+    }
+    .reviews-header .reviews-amount {
+      font-size: 18px !important;
+    }
+   
+    .YotpoPercent, .YotpoPercent2{
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      padding-left:40px !important;
+    }
+    .YotpoPercent2{
+      display: none;
+    }
+    .BeforeTabMobile .YotpoPercent, .YotpoPercent2{
+      flex-direction: row;
+      padding-left:8px !important;
+    }
+    .YotpoPercentValue{
+       font-size: 32px !important;
+       line-height: 60px !important;
+       font-weight: 600;
+    }
+    .YotpoPercent2 .YotpoPercentValue{
+      line-height: 20px !important;
+      margin-right: 12px !important;
+    }
+ 
+    .write-question-review-buttons-container .write-question-review-button:hover{
+      background-color: rgb(56, 58, 58) !important; 
+    }
+    .write-question-review-buttons-container .write-question-review-button{
+      height:45px !important;
+      padding-left:23px !important;
+      padding-right:23px !important;
+      text-transform: uppercase;
+ 
+    }
+    .write-question-review-button-text{
+      font-size: 12px !important;
+      font-weight: 600 !important;
+    }
+
+    .reviews-qa-label,.yotpo-user-name{
+      font-size:18px !important;
+    
+    }
+    .reviews-qa-label{
+    position: absolute;}
+    .yotpo-review-date{
+      font-size: 15px !important;
+    }
+    .YotpoImageText{
+      width:100%;
+      display: none;
+      flex-direction: row;
+      align-items: right;
+      margin-top:12px !important;
+      
+    }
+    .YotpoImageText img{
+      margin-right:8px;
+    }
+    .desktop-clear-btn-text{
+      text-decoration: underline;
+    }
+    .filters-container .desktop-clear-all-btn{
+      border:0px;
+      margin-top:-10px;
+      margin-left:-30%;
+    }
+    .bottom-line-items{
+      margin-top:15px !important;
+      
+    }
+    .dropdown-filters-container{
+      width:85%;
+    }
+    .filters-dropdown .yotpo-dropdown-button{
+      width:100%;
+    }
+  .filters-dropdown:nth-child(2){
+     display: none;
+  }
+   .filters-dropdown{
+    width:100%;
+    margin-top:0px !important;
+   }
+   .main-widget .avg-score{
+      margin-right:15px;
+      font-size: 32px !important;
+    }
+
+    .write-question-review-buttons-container{
+      text-align: right;
+      position: absolute;
+      right:0px;
+
+
+    }
+    .addAndWrite{
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      margin:15px auto 8px auto;
+    }
+    .yotpo-display-wrapper:nth-child(2) , .yotpo-logo-link-new {
+      display: none;
+    }
+    .yotpo .new-yotpo-small-box{
+      border-bottom:0px;
+      margin-top:8px;
+    }
+    .YotoTopContainer{
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      
+    }
+    .filters-container .desktop-clear-all-btn{
+      position: relative;
+      height:40px;
+    }
+    .YotoRightItems{
+      width:40%;
+      min-width: 460px;
+
+    }
+    .YotoLeftItems{
+      width:20%;
+      min-width: 200px;
+
+    }
+    .YotoMediumItems{
+      width:35%;
+      min-width: 460px;
+    }
+    .filters-dropdown .yotpo-dropdown-button{
+      margin-bottom:12px;
+    }
+    .filters-container-title{
+      padding-bottom:0px !important;
+    }
+    .yotpo-hidden-mobile{
+      display: block !important;
+    }
+    .filters-dropdown    .yotpo-dropdown-button
+    {
+      height: 40px;
+      border: solid 1px #575757;
+    }
+    .yotpo-dropdown-button .selected
+    {
+      font-size: 15px !important;
+      font-weight: 500 !important;
+    }
+    .suggested-topics-row .suggested-topic, .suggested-topics-row .suggested-topic-expand
+    {
+      padding: 9px 10px 10px 12px !important;
+    }
+    /*reviews-qa-labels-container */
+    @media only screen and (min-width: 2000px)
+    {
+      .YotoRightItems{
+        width: 35% !important;
+      }
+      .YotoMediumItems
+      {
+        width: 40% !important;
+        
+      }
+    }
+    @media only screen and (min-width: 961px)
+    {
+      .write-question-review-buttons-container
+      {
+        position: absolute;
+        top: 0;
+      }
+      .dropdown-filters-container
+      {
+        width: 455px;
+      }
+    }
+    @media only screen and (max-width: 960px)
+    {
+      .main-widget .mobile-clear-filters-btn
+      {
+        position: absolute;
+        right: 0;
+      }
+      .YotoRightItems
+      {
+        width: 100% !important;
+        min-width: auto !important;
+      }
+      .dropdown-filters-container
+      {
+        width: 100% !important;
+      }
+      .suggested-topics-component .suggested-topics-row
+      {
+        display: inherit;
+      }
+      .BeforeTabMobile .YotpoPercent2{
+        align-items: center;
+      }
+      .BeforeTabMobile .bottom-line-only-container
+      {
+margin-top: -10px;
+margin-left: 10px;
+      }
+      .BeforeTabMobile .bottom-line-items
+      {
+        padding: 10px 0;
+      }
+      .main-widget .reviews-qa-labels-container{
+        display: block !important;
+        float: unset;
+    padding-top: 30px;
+    margin-left: 10px;
+    display: inherit;
+    position: relative;
+      }
+    }
+    @media(max-width:880px){
+      .filters-container .free-text-search
+      {
+        width: 100% !important;
+      }
+      .filters-container .free-text-search-input
+      {
+        width: 100% !important;
+      }
+      .YotpoPercent2{
+        padding: 15px !important;
+      }
+    
+      .reviews-qa-labels-container .reviews-qa-label
+      {
+        position: relative;
+      }
+      .write-question-review-buttons-container{
+        position: relative;
+      }
+      
+     
+      .filters-dropdown .yotpo-dropdown-button{
+        width:100%;
+      }
+      .BeforeTabMobile{
+      display: block;
+      padding-bottom: 15px;
+    }
+    .addAndWrite{
+      display: none;
+    }
+    .YotpoPercent2{
+      display: flex;
+    }
+    .YotpoPercent{
+      display: none;
+    }
+    .main-widget .avg-score{
+      margin-right:-18px;
+      margin-left:10px;
+    }
+    .bottom-line-items{
+      margin-bottom:15px !important;
+      
+    }
+  </style>
+

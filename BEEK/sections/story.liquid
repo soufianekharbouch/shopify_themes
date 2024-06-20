@@ -1,0 +1,119 @@
+<section class="story-section"
+  {% if section.settings.bkg_image %}
+    style="background-image:url({{ section.settings.bkg_image | img_url: 'master' }})"
+  {% endif %}
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center story_content">
+        <div
+          {% if section.settings.bkg_image %}
+            class="inner__wrap"
+          {% endif %}
+          >
+          <div class="top__wrap">
+            {%- if section.settings.icon_tagline -%}
+              <div class="label_d">{{ section.settings.icon_tagline }}</div>
+            {%- endif -%}
+            {%- if section.settings.icon -%}
+              {% include 'responsive-image' with
+                image: section.settings.icon,
+                min_width: 40;
+                min_height: 40,
+                max_width: 80,
+                max_height: 80 %}
+            {%- endif -%}
+
+            {%- if section.settings.title != blank -%}
+              <h2>{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+
+            {%- if section.settings.text != blank -%}
+              <div class="text">
+                {{ section.settings.text }}
+              </div>
+            {%- endif -%}
+
+            {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+              <a class="view__more" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_label | escape }}
+              </a>
+            {% endif %}
+          </div>
+
+          {%- if section.settings.image -%}
+            <div class="bottom__wrap">
+              <div class="story-section__image">
+                {%- if section.settings.image != blank -%}
+                  {% include 'responsive-image' with
+                    image: section.settings.image,
+                    max_width: 1400,
+                    max_height: 1000 %}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bkg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "icon_tagline",
+      "label": "Icon Tagline",
+      "default": "Featured"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Story"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Story content"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "CTA Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+	],
+    "presets": [
+      {
+        "name": "Story",
+        "category": "Image"
+      }
+  	]
+  }
+{% endschema %}

@@ -1,0 +1,20 @@
+{% if product.metafields.accentuate.quotes != null and product.metafields.accentuate.photo != null and product.metafields.accentuate.youtube_image_preload != null and product.metafields.accentuate.video != null %}
+    <div class="photo_quote_video_section">
+        <div class="pqv_container">
+            <div class="quotes_photo_wrap">
+                <div class="product-section-photo"><img src="{{product.metafields.accentuate.photo}}" alt=""></div>
+                <div class="product-section-quotes">
+                    <div class="quote-table-cell">{{product.metafields.accentuate.quotes}}</div>
+                </div>
+            </div>
+            <div class="fake_video">
+                <img src="{{ product.metafields.accentuate.youtube_image_preload }}" alt="">
+                <a class="u2be_video" href="#" data-video="{{ product.metafields.accentuate.video }}">{% include 'icon-player' %}</a>
+                <div class="modal_wrap_overlay">
+                    <span class="close_u2be">{% include 'icon-close' %}</span>
+                    <div id="u2be_inner" class="modal_inner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

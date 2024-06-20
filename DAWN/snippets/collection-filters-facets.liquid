@@ -1,0 +1,59 @@
+{% liquid
+  if results.url
+      assign results_url = results.url
+  else
+      assign terms = results.terms | escape
+      assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+%}
+
+<div id="sf-filter-by-items" class="flex flex-wrap items-center">
+  {%- assign has_filters = false -%}
+  {%- for filter in results.filters -%}
+    {%- liquid 
+      if filter.active_values.size > 0
+        assign has_filters = true
+      endif
+    -%}
+    {%- for value in filter.active_values -%}
+      <facet-remove class="filtered-item">
+        <a href="{{ value.url_to_remove }}">
+          <span class="flex items-center">
+            <span class="mr-2">{% render 'icon', name: 'times', size: 'small' %}</span>
+            {{ value.label | escape }}
+          </span>
+        </a>
+      </facet-remove>
+    {%- endfor -%}
+    {% if filter.type == "price_range" %}
+      {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+        {%- assign has_filters = true -%}
+        <facet-remove class="filtered-item">
+          <a href="{{ filter.url_to_remove }}" class="flex">
+            <span class="mr-2">{% render 'icon', name: 'times', size: 'small' %}</span>
+            <span>
+              {%- if filter.min_value.value -%}
+                {{- filter.min_value.value | money -}}
+              {%- else -%}
+                {{- 0 | money -}}
+              {%- endif -%} 
+              <span class="mx-1">-</span>
+              {%- if filter.max_value.value -%}
+                {{- filter.max_value.value | money -}}
+              {%- else -%}
+                {{- filter.range_max | money -}}
+              {%- endif -%}
+            </span>
+          </a>
+        </facet-remove>
+      {%- endif -%}
+    {% endif %}
+  {%- endfor -%}
+  {%- unless has_filters == false -%}
+    <facet-remove class="filtered-item" style="background: transparent;">
+      <a href="{{ results_url }}" class="text-color-secondary font-normal underline hover:text-color-primary">
+        <span>{{ 'collections.sidebar.clear_all' | t }}</span>
+      </a>
+    </facet-remove>
+  {%- endunless -%}
+</div>

@@ -1,0 +1,114 @@
+<div id="NavDrawer" class="drawer fixed-overlay">
+  <div class="fixed-overlay--content">
+    <div class="drawer__header medium-down--hide">
+      <div class="drawer__close">
+        <button type="button" class="icon-fallback-text js-drawer-close">
+          <svg><use xlink:href="#icon-close"></use></svg>
+          <span class="fallback-text">{{ 'layout.drawers.close_menu' | t }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- begin mobile-nav -->
+    <ul class="mobile-nav">
+      {% assign usePlaceholderNavbar = true %}
+
+      {% assign mainMenu = section.settings.nav_linklist %}
+      {% if linklists[mainMenu].links.size != 0 %}
+        {% assign usePlaceholderNavbar = false %}
+        <div class="mobile-nav__header">{{ linklists[mainMenu].title }}</div>
+        <ul class="mobile-nav">
+          {%- comment %}<locksmith:08a4>{% endcomment -%}
+            {%- assign locksmith_455b_forloop__size = 0 %}{% for link in linklists[mainMenu].links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[mainMenu], variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_455b_forloop__size = locksmith_455b_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_455b_forloop__index = nil -%}
+          {%- comment %}</locksmith:08a4>{% endcomment -%}
+          {% for link in linklists[mainMenu].links %}
+            {%- comment %}<locksmith:09b1>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[mainMenu], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_455b_forloop__index == nil %}{% assign locksmith_455b_forloop__index = 1 %}{% assign locksmith_455b_forloop__index0 = 0 %}{% else %}{% assign locksmith_455b_forloop__index = locksmith_455b_forloop__index | plus: 1 %}{% assign locksmith_455b_forloop__index0 = locksmith_455b_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_455b_forloop__index == 1 %}{% assign locksmith_455b_forloop__first = true %}{% else %}{% assign locksmith_455b_forloop__first = false %}{% endif %}{% if locksmith_455b_forloop__index == locksmith_455b_forloop__size %}{% assign locksmith_455b_forloop__last = true %}{% else %}{% assign locksmith_455b_forloop__last = false %}{% endif %}{% assign locksmith_455b_forloop__rindex = locksmith_455b_forloop__size | minus: locksmith_455b_forloop__index | minus: 1 %}{% assign locksmith_455b_forloop__rindex0 = locksmith_455b_forloop__size | minus: locksmith_455b_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:09b1>{% endcomment -%}
+            {% assign child_list_handle = link.title | handleize %}
+            {% include "drawer-nav-menu" with handle: child_list_handle %}
+            {% if locksmith_455b_forloop__last %}
+              {% if linklists[section.settings.nav_linklist_2].links.size != 0 or linklists[section.settings.nav_linklist_2].links.size == 0 and linklists[section.settings.nav_linklist_3].links.size != 0  %}
+              <hr class='medium-down--show large--hide'>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if linklists[section.settings.nav_linklist_2].links.size != 0 %}
+        {% assign usePlaceholderNavbar = false %}
+        <div class="mobile-nav__header">{{ linklists[section.settings.nav_linklist_2].title }}</div>
+        <ul class="mobile-nav">
+          {%- comment %}<locksmith:2906>{% endcomment -%}
+            {%- assign locksmith_e63b_forloop__size = 0 %}{% for link in linklists[section.settings.nav_linklist_2].links %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.nav_linklist_2], variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_e63b_forloop__size = locksmith_e63b_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_e63b_forloop__index = nil -%}
+          {%- comment %}</locksmith:2906>{% endcomment -%}
+          {% for link in linklists[section.settings.nav_linklist_2].links %}
+            {%- comment %}<locksmith:2c29>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.nav_linklist_2], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_e63b_forloop__index == nil %}{% assign locksmith_e63b_forloop__index = 1 %}{% assign locksmith_e63b_forloop__index0 = 0 %}{% else %}{% assign locksmith_e63b_forloop__index = locksmith_e63b_forloop__index | plus: 1 %}{% assign locksmith_e63b_forloop__index0 = locksmith_e63b_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_e63b_forloop__index == 1 %}{% assign locksmith_e63b_forloop__first = true %}{% else %}{% assign locksmith_e63b_forloop__first = false %}{% endif %}{% if locksmith_e63b_forloop__index == locksmith_e63b_forloop__size %}{% assign locksmith_e63b_forloop__last = true %}{% else %}{% assign locksmith_e63b_forloop__last = false %}{% endif %}{% assign locksmith_e63b_forloop__rindex = locksmith_e63b_forloop__size | minus: locksmith_e63b_forloop__index | minus: 1 %}{% assign locksmith_e63b_forloop__rindex0 = locksmith_e63b_forloop__size | minus: locksmith_e63b_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:2c29>{% endcomment -%}
+            {% assign child_list_handle = link.title | handleize %}
+            {% include "drawer-nav-menu" with handle: child_list_handle %}
+            {% if locksmith_e63b_forloop__last and linklists[section.settings.nav_linklist_3].links.size != 0  %}<hr class='medium-down--show large--hide'>{% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if linklists[section.settings.nav_linklist_3].links.size != 0 %}
+        {% assign usePlaceholderNavbar = false %}
+        <div class="mobile-nav__header">{{ linklists[section.settings.nav_linklist_3].title }}</div>
+        <ul class="mobile-nav">
+          {% for link in linklists[section.settings.nav_linklist_3].links %}
+            {%- comment %}<locksmith:853f>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.nav_linklist_3], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:853f>{% endcomment -%}
+            {% assign child_list_handle = link.title | handleize %}
+            {% include "drawer-nav-menu" with handle: child_list_handle %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if shop.customer_accounts_enabled %}
+        {% assign usePlaceholderNavbar = false %}
+        <li class="mobile-nav__item">
+          <hr class='medium-down--show large--hide'>
+          <div class="mobile-nav__header">{{'customer.account.title' | t }}</div>
+          <ul class="mobile-nav">
+            {% if customer %}
+              <li class="mobile-nav__item">
+                {% if customer.first_name != blank %}
+                  {% capture first_name %}{{ customer.first_name }}{% endcapture %}
+                  <a href="/account">{{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}</a>
+                {% else %}
+                  <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                {% endif %}
+              </li>
+              <li class="mobile-nav__item">
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li class="mobile-nav__item">
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+              {% if shop.customer_accounts_enabled %}
+                <li class="mobile-nav__item">
+                  {{ 'layout.customer.create_account' | t | customer_register_link }}
+                </li>
+              {% endif %}
+            {% endif %}
+          </ul>
+        </li>
+      {% endif %}
+
+      {% if usePlaceholderNavbar %}
+        {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+        <p class='nav-placeholder'>
+          <strong>{{'homepage.onboarding.navbar_bold' | t }}</strong>
+          <br>{{'homepage.onboarding.navbar' | t }}
+        </p>
+      {% endif %}
+
+    </ul>
+  </div>
+  <!-- //mobile-nav -->
+</div>

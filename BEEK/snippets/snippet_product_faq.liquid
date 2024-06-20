@@ -1,0 +1,43 @@
+{% for value in product.metafields.faq_fields_question.faq_fields %}
+{%if value != blank %}
+{%assign not_empty= true %}
+{%endif%}
+{%endfor%}
+
+{% if not_empty %}
+    <div class="container faq__pdp">
+        <div class="row">
+            <div class="col-md-9 col-lg-12 text-center">
+                <h1> {{ 'FAQ' }}</h1>
+            </div>
+        </div>
+        <div class="row pb-5">
+            <div class="col-md-9 col-lg-12">
+                {% for value in product.metafields.faq_fields_question.faq_fields %}
+                    <button class="collapsible">
+                        <span>{{ value }}</span>
+                        {% include 'icon-chevron-down' %}
+                    </button>
+                    <div class="content">
+                        <p>{{ product.metafields.faq_fields_answer.answer[forloop.index0] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+      const coll = document.getElementsByClassName("collapsible");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+{% endif %}

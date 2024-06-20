@@ -1,0 +1,39 @@
+<div class="new-facial-bottom-hero">
+    <div class="hero-wrap">
+        {% if block.settings.mobile_hero_image != blank %}
+            <span class="d-md-none">
+                <img src="{{ block.settings.mobile_hero_image | img_url: 'master' }}">
+            </span>
+        {% endif %}
+
+        {% if block.settings.desktop_hero_image != blank %}
+            <span class="d-none d-md-block">
+                <img src="{{ block.settings.desktop_hero_image | img_url: 'master' }}">
+            </span>
+        {% endif %}
+      
+        <div class="content__area content-area-heading">
+            {%- if block.settings.discover_heading != blank -%}
+                <span class="discover-heading-text">
+                    {{ block.settings.discover_heading | escape }}
+                </span>
+            {% endif %}
+
+            <div class="new-facial-discover-spacer"></div>
+            {%- if block.settings.discover_text != blank -%}
+                <span class="discover-desc-text">
+                    {{ block.settings.discover_text }}
+                    <div class="fh-content" style="margin-top:15px">
+                        <a  class="btnGetStarted" href="#" onclick="startYmk();">
+                            GET STARTED
+                       </a>
+                     </div>
+                </span>
+            {% endif %}
+         
+      
+        </div>
+
+   
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="microbiome-skincare" id="skincare">
+  <div class="image__wrap">
+    {% if block.settings.mobile_img != blank %}
+      <img src="{{ block.settings.mobile_img | img_url: 'master' }}" class="d-block d-md-none" alt="" />
+    {% endif %}
+
+    {% if block.settings.desktop_img != blank %}
+      <img src="{{ block.settings.desktop_img | img_url: 'master' }}" class="d-none d-md-block" alt="" />
+    {% endif %}
+
+    <div class="section__content">
+      {%- if block.settings.section_ttl != blank -%}
+        <h2>{{ block.settings.section_ttl | escape }}</h2>
+      {%- endif -%}
+      {%- if block.settings.section_text != blank -%}
+        <p>{{ block.settings.section_text }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

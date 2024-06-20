@@ -1,0 +1,10 @@
+{% if block.settings.certified_image %}
+    <div class="clinicallykind-certified">
+        <div class="image__wrap">
+            <img src="{{ block.settings.certified_image | img_url: 'master' }}" alt="Certified Clinically Kind" />
+        </div>
+        <div class="text__wrap">
+            {{ block.settings.certified_text }}
+        </div>
+    </div>
+{% endif %}

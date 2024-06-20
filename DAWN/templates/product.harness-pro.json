@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_saving": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        },
+        "addons": {
+          "type": "addons",
+          "settings": {
+            "show_atcp": false,
+            "show_ask_a_question": false,
+            "show_social": false
+          }
+        },
+        "53d5fb78-c1b7-4ae4-869a-d9657affb770": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "addons",
+        "53d5fb78-c1b7-4ae4-869a-d9657affb770"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
+    "2e1284c8-1dc4-42f9-942e-bd48b8031e6f": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "79beede3-b42d-4f16-9a70-d1a6776841d0": {
+          "type": "item",
+          "settings": {
+            "header": "30 Days Money Back",
+            "content": "",
+            "content_page": "money-back-policy",
+            "open": false
+          }
+        },
+        "d3bec433-35af-4916-a575-91e205bca704": {
+          "type": "item",
+          "settings": {
+            "header": "Shipping Info",
+            "content": "",
+            "content_page": "shipping-info",
+            "open": false
+          }
+        },
+        "template--20182899786033__2e1284c8-1dc4-42f9-942e-bd48b8031e6f-item-2": {
+          "type": "item",
+          "settings": {
+            "header": "FAQs",
+            "content": "<h3>1. HOW DO I TRACK MY ORDER?<\/h3><p>We've actually made this super simple! You can <a href=\"https:\/\/yamyoop.com\/apps\/track123\"><span style=\"text-decoration:underline\">click here<\/span><\/a> to see the status of your order.<\/p><h3>2. HOW DO I RETURN SOMETHING?<\/h3><p>Please refer to our returns policy. Besides, <strong>MONEYBACK<\/strong> cannot accept returned products that have man-made damage. <\/p><h3>3. HOW DO I USE A COUPON CODE?<\/h3><p>Lucky you! To use your coupon code, add all of your glam goodies to your shopping cart and begin the checkout process. There will be a box to enter your code, then just click ”apply”. Please note that only one promotion code can be entered for a given order from <strong>www.yamyoop.com<\/strong>. Coupon code cannot be used for orders already placed.<\/p><h3>4. WHAT IF THE PRODUCTS I RECEIVED IS DAMAGED OR MISSING ITEMS?<\/h3><p>Please refer to our returns policy. Besides, We cannot accept returned products that have been used or man-made damage. <br\/>You must report damage or missing items within 3 business days of receipt by contacting us at <strong>hi@yamyoop.com<\/strong>You also must keep the original box & packing material in the event we open a claim with the carrier. In some cases, we may need a customer's help to confirm why this is happening. We appreciate your cooperation and patience through this process.<\/p><p>5. WHAT FORMS OF PAYMENT DO YOU ACCEPT?<\/p><p>Our checkout page accepts Visa, Mastercard, and PayPal as a form of payment.<\/p><h3>6. WHY DID I PAY FOR SEVERAL DAYS WITHOUT A TRACKING NUMBER?<\/h3><p>Your payment reaches our account on time, usually 10 minutes will arrive at our account, but this does not exclude special circumstances this process needs a few days, depending on the credit card payment platform.And please review the product page for the products you have ordered, which will indicate the inventory availability status of the product. Products that are out of stock will be shipped automatically once we receive additional inventory.<\/p>",
+            "content_page": "",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "79beede3-b42d-4f16-9a70-d1a6776841d0",
+        "d3bec433-35af-4916-a575-91e205bca704",
+        "template--20182899786033__2e1284c8-1dc4-42f9-942e-bd48b8031e6f-item-2"
+      ],
+      "settings": {
+        "container": "container"
+      }
+    },
+    "8704f1a2-481b-42c2-917a-d0784c2c0375": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>\n<br>",
+        "custom_class": ""
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "header": "Product description"
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "header": "Shipping & Return",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "bg_color": "",
+        "default_open": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container",
+        "heading": "You Might Also Like",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "heading": "Recently Viewed Products",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "16915267084cacd27d": {
+      "type": "apps",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "6a61b566-4c38-44ab-96b5-ff25102aba3e": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/STAFF_image.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Get Support",
+            "subheading": "",
+            "text": "<p>Give us a few details and we’ll offer the best solution. Connect by phone, chat, email, and more.<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "Start Now",
+            "button_link": "shopify:\/\/pages\/contact",
+            "button_style": "sf__btn-link",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-image-1",
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-text-1"
+      ],
+      "settings": {
+        "heading": "Custom content",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "2e1284c8-1dc4-42f9-942e-bd48b8031e6f",
+    "8704f1a2-481b-42c2-917a-d0784c2c0375",
+    "product-details-tabs",
+    "product-recommendations",
+    "recent-viewed-products",
+    "16915267084cacd27d",
+    "6a61b566-4c38-44ab-96b5-ff25102aba3e"
+  ]
+}

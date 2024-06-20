@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}" id="checkout__beekman">
+  <head>
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGLD8S8');</script>
+<!-- End Google Tag Manager -->
+    
+<!-- Start VWO Async SmartCode -->
+<script type='text/javascript'>
+window._vwo_code = window._vwo_code || (function(){
+var account_id=633816,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+is_spa=1,
+hide_element='body',
+
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
+window.settings_timer=setTimeout(function () {_vwo_code.finish() },settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
+</script>
+<!-- End VWO Async SmartCode -->
+<!-- Reddit Pixel -->
+<script>
+!function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','t2_5igr8j4b');rdt('track', 'PageVisit');rdt('track', 'Purchase');rdt('track', 'ViewContent');
+</script>
+<!-- DO NOT MODIFY -->
+<!-- End Reddit Pixel -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    {{ 'checkout_styling.scss.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGLD8S8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    {{ skip_to_content_link }}
+
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main" role="main">
+          <div class="main__content">
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            <div role="contentinfo" aria-label="Footer">
+              <p class="copyright-text">
+                All Rights Reserved / Beekman 1802
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            <limespot></limespot>
+{{ content_for_order_summary }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+  
+  <!-- start_checkout_beacon_code_js_section -->
+
+  {% if checkout.order.order_number %}
+    <script type="text/javascript" src="//static.powerreviews.com/t/v1/tracker.js"></script>
+
+    <script type="text/javascript">
+        (function(){try{
+
+        var tracker = POWERREVIEWS.tracker.createTracker({
+            merchantGroupId: "589322278"});
+
+            var orderFeed = {
+                merchantGroupId: '589322278',
+                merchantId: '1433387162',
+                locale: 'en_US',
+                merchantUserId: '{{ checkout.customer.id }}',
+                marketingOptIn: true,
+                userEmail: '{{ checkout.customer.email | url_param_escape }}',
+                userFirstName: '{{ checkout.customer.first_name }}',
+                userLastName: '{{ checkout.customer.last_name }}',
+                orderId: '{{ checkout.order.order_number }}',
+                orderItems: [
+                  {% for line_item in checkout.line_items %}
+                  {
+                    page_id: '{{ line_item.product_id }}',
+                      product_name: '{{ line_item.title }}',
+                      quantity: '{{ line_item.quantity }}',
+                      unit_price: '{{ line_item.price | money_without_currency }}'
+                  }
+                  {% if forloop.last == false %}, {% endif %} {% endfor %}
+                ]
+            }
+
+            tracker.trackCheckout(orderFeed);
+
+        }catch(e){window.console && window.console.log(e)}}());
+    </script>
+  {% endif %}
+  <!-- end_checkout_beacon_code_js_section -->
+
+    <script type="text/javascript">
+      const productsBlock = document.getElementsByClassName('order-summary__section__content')[0];
+      const productSingleBlockArray = productsBlock.querySelectorAll('.product');
+      productSingleBlockArray.forEach((item) => {
+        const description = item.getElementsByClassName('product__description__variant order-summary__small-text')[0]
+        if (description.textContent === '(100% off)') {
+          description.textContent = '';
+        }
+      })
+    </script>
+    
+    
+    
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="168672"></div>
+    
+    <!-- LOYALTY CODE START POST CHECKOUT -->
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+    <!-- Initial CSS to hide the module -->
+    <style type="text/css">
+        .yotpo-checkout-hide {
+            display: none;
+        }
+    </style>
+    <!-- module inside container -->
+    <div class="yotpo-refer-popup-container yotpo-checkout-hide">
+    <div class="yotpo-widget-instance" data-yotpo-instance-id="168673"></div>
+    </div>
+    <!-- JS to handle module initiation -->
+    <script type="text/javascript">
+        window.location.href.indexOf("loyalty_thank_you") !== -1
+            ? document
+                  .querySelector(".yotpo-checkout-hide")
+                  .classList.remove("yotpo-checkout-hide")
+            : "";
+    </script>
+    <!-- LOYALTY CODE END -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      $('.product__description__property').each(function(){
+        var cont=""+$(this).html();
+        if(cont.includes('is_utm_gift:') || cont.includes('is_free_gift:') || cont.includes('is_2xab_gift:')){
+          $(this).remove();
+        }
+      })
+      var i=0;
+      setInterval(function () {i=0}, 4000);
+      $('#order-summary').on('DOMSubtreeModified', function(){
+       setTimeout(addfreebie, 700);
+      });
+      function addfreebie(){
+        cont=""+$("#order-summary").html();
+        if(i<1 && cont.includes('<span class="reduction-code__text">FREEBIE</span>')){
+          AjaxAdd('{"items": [{"id": "33031743176739","quantity":"1"}]}');
+          i=i+1;
+        }
+
+       
+
+      }
+      function AjaxAdd(data_to_add) {
+        $.ajax({
+          url: "/cart.js"
+        }).done(function(data) {
+          data=JSON.parse(data)
+          var already_exist=false;
+          for (item of data.items){
+            if(item.variant_id =="33031743176739"){
+              already_exist=true
+            }
+          }
+          if(!already_exist){
+                data_to_add = JSON.parse(data_to_add);
+              $.ajax({
+                url: '{{shop.url}}/cart/add.js',
+                dataType: 'json',
+                type: 'post',
+                data: data_to_add, // $addToCartForm.serialize()+'&shipstocountry=US',
+                success: function(Data) {
+                    location.reload();
+                }
+              });
+          }else{
+            console.log("Auto added product already exist")
+          }
+        });
+
+
+    
+      }
+    </script>
+    <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+
+  </body>
+</html>
+
+{{ 'idme-checkout-style.css' | asset_url | stylesheet_tag }}
+{{ 'idme-checkout-template.js' | asset_url | script_tag }}

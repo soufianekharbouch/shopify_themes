@@ -1,0 +1,759 @@
+{% include 'subscription-cart-footer' %}
+
+{%- assign giftItemId = false -%}
+{% for item in cart.items %}
+  {% if item.variant.title contains "(Freegifts)" or item.variant.title contains "% off)" or product.metafields.secomapp['freegifts'] %}
+    {%- assign giftItemId = item.id -%}
+  {% endif %}
+{% endfor %}
+
+{%- assign prefix = '' -%}
+{% if cart.item_count > 1 %}
+  {% assign prefix = 's' %}
+{% endif %}
+<!--
+Event snippet for Landing Page on : Please do not remove.
+Place this snippet on pages with events you’re tracking. 
+Creation date: 10/30/2022
+-->
+<script>
+  gtag('event', 'conversion', {
+    'allow_custom_scripts': true,
+    'send_to': 'DC-12412335/inter0/landi0+standard'
+  });
+</script>
+<noscript>
+<img src=""https://ad.doubleclick.net/ddm/activity/src=12412335;type=inter0;cat=landi0;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?"" width=""1"" height=""1"" alt=""""/>
+</noscript>
+<!-- End of event snippet: Please do not remove -->			
+<script data-cfasync="false" type="text/javascript">if (typeof Shopify === "undefined") var Shopify = {}; Shopify.cart = {{ cart | json }};</script>
+
+<style>
+  #sca-fg-owl-carousel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+  }
+  .sca-fg-cart-container {
+    display: none !important;
+  }
+  #sca-fg-slider-cart {
+    border: none;
+  }
+  #sca-fg-slider-cart .sca-fg-cart-title {
+    background: none;
+  }
+  #sca-fg-slider-cart .sca-fg-cart-title strong {
+    font-family: 'Avenir Next';
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #4a5761;
+    background: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0.7rem;
+    display: flex;
+    justify-content: center;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-wrapper-outer {
+    overflow-y: hidden !important;
+    z-index: 1;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item {
+    height: 300px;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item img {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    object-fit: scale-down;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-product-title {
+    color: #4a5761 !important;
+    font-weight: 500;
+    font-family: 'Century OS';
+    display: block;
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+  #sca-fg-owl-carousel .owl-theme .owl-controls .owl-buttons div {
+    color: #4A5761;
+    font-size: 20px;
+    background: transparent;
+    opacity: 1;
+  }
+  #sca-fg-owl-carousel .owl-carousel .item > a {
+    display: flex;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 1.5rem auto;
+    background: #F8F8F8;
+    align-items: center;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-product-shop {
+    height: 50%;
+    position: relative;
+    display: block;
+    bottom: 0;
+    text-align: center;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-product-shop .f-fix {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    bottom: 0;
+    text-align: center;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-button {
+    padding-top: 10px;
+    background-color: white;
+    border-style: hidden;
+  }
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-button span {
+    background: transparent !important;
+    padding: 0 !important;
+    font-size: 1.5rem;
+    overflow: hidden;
+    height: 24px;
+    text-transform: uppercase;
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    position: relative;
+    color: #4A5761 !important;
+  }
+
+  #sca-fg-owl-carousel .owl-carousel .owl-item .sca-button span:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #4A5761;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  #sca_freegift_list .item {
+    height: 100%;
+    background: #fff;
+  }
+  #sca-fg-owl-carousel .f-fix .sca-price {
+    font-size: 1.8rem;
+    font-family: 'Century OS';
+    color: rgba(78, 87, 97, 0.6);
+    display: none;
+  }
+  #sca-fg-owl-carousel .f-fix .sca-price span {
+    padding: 1rem 0.5rem;
+  }
+  .owl-pagination {
+    display: none;
+  }
+  @media screen and (max-width: 475px) {
+    #sca-fg-owl-carousel {
+      margin-bottom: 0;
+    }
+    #sca-fg-slider-cart .sca-fg-cart-title strong {
+      font-size: 1.3rem;
+    }
+    .owl-pagination {
+      width: 80%;
+      background: #E4E6E8;
+      height: 5px;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      display: flex;
+      border-radius: 2px;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    #sca-fg-owl-carousel .owl-theme .owl-controls .owl-page {
+      display: flex;
+      flex: 1;
+      border-radius: 5px;
+    }
+    #sca-fg-owl-carousel .owl-theme .owl-controls .owl-page.active {
+      background: #4A5761 !important;
+    }
+    #sca_freegift_list .item {
+      padding: 0 0 30px;
+    }
+    #sca-fg-owl-carousel .owl-carousel .owl-item {
+      height: 270px;
+    }
+  }
+  #sca-fg-owl-carousel .owl-theme .owl-controls .owl-prev .fa-chevron-left:before,
+  #sca-fg-owl-carousel .owl-theme .owl-controls .owl-next .fa-chevron-right:before {
+    content: '';
+    height: 20px;
+    width: 12px;
+    display: block;
+  }
+  #sca-fg-owl-carousel .owl-theme .owl-controls .owl-prev .fa-chevron-left:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='20' viewBox='0 0 12 20'%3E%3Cpolygon fill='%234A5761' points='12.512 10.717 11.722 9.933 2.622 .956 .766 2.524 9.066 10.717 3.587 16.124 .764 18.91 2.62 20.478 11.72 11.501' transform='rotate(180 6.256 10.239)'/%3E%3C/svg%3E");
+  }
+  #sca-fg-owl-carousel .owl-theme .owl-controls .owl-next .fa-chevron-right:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='20' viewBox='0 0 12 20'%3E%3Cpolygon fill='%234A5761' points='11.748 9.761 10.958 8.977 1.858 0 .002 1.568 8.302 9.761 2.823 15.168 0 17.954 1.856 19.522 10.956 10.545' transform='translate(.252 .478)'/%3E%3C/svg%3E");
+  }
+
+  .not-sca-qv a {
+    pointer-events: none;
+    cursor: default;
+  }
+</style>
+
+<div id="sca_fg_cart">
+  <div class="container cart-page">
+    <h1 class="page-title">{{ 'cart.general.title' | t }}</h1>
+    {% if cart.item_count > 0 %}
+      <div class="gift__wrapper">
+        <div class="row header-product-block">
+          <div class="col-12 product-block-wrap">
+            <div id="sca-fg-owl-carousel">
+              <div id="freegift_cart_container" class="sca-fg-cart-container">
+                <div id="freegift_message" class="owl-carousel"></div>
+              </div>
+              <div id="sca-fg-slider-cart" style="display: none;">
+                <div class="sca-fg-cart-title">
+                  <strong>SELECT A FREE SAMPLE</strong>
+                </div>
+                <div id="sca_freegift_list" class="owl-carousel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form action="/cart" method="post" novalidate>
+        <div class="row header-product-block">
+          <div class="col-12 product-block-wrap">
+            <div class="product-block">
+              <p class="title">Shopping cart ({{ cart.item_count }} product{{ prefix }})</p>
+            </div>
+            <div class="quantity-block">
+              <p class="title">{{ 'cart.label.product' | t }}</p>
+            </div>
+            <div class="price-block">
+              <p class="title">{{ 'cart.label.price' | t }}</p>
+            </div>
+          </div>
+        </div>
+
+        {% for item in cart.items %}
+          {% unless item.id == giftItemId %}
+            <div class="row">
+              <div class="col-12 product-block-wrap product__wrap" data-variant-id="{{ item.variant_id }}">
+                <div class="product-block">
+                  <div class="img__wrap d-none d-sm-block">
+                    <a href="{{ item.url | within: collections.all }}">
+                      {% include 'responsive-image' with
+                        image: item.image,
+                        max_width_image: 127,
+                        max_height_image: 170,
+                        image_attributes: "data-product-featured-image",
+                        wrapper_class: wrapper_class,
+                        wrapper_attributes: "data-product-image-wrapper",%}
+                    </a>
+                  </div>
+                  <div class="img__wrap d-sm-none">
+                    <a href="{{ item.url | within: collections.all }}">
+                      {% include 'responsive-image' with
+                        image: item.image,
+                        max_width_image: 76,
+                        max_height_image: 92,
+                        image_attributes: "data-product-featured-image",
+                        wrapper_class: wrapper_class,
+                        wrapper_attributes: "data-product-image-wrapper",%}
+                    </a>
+                  </div>
+                  <div class="details-wrap">
+                    {% if item.product.metafields.accentuate.parent_product != blank %}
+                      {% assign parent_prod = item.product.metafields.accentuate.parent_product %}
+                      {% assign parent_prod = all_products[parent_prod] %}
+                      <a href="{{ parent_prod.url }}" class="product-title">
+                        {{ parent_prod.metafields.accentuate.custom_name | default: parent_prod.title }}
+                      </a>
+                    {% else %}
+                      <a href="{{ item.url }}" class="product-title">
+                        {{ item.product.metafields.accentuate.custom_name | default: item.product.title }}
+                      </a>
+                    {% endif %}
+                    {% assign hasVariants = false %}
+                    {% unless item.product.has_only_default_variant %}
+                      {% unless item.variant.title == 'Default Title' %}
+                      {% assign hasVariants = true %}
+                      {% endunless %}
+                    {% endunless %}
+
+                    {% if hasVariants %}
+                      <p class="desc">{{ item.product.metafields.accentuate.short_description }}</p>
+                      <p class="variant d-none d-sm-block">{{ item.variant.title }}</p>
+                    {% else %}
+                      <p class="desc last">{{ item.product.metafields.accentuate.short_description }}</p>
+                    {% endif %}
+                    <div class="amount js-amount-block" data-line="{{ forloop.index }}">
+                      <span class="js-minus-amount">-</span>
+                      <div class="input-amount js-amount-block">
+                        {{ item.quantity }}
+                      </div>
+                      <span class="js-plus-amount">+</span>
+                    </div>
+                    <a href="#" class="remove-button" data-line="{{ forloop.index }}">
+                      {{ 'cart.general.remove' | t }}
+                    </a>
+                  </div>
+                </div>
+                <div class="quantity-block">
+                  <div class="amount js-amount-block" data-line="{{ forloop.index }}">
+                    <span class="js-minus-amount">-</span>
+                    <div class="input-amount js-amount-block">
+                      {{ item.quantity }}
+                    </div>
+                    <span class="js-plus-amount">+</span>
+
+                    <input type="hidden"
+                           name="updates[]"
+                           class="item-amount"
+                           id="updates_{{ item.key }}"
+                           value="{{ item.quantity }}"
+                           min="0"
+                           aria-label="{{ 'cart.general.item_quantity' | t }}">
+                  </div>
+                  <!--
+                  <input class="UpdateQtyCartPage" data-line="{{forloop.index}}"  type="submit" name="update" onclick="return false;" value="update">
+                  -->
+                </div>
+                <div class="price-block">
+                  <p class="price">{{ item.line_price | money }}</p>
+                  <input type="submit" name="update" value="update">
+                </div>
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+
+        {% for item in cart.items %}
+          {% if item.id == giftItemId %}
+            <div class="row">
+              <div class="col-12 product-block-wrap gift_product_wrap product__wrap">
+                <div class="product-block">
+                  <div class="img__wrap">
+                    <a href="{{ item.url | within: collections.all }}">
+                      {% include 'responsive-image' with
+                        image: item.image,
+                        max_width_image: 127,
+                        max_height_image: 170,
+                        image_attributes: "data-product-featured-image",
+                        wrapper_class: wrapper_class,
+                        wrapper_attributes: "data-product-image-wrapper",%}
+                    </a>
+                  </div>
+
+                  <div class="details-wrap">
+                    <a href="{{ item.url }}" class="product-title">
+                      {{ item.product.metafields.accentuate.custom_name | default: item.product.title }}
+                    </a>
+                    <p>{{ item.product.metafields.accentuate.short_description }}</p>
+                    <p class="free__gift-message desc">{{ item.product.description }}</p>
+                    <a href="" class="remove-button" data-line="{{ forloop.index }}">
+                      Change
+                    </a>
+                  </div>
+                </div>
+                <div class="price-block block__copy">
+                  <div class="d-none d-sm-block price">Free</div>
+                  <div class="d-sm-none price">{{ item.product.price | money }}</div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        {%- capture taxes_shipping_checkout -%}
+          {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
+            {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            {%- elsif shop.taxes_included -%}
+            {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+            {%- elsif shop.shipping_policy.body != blank -%}
+            {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+          {%- else -%}
+            {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+          {%- endif -%}
+        {%- endcapture -%}
+
+        <div class="row d-flex justify-content-start free-shipping-wrap">
+          <div class="col-lg-5">
+            <div class="col-lg-6 free-shipping">
+              <div class="icon-shipping-block">
+                {% include 'icon-shipping' %}
+              </div>
+              {% assign free_text = shop.metafields.accentuate.free_cart_text  | newline_to_br | split: '<br />' %}
+              {% for paragraph in free_text %}
+                <p>{{ paragraph }}</p>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-lg-5">
+            {% if settings.cart_notes_enable %}
+              <div class="row d-flex justify-content-end">
+                <div class="col-lg-12 justify-content-between subtotal-block">
+                  <p class="title">
+                    <label for="CartSpecialInstructions" class="w-100">{{ 'cart.general.note' | t }}</label>
+                  </p>
+                  <textarea name="note" maxlength="250" id="CartSpecialInstructions" class="w-100">{{ cart.note }}</textarea>
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="row d-flex justify-content-end">
+              <div class="col-lg-12 d-flex justify-content-between subtotal-block">
+              <span class="title">
+                {{ 'cart.general.subtotal' | t }}
+              </span>
+                <span class="total-price">
+                {{ cart.total_price | money }}
+              </span>
+              </div>
+            </div>
+
+            <div class="row d-flex justify-content-end">
+              <div class="col-md-12 col-lg-12 promo-code-block">
+                <p>
+                  {{ 'cart.general.shipping_at_checkout' | t }}
+                </p>
+              </div>
+            </div>
+
+            <div class="row d-flex justify-content-end">
+              <div class="col-lg-12 d-flex justify-content-between total-block">
+                <div class="total__wrap d-flex justify-content-between w-100">
+                <span class="title">
+                  total
+                </span>
+                  <span class="total-price">
+                  {{ cart.total_price | money }}
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% if cart.total_discounts > 0 %}
+          <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+        {% endif %}
+
+        <div class="row cart-actions-block">
+          <div class="col-12 col-md-6 d-flex align-items-center continue-shopping-block">
+            <a id="continue-shopping" href="" class="continue-link" title="Continue shopping">Continue shopping</a>
+          </div>
+          <div class="col-12 col-md-6 d-flex justify-content-end checkout-block">
+            <input type="submit" name="checkout" value="{{ 'cart.general.checkout' | t }}">
+          </div>
+          
+
+        </div>
+      </form>
+
+      {% if settings.cart_crosssell_enable %}
+        <div class="row most__loved-wrap">
+          {% include 'cart_crossell_products' with cartproducts: cart.items %}
+        </div>
+      {% endif %}
+
+    {% else %}
+      <div class="supports-cookies">
+        <p>{{ 'cart.general.empty' | t }}</p>
+        <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+      </div>
+    {% endif %}
+  </div>
+
+  {% comment %}
+    {# <table class="responsive-table">
+       <thead class="small--hide">
+       <tr>
+         <th colspan="2">{{ 'cart.label.product' | t }}</th>
+         <th>{{ 'cart.label.price' | t }}</th>
+         <th>{{ 'cart.label.quantity' | t }}</th>
+         <th>{{ 'cart.label.total' | t }}</th>
+       </tr>
+       </thead>
+       <tbody>
+
+       {% for item in cart.items %}
+
+       {% comment %}
+
+       Cart Item Template
+       =====================
+       The data-label attributes on <td> elements are mobile-friendly
+         helpers used for responsive-table labels
+         {% endcomment %}
+
+         <tr class="responsive-table-row">
+
+           <td data-label="{{ 'customer.order.product' | t }}">
+
+             {% if item.image != blank %}
+               <a href="{{ item.url | within: collections.all }}">
+                 {{ item | img_url: '240x240' | img_tag: item.title }}
+               </a>
+             {% endif %}
+
+           </td>
+           <td>
+             <a href="{{ item.url }}">{{ item.product.metafields.accentuate.custom_name | default: item.product.title }}</a>
+
+             {% unless item.product.has_only_default_variant %}
+               <p>{{ item.variant.title }}</p>
+             {% endunless %}
+
+             <p>{{ item.vendor }}</p>
+             <p>{{ item.product.metafields.accentuate.short_description }}</p>
+
+             {%- assign property_size = item.properties | size -%}
+
+             {% if property_size > 0 %}
+               {% for p in item.properties %}
+                 {% unless p.last == blank %}
+                   {{ p.first }}:
+
+                   {% if p.last contains '/uploads/' %}
+                     <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                   {% else %}
+                     {{ p.last }}
+                   {% endif %}
+
+                 {% endunless %}
+               {% endfor %}
+             {% endif %}
+
+             <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+               <small>{{ 'cart.general.remove' | t }}</small>
+             </a>
+           </td>
+           <td data-label="{{ 'cart.label.price' | t }}">
+             {% if item.original_line_price != item.line_price %}
+               <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+               {{ item.price | money }}
+               <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+               <s>{{ item.original_price | money }}</s>
+             {% else %}
+               {{ item.price | money }}
+             {% endif %}
+           </td>
+           <td data-label="{{ 'cart.label.quantity' | t }}">
+             <input type="number"
+                    name="updates[]"
+                    id="updates_{{ item.key }}"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    aria-label="{{ 'cart.general.item_quantity' | t }}">
+           </td>
+           <td data-label="{{ 'cart.label.total' | t }}">
+             {{ item.line_price | money }}
+           </td>
+         </tr>
+
+         {% endfor %}
+       </tbody>
+     </table>
+
+     {% if settings.cart_notes_enable %}
+       <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+       <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+     {% endif %}
+
+     <p>{{ 'cart.general.subtotal' | t }}</p>
+     <p>{{ cart.total_price | money }}</p>
+     {% if cart.total_discounts > 0 %}
+       <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
+     {% endif %}
+     <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
+     <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
+     <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
+   </form>
+
+
+{% else %}
+ <h1>{{ 'cart.general.title' | t }}</h1>
+
+ {% comment %}
+ Cart empty state
+ {% endcomment %}
+ <div class="supports-cookies">
+   <p>{{ 'cart.general.empty' | t }}</p>
+   <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+ </div>
+
+ {% comment %}
+ Cart no cookies state
+ ---------------------
+ Browser cookies are required to use the cart. If cookies aren't enabled in the
+ browser a message is displayed prompting the user to enable them.
+ {% endcomment %}
+ <div class="supports-no-cookies">
+   <p>{{ 'cart.general.cookies_required' | t }}</p>
+ </div>
+{% endif %}#}
+
+  {% endcomment %}
+
+</div>
+<script>
+  $('.js-plus-amount').click(function(){
+    qty=Number($(this).next('.item-amount').val())+1
+    line=$(this).parent().attr('data-line')
+    $.ajax({
+              url: "cart/change.js",
+              dataType: 'json',
+              type: 'post',
+              data: {'line': line,'quantity': qty},
+              success: function(data) { 
+               console.log(data)
+               const myTimeout = setTimeout(function(){ _addGiftCart(data);}, 1000);
+              },
+              error: function(XMLHttpRequest) {
+              }
+            });
+  })
+
+  $('.js-minus-amount').click(function(){
+    qty=Number($(this).parent().find('.item-amount').val())-1
+    line=$(this).parent().attr('data-line')
+    $.ajax({
+              url: "cart/change.js",
+              dataType: 'json',
+              type: 'post',
+              data: {'line': line,'quantity': qty},
+              success: function(data) { 
+               console.log(data)
+               const myTimeout = setTimeout(function(){ _addGiftCart(data);}, 1000);
+              },
+              error: function(XMLHttpRequest) {
+              }
+            });
+  })
+
+
+  $('.remove-button').click(function(){
+
+  line=$(this).attr('data-line')
+  my=$(this);
+    $.ajax({
+              url: "cart/change.js",
+              dataType: 'json',
+              type: 'post',
+              data: {'line': line,'quantity': 0},
+              success: function(data) { 
+               my.parents(".row").remove();
+               const myTimeout = setTimeout(function(){ _addGiftCart(data);}, 1000);
+              },
+              error: function(XMLHttpRequest) {
+                console.log(XMLHttpRequest)
+              }
+            });
+  })
+  
+
+  function _addGiftCart(data){
+        var variant_id='{{settings.free_gift_variant_id}}';
+        var ammount={{settings.free_gift_ammount}};
+        var Gquantity={{settings.free_gift_quantity}};
+        if(!{{settings.free_gift_promo_enabled}}) 
+        return;
+        $.ajax({
+            url: "/cart.js",
+            success: function(cart) { 
+              cartData=JSON.parse(cart)
+              t=0;
+              var total=0;
+              for(item of cartData.items){
+                console.log(item)
+                if(item.variant_id == variant_id || item.product_type==="Gift Card" || item.product_type==="Event" ){
+                    total=Number(total+item.final_line_price);
+                    if(item.variant_id == variant_id)
+                    t=1;
+                     
+                  }
+                }
+               if((cartData.item_count>0 && Number(cartData.total_price-total)<Number(ammount*100)) || cartData.item_count==0 )
+               {
+                 j=1;
+                for(item of cartData.items){
+                  if(item.variant_id == variant_id ){
+                    if(!{{settings.free_gift_keep}}){
+                    $.ajax({
+                       url: "cart/change.js",
+                       dataType: 'json',
+                       type: 'post',
+                       data:  {'line': j,'quantity': 0},
+                       success: function(data) {
+                           location.reload()
+                       },
+                       error: function(XMLHttpRequest) {
+                       console.error(XMLHttpRequest);
+                       }
+                     });
+                    }
+                  }
+                  j=j+1;
+                }
+                location.reload();
+                return;
+               }
+               
+             if(t==1){
+              j=1;
+              for(item of cartData.items){
+                  if(item.variant_id == variant_id ){
+                    $.ajax({
+                       url: "cart/change.js",
+                       dataType: 'json',
+                       type: 'post',
+                       data:  {'line': j,'quantity': Gquantity},
+                       success: function(data) {
+                        location.reload();
+                       },
+                       error: function(XMLHttpRequest) {
+                       console.error(XMLHttpRequest);
+                       }
+                     });
+                  }
+                  j=j+1;
+                }
+                location.reload();
+                return;
+             }
+               
+             var $addToCartBtn=$('.close-btn-cart')
+             var $addToCartForm=$('.cart__form')
+            $.ajax({
+              url: "cart/add.js",
+              dataType: 'json',
+              type: 'post',
+              data: {'items': [{'id': variant_id,'quantity': Gquantity}]},
+              success: function(data) {
+                 location.reload();
+              },
+              error: function(XMLHttpRequest) {
+    
+              }
+           });
+              },
+              error: function(XMLHttpRequest) {
+    
+            
+              }
+            });
+   
+      }
+</script>
+
+
+<script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165720"></div>

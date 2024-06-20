@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "maps_FMQLgP": {
+      "type": "maps",
+      "blocks": {
+        "store_location_b7bzcB": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Marrakech<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_KYReEU": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>CasaBlanca<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_BVUNam": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Rabat<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_GdaPP7": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>Paris<\/p>",
+            "store_url": ""
+          }
+        },
+        "store_location_WYWaNb": {
+          "type": "store_location",
+          "settings": {
+            "store_name": "<p>NewYork City<\/p>",
+            "store_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "store_location_b7bzcB",
+        "store_location_KYReEU",
+        "store_location_BVUNam",
+        "store_location_GdaPP7",
+        "store_location_WYWaNb"
+      ],
+      "settings": {
+        "heading": "<p><\/p>",
+        "iframe_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m12!1m3!1d108741.83940408906!2d-8.0314368!3d31.601459199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sma!4v1707679149632!5m2!1sen!2sma\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+        "container": "container-fluid",
+        "map_height": "medium",
+        "textx": "40.6700",
+        "texty": "-73.9400",
+        "zoom": "11",
+        "text2": "New York"
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "maps_FMQLgP",
+    "main",
+    "59f9eaa0-2c2b-49f2-b076-ff19fa825b49"
+  ]
+}

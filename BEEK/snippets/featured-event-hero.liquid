@@ -1,0 +1,42 @@
+{{ 'jquery.countdown.min.js' | asset_url | script_tag }}
+
+<div class="hero_section">
+      <div class="image__wrap">
+        {% if article.metafields.accentuate.featured_event_hero_mobile != blank %}
+              <img src="{{ article.metafields.accentuate.featured_event_hero_mobile }}" class="mob_hero d-lg-none" alt="">
+        {% endif %}
+        {% if article.metafields.accentuate.featured_event_hero_desktop != blank %}
+              <img src="{{ article.metafields.accentuate.featured_event_hero_desktop }}" class="desk_hero d-none d-lg-block" alt="">
+        {% endif %}
+      </div>
+      <div class="content">
+        {% assign hero_text = article.metafields.accentuate.featured_event_hero_text | newline_to_br | split: '<br />' %}
+        {% for line in hero_text %}
+              <p>{{ line }}</p>
+        {% endfor %}
+
+        {% if article.metafields.accentuate.featured_event_hero_link != blank %}
+              <a href="/blogs/{{ article.metafields.accentuate.featured_event_hero_link}}" class="learn__more">Learn More</a>
+        {% endif %}
+      </div>
+      <div id="counter-{{ article.id }}" class="count__down"></div>
+      <div class="text-center d-none d-lg-block arrow__down">
+            <a class="" href="">
+              {% include 'icon-angle-down' %}
+            </a>
+      </div>
+        <script type="text/javascript">
+           str='{{article.metafields.accentuate.start_date}}';
+           var str = str.split("-");
+           var dt = new Date(+str[2], str[1] - 1, +str[0]);
+
+                        $('#counter-{{ article.id }}').countdown(dt).on('update.countdown', function (event) {
+                            $(this).html(event.strftime('<div class="t_wrap">%-d <div>day%!d</div></div> '
+                                + '<div class="t_wrap">%H <div>hours</div></div> '
+                                + '<div class="t_wrap">%M <div>minutes</div></div> '
+                                + '<div class="t_wrap">%S <div>seconds<div></div>'));
+                        });
+                    
+              
+        </script>
+</div>

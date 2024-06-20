@@ -1,0 +1,247 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "ec99bf9f-e879-45e6-ba79-de8993d8775f": {
+      "type": "image-banner",
+      "blocks": {
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-heading-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-buttons-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-heading-1",
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-text-1",
+        "template--21028854497624__ec99bf9f-e879-45e6-ba79-de8993d8775f-buttons-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/C_EST_LE_MOMENT_DE_DECOUVRIR_ARGIE.png",
+        "cclass": "new_banner",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "e6862a05-dc60-4e33-9de6-11c2b5c50308": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21028854497624__e6862a05-dc60-4e33-9de6-11c2b5c50308-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Les Problématiques liés aux Taies d'Oreiller en Coton<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--21028854497624__e6862a05-dc60-4e33-9de6-11c2b5c50308-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Les taies d'oreiller en coton peuvent souvent causer des problèmes cutanés tels que des éruptions cutanées, de l'acné et des pores obstrués. Chez Argie, nous comprenons que les soins de votre peau sont aussi importants qu'un bon sommeil. C'est pourquoi nous avons développé une solution pour protéger votre peau pendant le sommeil.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21028854497624__e6862a05-dc60-4e33-9de6-11c2b5c50308-heading-1",
+        "template--21028854497624__e6862a05-dc60-4e33-9de6-11c2b5c50308-text-1"
+      ],
+      "settings": {
+        "class-name": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "92f49446-f40b-448a-9d7b-17017e0f52b5": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Notre Solution Anti-Acné - Technologie Silvtech<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Chez Argie, nous avons créé une taie d'oreiller anti-acné qui sert d'alternative aux taies d'oreiller en coton traditionnelles. Notre technologie Silvtech exploite les propriétés antibactériennes de l'argent. Nous avons imprégné nos taies d'oreiller d'argent pour créer un environnement de sommeil plus sain. L'argent est reconnu pour sa capacité à inhiber la croissance des bactéries, ce qui est particulièrement avantageux pour les problèmes cutanés tels que l'acné.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-heading-1",
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-text-1",
+        "template--21028854497624__92f49446-f40b-448a-9d7b-17017e0f52b5-button-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/Screenshot_2023-11-27_at_18.15.24.png",
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-11-27_at_18.15.24.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "368dcc8d-1a43-416b-9149-6cba715e8085": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21028854497624__368dcc8d-1a43-416b-9149-6cba715e8085-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Le Résultat Attendu - Un Sommeil Sain et une Peau Rayonnante<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--21028854497624__368dcc8d-1a43-416b-9149-6cba715e8085-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Notre objectif principal chez Argie est de vous offrir non seulement une alternative aux taies d'oreiller en coton classiques, mais aussi d'atteindre les résultats souhaités. En passant à nos taies d'oreiller imprégnées d'argent, nous aspirons à vous offrir un sommeil sain tout en préservant la radiance de votre peau sans imperfections. Découvrez l'univers d'Argie et constatez comment nos taies d'oreiller avec technologie Silvtech peuvent améliorer votre rituel de sommeil et de soins de la peau.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--21028854497624__368dcc8d-1a43-416b-9149-6cba715e8085-heading-1",
+        "template--21028854497624__368dcc8d-1a43-416b-9149-6cba715e8085-text-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/dsc7015_jpg_c81b3134-5810-4b8c-9a4b-cfeafd2e692e.webp",
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "image": "shopify:\/\/shop_images\/dsc7015_jpg_c81b3134-5810-4b8c-9a4b-cfeafd2e692e.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "d9d0fc53-7a76-4222-a743-e3dfd94cba2d": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21028854497624__d9d0fc53-7a76-4222-a743-e3dfd94cba2d-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Petits conseils...<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--21028854497624__d9d0fc53-7a76-4222-a743-e3dfd94cba2d-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Le lavage de nos taies Argie se fait 1 à 2 fois par mois seulement.<\/p><p>Il faut savoir que les taies d'oreiller Silvtech™️ sont naturellement anti bactériennes et hypoallergéniques.<\/p><p>Vos produits Argie peuvent tenir plusieurs semaines sans avoir à être lavés car ils n’absorbent ni vos crèmes ni votre sébum.<\/p><p>Si vous souhaitez les laver plus souvent nous vous conseillons d’acheter des sets pour pouvoir jongler !<\/p><p><em><strong>Eva. Co-Fondatrice Argie™️<\/strong><\/em><\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--21028854497624__d9d0fc53-7a76-4222-a743-e3dfd94cba2d-heading-1",
+        "template--21028854497624__d9d0fc53-7a76-4222-a743-e3dfd94cba2d-text-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/dsc4169_jpg_b4eebe4f-5dfb-4c6a-8546-a6a8a58616d4.webp",
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "image": "shopify:\/\/shop_images\/dsc4169_jpg_b4eebe4f-5dfb-4c6a-8546-a6a8a58616d4.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ec99bf9f-e879-45e6-ba79-de8993d8775f",
+    "e6862a05-dc60-4e33-9de6-11c2b5c50308",
+    "92f49446-f40b-448a-9d7b-17017e0f52b5",
+    "368dcc8d-1a43-416b-9149-6cba715e8085",
+    "d9d0fc53-7a76-4222-a743-e3dfd94cba2d"
+  ]
+}

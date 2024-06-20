@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-contact",
+      "disabled": true,
+      "settings": {
+        "container": "container"
+      }
+    },
+    "maps": {
+      "type": "maps",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "map_height": "large",
+        "textx": "40.6700",
+        "texty": "-73.9400",
+        "zoom": "11",
+        "text2": "New York"
+      }
+    },
+    "a1f165a1-44f4-4ecf-ad01-f7725c174ddd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br><br><br><div",
+        "custom_class": ""
+      }
+    },
+    "564ca4ed-7dee-4b23-8e19-bb54c99b0541": {
+      "type": "custom-content",
+      "blocks": {
+        "cae0efb7-1ce0-4fab-8ac5-bcbc83f3f3b2": {
+          "type": "text",
+          "settings": {
+            "title": "Let’s chat !",
+            "subheading": "",
+            "text": "<h5>Pour toutes vos questions et besoin d’informations. Nous nous ferons un plaisir de vous aider.<br\/><\/h5>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "large",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        },
+        "b5d53b65-0f5b-4e7c-b540-fbec64a15f18": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "We're Open",
+            "subheading": "",
+            "text": "<p>Our store has re-opened for shopping, exchanges<br\/><br\/>Every day 11am to 7pm<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        },
+        "template--20182899163441__564ca4ed-7dee-4b23-8e19-bb54c99b0541-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Address",
+            "subheading": "",
+            "text": "<p>Adresse <\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "cae0efb7-1ce0-4fab-8ac5-bcbc83f3f3b2",
+        "b5d53b65-0f5b-4e7c-b540-fbec64a15f18",
+        "template--20182899163441__564ca4ed-7dee-4b23-8e19-bb54c99b0541-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "text-block-1": {
+          "type": "textblock",
+          "disabled": true,
+          "settings": {
+            "title": "Address",
+            "content": "<p>7895 Piermont Dr NE Albuquerque, NM 198866, <a href=\"#\">See Our Stores<\/a><\/p>"
+          }
+        },
+        "text-block-2": {
+          "type": "textblock",
+          "disabled": true,
+          "settings": {
+            "title": "Information",
+            "content": "<p>+391 (0)35 2568 4593<\/p><p>hello@domain.com<\/p>"
+          }
+        },
+        "text-block-3": {
+          "type": "socialmedia",
+          "disabled": true,
+          "settings": {
+            "title": "Social Media"
+          }
+        },
+        "text-block-4": {
+          "type": "textblock",
+          "disabled": true,
+          "settings": {
+            "title": "We're Open",
+            "content": "<p>Our store has re-opened for shopping, exchanges<\/p><p>Every day 11am to 7pm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text-block-1",
+        "text-block-2",
+        "text-block-3",
+        "text-block-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "title": "We're here to help, fill out the form to get in touch with us.",
+        "description": "",
+        "show_name": false,
+        "show_phone": false,
+        "show_signup_email": true
+      }
+    },
+    "e9c2ae9b-5038-43b6-b8f6-19e1dca830e8": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<center><a href=\"https:\/\/wa.me\/212663246270\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/button-demo_1.webp\" class=\"wa-btnnnn\"><\/a><\/center>\n<br>\n<style>\n.wa-btnnnn{\nwidth:60vw;\n}\n@media only screen and (min-width: 769px){ .wa-btnnnn{\nwidth:20vw;\n}}\n\n<\/style>",
+        "custom_class": ""
+      }
+    },
+    "custom_liquid_ayXyyX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>\n<br>\n<br>\n<br>\n<br>",
+        "custom_class": ""
+      }
+    },
+    "10999d1c-8335-4df1-a16f-f189540ab49d": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "maps",
+    "a1f165a1-44f4-4ecf-ad01-f7725c174ddd",
+    "564ca4ed-7dee-4b23-8e19-bb54c99b0541",
+    "contact-form",
+    "e9c2ae9b-5038-43b6-b8f6-19e1dca830e8",
+    "custom_liquid_ayXyyX",
+    "10999d1c-8335-4df1-a16f-f189540ab49d"
+  ]
+}

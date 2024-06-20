@@ -1,0 +1,67 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "0e25fd9e-486e-4daf-93af-5479f34fbe07": {
+          "type": "text1",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/free-delivery.webp",
+            "title1": "<h3><strong>LIVRAISON EXPRESS<\/strong><\/h3>",
+            "text1": "<p><strong>Livraison suivie en 2 à 5 Jours <\/strong>en France.<\/p><p>Commandé aujourd'hui = expédié demain !<\/p>",
+            "image2": "shopify:\/\/shop_images\/premium-badge.webp",
+            "title2": "<h3><strong>GARANTIE RETOUR 100 JOURS<\/strong><\/h3>",
+            "text2": "<p>Essayez Argie pendant 100 jours. Si vous n'aimez pas vos résultats, nous vous remboursons intégralement.<\/p>",
+            "image3": "shopify:\/\/shop_images\/secure-payment.webp",
+            "title3": "<h3><strong>PAIEMENT SÉCURISÉ<\/strong><\/h3>",
+            "text3": "<p>Nous utilisons le cryptage SSL pour des <strong>paiements 100% sécurisés<\/strong>.<\/p>",
+            "image4": "shopify:\/\/shop_images\/returning.webp",
+            "title4": "<h3><strong>RETOURS RACILES <\/strong><\/h3>",
+            "text4": "<p>Politique de retour facile pour la tranquillité de votre esprit<\/p>"
+          }
+        },
+        "eb578be1-64c7-4049-a573-14a9e8517aeb": {
+          "type": "link_list",
+          "settings": {
+            "heading": "INFO",
+            "menu": "footer"
+          }
+        },
+        "fcbd61f9-a3e4-4fb2-ab7b-330e15066ca1": {
+          "type": "text",
+          "settings": {
+            "heading": "NOTRE MISSION",
+            "subtext": "<p>Argie est une entreprise française qui a été créée pour rendre votre sommeil plus joyeux tout en favorisant une solution qui préserve l'hydratation de ta peau, adoucit tes cheveux et améliore ta qualité de sommeil.<\/p><p>7 Rue Robert Blache, 75010, Paris.<\/p><p>Lundi - Vendredi: 09h00 à 18h00<\/p><p>Samedi- Dimanche: 09h00 à 13h00<\/p><p>Email: contact@helloargie.fr<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "0e25fd9e-486e-4daf-93af-5479f34fbe07",
+        "eb578be1-64c7-4049-a573-14a9e8517aeb",
+        "fcbd61f9-a3e4-4fb2-ab7b-330e15066ca1"
+      ],
+      "custom_css": [
+        "h2.image-with-text__heading {color: #FC95CF;}"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "<strong>Rejoins la famille #Argie !<\/strong>",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 36,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

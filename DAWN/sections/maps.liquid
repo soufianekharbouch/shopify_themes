@@ -1,0 +1,215 @@
+{%- assign st = section.settings -%}
+<section data-section-type="google-maps" data-section-id="{{ section.id }}" class="section-wrapper">
+  <div class="{{ section.settings.container }} ">
+    <h2 class="heading">
+      {{ st.heading }}
+    </h2>
+
+    <div class="map-container">
+      <div class="map-col-1">
+        {% for block in section.blocks %}
+          {% if block.type == 'store_location' %}
+            <div class="location_block flex justify-between capitalize">
+              <a href="{{ block.settings.store_url }}" target="_blank"> {{ block.settings.store_name }}</a>
+              <span class="span_info"> +info</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="map-col-2">
+        <!--
+          <div class="w-full relative sf__map sf__map-{{ section.settings.map_height }}" id="sf__map" data-key="{{ settings.gm_api }}" data-map-title={{ st.text2 }} data-map-x={{ st.textx }} data-map-y={{ st.texty }} data-map-zoom={{ st.zoom }}></div>
+        -->
+        {{ st.iframe_map }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-wrapper {
+    padding:2rem 0;
+  }
+  .map-container {
+    display:flex;
+    padding:2rem 0;
+    gap:2rem;
+
+
+  }
+  @media (max-width:700px) {
+    .map-container{
+    flex-direction:column;
+
+
+    }
+    .span_info {
+      display:none;
+    }
+    .map-container .map-col-1 {
+      flex-direction:row !important;
+      overflow-x:scroll;
+      padding:0;
+
+    }
+    .map-container .map-col-1 .location_block {
+      flex:1 0 80%;
+      border-bottom:none;
+
+      padding:.5rem 1.25rem;
+      background-color:#fef7ec;
+      border-radius:3rem;
+       margin-right:1rem;
+        display:flex;
+      justify-content:center;
+      align-items:center;
+
+
+    }
+  }
+   .heading {
+    font-size:2rem;
+     text-align:center
+  }
+  .map-container > div {
+    flex: 1 0 50%;
+  }
+  .map-container .map-col-1 {
+    display:flex;
+    flex-direction:column;
+    padding:1rem 3rem;
+    height:400px;
+    overflow-y:scroll;
+
+
+
+  }
+  .map-container .location_block {
+    border-bottom:1px solid #c18361;
+    padding:2rem;
+    text-transform:capilatize;
+    font-size:1.7rem;
+  }
+  .map-container .location_block:hover {
+    background-color:#fef7ec;
+
+  }
+</style>
+{% schema %}
+{
+  "name": "Google Maps",
+  "settings": [
+    {
+        "type":"richtext",
+      "id":"heading",
+      "label":"heading"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type":"html",
+      "id":"iframe_map",
+      "label":"google map iframe"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container-fluid",
+      "options": [
+        {
+          "value": "container-fluid",
+          "label": "Default"
+        },
+        {
+          "value": "w-full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Use container box"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Maps settings"
+    },
+    {
+      "type": "select",
+      "id": "map_height",
+      "label": "Height",
+      "default": "medium",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Google maps must have API Key. Click Theme Settings bellow to setup API Key."
+    },
+    {
+      "type": "text",
+      "id": "textx",
+      "label": "Coordinate X",
+      "default": "40.6700",
+      "info": "Integer"
+    },
+    {
+      "type": "text",
+      "id": "texty",
+      "label": "Coordinate Y",
+      "default": "-73.9400",
+      "info": "Integer"
+    },
+    {
+      "type": "text",
+      "id": "zoom",
+      "label": "Zoom",
+      "default": "11",
+      "info": "Integer"
+    },
+    {
+      "type": "textarea",
+      "id": "text2",
+      "label": "Map Text",
+      "default": "New York"
+    }
+  ],
+  "blocks": [
+    {
+      "type":"store_location",
+      "name":"store location",
+      "settings": [
+       { "type":"richtext",
+         "id":"store_name",
+         "label":"store name"
+       },
+        {
+          "type":"url",
+            "id":"store_url",
+          "label":"store URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Google map"
+    }
+  ]
+}
+{% endschema %}

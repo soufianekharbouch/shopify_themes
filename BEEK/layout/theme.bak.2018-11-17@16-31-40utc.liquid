@@ -1,0 +1,239 @@
+{%- comment %}<locksmith:e2f9>{% endcomment -%}
+  {%- include 'locksmith' -%}
+{%- comment %}</locksmith:e2f9>{% endcomment -%}
+
+<!doctype html>
+
+{% include 'theme-info' %}
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+  {{ 'raf.js' | asset_url | script_tag }}
+  <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+{{ locksmith_initializations }}
+  <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/x1sQMKFVib1i7wSiNv2wRrMyEgWN75ksizzqyBDD/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script><style>
+    
+/* do not group these rules */
+input[type="search"]::-webkit-input-placeholder {
+    color: #e0ddb0 !important;
+}
+input[type="search"]:-moz-placeholder {
+    /* FF 4-18 */
+    color: #e0ddb0 !important;
+}
+input[type="search"]::-moz-placeholder {
+    /* FF 19+ */
+    color: #e0ddb0 !important;
+}
+input[type="search"]:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #e0ddb0 !important;
+}
+  </style>
+  
+  <script type="text/javascript">
+    (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/x1sQMKFVib1i7wSiNv2wRrMyEgWN75ksizzqyBDD/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+  </script>
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="google-site-verification" content="7yyW1A_GziV5F6GvI_yrLCSYGiwxch_KSS_Wp8Q3VJ4" />
+
+  {% if settings.favicon_image != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon_image | img_url: '32x' }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  {%- comment %}<locksmith:ad31>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', variable: 'transparent', hiding_scope: 'resource' %}{% endcapture %}{% if var == 'true' %}<meta name="description" content="{{ page_description | escape }}">{% endif -%}
+    {%- comment %}original: <meta name="description" content="{{ page_description | escape }}">{%- endcomment %}
+  {%- comment %}</locksmith:ad31>{% endcomment -%}
+  {% endif %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <!-- CSS ================================================== -->
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
+  {{ 'style.scss.css' | asset_url | stylesheet_tag }}
+  {{ '_overit.scss.css' | asset_url | stylesheet_tag }}
+  {% include 'google-fonts' %}
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/light.css" integrity="sha384-33RmjeesW9BZ4wR2Gm3n4iBXOvGTto4znqL2kZleiRanWDxM59IHIq5RsbRioqxb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/fontawesome.css" integrity="sha384-srL3Qh9R/n855m4o5fegS//B2q0R1md7z6ndDYaPj8iEp0j0IuKdFVWMY0JosKPF" crossorigin="anonymous">
+
+  <!-- Header hook for plugins ================================================== -->
+  {{ content_for_header }}
+  {% include 'qikify-apps' %}
+
+  {% include 'oldIE-js' %}
+
+
+
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %} Component Scripts {% endcomment %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+
+
+
+  {{ 'libraries.min.js' | asset_url | script_tag }}
+
+
+  {% comment %}
+    If your store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% if settings.typekit != blank %}
+    <script src="https://use.typekit.net/{{ settings.typekit }}.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  {% endif %}
+
+<!--Findify script--><script async defer src="//findify-assets-2bveeb6u8ag.netdna-ssl.com/search/prod/beekman1802.myshopify.com.min.js"></script><!-- End Findify script-->
+{% include "tabarnapp_cm" %}  {% include 'talkable-partial' %}
+
+  <!-- Begin Talkable integration code -->
+ <script>
+  window._talkableq = window._talkableq || [];
+  _talkableq.push(['init', { site_id: 'beekman-1802' }]);
+  window._talkableq.push(['authenticate_customer', {
+      email: '{% if customer %}{{ customer.email }}{% endif %}',
+      first_name: '{% if customer %}{{ customer.first_name }}{% endif %}',
+      last_name: '{% if customer %}{{ customer.last_name }}{% endif %}'
+  }]);
+  window._talkableq.push(['register_affiliate', {}]);
+</script>
+<script src="//d2jjzw81hqbuqv.cloudfront.net/integration/clients/beekman-1802.min.js" type="text/javascript">
+</script>
+<script>
+//Talkable auto apply coupon
+ window._talkableq.push(['gleam_reward', {
+    callback: function(coupon) {
+      if (window.jQuery) {
+        $('body').on('submit', "form[action='/cart']", function(data) {
+          $('<input />').attr('type', 'hidden')
+            .attr('name', 'discount')
+            .attr('value', coupon)
+            .appendTo($("form[action='/cart']"));
+          return true;
+        });
+      } else {
+        var forms = document.getElementsByTagName('form'),
+            discount = document.createElement('input');
+        discount.type = 'hidden';
+        discount.name = 'discount';
+        discount.value = coupon;
+        for (var i = 0; i < forms.length; i++) {
+          if (forms[i].action.indexOf('/cart') !== -1) {
+            forms[i].appendChild(discount);
+          }
+        }
+      }
+    }
+  }]);
+</script>
+<!-- End Talkable integration code -->
+
+   
+  
+  
+  
+  
+  
+</head>
+
+{% comment %}
+  Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+<body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', '-' }}" >
+
+  {% include 'icons.svg' %}
+  <div class="fadeout-overlay"></div>
+
+  {% section 'header' %}
+  {% section 'popup' %}
+
+  <div id="PageContainer" class="is-moved-by-drawer">
+    <main class="main-content" role="main">
+      {{ content_for_layout }}
+<limespot></limespot>
+    </main>
+
+    {% section 'footer' %}
+  </div>
+
+  {{ 'ira.js' | asset_url | script_tag }}
+  {% comment %}{{ 'ira.min.js' | asset_url | script_tag }}{% endcomment %}
+
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+
+  {% if resetPassword %}
+    <script>
+      $(function() {
+        ira.resetPasswordSuccess();
+      });
+    </script>
+  {% endif %}
+
+  {% comment %}
+    Ajaxify your cart with this plugin.
+    Documentation:
+      - http://shopify.com/timber#ajax-cart
+  {% endcomment %}
+    {{ 'handlebars.min.js' | asset_url | script_tag }}
+    {% include 'ajax-cart-template' %}
+    {{ 'ajax-cart.js' | asset_url | script_tag }}
+    <script>
+      jQuery(function($) {
+        ajaxCart.init({
+          formSelector: '#AddToCartForm',
+          cartContainer: '#CartContainer',
+          addToCartSelector: '#AddToCart',
+          cartCountSelector: '#CartCount',
+          cartCostSelector: '#CartCost',
+          moneyFormat: {{ shop.money_format | json }}
+        });
+      });
+
+      jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {
+        // Bind to 'ajaxCart.afterCartLoad' to run any javascript after the cart has loaded in the DOM
+        ira.CartDrawer.open();
+      });
+    </script>
+
+    {% if settings.show_multiple_currencies %}
+      {% include 'currencies' %}
+    {% endif %}
+{% include 'subscription-theme-footer' %}
+<script>
+    jQuery('.social-icons a').attr('target', '_blank');
+  </script>
+  
+  {{ '_overit.js' | asset_url | script_tag }}
+  
+  <!-- CRITEO START-->
+  {% include 'criteo-tracking' %}
+  <!-- CRITEO END-->
+{% include 'findify-tagging' %}
+</body>
+</html>

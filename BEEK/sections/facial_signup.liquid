@@ -1,0 +1,176 @@
+<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
+
+<div id="popupWrap">
+    <div class="popup__content">
+        <div class="popup__close_btn"></div>
+        <h2>Get Your Results!</h2>
+        <form id="facial_signup" class="klaviyo_styling klaviyo_gdpr_embed_QPiNPm"
+              action="//manage.kmail-lists.com/subscriptions/subscribe"
+              data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank"
+              novalidate="novalidate">
+            <input type="hidden" name="g" value="QPiNPm">
+            <input type="hidden" name="$fields" value="name">
+            <div class="klaviyo_field_group">
+                <label for="user_name">Name:</label>
+                <input class="" type="text" value="" name="name" id="user_name" placeholder="Your Name"/>
+                <label for="k_id_email">Email:</label>
+                <input class="" type="email" value="" name="email" id="k_id_email" placeholder="Your Email"/>
+            </div>
+            <div class="klaviyo_messages">
+                <div class="success_message" style="display:none;"></div>
+                <div class="error_message" style="display:none;"></div>
+            </div>
+            <div class="klaviyo_form_actions">
+                <p>By signing up, you consent to receiving marketing messages from Beekman 1802.</p>
+                <button type="submit" class="klaviyo_submit_button">See Your Results</button>
+                <div class="skip__wrap">
+                    <a class="klaviyo_skip" href="javascript:void(0)">Skip this</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style type="text/css">
+    #popupWrap {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 110;
+    }
+    .facial__popup_open #popupWrap {
+        display: block;
+    }
+    .facial__popup_open #shopify-section-header {
+        z-index: 0;
+    }
+    #popupWrap .popup__content {
+        background: #FFE900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 5px;
+        width: 70%;
+        text-align: center;
+    }
+    #popupWrap .popup__content h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        color: #4a5761;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    #popupWrap .popup__content .popup__close_btn {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        color: #4a5761;
+        text-align: center;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2VpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxQ0VBRTA0Qzk0NjYxMUU3QThGQ0E0MDRENDIwMURFRCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxMzJGRkRBRTZBQzAxMUU4OTgyQkQxQzU4REQ5MThGMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxMzJGRkRBRDZBQzAxMUU4OTgyQkQxQzU4REQ5MThGMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzQ2RkRDRDI2OUY4MTFFODgxQkRGMDhGQkYxNTdEODgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzQ2RkRDRDM2OUY4MTFFODgxQkRGMDhGQkYxNTdEODgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7T2qPEAAACCklEQVR42uzdQU7CQBiG4XbiDuI9uIOsDe71Erp3w5IFF/ASsqcJW7wD9zC4rv8kQyxKTQplmG943+RPY6IZ5UkZaomWdV0XlE6OhwAQAgQQAgQQAgQQAgQQAoQAAYQAAYQAAYQAAYQAIUAAIUAAIUAAIUAAIUAIEEAIEECov25S+CZGo9GtHd5tZpvN5qPj156y9J3N1ObJ1v3kDPlpYXNvU9kDPI60pseowroLnrL2m9l82QxtlhFQdhjDsO4MkEb2dLG2wyQSym+MSVgfkAugJI2R3KusM6P8wbBJCiPJl71nQpHASPY6pGeUsQpG0heGPaH4z1+qYCR/pX4iihyGxK9OjkSRxJAAOQJFFkMGpAOKNIYUSBtKQMgCQw7kH5TnHDB8peofMAtPV/76YmDjf4jyGAwD5gzp8Ux5bWDU4eN1IZwsSDhD5gGjCMd5Y08BJDJGc894adnoAbkAht8z3sJxq47iMsDY7Rn++KCO4pQxDtxckkdxGWFkgeJEMLredpVFcSIYg6L7PXBJFJcphiyKyxhDEsVljiGH4q4Aow2lShHFXQnGIRS/Tsz3EuuARMKQQEnlDJlGwmhDmQKy36PNqoj7Xtsdyiqsn0Ql//KITZ0AAYQAAYQAAYQAAYQAIUAAIUAAIUAAIUAAIUAIEEAIEEAIEEAIEEAIEAIEEAIEEOqvbwEGAKRfF6DlCrA2AAAAAElFTkSuQmCC);
+        background-repeat: no-repeat;
+        background-position: -4px center;
+        background-size: 40px 40px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 3;
+        top: -70px;
+        right: -30px;
+    }
+    #popupWrap .klaviyo_styling {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm {
+        margin-bottom: 0;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm label {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: #4a5761;
+        text-align: center;
+        margin: 0 0 1rem;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 1px;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .klaviyo_field_group {
+        margin: 0;
+    }
+
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm input[type=text],
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm input[type=email] {
+        font-size: 1.6rem;
+        color: #4a5761;
+        text-align: center;
+        padding: 0 1rem;
+        font-weight: 600;
+        line-height: 3rem;
+        height: 3rem;
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: #4a5761;
+        background: none;
+        margin-bottom: 2rem;
+        outline: 0;
+        border-radius: 0;
+    }
+
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .skip__wrap {
+        text-align: center;
+        line-height: 3.4rem;
+      text-decoration: underline;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .skip__wrap .klaviyo_skip {
+        color: #4a5761;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        border-radius: 0;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .klaviyo_submit_button {
+        background: #4a5761;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-family: Avenir Next,Arial,Helvetica;
+        box-shadow: none;
+        height: 3.4rem;
+        border-radius: 0;
+        color: #fff;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .klaviyo_submit_button:hover {
+        background: #4a5761;
+        color: #fff;
+    }
+
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .klaviyo_form_actions {
+        text-align: center;
+    }
+    .klaviyo_styling.klaviyo_gdpr_embed_QPiNPm .klaviyo_form_actions p {
+        font-size: 1.2rem;
+        color: #4a5761;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script>
+  jQuery(document).ready(function () {
+      jQuery(document).on('click', '.popup__close_btn, .klaviyo_skip', function () {
+        jQuery('body').addClass('klaviyo__processed').removeClass('facial__popup_open');
+        gtag('event', 'facial_app_results', {
+          'event_category': 'facial_app',
+          'event_label': 'Facial App Results',
+        });
+      });
+  });
+</script>

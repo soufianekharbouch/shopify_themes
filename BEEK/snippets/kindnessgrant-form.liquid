@@ -1,0 +1,118 @@
+<div class="kindnessgrant-form-section">
+  {%- if block.settings.section-heading != blank -%}
+    <h2 class="top__ttl">{{ block.settings.section-heading | escape }}</h2>
+  {%- endif -%}
+  {%- if block.settings.section-description != blank -%}
+    <p>{{ block.settings.section-description | escape }}</p>
+  {%- endif -%}
+
+  <div class="form__wrap">
+    <form id="kindnessGrant" action="{{ settings.private_app_url }}forms">
+      <input type="hidden" name="email_subject" value="{{ page.metafields.accentuate.subject_for_email }}">
+      <input type="hidden" name="email_recipients" value="{{ page.metafields.accentuate.list_of_recipients }}">
+      <div class="field">
+        <label for="KindnessGrantName" class="hide">Full Name</label>
+        <input type="text"
+             name="customform[Name]"
+             id="KindnessGrantName"
+             placeholder="Full Name"
+             required>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantEmail" class="hide">Email</label>
+        <input type="email"
+               name="customform[E-mail]"
+               id="KindnessGrantEmail"
+               placeholder="Email"
+               required
+               spellcheck="false"
+               autocomplete="off"
+               autocapitalize="off">
+      </div>
+      <div class="field">
+        <label for="KindnessGrantState" class="hide">State of Residence</label>
+        <select name="customform[State of Residence]"
+                id="KindnessGrantState"
+                style="background: #ffffff url('{{ 'chevron-down.png' | asset_url }}');"
+                required
+                class="select-wrap state__residence">
+          <option value="" selected disabled>State of Residence</option>
+          {% assign states = page.metafields.accentuate.state_of_residence | split: "|" %}
+          {% for state in states %}
+            <option
+                    data-multiplier="{{ state | split: " -- " | last }}"
+                    value="{{ state | split: " -- " | first }}"
+            >
+              {{ state | split: " -- " | first }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantKindActFulfilled" class="hide">Tell us about the Kind act you want to have fulfilled</label>
+        <textarea rows="5"
+                  name="customform[Tell us about the Kind act you want to have fulfilled]"
+                  id="KindnessGrantKindActFulfilled"
+                  placeholder="Tell us about the Kind act you want to have fulfilled"
+                  required></textarea>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantDescribeThePerson" class="hide">Describe the person(s) you’ll be treating to an act of Kindness</label>
+        <select
+                name="customform[Describe the person(s) you’ll be treating to an act of Kindness]"
+                id="KindnessGrantDescribeThePerson"
+                style="background: #ffffff url('{{ 'chevron-down.png' | asset_url }}');"
+                required
+                class="select-wrap person__description">
+            <option value="" selected disabled>Describe the person(s) you’ll be treating to an act of Kindness</option>
+            {% assign personDescription = page.metafields.accentuate.describe_the_persons_list | split: "|" %}
+            {% for description in personDescription %}
+              <option
+                      data-multiplier="{{ description | split: " -- " | last }}"
+                      value="{{ description | split: " -- " | first }}"
+              >
+                {{ description | split: " -- " | first }}
+              </option>
+            {% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantImpact" class="hide">How will this act of kindness impact who we are giving it to?</label>
+        <textarea rows="5"
+                  name="customform[How will this act of kindness impact who we are giving it to?]"
+                  id="KindnessGrantImpact"
+                  placeholder="How will this act of Kindness impact who we are giving it to?"
+                  required></textarea>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantToFulfill" class="hide">What needs to happen to fulfill this act of Kindness?</label>
+        <textarea rows="5"
+                  name="customform[What needs to happen to fulfill this act of Kindness?]"
+                  id="KindnessGrantToFulfill"
+                  placeholder="What needs to happen to fulfill this act of Kindness?"
+                  required></textarea>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantAffected" class="hide">Tell us how an act of kindness has affected your life</label>
+        <textarea rows="5"
+                  name="customform[Tell us how an act of kindness has affected your life]"
+                  id="KindnessGrantAffected"
+                  placeholder="Tell us how an act of Kindness has affected your life"
+                  required></textarea>
+      </div>
+      <div class="field">
+        <label for="KindnessGrantSMFriends" class="hide">How many social media friends do you have?</label>
+        <input type="text"
+               name="customform[How many social media friends do you have?]"
+               id="KindnessGrantSMFriends"
+               class="people__num"
+               required
+               placeholder="How many social media friends do you have? Please only enter a number."
+        >
+      </div>
+      <div class="action__wrap">
+          <input type="submit" class="submit__calculate get__started" value="Submit & Calculate">
+      </div>
+    </form>
+  </div>
+</div>

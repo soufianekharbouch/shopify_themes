@@ -1,0 +1,268 @@
+{% include 'sca_freegift_price' with product %}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{% assign has_only_default_variant = product.has_only_default_variant %}
+{% assign variantTitle = 'Default Title' %}
+{% unless product.has_only_default_variant %}
+{% assign variantsCounter = 0 %}
+  {% for variant in product.variants %}
+    {%unless variant.metafields.secomapp.freegifts %}
+    {% assign variantsCounter = variantsCounter | plus:1 %}
+    {% assign variantTitle = variant.title %}
+      <script>
+          window.AccentuateVariantsData = window.AccentuateVariantsData || {}
+          if ({{ variant.metafields.accentuate.alt_size | json }}) {
+              AccentuateVariantsData[{{ variant.id | json }}] = {{ variant.metafields.accentuate | json }}
+          }
+      </script>
+    {%endunless%}
+  {% endfor %}
+  {% if variantsCounter == 1 and variantTitle == 'Default Title' %}
+    {% assign has_only_default_variant = true %}
+  {% endif %}
+{% endunless %}
+
+<div class="checkout-section">
+  <div class="js variant-options">
+    {% form 'product', product, data-productid: product.id, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+      {% if has_only_default_variant %}
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}" data-productid="{{product.id}}" />
+      {% else %}
+        {% unless has_only_default_variant %}
+          {% for option in product.options_with_values %}
+            {% if option.name == 'Size' or option.name == 'Subscription' %}
+                <div class="sizes-info">
+                    {{ option.name | strip }}:
+                    {% if current_variant.metafields.accentuate.alt_size %}
+                        <span class="val">{{ current_variant.metafields.accentuate.alt_size }}</span>
+                    {% else %}
+                        <span class="val">{{ current_variant.title }}</span>
+                    {% endif %}
+                </div>
+              <div class="product__variants size">
+                <ul>
+                  {% for value in option.values %}
+                    <li class="variant__swatch">
+                      <input type="radio"
+                             id="Option{{ option.position }}-{{ value }}"
+                             name="options[{{ option.name }}]"
+                             value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
+                      <label
+                              id="{{ value | downcase | replace: " ", "-" }}"
+                              for="Option{{ option.position }}-{{ value }}">{{ value }}
+                      </label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <div class="js option__wrap">
+                <label for="Option{{ option.position }}" class="option__label">
+                  {{ option.name }}:
+                </label>
+                <select
+                    id="Option{{ option.position }}"
+                    name="options[{{ option.name | escape }}]">
+                  {% for value in option.values %}
+                    <option
+                        value="{{ value | escape }}"
+                        {% if option.selected_value == value %}selected="selected"{% endif %}>
+                      {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endunless %}
+      {% endif %}
+
+      {% if product.metafields.accentuate.is_prepaid_subscription == 'true' %}
+        <div class="variants_select" data-product-handle="{{ product.handle }}"></div>
+      {% endif %}
+
+      <select name="id" class="variants__selector" data-productid="{{ product.id }}" style="display:none">
+        {% for variant in product.variants %}
+          {% unless variant.metafields.secomapp.freegifts %}
+            <option
+                {% if variant == current_variant %}selected="selected"{% endif %}
+                {% unless variant.available %}disabled="disabled"{% endunless %}
+                value="{{ variant.id }}" data-price="{{ variant.price | money }}">
+              {{ variant.title }}
+            </option>
+          {%endunless%}
+        {% endfor %}
+      </select>
+
+      <!-- Begin ReCharge code -->
+      {% if product.available %}{% include 'subscription-product-custom' %}{% endif %}
+      <!-- End ReCharge code -->
+
+      <div class="qty__wrap">
+        <label for="Quantity">{{ 'products.product.quantity' | t }}:</label>
+
+        <select id="Quantity" name="quantity">
+          <option selected="selected" value="1">1</option>
+          {% for i in (2..10) %}
+            <option value="{{ i }}">{{ i }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    {%- comment %}<locksmith:be36>{% endcomment -%}
+      {%- assign locksmith_08cc_forloop__size = 0 %}{%for collection in product.collections%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_08cc_forloop__size = locksmith_08cc_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_08cc_forloop__index = nil -%}
+    {%- comment %}</locksmith:be36>{% endcomment -%}
+    {%for collection in product.collections%}
+    {%- comment %}<locksmith:16e5>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_08cc_forloop__index == nil %}{% assign locksmith_08cc_forloop__index = 1 %}{% assign locksmith_08cc_forloop__index0 = 0 %}{% else %}{% assign locksmith_08cc_forloop__index = locksmith_08cc_forloop__index | plus: 1 %}{% assign locksmith_08cc_forloop__index0 = locksmith_08cc_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_08cc_forloop__index == 1 %}{% assign locksmith_08cc_forloop__first = true %}{% else %}{% assign locksmith_08cc_forloop__first = false %}{% endif %}{% if locksmith_08cc_forloop__index == locksmith_08cc_forloop__size %}{% assign locksmith_08cc_forloop__last = true %}{% else %}{% assign locksmith_08cc_forloop__last = false %}{% endif %}{% assign locksmith_08cc_forloop__rindex = locksmith_08cc_forloop__size | minus: locksmith_08cc_forloop__index | minus: 1 %}{% assign locksmith_08cc_forloop__rindex0 = locksmith_08cc_forloop__size | minus: locksmith_08cc_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:16e5>{% endcomment -%}
+    {%assign handle= collection.handle | downcase%}
+    {%assign handle_settings= settings.cross_out_price_collection_handle | downcase%}
+    {%assign handle_settings = handle_settings | split: "|"%}
+    {%for handle_setting in handle_settings%}
+      {% if handle == handle_setting %}
+          {%assign is_tagged=true%} 
+          {%assign percent_off =settings.cross_out_price_value |split : "|" %}
+          {%assign in= forloop.index |plus :-1%}
+          {%assign percent_off = percent_off[in] %}
+          {%assign percent_off =percent_off | times : 0.01 %}
+          <script>
+            var percent_off=Number("{{percent_off}}");
+          </script>
+      {%endif%}
+    {%endfor%}
+    {%endfor%}
+      <div data-price-wrapper class="price__wrap">
+        <span data-product-price class="product__price {%if is_tagged  %} productPriceStrike {%endif%}">
+          {{ current_variant.price | money }}
+        </span>
+       {% for tag in product.tags %}
+   {% if tag == 'Stock' %}
+         <div class="LeftInStock">Only {{product.variants[0].inventory_quantity}} left in stock!</div>
+          {% endif %}
+         {% endfor %}
+    
+        {%if is_tagged %} 
+          
+          {%assign NewPrice =current_variant.price | times : percent_off%}
+          {%assign NewPrice=current_variant.price | minus : NewPrice%}
+          <span  class="product__price2" style="color:#4a5761;padding-left:10px;">
+            {{ NewPrice | money }} 
+          </span>
+        {%endif%}
+        <span class="save__info">
+          You Save
+          <span class="s_amount"></span>
+          <span class="s_percent"></span>
+        </span>
+
+        {% if sca_compare_at_price_max > sca_price %}
+          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+          <s data-compare-price>
+            {% if current_variant.compare_at_price > current_variant.price %}
+              {{ current_variant.compare_at_price | money }}
+            {% endif %}
+          </s>
+        {% endif %}
+      </div>
+
+      {% if product.metafields.accentuate.is_prepaid_subscription == 'true' %}
+        <a href="" class="subscribe add__to-cart">
+            <span data-submit-button-text>
+              {{ 'products.product.add_to_cart' | t }}
+            </span>
+        </a>
+      {% else %}
+        <button
+            style="margin-bottom:12px"
+            type="submit"
+            name="add"
+            data-submit-button
+            {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+            <span data-submit-button-text>
+              {% if current_variant.available %}
+                {{ 'products.product.add_to_cart' | t }}
+              {% else %}
+                {{ 'products.product.sold_out' | t }}
+              {% endif %}
+            </span>
+        </button>
+      {% endif %}
+      {{form | payment_terms}}
+    {% endform %}
+  </div>
+
+</div>
+{% if product.metafields.accentuate.is_prepaid_subscription == 'true' %}
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(document).on('click', '.subscribe', function (e) {
+        e.preventDefault();
+        $('.variants_select').html('');
+        var handle = $('.variants_select').attr('data-product-handle'),
+          duration = $('.variant__swatch').find('input[type=radio]:checked').val().replace(/\s+/g, '-').toLowerCase(),
+          qty = $('#Quantity').val();
+
+        $('.variants_select').load('/products/'+handle+'-'+duration+' select[data-productid]', function () {
+          var val = $('.variants_select select option:contains("Default Title")').attr('value');
+
+          $('.variants_select').load('/products/'+handle+'-'+duration+' #rc_container', function () {
+            var subs = $('.variants_select #rc_subscription_id').val();
+            var freq = $('.variants_select .rc_select__frequency').val();
+            var unit = $('.variants_select #rc_shipping_interval_unit_type').val();
+            addItemToCart(val , qty, freq, unit, subs);
+          });
+        });
+      });
+    });
+
+    function addItemToCart (variant_id, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscription_id) {
+      var data = {
+        "quantity": quantity,
+        "id": variant_id,
+        "properties[shipping_interval_frequency]": shipping_interval_frequency,
+        "properties[shipping_interval_unit_type]": shipping_interval_unit_type,
+        "properties[subscription_id]": subscription_id
+      };
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: data,
+        dataType: 'json',
+        success: function() {
+          window.location.href = '/cart';
+        }
+      });
+    }
+  </script>
+{% endif %}
+<script>
+    $(document).ready(function () {
+       const productVariants = {{ product.variants | json }};
+        $.each(productVariants, function (i) {
+           if (productVariants[i].available === false ) {
+               const variantTitle = productVariants[i].title
+               const labelSelector = variantTitle.toLowerCase().replace(/\s+/g, "-");
+               // add class unavailable-variant and text "sold out" for variant label that not available now
+               $('label[id='+ labelSelector +']').addClass('unavailable-variant').text(variantTitle + ' (sold out)');
+               // add "sold out" text for unavailable variants to sizes-info
+               $('#' + labelSelector + '-alt-value').text(variantTitle + ' (sold out)');
+
+           }
+       });
+
+
+    $('.variant__swatch').find("input").click(function(){
+     setTimeout(function(){
+      var price=""+$('.productPriceStrike').html();
+      price=price.substring(1);
+      var newPrice=Number(price-(price*percent_off));
+      $('.product__price2').html("$"+newPrice.toFixed(2));
+    },100);
+    })   
+     
+    });
+</script>
+<style>
+  .productPriceStrike{
+    text-decoration: line-through;
+  }
+</style>

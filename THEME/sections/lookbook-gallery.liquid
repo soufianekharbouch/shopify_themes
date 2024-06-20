@@ -1,0 +1,94 @@
+<div class="section-spacing section-spacing--tight section_lookbook">
+  <div class="container">
+    <div class="section_lookbook-stack">
+      <div class="section_lookbook-header">
+        <h2>{{ section.settings.coll_name  }}</h2>
+      </div>
+      <div class="lookbook-stack">        
+        <div class="lookbook_collection-list">
+          {% for block in section.blocks %}
+            <a data-fancybox="images" data-src="#lookbook_popup_{{forloop.index}}" href="javascript:;" class="lookbook-card">
+              <div class="lookbook_content-over-media">
+              <img class="lookbook_image" data-src="" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="" data-sizes="auto" src="{{ block.settings.img_url | img_url:"master"  }}" alt="" sizes="523px">               
+              </div>    
+              <div id="lookbook_popup_{{forloop.index}}" class="lookbook_popup" style="display:none">
+                <div class="lookbook_popup-slide">
+                  <div class="lookbook_popup-inner">
+                    <div class="lookbook_image-wrap">  
+                    <img class="lookbook_image" data-src="" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="" data-sizes="auto" src="{{ block.settings.img_url | img_url:"master"  }}" alt="" sizes="523px">               
+                    <span class="lb-number">Image {{ forloop.index }} of {{ forloop.length }}</span>
+                    </div>
+                      <div class="lookbook__content">
+                        <h4>{{ section.settings.load_caption }}</h4>
+                          <ul>                    
+                            <li data-url="/products/faubourg-t-shirt-cream-merlot">   {{ block.settings.product_text }} </li>
+                            <li data-url="/products/faubourg-t-shirt-cream-merlot"> {{ block.settings.product.title }} </li>
+                          </ul>
+                      </div> 
+                    </div>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Lookbook Gallery",
+    "settings": [
+      {
+        "type":"text",
+        "id":"load_caption",
+        "label":"Caption"
+      },
+      {
+        "type":"text",
+        "id":"coll_name",
+        "label":"Title"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"Collection-Repeter",
+        "name":"Repeter",
+        "settings":[
+        {
+           "type": "image_picker",
+           "id": "img_url",
+           "label": "Image"
+        },
+        {
+          "type":"text",
+          "id":"product_text",
+          "label":"Text"
+        },
+        {
+          "type":"url",
+          "id":"product_url",
+          "label":"Product Link"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+       ]  
+      }
+    ],
+     "presets":[{
+      "name":"Lookbook-Gallery"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

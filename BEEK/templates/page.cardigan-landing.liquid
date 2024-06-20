@@ -1,0 +1,314 @@
+<div class="cardigan__landing">
+  <div class="hero-section">
+    <div class="image-wrap">
+      {%- if page.metafields.accentuate.cardigan_hero_mob != blank -%}
+        <div class="row">
+          <div class="d-block col-12 d-lg-none">
+            <div class="hero-section__image">
+              <img src="{{ page.metafields.accentuate.cardigan_hero_mob }}" alt="">
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if page.metafields.accentuate.cardigan_hero != blank -%}
+        <div class="d-none d-lg-block">
+          <div class="hero-section__image">
+            <img src="{{ page.metafields.accentuate.cardigan_hero }}" alt="">
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if page.metafields.accentuate.cardigan_hero_logo != blank -%}
+        <div class="d-none d-lg-block hero__logo">
+          <img src="{{ page.metafields.accentuate.cardigan_hero_logo }}" alt="">
+        </div>
+      {%- endif -%}
+
+      <div class="hero-content-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              {%- if page.metafields.accentuate.cardigan_hero_title != blank -%}
+                <h2>{{ page.metafields.accentuate.cardigan_hero_title | escape }}</h2>
+              {%- endif -%}
+            </div>
+
+            <div class="col-12 d-none d-lg-block">
+              {%- if page.metafields.accentuate.cardigan_thanks_desc != blank -%}
+                <div class="text">
+                  {{ page.metafields.accentuate.cardigan_thanks_desc }}
+                </div>
+              {%- endif -%}
+            </div>
+
+            <div class="col-12 d-lg-none">
+              {%- if page.metafields.accentuate.cardigan_description != blank -%}
+                <div class="text">
+                  {{ page.metafields.accentuate.cardigan_description }}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form__wrap">
+    <div class="container">
+      <div class="row d-none d-lg-block">
+        <div class="col-12">
+          {%- if page.metafields.accentuate.form_title != blank -%}
+            <h3>{{ page.metafields.accentuate.form_title | escape }}</h3>
+          {%- endif -%}
+        </div>
+
+        <div class="col-12">
+          {%- if page.metafields.accentuate.form_description != blank -%}
+            <div class="text">
+              {{ page.metafields.accentuate.form_description }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form
+                    action="https://beekman1802.us1.list-manage.com/subscribe/post?u=bc6545b1a5124191e0ed629b4&amp;id=2d25e2703c"
+                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                    target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="two__col">
+                  <div class="mc-field-group">
+                    <input type="text" value="" placeholder="First Name*" name="FNAME" class="required" id="mce-FNAME">
+                  </div>
+                  <div class="mc-field-group">
+                    <input type="text" value="" name="LNAME" placeholder="Last Name*" class="required" id="mce-LNAME">
+                  </div>
+                </div>
+                <div class="mc-field-group">
+                  <input type="email" value="" name="EMAIL" placeholder="Your Email*" class="required email"
+                         id="mce-EMAIL">
+                </div>
+                <div class="mc-field-group agree_check_wrap">
+                  <input type="checkbox" name="agree_check" class="agree_check" id="agreeCheck"/>
+                  <label for="agreeCheck">By checking this box you agree to receive marketing and business communications from Beekman 1802*</label>
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text"
+                         name="b_bc6545b1a5124191e0ed629b4_212a769aad"
+                         tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input type="submit" value="Submit" name="subscribe" disabled="disabled"
+                         id="mc-embedded-subscribe"
+                         class="button">
+                </div>
+              </div>
+            </form>
+          </div>
+          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+          <script type='text/javascript'>(function ($) {
+              window.fnames = new Array();
+              window.ftypes = new Array();
+              fnames[1] = 'FNAME';
+              ftypes[1] = 'text';
+              fnames[0] = 'EMAIL';
+              ftypes[0] = 'email';
+              fnames[2] = 'LNAME';
+              ftypes[2] = 'text';
+              fnames[11] = 'BIRTHDAY';
+              ftypes[11] = 'date';
+              fnames[9] = 'MMERGE9';
+              ftypes[9] = 'text';
+              fnames[10] = 'MMERGE10';
+              ftypes[10] = 'text';
+              fnames[12] = 'MMERGE12';
+              ftypes[12] = 'text';
+              fnames[7] = 'ADDRESS';
+              ftypes[7] = 'address';
+              fnames[3] = 'MMERGE3';
+              ftypes[3] = 'text';
+              fnames[4] = 'MMERGE4';
+              ftypes[4] = 'text';
+              fnames[5] = 'COMPANY';
+              ftypes[5] = 'text';
+              fnames[6] = 'PHONE';
+              ftypes[6] = 'phone';
+              fnames[8] = 'LAST_ORDER';
+              ftypes[8] = 'date';
+              fnames[13] = 'MMERGE13';
+              ftypes[13] = 'text';
+              fnames[14] = 'MMERGE14';
+              ftypes[14] = 'text';
+              fnames[15] = 'MMERGE15';
+              ftypes[15] = 'text';
+              fnames[16] = 'MMERGE16';
+              ftypes[16] = 'zip';
+              fnames[17] = 'MMERGE17';
+              ftypes[17] = 'text';
+              fnames[18] = 'MMERGE18';
+              ftypes[18] = 'zip';
+              fnames[19] = 'MMERGE19';
+              ftypes[19] = 'number';
+              fnames[20] = 'MMERGE20';
+              ftypes[20] = 'number';
+              fnames[21] = 'MMERGE21';
+              ftypes[21] = 'text';
+              fnames[22] = 'MMERGE22';
+              ftypes[22] = 'text';
+              fnames[23] = 'MMERGE23';
+              ftypes[23] = 'text';
+              fnames[24] = 'MMERGE24';
+              ftypes[24] = 'zip';
+              fnames[25] = 'MMERGE25';
+              ftypes[25] = 'zip';
+              fnames[26] = 'MMERGE26';
+              ftypes[26] = 'address';
+              fnames[27] = 'MMERGE27';
+              ftypes[27] = 'address';
+              fnames[28] = 'MMERGE28';
+              ftypes[28] = 'zip';
+              fnames[29] = 'MMERGE29';
+              ftypes[29] = 'text';
+              fnames[30] = 'MMERGE30';
+              ftypes[30] = 'zip';
+            }(jQuery));
+            var $mcj = jQuery.noConflict(true);</script>
+          <!--End mc_embed_signup-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content__wrap container">
+    <div class="row">
+      <div class="col-12 col-lg-5 offset-lg-1 order-lg-1">
+        {%- if page.metafields.accentuate.cardigan_content_title != blank -%}
+          <h3>
+            {{ page.metafields.accentuate.cardigan_content_title }}
+          </h3>
+        {%- endif -%}
+        {%- if page.metafields.accentuate.cardigan_content_text != blank -%}
+          <div class="text">
+            {{ page.metafields.accentuate.cardigan_content_text }}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="col-12 col-lg-6">
+        {%- if page.metafields.accentuate.cardigan_content_image != blank -%}
+          <img src="{{ page.metafields.accentuate.cardigan_content_image }}" alt="">
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <div class="bottom__form container">
+    <div class="row">
+      <div class="col-12">
+        {%- if page.metafields.accentuate.share_form_title != blank -%}
+          <h3>{{ page.metafields.accentuate.share_form_title | escape }}</h3>
+        {%- endif -%}
+
+        {%- if page.metafields.accentuate.share_form_description != blank -%}
+          <div class="text">
+            {{ page.metafields.accentuate.share_form_description }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+      <script type='text/javascript'>(function ($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[1] = 'FNAME';
+          ftypes[1] = 'text';
+          fnames[0] = 'EMAIL';
+          ftypes[0] = 'email';
+          fnames[2] = 'LNAME';
+          ftypes[2] = 'text';
+          fnames[11] = 'BIRTHDAY';
+          ftypes[11] = 'date';
+          fnames[9] = 'MMERGE9';
+          ftypes[9] = 'text';
+          fnames[10] = 'MMERGE10';
+          ftypes[10] = 'text';
+          fnames[12] = 'MMERGE12';
+          ftypes[12] = 'text';
+          fnames[7] = 'ADDRESS';
+          ftypes[7] = 'address';
+          fnames[3] = 'MMERGE3';
+          ftypes[3] = 'text';
+          fnames[4] = 'MMERGE4';
+          ftypes[4] = 'text';
+          fnames[5] = 'COMPANY';
+          ftypes[5] = 'text';
+          fnames[6] = 'PHONE';
+          ftypes[6] = 'phone';
+          fnames[8] = 'LAST_ORDER';
+          ftypes[8] = 'date';
+          fnames[13] = 'MMERGE13';
+          ftypes[13] = 'text';
+          fnames[14] = 'MMERGE14';
+          ftypes[14] = 'text';
+          fnames[15] = 'MMERGE15';
+          ftypes[15] = 'text';
+          fnames[16] = 'MMERGE16';
+          ftypes[16] = 'zip';
+          fnames[17] = 'MMERGE17';
+          ftypes[17] = 'text';
+          fnames[18] = 'MMERGE18';
+          ftypes[18] = 'zip';
+          fnames[19] = 'MMERGE19';
+          ftypes[19] = 'number';
+          fnames[20] = 'MMERGE20';
+          ftypes[20] = 'number';
+          fnames[21] = 'MMERGE21';
+          ftypes[21] = 'text';
+          fnames[22] = 'MMERGE22';
+          ftypes[22] = 'text';
+          fnames[23] = 'MMERGE23';
+          ftypes[23] = 'text';
+          fnames[24] = 'MMERGE24';
+          ftypes[24] = 'zip';
+          fnames[25] = 'MMERGE25';
+          ftypes[25] = 'zip';
+          fnames[26] = 'MMERGE26';
+          ftypes[26] = 'address';
+          fnames[27] = 'MMERGE27';
+          ftypes[27] = 'address';
+          fnames[28] = 'MMERGE28';
+          ftypes[28] = 'zip';
+          fnames[29] = 'MMERGE29';
+          ftypes[29] = 'text';
+          fnames[30] = 'MMERGE30';
+          ftypes[30] = 'zip';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);</script>
+      <!--End mc_embed_signup-->
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(document).on('change', '.agree_check', function (e) {
+      if ($(this).prop('checked')) {
+        $(this).closest('#mc_embed_signup').find('input.button').prop('disabled', false);
+      } else {
+        $(this).closest('#mc_embed_signup').find('input.button').prop('disabled', true);
+      }
+    });
+    $(document).on('input', '.friend__email', function (e) {
+      if ($(this).val() != '') {
+        $(this).closest('#mc_embed_signup').find('input.button').prop('disabled', false);
+      } else {
+        $(this).closest('#mc_embed_signup').find('input.button').prop('disabled', true);
+      }
+    });
+  });
+</script>

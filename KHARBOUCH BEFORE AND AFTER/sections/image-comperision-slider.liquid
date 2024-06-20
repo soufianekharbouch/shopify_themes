@@ -1,0 +1,246 @@
+<div class="page-width image-comp">
+  <div class="heading_after">
+    <h2>{{ section.settings.head }}</h2>
+      <p>{{ section.settings.pera }}</p>
+  </div>
+</div>
+<div class="page-width image-compdiv">
+<div class="multi-inner">
+<div class="image-comperision">
+    <figure style="background-image: url({{ section.settings.imagefirst | img_url: 'master'}});">
+      <div class="s-handle"></div>
+      <div style="background-image: url({{ section.settings.imagesnd | img_url: 'master'}});"  class="s-divisor"></div>
+    </figure>
+    <input type="range" min="0" max="100" value="50"  class="s-slide" oninput="moveDividor()"> 
+  </div>
+ </div>
+</div>
+
+  <style>
+.container {
+  max-width: 800px;
+}
+    
+.page-width.image-comp {
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+.page-width.image-comp .heading_after {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+}
+.image-comp h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height:46px;
+    margin-bottom: 10px;
+}
+.image-comp p {
+  font-weight: normal;
+    font-size: 16px;
+  line-height: 29px;
+    margin-bottom: 10px;
+}
+.page-width.image-compdiv {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px 50px;
+  align-items:center;
+}
+.s-handle:before, .s-handle:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 6px inset transparent;
+    position: absolute;
+    top: 53%;
+    margin-top: -6px;
+}
+.image-comperision {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    padding-bottom: unset!important;
+    max-width: 450px;
+    position: relative;
+    margin: 0 auto;
+  overflow: hidden;
+}
+
+.image-comperision figure { 
+  position: absolute;
+	background-size: cover;
+	font-size: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0; 
+}
+
+  .s-divisor { 
+	background-size: cover;
+	position: absolute;
+	width: 50%; 
+	box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+	bottom: 0; height: 100%;
+  display: block!important;
+   }
+ .s-divisor::before,  .s-divisor::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    width: 4px;
+    height: calc(50% - 23px);
+    background: white;
+    z-index: 1;
+  }
+ .s-divisor::before {
+    top: 0;
+    box-shadow: 0 -3px 8px 1px rgba(0,0,0,.3);
+  }
+  .s-divisor::after {
+    bottom: 0;
+    box-shadow: 0 3px 8px 1px rgba(0,0,0,.3);
+  }
+
+  .s-handle {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 1;
+  display: block!important;
+}
+    
+ .s-handle::before {
+    border-right: 6px solid white;
+    left: 50%;
+    margin-left: -17px;
+  }
+  .s-handle::after {
+    border-left: 6px solid white;
+    right: 50%;
+    margin-right: -17px;
+  }
+
+
+.image-comperision input[type=range]{
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	position: absolute;
+	top: 50%; left: -26px;
+  transform: translateY(-50%);
+	background-color: transparent;
+	width: calc(100% + 50px); 
+  z-index: 1;
+}
+  .image-comperision input[type=range]:focus,
+  .image-comperision input[type=range]:active {
+    border: none;
+    outline: none;
+}
+
+.image-comperision input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid white;
+  box-shadow: 0 0 8px 1px rgba(0,0,0,.3);
+}
+.image-comperision input[type=range]::-moz-range-track {
+	-moz-appearance:none;
+	height:15px;
+	width: 100%;
+	background-color: transparent; 
+	position: relative;
+	outline: none;    
+}
+ @media screen and (max-width:749px){
+   .page-width.image-compdiv {
+     flex-wrap:wrap;
+      padding: 10px 15px 50px;
+   }
+   .image-comperision {
+     margin:30px auto;
+   }
+   .left_icon {
+     width:100%;
+   }
+   .image-comperision {
+     width:80%;
+   }
+
+   .image-comp h2 {
+     margin-top:0px;
+     font-size:28px;
+     line-height:38px;
+   }
+ }
+ </style>
+ <script>
+ 
+   
+
+   var divisors = document.querySelectorAll(".s-divisor");
+    var handles = document.querySelectorAll(".s-handle");
+    var sliders = document.querySelectorAll(".s-slide");
+
+    function moveDividor() {
+  if (handles !== null) {
+      handles.style.left = sliders.value+"%";
+  }
+  if (divisors !== null) {
+      divisors.style.width = sliders.value+"%";
+  }
+}
+
+    window.onload = function() {
+    	moveDividor();
+      
+    };
+   
+ </script>
+
+  {% schema %}
+{
+	"name": "Image Comperision Slider",
+	"tag": "section",
+	"class": "spaced-section",
+			"settings": [
+              {
+                "type": "text",
+                "id": "head",
+                "label": "Heading"
+              },
+                        {
+                "type": "text",
+                "id": "pera",
+                "label": "Content"
+              },
+                        {
+                "type": "image_picker",
+                "id": "imagefirst",
+                "label": "Before Image"
+              },
+              {
+                "type": "image_picker",
+                "id": "imagesnd",
+                "label": "After Image"
+              }
+          	],
+          	"presets": [
+          		{ "name": "Image Comperision Slider" }
+          	]
+          }
+{% endschema %}

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="microbiome-botanical" id="ingredients">
+                <strong class="heading">{{ block.settings.botanical_block_title }}</strong>
+                <div></div>
+                <span class="subheading">{{ block.settings.botanical_block_subtitle }}</span>
+                <div class="desktop-botanic-wrapper">
+                    {% for i in (1..5) %}
+                        {% capture currentDescription %}botanical_{{ i }}_description{% endcapture %}
+                        {% capture currentImg %}botanical_{{ i }}_img{% endcapture %}
+                        {% capture currentSubtitle %}botanical_{{ i }}_subtitle{% endcapture %}
+                        {% capture currentTitle %}botanical_{{ i }}_title{% endcapture %}
+                        <div class="botanic-tile">
+                            <div class="img-wrap">
+                                <img src="{{ block.settings[currentImg] | img_url: 'master' }}">
+                            </div>
+                            <strong>{{ block.settings[currentTitle] }}</strong>
+                            <span>{{ block.settings[currentSubtitle] }}</span>
+                            <p>{{ block.settings[currentDescription] }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="microbiome-botanical">
+    <div class="mobile-botanic-carousel">
+        {% for i in (1..5) %}
+            {% capture currentDescription %}botanical_{{ i }}_description{% endcapture %}
+            {% capture currentImg %}botanical_{{ i }}_img{% endcapture %}
+            {% capture currentSubtitle %}botanical_{{ i }}_subtitle{% endcapture %}
+            {% capture currentTitle %}botanical_{{ i }}_title{% endcapture %}
+            <div class="botanic-tile">
+                <div class="img-wrap">
+                    <img src="{{ block.settings[currentImg] | img_url: 'master' }}">
+                </div>
+                <strong>{{ block.settings[currentTitle] }}</strong>
+                <span>{{ block.settings[currentSubtitle] }}</span>
+                <p>{{ block.settings[currentDescription] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $('.mobile-botanic-carousel').addClass('owl-carousel').owlCarousel({
+        center: true,
+        dots: true,
+        nav: false,
+        dotsEach: 1,
+        loop: false,
+        items: 2,
+        margin: 60,
+        stagePadding: 20,
+    });
+</script>

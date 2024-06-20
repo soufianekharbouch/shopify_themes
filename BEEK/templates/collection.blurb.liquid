@@ -1,0 +1,131 @@
+{%- paginate collection.products by 1000 -%}
+{%for product in collection.products%}
+
+{%- comment %}<locksmith:1adb>{% endcomment -%}
+  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+{%- comment %}</locksmith:1adb>{% endcomment -%}
+
+<div id="yotpoStart-{{product.id}}" style="display: none;">
+    <div  class="yotpo bottomLine" data-product-id="{{product.id }}" >
+    </div>
+</div>
+{%endfor%}
+{%endpaginate%}
+
+{%if collection.handle==settings.count_down_collection%}
+<div class="countDown2 CountDownCollection" class="landing_hero_container">
+    <div class="landing_left_hero">   
+             <div class="landing_count_down">
+                 <div class="landing_count_down_text">
+                      <span class="landing_days_text lnd">--</span>
+                      <div class="landing_label" > DAYS </div>
+                </div>
+
+                <div class="landing_count_down_text">
+                      <span class="landing_hours_text lnd" >--</span>
+                      <div class="landing_label" > HRS </div>
+                </div> 
+
+                <div class="landing_count_down_text">
+                      <span class="landing_minutes_text lnd" >--</span>
+                      <div class="landing_label" > MINS </div>
+                </div>
+
+                <div class="landing_count_down_text">
+                      <span class="landing_seconds_text lnd" >--</span>
+                      <div class="landing_label" > SECS </div>
+                </div>
+             </div>
+              <div class="landing_count_down in-live">
+                 <div class="sub-in-live">
+                   <span><a href="#">We are live!</a> </span>
+                 </div>  
+             </div>
+
+    </div>
+    </div>
+</div>
+{%endif%}
+<style>
+   .CountDownCollection {
+      margin-bottom: -25px !important;
+      margin-top: 8px !important;
+    }
+  </style>
+
+<div class="category-landing-content collection__wrap">
+    <div class="container">
+        <div class="row collection-featured-image__wrap">
+            {%for product in collection.products%}
+
+       {%- comment %}<locksmith:9f39>{% endcomment -%}
+         {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+       {%- comment %}</locksmith:9f39>{% endcomment -%}
+       {%- assign current_variant = product.selected_or_first_available_variant -%}
+       <input type="hidden" id="selected_or_first_available_variant_{{product.handle}}" value="{{current_variant.available}}"/>
+               {%endfor%}{%- comment %}
+
+            <div class="col-12 collection__main-image">
+                {% include 'responsive-image' with
+                    image: collection.image.src,
+                    max_width_image: 1334,
+                    image_attributes: "data-product-featured-image",
+                    wrapper_class: "desktop_featured_image",
+                    wrapper_attributes: "listing-featured-image", %}
+
+                {% if collection.metafields.accentuate.featured_image_mobile %}
+                    <div class="mobile-featured-image">
+                        <img src="{{collection.metafields.accentuate.featured_image_mobile}}" alt="">
+                    </div>
+                {% endif %}
+
+            </div>{% endcomment -%}
+
+        
+            <div class="col-12 d-flex justify-content-end count_products_block">
+                <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-count">
+                    <span class="boost-pfs-filter-total-product">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</span>
+                </div>
+            </div>
+            <div class="col-12 d-flex flex-column align-items-center title_product_block">
+                <p>
+                    View our products for
+                </p>
+                <h1>
+                    {{ collection.title }}
+                </h1>
+            </div>
+
+              <div class="topblurb">
+              <p>{{collection.metafields.custom.top_blurb}}</p>
+              </div>
+              </div>
+        
+        <div class="row most__loved-wrap">
+
+            {% section 'collection-template-boost-pfs-filter' %}
+        </div>
+    </div>
+   
+</div>
+
+<script type="text/javascript">
+    var ___PRIVATE_APP_URL = {{ settings.private_app_url | json }}
+</script>
+
+<style>
+  .topblurb{
+    width: 62%;
+    font-family: Century OS !important;
+    font-size: 16px;
+    margin: auto;
+    text-align: center;
+    margin-left: 22%;
+  }
+  .topblurbSpacing{
+   text-align: left;
+    margin:20px auto;
+    width: 80%;
+  }
+</style>
+

@@ -1,0 +1,267 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<section id="beekman_the_farm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 order-md-2">
+        <h1 id="next">{{ section.settings.hero_heading }}</h1>
+      </div>
+      <div class="col-12 d-md-none">
+        {% include 'responsive-image-aspect-ratio' with
+          image: section.settings.hero_mobile,
+          hero_aspect_ratio:100,
+          bgPosition: 'cover',
+          max_width: 2000,
+          max_height: 2000,
+        %}
+      </div>
+      <div class="col-12 d-none d-md-block order-1">
+        {% include 'responsive-image-aspect-ratio' with
+          image: section.settings.hero_desktop,
+          hero_aspect_ratio:47,
+          bgPosition: 'cover',
+          max_width: 2000,
+          max_height: 2000,
+        %}
+        <a class="down-arrow jump-arrow" href="#">{% include 'icon-chevron-left' %}</a>
+      </div>
+    </div>
+    <span class="d-none d-md-block">
+      <div class="row no-gutters bg my-5">
+        <div class="col-12">
+          <div class="farm_carousel_wrap2">
+            {% for block in section.blocks %}
+              {% assign activeIndex=forloop.length | minus: forloop.index | plus: 1 %}
+              <div class="slide">
+                <div class="bg-2 sidebar">
+                  <div class="sidebar-content">
+                    <ul>
+                      {% for block in section.blocks %}
+                        <li class="dot {% if activeIndex == forloop.index %}active{% endif %}">
+                          <div></div>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                    <p>
+                      {{ block.settings.caption_title }} 
+                    </p>
+                  </div>
+                </div>
+                <div class="row no-gutters h-100 ml-5 pl-5 align-items-center">
+                  <div class="col-4">
+                    <h4>{{ block.settings.caption_title }}</h4>
+                    <p>{{ block.settings.caption_text }}</p>
+                  </div>
+                  <div class="col-8">
+                    {% include 'responsive-image-aspect-ratio' with
+                      image: block.settings.caption_img_desktop,
+                      hero_aspect_ratio:67,
+                      bgPosition: 'cover',
+                      max_width: 2000,
+                      max_height: 2000,
+                    %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row bookings my-5 py-5">
+        <div class="col-12">
+          <h3>{{ section.settings.bookings_heading }}</h3>
+        </div>
+        <div class="col-12">
+          <p>{{ section.settings.bookings_content }}</p>
+        </div>
+        <div class="col-12">
+          <a class="btn" href="{{section.settings.bookings_button_link}}">{{ section.settings.bookings_button_label }}</a>
+        </div>
+      </div>
+    </span>
+  </div>
+  <div class="d-none d-md-block bg history">
+    <div class="container">
+      <div class="row align-items-center mt-5">
+        <div class="col-8 shift-up">
+          {% include 'responsive-image-aspect-ratio' with
+            image: section.settings.history_img,
+            hero_aspect_ratio: 72,
+            bgPosition: 'cover',
+            max_width: 2000,
+            max_height: 2000,
+          %}
+        </div>
+        <div class="col-4">
+          <h3>{{ section.settings.history_title }}</h3>
+          <p>{{ section.settings.history_content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="d-md-none">
+    <div class="row bg mt-5 pb-3">
+      <div class="col-12">
+        <div class="farm_carousel_wrap">
+          {% for block in section.blocks %}
+            <div class="slide">
+              <h4>{{ block.settings.caption_title }}</h4>
+              {% include 'responsive-image-aspect-ratio' with
+                image: block.settings.caption_img_mobile,
+                hero_aspect_ratio:117,
+                bgPosition: 'cover',
+                max_width: 2000,
+                max_height: 2000,
+              %}
+              <div class="counter">({% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}/{% if forloop.length < 10 %}0{% endif %}{{ forloop.length }})</div>
+              <p>{{ block.settings.caption_text }}</p>
+            </div>
+          {% endfor %}
+        </div> 
+      </div>
+    </div>
+    <div class="row py-5 mb-5">
+      <div class="col-12">
+        <h3>{{ section.settings.bookings_heading }}</h3>
+      </div>
+      <div class="col-12">
+        <p>{{ section.settings.bookings_content }}</p>
+      </div>
+      <div class="col-12">
+        <a class="btn" href="{{section.settings.bookings_button_link}}">{{ section.settings.bookings_button_label }}</a>
+      </div>
+    </div>
+    <div class="row bg">
+      <div class="col-12 my-5">
+        <h3>{{ section.settings.history_title }}</h3>
+      </div>
+      <div class="col-12">
+        {% include 'responsive-image-aspect-ratio' with
+          image: section.settings.history_img,
+          hero_aspect_ratio: 72,
+          bgPosition: 'cover',
+          max_width: 2000,
+          max_height: 2000,
+        %}
+      </div>
+      <div class="col-12 pb-5">
+        <p>{{ section.settings.history_content }}</p>
+      </div>
+    </div>
+  </span>
+  <div class="slider_nav">
+    <span class="customNextBtn">{% include 'icon-chevron-right' %}</span>
+    <span class="customPrevBtn">{% include 'icon-chevron-left' %}</span>
+    <span class="customNextBtn2">{% include 'icon-chevron-right' %}</span>
+    <span class="customPrevBtn2">{% include 'icon-chevron-left' %}</span>
+  </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(document).on('click', 'a.down-arrow', function (e) {
+            e.preventDefault();
+            setTimeout(function () {
+                $('html, body').stop();
+            }, 800)
+            $('html, body').animate({
+                scrollTop: $('#next').offset().top - 100
+            }, 800, 'linear');
+
+        });
+
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "The Farm",
+    "settings": [
+      {
+        "id": "hero_mobile",
+        "type": "image_picker",
+        "label": "Mobile Hero Image"
+      },
+      {
+        "id": "hero_desktop",
+        "type": "image_picker",
+        "label": "Desktop Hero Image"
+      },
+      {
+        "id": "hero_heading",
+        "type": "text",
+        "label": "Hero Heading",
+        "default": "Welcome to the Beekman Farm"
+      },
+      {
+        "id": "bookings_heading",
+        "type": "text",
+        "label": "Bookings - Heading",
+        "default": "Book A Tour"
+      },
+      {
+        "id": "bookings_content",
+        "type": "textarea",
+        "label": "Bookings - Text",
+        "default": "We are not currently offering tours of the farm. Be sure to join our community below for updates when this will be available."
+      }, 
+      {
+        "id": "bookings_button_label",
+        "type": "text",
+        "label": "Button - Label",
+        "default": "Contact Us"
+      },
+      {
+        "id": "bookings_button_link",
+        "type": "url",
+        "label": "Button - Link"
+      },
+      {
+        "id": "history_title",
+        "type": "text",
+        "label": "History - Title",
+        "default": "History"
+      },
+      {
+        "id": "history_img",
+        "type": "image_picker",
+        "label": "History - Image"
+      },
+      {
+        "id": "history_content",
+        "type": "textarea",
+        "label": "History - Content"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image_with_caption", 
+        "name": "Slide",
+        "settings": [
+            {
+                "id": "caption_title",
+                "type": "text",
+                "label": "Slide - Title"
+            },
+            {
+                "id": "caption_img_mobile",
+                "type": "image_picker",
+                "label": "Slide - Mobile Image"
+            },
+            {
+                "id": "caption_img_desktop",
+                "type": "image_picker",
+                "label": "Slide - Desktop Image"
+            },
+            {
+                "id": "caption_text",
+                "type": "textarea",
+                "label": "Slide - Caption"
+            }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'about_farm.js' | asset_url | script_tag }}

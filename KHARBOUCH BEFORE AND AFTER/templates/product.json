@@ -1,0 +1,1410 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "a7074f1f-7f86-46cd-9f6a-4277b9cb079e": {
+          "type": "quote",
+          "settings": {
+            "css_quote": "",
+            "textarea": "\"Ich war anfangs skeptisch, weil ich empfindliche Zähne habe. Ich bin froh, dass ich es gewagt habe. Ich habe schon viele Komplimente im Büro und von meinen Freunden bekommen\".\n<span>Anna L. Avis vérifié<\/span>",
+            "metaarea": "",
+            "image3": "shopify:\/\/shop_images\/Screenshot_2023-08-12_at_06.08.12.png"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "6caf1c42-43a3-4a2e-b129-dedfaa71ac58": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "e9b2c294-f7fe-42b6-bbed-b2a2f25d620c": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>4.8 \/ 5 <a href=\"#judgeme_product_reviews\" title=\"#judgeme_product_reviews\">(1793 avis vérifiés)<\/a><\/p>",
+            "richtext2": "",
+            "icon": "award",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "18750f40-cf43-482a-b9b7-2a292be98eb8": {
+          "type": "tagss",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "5ac89496-0ff7-4e06-b4b8-2026294df63b": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richClass": "",
+            "richtext": "<p><strong>78%<\/strong> <strong>RÉDUCTION<\/strong> –DERNIER JOUR DES SOLDES!<\/p>",
+            "richtext2": "",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "7984a388-8b54-4c4a-8eed-397805cfaf33": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<hr class=\"cust_hr\">"
+          }
+        },
+        "9b67f9e0-3525-4345-8433-a800af5390ba": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>AKTION ENDET HEUTE!<\/p>",
+            "richtext2": "",
+            "icon": "box",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "64342afc-3225-405b-ad9e-2206a6fae4e3": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>💜 Von Zahnärzten getestet und empfohlen<\/p>",
+            "richtext2": "",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "d0f40cfd-250c-4b4d-9abe-0e622d55db21": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>✨ 3x weißere Zähne in weniger als 10min<\/p>",
+            "richtext2": "",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "12379259-8c3e-4d7f-8338-6035eefb0b3d": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "",
+            "richtext": "",
+            "richtext2": "<div id=\"option\"> <\/div>",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "0e4ea1da-7d7b-424c-bf27-3865548b9e65": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>⭐️ Peroxidfreie Formel speziell für empfindliche Zähne<\/p>",
+            "richtext2": "",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "c2ba6e85-6188-43a1-9d24-dc1b61f9aa04": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richClass": "",
+            "richtext": "<p>♻️ Éco-Friendly et réutilisable(~3 ans)<\/p>",
+            "richtext2": "",
+            "icon": "chat_bubble",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false,
+            "view_count_min": 50,
+            "view_count_max": 100,
+            "view_text": "Besucher sehen sich dieses Produkt im Moment an!",
+            "sticky_mgs": "30-Tage-Geld-zurück-Garantie  💜"
+          }
+        },
+        "e529d114-c224-4640-8cef-c4eadd3c324d": {
+          "type": "richtext",
+          "settings": {
+            "richClass": "product-rich-text",
+            "richtext": "<p>Lieferung 3-5 Tage überall in Germany<\/p>",
+            "richtext2": "",
+            "icon": "",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "a7472c15-1c49-494a-a002-55bc3812b836": {
+          "type": "deliverydate",
+          "disabled": true,
+          "settings": {
+            "delivery_text": "Commandez aujourd'hui et soyez livrés dès Vendredi",
+            "delivery_date": "08 Septembre."
+          }
+        },
+        "e9e094d3-b730-4b79-86a1-d6d43b3637c7": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richClass": "product-rich-text",
+            "richtext": "<p><strong>Noté 4.8\/5 par plus de 175 000 clients satisfaits<\/strong><\/p>",
+            "richtext2": "",
+            "icon": "",
+            "icon_size": "small",
+            "enable_box": false,
+            "box_color": "#e0f4d5",
+            "show_in_quickbuy": false
+          }
+        },
+        "f5e15c7b-e836-423a-bc8d-5bed01062b30": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "cclass": "three-image-blocks",
+            "icon_1": "heart",
+            "heading_1": "Kostenlose Lieferung",
+            "icon_2": "return",
+            "heading_2": "Kostenlose Rücksendung 30 Tage",
+            "icon_3": "truck",
+            "heading_3": "Einfache Rücksendungen"
+          }
+        },
+        "2ec037cf-faaf-49a8-a307-7ff868210e3b": {
+          "type": "paymenticon",
+          "disabled": true,
+          "settings": {}
+        },
+        "6ba19abf-1733-42cd-bd7c-c55b7e9e4325": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Korrektur-Technologie",
+            "make_collapsible_row": false,
+            "dclass": "",
+            "icon": "question_mark",
+            "content": "<p>Das Farbkorrekturserum ist ein Produkt der Zahnkosmetik, das die Zähne mithilfe der Farbmessung sofort weißer macht. ✨<br\/><br\/>Da Violett die Farbe ist, die Gelb im Farbkreis direkt gegenübersteht, suchten wir nach dem genauesten und tiefsten Violett, um gelben Flecken und Tönen auf den Zähnen entgegenzuwirken, unabhängig davon, ob sie durch Kaffee, Tee, Ernährung oder Zigaretten verursacht werden. <br\/><br\/>Die violette Farbe unseres Farbkorrektors legt sich auf den Zahnschmelz, was die Zähne für mehrere Stunden oder sogar einen Tag weißer erscheinen lässt.<br\/><br\/>Das Serum funktioniert ähnlich wie violette Shampoos, die dabei helfen, das Haar nach einer Blondierung aufzuhellen.<\/p>",
+            "page": ""
+          }
+        },
+        "34812f66-f696-44d6-b2e7-3c5edf665735": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Was ich erhalte?",
+            "make_collapsible_row": false,
+            "dclass": "",
+            "icon": "check_mark",
+            "content": "<p>SOLO:<br\/>1x hismile Farbkorrekturserum<br\/><br\/>DUO + GLOSTIK GESCHENKT 💜:<br\/>2x Farbkorrekturserum hismile V34<br\/><br\/>1x Glostik Instant Whitening GESCHENKT (ursprünglicher Preis 29€).<br\/><br\/>Glostik hismile Was ist das?<br\/><br\/>Glostik ist ein peroxidfreier Instant-Zahnaufheller, der genau wie Make-up funktioniert, nur für deine Zähne. Er verleiht deinen Zähnen einen perlmuttartigen Glanz und kann den ganzen Tag über immer wieder aufgetragen werden, was ihn zum perfekten Lächelverbesserer für unterwegs macht.<br\/><br\/>- Nicht-invasives Bleaching<br\/>- Aufhellender und glänzender Effekt<br\/>- Einfaches Auftragen, nimm es überall mit hin.<br\/>- Perfekt für hellere und weißere Zahntöne.<\/p>",
+            "page": ""
+          }
+        },
+        "0b0be231-0c7e-4072-aa51-7b1ee0aa1877": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Nicht-abrasive Formel",
+            "make_collapsible_row": true,
+            "dclass": "",
+            "icon": "leaf",
+            "content": "<p>Unser Serum ist peroxidfrei, damit es nicht invasiv, nicht abrasiv und nicht schädlich für den Zahnschmelz Ihrer Zähne und Ihr Zahnfleisch ist! 🍃<br\/><br\/>Seine nach Minze duftende Formel ist zertifiziert. ✔️<br\/><br\/>Unser 30mL (1 fl oz) Serum enthält: Glycerin, Aqua\/Water, Sorbitol, Hydrated Silica, Xylitol, Polysorbate 80, Cellulose Gum, Mentha Piperita (Peppermint) Oil, Phenoxyethanol, Sucralose, Tetrasodium Pyrophosphate, CI17200\/D&C Red No. 33, CI42090\/FD&C Blue No.1, Ethylhexylglycerin.<\/p>",
+            "page": ""
+          }
+        },
+        "38fbfafe-bf22-45bc-baad-d81ec68854ed": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Warum Sie sich für DUO + GLOSTIK entscheiden sollten",
+            "make_collapsible_row": false,
+            "dclass": "",
+            "icon": "check_mark",
+            "content": "<p>Bist du auf der Suche nach dem ultimativen Bleaching-Hack? Kombiniere unsere leistungsstarke GLOSTIK-Formel für sofortiges Bleichen mit unserer exklusiven V34-Farbkorrekturtechnologie. Das V34-Farbkorrekturserum hellt deine Zähne auf, um gelbe Flecken zu entfernen, und Glostik hellt deine Zähne sofort auf und schafft das ultimative weißere Lächeln.<\/p>",
+            "page": ""
+          }
+        },
+        "4cbd3ad4-260e-4cce-800d-c9fee5091a41": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Lieferung",
+            "make_collapsible_row": false,
+            "dclass": "",
+            "icon": "truck",
+            "content": "<p>Unsere Lieferungen werden von unserem Partner DHL Express innerhalb von 3 bis 5 Tagen versandt.<\/p>",
+            "page": ""
+          }
+        },
+        "9942eeee-cb23-4fab-8138-f38691911a34": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Zufriedenheit garantiert",
+            "make_collapsible_row": false,
+            "dclass": "",
+            "icon": "return",
+            "content": "<p>Wir lieben unser hismile® Serum und sind überzeugt, dass Sie es auch mögen werden! 💜 Deshalb bieten wir Ihnen an, es 30 Tage lang zu testen. Wenn Sie mit den Ergebnissen nicht 100%ig zufrieden sind, erstatten wir Ihnen den vollen Betrag zurück.<\/p>",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "60002046-8d7f-41d0-8182-93caec011dcb": {
+          "type": "logo",
+          "settings": {
+            "content": "17 prix<br>\naux oscars de la beauté"
+          }
+        }
+      },
+      "block_order": [
+        "a7074f1f-7f86-46cd-9f6a-4277b9cb079e",
+        "vendor",
+        "title",
+        "6caf1c42-43a3-4a2e-b129-dedfaa71ac58",
+        "e9b2c294-f7fe-42b6-bbed-b2a2f25d620c",
+        "18750f40-cf43-482a-b9b7-2a292be98eb8",
+        "price",
+        "5ac89496-0ff7-4e06-b4b8-2026294df63b",
+        "7984a388-8b54-4c4a-8eed-397805cfaf33",
+        "9b67f9e0-3525-4345-8433-a800af5390ba",
+        "64342afc-3225-405b-ad9e-2206a6fae4e3",
+        "d0f40cfd-250c-4b4d-9abe-0e622d55db21",
+        "12379259-8c3e-4d7f-8338-6035eefb0b3d",
+        "0e4ea1da-7d7b-424c-bf27-3865548b9e65",
+        "c2ba6e85-6188-43a1-9d24-dc1b61f9aa04",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "e529d114-c224-4640-8cef-c4eadd3c324d",
+        "a7472c15-1c49-494a-a002-55bc3812b836",
+        "e9e094d3-b730-4b79-86a1-d6d43b3637c7",
+        "f5e15c7b-e836-423a-bc8d-5bed01062b30",
+        "2ec037cf-faaf-49a8-a307-7ff868210e3b",
+        "6ba19abf-1733-42cd-bd7c-c55b7e9e4325",
+        "34812f66-f696-44d6-b2e7-3c5edf665735",
+        "0b0be231-0c7e-4072-aa51-7b1ee0aa1877",
+        "38fbfafe-bf22-45bc-baad-d81ec68854ed",
+        "4cbd3ad4-260e-4cce-800d-c9fee5091a41",
+        "9942eeee-cb23-4fab-8138-f38691911a34",
+        "description",
+        "share",
+        "60002046-8d7f-41d0-8182-93caec011dcb"
+      ],
+      "settings": {
+        "css": "single-pro-content",
+        "offf_enable": true,
+        "offf": "<span>RABATT<\/span> - VOR-BLACK FRIDAY SALE!",
+        "enable_sticky_info": true,
+        "media_size": "small",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "79d7c212-f090-4adc-a294-3e4862fd7c02": {
+      "type": "before_after",
+      "settings": {
+        "head": "Verabschieden Sie sich von gelben Zähnen und enthüllen Sie ein strahlendes Lächeln!",
+        "pera": "Erhalten Sie im Handumdrehen weißere Zähne, ohne Schmerzen oder übermäßige Ausgaben, und beseitigen Sie sofort die gelben Flecken, die Ihr Lächeln verderben. Beeindrucken Sie Ihre Mitmenschen und strahlen Sie Selbstvertrauen aus mit unserem V34 Farbkorrekturserum. Ihre Mitmenschen werden den blendenden Unterschied sicher bemerken!",
+        "imagefirst": "shopify:\/\/shop_images\/after.png",
+        "imagesnd": "shopify:\/\/shop_images\/bef.png",
+        "image1": "shopify:\/\/shop_images\/Non-Violent.webp",
+        "title1": "Sofortiges Ergebnis",
+        "richtext1": "<p>Erzielen Sie eine sofortige Aufhellung, damit Ihre Zähne jeden Tag weißer und strahlender aussehen.<\/p>",
+        "image2": "shopify:\/\/shop_images\/Easy-to-use.webp",
+        "title2": "Entfernt gelbe Flecken",
+        "richtext2": "<p>Violette Pigmente entfernen effektiv gelbe Flecken von Ihren Zähnen<\/p>",
+        "image3": "shopify:\/\/shop_images\/Peace-of-Mind.png",
+        "title3": "Keine Empfindlichkeit",
+        "richtext3": "<p>Nicht abrasive Formel für effektives Bleichen bei gleichzeitiger Schonung des Zahnschmelzes<\/p>",
+        "title4": "Natürliche Zutaten",
+        "richtext4": "<p>Zusammensetzung auf der Grundlage von natürlichen Produkten aus Pflanzen- und Kräuterextrakten<\/p>"
+      }
+    },
+    "25bbd1df-4c0b-48d1-8148-e19823385b4b": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>+17,500 Zufriedene Kunden haben hismile getestet, für gut befunden und lieben es<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entdecken Sie die echten Ergebnisse von <strong>+17,500 zufriedenen Kunden,<\/strong> die hismile für ein weißeres, strahlenderes Lächeln gewählt haben.<\/p>"
+          }
+        },
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-heading-1",
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-text-1",
+        "template--19557711216967__25bbd1df-4c0b-48d1-8148-e19823385b4b-button-1"
+      ],
+      "settings": {
+        "class-name": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "09b868a9-487c-4726-aef3-a5076b221678": {
+      "type": "After-before-carousal",
+      "blocks": {
+        "ccb672a0-b3d7-4fc8-9516-b9bfbb231883": {
+          "type": "Before",
+          "settings": {
+            "title": "Super Serum",
+            "name": "- Sophie B.",
+            "reviews": "<p>Es war schon bei der ersten Anwendung ein erstaunliches Ergebnis. Nach drei Anwendungen konnte ich einen großen Unterschied feststellen. Ich empfehle dieses Produkt allen, die ihr Perlweiß zurückgewinnen wollen!<\/p>"
+          }
+        },
+        "76d7499a-8eac-4b47-9ade-42719f969dce": {
+          "type": "Before",
+          "settings": {
+            "title": "Effektiv",
+            "name": "- Antoine T.",
+            "reviews": "<p>\"Ich habe es ein paar Tage lang ausprobiert, aber meine Zähne sind weiß geworden. Die Inhaltsstoffe sind sehr sicher und nicht reizend, und es erfrischt meinen Mund und meinen Atem\".<\/p>"
+          }
+        },
+        "90dfd120-2320-477f-9807-ef8584a93fed": {
+          "type": "Before",
+          "settings": {
+            "title": "Super für sensible Bereiche 👍.",
+            "name": "- Sylvie K.",
+            "reviews": "<p>\"Ich war anfangs zweifelhaft, ich benutze es für eine Woche und ich brauche nicht viele Worte das Bild selbst hat alles gesagt, ich habe keine Empfindlichkeit mit heiß oder kalt o kein Problem, ich liebe dieses Produkt wirklich.<\/p>"
+          }
+        },
+        "a5ca1085-006e-4d51-a49f-8dbd5f876c45": {
+          "type": "Before",
+          "settings": {
+            "title": "Mein bester Kauf des Jahres",
+            "name": "- Hugo F.",
+            "reviews": "<p>\"Spürbarer Unterschied in etwa einer Woche. Funktioniert gut für mich; täglicher Kaffeetrinker\".<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ccb672a0-b3d7-4fc8-9516-b9bfbb231883",
+        "76d7499a-8eac-4b47-9ade-42719f969dce",
+        "90dfd120-2320-477f-9807-ef8584a93fed",
+        "a5ca1085-006e-4d51-a49f-8dbd5f876c45"
+      ],
+      "settings": {
+        "title": "",
+        "center_desktop": false,
+        "center_mobile": false,
+        "review_text": "Before After",
+        "css": "cust_sec1"
+      }
+    },
+    "1ef69d1f-e428-4489-b287-e0ee1524f9d4": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "\"Zum fünften Mal ist hismile ein Opfer seines Erfolgs und kündigt an, dass V34, das Farbkorrekturserum, ausverkauft ist\".",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "\"Die Zahnaufhellung gelingt mit dem hismile Farbkorrekturserum besonders schnell und einfach\".",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "\"Die intensive Zahnaufhellungsbehandlung von hismile hat alle Teilnehmer unseres Tests beeindruckt\".",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-1",
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-2",
+        "template--19557711216967__1ef69d1f-e428-4489-b287-e0ee1524f9d4-column-3"
+      ],
+      "settings": {
+        "cclass": "quotes",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3d10d9d7-06c5-44f7-b904-193efa4ba244": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Dites À Dieu Aux Poils Incarnés",
+            "heading_size": "h1"
+          }
+        },
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Les poils incarnés apparaissent quand l'orifice pileux s'est obstrué ( poil non entièrement enlevé, peaux mortes..). Par conséquence, le poil ne parvient pas à sortir, et continue de pousser sous la peau.<\/p><p>Bloomie permet d'éviter l'apparition des poils incarnés grâce à sa technologie nano-cristalline. Elle enlève les poils à la racine, exfolie et enlève les peaux mortes permettant une repousse normale du poil, et révélant une peau douce, saine et lisse après utilisation.<\/p><p><\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Ajouter au panier",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-heading-1",
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-text-1",
+        "template--19557711216967__3d10d9d7-06c5-44f7-b904-193efa4ba244-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "im-class": "bloomie_sec",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-head": "Dites À Dieu Aux Poils Incarnés",
+        "mob-txt": "",
+        "mob_button_label": "Ajouter au panier",
+        "mob_button_link": "#",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "ceea7b4f-0799-45de-a375-95f98bddfb5c": {
+      "type": "video",
+      "settings": {
+        "heading": "<strong>Gewinnen Sie das Vertrauen in Ihr Lächeln zurück<\/strong>",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify:\/\/files\/videos\/SAVEINSTA.APP - 3059288697875092716 (1).mp4",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3309b03a-6f45-4724-8685-cdb611a1c9b1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19926064955730__3309b03a-6f45-4724-8685-cdb611a1c9b1-heading-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "template--19926064955730__3309b03a-6f45-4724-8685-cdb611a1c9b1-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Die Kombination aus zwei wasserlöslichen Farbstoffen hebt Gelbnuancen auf, sodass Sie das strahlendste Lächeln haben, ohne Rückstände zu hinterlassen.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--19926064955730__3309b03a-6f45-4724-8685-cdb611a1c9b1-heading-1",
+        "template--19926064955730__3309b03a-6f45-4724-8685-cdb611a1c9b1-text-1"
+      ],
+      "settings": {
+        "class-name": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "3069b9ae-1d87-4b32-bb56-380641b84d10": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Schritt 1<\/strong>",
+            "text": "<p>Tragen Sie das Serum auf Ihre Zahnbürste auf.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Schritt 2<\/strong>",
+            "text": "<p>Putzen Sie Ihre Zähne 2 bis 3 Minuten lang.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "<strong>Schritt 3<\/strong>",
+            "text": "<p>Spülen Sie Ihren Mund aus und entdecken Sie Ihr neues Lächeln!<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-1",
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-3",
+        "template--19557711216967__3069b9ae-1d87-4b32-bb56-380641b84d10-column-2"
+      ],
+      "settings": {
+        "cclass": "multi-review",
+        "title": "<strong>Einfache Nutzung in 3 Schritten<\/strong>",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "circle",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "shopify:\/\/pages\/avis",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "93ef7f7a-babe-455a-aaf8-3fc53b0ead33": {
+      "type": "comparison-table",
+      "blocks": {
+        "template--19407842378055__93ef7f7a-babe-455a-aaf8-3fc53b0ead33-heading-1": {
+          "type": "heading",
+          "settings": {
+            "point-des": "Schmerzlos",
+            "check-img": "shopify:\/\/shop_images\/check_1check-v1642658295149.png"
+          }
+        },
+        "11848c57-07c0-4d24-87cf-cb1304103157": {
+          "type": "heading",
+          "settings": {
+            "point-des": "Effektiv",
+            "check-img": "shopify:\/\/shop_images\/check_1check-v1642658295149.png"
+          }
+        },
+        "67b356ee-3501-47a1-9c49-d3f1955a26af": {
+          "type": "heading",
+          "settings": {
+            "point-des": "Instant",
+            "check-img": "shopify:\/\/shop_images\/check_1check-v1642658295149.png"
+          }
+        },
+        "e532b640-184f-42d0-ac87-9260e6e15eb5": {
+          "type": "heading",
+          "settings": {
+            "point-des": "Invasiv",
+            "cross-img": "shopify:\/\/shop_images\/check_1check-v1642658295149.png"
+          }
+        },
+        "4e0007f3-1e92-4298-95e7-ee7c38bdc698": {
+          "type": "heading",
+          "settings": {
+            "point-des": "Kostet teuer €",
+            "cross-img": "shopify:\/\/shop_images\/check_1check-v1642658295149.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--19407842378055__93ef7f7a-babe-455a-aaf8-3fc53b0ead33-heading-1",
+        "11848c57-07c0-4d24-87cf-cb1304103157",
+        "67b356ee-3501-47a1-9c49-d3f1955a26af",
+        "e532b640-184f-42d0-ac87-9260e6e15eb5",
+        "4e0007f3-1e92-4298-95e7-ee7c38bdc698"
+      ],
+      "settings": {
+        "css": "cust_sec2",
+        "heading-name": "Was macht hismile einzigartig?",
+        "points": "",
+        "main-prod-name": "hismile",
+        "compare-prod-name": "Andere"
+      }
+    },
+    "1698680297c71df112": {
+      "type": "apps",
+      "blocks": {
+        "e674323d-95c5-4bee-8548-b65ede52dd58": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "e674323d-95c5-4bee-8548-b65ede52dd58"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "b1aad811-7c2e-4104-87d7-7475c125cd2b": {
+      "type": "trust_slider",
+      "blocks": {
+        "3195de72-6875-43c7-9e95-9cf65e94144e": {
+          "type": "Review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stars_new_1.png",
+            "title": "Effektiv!",
+            "name": "Marion",
+            "date": "vor 4 Tagen",
+            "reviews": "<p>Wirklich einfach zu benutzen und super effektiv. Meine ganze Familie will es jetzt ausprobieren, ich habe das Gefühl, dass der hissige Weihnachtsmann viel zu früh vorbeikommen muss!!!<\/p>"
+          }
+        },
+        "27d0fef2-1695-40f0-916c-4d35c1326b59": {
+          "type": "Review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stars-4.5_450x450_2fb7cfd9-aa96-4a1a-8f3a-a0da1e8dff96_1.svg",
+            "title": "Empfiehlt sich für Raucher",
+            "name": "Océanne",
+            "date": "vor 9 Tagen",
+            "reviews": "<p>ich bin raucherin und habe schon viele bleichmittel ausprobiert, aber keines war so gut wie dieses. ich empfehle es rauchern sehr.<\/p>"
+          }
+        },
+        "8b9acf03-fb45-488c-87bd-fa5d38aeb95d": {
+          "type": "Review",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/stars-4.5_450x450_2fb7cfd9-aa96-4a1a-8f3a-a0da1e8dff96_1.svg",
+            "title": "Empfiehlt sich allen Frauen",
+            "name": "Julie",
+            "date": "29. August",
+            "reviews": "<p>Topissime !!! Ich empfehle es allen Frauen! Es tut weh!? nein, aber ich werde Sie nicht anlügen, es kostet ein bisschen Überwindung... aber im Vergleich zu den Schmerzen beim Epilieren bei der Kosmetikerin ist das völlig in Ordnung!<\/p>"
+          }
+        },
+        "59d29046-c11e-432d-b2b0-139735771fab": {
+          "type": "Review",
+          "disabled": true,
+          "settings": {
+            "title": "Offert par mon mari, satisfaite !🥰",
+            "name": "Nathalie",
+            "date": "27 Juillet",
+            "reviews": "<p>Très satisfaite, offert par mon mari un pur bijou pour une épilation parfaite et sans douleur<br\/>Il ne fais pas mal et surtout ne fais pas de poils incarnés. <br\/>Je vous le recommande vraiment !<\/p>"
+          }
+        },
+        "e13b5ab3-f9a5-450e-8ee5-f0a6498c9b12": {
+          "type": "Review",
+          "disabled": true,
+          "settings": {
+            "title": "Title",
+            "name": "",
+            "date": "",
+            "reviews": ""
+          }
+        }
+      },
+      "block_order": [
+        "3195de72-6875-43c7-9e95-9cf65e94144e",
+        "27d0fef2-1695-40f0-916c-4d35c1326b59",
+        "8b9acf03-fb45-488c-87bd-fa5d38aeb95d",
+        "59d29046-c11e-432d-b2b0-139735771fab",
+        "e13b5ab3-f9a5-450e-8ee5-f0a6498c9b12"
+      ],
+      "settings": {
+        "review_text": "+ 1793 überprüfte Meinungen",
+        "title": "Ausgezeichnet",
+        "imagelogo": "shopify:\/\/shop_images\/New_Project_3_3.png",
+        "imagestar": "shopify:\/\/shop_images\/New_Project_4_3.png"
+      }
+    },
+    "b3862909-72b1-4c24-9377-a4a8de154e93": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-1": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-2": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "db1d0d0a-ce10-4aee-92f5-39b0352e80e6": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-0",
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-1",
+        "template--19252732428615__b3862909-72b1-4c24-9377-a4a8de154e93-1689073515924db46f-2",
+        "db1d0d0a-ce10-4aee-92f5-39b0352e80e6"
+      ],
+      "disabled": true,
+      "settings": {
+        "cclass": "feat-img",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bd887717-aa40-4424-ae29-194bfa6fdacc": {
+      "type": "new-multi-bfr",
+      "disabled": true,
+      "settings": {
+        "component-class": "",
+        "heads": "+17,500 clientes ont retrouvéconfiance en elles",
+        "befores": "Avant",
+        "afters": "Apres",
+        "peras": "The Ultimate EMS Massager provides a unique combination of focused massage and vibration that can help alleviate and prevent any type of muscle complexion",
+        "heading1": "Réduit l'apparence \"peau de fraise\"",
+        "html": "\"Vérifiez que c'est bien le produit original Bloomie avant d'acheter. Je l'utilise depuis quelques mois déjà. Ça réduit l'effet peau de fraise et je suis agréablement surprise de Bloomie! \"               .<strong> \n- Marine F.<\/strong>",
+        "heading2": "Réduit l'apparence \"peau de fraise\"",
+        "html2": "\"Vérifiez que c'est bien le produit original Bloomie avant d'acheter. Je l'utilise depuis quelques mois déjà. Ça réduit l'effet peau de fraise et je suis agréablement surprise de Bloomie! \"               .<strong> \n- Marine F.<\/strong>",
+        "heading3": "Super pour zones sensibles 👍",
+        "html3": "\" Ça marche même pour les aisselles et maillot, super satisfaite merci ! \"<strong> - Sylvie K.<\/strong>"
+      }
+    },
+    "893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "VON ZAHNEXPERTEN MITENTWICKELT",
+            "heading_size": "h1"
+          }
+        },
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Das hismile V34 Zahnkorrekturserum wurde von Zahnexperten mitentwickelt und anschließend von der ONCD, dem Ordre National des Chirurgiens-Dentistes in Frankreich, klinisch getestet und zertifiziert.<br\/><br\/>Mit hismile haben Sie die Gewissheit einer 100% sicheren Anwendung in vollem Vertrauen.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-heading-1",
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-text-1",
+        "template--19557711216967__893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909-button-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 84
+      }
+    },
+    "62024b12-7284-48b5-98b0-5f4119936746": {
+      "type": "custom-image-with-range-slider",
+      "blocks": {
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ein weißeres Lächeln, du hast es verdient! 💜",
+            "heading_size": "h1"
+          }
+        },
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>gaben an, Komplimente über das Aussehen ihrer Zähne erhalten zu haben.<\/p>",
+            "range-value": "95",
+            "text_style": "body"
+          }
+        },
+        "4deebc0f-0b13-4f0b-a635-a240b3fa6dd5": {
+          "type": "text",
+          "settings": {
+            "text": "<p>bemerkten nach 10 Minuten eine deutliche Verbesserung nach der Verwendung des Korrekturserums V34<\/p>",
+            "range-value": "93",
+            "text_style": "body"
+          }
+        },
+        "b261c3cd-50e4-4501-a3ff-239496031e4d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>haben durch hismile neues Selbstvertrauen gewonnen<\/p>",
+            "range-value": "90",
+            "text_style": "body"
+          }
+        },
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-caption-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "* Résultats selon des études cliniques\/consommateurs. Pour plus d'informations, se référer à la page de chaque produit.",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Ich nutze meine kostenlose Testversion!",
+            "button_link": "shopify:\/\/products\/v34hismile",
+            "btn_add_cart": false,
+            "btn_cart_name": "Ajouter au panier"
+          }
+        },
+        "5fcb764f-fccd-4b9e-b02e-8b2f33ed7d01": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "range-value": "50",
+            "text_style": "body"
+          }
+        },
+        "76df690a-a911-4462-8e83-1beee17c36da": {
+          "type": "text",
+          "settings": {
+            "text": "<p>* Ergebnisse gemäß klinischer\/Verbraucherstudien. Weitere Informationen finden Sie auf der jeweiligen Produktseite.<\/p>",
+            "range-value": "",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-heading-1",
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-text-1",
+        "4deebc0f-0b13-4f0b-a635-a240b3fa6dd5",
+        "b261c3cd-50e4-4501-a3ff-239496031e4d",
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-caption-1",
+        "template--19926064955730__62024b12-7284-48b5-98b0-5f4119936746-button-1",
+        "5fcb764f-fccd-4b9e-b02e-8b2f33ed7d01",
+        "76df690a-a911-4462-8e83-1beee17c36da"
+      ],
+      "settings": {
+        "im-class": "image-range-slider sl-btn-click",
+        "custom-tab-video2": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Das könnte Sie auch interessieren...",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "d02511d2-b89d-4a7e-a6a8-05b1c39cd525": {
+      "type": "custom-review-section",
+      "blocks": {
+        "e1f79e79-71bb-409a-8d52-d33be9e7be1a": {
+          "type": "column_item",
+          "settings": {
+            "title": "Eine tolle Erfindung!",
+            "text": "<p>Das erste Mal, dass ich einen Concealer benutze und wirklich ein sehr guter Eindruck. Täglicher Gebrauch des Produkts, das meine Zähne weißer macht und Flecken entfernt. Keine Irritationen trotz sehr empfindlicher Zähne, ich kann es wirklich empfehlen.<\/p>",
+            "customer_details": "<p><strong>Stéphanie Durant<\/strong><\/p><p><strong>IG:<\/strong> stephaniedurant<\/p><p><strong>Abonnenten:<\/strong> 3.7M<\/p>"
+          }
+        },
+        "25e36ed9-11dd-4606-8d0b-02147ed5b9bb": {
+          "type": "column_item",
+          "settings": {
+            "title": "Ich empfehle",
+            "text": "<p>Ich empfehle es sehr für Kaffeesüchtige, der Unterschied ist schon bei der ersten Verwendung spürbar.<\/p>",
+            "customer_details": "<p><strong>Mastu<\/strong><\/p><p><strong>IG:<\/strong> mastuu_<\/p><p><strong>Abonniert: <\/strong>2.8M<\/p>"
+          }
+        },
+        "84ea9fc6-ffb2-4191-b489-04ed06093e7d": {
+          "type": "column_item",
+          "settings": {
+            "title": "Meine Erwartungen wurden übertroffen.",
+            "text": "<p>Sehr einfach zu verwenden, der Duft, die Farbe und die Ergebnisse sind top! Ich benutze es seit zwei Monaten einmal pro Woche und meine Zähne sind weißer, weicher und haben viel weniger Unreinheiten.<\/p>",
+            "customer_details": "<p><strong>Romane<\/strong><\/p><p><strong>IG: <\/strong>romy<\/p><p><strong>Abonnenten:<\/strong> 1.5M<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "e1f79e79-71bb-409a-8d52-d33be9e7be1a",
+        "25e36ed9-11dd-4606-8d0b-02147ed5b9bb",
+        "84ea9fc6-ffb2-4191-b489-04ed06093e7d"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "heading": "DIE GRÖSSTEN INFLUENCER DER GEGENWART MÖGEN HISMILE",
+        "icon_width": 66,
+        "section_bg": "#ffffff"
+      }
+    },
+    "06329581-6b6c-4d17-a963-1e8240a4a571": {
+      "type": "text-with-text",
+      "blocks": {
+        "339640bb-2b33-4848-bd3f-5155034551fb": {
+          "type": "heading",
+          "settings": {
+            "lheading": "Économisez du Temps et de l'Argent avec hismile !",
+            "lcontent": "<p> Pourquoi souffrir, perdre du temps et dépenser une fortune chez les dentistes pour un résultat qui n'est probablement pas garanti ...?  Avec hismile, tu peux obtenir des dents plus lumineuses rapidement et sans douleurs depuis le confort de chez toi, et sans gaspillez ton argent. Fais le choix intelligent et passes à hismile, la solution de blanchiment dentaire à la fois sûre et rentable.<\/p>",
+            "rheading": "<ul class=\"leaders\">\n    <li>\n<span class=\"descripcion\">Rasoir<\/span>\n     <span class=\"precio\">680€*<\/span>\n<\/li>\n    <li>\n<span class=\"descripcion\">Épilation<\/span>\n     <span class=\"precio\">3,450€*<\/span>\n<\/li>\n    <li>\n<span class=\"descripcion\">Laser<\/span>\n     <span class=\"precio\">3,900€*<\/span>\n<\/li>\n    <li class=\"nood-price\">\n<span class=\"descripcion\">Bloomie<\/span>\n     <span class=\"precio\">  34€ seulement!<\/span>\n<\/li>\n    \n    <\/ul>",
+            "rcontent": "<p>*Coût évalué sur 3 ans<\/p>\n<p>**Coût standard d'épilation en institut.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "339640bb-2b33-4848-bd3f-5155034551fb"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_padding_left": 20,
+        "section_padding_right": 20,
+        "custom_text_title": "",
+        "custom_text_body": ""
+      }
+    },
+    "8f59a994-ded2-4f82-b6c2-21f2b2318542": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Unsere Kunden sprechen am besten darüber<\/strong>.",
+            "heading_size": "h1"
+          }
+        },
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-heading-1",
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-text-1",
+        "template--19557711216967__8f59a994-ded2-4f82-b6c2-21f2b2318542-button-1"
+      ],
+      "settings": {
+        "class-name": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "8973d8e8-9614-4481-9c45-9c926146a37c": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hismile-Garantie",
+            "heading_size": "h1"
+          }
+        },
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>+17.500 Kunden haben hismile getestet, für gut befunden und für gut befunden. Wir sind zu 100% davon überzeugt, dass auch Sie hileism ab der ersten Anwendung lieben werden! Deshalb bieten wir Ihnen die Möglichkeit, hileism 30 Tage lang zu testen. Wenn Sie mit den Ergebnissen nicht 100%ig zufrieden sind, erstatten wir Ihnen den vollen Betrag zurück, ohne weitere Fragen zu stellen.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-heading-1",
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-text-1",
+        "template--19557711216967__8973d8e8-9614-4481-9c45-9c926146a37c-button-1"
+      ],
+      "settings": {
+        "im-class": "guarantee",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "6e22e4d6-73b2-4d69-9039-4e653fdeaf36": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Exklusiver Bloomie-Bonus!<\/strong>.",
+            "heading_size": "h1"
+          }
+        },
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Beim Kauf unseres Bloomie Originals® Epiliergeräts erhalten Sie das Ebook \"50 einfache und <\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-heading-1",
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-text-1",
+        "template--19557711216967__6e22e4d6-73b2-4d69-9039-4e653fdeaf36-button-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1772d3ad-d09f-4a39-a648-80c9067f04bb": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Was ist ein farbkorrigierendes Serum?",
+            "icon": "check_mark",
+            "row_content": "<p>Unser Serum verwendet eine Farbkorrekturtechnologie, um das Aussehen und den Farbton der Zähne tiefgreifend zu verbessern. Seine Formulierung beruht auf einem sorgfältigen Gleichgewicht zwischen zwei natürlichen, wasserlöslichen Farbstoffen, wodurch ein tiefer Violett-Ton entsteht, der bei der Zahnaufhellung sehr wirksam ist.<br\/><br\/>Dieses farbkorrigierende Serum eignet sich für alle, die ihre Zähne nach einer Bleichbehandlung noch weiter aufhellen möchten oder die bereits sehr weiße Zähne haben und keine umfassende Behandlung mit einem Bleaching-Kit benötigen. Die Oxidation von Zahnflecken über unser Serum erhöht die Helligkeit und verringert gleichzeitig die Sättigung der gelben Flecken. Gleichzeitig gleicht es die warmen und kalten Töne Ihrer Zähne aus und enthüllt so einen strahlenderen Weißton.<\/p>",
+            "page": ""
+          }
+        },
+        "acdf666f-ae10-4640-8647-fdbad553ffed": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wie lange bleiben meine Zähne weiß?",
+            "icon": "check_mark",
+            "row_content": "<p>Die Wirkung des farbkorrigierenden Serums ist in der Regel über einen Zeitraum von 6 bis 12 Monaten spürbar. Dennoch ist es wichtig, dass Sie nach der Anwendung eine regelmäßige Zahnpflege beibehalten. Es wird empfohlen, den Verzehr von potenziell färbenden Lebensmitteln wie Kaffee und Tee einzuschränken und das Rauchen zu vermeiden, um die Haltbarkeit der Ergebnisse zu gewährleisten.<\/p>",
+            "page": ""
+          }
+        },
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wie lange dauert es, bis meine Zähne weiß werden?",
+            "icon": "check_mark",
+            "row_content": "<p>In den meisten Fällen werden Sie bereits nach der ersten Anwendung sichtbare Ergebnisse erzielen. Der Bleicheffekt wird nach einer Woche regelmäßiger Anwendung verstärkt. Während dieser Zeit hilft die Aktivkohle dabei, die äußeren Verfärbungen von der Zahnoberfläche zu entfernen.<\/p>",
+            "page": ""
+          }
+        },
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Wann sollte ich es verwenden?",
+            "icon": "check_mark",
+            "row_content": "<p>Eine gelegentliche Anwendung (2-3 Mal pro Woche), am besten nach dem Zähneputzen, wird empfohlen. Unabhängig davon, ob Sie Ihre Zähne aufhellen oder ihr Weiß erhalten möchten.<\/p>",
+            "page": ""
+          }
+        },
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Stellt das Serum ein Risiko für meine Zähne dar?",
+            "icon": "check_mark",
+            "row_content": "<p>Die Formel unseres Serums ist natürlich und nicht abrasiv. Wir haben uns dafür entschieden, keine Peroxide zu verwenden. Peroxide sind nämlich sehr sauer und greifen die Zähne, den Zahnschmelz und das Zahnfleisch an. Dies macht die Zähne in der Regel überempfindlich und kann zu Irritationen führen.<\/p>",
+            "page": ""
+          }
+        },
+        "6ec244b5-abc5-4de7-a4dd-b8e9517aa55e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Kann ich sie mit Veneers, Implantaten oder Prothesen verwenden?",
+            "icon": "check_mark",
+            "row_content": "<p>Serum kann sicher bei Zahnbehandlungen verwendet werden, da es sich um eine nicht abrasive Form des Bleichens handelt. Wir empfehlen Ihnen jedoch, es nicht auf diesen Zähnen zu putzen, da nur natürliche Zähne korrigiert werden können.<br\/><br\/>Wir empfehlen Ihnen immer, vor der Anwendung eines Produkts Ihren Zahnarzt zu konsultieren, um sicherzustellen, dass es für Sie geeignet ist.<\/p>",
+            "page": ""
+          }
+        },
+        "5eab00e4-525d-4ec2-b5b6-a4330dc7c206": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Comment nettoyer Bloomie après utilisation?",
+            "icon": "check_mark",
+            "row_content": "<p>Après chaque utilisation, nettoyez votre épilateur Bloomie à la main sous l'eau afin de le débarrasser des peaux mortes et poils précédemment amassés. Conservez-le dans un endroit sec. <\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-0",
+        "acdf666f-ae10-4640-8647-fdbad553ffed",
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-1",
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-2",
+        "template--19252732428615__1772d3ad-d09f-4a39-a648-80c9067f04bb-1689578664dd597592-3",
+        "6ec244b5-abc5-4de7-a4dd-b8e9517aa55e",
+        "5eab00e4-525d-4ec2-b5b6-a4330dc7c206"
+      ],
+      "settings": {
+        "caption": "",
+        "sec-class": "product-faq",
+        "heading": "FAQ - Häufig gestellte Fragen",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16975237027ea0c6a9": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "79d7c212-f090-4adc-a294-3e4862fd7c02",
+    "25bbd1df-4c0b-48d1-8148-e19823385b4b",
+    "09b868a9-487c-4726-aef3-a5076b221678",
+    "1ef69d1f-e428-4489-b287-e0ee1524f9d4",
+    "3d10d9d7-06c5-44f7-b904-193efa4ba244",
+    "ceea7b4f-0799-45de-a375-95f98bddfb5c",
+    "3309b03a-6f45-4724-8685-cdb611a1c9b1",
+    "3069b9ae-1d87-4b32-bb56-380641b84d10",
+    "93ef7f7a-babe-455a-aaf8-3fc53b0ead33",
+    "1698680297c71df112",
+    "b1aad811-7c2e-4104-87d7-7475c125cd2b",
+    "b3862909-72b1-4c24-9377-a4a8de154e93",
+    "bd887717-aa40-4424-ae29-194bfa6fdacc",
+    "893d3b2e-ed93-4d54-8bd2-0d3f9f4bd909",
+    "62024b12-7284-48b5-98b0-5f4119936746",
+    "related-products",
+    "d02511d2-b89d-4a7e-a6a8-05b1c39cd525",
+    "06329581-6b6c-4d17-a963-1e8240a4a571",
+    "8f59a994-ded2-4f82-b6c2-21f2b2318542",
+    "8973d8e8-9614-4481-9c45-9c926146a37c",
+    "6e22e4d6-73b2-4d69-9039-4e653fdeaf36",
+    "1772d3ad-d09f-4a39-a648-80c9067f04bb",
+    "16975237027ea0c6a9"
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_saving": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true
+          }
+        },
+        "9d39b44e-49cc-4266-bfd4-b251efe3db10": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DHL-Logo.wine.svg",
+            "image_link": "",
+            "image_width": 24,
+            "image_alignment": "center"
+          }
+        },
+        "89427246-7b28-4a95-b372-76cfb324105e": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "9d39b44e-49cc-4266-bfd4-b251efe3db10",
+        "89427246-7b28-4a95-b372-76cfb324105e"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-1",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": true,
+        "show_pagination_mobile": false,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "header": "Shipping Information"
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "header": "Shipping & Return",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "bg_color": "",
+        "default_open": true
+      }
+    },
+    "9f2ea3a8-cd78-4972-a820-44dec5a93f83": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "f97d07ab-79ae-462b-89b3-8dbe99253b6d": {
+          "type": "item",
+          "settings": {
+            "header": "Tested Size Chart",
+            "content": "",
+            "content_page": "prod-size-chart",
+            "open": true
+          }
+        },
+        "f5753081-ea2c-4c65-b166-251068d5e7ac": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "header": "Tested Size Chart",
+            "custom_liquid": "<table style=\"width: 100%; max-width: 562px;\">\n<thead>\n<tr>\n<th style=\"width: 20%;\"><b>Size<\/b><\/th>\n<th style=\"width: 20%;\"><b>Body Length<\/b><\/th>\n<th style=\"width: 20%;\"><b>Neck<\/b><\/th>\n<th style=\"width: 20%;\"><b>Chest<\/b><\/th>\n<th style=\"width: 20%;\"> <b>Weight Range<\/b><\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td style=\"width: 20%;\"><strong>X-Small<\/strong><\/td>\n<td style=\"width: 20%;\">25 cm<\/td>\n<td style=\"width: 20%;\">25 cm<\/td>\n<td style=\"width: 20%;\">35 cm<\/td>\n<td style=\"width: 20%;\"><strong>1-3 kg<\/strong><\/td>\n<\/tr>\n<tr>\n<td style=\"width: 20%;\"><strong>Small<\/strong><\/td>\n<td style=\"width: 20%;\">30 cm<\/td>\n<td style=\"width: 20%;\">28 cm<\/td>\n<td style=\"width: 20%;\">40 cm<\/td>\n<td style=\"width: 20%;\"><strong>3-5 kg<\/strong><\/td>\n<\/tr>\n<tr>\n<td style=\"width: 20%;\"><strong>Medium<\/strong><\/td>\n<td style=\"width: 20%;\">35 cm<\/td>\n<td style=\"width: 20%;\">33 cm<\/td>\n<td style=\"width: 20%;\">50 cm<\/td>\n<td style=\"width: 20%;\"><strong>5-8 kg<\/strong><\/td>\n<\/tr>\n<tr>\n<td style=\"width: 20%;\"><strong>Large<\/strong><\/td>\n<td style=\"width: 20%;\">44 cm<\/td>\n<td style=\"width: 20%;\">38 cm<\/td>\n<td style=\"width: 20%;\">58 cm<\/td>\n<td style=\"width: 20%;\"><strong>8-12 kg<\/strong><\/td>\n<\/tr>\n<tr>\n<td style=\"width: 20%;\"><strong>X-Large<\/strong><\/td>\n<td style=\"width: 20%;\">50 cm<\/td>\n<td style=\"width: 20%;\">44 cm<\/td>\n<td style=\"width: 20%;\">70 cm<\/td>\n<td style=\"width: 20%;\"><strong>14-20 kg<\/strong><\/td>\n<\/tr>\n<tr>\n<td style=\"width: 20%;\"><strong>XX-Large<\/strong><\/td>\n<td style=\"width: 20%;\">58 cm<\/td>\n<td style=\"width: 20%;\">48 cm<\/td>\n<td style=\"width: 20%;\">78 cm<\/td>\n<td style=\"width: 20%;\"><strong>22-30 kg<\/strong><\/td>\n<\/tr>\n<\/tbody>\n<\/table>"
+          }
+        },
+        "525c316b-639a-47cd-b570-c70d105c6f35": {
+          "type": "item",
+          "settings": {
+            "header": "Materials & Pet Care",
+            "content": "",
+            "content_page": "prodtab-materials-clothing",
+            "open": false
+          }
+        },
+        "template--20431176728881__9f2ea3a8-cd78-4972-a820-44dec5a93f83-item-1": {
+          "type": "item",
+          "settings": {
+            "header": "Shipping Info",
+            "content": "",
+            "content_page": "shipping-info",
+            "open": false
+          }
+        },
+        "template--20431176728881__9f2ea3a8-cd78-4972-a820-44dec5a93f83-item-2": {
+          "type": "item",
+          "settings": {
+            "header": "30 Days Money Back",
+            "content": "",
+            "content_page": "money-back-policy",
+            "open": false
+          }
+        },
+        "eb36f151-4b9e-41d4-becc-1199ce77358e": {
+          "type": "item",
+          "settings": {
+            "header": "FAQs",
+            "content": "<h3>1. HOW DO I TRACK MY ORDER?<\/h3><p>We've actually made this super simple! You can <a href=\"https:\/\/yamyoop.com\/apps\/track123\"><span style=\"text-decoration:underline\">click here<\/span><\/a> to see the status of your order.<\/p><h3>2. HOW DO I RETURN SOMETHING?<\/h3><p>Please refer to our returns policy. Besides, <strong>MONEYBACK<\/strong> cannot accept returned products that have man-made damage. <\/p><h3>3. HOW DO I USE A COUPON CODE?<\/h3><p>Lucky you! To use your coupon code, add all of your glam goodies to your shopping cart and begin the checkout process. There will be a box to enter your code, then just click ”apply”. Please note that only one promotion code can be entered for a given order from <strong>www.yamyoop.com<\/strong>. Coupon code cannot be used for orders already placed.<\/p><h3>4. WHAT IF THE PRODUCTS I RECEIVED IS DAMAGED OR MISSING ITEMS?<\/h3><p>Please refer to our returns policy. Besides, We cannot accept returned products that have been used or man-made damage. <br\/>You must report damage or missing items within 3 business days of receipt by contacting us at <strong>hi@yamyoop.com<\/strong>You also must keep the original box & packing material in the event we open a claim with the carrier. In some cases, we may need a customer's help to confirm why this is happening. We appreciate your cooperation and patience through this process.<\/p><p>5. WHAT FORMS OF PAYMENT DO YOU ACCEPT?<\/p><p>Our checkout page accepts Visa, Mastercard, and PayPal as a form of payment.<\/p><h3>6. WHY DID I PAY FOR SEVERAL DAYS WITHOUT A TRACKING NUMBER?<\/h3><p>Your payment reaches our account on time, usually 10 minutes will arrive at our account, but this does not exclude special circumstances this process needs a few days, depending on the credit card payment platform.And please review the product page for the products you have ordered, which will indicate the inventory availability status of the product. Products that are out of stock will be shipped automatically once we receive additional inventory.<\/p>",
+            "content_page": "",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "f97d07ab-79ae-462b-89b3-8dbe99253b6d",
+        "f5753081-ea2c-4c65-b166-251068d5e7ac",
+        "525c316b-639a-47cd-b570-c70d105c6f35",
+        "template--20431176728881__9f2ea3a8-cd78-4972-a820-44dec5a93f83-item-1",
+        "template--20431176728881__9f2ea3a8-cd78-4972-a820-44dec5a93f83-item-2",
+        "eb36f151-4b9e-41d4-becc-1199ce77358e"
+      ],
+      "settings": {
+        "container": "container-narrow"
+      }
+    },
+    "46d63b52-dd05-40c5-a3f7-f288ad7c889d": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>\n<br>",
+        "custom_class": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container",
+        "heading": "You Might Also Like",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "heading": "Recently Viewed Products",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "16915192714cf1f903": {
+      "type": "apps",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "bfaa8707-a576-4526-8300-587ee54f5c81": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20431176728881__bfaa8707-a576-4526-8300-587ee54f5c81-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/STAFF_image.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "template--20431176728881__bfaa8707-a576-4526-8300-587ee54f5c81-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Get Staff Support",
+            "subheading": "",
+            "text": "<p>Give us a few details and we’ll offer the best solution. Connect by phone, chat, email, and more.<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "large",
+            "text_color": "black",
+            "button_label": "Start Now",
+            "button_link": "shopify:\/\/pages\/contact",
+            "button_style": "sf__btn-link",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20431176728881__bfaa8707-a576-4526-8300-587ee54f5c81-image-1",
+        "template--20431176728881__bfaa8707-a576-4526-8300-587ee54f5c81-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "product-details-tabs",
+    "9f2ea3a8-cd78-4972-a820-44dec5a93f83",
+    "46d63b52-dd05-40c5-a3f7-f288ad7c889d",
+    "product-recommendations",
+    "recent-viewed-products",
+    "16915192714cf1f903",
+    "bfaa8707-a576-4526-8300-587ee54f5c81"
+  ]
+}

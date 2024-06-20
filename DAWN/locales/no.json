@@ -1,0 +1,2764 @@
+{
+  "shopify": {
+    "sentence": {
+      "two_words_connector": " og ",
+      "last_word_connector": ", og "
+    },
+    "checkout": {
+      "general": {
+        "page_title": "Sjekk ut",
+        "error_page_title": "Feil",
+        "skip_to_content": "Hopp til innholdet",
+        "breadcrumb": "Brødsmule",
+        "continue_button_label": "Fortsette",
+        "complete_purchase_button_label": "Fullfør bestilling",
+        "pay_now_button_label": "Betal nå",
+        "authenticate_purchase_button_label": "Autentiser betaling",
+        "edit_link_label": "Redigere",
+        "all_rights_reserved": "Alle rettigheter forbeholdt %{shop_name}",
+        "print_policies_link_label": "Skrive ut",
+        "cart": "Handlevogn",
+        "close_modal_label": "Lukk",
+        "close_notice_label": "Lukk",
+        "expand_notice_label": "Se mer",
+        "continue_to_shipping_method": "Fortsett til frakt",
+        "continue_to_payment_method": "Fortsett å betale",
+        "continue_to_review": "Gjennomgå bestillingen",
+        "back_to_cart": "Gå tilbake til handlekurven",
+        "back_to_contact_information": "Gå tilbake til informasjon",
+        "back_to_shipping_method": "Gå tilbake til frakt",
+        "back_to_payment_method": "Gå tilbake til betaling",
+        "choose_shipping_method": "Velg en fraktmetode",
+        "choose_payment_method": "Velg en betalingsmetode",
+        "choose_billing_address": "Velg en faktureringsadresse",
+        "contact_us_html": "Kontakt oss for mer informasjon",
+        "autocomplete_title": "Forslag",
+        "autocomplete_single_item": "1 vare tilgjengelig",
+        "autocomplete_multi_item": "{{number}} varer tilgjengelig",
+        "autocomplete_close": "Lukk forslag",
+        "forwarding_indicator": {
+          "new_window": "Åpnes i et nytt vindu.",
+          "external": "Åpner ekstern nettside.",
+          "external_and_new_window": "Åpner ekstern nettside i nytt vindu."
+        },
+        "checkout_context": {
+          "step_one": "%{shop_name} – kassen"
+        },
+        "tooltip_accessibility_label": "Mer informasjon",
+        "errors": {
+          "session_identifier_not_unique_error": "Noe gikk galt med bestillingen din. Prøv å sjekke ut igjen.",
+          "line_item_limit_reached": "Maksimalt antall artikler er nådd."
+        },
+        "full_price": "Full pris:",
+        "title": "Kasse – {{shopName}}",
+        "full_title": "{{pageTitle}} - {{shopName}} - Kasse",
+        "loading_title": "Kasse – {{shopName}}",
+        "google_map_title": "Google Kart",
+        "submit_order_button_label": "Sende inn ordre",
+        "submit_for_review_button_label": "Send inn for vurdering",
+        "submit_for_review_notice_label": "Betaling forfaller ikke før bestillingen din er gjennomgått",
+        "continue_to_payment_plans_button_label": "Fortsett til betalingsplaner",
+        "back_button_label": "Komme tilbake",
+        "choose_delivery_strategy": "Velg en leveringsmetode",
+        "autocomplete_zero_item": "Ingen varer tilgjengelig",
+        "autocomplete_powered_by_google": "Drevet av {{brandName}}",
+        "submit": "Sende inn",
+        "processing": "Behandling…",
+        "stepper": {
+          "increase": "Øk {{type}}",
+          "decrease": "Reduser {{type}}",
+          "minimum_reached": "Minimum {{value}} er nådd",
+          "maximum_reached": "Maksimum på {{value}} er nådd"
+        },
+        "remove_item": "Fjern %{label}",
+        "remove_tag": "Fjern taggen",
+        "dates": {
+          "weekdays": {
+            "monday": "mandag",
+            "tuesday": "tirsdag",
+            "wednesday": "onsdag",
+            "thursday": "Torsdag",
+            "friday": "fredag",
+            "saturday": "lørdag",
+            "sunday": "søndag"
+          },
+          "weekdays_abbreviation": {
+            "tuesday": "ti",
+            "wednesday": "Vi"
+          },
+          "months": {
+            "january": "januar",
+            "february": "februar",
+            "march": "mars",
+            "may": "Kan",
+            "june": "juni",
+            "july": "juli",
+            "october": "oktober",
+            "december": "desember"
+          }
+        },
+        "datepicker": {
+          "show_previous_month": "Vis forrige måned, {{month}} {{year}}",
+          "show_next_month": "Vis neste måned, {{month}} {{year}}",
+          "range_start": "Rekkestart",
+          "in_range": "Innen rekkevidde",
+          "range_end": "Rekkevidde slutt"
+        }
+      },
+      "contact": {
+        "title": "Informasjon",
+        "address_title": "Adresse",
+        "shipping_used_as_billing_notice": "Dette vil også bli brukt som din faktureringsadresse for denne bestillingen.",
+        "delivery_option_title": "Leverings metode",
+        "contact_method_title": "Kontakt",
+        "email_label": "E-post",
+        "email_placeholder": "E-post",
+        "email_or_phone_label": "E-post eller mobilnummer",
+        "email_or_phone_placeholder": "E-post eller mobilnummer",
+        "stored_addresses_label": "Lagrede adresser",
+        "new_address_label": "Bruk en ny adresse",
+        "first_name_label": "Fornavn",
+        "optional_first_name_label": "Fornavn (valgfritt)",
+        "last_name_label": "Etternavn",
+        "company_label": "Selskap",
+        "optional_company_label": "Firma (valgfritt)",
+        "address1_label": "Adresse",
+        "address2_label": "Leilighet, suite osv.",
+        "optional_address2_label": "Leilighet, suite osv. (valgfritt)",
+        "city_label": "By",
+        "country_label": "Land\/region",
+        "country_code": "Lands-\/regionkode",
+        "province_label": "Provins",
+        "province_placeholder": "Provins",
+        "county_label": "fylke",
+        "county_placeholder": "fylke",
+        "state_label": "Stat",
+        "state_placeholder": "Stat",
+        "region_none": "Ingen valgt",
+        "prefecture_label": "Prefektur",
+        "prefecture_placeholder": "Prefektur",
+        "emirate_label": "Emirat",
+        "emirate_placeholder": "Emirat",
+        "state_and_territory_label": "Stat\/territorium",
+        "state_and_territory_placeholder": "Stat\/territorium",
+        "phone_label": "Telefon",
+        "optional_phone_label": "Telefon valgfritt)",
+        "phone_placeholder": "Telefon",
+        "phone_tooltip": "I tilfelle vi trenger å kontakte deg om bestillingen din",
+        "zip_code_label": "post kode",
+        "zip_code_placeholder": "post kode",
+        "postal_code_label": "Postnummer",
+        "postal_code_placeholder": "Postnummer",
+        "postcode_label": "postnummer",
+        "postcode_placeholder": "postnummer",
+        "pincode_label": "PIN-kode",
+        "pincode_placeholder": "PIN-kode",
+        "civic_number_warning": "Legg til et husnummer hvis du har et",
+        "optional_last_name_label": "Etternavn (valgfritt)",
+        "optional_recipient_label": "Oppmerksomhet (valgfritt)",
+        "different_shipping_address_label": "Send til en annen adresse",
+        "different_shipping_address_text": "Bruk en engangsadresse for denne bestillingen",
+        "change_company_location_link_label": "Endre bedriftens plassering",
+        "change_location_link_label": "Bytt sted",
+        "ship_to_company": "Send til {{companyName}}"
+      },
+      "shipping": {
+        "subscription_delivery_description": {
+          "recurring_order_shipping_price": "etterfulgt av %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "Første ordre inkludert, etterfulgt av %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} per levering), etterfulgt av %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "Første bestilling gratis",
+            "other": "Første %{count} bestillinger gratis"
+          },
+          "free_for_first_n_order": {
+            "one": "For første bestilling",
+            "other": "For første %{count} bestillinger"
+          },
+          "prepaid_delivery_frequency": {
+            "one": "for %{count} levering",
+            "other": "for %{count} leveranser"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "hver dag",
+              "other": "hver %{count} dag"
+            },
+            "week": {
+              "one": "hver uke",
+              "other": "hver %{count} uke"
+            },
+            "month": {
+              "one": "hver måned",
+              "other": "hver %{count} måned"
+            },
+            "year": {
+              "one": "hvert år",
+              "other": "hvert %{count} år"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} per levering",
+          "prepaid_shipping_price_label": "%{shipping_price} per levering x %{delivery_interval_count}",
+          "initial_order_discounted": "Først fraktkostnad %{discounted_shipping_cost}, deretter %{frequency_description}",
+          "prepaid_initial_order_discounted": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency}, deretter %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "Første fraktkostnad %{discounted_shipping_price} %{prepaid_delivery_frequency} (%{discounted_cost_per_delivery}), deretter %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "Inkludert"
+        },
+        "one_time_purchase_shipping": "Engangsfrakt",
+        "address2_add_label": "Legg til leilighet, suite osv.",
+        "duties_and_taxes_title": "Toll og skatter",
+        "shipping_information_required_notice": "Fraktinformasjon kreves. {{link}} .",
+        "shipping_information_redirect_link": "Skriv inn informasjonen din her",
+        "loading_progressive_rates": "Søker etter flere priser …",
+        "no_other_methods_available": "Ingen andre metoder tilgjengelig",
+        "duties_and_taxes_options": {
+          "ddu_title": "Betal ved levering",
+          "ddu_caption": "Ekstra avgifter kan påløpe",
+          "ddp_title": "Betal nå",
+          "ddp_caption": "Ingen tilleggsgebyrer ved levering"
+        },
+        "shipping_method_combinations": {
+          "combination": "%{rest} og %{current}"
+        },
+        "shipping_used_as_billing_notice": "Dette vil også bli brukt som din faktureringsadresse for denne bestillingen.",
+        "address_update": "Oppdater adressen",
+        "shipping_method_title": "Forsendelsesmetode",
+        "shipping_method_one_time_purchase_group_title": "Engangskjøp",
+        "shipping_method_subscription_group_title": "Abonnement",
+        "subscription_shipping": "Abonnementsfrakt",
+        "subscription_local_delivery": "Abonnement lokal levering",
+        "subscription_pickup": "Henting av abonnement",
+        "waiting_on_rate_notice": "Får tilgjengelige fraktpriser …",
+        "waiting_on_pickup_location_notice": "Får tilgjengelige hentesteder …",
+        "no_rates_for_cart_or_destination_notice": "Det er ingen tilgjengelige forsendelsesmetoder for handlekurven eller adressen din",
+        "no_pickup_location_notice": "Minst ett av produktene dine er ikke tilgjengelig for henting",
+        "no_rates_for_country_notice": "Fant ingen fraktpriser for denne adressen.",
+        "no_rates_contact_notice": "Kontakt oss for mer informasjon",
+        "free_rate_label": "Gratis",
+        "cheapest_rate_label": "Billigst",
+        "please_enter_your_shipping_information_notice": "Vennligst skriv inn fraktinformasjonen din.",
+        "estimated_delivery_date": {
+          "one": "%{count} virkedag",
+          "other": "%{count} virkedager"
+        },
+        "estimated_delivery_date_range": "%{minimum} til %{maximum} virkedager",
+        "estimated_delivery_time": "Beregnet leveringstid}",
+        "estimated_delivery_time_range": "Beregnet levering %{min_time}–%{max_time}",
+        "delivery_today": "Levering samme dag %{time}",
+        "delivery_tomorrow": "Levering neste dag %{time}",
+        "two_day_delivery": "2-dagers levering %{time}",
+        "delivery": "Leveringstid}",
+        "arrives_time": "Ankommer %{time}",
+        "arrives_time_range": "Ankommer %{min_time}–%{max_time}",
+        "estimated_time": "Anslått %{time}",
+        "estimated_time_range": "Anslått %{min_time}–%{max_time}",
+        "shipping_line_phone_label": "Mobilnummer (påkrevd)",
+        "shipping_line_phone": "Din kurer kan bruke dette nummeret til å kontakte deg.",
+        "shipping_line_delivery_phone_label": "Mobiltelefonnummer",
+        "shipping_line_delivery_phone": "Du kan bli kontaktet med oppdateringer om leveringen din.",
+        "optional_shipping_line_delivery_instructions_label": "Leveringsinstruksjoner (valgfritt)",
+        "shipping_line_delivery_instructions": "Skriv inn nødvendig informasjon som dørkoder eller avleveringsinstruksjoner.",
+        "other_method": {
+          "zero": "Ingen andre metoder tilgjengelig",
+          "one": "%{count} annen metode tilgjengelig på",
+          "other": "%{count} andre metoder tilgjengelig fra kl"
+        },
+        "shipping_rate_discounted_amount": "Var: %{original_amount}. Nå: %{amount}",
+        "local_delivery": "Lokal levering"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "Ytterligere informasjon"
+        }
+      },
+      "payment": {
+        "amazon_payments_login_hint": "Du vil bli bedt om å logge på med Amazon.",
+        "amazon_payments_logout": "Logg ut fra Amazon Pay",
+        "amazon_payments_failed_mfa_challenge": "Den valgte betalingsmåten kunne ikke brukes. Velg en annen metode eller kontakt banken eller kortutstederen din.",
+        "amazon_payments_abandoned_mfa_challenge": "Betalingen din kunne ikke fullføres. Prøv en annen betalingsmåte eller kontakt banken eller kortutstederen din.",
+        "amazon_payments_could_not_enqueue_authorize": "Det oppsto et problem under behandlingen av betalingen din. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "title": "innbetaling",
+        "amount_left_to_pay_label": "Betalings forfall:",
+        "discount_button_action_label": "Bruk rabattkode",
+        "gift_card_code_label": "Gavekortkode",
+        "apply_gift_card_button_label": "Søke om",
+        "gift_card_balance_label": "Balansere:",
+        "supported_card_brands_more_label": "og mer…",
+        "detected_card_brand": "Oppdaget kortmerke: {brand}",
+        "credit_card_vaulting_sign_in_banner_title": "Lagre kredittkortet ditt",
+        "credit_card_vaulting_sign_in_banner_info": "Logg inn eller opprett en konto for å lagre kredittkortet ditt for fremtidige kjøp.",
+        "credit_card_vaulting_sign_in_banner_button_label": "Logg Inn",
+        "ftd_vault_credit_card_label": "Lagre dette kredittkortet på kontoen min for en raskere utsjekking",
+        "card_number_label": "Kortnummer",
+        "card_number_placeholder": "Kortnummer",
+        "card_pay_with": "Betale med:",
+        "card_security_notice": "Alle transaksjoner er sikre og krypterte.",
+        "card_security_vault_notice": "Vi trenger dine opplysninger for fremtidige betalinger. Alle transaksjoner er sikre og krypterte.",
+        "card_information_notice": "Alle transaksjoner er sikre og krypterte. Kredittkortinformasjon lagres aldri.",
+        "name_on_card_label": "Navn på kort",
+        "name_on_card_placeholder": "Navn på kort",
+        "card_expired": "Utløpt",
+        "card_expiry_label": "Utløpsdato (MM \/ ÅÅ)",
+        "card_expiry_placeholder": "Utløpsdato (MM \/ ÅÅ)",
+        "credit_card_start_month": "Start måned",
+        "credit_card_start_year": "Startår",
+        "delete_customer_mandate_modal_title": "Vil du fjerne dette betalingskortet?",
+        "delete_customer_mandate_modal_body": "Hvis du fjerner dette kortet, må du legge det til på nytt før du bruker det til betalinger.",
+        "delete_customer_mandate_modal_confirm": "Fjern kortet",
+        "delete_customer_mandate_modal_cancel": "Avbryt",
+        "card_verification_value_label": "Sikkerhetskode",
+        "card_verification_value_placeholder": "Sikkerhetskode",
+        "card_verification_confirm": "For verifiseringsformål, vennligst skriv inn kortets sikkerhetskode.",
+        "card_expiry_date_explanation": "Kortets utløpsdato i format: måned, måned, år, år",
+        "card_expiration_month_label": "Utløpsmåned",
+        "card_expiration_year_label": "Utløpsår",
+        "card_verification_value_explanation": "3-sifret sikkerhetskode finnes vanligvis på baksiden av kortet ditt. American Express-kort har en 4-sifret kode på forsiden.",
+        "card_verification_value_explanation_amex": "4-sifret sikkerhetskode på forsiden av kortet ditt",
+        "card_verification_value_explanation_other": "3-sifret sikkerhetskode på baksiden av kortet ditt",
+        "card_start_label": "Utstedelsesdato (MM \/ ÅÅ)",
+        "card_start_placeholder": "Utstedelsesdato (MM \/ ÅÅ)",
+        "card_issue_number_label": "Utstedelsesnummer",
+        "card_issue_number_placeholder": "Utstedelsesnummer",
+        "card_change_label": "Endring",
+        "card_update_label": "Oppdater kortet",
+        "ends_with_label": "slutter med %{last_digits}",
+        "masked_digits_label": "•••• %{siste sifre}",
+        "payment_method_saved": "Betalingsmåten er lagret",
+        "card_vaulted_company_location": "Kortet er lagret for denne plasseringen",
+        "expiry_long": "(Utløper %{month}\/%{år})",
+        "expiry_short": "(Utløp %{month}\/%{år})",
+        "saved_by_payment_method": "Lagret av %{payment_method}",
+        "pay_with_payment_method": "Betal med %{payment_method}",
+        "different_credit_card_label": "Bruk et annet kredittkort",
+        "same_billing_address_label": "samme som leveringsadressen",
+        "different_billing_address_label": "Bruk en annen faktureringsadresse",
+        "billing_address_associated_with_mandate": "Bruk adressen knyttet til betalingsmåten",
+        "billing_address_associated_with_mandate_info": "Hvis du ønsker å endre faktureringsadressen din, vennligst fjern og skriv inn kredittkortopplysningene dine på nytt",
+        "free_order_notice_html": "Bestillingen din er <strong>gratis<\/strong> . Ingen betaling kreves.",
+        "express_checkout_free_order": "Du vil ikke bli belastet for en gratis bestilling",
+        "order_covered_by_gift_cards_notice": {
+          "one": "Bestillingen din dekkes av gavekortet ditt.",
+          "other": "Bestillingen din dekkes av gavekortene dine."
+        },
+        "offsite_gateway_redirect_hint": "Etter å ha klikket på «%{button_label}», blir du omdirigert til %{gateway_label} for å fullføre kjøpet på en sikker måte.",
+        "offsite_gateway_redirect_hint_multi_currency_html": "%{gateway_label} totalt %{total_shop_price}",
+        "receiver_payment_experience_hint": "Etter at du har lagt inn bestillingen din, vil du motta betalingsinformasjon. Foreta betalingen på Multibanco eller online innen %{due_days} dager.",
+        "billing_address_title": "Fakturaadresse",
+        "billing_address_description": "Velg adressen som samsvarer med kortet eller betalingsmåten.",
+        "billing_address_description_no_shipping_address": "Skriv inn adressen som samsvarer med kortet eller betalingsmåten.",
+        "no_js_credit_card_fields_redirect_hint": "Du vil bli omdirigert for å legge til betalingsinformasjonen din.",
+        "card_fields_container_prefix": "Feltbeholder for:",
+        "card_fields_unavailable_html": {
+          "one": "Kreditt- og debetkortbetalinger er ikke tilgjengelig akkurat nå.<br> <a href=\"%{current_url}\">Oppdater denne siden<\/a> eller prøv igjen senere.",
+          "other": "Kreditt- og debetkortbetalinger er ikke tilgjengelig akkurat nå.<br> <a href=\"%{current_url}\">Oppdater denne siden<\/a> eller prøv en annen betalingsmetode."
+        },
+        "markets_pro_disclaimer_terms_and_conditions_title": "Forhandlerens vilkår og betingelser",
+        "markets_pro_disclaimer_privacy_policy_title": "Personvernerklæring for selgere",
+        "purchase_order_number": {
+          "title": "Postnummer",
+          "label": "PO-nummer (valgfritt)"
+        },
+        "alternative_payment_currency_total_notice": "Merk: du vil bli belastet %{amount_due}.",
+        "waiting_on_taxes_message": "Hvis skatten din ikke beregnes innen de neste sekundene, oppdater siden.",
+        "waiting_on_taxes_notice": "Beregning av skatter",
+        "card_fields_processing_error": "Det oppsto et problem med å behandle betalingen. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din.",
+        "technical_error": "Betalinger kan ikke behandles akkurat nå på grunn av et teknisk problem. Prøv igjen om noen minutter.",
+        "no_method_error": "Denne butikken kan ikke godta betalinger akkurat nå.",
+        "not_configured_error": "Denne butikken kan ikke godta betalinger akkurat nå.",
+        "missing_credit_card_error": "Skriv inn kortdetaljene dine for å fullføre betalingen",
+        "billing_address_not_supported_for_payment_method_error": "Denne betalingsmåten er ikke tilgjengelig for faktureringsadressen og valutaen din. Prøv en annen betalingsmåte.",
+        "generic_incorrect_card_info": "Betalingsopplysningene dine kunne ikke bekreftes. Sjekk kortdetaljene dine og prøv igjen.",
+        "sofort_label": "Sofort bankoverføring",
+        "shop_pay_installments_label": "Handle Betal avdrag",
+        "paypal_modal": {
+          "order_contains_subscriptions": "Abonnement",
+          "order_contains_fixed_selling_plans": "Summen inkluderer kanskje ikke skatter, frakt, utsatte kostnader og enkelte rabatter. Fortsett å betale for beløpet som skal betales i dag."
+        },
+        "klarna_pay_later_label": "Betal senere med Klarna",
+        "klarna_pay_now_label": "Betal nå med Klarna",
+        "klarna_slice_it_label": "Økonomi med Klarna",
+        "purchase_options_card_update_agreement_label_html": "Ved å oppdatere betalingsmåten din godkjenner du betalinger for gjentakende eller utsatte kjøp i henhold til denne butikkens <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{cancellation_policy}\" href=\"%{policy_href}\">kanselleringspolicy<\/a> .",
+        "subscription_card_update_agreement_label": "Endring av betalingsmåte vil oppdatere abonnementet ditt og fremtidige gjentakende betalinger.",
+        "subscription_agreement_label": "Jeg forstår at jeg godtar et abonnement. Den fornyes til prisen og frekvensen som er oppført til den avsluttes eller %{cancelled}.",
+        "subscription_agreement_cancelled": "kansellert",
+        "subscription_agreement_label_html": "Jeg forstår at jeg godtar et abonnement. Den fornyes til prisen og frekvensen som er oppført til den slutter eller er\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">kansellert<\/a> .\n",
+        "purchase_options_agreement_label": "Jeg forstår at en eller flere varer i handlekurven min er et utsatt eller tilbakevendende kjøp. Ved å fortsette godtar jeg %{cancellation_policy_label} og gir deg tillatelse til å belaste betalingsmåten min til prisene, frekvensen og datoene som er oppført på denne siden, inntil bestillingen min er utført eller jeg kansellerer, hvis det er tillatt.",
+        "purchase_options_agreement_label_html": "Jeg forstår at en eller flere varer i handlekurven min er et utsatt eller tilbakevendende kjøp. Ved å fortsette godtar jeg\n <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{subscription_policy}\" href=\"%{policy_href}\">avbestillingsregler<\/a>\n og autorisere deg til å belaste betalingsmåten min til prisene, frekvensen og datoene som er oppført på denne siden frem til min\n bestillingen er oppfylt eller jeg kansellerer, hvis det er tillatt.\n",
+        "change_currency_section_description": "Velg et valutaalternativ",
+        "no_real_orders_dev_store": "Denne butikken kan ikke akseptere ekte bestillinger eller ekte betalinger.",
+        "waiting_on_payment_methods": "Får tilgjengelige betalingsmåter...",
+        "apple_pay_payment_error": "Betalingen din kunne ikke fullføres. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "taxes_not_included": "Skatter ikke inkludert",
+        "no_taxes_banner_content": "Avgifter vil ikke bli belastet for denne bestillingen. Når du har samlet inn betalingen, kan det ikke lenger legges til skatter.",
+        "paypal": {
+          "connect": "Klikk for å koble til PayPal-kontoen din"
+        },
+        "apple": {
+          "connect": "Klikk for å koble til Apple Pay-kontoen din",
+          "not_available": "Apple Pay er ikke tilgjengelig i denne nettleseren. For å koble til Apple Pay-kontoen din må du bruke Safari på en Apple-enhet."
+        },
+        "google": {
+          "connect": "Klikk for å koble til Google Pay-kontoen din",
+          "error_authorizing": "Feil ved autorisering av betaling"
+        },
+        "account_connected": "Konto tilkoblet.",
+        "mor_disclaimer_html": "Ved å klikke nedenfor og fullføre bestillingen, godtar du å kjøpe varen(e) fra Global-e som registrert selger\n for denne transaksjonen, på Global-e sine <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{mor_terms}\" href=\"%{terms_href}\">vilkår og betingelser<\/a>\n og <a class=\"link--small\" data-modal=\"true\" data-title-text=\"%{privacy_policy}\" href=\"%{policy_href}\">retningslinjer for personvern<\/a> . Global-e er en internasjonal\n tjenesteleverandør til %{shop_name}\n",
+        "pending_payment": {
+          "due_notice": "Betalingen din på %{amount_due} forfaller %{due_date}.",
+          "multibanco": {
+            "instruction_html": "Foreta betalingen din på Multibanco eller online ved å bruke detaljene nedenfor. For spørsmål eller for å oppdatere betalingsdetaljer, %{contact_us}.",
+            "entity": "Entitet",
+            "reference": "Henvisning",
+            "amount": "Beløp",
+            "find_nearest_atm": "Finn nærmeste minibank"
+          }
+        },
+        "update_payment_method": "Oppdater betalingsmåten",
+        "order_covered_by_store_credit_notice": "Bestillingen din dekkes av butikkkreditten din.",
+        "order_covered_by_redeemables_notice": "Bestillingen din er dekket.",
+        "store_credit": {
+          "label": "Butikkreditt",
+          "apply_label": "Bruk butikkkreditt"
+        },
+        "clear": "Klar",
+        "billing_must_match_shipping_notice": "Betalingsmetodens faktureringsadresse må samsvare med leveringsadressen.",
+        "same_billing_address_checkbox_label": "Bruk leveringsadresse som faktureringsadresse",
+        "location_billing_address_label": "Steds faktureringsadresse",
+        "fact_billing_address_label": "Fakturaadresse",
+        "location_shipping_address_label": "Sted leveringsadresse",
+        "no_working_method_error": "Denne butikken kan ikke godta betalinger akkurat nå. Oppdater denne siden eller kom tilbake senere.",
+        "brand_not_available": "Denne butikken godtar ikke {{brand}} . Bruk et annet kort for å betale.",
+        "shipping_rate_updated": "Tilgjengelige fraktmetoder er oppdatert. Bekreft valget før du sjekker ut.",
+        "billing_address_invalid_phone": "Oppdater telefonnummeret i faktureringsadressen for {{label}} {{last_digits}} for å fortsette.",
+        "billing_address_invalid_phone_no_card": "Oppdater telefonnummeret i faktureringsadressen din for å fortsette.",
+        "preview_not_available": {
+          "title": "Forhåndsvisning ikke tilgjengelig",
+          "content": "Ikke bekymre deg, denne ekspresskassen fungerer for kundene dine."
+        },
+        "card_fields": {
+          "errors": {
+            "required": {
+              "issue_date": "Angi en gyldig utstedelsesdato",
+              "issue_number": "Skriv inn et gyldig problemnummer"
+            },
+            "invalid": {
+              "verification_value": "Skriv inn en gyldig CVV eller sikkerhetskode"
+            }
+          }
+        },
+        "simulated_checkout": "Forhåndsvisning kommer snart",
+        "vaulting_agreement_label": "Lagre betalingsinformasjonen min hos %{company} for en raskere utsjekking.",
+        "business_customer_vaulting_payment_label": "Lagre dette kortet ved utsjekking og autoriser %{company} til å belaste dette kortet for fremtidige kjøp for dette stedet. Enhver kontakt som er tildelt dette stedet er autorisert til å bruke dette kortet.",
+        "purchase_options_and_vaulting_agreement_label": "En eller flere varer i handlekurven din er et utsatt eller tilbakevendende kjøp. Ved å fortsette med betalingen godtar du at betalingsmåten din automatisk belastes med prisen og frekvensen som er oppført på denne siden til den avsluttes eller du kansellerer. Alle kanselleringer er underlagt %{cancellation_policy_label}.",
+        "purchase_options_cancellation_policy_label": "avbestillingsregler",
+        "use_different_credit_card_label": "Bruk et annet kort",
+        "saved_credit_card": "Ditt lagrede kredittkort",
+        "saved_credit_card_info": "Siste fire sifre",
+        "saved_credit_cards_modal": {
+          "view_all_label": "Se alle lagrede kort",
+          "done": "Ferdig",
+          "cancel": "Avbryt"
+        },
+        "expired_cards_info": {
+          "one": "Det er %{count} utløpt kort, som du kan se og redigere i kontoen din.",
+          "other": "Det er %{count} utløpte kort, som du kan se og redigere i kontoen din."
+        },
+        "local_payment_method_receiver_notice": "Etter at du har lagt inn bestillingen din, vil du motta betalingsinformasjon. Foreta betalingen i en minibank eller online innen {{dueDays}} dager.",
+        "order_edit_banner_title": "Betaling på {{amount_owed}} er nødvendig",
+        "order_edit_banner_subtitle": "Bestillingen din {{order_number}} ble oppdatert. Se gjennom disse endringene, og betal deretter for å bekrefte bestillingen din.",
+        "order_edit_banner_single_item_added": "La til",
+        "order_edit_banner_multiple_items_added": "{{amount}} lagt til",
+        "order_edit_banner_single_item_removed": "Fjernet",
+        "order_edit_banner_multiple_items_removed": "{{amount}} fjernet",
+        "order_edit_banner_single_item_returned": "Returnert",
+        "order_edit_banner_multiple_items_returned": "{{amount}} returnert",
+        "gift_card_wrapper": {
+          "heading": "Gavekort",
+          "apply_gift_card_label": "Bruk et gavekort",
+          "payment_tag": "Gavekort"
+        },
+        "custom_onsite_payment_method_modal": {
+          "title": "Tilpasset betalingsbekreftelse på stedet"
+        },
+        "markets_pro_disclaimer_label": "Ved å klikke nedenfor og fullføre bestillingen, godtar du å kjøpe varene dine fra Global-e som registrert selger for denne transaksjonen, på Global-e sine %{markets_pro_terms} og %{privacy_policy}. Global-e er en internasjonal tjenesteleverandør til %{shop_name}",
+        "markets_pro_disclaimer_terms_and_conditions": "Vilkår og betingelser",
+        "markets_pro_disclaimer_privacy_policy": "Personvernerklæring"
+      },
+      "wallets": {
+        "payment_in_progress_body": "Betalingen din blir behandlet. Bestillingen din vil snart bli fullført.",
+        "call_to_action": "Betal med {{walletName}}",
+        "redirection_notice": "Etter å ha klikket på \" {{buttonLabel}} \", vil du bli omdirigert til {{walletName}} for å fullføre kjøpet på en sikker måte.",
+        "errors": {
+          "unavailable": {
+            "title": "{{walletName}} er ikke tilgjengelig",
+            "description": "{{walletName}} var ikke tilgjengelig. Bruk en annen betalingsmåte eller prøv igjen senere.",
+            "instructions": "Det var et problem med {{walletName}} . Gå tilbake til butikken for å prøve igjen eller sjekk ut på en annen måte."
+          },
+          "generic": "Det var et problem med {{walletName}} . Prøv på nytt eller bruk en annen betalingsmetode.",
+          "terminal": "Det var et problem med {{walletName}} . Vennligst bruk en annen betalingsmetode.",
+          "detour": {
+            "stock_problems": "Noen varer er ikke lenger tilgjengelig. Lukk {{walletName}} og prøv igjen.",
+            "price_change": "Noen varepriser er endret. Lukk {{walletName}} for å se gjennom bestillingen din og prøv på nytt.",
+            "queue": "Du har blitt plassert i kø til kassen. Lukk {{walletName}} for å fortsette."
+          },
+          "unsupported": {
+            "address": "Selgeren kan ikke levere til denne adressen",
+            "postal_code": "Denne plasseringen støttes ikke"
+          },
+          "outdated": {
+            "shipping_method": "Fraktalternativene er endret for bestillingen din. Se gjennom valget ditt."
+          },
+          "invalid": {
+            "shipping_address": "Skriv inn en gyldig leveringsadresse",
+            "billing_address": "Skriv inn en gyldig faktureringsadresse",
+            "shipping_option": "Velg et gyldig fraktalternativ",
+            "email": "Skriv inn en gyldig e-post",
+            "zone": "Angi en gyldig stat\/provins",
+            "postal_code": "Skriv inn et gyldig postnummer",
+            "reduction_code": "Skriv inn en gyldig rabattkode eller gavekort"
+          },
+          "missing": {
+            "first_name": "Skriv inn et fornavn",
+            "last_name": "Skriv inn et etternavn",
+            "address1": "Skriv inn en adresse",
+            "address2": "Gå inn i en leilighet, suite osv.",
+            "city": "Skriv inn en by",
+            "province": "Velg en stat\/provins",
+            "country": "Velg et land\/region",
+            "zip": "Skriv inn et postnummer",
+            "phone": "Skriv inn et telefonnummer"
+          },
+          "formatting": {
+            "name_contains_emojis": "Slett emoji fra navnet ditt",
+            "postal_code_contains_emoji": "Slett emoji fra postnummeret ditt",
+            "first_name_too_long": "Fornavnet inneholder for mange bokstaver",
+            "last_name_too_long": "Etternavnet inneholder for mange bokstaver"
+          }
+        },
+        "return_to_store": "Gå tilbake til butikken",
+        "redirect_hint": "Du vil bli bedt om å logge på med {{walletName}} .",
+        "logged_in": "Koblet til {{email}}",
+        "payment_in_progress_title": "Betaling pågår"
+      },
+      "review": {
+        "blocks": {
+          "shipping_address_title": "Send til",
+          "shipping_method_title": "Metode",
+          "payment_method_title": "innbetaling",
+          "change_link_label": "Endring",
+          "change_contact_method_link_label": "Endre kontaktinformasjon",
+          "change_billing_address_link_label": "Endre faktureringsadresse",
+          "change_shipping_address_link_label": "Endre leveringsadresse",
+          "change_shipping_method_link_label": "Endre fraktmetode",
+          "change_payment_method_link_label": "Endre betalingsmåte",
+          "pick_up_in_store_shipping_method_html": "Hent i butikk · %{location_name}",
+          "purchase_order_number_title": "Postnummer",
+          "change_purchase_order_number_label": "Endre PO-nummer",
+          "change_delivery_method_link_label": "Endre leveringsmåte",
+          "no_address": "(Ingen adresse)",
+          "no_purchase_order_number": "(Ingen PO-nummer)",
+          "due_after_order_reviewed_html": "Forfaller etter at bestillingen er gjennomgått"
+        },
+        "block_title": "gjennomgå informasjonen din"
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "Send meg en e-post med nyheter og tilbud",
+        "post_accept_marketing_checkbox_label": "Du abonnerer på å motta nyheter og tilbud på e-post",
+        "pending_accept_marketing_checkbox_label": "Sjekk e-posten din for å bekrefte abonnementet på nyheter og tilbud",
+        "accept_sms_checkbox_label": "Send meg en melding med nyheter og tilbud",
+        "sms": {
+          "disclaimer": {
+            "privacy_policy": "Personvernerklæring",
+            "terms_of_service": "Vilkår for bruk",
+            "description_html": "Ved å registrere deg via tekst, godtar du å motta tilbakevendende automatiserte markedsføringsmeldinger, inkludert handlekurvpåminnelser, på telefonnummeret som er oppgitt. Samtykke er ikke en betingelse for kjøp. Svar STOP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Meldings- og datatakster kan gjelde. Se %{privacy_policy_link} og %{terms_of_service_link}.",
+            "description_transactional_html": "Du kan motta tekstmeldinger relatert til ordrebekreftelse og fraktoppdateringer. Svar STOP for å avslutte abonnementet. Svar HJELP for hjelp. Meldingsfrekvensen varierer. Meldings- og datatakster kan gjelde. Se våre %{privacy_policy_modal_link} og %{terms_of_service_modal_link}."
+          },
+          "mobile_phone_number": "Mobiltelefonnummer",
+          "get_offers_by_text": "Få tilbud på sms"
+        },
+        "unsubscribe": {
+          "title": "Du har avsluttet abonnementet",
+          "description": "Du vil ikke motta flere handlekurvpåminnelser fra oss."
+        },
+        "accept_shop_pay_marketing_checkbox_label": "Registrer meg for nyheter og tilbud fra denne butikken"
+      },
+      "shop_policies": {
+        "refund_policy": "Angrerett",
+        "privacy_policy": "Personvernerklæring",
+        "terms_of_service": "Vilkår for bruk",
+        "legal_notice": "Juridisk varsel",
+        "shipping_policy": "Fraktpolicy",
+        "terms_of_sale": "Salgsbetingelser",
+        "subscription_policy": "Regler for abonnement",
+        "purchase_options_policy": "Retningslinjer for kjøpsalternativer",
+        "contact_information": "Kontaktinformasjon",
+        "purchase_options_cancellation_policy": "Avbestillingsregler"
+      },
+      "mor_policies": {
+        "terms_and_conditions": "Forhandlerens vilkår og betingelser",
+        "privacy_policy": "Personvernerklæring for selgere"
+      },
+      "markets": {
+        "invalid_market_manager_error": "Se gjennom kontaktinformasjonen din før du fullfører betalingen"
+      },
+      "notifications": {
+        "title": "Varsler"
+      },
+      "order_payment_collection": {
+        "custom_line_item_description": "Beløp å betale for ordre %{order_name}",
+        "changes_summary": {
+          "added": {
+            "one": "La til",
+            "other": "%{count} lagt til"
+          },
+          "removed": "Fjernet",
+          "subtracted": "%{count} fjernet",
+          "returned": "%{count} returnerte"
+        },
+        "additional_payment_requested": "Betaling på %{total_outstanding} er nødvendig",
+        "checkout_review_and_pay": "Bestillingen din %{order_name} ble oppdatert. Se gjennom disse endringene, og betal deretter for å bekrefte bestillingen din.",
+        "order_updated_on": "Bestillingen din ble oppdatert %{last_edited_at}.",
+        "order_review_and_pay": "Bestillingen din ble oppdatert. Se gjennom og betal for å bekrefte bestillingen din.",
+        "pay_now": "Betal nå"
+      },
+      "change_currency": {
+        "credit_card_will_be_charged_html": "Kredittkortet ditt vil bli belastet %{amount}",
+        "payment_total_label": "Betaling totalt",
+        "change_currency_link": "Endre til %{currency_name}",
+        "card_provider_fx_charges_warning": "Kortleverandøren din kan kreve gebyrer på %{currency_code}-transaksjoner.",
+        "currency_not_supported_by_shop": "Valutaen du valgte er ikke lenger tilgjengelig. Alle priser er nå i %{currency_code}."
+      },
+      "change_country": {
+        "cart_updated_based_on_country": "Handlekurven din har blitt oppdatert basert på fraktlandet ditt.",
+        "cart_and_currency_updated_based_on_country": "Handlekurven og valutaen din er oppdatert basert på fraktlandet ditt."
+      },
+      "change_cart_localization": {
+        "verify_shipping_address": "Landet\/regionen din er oppdatert. Skriv inn leveringsadressen din for å fortsette utsjekkingen."
+      },
+      "tips": {
+        "title": "Legg til tips",
+        "description": "Vis din støtte til teamet på %{shop_name}",
+        "presets_description": "Velg en tipsprosent",
+        "custom_label": "Egendefinert tips",
+        "add_tip": "Legg til tips",
+        "update_tip": "Oppdateringstips",
+        "message": "Takk, vi setter pris på det.",
+        "no_tip_label": "Ingen"
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "zero": "Kjøp %{product_name}",
+          "one": "Kjøp %{product_name} og %{count} annen vare",
+          "other": "Kjøp %{product_name} og %{count} andre varer"
+        }
+      },
+      "subscriptions": {
+        "recurring_total_intervals": {
+          "day": {
+            "one": "dag",
+            "other": "%{count} dager"
+          },
+          "week": {
+            "one": "uke",
+            "other": "%{count} uker"
+          },
+          "month": {
+            "one": "måned",
+            "other": "%{count} måneder"
+          },
+          "year": {
+            "one": "år",
+            "other": "%{count} år"
+          }
+        },
+        "recurring_totals": "%{total_price} hver %{interval}",
+        "recurring_totals_with_initial_order_shipping_discount": "Første betaling %{total_price_with_discount}, deretter %{recurring_total}",
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "one": "Første betaling %{total_price}",
+            "other": "Første %{count} betalinger %{total_price} hver"
+          },
+          "following_cycles": ", deretter %{total_price} hver %{intervall}"
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "one": ", deretter %{count} betaling til %{total_price}",
+            "other": ", deretter %{count} betalinger til %{total_price} hver"
+          }
+        }
+      },
+      "customer_payment_methods": {
+        "page_title": "Betalingsmetoder",
+        "title": "Betalingsmetoder",
+        "update_card_button_label": "Oppdater kortet",
+        "delete_customer_mandate": {
+          "generic_error": "Det oppsto et problem under behandlingen av forespørselen din.",
+          "success_message": "Betalingsmåten din er slettet"
+        }
+      },
+      "throttle": {
+        "too_many_attempts": {
+          "message": "For mange forsøk",
+          "description": "Vennligst prøv igjen om noen minutter"
+        },
+        "line_to_check_out": "Du står i kø for å sjekke ut",
+        "cart_summary_heading": "Handlevognen din",
+        "merchandise": {
+          "available": "Tilgjengelig",
+          "sold_out": "Utsolgt"
+        },
+        "inventory": {
+          "partial_inventory_banner": "En del av handlekurven din er utsolgt og vil ikke være tilgjengelig for kjøp i kassen.",
+          "sold_out": {
+            "heading": "Handlevognen din er utsolgt",
+            "storefront_body": "Gå tilbake til butikken for å fortsette å handle",
+            "no_storefront_body": "Dessverre er varen du ønsker å kjøpe ikke lenger tilgjengelig.",
+            "link": "Tilbake til butikken"
+          }
+        },
+        "title": "Kø",
+        "time_to_checkout_title": "På tide å sjekke ut – {{shopName}}",
+        "estimated_wait_time": {
+          "calculating": "Beregner estimert ventetid",
+          "less_than_one": "Estimert ventetid: Mindre enn ett minutt",
+          "one": "Beregnet ventetid: {{count}} minutt",
+          "other": "Estimert ventetid: {{count}} minutter"
+        },
+        "last_checked": "(Sist sjekket: {{time}} )",
+        "footer": {
+          "heading": "Ikke oppdater denne siden, den oppdateres automatisk.",
+          "body": "Varer i handlekurven din er ikke reservert før du fullfører kassen."
+        }
+      },
+      "cart_checkout_validation": {
+        "runtime_error": "Det oppsto et problem med å behandle forespørselen din. Ta kontakt med butikkeieren."
+      },
+      "no_address_location": {
+        "title": "Sted uten adresse",
+        "header": "Du har ingen leveringsadresse for dette stedet",
+        "alt_header": "Mangler leveringsadresse",
+        "message": "Kontakt oss for å legge til en adresse for dette stedet for å fullføre kassen.",
+        "email_us_button_label": "Send oss ​​en e-post"
+      },
+      "order_errors": {
+        "creation_failure": "Det oppsto et problem med å opprette bestillingen din. Prøv igjen, eller kontakt oss for mer informasjon.",
+        "network_failure": "Bestillingen din kunne ikke sendes på grunn av en nettverksfeil. Sjekk tilkoblingen og prøv igjen."
+      },
+      "session_errors": {
+        "session_not_unique": "Det oppsto et problem under behandlingen av bestillingen din. Oppdater denne siden for å gå tilbake til butikken.",
+        "session_already_finished": "Denne bestillingen er allerede sendt inn. Du kan gå tilbake til butikken for å starte en ny bestilling."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "Lukket",
+        "business_hours": "Åpningstider",
+        "title": "Hentested",
+        "or": "eller",
+        "search_button": "Søk",
+        "selector_tabs": "Velger for hentepunkt",
+        "selector_tab_map": "Kart",
+        "selector_tab_list": "Liste",
+        "could_not_resolve_address": "Kunne ikke finne adressen din. Prøv på nytt eller bruk en annen adresse",
+        "no_pickup_points_near_you": "Ingen hentepunkter funnet i nærheten av den valgte adressen",
+        "no_pickup_points_near_location": "Ingen hentepunkter funnet i nærheten av din plassering",
+        "no_pickup_points_found": "Ingen hentepunkter funnet",
+        "paginator": {
+          "next_accessibility_label": "Neste side",
+          "previous_accessibility_label": "Forrige side",
+          "header": {
+            "one": "Viser %{first} - %{last} av %{count} poeng",
+            "other": "Viser %{first} - %{last} av %{count} poeng"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} av %{count} poeng",
+            "other": "%{pickup_point_index} av %{count} poeng"
+          },
+          "selected_page": {
+            "one": "%{first} – %{last} av %{count} poeng",
+            "other": "%{first} – %{last} av %{count} poeng"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} hentepunkt nær posisjonen din",
+          "other": "%{count} hentepunkter i nærheten av stedet ditt"
+        },
+        "change": "Endring",
+        "waiting_on_pickup_point_location_notice": "Søker etter hentepunkter...",
+        "geolocation": {
+          "shared_location_button": "Bruk posisjonen min",
+          "errors": {
+            "unsuported_by_browser": "Å få geolokalisering støttes ikke av nettleseren din. Prøv på nytt eller bruk en annen nettleser.",
+            "permission_not_allowed": "Tillat deling av posisjonen din.",
+            "permission_denied": "Kunne ikke finne posisjonen din. Prøv igjen."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "Det var et problem med kassen vår",
+          "message": "Oppdater denne siden eller prøv igjen om noen minutter",
+          "action": {
+            "cta": "Oppdater side"
+          },
+          "request_id": "Forespørsels-ID: {{requestId}}"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "Gå tilbake til handlekurven",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} for å oppdatere mengdene",
+        "subscription_changed": "Ett av abonnementene dine er endret.",
+        "company_location_changed": "Handlekurven din har blitt oppdatert. Se gjennom bestillingen din før du sender den.",
+        "company_location_changed_product_removed": "Handlekurven din har blitt oppdatert fordi noen produkter ikke er tilgjengelige på dette stedet. Se gjennom bestillingen din før du sender den.",
+        "violations_title": "{{violation}} mangler eller er ugyldig",
+        "individual_violations_title": {
+          "DeliveryViolations": "Sendingsadresse",
+          "PaymentViolations": "Fakturaadresse",
+          "OtherViolations": "BESTILLINGSINFORMASJON"
+        },
+        "all_violations_content": "Ring eller {{emailLink}} oss for å oppdatere denne informasjonen og fullføre bestillingen din:",
+        "all_violations_email_link": "e-post",
+        "editable_shipping_address_violations_message_title": "Legg til denne informasjonen for å fullføre bestillingen:",
+        "editable_shipping_address_violations_message_footer": "For å permanent oppdatere adressen for denne plasseringen, {{emailLink}} .",
+        "editable_shipping_address_violations_email_link": "kontakt oss"
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "Anmeldelse",
+          "link_label": "Vilkår og betingelser {{partnerDisplayName}}"
+        }
+      },
+      "online_store_chat": {
+        "title": "Spørsmål? snakk med oss"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "Det er %{count} butikk med lager nær %{address}",
+          "other": "Det er %{count} butikker med lager nær %{address}"
+        },
+        "toggle_location": "Endre posisjonen min",
+        "or": "ELLER",
+        "cancel": "Avbryt",
+        "your_location": "posisjonen din",
+        "search_button": "Finn butikker",
+        "no_stores_found": "Ingen butikker funnet",
+        "could_not_resolve_address": "Kunne ikke finne adressen din. Prøv på nytt eller bruk en annen adresse",
+        "paginator": {
+          "accessibility_label": "Lokal henting paginering",
+          "previous": "Forrige side",
+          "next": "Neste side",
+          "label": {
+            "one": "%{first} - %{last} av %{count} butikk",
+            "other": "%{first} – %{last} av %{count} butikker"
+          }
+        },
+        "reveal_more_label": {
+          "one": "Vis %{count} plassering til",
+          "other": "Vis %{count} steder til"
+        }
+      },
+      "captcha": {
+        "title": "Fullfør CAPTCHA for å fortsette",
+        "errors": {
+          "not_solved": "Fullfør CAPTCHA for å fortsette"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "Bestillingen din kunne ikke behandles fordi rabattkoden din ikke lenger er tilgjengelig. Se gjennom ordresummen og prøv igjen."
+      },
+      "delivery_options": {
+        "free_total_label": "Gratis",
+        "ship": "Skip",
+        "shipping_address": "Sendingsadresse",
+        "pick_up": "Plukke opp",
+        "pick_up_locations": "Hentesteder",
+        "pick_up_in_one_hour": "Vanligvis klar på 1 time",
+        "pick_up_in_two_hours": "Vanligvis klar på 2 timer",
+        "pick_up_in_four_hours": "Vanligvis klar på 4 timer",
+        "pick_up_in_twenty_four_hours": "Vanligvis klar på 24 timer",
+        "pick_up_in_two_to_four_days": "Vanligvis klar på 2-4 dager",
+        "pick_up_in_five_or_more_days": "Vanligvis klar om 5+ dager",
+        "pick_up_in_zero_to_two_hours": "Klar for henting om 2 timer",
+        "pick_up_in_two_to_four_hours": "Klar for henting om 4 timer",
+        "pick_up_immediately": "Klar for henting nå",
+        "pick_up_next_day": "Klar for henting neste dag",
+        "pickup_point_method_definition": "Send til hentested",
+        "retail_method_definition": "Detaljhandelsfrakt",
+        "none_method_definition": "Ingen frakt",
+        "subscription_pickup_information": "Denne leveringsmetoden vil gjelde for alle varer i denne bestillingen og for alle fremtidige bestillinger for dette abonnementet."
+      },
+      "customer_account": {
+        "not_user_label": "Ikke %{first_name}?",
+        "have_an_account_label": "Har en konto?",
+        "sign_in_link_label": "Logg Inn",
+        "sign_out_link_label": "Logg ut",
+        "save_my_information_label": "Lagre denne informasjonen til neste gang",
+        "invalid_address": "Den valgte adressen er ugyldig. %{update_address_link} eller velg en annen adresse.",
+        "incomplete_address": "Den valgte adressen er ufullstendig. %{update_address_link} eller velg en annen adresse."
+      },
+      "stock": {
+        "page_title": "Inventarproblemer",
+        "title": "Utsolgt",
+        "items_unavailable_notice": "Noen varer er ikke lenger tilgjengelig. Handlekurven din har blitt oppdatert.",
+        "product_column_header": "Produkter",
+        "quantity_column_header": "Mengde",
+        "price_column_header": "Pris",
+        "removed_from_cart_notice": "Fjernet fra handlekurven",
+        "sold_out_label": "Utsolgt",
+        "reduced_label": "Redusert",
+        "reduced_with_quantity_label": "Bare %{quantity_available} igjen",
+        "remove_from_cart_button_label": "Fjern fra handlekurven",
+        "continue_shopping_button_label": "Fortsette",
+        "go_back_to_cart_button_label": "Gå tilbake til handlekurven min",
+        "remove": "Fjerne",
+        "empty_cart_label": "Vognen din er tom",
+        "quantity_update": {
+          "page_title": "Oppdatering av antall",
+          "title": "Oppdatering av antall",
+          "description": "Tilgjengelige kvanta for disse varene er endret og er oppdatert i handlekurven din."
+        },
+        "unpurchasable_product": {
+          "title": "Ukjøpbart produkt",
+          "header": "Noen varer ble fjernet fra handlekurven din",
+          "message": "Disse varene er ikke tilgjengelige for B2B-bestillinger.",
+          "status_column_header": "Ikke tilgjengelig"
+        },
+        "unpurchasable_product_generic": {
+          "title": "Ukjøpbart produkt",
+          "header": "Noen varer ble fjernet fra handlekurven din",
+          "message": "Disse elementene er ikke tilgjengelige.",
+          "status_column_header": "Ikke tilgjengelig"
+        },
+        "unshippable_product": {
+          "title": "Ingen levering tilgjengelig",
+          "header": {
+            "one": "Ingen levering tilgjengelig for %{count} vare",
+            "other": "Ingen levering tilgjengelig for %{count} varer"
+          },
+          "message": {
+            "one": "Denne varen vil bli fjernet fra handlekurven din fordi det ikke er noen leveringsmetoder tilgjengelig for adressen din.",
+            "other": "Disse varene vil bli fjernet fra handlekurven din fordi det ikke er noen leveringsmetoder tilgjengelig for adressen din."
+          },
+          "status_column_header": "Ingen levering"
+        }
+      },
+      "field_errors": {
+        "sms_marketing_phone_invalid": "Skriv inn et gyldig telefonnummer",
+        "address_suggestion_did_you_mean_html": "Mente du %{html}?",
+        "handle_phone_invalid": "Skriv inn et gyldig telefonnummer",
+        "handle_email_invalid": "Skriv inn en gyldig e-post",
+        "email_invalid": "Skriv inn en gyldig e-post",
+        "email_or_phone_blank": "Skriv inn en e-post eller et telefonnummer",
+        "email_or_phone_invalid": "Skriv inn en gyldig e-post eller et mobiltelefonnummer",
+        "address_first_name_blank": "Skriv inn et fornavn",
+        "address_first_name_too_long": "Fornavnet er for langt (maksimalt 255 tegn)",
+        "address_first_name_contains_emojis": "Fornavn kan ikke inneholde emojier",
+        "address_first_name_contains_html_tags": "Fornavn kan ikke inneholde HTML-koder.",
+        "address_first_name_contains_url": "Fornavn kan ikke inneholde en URL",
+        "address_last_name_blank": "Skriv inn et etternavn",
+        "address_last_name_too_long": "Etternavnet er for langt (maksimalt er 255 tegn)",
+        "address_last_name_contains_emojis": "Etternavn kan ikke inneholde emojier",
+        "address_last_name_contains_html_tags": "Etternavn kan ikke inneholde HTML-koder.",
+        "address_last_name_contains_url": "Etternavn kan ikke inneholde en URL",
+        "address_address1_blank": "Skriv inn en adresse",
+        "address_address1_too_long": "Den første adresselinjen er for lang (maksimalt er 255 tegn)",
+        "address_address1_contains_emojis": "Adresse1 kan ikke inneholde emojier",
+        "address_address1_contains_html_tags": "Adresse1 kan ikke inneholde HTML-koder.",
+        "address_address2_blank": "Gå inn i en leilighet, suite osv.",
+        "address_address2_too_long": "Den andre adresselinjen er for lang (maksimalt er 255 tegn)",
+        "address_address2_contains_emojis": "Adresse2 kan ikke inneholde emojier",
+        "address_address2_contains_html_tags": "Adresse2 kan ikke inneholde HTML-koder.",
+        "address_city_blank": "Skriv inn en by",
+        "address_city_too_long": "Byen er for lang (maksimum er 255 tegn)",
+        "address_city_contains_emojis": "By kan ikke inneholde emojier",
+        "address_city_contains_html_tags": "By kan ikke inneholde HTML-koder.",
+        "address_country_blank": "Velg et land\/region",
+        "address_country_not_supported": "Vi sender ikke til dette landet eller området. Skriv inn en ny leveringsadresse og prøv på nytt.",
+        "address_province_blank": "Velg en stat\/provins",
+        "address_company_blank": "Skriv inn et firmanavn",
+        "address_company_too_long": "Firmanavnet er for langt (maksimalt er 255 tegn)",
+        "address_company_contains_emojis": "Selskapet kan ikke inneholde emojier",
+        "address_company_contains_html_tags": "Selskapet kan ikke inneholde HTML-koder.",
+        "address_phone_blank": "Skriv inn et gyldig telefonnummer",
+        "address_phone_contains_emojis": "Telefonnummer kan ikke inneholde emojier",
+        "address_zip_blank": "Skriv inn et postnummer",
+        "address_zip_not_supported": "Denne plasseringen støttes ikke.",
+        "address_zip_invalid_for_country": "Skriv inn et gyldig postnummer for %{country}",
+        "address_zip_invalid_for_province": "Skriv inn et gyldig postnummer for %{province}",
+        "address_zip_invalid_for_country_and_province": "Skriv inn et gyldig postnummer for %{province}, %{country}",
+        "address_zip_contains_emojis": "Postnummer kan ikke inneholde emojier",
+        "credit_card_name_blank": "Skriv inn navnet ditt nøyaktig slik det er skrevet på kortet ditt",
+        "credit_card_name_invalid": "Skriv inn navnet ditt nøyaktig slik det er skrevet på kortet ditt",
+        "credit_card_number_invalid": "Skriv inn et gyldig kortnummer",
+        "credit_card_expiry_invalid": "Angi en gyldig utløpsdato",
+        "credit_card_month_invalid": "Angi en gyldig utløpsmåned",
+        "credit_card_year_invalid": "Angi et gyldig utløpsår",
+        "credit_card_start_invalid": "Angi en gyldig startdato for kortet",
+        "credit_card_start_month_invalid": "Angi en gyldig kortstartmåned",
+        "credit_card_start_year_invalid": "Angi et gyldig kortstartår",
+        "credit_card_verification_value_blank": "Skriv inn CVV eller sikkerhetskoden på kortet ditt",
+        "delivery_line_detail_changed": "Noen leveringsdetaljer kan ha endret seg. Bekreft leveringsmetoden din og prøv igjen.",
+        "delivery_zone_not_found": "Den angitte sonen ble ikke funnet i det angitte landet.",
+        "reduction_code_code_not_found": "Skriv inn en gyldig rabattkode eller gavekort",
+        "reduction_code_discount_not_found": "Skriv inn en gyldig rabattkode",
+        "reduction_code_gift_card_code_invalid": "Skriv inn et gyldig gavekort",
+        "reduction_code_gift_card_unusable": "Du kan ikke bruke et gavekort til å kjøpe et annet gavekort",
+        "reduction_code_gift_cards_not_supported_with_deferred_purchase_options": "Gavekort støttes ikke med utsatte kjøpsalternativer.",
+        "shipping_line_phone_blank": "Skriv inn et telefonnummer for å bruke denne leveringsmetoden",
+        "shipping_line_phone_invalid": "Skriv inn et gyldig telefonnummer",
+        "tips_invalid_tip_amount": "Skriv inn et tips som ikke er mer enn %{amount}",
+        "gift_card_already_applied": "Dette gavekortet er allerede brukt på bestillingen din",
+        "gift_card_disabled": "Dette gavekortet er ikke lenger tilgjengelig",
+        "gift_card_expired": "Dette gavekortet er utløpt",
+        "gift_card_depleted": "Dette gavekortet har ingen midler igjen",
+        "gift_card_currency_mismatch": "Kun gavekort i %{checkout_currency} kan brukes med denne bestillingen",
+        "gift_cards_not_supported_with_deferred_purchase_options": "Gavekort støttes ikke med utsatte kjøpsalternativer.",
+        "gift_card_buying_gift_card": "Du kan ikke bruke et gavekort til å kjøpe et annet gavekort",
+        "payment_gateway_needs_paid_plan_error": "Denne betalingsmåten er ikke tilgjengelig i butikken akkurat nå",
+        "payment_gateway_not_in_test_mode": "er ikke konfigurert for å teste bestillinger. Denne butikken kan ikke akseptere ekte bestillinger eller ekte betalinger.",
+        "payment_gateway_incompatible_with_multi_currency": "For å fullføre denne kassen i din lokale valuta, må du betale med kredittkort.",
+        "payment_gateway_unsupported_for_subscriptions": "Denne betalingsmåten er ikke tilgjengelig for abonnementsbestillinger.",
+        "payment_gateway_unsupported_for_deferred_purchase_options": "Denne betalingsmåten er ikke tilgjengelig for utsatte kjøpsalternativer.",
+        "payment_gateway_unsupported_for_country": "Denne betalingsmåten er ikke tilgjengelig for fraktlandet ditt.",
+        "payment_gateway_unsupported_for_development_store_html": "For å legge inn en testbestilling, må du bruke en testbetalingsgateway. Lær mer om <a href=\"%{docs_link}\">testing av bestillinger i utviklingsbutikker<\/a> .",
+        "payment_gateway_unsupported_for_order_above_maximum_orders_html": "Du har nådd grensen for utviklingsbutikkbestillinger med denne betalingsbehandleren. For å legge inn en annen bestilling, må du bruke en testbetalingsgateway. Lær mer om <a href=\"%{docs_link}\">testing av bestillinger i utviklingsbutikker<\/a> .",
+        "purchase_options_agreement_blank": "For å fortsette med kjøpet må du godta de utsatte eller gjentakende kjøpsvilkårene.",
+        "physical_gift_card_invalid_quantity": "Fysiske gavekortordrelinjer må ha et antall som samsvarer med antall gavekortkoder.",
+        "physical_gift_card_duplicate_code": "Fysisk gavekortordrelinje inneholder duplikatkode.",
+        "physical_gift_card_invalid_code": "Den fysiske gavekortkoden er ugyldig.",
+        "email_blank": "Skriv inn en e-post",
+        "phone_blank": "Skriv inn et telefonnummer",
+        "address_country_invalid": "Velg et land\/region fra listen",
+        "address_zip_invalid": "Skriv inn et gyldig postnummer",
+        "gift_card_invalid": "Gavekortet «••••%{last_four_characters}» er ikke lenger gyldig",
+        "vaulting_agreement_blank": "For å fortsette må du lagre det nye kredittkortet ditt fordi betaling for denne bestillingen vil skje på et senere tidspunkt."
+      },
+      "store_credit_errors": {
+        "generic_error": "Det oppsto et problem med butikkkreditten din. Prøv på nytt eller last inn siden på nytt."
+      },
+      "payment_errors": {
+        "method_not_available": "Den forespurte betalingsmåten er ikke tilgjengelig.",
+        "generic_error": "Det oppsto et problem under behandlingen av betalingen din. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "rejected_transaction": "Betalingen din ble avvist. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "credit_card_processing": "Betalingen din kan ikke behandles av tekniske årsaker. Prøv igjen om noen minutter, eller bruk en annen betalingsmetode.",
+        "checkout_amount_changed": "Betalingen din kunne ikke behandles fordi beløpet som skal betales i kassen har endret seg. Vennligst sjekk bestillingen din og prøv igjen.",
+        "deferred_payment_not_allowed": "Utsatt betaling er ikke tillatt. Vennligst sjekk bestillingen din og prøv igjen.",
+        "deferred_payment_required": "Denne bestillingen krever utsatt betaling. Vennligst sjekk bestillingen din og prøv igjen.",
+        "deferred_amount_changed": "Betalingen din kunne ikke behandles fordi det utsatte betalingsbeløpet er endret. Vennligst sjekk bestillingen din og prøv igjen.",
+        "deferred_date_changed": "Betalingen din kunne ikke behandles fordi den utsatte betalingsdatoen er endret. Vennligst sjekk bestillingen din og prøv igjen.",
+        "order_total_changed": "Betalingen din kunne ikke behandles fordi totalen for ordren din er endret. Sjekk totalen for ordren og prøv igjen.",
+        "payment_processing": "Betalingen din kan ikke behandles av tekniske årsaker. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "payment_processing_no_retry": "Betalingen din kan ikke behandles av tekniske årsaker. Prøv en annen betalingsmåte.",
+        "paypal_zero_amount": "Du kan ikke bruke PayPal for %{amount} bestillinger. Bekreft at bestillingen din er riktig og sjekk ut uten PayPal.",
+        "paypal_invalid_token": "PayPal var ikke tilgjengelig. Prøv på nytt eller bruk et annet betalingsalternativ.",
+        "pay_later_failed": "Det oppsto en feil under behandling av betalingen din med Pay senere. Velg en annen betalingsmåte og prøv på nytt.",
+        "three_d_secure_failed": "Betalingen din kunne ikke bekreftes. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "three_d_secure_failed_duplicate": "Kredittkortets 3D Secure-autentisering mislyktes fordi en annen allerede er i gang.",
+        "three_d_secure_throttled": "For mange forsøk; vennligst vent før du prøver igjen",
+        "subscription_agreement_blank": "For å kjøpe et abonnement må betalingsopplysningene dine lagres. For å fortsette må du bekrefte at du godtar eller fjerne abonnementsartikler fra bestillingen din.",
+        "insufficient_funds": "Betalingen din ble avvist på grunn av utilstrekkelige midler. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "multiple_deferred_payment_not_allowed": "Kun én utsatt betaling er tillatt per forespørsel. Sjekk forespørselen din og prøv igjen.",
+        "shipping_must_match_billing": "Faktureringsadressen må samsvare med leveringsadressen. Vennligst bruk en annen betalingsmetode.",
+        "decision_rule_block": "Det oppsto et problem under behandlingen av betalingen din. Ta kontakt med butikkeieren.",
+        "pick_up_card": "Kortet ditt ble avvist. Prøv på nytt eller bruk en annen betalingsmetode.",
+        "cannot_verify": "Betalingsopplysningene dine kunne ikke bekreftes. Sjekk kortdetaljene dine og prøv igjen.",
+        "invalid_number": "Skriv inn et gyldig kortnummer",
+        "invalid_expiry_date": "Angi en gyldig utløpsdato",
+        "invalid_cvc": "Skriv inn en gyldig sikkerhetskode",
+        "expired_card": "Kortet ditt er utløpt. Bruk en annen betalingsmetode.",
+        "card_declined": "Kortet ditt ble avvist. Prøv på nytt eller bruk en annen betalingsmetode.",
+        "processing_error": "Det oppsto et problem under behandlingen av betalingen din. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "call_issuer": "Kortet ditt ble avvist. Bruk en annen betalingsmåte eller kontakt banken din for mer informasjon.",
+        "test_mode_live_card": "Denne butikken kan ikke akseptere ekte bestillinger eller ekte betalinger.",
+        "transient_error": "Det oppsto et problem med å behandle betalingen din. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din.",
+        "missing_shipping_address": "Betalingen din kunne ikke behandles fordi leveringsadressen mangler. Legg til en leveringsadresse og prøv igjen.",
+        "invalid_shipping_address": "Betalingen din kunne ikke behandles fordi vi ikke fant leveringsadressen din. Sjekk leveringsadressen din og prøv igjen.",
+        "successful_offsite_with_gift_card_error": "Det oppsto et problem med å behandle gavekortbetalingen din. Prøv på nytt eller bruk en annen betalingsmåte.",
+        "development_store_order_limit_reached": "Du har nådd grensen for utviklingsbutikkbestillinger med denne betalingsbehandleren. For å legge inn en annen bestilling, må du bruke en testbetalingsgateway. Finn ut mer om %{development_store_order_testing_docs_link}.",
+        "development_store_with_order_limit": "For å legge inn en testbestilling, må du bruke en testbetalingsgateway. Finn ut mer om %{development_store_order_testing_docs_link}.",
+        "development_store_order_testing_docs_link": "testing av bestillinger i utviklingsbutikker"
+      },
+      "shipping_errors": {
+        "shipping_method": "Fraktalternativene er endret for bestillingen din. Se gjennom valget ditt og prøv igjen.",
+        "shipping_method_not_available": "Handlekurven din er oppdatert og varene du har lagt til kan ikke sendes til adressen din. Fjern varene for å fullføre bestillingen.",
+        "shipping_method_not_available_generic": {
+          "one": "Denne bestillingen kan ikke sendes til adressen du oppga. Se gjennom adressen din for å sikre at alle feltene er angitt riktig, og prøv igjen.",
+          "other": "Noen varer i handlekurven din kan ikke sendes til adressen du oppga. Se gjennom adressen din for å sikre at alle feltene er angitt riktig, og prøv igjen."
+        },
+        "shipping_method_not_available_due_to_unsatisfied_conditions": "Varer i handlekurven oppfyller ikke krav til pris eller vekt for å kvalifisere for frakt. Oppdater handlekurven og prøv igjen.",
+        "shipping_method_not_available_updated": {
+          "one": "Varen du la til, sendes ikke til stedet ditt. Fjern den for å sjekke ut, eller kontakt butikken.",
+          "other": "En eller flere varer du har lagt til, sendes ikke til stedet ditt. Fjern dem for å sjekke ut, eller kontakt butikken."
+        },
+        "payment_method_not_supported": "Du kan ikke bruke denne betalingsmåten for %{country}. Bruk en annen betalingsmåte for å sende til dette landet.",
+        "empty_state": "Skriv inn leveringsadressen din for å se tilgjengelige leveringsmetoder."
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "hurtigutsjekking",
+        "or": "ELLER",
+        "show_more_options": "Vis flere alternativer"
+      },
+      "post_purchase": {
+        "page_title": "Etter kjøp",
+        "title": "Etter kjøp",
+        "escape_confirmation": "Du har betalt for bestillingen din.",
+        "escape_action": "Se ordrebekreftelse ›",
+        "components": {
+          "close": "Lukk",
+          "expand": "Se mer",
+          "processing": "Behandling…",
+          "submit": "Sende inn"
+        }
+      },
+      "processing": {
+        "redirecting_page_title": "Omdirigerer …",
+        "redirecting_title": "Omdirigerer …",
+        "redirecting_notice": "Vent mens vi omdirigerer deg.",
+        "complete_your_purchase_title": "Fullfør kjøpet",
+        "continue_to_payment_gateway_notice": "Fortsett til betaling for å legge til betalingsinformasjonen din.",
+        "continue_to_payment_gateway_button_label": "Fortsett å betale",
+        "complete_your_purchase_title_error": "Korriger betalingsinformasjonen din",
+        "continue_to_payment_gateway_notice_error": "Betalingsinformasjonen din kunne ikke bekreftes.",
+        "continue_to_payment_gateway_button_label_error": "Oppdater betalingsinformasjon",
+        "page_title": "Behandler ordre",
+        "title": "Behandler ordre",
+        "your_order_has_been_received_title": "takk for din bestilling",
+        "you_will_receive_confirmation": "Vi får mange bestillinger akkurat nå. Du bør motta bekreftelse på e-post eller tekst snart. Gi oss beskjed hvis du ikke mottar den i løpet av den neste timen.",
+        "you_will_not_be_charged": "Du blir ikke belastet ennå",
+        "wait": {
+          "short": "Bestillingen din behandles.",
+          "medium": {
+            "one": "Bestillingen din behandles. Estimert ventetid er %{count} minutt.",
+            "other": "Bestillingen din behandles. Estimert ventetid er %{count} minutter."
+          },
+          "long": "Du vil motta en e-post så snart bestillingen din er behandlet. Det er for tiden et høyt ordrevolum.",
+          "no_auto_refresh_html": "Hvis du ikke blir omdirigert automatisk, %{link}.",
+          "refresh_this_page": "oppdater denne siden"
+        },
+        "action_required": "Handling kreves"
+      },
+      "failed_payment": {
+        "page_title": "Betalingen kunne ikke behandles",
+        "title": "Betalingen kunne ikke behandles",
+        "payment_not_processed_title": "Betalingen din kunne ikke behandles",
+        "payment_not_processed_text": "Du har ikke blitt belastet. Gå tilbake til handlekurven for å fullføre kjøpet.",
+        "return_to_cart_button_label": "Gå tilbake til handlekurven"
+      },
+      "payment_gateway": {
+        "credit_card_label": "Kredittkort",
+        "bank_deposit_label": "Bankinnskudd",
+        "cash_on_delivery_label": "Postoppkrav (COD)",
+        "money_order_label": "Postanvisning",
+        "debit_card_label": "Debetkort",
+        "deferred_payment_label": "Velg betalingsmåte senere",
+        "generic_payment_terms": "Du er på {{translatedName}} vilkår. Betalingen din forfaller {{dueDate}} .",
+        "login_prompt": {
+          "no_access": {
+            "message": "{{logIn}} til en konto med tilgang til denne plasseringen for å legge til eller bruke lagrede betalingsmåter.",
+            "link": "Logg Inn"
+          }
+        },
+        "direct_payment_terms": "Du er på {{translatedName}} vilkår. Kortet ditt vil bli belastet {{dueDate}} .",
+        "order_due_on_fulfillment_choose_later": "Betalingen din forfaller når bestillingen er utført."
+      },
+      "payment_summary": {
+        "gift_card_current_balance_notice": "Gjeldende saldo %{amount}",
+        "credit_card_expires_on_notice": "Utløper %{month}\/%{year}",
+        "express_payment_gateway_label": "Uttrykke",
+        "manual_payment_gateway_label": "Håndbok",
+        "billing_address_title": "Fakturaadresse",
+        "free_label": "Gratis"
+      },
+      "order_summary": {
+        "recurring_subtotal_label": "Gjentakende delsum",
+        "recurring_total_label": "Gjentakende totalt",
+        "recurring_total_tooltip": "Inkluderer ikke frakt, avgifter, avgifter eller eventuelle rabatter.",
+        "confirmation_number_label": "Bekreftelse #%{confirmation_number}",
+        "higher_value_discount_applied": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> kunne ikke brukes med dine eksisterende rabatter. Du har allerede en bedre kombinasjon.",
+        "percent_off_shipping": "%{percent}% rabatt på frakt",
+        "amount_off_shipping": "%{amount} rabatt på frakt",
+        "deferred_payment_info": {
+          "title": "Betaling på %{amount_due} forfaller %{due_at}",
+          "description_html": "For spørsmål om bestillingen din, %{contact_us}.",
+          "paid_today": "Totalt betalt i dag",
+          "due_on_fulfillment_title": "Betaling på %{amount_due} forfaller ved oppfyllelse",
+          "due_on_receipt_title": "Betaling på %{amount_due} forfaller ved mottak"
+        },
+        "payment_terms_totals": {
+          "due_today": "Totalt forfall i dag",
+          "due_later": "Total forfall %{due_at}",
+          "due_on_fulfillment": "Total forfall ved oppfyllelse",
+          "due_on_receipt": "Totalt forfaller ved mottak",
+          "due_later_checkout_to_draft": "Totalt forfaller senere"
+        },
+        "maximum_discount_code_limit_reached": "Du har nådd maksimalt antall rabattkoder. Fjern en eksisterende kode for å bruke <strong style=\"text-transform:uppercase\">%{code}<\/strong> .",
+        "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> fungerer ikke akkurat nå. Kontakt oss for hjelp.",
+        "due_on_fulfillment": "Forfaller ved oppfyllelse",
+        "subscriptions": "Abonnementer",
+        "duties_label": "Plikter",
+        "duties_and_taxes_label": "Toll og skatter",
+        "error_duties_tooltip": "Denne bestillingen sendes fra et annet land, så toll og avgifter kan bli belastet ved levering.",
+        "may_be_charged_on_delivery": "Kan belastes ved levering",
+        "total_updated_label_with_price": "Oppdatert totalpris: %{totalPrice}",
+        "recurring_payments": "Gjentakende betalinger",
+        "recurring_total_multiple_label": "Denne bestillingen har en gjentakende kostnad for flere varer.",
+        "deferred_total_due_date_label": "Total forfall {{date}}",
+        "full_price": "Full pris: %{price}",
+        "custom_discount": "Tilpasset rabatt",
+        "expand_component_information": {
+          "one": "Vis %{count} element",
+          "other": "Vis %{count} elementer"
+        },
+        "collapse_component_information": {
+          "one": "Skjul %{count} element",
+          "other": "Skjul %{count} elementer"
+        },
+        "discount_discovery": {
+          "add_code": "Legg til rabatt",
+          "merchandise_quantity_label": {
+            "one": "%{count} element",
+            "other": "%{count} elementer"
+          }
+        },
+        "alternative_payment_currency_total": "Belastet som %{amount_due}",
+        "title": "Bestillingssammendrag",
+        "group_title_label": "En del av «%{group_title}»",
+        "order_name_label": "Bestill %{name}",
+        "shopping_cart_label": "Handlevogn",
+        "discount_title": "Rabatt",
+        "discount_title_stacking": {
+          "one": "Rabatt",
+          "other": "Rabatter"
+        },
+        "discount_order_stacking": {
+          "one": "Bestillingsrabatt",
+          "other": "Bestill rabatter"
+        },
+        "discount_label": "Rabattkode",
+        "discount_placeholder": "Rabattkode",
+        "gift_card_title": "Gavekort",
+        "gift_card_label": "Gavekort",
+        "gift_card_placeholder": "Gavekort",
+        "gift_card_and_discount_title": "Gavekort eller rabattkode",
+        "gift_card_and_discount_label": "Gavekort eller rabattkode",
+        "gift_card_and_discount_placeholder": "Gavekort eller rabattkode",
+        "remove_gift_card_label": "Tydelig gavekort",
+        "remove_discount_label": "Fjern rabatt",
+        "free_shipping_discount_label": "Gratis frakt",
+        "applied_free_shipping_discount_label": "Anvendt",
+        "apply_discount_button_label": "Søke om",
+        "applied_discount_message": "%{amount} rabatt på total bestillingspris",
+        "discount_has_been_applied": "Rabatten er brukt",
+        "discount_has_been_removed": "Rabatten er fjernet",
+        "gift_card_has_been_applied": "Gavekortet er tatt i bruk",
+        "gift_card_has_been_removed": "Gavekortet er fjernet",
+        "gift_card_subscriptions_notice": "Gavekort gjelder kun for din første betaling",
+        "discount_already_applied": "Det er gitt en rabatt på denne bestillingen. Du kan ikke legge til en ny rabatt.",
+        "cart_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> rabattkoden er ikke gyldig for varene i handlekurven din",
+        "discount_requires_customer_notice": "Skriv inn fraktinformasjonen din for å bruke <strong style=\"text-transform:uppercase\">%{code}<\/strong> rabattkoden",
+        "customer_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> rabattkode er ikke tilgjengelig for deg akkurat nå",
+        "shipping_information_does_not_meet_discount_requirements_notice": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> rabattkode er ikke tilgjengelig for leveringsadressen din",
+        "customer_already_used_once_per_customer_discount_notice": "Rabattkoden <strong style=\"text-transform:uppercase\">%{code}<\/strong> er allerede brukt",
+        "subtotal_label": "Delsum",
+        "pickup_label": "Plukke opp",
+        "no_pickup_location": "Henting er ikke tilgjengelig for denne bestillingen. Velg en annen leveringsmetode.",
+        "tip_label": "Tips",
+        "calculating_shipping": "Beregner …",
+        "calculating": "Beregner …",
+        "shipping_default_value": "Beregnes ved neste trinn",
+        "shipping_pending_message": "Ikke tilgjengelig enda",
+        "shipping_policy_link": "Fraktkostnader",
+        "taxes_label": "Skatter",
+        "estimated_taxes_label": "Beregnet skatt",
+        "information_estimated_taxes_label": "Skatter (estimert)",
+        "estimated_taxes_finalization_tooltip_content": "Den endelige skatten og totalsummen vil bli bekreftet via e-post eller tekst etter at du har lagt inn bestillingen.",
+        "order_total_label": "Bestilling totalt",
+        "total_outstanding_label": "Beløp å betale",
+        "free_total_label": "Gratis",
+        "paid_label": "Betalt",
+        "payment_due_label": "Betalings forfall",
+        "vat_label_html": "Inkludert %{amount} i skatt",
+        "discount_and_gift_card_savings_notice": "Etter %{discount_amount} i rabatter og %{gift_card_amount} i gavekort",
+        "discount_savings_notice": "Etter %{discount_amount} i rabatter",
+        "gift_card_savings_notice": "Etter %{gift_card_amount} i gavekort",
+        "cost_table_title": "Kostnadssammendrag",
+        "description_label": "Beskrivelse",
+        "price_label": "Pris",
+        "quantity_label": "Mengde",
+        "product_change_label": "Endring",
+        "product_image_label": "Produktbilde",
+        "scroll_order_summary": "Bla for flere elementer",
+        "expand_order_summary": "Vis ordresammendrag",
+        "collapse_order_summary": "Skjul ordresammendrag",
+        "original_price": "Original pris",
+        "sale_price": "Salgs pris",
+        "total_updated_label": "Oppdatert totalpris:",
+        "order_total_updated_label": "Oppdatert totalt",
+        "total_already_paid_label": "Allerede betalt",
+        "gift_card_ending": "Gavekort som slutter med %{last_characters}",
+        "estimated_tax_label": "Beregnet skatt",
+        "multiple_shipping_lines_label": "Frakt totalt"
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "Utilgjengelig produkt",
+          "other": "Utilgjengelige produkter"
+        },
+        "products_not_available": {
+          "one": "Dette produktet vil bli fjernet fra handlekurven din fordi det ikke er tilgjengelig i ditt land\/region.",
+          "other": "Disse produktene vil bli fjernet fra handlekurven din fordi de ikke er tilgjengelige i ditt land\/region."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "Dette produktet er ikke tilgjengelig i ditt land\/din region.",
+          "other": "Disse produktene er ikke tilgjengelige i ditt land\/region."
+        },
+        "unavailable_label": "Utilgjengelig"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "Ingen levering tilgjengelig for %{count} vare",
+            "other": "Ingen levering tilgjengelig for %{count} varer"
+          },
+          "message": {
+            "one": "Denne varen vil bli fjernet fra handlekurven din fordi det ikke er noen leveringsmetoder tilgjengelig for adressen din.",
+            "other": "Disse varene vil bli fjernet fra handlekurven din fordi det ikke er noen leveringsmetoder tilgjengelig for adressen din."
+          },
+          "label": "Ingen levering"
+        }
+      }
+    },
+    "errors": {
+      "invalid_for_card_type": "er ikke gyldig",
+      "invalid_type": "beklager, vi godtar ikke kort av denne typen",
+      "invalid_format": "formatet er ikke gyldig",
+      "expired": "har utgått",
+      "invalid_start_date_or_issue_number_for_debit": "en gyldig startdato eller utstedelsesnummer kreves",
+      "invalid_expiry_year": "er ikke et gyldig utløpsår",
+      "reset_password_html": "Denne e-postadressen er allerede knyttet til en konto. Hvis denne kontoen er din, kan du <a href=\"\/account\/login#recover\">tilbakestille passordet ditt<\/a>",
+      "verify_email": "Vi har sendt en e-post til %{customer_email}, vennligst klikk på koblingen for å bekrefte e-postadressen din.",
+      "product_not_available": "produktet er ikke publisert for denne kunden.",
+      "blank": "kan ikke være blank",
+      "blocked_address": "Denne plasseringen støttes ikke.",
+      "credit_card_session_expired": "Kredittkortautorisasjonen er utløpt, skriv inn betalingsinformasjonen din på nytt. Kortet ditt er ikke belastet.",
+      "empty": "kan ikke være tom",
+      "invalid_email": "Må være en gyldig e-postadresse",
+      "discount_disabled": "Denne rabatten er deaktivert",
+      "discount_expired": "Denne rabatten er ikke gyldig lenger",
+      "discount_limit_reached": "Denne rabatten har nådd sin bruksgrense",
+      "discount_not_found": "Kan ikke finne en gyldig rabatt som samsvarer med koden som er oppgitt",
+      "customer_already_used_once_per_customer_discount_notice": "Denne rabatten har nådd sin bruksgrense",
+      "gift_card_already_applied": "Koden er allerede brukt på kassen din",
+      "gift_card_code_invalid": "Koden er ugyldig",
+      "gift_card_currency_mismatch": "Gavekortet ditt er i %{gift_card_currency}. Kontakt oss for å få den utstedt på nytt i %{checkout_currency}.",
+      "gift_card_depleted": "Det er ingen midler igjen på dette gavekortet",
+      "gift_card_disabled": "Gavekortet er deaktivert",
+      "gift_card_expired": "Gavekortet er utløpt",
+      "invalid": "er ugyldig",
+      "bad_domain": "inneholder et ugyldig domenenavn",
+      "taken": "har allerede blitt tatt",
+      "contains_html_tags": "kan ikke inneholde HTML-koder",
+      "too_short": "er for kort (minimum er %{count} tegn)",
+      "too_long": "er for lang (maksimum er %{count} tegn)",
+      "password_mismatch": "må samsvare med det angitte passordet",
+      "contains_spaces": "starter eller slutter med mellomrom.",
+      "email_domain_invalid": "leverandøren støttes ikke",
+      "invalid_for_country": "er ikke gyldig for %{country}",
+      "invalid_for_country_and_province": "er ikke gyldig for %{province} og %{country}",
+      "invalid_province_in_country": "er ikke en gyldig provins i %{country}",
+      "invalid_state_in_country": "er ikke en gyldig tilstand i %{country}",
+      "invalid_region_in_country": "er ikke en gyldig region i %{country}",
+      "less_than_or_equal_to": "må være mindre enn eller lik %{count}",
+      "not_supported": "er ikke støttet",
+      "full_name_required": "Skriv inn fornavn og etternavn"
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "Feil ved tilbakestilling av passord",
+        "no_account_found": "Fant ingen konto med den e-posten.",
+        "invalid_credentials": "Feil email eller passord.",
+        "denylisted_reset_password": "Kontoen din fikk ikke tilgang fordi det gjeldende passordet ikke er sikkert. Du vil motta en e-post for å oppdatere passordet ditt."
+      },
+      "address": {
+        "updated": "Adressen er oppdatert.",
+        "error_updating": "Feil under oppdatering av adresse",
+        "created": "Vellykket opprettet adresse",
+        "error_creating": "Feil ved opprettelse av adresse.",
+        "deleted": "Adressen er slettet",
+        "error_deleting": "Feil ved sletting av adresse."
+      },
+      "order": {
+        "not_available": "Denne bestillingen er ikke tilgjengelig",
+        "financial_status": {
+          "authorized": "Autorisert",
+          "pending": "Avventer",
+          "paid": "Betalt",
+          "unpaid": "Ubetalt",
+          "voided": "Ugyldig",
+          "partially_paid": "Delvis betalt",
+          "partially_refunded": "Delvis refundert",
+          "refunded": "Refundert",
+          "expired": "Utløpt"
+        },
+        "fulfillment_status": {
+          "fulfilled": "Oppfylt",
+          "complete": "Fullstendig",
+          "partial": "Delvis",
+          "unfulfilled": "Uoppfylt",
+          "restocked": "Lagret på nytt"
+        },
+        "transaction_status": {
+          "success": "Suksess",
+          "pending": "Avventer",
+          "failure": "Feil",
+          "error": "Feil"
+        },
+        "cancel_reason": {
+          "declined": "Betaling avvist",
+          "inventory": "Varer er utilgjengelige",
+          "fraud": "Uredelig ordre",
+          "customer": "Kunden endret\/kansellerte ordre",
+          "staff": "Personalfeil",
+          "other": "Annen"
+        },
+        "cash_on_delivery": "Postoppkrav (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "Du kan bare legge til %{count} %{name} i handlekurven.",
+        "too_many_items_in_cart": "Du kan ikke legge til flere %{name} i handlekurven.",
+        "less_than_minimum": "Denne varen har et minimum på %{min}.",
+        "more_than_maximum": "Denne varen har maksimalt %{max}.",
+        "not_respect_step": "Du kan bare legge til dette elementet i multipler av %{step}.",
+        "all_items_in_cart": "Alle %{count} %{name} er i handlekurven din.",
+        "empty_update": "kan ikke oppdatere tom handlekurv",
+        "missing_parameters": "ingen gyldig id eller linjeparameter",
+        "generic_error": "Handlevognfeil",
+        "product_not_available": "Produktet er ikke tilgjengelig",
+        "too_many_line_items_error": "Handlekurven din kan ikke inneholde mer enn %{max} varer.",
+        "link_expired": "Linken er utløpt",
+        "link_no_longer_exists": "Linken eksisterer ikke lenger.",
+        "stock_problems_html": "En eller flere varer er ikke lenger tilgjengelig. Vi har levert en <a href=\"%{link}\">oppdatert handlekurv<\/a> .",
+        "changed": "Handlevogn byttet",
+        "items_changed": "Ett eller flere elementer er endret.",
+        "product_sold_out": "Produktet «%{name}» er allerede utsolgt.",
+        "variant_not_found": "Finner ikke variant",
+        "variant_requires_selling_plan": "Variant kan kun kjøpes med en salgsplan.",
+        "selling_plan_not_available_for_company_locations": "Kun engangskjøp er tilgjengelig for B2B-bestillinger",
+        "digital_product_not_available_for_company_locations": "Denne varen kan ikke legges til en B2B-bestilling",
+        "selling_plan_not_applicable": "Kan ikke bruke salgsplan på variant",
+        "shipping_address_not_required": "Denne handlekurven krever ikke frakt",
+        "shipping_address_invalid": "Det oppsto et problem med å beregne fraktprisene dine. Fortsett til kassen for å velge en fraktpris før du fullfører bestillingen.",
+        "bundle_requires_components": "Pakkeproduktet '%{name}' kan ikke legges i handlekurven.",
+        "gift_card_with_components_not_supported": "Pakkeproduktet '%{name}' kan ikke legges i handlekurven.",
+        "bundle_products_not_supported_for_b2b_draft": "Samlede varer kan ikke legges til B2B-bestillinger for dette stedet."
+      },
+      "storefront": {
+        "invalid_password": "Passordet er feil. Prøv igjen."
+      },
+      "tags": {
+        "add_articles": "Begrens søket til artikler som også har taggen %{tag}",
+        "add_products": "Begrens utvalget til produkter som samsvarer med taggen %{tag}",
+        "remove_articles": "Utvid søket til artikler som ikke er merket %{tag}",
+        "remove_products": "Fjern tag %{tag}"
+      }
+    },
+    "email_marketing": {
+      "subscribed": {
+        "confirmation": "Takk for at du abonnerer på vår e-postliste.",
+        "disclaimer": "Du kan melde deg av når som helst.",
+        "unsubscribe": "Avslutte abonnementet"
+      },
+      "unsubscribed": {
+        "confirmation": "Du har meldt deg av e-postlisten vår.",
+        "disclaimer": "Du vil ikke motta flere markedsføringsoppdateringer fra oss. Du kan abonnere på nytt når som helst.",
+        "preview": "Du forhåndsviser hva kundene vil se når de avslutter abonnementet."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "opted_in_html": "<b>Du har valgt å åpne e-postsporing.<\/b>",
+          "visibility": "Åpningspriser for e-post vil bli rapportert anonymt. Vi vil bare se om du har åpnet en e-post som en del av en samlet åpningshastighet for e-post.",
+          "opt_out_html": "Du kan <a style=\"text-decoration:underline;\" href=\"%{link}\">velge bort<\/a> e-postsporing hvis du ikke ønsker å dele denne informasjonen.",
+          "preview_bar": "Du forhåndsviser hva kunder vil se når de velger å åpne e-postsporing."
+        },
+        "opt_out": {
+          "opted_out_html": "<b>Du har valgt bort sporing av åpen e-post.<\/b>",
+          "visibility": "Vi vil ikke se om du har åpnet e-postene våre.",
+          "opt_in_html": "<a style=\"text-decoration:underline;\" href=\"%{link}\">Velg<\/a> åpen sporing via e-post.",
+          "preview_bar": "Du forhåndsviser hva kunder vil se når de velger bort sporing av åpen e-post."
+        },
+        "no_longer_track": {
+          "status_html": "<b>Vi sporer ikke lenger e-poståpninger.<\/b>",
+          "privacy_policy": "Etter at denne e-posten ble sendt, oppdaterte vi personvernreglene våre, og vi sporer ikke lenger åpninger."
+        },
+        "track": {
+          "status_html": "<b>E-post åpen sporing rapporteres.<\/b>",
+          "visibility": "Vi vil bare se om du har åpnet e-posten, som en del av den totale åpningshastigheten for e-post."
+        },
+        "updated_policy": {
+          "status_html": "<b>E-post åpen sporing rapporteres.<\/b>",
+          "visibility": "Vi har oppdatert retningslinjene våre, og nå åpnes sporingse-poster. Åpningspriser for e-post vil bli rapportert anonymt. Vi vil bare se om du har åpnet en e-post som en del av den totale åpningshastigheten for e-post.",
+          "opt_out_html": "Hvis du ikke ønsker å dele denne informasjonen, kan du <a style=\"text-decoration:underline;\" href=\"%{link}\">melde deg av.<\/a>"
+        }
+      }
+    },
+    "filters": {
+      "availability": {
+        "label": "Tilgjengelighet",
+        "value": {
+          "in_stock": "På lager",
+          "out_of_stock": "Utsolgt"
+        }
+      },
+      "vendor": {
+        "label": "Merke"
+      },
+      "price": {
+        "label": "Pris"
+      },
+      "product_type": {
+        "label": "Produkttype"
+      },
+      "boolean": {
+        "true_label": "Ja",
+        "false_label": "Nei"
+      },
+      "tags": {
+        "label": "Flere filtre"
+      }
+    },
+    "pagination": {
+      "previous": "Tidligere",
+      "next": "Neste"
+    },
+    "links": {
+      "powered_by_shopify": "Drevet av Shopify",
+      "learn_more": "Lære mer"
+    },
+    "feed": {
+      "more": "Mer"
+    },
+    "attributes": {
+      "email": "e-post",
+      "password": "passord",
+      "password_confirmation": "Passordbekreftelsen",
+      "first_name": "fornavn",
+      "last_name": "etternavn",
+      "body": "kropp",
+      "signature": "Adresse"
+    },
+    "addresses": {
+      "zip_code": "post kode",
+      "postal_code": "Postnummer",
+      "postcode": "postnummer",
+      "pincode": "Pinkode",
+      "prefecture": "Prefektur",
+      "province": "Provins",
+      "state": "Stat",
+      "state_and_territory": "Stat\/territorium",
+      "county": "fylke",
+      "emirate": "Emirat",
+      "confirm": "Er du sikker på at du vil slette denne adressen?"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "Utvalgte",
+        "best_selling": "Bestselger",
+        "az": "Alfabetisk, AZ",
+        "za": "Alfabetisk, ZA",
+        "price_ascending": "Pris, lav til høy",
+        "price_descending": "Pris, høy til lav",
+        "date_ascending": "Dato, gammelt til nytt",
+        "date_descending": "Dato, nytt til gammelt"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "Relevans",
+        "price_ascending": "Pris, lav til høy",
+        "price_descending": "Pris, høy til lav"
+      }
+    },
+    "page_titles": {
+      "blog_or_article_with_error": "Feil – %{title}",
+      "products": "Produkter",
+      "shopping_cart": "din handlevogn",
+      "account": "Regnskap",
+      "create_account": "Opprett konto",
+      "reset_account": "Tilbakestill konto",
+      "addresses": "Adresser",
+      "order": "Bestill %{name}",
+      "search": "Søk",
+      "search_results": {
+        "one": "Søk: %{count} resultat funnet for \"%{terms}\"",
+        "other": "Søk: %{count} resultater funnet for \"%{terms}\""
+      },
+      "collections": "Samlinger",
+      "not_found": "404 ikke funnet",
+      "challenge": "Utfordring",
+      "checkpoint": "Kontrollpunkt"
+    },
+    "cart": {
+      "discounts_with_count": "%{count} rabatter er brukt"
+    },
+    "challenge": {
+      "message": "For å fortsette, gi oss beskjed om at du ikke er en robot.",
+      "error": "Svaret ditt var ikke riktig, prøv igjen.",
+      "submit_button_text": "Sende inn"
+    },
+    "checkpoint": {
+      "message": "Løs Captcha for å fortsette",
+      "error": "Captcha-validering mislyktes",
+      "submit_button_text": "Sende inn"
+    },
+    "store_availability": {
+      "pick_up_time": {
+        "one_hour": "Vanligvis klar på 1 time",
+        "two_hours": "Vanligvis klar på 2 timer",
+        "four_hours": "Vanligvis klar på 4 timer",
+        "twenty_four_hours": "Vanligvis klar på 24 timer",
+        "two_to_four_days": "Vanligvis klar på 2-4 dager",
+        "five_or_more_days": "Vanligvis klar om 5+ dager",
+        "zero_to_two_hours": "Vanligvis klar på 2 timer",
+        "two_to_four_hours": "Vanligvis klar på 4 timer",
+        "immediately": "Klar for henting nå",
+        "next_day": "Klar for henting neste dag"
+      }
+    }
+  },
+  "customer_accounts": {
+    "address_form": {
+      "loading_form_accessibility_message": "Laster adresseskjema",
+      "loading_finished_accessibility_message": "Adresseskjemaet er lastet inn",
+      "save": "Lagre",
+      "save_accessibility_label": "Lagre adressen {{address}}",
+      "section_title_accessibility_label": "Legg til adresse",
+      "update_success_notification": "Adressen er oppdatert",
+      "attention": "Merk følgende",
+      "attention_help_text": "Navnet på en person eller avdeling",
+      "auto_complete_close_accessibility_label": "Lukk forslag",
+      "auto_complete_title": "Forslag",
+      "billing_address": "Bruk som faktureringsadresse",
+      "cancel": "Avbryt",
+      "cancel_accessibility_label": "Avbryt redigering av adresse {{address}}",
+      "creation_success_notification": "Adresse lagt til",
+      "default_address": "Dette er standardadressen min",
+      "default_address_creation_success_notification": "Standardadresse lagt til",
+      "default_address_update_success_notification": "Standardadressen er oppdatert",
+      "loading_add_form_accessibility_message": "Laster inn nytt adresseskjema",
+      "loading_edit_form_accessibility_message": "Laster rediger adresseskjema"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_name_label": "Selskapsnavn",
+        "company_card_section_accessibility_label": "Selskap"
+      },
+      "locations": {
+        "contact_email": "E-post",
+        "contact_list_title": "Mennesker",
+        "contact_name": "Navn",
+        "contact_permissions": "Tillatelser",
+        "contact_phone_number": "Telefonnummer",
+        "location_picker_label": "Stedsnavn",
+        "location_picker_accessibility_label": "Stedsnavn: {{locationName}}",
+        "net_payment_terms_description": "{{name}} : betalinger forfaller innen {{numberOfDays}} dager",
+        "own_role_contact_name": "Du",
+        "pagination": {
+          "load_more": "Last mer",
+          "load_more_accessibility_label": "Last inn flere lokasjoner"
+        },
+        "payment_details_title": "Betalingsinformasjon",
+        "payment_terms": "Betalingsbetingelser",
+        "permissions_label": "Dine tillatelser",
+        "permissions_title": "Tillatelser",
+        "section_title": "plassering",
+        "shipping_address_required": "Legg til en leveringsadresse til dette stedet for å begynne å legge inn bestillinger.",
+        "staff_and_permissions_title": "Personale og tillatelser",
+        "tax_details_title": "Skattedetaljer",
+        "tax_id": "Skatte-ID",
+        "tax_exemptions": "Skattefritak",
+        "multiple_tax_exemptions": "{{taxExemptionsCount}} til",
+        "multiple_tax_exemptions_and": "og",
+        "tax_exemptions_modal_close": "Lukk",
+        "taxes_none": "Ingen",
+        "tax_exemptions_modal_button_accessibility_label": "Se alle skattefritak"
+      },
+      "location_selection": {
+        "continue_to_store": "Fortsett å lagre",
+        "description": "Hvis du allerede har varer i handlekurven, kan endring av plassering påvirke handlekurvpriser og kvanta.",
+        "list_accessibility_label": "Stedsliste",
+        "list_item_without_address_accessibility_label": "{{name}} : Ingen adresse",
+        "list_loading_accessibility_message": "Laster inn liste over steder",
+        "list_loading_address_accessibility_message": "Laster inn adresse for {{locationName}}",
+        "list_loading_finished_accessibility_message": "Liste over steder er lastet inn",
+        "loading_store_accessibility_message": "Skal på butikk",
+        "no_location_title": "Kun personlige bestillinger",
+        "no_location_description": "Du har ikke lenger tillatelse til å legge inn bestillinger for {{company}} . Du kan fortsatt legge inn personlige bestillinger.",
+        "no_locations_found": "Ingen steder funnet",
+        "search": "Søk etter et sted",
+        "search_location_title": "Velg et sted",
+        "selection_cancel_button": "Avbryt",
+        "selection_confirmation_button": "Velg plassering",
+        "title": "Hvilket sted kjøper du?",
+        "clear_search": "Tøm søk",
+        "try_new_search": "Prøv et nytt søk"
+      },
+      "addresses": {
+        "add_billing_address_button": "Legg til faktureringsadresse",
+        "add_billing_address_section_accessibility_label": "Legg til faktureringsadresse",
+        "add_shipping_address_button": "Legg til leveringsadresse",
+        "add_shipping_address_section_accessibility_label": "Legg til leveringsadresse",
+        "billing_address_card_title": "Fakturaadresse",
+        "cancel_adding_billing_address_accessibility_label": "Avbryt å legge til faktureringsadresse",
+        "cancel_adding_shipping_address_accessibility_label": "Avbryt å legge til leveringsadresse",
+        "save_new_billing_address_accessibility_label": "Lagre faktureringsadresse",
+        "save_new_shipping_address_accessibility_label": "Lagre leveringsadresse",
+        "shipping_address_card_title": "Sendingsadresse"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "Gjem alle",
+          "show_all": "Vis alt",
+          "hide_all_accessibility_label": "Skjul alle bestillinger i gjennomgang",
+          "show_all_accessibility_label": "Vis alle bestillinger i gjennomgang",
+          "show_all_orders_in_review": "Vis alle bestillinger i gjennomgang",
+          "show_less_orders_in_review": "Vis færre bestillinger i gjennomgang",
+          "title": "Avventer",
+          "pending_tab_accessibility_label": {
+            "no_pending_orders": "Du har ingen ventende bestillinger",
+            "pending_orders": {
+              "one": "Du har {{count}} ventende bestilling",
+              "other": "Du har {{count}} ventende bestillinger"
+            },
+            "more_than_pagination_length": "Du har mer enn {{count}} ventende bestillinger"
+          },
+          "pending_orders_count_more_than_pagination_length": "{{count}} +",
+          "pagination": {
+            "nav_accessibility_label": "Bestillinger i vurderingsnavigasjonsknapper"
+          }
+        },
+        "order_list_column_headers_location": "plassering",
+        "order_list_column_headers_contact": "Kontakt",
+        "removed_company_contact_tooltip": "Fjernet fra selskapet"
+      },
+      "draft_order_details": {
+        "draft_order_subtitle": "Bekreftet {{date}} fra bestillingen {{draftOrderName}}",
+        "loading": "Laster bestillingsdetaljer",
+        "loading_finished_accessibility_message": "Bestillingsdetaljer er lastet inn",
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "one": "Betalingen din er {{count}} dag forsinket",
+              "other": "Betalingen din er {{count}} dager forsinket"
+            },
+            "banner_due": {
+              "one": "Betalingen din forfaller innen {{count}} dag",
+              "other": "Betalingen din forfaller innen {{count}} dager"
+            },
+            "banner_due_today": "Betalingen din forfaller i dag",
+            "title": "Betalings forfall",
+            "title_with_date": "Betaling forfaller {{date}}",
+            "title_due_on_receipt": "Betaling ikke forfalt ennå",
+            "title_due_on_fulfillment": "Betaling ved oppfyllelse",
+            "description_overdue": "Betalingen din er forsinket.",
+            "description_partially_paid": "Denne ordren ble delvis betalt. Du har en gjenværende saldo.",
+            "description_authorized": "Betalingsmåten din vil bli belastet på forfallsdatoen, eller du kan betale nå.",
+            "description_due_on_receipt": "Du vil motta en faktura når betaling forfaller.",
+            "description_due_on_fulfillment": "Betaling forfaller når alle varene i denne bestillingen er oppfylt."
+          },
+          "draft": {
+            "description": "Betalingsdetaljer avgjøres når bestillingen er bekreftet.",
+            "title": "Betaling ennå ikke forfalt",
+            "in_review": {
+              "description": "Betalingsdetaljer avgjøres når bestillingen er bekreftet.",
+              "title": "Betaling ennå ikke forfalt"
+            },
+            "submitted": {
+              "description": "Send inn betaling for å bekrefte denne bestillingen.",
+              "title": "Betal for å bekrefte"
+            }
+          },
+          "paid": {
+            "title": "Betalt",
+            "title_with_date": "Betalt {{date}}",
+            "description": "Bestillingen din er fullt betalt."
+          },
+          "refund": {
+            "title": "Refundert",
+            "title_with_date": "Refundert {{date}}",
+            "description_full_refund": "Du har mottatt full refusjon for denne bestillingen.",
+            "description_single_refund": "Du har mottatt en delvis refusjon for denne bestillingen.",
+            "description_multiple_refunds": "Du mottok delvis refusjon for denne bestillingen."
+          },
+          "canceled": {
+            "title": "Betaling kansellert",
+            "description": "Du blir ikke belastet."
+          },
+          "pay_now": "Betal nå",
+          "pay_now_accessibility_label": "Betal nå for bestillingen {{orderName}}",
+          "title": "Betalingsstatus"
+        },
+        "order_timeline": {
+          "expand_events_label": "Vis detaljer",
+          "expand_events_accessibility_label": "Vis utkast til bestillingsdetaljer",
+          "hide_events_label": "Skjul detaljer",
+          "hide_events_accessibility_label": "Skjul utkast til bestillingsdetaljer"
+        },
+        "subtitle": "Sendt inn {{date}}",
+        "title": "Bestill {{name}}"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "Denne betalingsmåten vil ikke lenger være tilgjengelig for fremtidige kjøp fra dette stedet.",
+          "description_with_replacement": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger for dette stedet. Erstatt den med en alternativ betalingsmetode for å fortsette å motta kommende bestillinger."
+        },
+        "payment_details": {
+          "order_label": "Bestill {{name}}",
+          "draft_label": "Ordreutkast {{name}}"
+        }
+      },
+      "purchase_order_number": {
+        "add_accessibility_label": "Legg til PO-nummer",
+        "add_modal_title": "Legg til PO-nummer",
+        "cancel": "Avbryt",
+        "close_modal_accessibility_label": "Lukk PO nummer modal",
+        "discard": "Kast",
+        "discard_changes_modal_title": "Forkaste endringer?",
+        "edit_accessibility_label": "Rediger PO-nummer",
+        "edit_modal_title": "Rediger PO-nummer",
+        "empty_state": "Ingen PO-nummer",
+        "modal_po_number_input_label": "Postnummer",
+        "modal_po_number_input_max_length_error": "PO-numre har maksimalt {{maxLength}} tegn.",
+        "save": "Lagre",
+        "title": "PO # {{poNumber}}"
+      }
+    },
+    "payment_methods": {
+      "payment_details": {
+        "invalid_payment_method": "Ugyldig betalingsmåte",
+        "invalid_payment_method_message": "Bruk et nytt kredittkort for å fortsette å motta kommende bestillinger.",
+        "replace_payment_method": "Bytt ut betalingsmåten",
+        "title": "Detaljer om betalingsmåte",
+        "credit_card_details_accessibility_label": "slutter på {{lastDigits}}",
+        "billing_title": "Fakturaadresse",
+        "card_info_title": "Kortinformasjon",
+        "payment_method_expiring_on": "Utløper {{expiryDate}}",
+        "payment_method_expired_on": "Utløp {{expiryDate}}",
+        "preauthorized_payments": "Forhåndsautoriserte betalinger",
+        "close_payment_modal": "Lukk",
+        "close_payment_modal_accessibility_label": "Lukk betalingsmåtedetaljer modal",
+        "payment_method_not_found_error": "Finner ikke betalingsmåten",
+        "payment_details_loading": "Laster inn betalingsmåtedetaljer",
+        "pre_authorized_payments": "Forhåndsautoriserte betalinger",
+        "total_amount_of_subscription_line_items_left": "og {{total}} til",
+        "total_amount_of_subscription_line_items_left_accessibility_label": "{{totalItems}} varer totalt, viser {{totalItemsToDisplay}} varer.",
+        "next_payment_due": "Neste betaling forfaller {{dueDateInMonthDayYear}}",
+        "edit_payment_method_button": "Redigere",
+        "edit_payment_method_button_accessibility_label": "Rediger betalingsmåte som slutter på {{lastDigits}}",
+        "loading_shop_pay": "Laster Shop Pay"
+      },
+      "edit_payment_method": {
+        "title": "Rediger betalingsmåte",
+        "save_payment_method_button": "Lagre",
+        "cancel_edit_payment_method_button": "Avbryt",
+        "payment_method_updated_toast": "Betalingsmåten er oppdatert",
+        "billing_address": "Fakturaadresse",
+        "billing_address_add_new": "Legg til ny",
+        "billing_address_choose_from_list": "Velg fra listen",
+        "future_purchases_notice": "Denne betalingsmåten vil bli lagret for fremtidige kjøp."
+      },
+      "card_fields": {
+        "card_number_label": "Kortnummer",
+        "card_number_placeholder": "Kortnummer",
+        "name_on_card_label": "Navn på kort",
+        "name_on_card_placeholder": "Navn på kort",
+        "card_expiry_label": "Utløpsdato (MM \/ ÅÅ)",
+        "card_expiry_placeholder": "Utløpsdato (MM \/ ÅÅ)",
+        "card_verification_value_label": "Sikkerhetskode",
+        "card_verification_value_placeholder": "Sikkerhetskode",
+        "card_start_label": "Utstedelsesdato (MM \/ ÅÅ)",
+        "card_start_placeholder": "Utstedelsesdato (MM \/ ÅÅ)",
+        "tooltip": {
+          "tooltip_accessibility_label": "Mer informasjon",
+          "card_verification_value_explanation_amex": "4-sifret sikkerhetskode på forsiden av kortet ditt",
+          "card_verification_value_explanation_other": "3-sifret sikkerhetskode på baksiden av kortet",
+          "card_verification_value_explanation": "3-sifret sikkerhetskode finnes vanligvis på baksiden av kortet ditt. American Express-kort har en 4-sifret kode på forsiden.",
+          "card_security_notice": "Alle transaksjoner er sikre og krypterte."
+        },
+        "field_errors": {
+          "credit_card_name_invalid": "Skriv inn navnet ditt nøyaktig slik det er skrevet på kortet ditt",
+          "credit_card_number_invalid": "Skriv inn et gyldig kortnummer",
+          "credit_card_expiry_invalid": "Angi en gyldig utløpsdato for kortet",
+          "credit_card_verification_value_blank": "Skriv inn CVV eller sikkerhetskoden på kortet ditt"
+        }
+      },
+      "payment_delete": {
+        "title": "Slett betalingsmåte",
+        "description_without_replacement": "Denne betalingsmåten vil ikke lenger være tilgjengelig for fremtidige kjøp.",
+        "description_with_replacement": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger. Du kan eventuelt erstatte den med en annen betalingsmetode for å fortsette å motta kommende bestillinger.",
+        "warning_message_with_replacement": {
+          "with_pending_orders_and_subscriptions": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger. Med mindre du velger en alternativ betalingsmetode, vil denne betalingsmetoden fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger. Ved å velge en alternativ betalingsmetode kan du motta kommende abonnementsbestillinger uten avbrudd.",
+          "with_pending_orders": "Hvis du sletter denne betalingsmåten, fjernes den fra kontoen din og vil ikke lenger være tilgjengelig for fremtidige kjøp. Med mindre du velger en alternativ betalingsmetode, vil den fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger.",
+          "with_subscriptions": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger. Erstatt den med en alternativ betalingsmetode for å fortsette å motta kommende bestillinger."
+        },
+        "warning_message_without_replacement": {
+          "with_pending_orders_and_subscriptions": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger. Denne betalingsmåten vil fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger, men du vil ikke motta kommende abonnementsbestillinger. Legg til en alternativ betalingsmåte for å fortsette å motta abonnementsbestillinger.",
+          "with_pending_orders": "Hvis du sletter denne betalingsmåten, fjernes den fra kontoen din og vil ikke lenger være tilgjengelig for fremtidige kjøp. Det vil fortsatt bli belastet for eventuelle utestående saldoer på eksisterende bestillinger.",
+          "with_subscriptions": "Sletting av denne betalingsmåten vil påvirke forhåndsautoriserte betalinger. Legg til en alternativ betalingsmåte for å fortsette å motta kommende bestillinger."
+        },
+        "payment_method_selector_placeholder": "Velg en erstatningsbetalingsmåte (valgfritt)",
+        "payment_method_selector_no_alternative_payment": "Ingen erstatningsmetode",
+        "replace_method_with_new_method_description": "Din {{currentPaymentMethodName}} vil bli slettet og erstattet med din {{newPaymentMethodName}} .",
+        "error_when_deleting": "Vi beklager, men noe gikk galt, og vi kunne ikke slette denne betalingsmåten. Prøv igjen senere eller oppdater siden.",
+        "delete_and_replace_button": "Slett og erstatt",
+        "delete_and_replace_button_accessibility_label": "Slett {{currentPaymentMethodName}} og erstatt med {{newPaymentMethodName}} .",
+        "deleted_successfully": "Betalingsmåten ble slettet.",
+        "loading_available_payment_methods_accessibility_label": "Laster tilgjengelige betalingsmåter"
+      },
+      "add_payment_method": {
+        "title": "Legg til betalingsmåte",
+        "payment_method_added_confirmation": "Betalingsmåte lagt til",
+        "billing_address": {
+          "title": "Fakturaadresse",
+          "add_billing_address_button": "Legg til ny",
+          "add_billing_address_button_accessibility_label": "Legg til ny faktureringsadresse",
+          "choose_billing_address_from_list_button": "Velg fra listen",
+          "choose_billing_address_from_list_button_accessibility_label": "Velg en faktureringsadresse fra listen",
+          "missing_billing_address_error_message": "Vennligst oppgi en faktureringsadresse"
+        }
+      },
+      "title": "Betalingsmetoder",
+      "add_payment_method_button": "Legg til betalingsmåte",
+      "add_payment_method_banner": "Legg til betalingsmetode for raskere utsjekking eller forhåndsautoriserte tjenester",
+      "no_payment_methods_banner": "Ingen betalingsmetoder lagt til",
+      "edit_payment_method_button_accessibility_label": "Rediger {{paymentMethodName}} som slutter på {{lastDigits}}",
+      "edit_payment_method_brand_button_accessibility_label": "Rediger {{paymentMethodName}}",
+      "delete_payment_method_button": "Slett",
+      "delete_payment_method_button_accessibility_label": "Slett {{paymentMethodName}}",
+      "back_button": "Tilbake",
+      "back_button_accessibility_label": "Tilbake til {{paymentMethodStepTitle}}",
+      "generic_card": "Kort",
+      "expiration_warning_button_accessibility_label": "Vis utløpsadvarsel for {{paymentMethodName}} som slutter på {{lastDigits}}",
+      "expires_soon": "Dette kortet utløper snart",
+      "expired": "Dette kortet er utløpt",
+      "card_update_consent": "Denne betalingsmåten vil bli lagret for fremtidige kjøp.",
+      "digital_wallet_title": "Digital lommebok",
+      "credit_or_debit_card_title": "Kreditt- eller debetkort",
+      "google_pay": {
+        "loading": "Laster inn Google Pay",
+        "errors": {
+          "generic": "Det oppsto et problem med Google Pay. Prøv på nytt eller bruk en annen betalingsmetode.",
+          "missing_billing_address": "Google Pay krever en faktureringsadresse. Vennligst legg til en til kontoen din."
+        }
+      },
+      "apple_pay": {
+        "loading": "Laster inn Apple Pay",
+        "errors": {
+          "generic": "Det var et problem med Apple Pay. Prøv på nytt eller bruk en annen betalingsmetode.",
+          "not_available": "Apple Pay er ikke tilgjengelig på denne enheten.",
+          "missing_billing_address": "Apple Pay krever en faktureringsadresse. Vennligst legg til en til kontoen din."
+        }
+      }
+    },
+    "payment_method_brands": {
+      "visa": "Visum",
+      "discover": "Oppdage",
+      "hipercard": "Hiperkort"
+    },
+    "shop_policies": {
+      "legal_notice": "Juridisk varsel",
+      "privacy_policy": "Personvernerklæring",
+      "refund_policy": "Angrerett",
+      "shipping_policy": "Fraktpolicy",
+      "subscription_policy": "Regler for abonnement",
+      "terms_of_sale": "Salgsbetingelser",
+      "terms_of_service": "Vilkår for bruk"
+    },
+    "orders": {
+      "order_list": {
+        "one_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}}",
+        "two_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} , {{lineItemName2}}",
+        "three_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}}",
+        "four_images_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} , {{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} , {{lineItemName2}} og {{numberOfAdditionalProducts}} produkter til",
+        "more_than_four_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} , {{lineItemName2}} , {{lineItemName3}} og {{numberOfAdditionalProducts}} produkter til",
+        "plus_more": "+ {{numberOfAdditionalProducts}}",
+        "plus_more_products": "+ {{numberOfAdditionalProducts}} produkter",
+        "carousel": {
+          "one_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} antall {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} mengde {{lineItemQuantity1}} , {{lineItemName2}} mengde {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} kvantitet {{lineItemQuantity1}} , {{lineItemName2}} kvantitet {{lineItemQuantity2}} , {{lineItemName3}} kvantitet {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} kvantitet {{lineItemQuantity1}} , {{lineItemName2}} kvantitet {{lineItemQuantity2}} , {{lineItemName3}} kvantitet {{lineItemQuantity3}} , {{lineItemName4}} kvantitet {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} kvantitet {{lineItemQuantity1}} , {{lineItemName2}} kvantitet {{lineItemQuantity2}} , {{lineItemName3}} kvantitet {{lineItemQuantity3}} , {{lineItemName4}} kvantitet {{lineItemQuantity4}} {{lineItemName5}} mengde {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} kvantitet {{lineItemQuantity1}} , {{lineItemName2}} kvantitet {{lineItemQuantity2}} , {{lineItemName3}} kvantitet {{lineItemQuantity3}} , {{lineItemName4}} kvantitet {{lineItemQuantity4}} {{lineItemName5}} mengde {{lineItemQuantity5}} , {{lineItemName6}} mengde {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "Bestillingen inkluderer {{lineItemName1}} kvantitet {{lineItemQuantity1}} , {{lineItemName2}} kvantitet {{lineItemQuantity2}} , {{lineItemName3}} kvantitet {{lineItemQuantity3}} , {{lineItemName4}} kvantitet {{lineItemQuantity4}} {{lineItemName5}} mengde {{lineItemQuantity5}} , {{lineItemName6}} mengde {{lineItemQuantity6}} og mer",
+          "view_order_details": "Se ordre detaljer",
+          "previous": "Tidligere",
+          "next": "Neste"
+        },
+        "items": {
+          "one": "{{count}} element",
+          "other": "{{count}} varer"
+        },
+        "list_view": "Vis listevisning",
+        "no_filtered_results_description": "Fjern eller juster filtre for å se bestillingene dine",
+        "no_filtered_results_title": "Ingen filtrerte resultater",
+        "order_link": "Se bestillingen {{name}}",
+        "order_number": "Bestill {{name}}",
+        "orders_title": "Bekreftet",
+        "pagination": {
+          "nav_accessibility_label": "Bestiller navigasjonsknapper",
+          "next": "Neste",
+          "next_accessibility_label": "Neste bestillinger",
+          "previous": "Forrige",
+          "previous_accessibility_label": "Tidligere bestillinger",
+          "load_more": "Last mer",
+          "load_more_accessibility_label": "Last inn flere bestillinger"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "Se bestillingen for detaljer",
+            "estimated_delivery": "Estimert levering {{date}}",
+            "last_updated": "Sist oppdatert {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "Est. levering {{date}}"
+          }
+        },
+        "payment_status": {
+          "list_view": {
+            "overdue": "Forsinket betaling",
+            "due": "Betaling forfaller {{date}}",
+            "due_today": "Betaling forfaller i dag",
+            "due_without_date": "Betalings forfall",
+            "due_on_fulfillment": "Betaling ved oppfyllelse",
+            "pay_to_confirm": "Betal for å bekrefte",
+            "payment_not_due": "Betaling ennå ikke forfalt"
+          },
+          "table_view": {
+            "overdue": "Forfalt",
+            "due": "Frist {{date}}",
+            "due_today": "Har termin i dag",
+            "paid": "Betalt",
+            "due_without_date": "Forfaller",
+            "due_on_fulfillment": "Forfaller ved oppfyllelse",
+            "pay_to_confirm": "Betal for å bekrefte",
+            "payment_not_due": "Ikke forfall ennå"
+          }
+        },
+        "sort_by": "Sorter etter: {{option}}",
+        "sort_hide_options_accessibility_label": "Skjul sorteringsalternativer for bekreftede bestillinger.",
+        "sort_show_options_accessibility_label": "Vis sorteringsalternativer for bekreftede bestillinger.",
+        "sort_currently_sorted_by_accessibility_label": "For øyeblikket sortert etter: {{option}}",
+        "sort_title": "Sortere",
+        "sort": {
+          "date": {
+            "newest": "Nyeste til eldste",
+            "oldest": "Eldst til nyeste"
+          },
+          "location": {
+            "ascending": "Plassering (AZ)",
+            "descending": "Plassering (ZA)"
+          },
+          "order_number": {
+            "ascending": "Bestillingsnummer (lavt til høyt)",
+            "descending": "Ordrenummer (høyt til lavt)"
+          },
+          "order_total": {
+            "ascending": "Bestilling totalt (lav til høy)",
+            "descending": "Bestilling totalt (høy til lav)"
+          }
+        },
+        "table_view": "Vis tabellvisning",
+        "show_order_actions_accessibility_label": "Vis bestillingshandlinger for bestillingen {{name}}",
+        "column_headers": {
+          "order": "Rekkefølge",
+          "items": "Varer"
+        },
+        "delivered": "Levert {{date}}",
+        "empty_state_order_source_description": "Bare bestillinger lagt inn av {{email}} vil vises her.",
+        "empty_state_subtitle": "Gå til butikken for å bestille.",
+        "empty_state_title": "Ingen bestillinger ennå",
+        "empty_state_title_for_pending_orders": "Ingen ventende bestillinger",
+        "estimated_shortform": "Est. {{date}}",
+        "estimated_delivery": "Estimert levering {{date}}"
+      },
+      "order_status": {
+        "attempted_delivery_label": "Forsøkt levering",
+        "attempted_delivery_description": "Leveringsforsøket mislyktes.",
+        "confirmed_description": "Vi har mottatt bestillingen din.",
+        "on_its_way_description": "Denne forsendelsen er på vei.",
+        "out_for_delivery_description": "Denne forsendelsen er ute for levering.",
+        "preparing_for_shipping_label": "Forbereder for frakt",
+        "preparing_for_shipping_description": "Disse varene blir klargjort for frakt.",
+        "ready_for_pickup_label": "Klar til å hentes",
+        "ready_for_pickup_description": "Disse varene er klare for henting. Ta med ordrebekreftelsen når du henter bestillingen.",
+        "ready_for_pickup_location": "Bestillingen din er klar for henting på stedet",
+        "picked_up_label": "Plukket opp",
+        "picked_up_description": "Disse varene er hentet.",
+        "canceled_description": "Bestillingen din ble kansellert {{date}} .",
+        "canceled_label": "Kansellert",
+        "canceled_title": "Bestillingen din er kansellert",
+        "come_back": "Kom tilbake til denne siden for oppdateringer om forsendelsesstatusen din.",
+        "company_tracking_number": "{{company}} sporingsnummer:",
+        "confirmed_label": "Bekreftet",
+        "confirmed_title": "Din bestilling er bekreftet",
+        "confirmed_description_pickup": "Du vil motta en e-post når bestillingen er klar for henting.",
+        "confirmed_description_digital": "Du vil motta en e-post når bestillingen er klar.",
+        "confirmed_description_gift_card_text": "Du vil motta en tekstmelding når bestillingen er klar.",
+        "delivered_description": "Denne forsendelsen er levert.",
+        "delivered_label": "Levert",
+        "delivered_title": "Forsendelsen din er levert",
+        "delivered_description_digital": "Bestillingen din er fullført.",
+        "delivered_description_gift_card": {
+          "one": "Gavekort ble sendt på e-post.",
+          "other": "Gavekort ble sendt på e-post."
+        },
+        "delivered_description_gift_card_text": {
+          "one": "Gavekortet ble sendt på sms.",
+          "other": "Gavekort ble sendt på sms."
+        },
+        "gift_card_label": {
+          "one": "Gavekort",
+          "other": "Gavekort"
+        },
+        "gift_card_resend": {
+          "one": "Send e-post igjen"
+        }
+      },
+      "list_layout_accessibility_label": "Oppsettalternativer",
+      "list_title": "Bestillinger"
+    },
+    "errors": {
+      "address_deletion_error": {
+        "description": "Det oppsto et problem med å slette denne adressen. Prøv på nytt eller oppdater siden."
+      },
+      "addresses_loading_issue": {
+        "description": "Tilkoblingsfeil. Sjekk Internett-tilkoblingen din og prøv igjen."
+      },
+      "banner_title": {
+        "one": "Det er {{count}} feil",
+        "other": "Det er {{count}} feil"
+      },
+      "failed_address_creation": {
+        "description": "Det oppsto et problem med å opprette adressen din. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din."
+      },
+      "failed_address_update": {
+        "description": "Det oppsto et problem med å oppdatere adressen din. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din."
+      },
+      "load_orders_error": {
+        "title": "Kan ikke laste bestillinger",
+        "description": "Prøv på nytt eller kom tilbake senere.",
+        "retry_button": "Prøv på nytt"
+      },
+      "load_paypal_error": {
+        "description": "Det er et problem med å laste inn PayPal. Vær så snill, prøv på nytt."
+      },
+      "no_access": {
+        "back_to_authentication_link": "Logg på en annen konto",
+        "description": "Du er ikke registrert som B2B-kunde hos {{shopName}}",
+        "title": "Ingen adgang"
+      },
+      "no_access_to_locations": {
+        "description": "Du har ikke tilgang til noen steder"
+      },
+      "not_found": {
+        "description": "Sjekk URL-en eller prøv igjen om noen minutter.",
+        "title": "Det er et problem med å laste denne siden"
+      },
+      "order_not_found": {
+        "description": "Denne bestillingen eksisterer ikke, eller du har ikke tillatelse til å se den.",
+        "title": "Finner ikke bestillingen"
+      },
+      "profile_update_error": {
+        "description": "Det oppsto et problem med å oppdatere profilen din. Prøv å oppdatere denne siden eller sjekk internettforbindelsen din."
+      },
+      "retry_action_label": "Prøv på nytt"
+    },
+    "order_details": {
+      "returns": {
+        "print_shipping_label": "Skriv ut fraktetikett",
+        "return_and_refund_modal_header": "Angrerett",
+        "tracking_number": "Sporingsnummer:"
+      },
+      "shipping": {
+        "address": "Sendingsadresse",
+        "address_map_marker": "Sendingsadresse",
+        "method": "Forsendelsesmetode",
+        "free": "Gratis",
+        "free_shipping_discount": "Gratis frakt",
+        "one_time": "Engangsfrakt",
+        "subscription": "Abonnementsfrakt"
+      },
+      "pickup": {
+        "pickup": "Plukke opp",
+        "pickup_location": "Hentested"
+      },
+      "show_items": "Vis elementer",
+      "show_order_summary": "Vis ordresammendrag",
+      "hide_order_summary": "Skjul ordresammendrag",
+      "subtitle": "Bekreftet {{date}}",
+      "subtotal": "Delsum",
+      "summary_list_title_accessibility_label": "Bestill varer",
+      "summary_title": "Bestillingssammendrag",
+      "summary_totals_title_accessibility_label": "Bestillingssummer",
+      "shop_order_tracking": {
+        "download_shop_to_track": "Last ned Shop for å spore pakken",
+        "track_order_with_shop": "Spor bestilling med butikk",
+        "title_header": "Skann med telefonen",
+        "real_time_delivery_updates": "Shop vil sende deg leveringsoppdateringer i sanntid når bestillingen din er sendt."
+      },
+      "edit_summary": {
+        "added": "La til",
+        "added_with_quantity": "{{quantity}} lagt til",
+        "removed": "Fjernet",
+        "removed_with_quantity": "{{quantity}} fjernet",
+        "updated_at": "Bestillingen din ble oppdatert {{date}}",
+        "returned": "Returnert",
+        "returned_with_quantities": "{{delta}} av {{total}} returnerte",
+        "removed_with_quantities": "{{delta}} av {{total}} fjernet"
+      },
+      "shop_pay": {
+        "order_completed_with": "Bestilling fullført med",
+        "learn_more": "Lære mer"
+      },
+      "taxes": "Skatter",
+      "duties": "Plikter",
+      "ok_duties_tooltip": "Denne bestillingen sendes fra et annet land, så avgifter er lagt til bestillingen din.",
+      "error_duties_tooltip": "Denne bestillingen sendes fra et annet land, så toll og avgifter kan bli belastet ved levering.",
+      "zero_duties_tooltip": "Denne bestillingen sendes fra et annet land. Toll belastes ikke for bestillinger av denne verdien.",
+      "tip": "Tips",
+      "title": "Bestill {{name}}",
+      "unit_price": "{{price}} \/ea",
+      "pagination": {
+        "load_more": "Last mer",
+        "load_more_accessibility_label": "Last inn flere varer",
+        "loading_accessibility_label": "Laster varer"
+      },
+      "login_to_view_all_order_details": "Logg inn for å se alle ordredetaljer.",
+      "log_in": "Logg Inn",
+      "logged_in_account_no_permission_to_order": "Du er logget på som {{email}} . Denne kontoen har ikke tillatelse til å administrere denne bestillingen.",
+      "log_in_to_a_different_account": "Logg på en annen konto"
+    },
+    "addresses": {
+      "add_button": "Legg til adresse",
+      "add_button_text": "Legg til",
+      "add_button_accessibility_label": "Legg til adresse",
+      "back_button": "Tilbake",
+      "back_button_accessibility_label": "Tilbake til redigeringsadressen {{address}}",
+      "add_address_banner": "Legg til adresser som skal brukes i kassen",
+      "no_addresses_banner": "Ingen adresser lagt til",
+      "address_deleted_notification": "Adresse slettet",
+      "cancel_adding_address_accessibility_label": "Avbryt å legge til adresse",
+      "cancel_deletion_button": "Avbryt",
+      "cancel_deletion_button_accessibility_label": "Avbryt sletting av {{address}}",
+      "default_address": {
+        "title": "Standard adresse",
+        "title_accessibility_label": "Standardadresse: {{address}}"
+      },
+      "delete_button": "Slett",
+      "delete_button_accessibility_label": "Slett {{address}}",
+      "delete_confirmation_button": "Slett adresse",
+      "delete_confirmation_button_accessibility_label": "Slett {{address}}",
+      "delete_confirmation_message": "Vil du slette adressen? Eksisterende bestillinger påvirkes ikke.",
+      "delete_confirmation_title": "Vil du slette adressen?",
+      "delete_confirmation_description": "Eksisterende bestillinger påvirkes ikke.",
+      "edit_button": "Redigere",
+      "edit_button_accessibility_label": "Rediger {{address}}",
+      "edit_section_accessibility_label": "Rediger {{address}}",
+      "edit_modal_title": {
+        "default": "Rediger adresse",
+        "billing": "Rediger faktureringsadresse",
+        "shipping": "Rediger leveringsadresse"
+      },
+      "loading_accessibility_message": "Laster adresse",
+      "loading_addresses_accessibility_message": "Laster inn adresser",
+      "loading_billing_accessibility_message": "Laster faktureringsadresse",
+      "loading_finished_accessibility_message": "Ny side med adresser er lastet inn",
+      "loading_shipping_accessibility_message": "Laster leveringsadresse",
+      "pagination": {
+        "load_more": "Last mer",
+        "load_more_accessibility_label": "Last inn flere adresser"
+      },
+      "save_new_address_accessibility_label": "Lagre adresse",
+      "title": "Adresser",
+      "billing_address_dropdown_placeholder": "Fakturaadresse"
+    },
+    "enable_javascript": "For å se kontoen din, aktiver JavaScript i nettleserinnstillingene eller logg på med en annen nettleser.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "Skjul konto-menyen",
+        "label": "Regnskap",
+        "show_accessibility_label": "Vis kontomenyen",
+        "nav_accessibility_label": "Kontonavigering",
+        "open_menu_accessibility_label": "Åpne Kontonavigering",
+        "close_menu_accessibility_label": "Lukk Kontonavigering",
+        "loading_message": "Laster kontonavigering"
+      },
+      "action_menu_accessibility_label": "Flere handlinger",
+      "close_menu_accessibility_label": "Lukk hovednavigasjonen",
+      "contact_email_subject": "Kontakt fra nettbutikken {{shopName}}",
+      "contact_link": "Kontakt oss",
+      "delete_confirmation": {
+        "cancel": "Avbryt",
+        "delete": "Slett"
+      },
+      "dismiss_toast": "Avskjedige",
+      "document_title": "{{sectionName}} - {{shopName}} - Konto",
+      "go_to_store_link": "Gå til butikken",
+      "loading_message": "Laster",
+      "log_out_link": "Logg ut",
+      "logout_overlay_label": "Logger deg ut...",
+      "nav_label_accessibility_label": "Hovednavigasjon",
+      "navigation_accessibility_message": "Du navigerte til {{sectionName}}",
+      "open_menu_accessibility_label": "Åpne hovednavigasjonen",
+      "orders_link_label": "Bestillinger",
+      "shop_logo_accessibility_label": "{{shopName}} -logoen",
+      "subscriptions_link_label": "Abonnementer"
+    },
+    "account_information": {
+      "loading_accessibility_message": "Laster inn kontoinformasjon",
+      "loading_finished_accessibility_message": "Kontoinformasjon er lastet inn",
+      "profile_card": {
+        "cancel": "Avbryt",
+        "cancel_accessibility_label": "Avbryt redigering av profil",
+        "edit": "Redigere",
+        "edit_accessibility_label": "Rediger profil",
+        "email_help_text": "E-post som brukes til pålogging kan ikke endres",
+        "first_name": "Fornavn",
+        "last_name": "Etternavn",
+        "no_name_provided_accessibility_label": "Ingen navn lagt til",
+        "phone_number_help_text": "Telefonnummeret som brukes til pålogging kan ikke endres",
+        "save": "Lagre",
+        "save_accessibility_label": "Lagre profil",
+        "title": "Profil"
+      },
+      "profile_update_confirmation_message": "Profil oppdatert",
+      "title": "Kontoinformasjon",
+      "people": {
+        "pagination": {
+          "load_more": "Last mer",
+          "load_more_accessibility_label": "Last inn flere folk",
+          "loading_accessibility_label": "Laster inn folk"
+        }
+      },
+      "add_button": "Legg til"
+    }
+  },
+  "layout": {
+    "back_to_shopping": "Tilbake til shopping",
+    "back": "Tilbake",
+    "wishlist": {
+      "title": "Ønskeliste",
+      "no_products": "Ingen produkter ble lagt til på ønskelisten."
+    },
+    "compare": {
+      "title": "Sammenligne",
+      "no_products": "Ingen produkter ble lagt til på sammenligningssiden."
+    },
+    "cart": {
+      "title": "Handlevogn"
+    },
+    "customer": {
+      "account": "Regnskap",
+      "log_in": "Logg Inn"
+    }
+  },
+  "pages": {
+    "find_a_store": "Finn en butikk"
+  },
+  "products": {
+    "product": {
+      "regular_price": "Vanlig pris",
+      "sold_out": "Utsolgt",
+      "availability": "Tilgjengelighet",
+      "brand": "Merke",
+      "colors": "Farger",
+      "in_stock": "På lager",
+      "out_of_stock": "Utsolgt",
+      "unavailable": "Utilgjengelig",
+      "on_sale": "På salg",
+      "from_text_html": "Fra {{ price }}",
+      "quantity": "Mengde",
+      "add_to_cart": "Legg i handlekurv",
+      "add_to_wishlist": "Legg til ønskeliste",
+      "remove_from_wishlist": "Fjern fra ønskeliste",
+      "add_to_compare": "Sammenligne",
+      "add_a_question": "Spør et spørsmål",
+      "remove_from_compare": "Fjern fra sammenligning",
+      "quick_add": "Rask Legg til",
+      "zoom_in": "Zoom inn",
+      "quick_view": "Hurtigvisning",
+      "collection": "Samling",
+      "decrease_quantity": "Reduser antallet {{ title }} med én",
+      "increase_quantity": "Øk antallet {{ title }} med én",
+      "include_taxes": "Avgift inkludert.",
+      "price": {
+        "from_price_html": "Fra {{ price }}",
+        "regular_price": "Vanlig pris",
+        "sale_price": "Salgs pris",
+        "unit_price": "Enhetspris",
+        "save_price_html": "Spar <span data-sale-value>{{ amount }}<\/span>"
+      },
+      "preorder": "Forhåndsbestille",
+      "product_quantity": "Produkt mengde",
+      "product_recommendation_heading": "Du kommer kanskje også til å like",
+      "product_reviews_heading": "Vurderinger og anmeldelser",
+      "quantity_minimum_message": "Antallet må være 1 eller mer",
+      "not_enough_items_message": "Ikke nok varer tilgjengelig. Bare {{ quantity }} igjen.",
+      "sale_price": "Salgs pris",
+      "see_more_options": "Se {{ count }} alternativ(er)",
+      "sold_out_items_message": "Produktet er allerede utsolgt.",
+      "view_details": "Vis detaljer",
+      "vendor": "Leverandør",
+      "collections": "Samlinger",
+      "social_share": "Dele",
+      "copy_link": "Kopier link",
+      "unit_price_label": "Enhetspris",
+      "size_guide": "Størrelsesguide",
+      "save_html": "Spar<span class=\"sf-currency sf-currency--saved font-medium\" data-saved-price>{{ amount }}<\/span>",
+      "recently_viewed_products": "Nylig viste produkter",
+      "select_options": "Velg alternativer",
+      "sold": "Solgt",
+      "available": "Tilgjengelig",
+      "xr_button": "Se i rommet ditt",
+      "xr_button_label": "Se i rommet ditt, laster inn element i utvidet virkelighet-vindu",
+      "pickup_availability": {
+        "view_store_info": "Se butikkinformasjon",
+        "check_other_stores": "Sjekk tilgjengelighet i andre butikker",
+        "pick_up_available": "Henting tilgjengelig",
+        "pick_up_available_at_html": "Henting tilgjengelig på <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "pick_up_unavailable_at_html": "Henting er for øyeblikket ikke tilgjengelig på <span class=\"color-foreground\">{{ location_name }}<\/span>",
+        "unavailable": "Kunne ikke laste inn tilgjengelighet for henting",
+        "refresh": "Forfriske"
+      }
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Her er gavekortet {{ value }} til {{ shop }} !",
+      "subtext": "Gavekortet ditt",
+      "gift_card_code": "Gavekortkode",
+      "shop_link": "Fortsette å handle",
+      "remaining_html": "Gjenværende {{ balance }}",
+      "add_to_apple_wallet": "Legg til Apple Wallet",
+      "qr_image_alt": "QR-kode – skann for å løse inn gavekort",
+      "copy_code": "Kopier koden",
+      "expired": "Utløpt",
+      "copy_code_success": "Koden ble kopiert",
+      "print_gift_card": "Skrive ut"
+    }
+  },
+  "sections": {
+    "video": {
+      "play": "Spille"
+    },
+    "collection_template": {
+      "from": "Fra",
+      "to": "Til",
+      "product_count": {
+        "one": "Viser {{ product_count }} av {{ count }} produkt",
+        "other": "Viser {{ product_count }} av {{ count }} produkter"
+      }
+    },
+    "slider": {
+      "video": {
+        "notice": "Nettleseren din støtter ikke videokoden."
+      }
+    }
+  },
+  "general": {
+    "404": {
+      "button": "Gå hjem",
+      "subtext": "Side ikke funnet!"
+    },
+    "accessibility": {
+      "error": "Feil",
+      "link_messages": {
+        "new_window": "Åpnes i et nytt vindu."
+      },
+      "close_header": "Lukk overskriften",
+      "close": "Lukk"
+    },
+    "meta": {
+      "tags": "Merket \" {{ tags }} \"",
+      "page": "Side {{ page }}"
+    },
+    "time": {
+      "days": "dager",
+      "hrs": "timer",
+      "hours": "timer",
+      "mins": "min",
+      "minutes": "minutter",
+      "secs": "sek",
+      "seconds": "sekunder"
+    },
+    "breadcrumbs": {
+      "home": "Hjem",
+      "home_link_title": "Tilbake til startsiden"
+    },
+    "password_page": {
+      "opening_soon": "Åpner snart"
+    },
+    "search": {
+      "title": "Søk i butikken vår",
+      "placeholder": "Søk etter produkter",
+      "placeholder_short": "Søk",
+      "popular_searches": "Populære søk",
+      "results_for": "Resultater for",
+      "more_results": "Flere resultater",
+      "heading": {
+        "one": "Søkeresultat: \" {{ terms }} \"",
+        "other": "Søkeresultater: \" {{ terms }} \""
+      },
+      "results_with_count": {
+        "one": "Fant {{ count }} resultat for \" {{ terms }} \"",
+        "other": "Fant {{ count }} resultater for \" {{ terms }} \""
+      },
+      "no_results": "Ingen resultat for",
+      "no_results_html": "Prøv et annet søkeord eller gå tilbake til <a href=\"\/\">hjemmesiden<\/a> ."
+    },
+    "newsletter_form": {
+      "confirmation": "Takk for at du abonnerer"
+    },
+    "payment": {
+      "options": "Betalingsalternativer"
+    },
+    "notifications": {
+      "item_added": "Produktet ble lagt til i handlekurven",
+      "required_field": "Fyll ut alle de obligatoriske feltene(*) før du legger i handlekurven!"
+    },
+    "foxkit": {
+      "add": "Legg til"
+    },
+    "tooltip": {
+      "not_found": "Finner ikke verktøytipstype"
+    }
+  },
+  "blogs": {
+    "article": {
+      "by_author": "av",
+      "posted_in": "på",
+      "tags": "Tagger:",
+      "read_more": "Les mer",
+      "related_title": "relaterte artikler",
+      "next_post": "Neste",
+      "previous_post": "Tidligere"
+    },
+    "comments": {
+      "title": "Legg igjen en kommentar",
+      "sub_title": "E-postadressen din vil ikke offentliggjøres.",
+      "name": "Navnet ditt*",
+      "email": "Din epost*",
+      "message": "Kommentar",
+      "post": "Send inn nå",
+      "reply": "Svare",
+      "at_time": "på",
+      "success_moderated": "Kommentaren din ble lagt ut. Vi vil publisere den om en liten stund, ettersom bloggen vår er moderert.",
+      "success": "Kommentaren din ble lagt ut! Takk skal du ha!",
+      "comments_with_count": {
+        "one": "{{ count }} kommentar",
+        "other": "{{ count }} kommentarer"
+      }
+    }
+  },
+  "sidebar": {
+    "clear_all": "RYDD ALT"
+  },
+  "cart": {
+    "general": {
+      "title": "Handlevogn",
+      "remove": "Fjerne",
+      "note": "Spesielle instruksjoner for selger",
+      "drawer_note": "Merk",
+      "drawer_coupon": "Kupong",
+      "subtotal": "Delsum",
+      "taxes_and_shipping_at_checkout": "Avgifter og frakt beregnes i kassen",
+      "taxes_and_shipping_policy_at_checkout_html": "Avgifter og <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">frakt<\/a> beregnes i kassen",
+      "taxes_included_but_shipping_at_checkout": "Inkludert moms og frakt beregnes i kassen",
+      "taxes_included_and_shipping_policy_html": "Avgift inkludert. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Frakt<\/a> beregnes i kassen.",
+      "enter_discount_code": "Skriv inn rabattkode her",
+      "checkout": "Sjekk ut",
+      "viewcart": "Se handlekurv",
+      "empty": "Handlevognen din er tom.",
+      "coupon_title": "Legg til en rabattkode",
+      "estimate_shipping_title": "Anslå fraktpriser",
+      "estimate_shipping_button": "Beregn fraktpriser",
+      "note_title": "Legg til merknad for selger",
+      "cancel": "Avbryt",
+      "save": "Lagre",
+      "zipcode_validate": "Postnummeret kan ikke være tomt",
+      "shipping_rates_result": "Vi fant {{count}} fraktsats(er) for adressen din",
+      "no_found_shipping_rate": "Det er ingen fraktpriser for adressen din.",
+      "recommend_title": "Anbefaling til deg"
+    },
+    "label": {
+      "product": "Produkt",
+      "price": "Pris",
+      "quantity": "Mengde",
+      "qty": "Antall",
+      "regular_total": "Vanlig totalt",
+      "discounted_total": "Rabattert totalt",
+      "product_details": "Produkt detaljer"
+    }
+  },
+  "collections": {
+    "general": {
+      "no_matches": "Beklager, det er ingen produkter i denne samlingen",
+      "collection_items": "{{ title }} elementer"
+    },
+    "sidebar": {
+      "clear_all": "Rydd alt"
+    },
+    "toolbar": {
+      "view_layout": "Utsikt",
+      "view_list": "Liste",
+      "grid_2cloumns": "2 kolonner",
+      "grid_3cloumns": "3 kolonner",
+      "grid_4cloumns": "4 kolonner",
+      "grid_5cloumns": "5 kolonner"
+    },
+    "sorting": {
+      "title": "Sorter etter"
+    },
+    "paginate": {
+      "load_more": "Last mer"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Navn",
+      "email": "E-post",
+      "phone": "Telefonnummer",
+      "message": "Beskjed",
+      "send": "Send inn nå",
+      "post_success": "Takk for at du kontaktet oss. Vi kommer tilbake til deg så snart som mulig.",
+      "save_infor_message": "Lagre navnet, e-posten og nettstedet mitt i denne nettleseren til neste gang jeg kommenterer."
+    },
+    "ask-form": {
+      "heading": "Spør et spørsmål",
+      "name": "Navnet ditt",
+      "email": "Din epost",
+      "phone": "Telefonnummeret ditt",
+      "message": "Din beskjed",
+      "required-fields": "Obligatoriske felt",
+      "send": "Send inn nå",
+      "post_success": "Takk for at du spør. Vi kommer tilbake til deg så snart som mulig."
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Min konto",
+      "page_title": "Regnskap",
+      "dashboard": "Dashbord",
+      "addresses": "Adresser",
+      "wishlist": "Ønskeliste",
+      "log_out": "Logg ut",
+      "details": "kontodetaljer",
+      "name": "Navn",
+      "email": "E-post",
+      "view_addresses": "Se adresser",
+      "return": "Gå tilbake til kontodetaljer",
+      "greeting": "Hallo",
+      "not": "ikke"
+    },
+    "activate_account": {
+      "title": "Aktiver konto",
+      "subtext": "Opprett passordet ditt for å aktivere kontoen din.",
+      "password": "Passord",
+      "password_confirm": "bekreft passord",
+      "submit": "Aktiver konto",
+      "cancel": "Avslå invitasjon"
+    },
+    "addresses": {
+      "title": "Dine adresser",
+      "your_addresses": "Dine adresser",
+      "default": "Standard adresse",
+      "add_new": "Legg til en ny adresse",
+      "name": "Navn",
+      "first_name": "Fornavn",
+      "last_name": "Etternavn",
+      "company": "Selskap",
+      "address1": "Adresse",
+      "address2": "Leilighet, suite osv.",
+      "city": "By",
+      "country": "Land",
+      "province": "Provins",
+      "zip": "Postnummer",
+      "phone": "Telefon",
+      "set_default": "Angi som standardadresse",
+      "update": "Oppdater adresse",
+      "cancel": "Avbryt",
+      "edit": "Redigere",
+      "delete": "Slett",
+      "delete_confirm": "Er du sikker på at du vil slette denne adressen?"
+    },
+    "login": {
+      "title": "Logg Inn",
+      "email": "E-post",
+      "password": "Passord",
+      "forgot_password": "Glemt passordet?",
+      "sign_in": "Logg inn",
+      "new_customer": "Ny kunde"
+    },
+    "orders": {
+      "title": "Ordrehistorikk",
+      "order_number": "Rekkefølge",
+      "date": "Dato",
+      "payment_status": "Betalingsstatus",
+      "fulfillment_status": "Oppfyllelsesstatus",
+      "make_your_first_order": "Gjør din første bestilling.",
+      "none": "Du har ikke lagt inn noen bestillinger ennå."
+    },
+    "order": {
+      "title": "Bestill {{ name }}",
+      "date": "Plassert {{ date }}",
+      "cancelled": "Bestillingen kansellert {{ date }}",
+      "cancelled_reason": "Årsak: {{ reason }}",
+      "billing_address": "fakturaadresse",
+      "fulfilled_at_html": "Oppfylt {{ date }}",
+      "payment_status": "Betalingsstatus",
+      "shipping_address": "Sendingsadresse",
+      "fulfillment_status": "Oppfyllelsesstatus",
+      "discounts": "Rabatter",
+      "tax": "Avgift",
+      "product": "Produkt",
+      "price": "Pris",
+      "quantity": "Mengde",
+      "track_shipment": "Spor forsendelse",
+      "subtotal": "Delsum",
+      "discount": "Rabatt"
+    },
+    "recover_password": {
+      "title": "Tilbakestill passordet ditt",
+      "email": "E-post",
+      "submit": "Sende inn",
+      "cancel": "Avbryt",
+      "subtext": "Vi sender deg en e-post for å tilbakestille passordet ditt.",
+      "success": "Vi har sendt deg en e-post med en lenke for å oppdatere passordet ditt."
+    },
+    "reset_password": {
+      "title": "Tilbakestill kontopassordet",
+      "subtext": "Skriv inn et nytt passord for {{ email }}",
+      "password": "Passord",
+      "password_confirm": "bekreft passord",
+      "submit": "Tilbakestille passord"
+    },
+    "register": {
+      "title": "Registrere",
+      "description": "Registrer deg for tidlig salgstilgang pluss skreddersydde nye produkter, trender og kampanjer. For å melde deg ut, klikk på avmeld i e-postene våre.",
+      "first_name": "Fornavn",
+      "last_name": "Etternavn"
+    }
+  },
+  "homepage": {
+    "onboarding": {
+      "blog_title": "Innleggets tittel",
+      "blog_excerpt": "Butikken din har ikke publisert noen blogginnlegg ennå. En blogg kan brukes til å snakke om nye produktlanseringer, tips eller andre nyheter du ønsker å dele med kundene dine.",
+      "product_title": "Eksempel på produkttittel",
+      "product_description": "Dette området brukes til å beskrive produktdetaljer. Fortell kundene om utseendet, følelsen og stilen til produktet ditt. Legg til detaljer om farge, materialer brukt, dimensjonering og hvor den ble laget.",
+      "collection_title": "Eksempel på samlingstittel",
+      "no_content": "Denne delen inneholder for øyeblikket ikke noe innhold. Legg til innhold i denne delen ved hjelp av sidefeltet.",
+      "blog_readmore": "Les mer"
+    }
+  }
+}

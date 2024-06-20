@@ -1,0 +1,141 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'hero-main' %}
+      {% include 'press-hero' %}
+
+    {% when 'press-badges' %}
+      {% include 'press-badges' %}
+
+    {% when 'press-featured' %}
+      {% include 'press-featured' %}
+
+    {% when 'press-grid' %}
+      {% include 'press-filters' %}
+
+    {% when 'press-grid' %}
+      {% include 'press-grid' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Press Landing",
+    "blocks": [
+      {
+        "type": "hero-main",
+        "name": "Press Hero Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Hero Image"
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "heroTitle",
+            "type": "text",
+            "label": "Hero Title",
+            "default": "Hero Title"
+          },
+          {
+            "id": "heroContent",
+            "type": "textarea",
+            "label": "Hero Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          }
+        ]
+      },
+      {
+        "type": "press-badges",
+        "name": "Press Badge Carousel",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "press_badges_enabled",
+            "label": "Show Press Badges?",
+            "info": "To set up Press Badges you need go to the Page -> More actions -> Custom Fields and add Press Badge Icon for each badge. Note: you'll see badge carousel on desktop view if there will be more than 6 badges",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "press-featured",
+        "name": "Press Featured Article",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "art_desk_image",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "art_mob_image",
+            "label": "Mobile Image"
+          },
+          {
+            "id": "art_tag",
+            "type": "text",
+            "label": "Article Tag",
+            "default": "featured"
+          },
+          {
+            "type": "image_picker",
+            "id": "art_logo",
+            "label": "Article Logo"
+          },
+          {
+            "id": "art_ttl",
+            "type": "text",
+            "label": "Article Title",
+            "default": "Featured article headline goes here about this"
+          },
+          {
+            "type": "url",
+            "label": "Read More Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Link Text",
+            "default": "Read More"
+          }
+        ]
+      },
+      {
+        "type": "press-grid",
+        "name": "Press Grid",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "press_grid_enabled",
+            "label": "Show Press Grid?",
+            "info": "To set up Press Article Grid you need go to the Page -> More actions -> Custom Fields and add Press Page Article for each article you want to display.",
+            "default": true
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'press-page.js' | asset_url | script_tag }}

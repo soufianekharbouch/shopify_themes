@@ -1,0 +1,126 @@
+{% paginate blog.articles by 12 %}
+
+<div class="container back">
+  <div class="row">
+    <div class="col-12 text-right align-items-center">
+      <a class="back" href="/">< Back</a>
+    </div>
+  </div>
+</div>
+<div class="container content">
+  <div class="row">
+    <div class="col-12">
+      <header class="section-header text-center">
+        <h1>{{ page_title }}</h1>
+        <p>{{ blog.metafields.accentuate.blog_landing_desc }}</p>
+      </header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <div class="row">
+          {% for article in blog.articles %}
+            {%- comment %}<locksmith:8bb1>{% endcomment -%}
+              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: article, subject_parent: blog, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+            {%- comment %}</locksmith:8bb1>{% endcomment -%}
+            <div class="col-12 col-sm-6 col-lg-4">
+              <li>
+                <div class="row no-gutters">
+                  <div class="col-4 col-sm-12 img__wrap">
+                    <a href="{{ article.url }}">
+                      {% if article.image %}
+                        {% include 'responsive-image-aspect-ratio' with
+                          image: article.image,
+                          hero_aspect_ratio: 100,
+                          max_width: 2000,
+                          max_height: 2000,
+                        %}
+                      {% endif %}
+                    </a>
+                  </div>
+
+                  <div class="col-8 col-sm-12">
+                    <div class="article-listing h-100 d-flex flex-column px-3 px-sm-0">
+                    {% if article.title %}
+                      <h2>{{ article.title }}</h2>
+                    {% endif %}
+                    <ul class="list--inline article__meta-buttons">
+                      <li>
+                        <a href="{{ article.url }}" class="btn" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+                          {{ 'blogs.article.read_more' | t }}
+                        </a>
+                      </li>
+
+                      {% if blog.comments_enabled and article.comments_count > 0 %}
+                        <li>
+                          <a href="{{ article.url }}#comments" class="article__comment-count btn">
+                            {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                          </a>
+                        </li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </div>
+          {% endfor %}
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+
+  {% endpaginate %}
+
+</div>
+
+{% schema %}
+{
+  "name": {
+    "de": "Blogseiten",
+    "en": "Blog pages",
+    "es": "Páginas del blog",
+    "fr": "Pages du blog",
+    "it": "Pagine del blog",
+    "ja": "ブログページ",
+    "nl": "Blogpagina's",
+    "pt-BR": "Páginas do blog",
+    "zh-CN": "博客页面",
+    "zh-TW": "部落格頁面"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_hero_on_desktop",
+      "label": "Show Hero on Desktop?",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "label": "Hero Statement",
+      "id": "hero_statement"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "nl": "Datum weergeven",
+        "pt-BR": "Exibir data",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

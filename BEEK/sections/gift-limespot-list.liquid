@@ -1,0 +1,88 @@
+{%- comment -%}
+    This is a required section for the Shopify Theme Store.
+    It is available when you add "Gifts Limespot list" section in the Theme Editor.
+
+    Theme Store required settings
+    - Heading: title of the limespot list section
+    - Collection
+{%- endcomment -%}
+<section class="gift-limespot limespot-list">
+    {% for block in section.blocks %}
+        <div class="row">
+            <div class="col-12 featured__products container">
+                {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                    <a class="shop-all d-none d-lg-block" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+                {% endif %}
+              	<div class="{{ block.settings.limespot_sibling }}"></div>
+                <div class="shop-all-mobile-container d-lg-none">
+                    <a class="shop-all-mobile" href="{{ block.settings.button_link }}">{{ block.settings.button_label | escape }}</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% if section.blocks.size == 0 %}
+        {% include 'no-blocks' %}
+    {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Gifts Limespot list",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Gifts Limespot list"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Blocks",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "limespot_sibling",
+          "label": "Limespot Sibling Class"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gifts Collections list",
+      "category": "Collection",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

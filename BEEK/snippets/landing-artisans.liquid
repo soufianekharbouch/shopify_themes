@@ -1,0 +1,74 @@
+<div class="row artisan-wrap">
+  {% if block.settings.list-title != blank %}
+    <h2 class="section__title col-12">{{ block.settings.artisan-title | escape }}</h2>
+  {% endif %}
+
+  {% if block.settings.url1 %}
+    <a href="{{ block.settings.url1 | default: "#" }}" class="artisan-list-item col-12 col-md-3">
+      {% if block.settings.artisan_image1 != blank %}
+        <div class="artisan__image">
+          {% include 'responsive-image' with
+            image: block.settings.artisan_image1,
+            max_width: 480,
+            max_height: 480 %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300"/>
+      {% endif %}
+      <p>{{ block.settings.title1 | default: default_label }}</p>
+      <p class="author">{{ block.settings.author1 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url2 %}
+    <a href="{{ block.settings.url2 | default: "#" }}" class="artisan-list-item col-12 col-md-3">
+      {% if block.settings.artisan_image2 != blank %}
+        <div class="artisan__image">
+          {% include 'responsive-image' with
+            image: block.settings.artisan_image2,
+            max_width: 480,
+            max_height: 480 %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300"/>
+      {% endif %}
+      <p>{{ block.settings.title2 | default: default_label }}</p>
+      <p class="author">{{ block.settings.author1 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url3 %}
+    <a href="{{ block.settings.url3 | default: "#" }}" class="artisan-list-item col-12 col-md-3">
+      {% if block.settings.artisan_image3 != blank %}
+        <div class="artisan__image">
+          {% include 'responsive-image' with
+            image: block.settings.artisan_image3,
+            max_width: 480,
+            max_height: 480 %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300"/>
+      {% endif %}
+      <p>{{ block.settings.title3 | default: default_label }}</p>
+      <p class="author">{{ block.settings.author1 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+  {% if block.settings.url4 %}
+    <a href="{{ block.settings.url4 | default: "#" }}" class="artisan-list-item col-12 col-md-3">
+      {% if block.settings.artisan_image4 != blank %}
+        <div class="artisan__image">
+          {% include 'responsive-image' with
+            image: block.settings.artisan_image4,
+            max_width: 480,
+            max_height: 480 %}
+        </div>
+      {% else %}
+        <img src="https://via.placeholder.com/300"/>
+      {% endif %}
+      <p>{{ block.settings.title4 | default: default_label }}</p>
+      <p class="author">{{ block.settings.author1 | default: default_label }}</p>
+    </a>
+  {% endif %}
+
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <style>
+        .vimeo-embed-wrapper {
+            padding-bottom: {{block.settings.video_size}}%;
+        }
+    </style>
+    <div class="vimeo-embed-wrapper">
+        <div id='{{ block.settings.vimeo_title }}'></div>
+    </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <script>
+            var options = {
+                url: "{{ block.settings.vimeo_link }}",
+                byline: false,
+                title: false
+            };
+
+            var videoPlayer = new Vimeo.Player('{{ block.settings.vimeo_title }}', options);
+
+            videoPlayer.on('play', function() {
+                console.log('Played the video');
+            });
+        </script>
+    </div>
+</div>

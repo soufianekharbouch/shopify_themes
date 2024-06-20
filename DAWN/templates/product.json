@@ -1,0 +1,367 @@
+{
+  "sections": {
+    "7ae02e86-7bbf-4778-829f-26b9db6cd860": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "",
+        "custom_class": ""
+      }
+    },
+    "863dd1bc-2d13-4124-adab-0680866963ce": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "custom_css": [
+        ".sf-breadcrumb {margin-top: 50px; margin-bottom: -80px;}"
+      ],
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_saving": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "custom_liquid_x6p6X3": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "Même dans le cas où ce produit n'est plus en stock, je souhaite le commander <a traget=\"_blank\"style=\"color:black; text-decoration:underline; \nfont-weight:800\" target=\"blank\" href=\"https:\/\/lynhomeharmony.ma\/pages\/contact\">contactez-nous<\/a>"
+          }
+        },
+        "53d5fb78-c1b7-4ae4-869a-d9657affb770": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "custom_liquid_x6p6X3",
+        "53d5fb78-c1b7-4ae4-869a-d9657affb770"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": false,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": true,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": true,
+        "sticky_atc_compare": false
+      }
+    },
+    "156efbc0-c392-41c7-9fb6-1d1961b5e9dd": {
+      "type": "icon-box",
+      "blocks": {
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/saw.webp",
+            "image_by_url": "",
+            "title": "Artisana inégalé",
+            "description": "<p>Nous sélectionnons méticuleusement les meilleurs matériaux et accordons une attention exceptionnelle aux détails de chaque pièce, garantissant ainsi que vous recevez des meubles d'une qualité inégalée.<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-2": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/timeless.webp",
+            "image_by_url": "",
+            "title": "Élégance intemporelle",
+            "description": "<p>Nous pensons que le vrai luxe est intemporel. Nos designs sont soigneusement créés pour résister aux tendances changeantes et offrir une beauté durable.<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-3": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/exclusive_icon_38f8817e-6d98-445f-ad98-3a66881e9a17.png",
+            "image_by_url": "",
+            "title": "Conceptions exclusives",
+            "description": "<p>Nos collections de meubles présentent des designs exclusifs et des collaborations avec des designers et des marques renommées. Vous ne trouverez nos pièces uniques nulle part ailleurs.<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-1",
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-2",
+        "template--17122774712542__156efbc0-c392-41c7-9fb6-1d1961b5e9dd-iconbox-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Designed for Your Comfort",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_per_row": 3,
+        "item_gap": 30,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "70px",
+        "content_alignment": "center",
+        "hover_effect": "zoom-in",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": ""
+      }
+    },
+    "fe0fa8dc-1b01-45b2-bfef-767be3e561a8": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/geometrics.jpg",
+        "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/GEOMETRICS_BY_LYN_HOME_HARMONY_compressed.pdf?v=1704701487",
+        "layout": "left",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Visualisez toute la brochure",
+        "sub_title": "Geometrics By Lyn",
+        "text": "<p>Tout ce dont vous avez besoin, en un seul document ! Visualisez toute la collection sur notre brochure disponible en ligne.<\/p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Voir la brochure",
+        "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/GEOMETRICS_BY_LYN_HOME_HARMONY_compressed.pdf?v=1704701487",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "a1f8863a-94aa-4b91-9e8e-d4484fffe15d": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Vous pourriez aussi aimer",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "collection": "act-for-life",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 4,
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "button_type": "link",
+        "button_text": "",
+        "button_style": "sf__btn-primary",
+        "button_size": "",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 20,
+        "padding_bottom": 60,
+        "custom_class": ""
+      }
+    },
+    "6a61b566-4c38-44ab-96b5-ff25102aba3e": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1408_d4224fcf-1e14-4ace-9141-6e6abe27348b.webp",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "L'histoire de Lyn",
+            "subheading": "",
+            "text": "<p>L'histoire des Ateliers Lyn commence il y a 20 ans, dans un petit magasin de la médina de Rabat. Spécialistes de l’ébénisterie, ils fabriquent des meubles sur-mesure destinés à durer, pour le compte de clients attirés par les créations uniques du fondateur, Lahcen.<\/p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "En savoir plus",
+            "button_link": "shopify:\/\/pages\/about-us",
+            "button_style": "sf__btn-link",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-image-1",
+        "template--20182899786033__6a61b566-4c38-44ab-96b5-ff25102aba3e-text-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "header": "Product description"
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "header": "Shipping & Return",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "bg_color": "",
+        "default_open": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "heading": "You Might Also Like",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "heading": "Recently Viewed Products",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "16915267084cacd27d": {
+      "type": "apps",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "aed24945-6a38-4afc-8c70-12c401cb18a2": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "7ae02e86-7bbf-4778-829f-26b9db6cd860",
+    "863dd1bc-2d13-4124-adab-0680866963ce",
+    "main",
+    "156efbc0-c392-41c7-9fb6-1d1961b5e9dd",
+    "fe0fa8dc-1b01-45b2-bfef-767be3e561a8",
+    "a1f8863a-94aa-4b91-9e8e-d4484fffe15d",
+    "6a61b566-4c38-44ab-96b5-ff25102aba3e",
+    "product-details-tabs",
+    "product-recommendations",
+    "recent-viewed-products",
+    "16915267084cacd27d",
+    "aed24945-6a38-4afc-8c70-12c401cb18a2"
+  ]
+}

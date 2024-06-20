@@ -1,0 +1,3 @@
+{% capture f_events %}{{ block.settings.event_product_1 }}|{{ block.settings.event_product_2 }}|{{ block.settings.event_product_3 }}{% endcapture %}
+{% assign featured_events = f_events | split: "|" %}
+{% include 'snippet_featured_events' with events: featured_events, event_ttl: block.settings.events-title %}

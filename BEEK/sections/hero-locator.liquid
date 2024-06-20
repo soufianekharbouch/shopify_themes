@@ -1,0 +1,146 @@
+<section class="hero-section {{ section.settings.hero_type }}">
+  <div class="image-wrap">
+    {% for block in section.blocks %}
+      {% case block.type %}
+
+      {% when 'hero_image' %}
+        {% include 'snippet_hero_images' %}
+
+      {% when 'hero_video' %}
+        {% include 'snippet_vimeo' %}
+
+      {% endcase %}
+    {% endfor %}
+
+    <div class="hero-content-area text-lg-left">
+
+      <div class="container header__container">
+
+        <div class="row text_inner_box">
+          <div class="col-12">
+            {%- if section.settings.title != blank -%}
+              <h2 class="d-lg-none">{{ section.settings.title | escape }}</h2>
+              <h2 class="d-none d-lg-block">{{ section.settings.title | escape }}</h2>
+            {%- endif -%}
+          </div>
+
+          <div class="col-12">
+            {%- if section.settings.text != blank -%}
+              <div class="text d-lg-none">
+                {{ section.settings.text }}
+              </div>
+              <div class="text d-none d-lg-block">
+                {{ section.settings.text }}
+              </div>
+            {%- endif -%}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Hero",
+  "max_blocks": 1,
+  "blocks": [
+  {
+  "type": "hero_image",
+  "name": "Hero Image",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "mobile_image",
+  "label": "Mobile Image"
+  },
+  {
+  "type": "image_picker",
+  "id": "desktop_image",
+  "label": "Desktop Image"
+  },
+  {
+  "id": "heroAspectRatio_mobile",
+  "type": "select",
+  "label": "Mobile Aspect Ratio",
+  "default": "100",
+  "options": [
+  {"value": "100", "label": "1:1"},
+  {"value": "75", "label": "3:4"},
+  {"value": "56.25", "label": "9:16"}
+  ]
+  }
+  ]
+  },
+  {
+  "type": "hero_video",
+  "name": "Hero Video",
+  "settings": [
+  {
+  "type": "video_url",
+  "id": "vimeo_link",
+  "label": "Video link",
+  "accept": [
+  "vimeo"
+  ]
+  },
+  {
+  "type": "text",
+  "id": "vimeo_title",
+  "label": "Video Title",
+  "default": "My Video"
+  },
+  {
+  "id": "video_size",
+  "type": "select",
+  "label": "Video Size",
+  "default": "56.25",
+  "options": [
+  {"value": "56.25", "label": "Large"},
+  {"value": "42.85", "label": "Medium"},
+  {"value": "28.12", "label": "Small"}
+  ]
+  }
+  ]
+  }
+  ],
+  "settings": [
+  {
+  "type": "text",
+  "id": "title",
+  "label": "Heading",
+  "default": "Hero Statement"
+  },
+  {
+  "type": "textarea",
+  "id": "text",
+  "label": "Text",
+  "default": "Hero statement content here."
+  },
+  {
+  "type": "radio",
+  "id": "hero_type",
+  "label": "Hero Type",
+  "options": [
+  {
+  "label": "Text Overlay Image",
+  "value": "overlay"
+  },
+  {
+  "label": "Text Beneath Image",
+  "value": "beneath"
+  }
+  ]
+  }
+  ],
+  "presets": [
+  {
+  "name": "Hero",
+  "category": "Image"
+  }
+  ]
+  }
+{% endschema %}
+

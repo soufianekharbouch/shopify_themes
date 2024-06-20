@@ -1,0 +1,81 @@
+{%- comment -%}
+  Primarily for "Goats" about page
+{%- endcomment -%}
+<section class="collection-list-secondary container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8 text-center">
+        <h1>{{ section.settings.title }}</h1>
+    </div>
+    <div class="col-2"></div>
+    <div class="d-none d-md-block col-md-2"></div>
+    <div class="col-12 col-md-8 text-center">
+        <p>{{ section.settings.text }}</p>
+    </div>
+    <div class="d-none d-md-block col-md-2"></div>
+  </div>
+  <div class="row">
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <div class="col-12 col-lg-4">
+        <a href="{{ collection.url | default: "#" }}" class="collection-list-item" {{ block.shopify_attributes }}>
+            <h3 class="d-md-none">{{ collection.title | default: default_label }}</h3>
+            <br/>
+            <div class="img-wrap">
+              {% include 'responsive-image-aspect-ratio' with
+                  image: block.settings.collection_thumb,
+                  hero_aspect_ratio: 133,
+                  max_width: 2000,
+                  max_height: 2000,
+              %}
+            </div>
+            <br/>
+            <h3 class="d-none d-md-block">{{ collection.title | default: default_label }}</h3>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if section.blocks.size == 0 %}
+      {% include 'no-blocks' %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collection list"
+      },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Tagline",
+        "default": "Some of our favorite products featuring goat milk."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+            {
+                "label": "Collection",
+                "id": "collection",
+                "type": "collection"
+            },
+            {
+                "label": "Featured Image",
+                "id": "collection_thumb",
+                "type": "image_picker"
+            }
+        ]
+      }
+    ]
+}
+{% endschema %}

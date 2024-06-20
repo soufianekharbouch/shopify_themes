@@ -1,0 +1,45 @@
+<div class="kindnessgrant-how-it-works">
+  {%- if block.settings.section-list-title != blank -%}
+    <h2 class="list__ttl">{{ block.settings.section-list-title | escape }}</h2>
+  {%- endif -%}
+
+  {%- if block.settings.list-item1-text != blank or block.settings.list-item2-text != blank or block.settings.list-item3-text != blank -%}
+    {%- assign listIsAvailable = true -%}
+  {%- endif -%}
+
+  {% if listIsAvailable %}
+    <ul class="section__list">
+      {%- if block.settings.list-item1-text != blank -%}
+        <li>
+          <span>1</span>
+          <div>
+            {{ block.settings.list-item1-text | escape }}
+          </div>
+        </li>
+      {%- endif -%}
+      {%- if block.settings.list-item2-text != blank -%}
+        <li>
+          <span>2</span>
+          <div>
+            {{ block.settings.list-item2-text | escape }}
+          </div>
+        </li>
+      {%- endif -%}
+      {%- if block.settings.list-item3-text != blank -%}
+        <li>
+          <span>3</span>
+          <div>
+            {{ block.settings.list-item3-text | escape }}
+          </div>
+        </li>
+      {%- endif -%}
+    </ul>
+  {%- endif -%}
+{%- comment -%}
+  <div class="action__wrap">
+    <a href="{{ block.settings.button_link | default: "#" }}" class="get__started">
+      {{ block.settings.button_label | default: "Get Started" }}
+    </a>
+  </div>
+{%- endcomment -%}
+</div>

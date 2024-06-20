@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="account_section">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>WELCOME NEIGHBOR</h1>
+                <h2>{{ customer.first_name }}'s Account</h2>
+            </div>
+        </div>
+        <div class="row customer_info">
+            <div class="col-12 col-md-4">
+                {% assign activeTab="wishlist"  %}
+                {% include 'account-sidebar' with activeTab %}
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="column_headers">
+                    <div class="header_item header-caption">MY WISHLIST (<span id="wishlist_count"></span><span
+                            class="products-description"> PRODUCTS</span>)</div>
+                    <div class="header_item header-price">PRICE</div>
+                </div>
+                <hr /><br />
+                <div class="customer_info_right" id="wishl-container">
+                    <div class="rte">
+                        {{ page.content }}
+                        {% include 'wishl-wishlist' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="wishl-item-template" type="text/x-handlebars-template">
+    {%- comment -%}
+        Handlebars syntax conflicts with liquid,
+        so wrap Handlebars template in a liquid raw tag.
+    {%- endcomment -%}
+{% raw %}
+    <div id="{{divId}}" class="custom_wishlist_item" data-item="{{itemId}}">
+        <div>
+            <div class="img_wrap">
+                <a href="{{product.url}}?variant={{variant.id}}" title="{{product.title}}"><img src="{{featuredImage}}" alt="{{product.title}}" /></a>
+            </div>
+            <div class="content-wrap">
+                <h3 class="product_title"><a href="{{product.url}}?variant={{variant.id}}" title="{{product.title}}">{{{product.title}}}</a></h3>
+                <p class="wishl-product-subtitle">{{product.metafields.accentuate.short_description}}</p>
+                {{#if priceDropped}}
+                <div>{{{priceDropped}}}</div>
+                {{/if}}
+            </div>
+            <div class="content-wrap add_to_cart">
+                <div class="price">{{{variantPrice}}} <del>{{{comparePrice}}}</del></div>
+                <form action="/cart/add" method="post">
+                    {{#if showAddToCart}}
+                    <input class="btn" type="submit" name="add" value="{{showAddToCart}}" />
+                    <input type="hidden" name="id" value="{{variant.id}}" />
+                    {{#each item.properties}}
+                    <input type="hidden" name="properties[{{@key}}]" value="{{this}}" />
+                    {{/each}}
+                    {{else if showSoldOut}}
+                    <input type="submit" name="add" value="{{showSoldOut}}" disabled="disabled" />
+                    {{/if}}
+                </form>
+                <div class="delete-btn">
+                    <!-- {{#if canMoveItem}}
+                    <a href="#" data-list-action="move" data-item="{{itemId}}">{{lang.move}}</a>
+                    {{/if}} -->
+                    {{#if deleteLabel}}
+                    <a href="#" class="wishl-del" data-item="{{itemId}}" data-item-title="{{product.title}}">{{deleteLabel}}</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endraw %}
+</script>
+
+<script type="text/javascript" language="javascript">
+    let target = document.getElementById('wishl-container');
+
+    const config = {
+        childList: true,
+        subtree: true
+    };
+
+    const callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+            $('#wishlist_count').html($('.custom_wishlist_item').length);
+            $('#wishl-title').after($('#wishl-controls'));
+        }
+        $('#scrollToShare').off('click').on('click', function(e){
+            e.preventDefault();
+            const id = $(this).attr('href'),
+                top = $(id).offset().top;
+            $('body, html').animate({scrollTop: top}, 900);
+            $('.wishl-controls-share').trigger('click');
+        } );
+    };
+
+    const observer = new MutationObserver(callback);
+
+    observer.observe(target, config);
+</script>

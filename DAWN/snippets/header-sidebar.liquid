@@ -1,0 +1,312 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+HEADER SIDEBAR COMPONENT
+----------------------------------------------------------------------------------------------------------------------
+
+This snippet the navigation sidebar for the header. It is used for both the mobile menu and for the desktop menu when
+the merchant configures the drawer mode.
+
+********************************************
+Supported variables
+********************************************
+
+* menu: the menu to render
+* show_dividers: whether dividers are shown for the collapsible
+{%- endcomment -%}
+
+{%- comment -%}
+IMPLEMENTATION NOTE: while being a drawer, the sidebar has a completely different structure for the content. We are
+therefore using a different structure for the Shadow DOM template
+{%- endcomment -%}
+
+<style>
+  :root {
+    --header-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  #shopify-section-{{ section.id }} {
+    --header-grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
+    --header-padding-block: 1rem;
+    --header-transparent-header-text-color: {{ section.settings.transparent_header_text_color.rgb }};
+    --header-separation-border-color: {% if section.settings.show_separation_border %}var(--border-color){% else %}0 0 0 / 0{% endif %};
+
+    position: relative;
+    z-index: 5;
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} {
+      {%- case section.settings.layout -%}
+        {%- when 'logo_left_navigation_inline' -%}
+          --header-grid: "logo primary-nav secondary-nav" / auto minmax(0, 1fr) auto;
+
+        {%- when 'logo_left_navigation_center' -%}
+          --header-grid: "logo primary-nav secondary-nav" / minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+
+        {%- when 'logo_center_navigation_below' -%}
+          --header-grid: ". logo secondary-nav" "primary-nav primary-nav primary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
+      {%- endcase -%}
+    }
+  }
+
+  {%- if section.settings.enable_sticky -%}
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+    }
+
+    .shopify-section--announcement-bar ~ #shopify-section-{{ section.id }} {
+      top: calc(var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px));
+    }
+  {%- endif -%}
+
+  {%- if section.settings.logo != blank -%}
+    #shopify-section-{{ section.id }} {
+      --header-logo-width: {{ section.settings.logo_mobile_max_width }}px;
+      --header-logo-height: {{ section.settings.logo_mobile_max_width | divided_by: section.settings.logo.aspect_ratio | round }}px;
+    }
+
+    @media screen and (min-width: 700px) {
+      #shopify-section-{{ section.id }} {
+        --header-logo-width: {{ section.settings.logo_max_width }}px;
+        --header-logo-height: {{ section.settings.logo_max_width | divided_by: section.settings.logo.aspect_ratio | round }}px;
+      }
+    }
+  {%- endif -%}
+
+.header-sidebar header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+</style>
+
+
+
+<template id="header-sidebar-template">
+  <div part="base">
+    <div part="overlay"></div>
+    <div part="content">
+      <header part="header">
+        <button type="button" is="dialog-close-button" part="close-button tap-area" aria-label="{{ 'general.accessibility.close' | t | escape }}">
+{{ 'general.accessibility.close' | t | escape }}       
+        </button>
+        {% comment %}{{- logo | image_url: width: logo.width | image_tag: sizes: sizes, widths: widths, class:'header__logo-image' -}}{% endcomment %}
+        <a href="/">
+         <img src="https://www.notstitched.com/cdn/shop/files/Not-Stitched-Final_a0822213-e370-4f3d-9e6e-640725585fe8.png" style="max-width:140px;"  />
+      </a>
+        </header>
+
+        
+
+      <div part="panel-list">
+        <slot name="main-panel"></slot>
+
+        {%- if menu.levels > 0 -%}
+          <slot name="collapsible-panel"></slot>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</template>
+
+<header-sidebar id="sidebar-menu" class="header-sidebar drawer drawer--sm" template="header-sidebar-template" open-from="left">
+  {%- comment -%}We are using a Shadow DOM where each panel has a slot, so we can directly render each level individually{%- endcomment -%}
+
+
+  {%- comment -%}Panel 1 is the first level{%- endcomment -%}
+  <div class="header-sidebar__main-panel" slot="main-panel">
+     
+    <div class="header-sidebar__scroller">
+      <div  class="header-sidebar_search">        
+          <form id="predictive-search-form1" action="{{ routes.search_url }}" method="GET" aria-owns="header-predictive-search" class="header-search__form" role="search">
+            <div class="header-search__form-control">
+              <input type="search" name="q" spellcheck="false" autocomplete="off" class="header-search__input h5 sm:h4" aria-label="{{ 'search.general.title' | t | escape }}" placeholder="{{ 'search.general.search_placeholder' | t | escape }}">
+               <button type="submit" aria-label="Search">
+              {%- render 'icon' with 'search', width: 20 -%}
+              </button>
+            </div>
+          </form> 
+      </div>
+      
+      <ul class="header-sidebar__linklist {% if show_dividers %}divide-y{% endif %} unstyled-list" role="list">
+        {%- for link in menu.links -%}
+          <li>
+            {%- if link.links.size > 0 -%}
+             
+              <button type="button" class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}" aria-controls="header-panel-{{ forloop.index }}" aria-expanded="false">
+              <a href="{{ link.url }}" >
+                {{- link.title -}}
+              </a>
+               <span class="animated-plus group-expanded:rotate" aria-hidden="true"></span>
+              </button>
+            
+
+
+              
+             <ul class="header-sidebar__linklist {% if show_dividers %}divide-y{% endif %} unstyled-list" role="list" style='display:none;'>
+                {%- for sub_link in link.links -%}
+               <li>
+                    {%- if sub_link.links.size > 0 -%}
+                      <details is="accordion-disclosure" class="group">
+                        <summary class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}">
+                     <a href="{{ link.url }}" class="custom_link">
+                      {{- sub_link.title -}}
+                     </a>
+                          <span class="animated-plus group-expanded:rotate" aria-hidden="true"></span>
+                        </summary>
+                        <div class="header-sidebar__nested-linklist">
+                          {%- for sub_sub_link in sub_link.links -%}
+                            <a href="{{ sub_sub_link.url }}" class="link-faded-reverse">{{ sub_sub_link.title }}</a>
+                          {%- endfor -%}
+                        </div>
+                      </details>
+                    
+                    {%- else -%}
+                      <a href="{{ sub_link.url }}" class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}">
+                        {% if sub_link.title =="SALE" or sub_link.title == "تخفيضات" %}
+                          {% comment %} <span style="color:rgb(232, 10, 10);">{{sub_link.title}}</span> {% endcomment %}
+                        {% else %}
+                          {{- sub_link.title -}}
+                        {% endif %}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            
+            
+            {%- else -%}
+              <a href="{{ link.url }}" class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}">
+                {% if link.title =="SALE" or link.title == "تخفيضات" %}
+                 <span style="color:rgb(232, 10, 10);">{{link.title}}</span>
+                {% else %}
+                  {{- link.title -}}
+                {% endif %}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+         <!-- <li><a class="ar_switcher header-sidebar__linklist-button" href="/ar" lan="ar" >العربية</a></li>
+         <li style="display:none" ><a class="en_switcher header-sidebar__linklist-button" href="/" lan="en" >English</a></li> -->
+      </ul>
+    </div>
+
+    {%- liquid
+      if section.settings.show_country_selector and localization.available_countries.size > 1
+        assign show_country_selector = true
+      endif
+
+      if section.settings.show_locale_selector and localization.available_languages.size > 1
+        assign show_locale_selector = true
+      endif
+    -%}
+
+    {%- if shop.customer_accounts_enabled or show_country_selector or show_locale_selector -%}
+      <div class="header-sidebar__footer">
+        {%- if shop.customer_accounts_enabled -%}
+          <a href="{{ routes.account_url }}" class="text-with-icon smallcaps sm:hidden">
+            {%- render 'icon' with 'account', width: 20 -%}
+            {{- 'header.general.account' | t -}}
+          </a>
+             <div class='buckscc-currency-box' style="display:none;"></div>
+
+        {%- endif -%}
+
+        {%- if show_country_selector or show_locale_selector -%}
+          <div class="localization-selectors">
+            {%- if show_country_selector -%}
+              {%- render 'localization-selector', type: 'country', placement: 'top-start', show_country_name: section.settings.show_country_name, show_country_flag: section.settings.show_country_flag, id_prefix: 'header-sidebar' -%}
+            {%- endif -%}
+
+            {%- if show_country_selector and show_locale_selector -%}
+              <span class="localization-selectors__separator" aria-hidden="true"></span>
+            {%- endif -%}
+
+            {%- if show_locale_selector -%}
+              {%- render 'localization-selector', type: 'locale', placement: 'top-start', id_prefix: 'header-sidebar' -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%}Panel 2 holds all the second levels
+  {%- if menu.levels > 0 -%}
+    <header-sidebar-collapsible-panel class="header-sidebar__collapsible-panel" slot="collapsible-panel">
+      <div class="header-sidebar__scroller">
+        {%- for link in menu.links -%}
+          {%- if link.links.size > 0 -%}
+            <div id="header-panel-{{ forloop.index }}" class="header-sidebar__sub-panel" hidden>
+              <button type="button" class="header-sidebar__back-button link-faded {% if show_dividers %}is-divided{% endif %} text-with-icon {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %} md:hidden" data-action="close-panel">
+                {%- render 'icon' with 'chevron-left', width: 12, direction_aware: true -%}
+                
+                {{- link.title -}}
+              </button>
+
+              <ul class="header-sidebar__linklist {% if show_dividers %}divide-y{% endif %} unstyled-list" role="list">
+                {%- for sub_link in link.links -%}
+                  <li>
+                    {%- if sub_link.links.size > 0 -%}
+                      <details is="accordion-disclosure" class="group">
+                        <summary class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}">
+                          {{- sub_link.title -}}
+                          <span class="animated-plus group-expanded:rotate" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="header-sidebar__nested-linklist">
+                          {%- for sub_sub_link in sub_link.links -%}
+                            <a href="{{ sub_sub_link.url }}" class="link-faded-reverse">{{ sub_sub_link.title }}</a>
+                          {%- endfor -%}
+                        </div>
+                      </details>
+                    {%- else -%}
+                      <a href="{{ sub_link.url }}" class="header-sidebar__linklist-button {% if section.settings.sidebar_text_font == 'heading' %}h6{% endif %}">
+                        {{- sub_link.title -}}
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+
+              {%- liquid
+                assign link_title_downcase = link.title | strip | downcase
+                assign mega_menu_block = ''
+
+                for block in section.blocks
+                  assign menu_item_downcase = block.settings.menu_item | strip | downcase
+
+                  if menu_item_downcase == link_title_downcase
+                    assign mega_menu_block = block
+                    break
+                  endif
+
+                endfor
+              -%}
+
+              {%- capture mega_menu_content -%}
+                {%- render 'mega-menu-images', context: 'sidebar', block: mega_menu_block -%}
+              {%- endcapture -%}
+
+              {%- if mega_menu_content != blank -%}
+                <div class="header-sidebar__promo scroll-area bleed md:unbleed">
+                  {{- mega_menu_content -}}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </header-sidebar-collapsible-panel>
+  {%- endif -%}
+  {%- endcomment -%}
+</header-sidebar>

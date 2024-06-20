@@ -1,0 +1,47 @@
+<div class="skincare-how-it-works">
+  {%- if block.settings.howitworks_ttl != blank -%}
+    <h2>{{ block.settings.howitworks_ttl | escape }}</h2>
+  {%- endif -%}
+
+  {%- if block.settings.howitworks_info != blank -%}
+    <p>{{ block.settings.howitworks_info | escape }}</p>
+  {%- endif -%}
+  <div class="fake_video" id="howItWorks">
+    <img src="{{ block.settings.video_img_link | img_url: 'large'}}" class="d-none d-md-block" alt="">
+    <img src="{{ block.settings.video_img_link_mob | img_url: 'large'}}" class="d-md-none" alt="">
+    <a class="u2be_video modal_trigger" href="#" data-video="{{ block.settings.video_link }}">{% include 'icon-player' %}</a>
+    <div class="modal_wrap_overlay">
+      <span class="close_u2be">{% include 'icon-close' %}</span>
+      <div id="u2be_inner" class="modal_inner"></div>
+    </div>
+  </div>
+  {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+    <a href="{{ block.settings.button_link }}" class="shop__all">
+      {{ block.settings.button_label | escape }}
+    </a>
+  {% endif %}
+</div>
+
+<script>
+    $(document).on('click', '.modal_trigger', function(e) {
+        $('#MainContent').css('z-index', 'auto');
+        e.preventDefault();
+        var link = $(e.currentTarget).data('video'),
+            $modalOverlay = $('.modal_wrap_overlay'),
+            str = '';
+        if (!link.match('.mp4') && !link.match('image')) {
+            link += '?modestbranding=1&rel=0&controls=1&showinfo=0&html5=1&autoplay=1';
+            str = '<iframe width="100%" height="550" src="' + link + '" frameborder="0" allowfullscreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>';
+        } else {
+            str = '<video autoplay width="100%" height="550" controls><source src="' + link + '" type="video/mp4"></video>';
+        }
+        $modalOverlay.addClass('active');
+        $('#u2be_inner').append(str);
+        $('.close_u2be').on('click', function(e) {
+            e.preventDefault();
+            $modalOverlay.removeClass('active');
+            $modalOverlay.find('#u2be_inner').children().remove();
+            $('#MainContent').css('z-index', 1);
+        });
+    });
+</script>

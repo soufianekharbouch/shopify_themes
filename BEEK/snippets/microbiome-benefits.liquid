@@ -1,0 +1,47 @@
+<div class="microbiome-benefits animated" style="background-image:url({{ block.settings.desktop_img | img_url: 'master' }});">
+  <div class="content__wrap">
+    <div class="info__wrap">
+      {%- if block.settings.section_ttl != blank -%}
+        <h2>{{ block.settings.section_ttl | escape }}</h2>
+      {%- endif -%}
+      {%- if block.settings.section_subttl != blank -%}
+        <h4>{{ block.settings.section_subttl | escape }}</h4>
+      {%- endif -%}
+      {%- if block.settings.section_text != blank -%}
+        <p>{{ block.settings.section_text }}</p>
+      {%- endif -%}
+    </div>
+    <div class="benefits__wrap" style="background-image:url({{ block.settings.mobile_img | img_url: 'master' }});">
+      {%- if block.settings.benefit1_ttl != blank -%}
+        <div class="benefit__item">
+          <div class="icon">{% include 'benefit-plus' %}</div>
+          <h3>{{ block.settings.benefit1_ttl | escape }}</h3>
+          <div class="sub__ttl">{{ block.settings.benefit1_subttl | escape }}</div>
+        </div>
+      {%- endif -%}
+      {%- if block.settings.benefit2_ttl != blank -%}
+        <div class="benefit__item">
+          <div class="icon">{% include 'benefit-plus' %}</div>
+          <h3>{{ block.settings.benefit2_ttl | escape }}</h3>
+          <div class="sub__ttl">{{ block.settings.benefit2_subttl | escape }}</div>
+        </div>
+      {%- endif -%}
+      {%- if block.settings.benefit3_ttl != blank -%}
+        <div class="benefit__item">
+          <div class="icon">{% include 'benefit-plus' %}</div>
+          <h3>{{ block.settings.benefit3_ttl | escape }}</h3>
+          <div class="sub__ttl">{{ block.settings.benefit3_subttl | escape }}</div>
+        </div>
+      {%- endif -%}
+      {%- if block.settings.benefit4_ttl != blank -%}
+        <div class="benefit__item">
+          <div class="icon">{% include 'benefit-plus' %}</div>
+          <h3>{{ block.settings.benefit4_ttl | escape }}</h3>
+          <div class="sub__ttl">{{ block.settings.benefit4_subttl | escape }}</div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,32 @@
+<div class="section">
+  <div class="single--img">
+    <a target="_blank" href="{{ section.settings.url }}"><img src="{{ section.settings.img | img_url : 'master'}}"></a>
+  </div>
+</div>
+
+{% schema %}
+{
+"name": "review section",
+"settings": [
+
+
+    {
+         "type": "image_picker",
+         "id": "img",
+         "label": "Image"
+      },{
+         "type": "url",
+         "id": "url",
+         "label": "url"
+      }
+  
+],
+  
+
+"presets": [
+{
+"name": "Single image"
+}
+]
+}
+{% endschema %}

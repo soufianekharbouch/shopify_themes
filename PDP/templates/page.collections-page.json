@@ -1,0 +1,200 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-content__main",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_rich_text_ab6UQt": {
+      "type": "index__rich-text",
+      "settings": {
+        "title": "Collections",
+        "heading_font": "open_sans_n4",
+        "heading_color": "rgba(0,0,0,0)",
+        "heading_alignment": "center",
+        "heading_size": 30,
+        "text": "",
+        "text_font": "open_sans_n4",
+        "text_color": "rgba(0,0,0,0)",
+        "text_alignment": "left",
+        "text_size": 14,
+        "columns": 2,
+        "button_label": "",
+        "button_link": "",
+        "button_alignment": "center",
+        "button_style": "button--primary",
+        "background": "#ffffff",
+        "gradient": "#ffffff",
+        "gradient_rotation": 180,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_collection_list_nhaz8G": {
+      "type": "index__collection-list",
+      "blocks": {
+        "collection_NDGJPN": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "wall-mounted-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_HyPEAV": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "in-ground-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_eF3Wi3": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "portable-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_QgjxkR": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "poolside-basketball-systems",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_CJeCHC": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "best-basketball-hoop-outdoor-options",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_wB8Hj8": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "indoor-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_pxeYwf": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "fixed-height-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_6K43i7": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "adjustable-basketball-goals",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_ijmgen": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "backboards",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_PyrxAL": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "basketball-equipment",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_TF488B": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "basketball-rims",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_ctaJyC": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "padding",
+            "title": "",
+            "button_label": "View All"
+          }
+        },
+        "collection_NGFe6B": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "scoring-equipment-shot-clocks",
+            "title": "",
+            "button_label": "View All"
+          }
+        }
+      },
+      "block_order": [
+        "collection_NDGJPN",
+        "collection_HyPEAV",
+        "collection_eF3Wi3",
+        "collection_QgjxkR",
+        "collection_CJeCHC",
+        "collection_wB8Hj8",
+        "collection_pxeYwf",
+        "collection_6K43i7",
+        "collection_ijmgen",
+        "collection_PyrxAL",
+        "collection_TF488B",
+        "collection_ctaJyC",
+        "collection_NGFe6B"
+      ],
+      "custom_css": [
+        ".collection-info__caption--below-image .title {font-size: 22px;}",
+        ".list-collection__thumbnail .product-wrap {background-color: #fff7f7; padding: 10px 10px 0 10px;}",
+        "a.collection-info__caption-wrapper.collection-info__caption--below-image {background-color: #fff7f7;}"
+      ],
+      "settings": {
+        "collections_per_row": 3,
+        "align_height": true,
+        "collection_height": 320,
+        "enable_zoom": true,
+        "button_style": "button--primary",
+        "overlay_background": "#939393",
+        "overlay_background_opacity": 0,
+        "overlay_text": "#ffffff",
+        "collection_title_below_image": true,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "index_rich_text_ab6UQt",
+    "index_collection_list_nhaz8G"
+  ]
+}

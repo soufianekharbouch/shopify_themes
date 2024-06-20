@@ -1,0 +1,26 @@
+<div class="kindnessgrant-ripple">
+    <div class="effect__video_wrap">
+        <div class="content__wrap">
+            <div class="d-lg-none text-center mob__video_wrap">
+                <video playsinline loop muted id="mobRippleVideo" class="play__in_canvas">
+                    <source src="{{ 'drops_ripples_mobile.mov' | asset_url }}" type="video/mp4"/>
+                </video>
+            </div>
+            <div class="d-none d-lg-block">
+                <video playsinline loop muted id="deskRippleVideo" class="play__in_canvas">
+                    <source src="{{ 'drops_ripples_desktop.mov' | asset_url }}" type="video/mp4"/>
+                </video>
+            </div>
+        </div>
+        <div class="result__wrap">
+            {%- if block.settings.sectionHeading != blank -%}
+                <h2>{{ block.settings.sectionHeading | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.effectNote != blank -%}
+                <h2>{{ block.settings.effectNote | escape }}</h2>
+            {%- endif -%}
+
+            <div class="calculated__amount"><span style="display: none;"></span></div>
+        </div>
+    </div>
+</div>

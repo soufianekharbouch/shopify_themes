@@ -1,0 +1,128 @@
+<div class="page-width conmtainer {{ section.settings.cls }}">
+  <div class="section">
+  <div id="review-div" class="review-section">
+    <div class="review-col-left">
+      <div class="left-cont-div" href="{{ section.settings.urlrating }}">
+       {{ section.settings.Fantastisktext }}
+        {{ section.settings.reviewicon }}
+        
+      {{ section.settings.reviewdescription }}
+        {{ section.settings.trustlogoicon }}
+       
+      </div>
+    </div>
+    <div class="review-col-right">
+      <div class="review-col-right-slider">
+
+        {% for block in section.blocks %}
+        <div class="right-cont-div">
+          <div class="reivew-icon-main-div">
+         {% assign rating= block.settings.ratenumbr | plus : 0 %}
+            <span class="ti-stars">
+          
+           {% if rating == 5 %}
+             {% for k in (1..5) %}
+              <span class="ti-star f"></span>
+               {% endfor %}
+             {% else %}
+{% for k in (1..rating) %}
+              <span class="ti-star f"></span>
+               {% endfor %}
+{% assign norating= 5 | minus : rating %}
+{% for k in (1..norating) %}
+              <span class="ti-star e"></span>
+  {% endfor %}
+
+
+              
+             {% endif %}
+
+            
+            
+            </span>
+          <div class="abtrate"><svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg style=" position:="" absolute;="" height:="" 100%;="" width:="" left:="" 0;="" top:="" 0;""="">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM6.09217 7.81401L9.20311 4.7031C9.44874 4.45757 9.84688 4.45757 10.0923 4.7031C10.338 4.94864 10.338 5.34673 10.0923 5.59226L6.62009 9.06448C6.59573 9.10283 6.56682 9.13912 6.53333 9.17256C6.28787 9.41821 5.88965 9.41821 5.64402 9.17256L3.7059 7.11031C3.46046 6.86464 3.46046 6.46669 3.7059 6.22102C3.95154 5.97548 4.34968 5.97548 4.59512 6.22102L6.09217 7.81401Z" fill="currentColor"></path>
+              </svg><span>Verified</span></div>
+          </div>
+          <h3>{{ block.settings.head }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+{% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% schema %}
+{
+"name": "review section",
+"settings": [
+
+
+    {
+         "type": "text",
+         "id": "cls",
+         "label": "Extra class"
+      }, {
+         "type": "html",
+         "id": "Fantastisktext",
+         "label": "heading"
+      },
+      {
+        "type": "html",
+        "id": "reviewicon",
+        "label": "start icon"
+      },
+      {
+         "type": "html",
+         "id": "reviewdescription",
+         "label": "review description"
+      },
+   {
+        "type": "html",
+        "id": "trustlogoicon",
+        "label": "trust logo icon"
+      }, {
+         "type": "url",
+         "id": "urlrating",
+         "label": "URL left grid"
+      }
+  
+
+],
+    "blocks": [
+    {
+      "type": "Reviewbox",
+      "name": "Review Box",
+      "settings": [
+        {
+          "type": "text",
+          "id": "ratenumbr",
+          "label": "Enter rate number between 0 -5"
+        },
+        {
+          "type": "text",
+          "id": "head",
+          "label": "Heading"
+        
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "Description"
+        
+        }
+      ]
+    }
+  ],
+  
+
+"presets": [
+{
+"name": "review section"
+}
+]
+}
+{% endschema %}

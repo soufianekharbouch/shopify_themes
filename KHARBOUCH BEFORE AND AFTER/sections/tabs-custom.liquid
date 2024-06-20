@@ -1,0 +1,250 @@
+
+
+<div class="tab-teasers">
+  <div class="tab-headers">
+    <div class="tab-head-contents">
+       {%- if section.settings.custom-Heading != blank -%} 
+          <h2>{{ section.settings.custom-Heading }}</h2>
+       {%- endif -%}
+    </div>
+    <div class="tab-teasers-menu">
+        <ul>
+          {% for block in section.blocks %}
+             {%- if block.settings.custom-tab != blank -%}
+                <li><a href="#" class="{%- if forloop.index == 1 -%}active{% endif %}" data-rel="tabs-{{ forloop.index }}">{{ block.settings.custom-tab }}</a></li>
+             {%- endif -%}
+           {% endfor %}
+        </ul>
+    </div>
+  </div>
+  <div class="tab-main-boxs">
+      {% for block in section.blocks %}
+      <div class="tab-boxs" id="tabs-{{ forloop.index }}" {%- if forloop.index == 1 -%}style="display:block;"{% endif %}>
+         {%- if block.settings.custom-tab-video != blank -%}
+           <video class="content b-lazy b-loaded" style="max-width: 100%; height: auto;" autoplay="true" loop="true" muted="" playsinline="" controlslist="nodownload" src="{{ block.settings.custom-tab-video }} "></video>
+         {%- endif -%}
+         {%- if block.settings.custom-tab-image != blank -%}
+            <img style="max-width: 100%;" src="{{ block.settings.custom-tab-image | img_url: 'master'}}">
+         {%- endif -%}
+         {%- if block.settings.custom-tab-paragraph != blank -%}
+            <p>{{ block.settings.custom-tab-paragraph }}</p>
+         {%- endif -%}
+      </div>
+     {% endfor %}
+  </div>
+</div>
+
+<script>
+  $('.tab-teasers-menu li a').on('click', function(){
+      var target = $(this).attr('data-rel');
+      $('.tab-teasers-menu li a').removeClass('active');
+      $(this).addClass('active');
+      $("#"+target).fadeIn('slow').siblings(".tab-boxs").hide();
+      return false;
+  });
+</script>
+<style>
+
+
+
+
+.tab-teasers { max-width:1200px; width:100%; margin:0 auto; display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-top: 50px;
+    margin-bottom: 50px;}
+.tab-headers {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.tab-teasers-menu,
+.tab-head-contents {
+  width:48%;
+}
+.tab-head-contents h2 {
+  font-size:40px;
+  line-height:51px;
+  font-weight:400;
+  color:#000;
+  margin-top:0px;
+}
+.tab-teasers-menu{
+  margin-top: 10px;
+  overflow-x :auto;
+  padding-bottom:10PX;
+  height:fit-content;
+}
+.tab-boxs { 
+  display:none; 
+}
+.tab-boxs img,
+.tab-boxs figure,
+.tab-boxs video {
+  width:100%;
+  border-radius: 25px; 
+}
+.tab-boxs p {
+  color:#000;
+  font-size:16px;
+  line-height:29px;
+  font-weight:400;
+} 
+.tab-main-boxs { 
+  background:transparent;   
+  width: 100%; 
+  overflow:hidden;
+  
+}
+
+.tab-teasers-menu ul {
+  margin:0; 
+  padding:5px; 
+  list-style:none; 
+  display: -webkit-box; 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+}
+.tab-teasers-menu ul li {
+  -ms-flex-preferred-size: 0;  
+  -ms-flex-positive: 1; 
+  max-width: 100%; 
+  text-align:center;
+  margin-right:5px;
+}
+.tab-teasers-menu ul li a { 
+  color: #000; 
+  text-transform: uppercase; 
+  letter-spacing: 0.44px;  
+  font-weight:bold; 
+  display:inline-block; 
+  padding: 6px 14px; 
+  display:block; 
+  text-decoration:none; 
+  transition:0.5s all; 
+  background: transparent; 
+  border-radius:10px;
+}
+.tab-teasers-menu ul li:last-child {
+  margin-right:0px;
+}
+.tab-teasers-menu ul li a:hover { 
+  background:#5b4c87; 
+  color:#fff; 
+  text-decoration:none; 
+  border-radius:10px; 
+}
+.tab-teasers-menu ul li a.active { 
+  background:#5b4c87; 
+  color:#fff; 
+  text-decoration:none; 
+  border-radius:10px;  
+}
+@media screen and (max-width:749px){
+  .tab-headers {
+    flex-wrap: wrap;
+    flex-direction:column;
+  }
+  
+  .tab-teasers {
+    padding: 0 20px;
+    gap:unset;
+  }
+  .tab-headers {
+    gap:unset;
+    margin-bottom:30px;
+  }
+  .tab-teasers-menu,
+  .tab-head-contents {
+    width:100%;
+  }
+  .tab-head-contents h2 {
+    text-align:center;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+  .tab-teasers-menu ul {
+    margin:0 auto;
+  }
+  .tab-boxs img,
+  .tab-boxs figure,
+  .tab-boxs video {
+    border-radius:10px;
+  }
+}
+@media screen and (min-width: 750px){
+  .tab-teasers {
+      padding: 0 5rem;
+  }
+}
+@media screen and (max-width:450px) and (min-width:320px){
+  .tab-teasers-menu ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+</style>
+
+
+{% schema %}
+  {
+    "name": "Tab custom",
+    "tag": "section",
+    "settings": [
+            {
+              "type": "html",
+              "id": "custom-Heading",
+              "label": "Heading"
+            }
+            
+          ],
+    "blocks": [
+            {
+              "type": "text",
+              "name": "Custom Tabs",
+              "limit": 6,
+              "settings": [
+                  {
+                    "type": "text",
+                    "id": "custom-tab",
+                    "label": "Tab Name"
+                  },
+                  {
+                    "type": "text",
+                    "id": "custom-tab-paragraph",
+                    "label": "Description"
+                  },
+                  {
+                     "type": "image_picker",
+                     "id": "custom-tab-image",
+                     "label": "Custom Tab Image "
+                  },
+                  {
+                      "type": "html",
+                      "id": "custom-tab-video",
+                      "label": "Video Link"
+                    }
+                ]
+            }
+        ],
+      "presets": [
+        		{ 
+                  "name": "Tab custom",
+                  "blocks": [
+                        {
+                          "type": "text"
+                        }
+                     ]
+                  }
+            	]
+  }
+{% endschema %}

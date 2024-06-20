@@ -1,0 +1,19 @@
+<div class="kindnessgrant-form-thanks-section">
+    <div class="image-wrap-thanks">
+    {%- if block.settings.section-heading-thanks-image != blank -%}
+        <img src="{{ block.section-heading-thanks-image | img_url: 'master' }}" alt="Beekman1802 kindness grant thanks">
+    {%- endif -%}
+    </div>
+
+  {%- if block.settings.section-heading-thanks != blank -%}
+    <h2>{{ block.settings.section-heading-thanks | escape }}</h2>
+  {%- endif -%}
+  {%- if block.settings.section-heading-effect != blank -%}
+    <h2>{{ block.settings.section-heading-effect | escape }}</h2>
+  {%- endif -%}
+
+    {%- comment -%} this is a dynamic value? {%- endcomment -%}
+    <div class="people-count">
+        <span>100 people</span>
+    </div>
+</div>

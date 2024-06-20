@@ -1,0 +1,50 @@
+<div class="product-detail">
+
+    {% assign paragraphId1 = product.id | append: 'details-preview' %}
+    {% assign paragraphId2 = product.id | append: 'details-description' %}
+    <div>
+
+        <div class="preview">
+            {% assign stripped_description = product.description %}
+            <div id='{{ paragraphId1 }}'>
+
+                {%if product.description contains '</a>' %}
+                {{ product.description | truncate: 380 }}
+                {%else%}
+                {{ product.description | truncate: 203 }}
+                {%endif%}
+                {% if stripped_description.size > 200 %}
+                <button class="view__more" onclick="addclass();">
+                    Read More
+                </button>
+                {% endif %}
+            </div>
+        
+        </div>
+        <script>
+            var desc = '{{product.description}}';
+            desc = $(desc).text();
+            $('.desc_truncated').html(desc.substring(0, 203) + $('.desc_truncated').html());
+        </script>
+
+        <div id='{{ paragraphId2 }}' class="hidden">
+            {{ product.description }}
+            <button id='{{ paragraphId2 }}' class="" onclick="removeclass();">
+                Read Less
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    function addclass() {
+        document.getElementById('{{ paragraphId1 }}').classList.add('show');
+        document.getElementById('{{ paragraphId1 }}').classList.add('preview-description');
+        document.getElementById('{{ paragraphId2 }}').classList.remove('hidden');
+    }
+
+    function removeclass() {
+        document.getElementById('{{ paragraphId1 }}').classList.remove('preview-description');
+        document.getElementById('{{ paragraphId1 }}').classList.remove('show');
+        document.getElementById('{{ paragraphId2 }}').classList.add('hidden');
+    }
+</script>

@@ -1,0 +1,86 @@
+<div class="upcommign_container_sup h_ucs">
+<h1 id="demo2">{{section.settings.section_title}}</h1>
+
+<div class="upcommign_container custom_scroll">
+   
+ <div class="upcomming_items_container">
+  {% for block in section.blocks %}
+               <div class="main-beek-card">
+                    <h4>{{block.settings.box-title}}</h4>
+                    <h6>{{block.settings.box-sub-title}}</h6>
+
+                    <p>{{block.settings.box-details}}</p>
+
+                    <a href="{{block.settings.box-button-url}}">{{block.settings.box-button-text}}</a>
+                </div>
+  {%endfor%}              
+ 
+  </div> 
+</div>
+</div>
+
+
+<style>
+.ittem1{
+  background:url("{{section.settings.item1_imagee | img_url: 'large'}}");
+}
+.ittem2{
+  background:url("{{section.settings.item2_imagee | img_url: 'large'}}");
+}
+.ittem3{
+  background:url("{{section.settings.item3_imagee | img_url: 'large'}}");
+}
+</style>
+
+
+{% schema %}
+{
+  "name": "UP COMMING SHOW",
+  "settings": [ 
+ {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "upcomming shows"
+    }    
+  ],
+    "blocks": [
+    {
+      "type": "feature",
+      "name": "Boxe",
+      "settings": [
+    {
+      "type": "text",
+      "id": "box-title",
+      "label": "Box title",
+      "default": "10/25"
+    },
+     {
+      "type": "text",
+      "id": "box-sub-title",
+      "label": "Box SubTitle",
+      "default": "7-8pm ET"
+    },
+     {
+      "type": "text",
+      "id": "box-details",
+      "label": "Box details text",
+      "default": "custom box detais text"
+    },
+     {
+      "type": "text",
+      "id": "box-button-text",
+      "label": "Button text",
+      "default": "Remind me"
+    },
+     {
+      "type": "url",
+      "id": "box-button-url",
+      "label": "Box url"
+    }
+    
+      ]
+    }
+  ]
+}
+{% endschema %}

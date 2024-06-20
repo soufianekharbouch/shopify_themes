@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "56d3cb5c-5955-47c6-9058-9c39a43aabde": {
+      "type": "index__divider",
+      "disabled": true,
+      "settings": {
+        "divider_style": "short",
+        "divider_width": 0,
+        "divider_color": "rgba(0,0,0,0)",
+        "alignment": "center",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "c7702c79-330b-4a37-9b90-8b3180780a62": {
+      "type": "index__rich-text",
+      "disabled": true,
+      "settings": {
+        "title": "About Us",
+        "heading_font": "open_sans_n7",
+        "heading_color": "rgba(0,0,0,0)",
+        "heading_alignment": "center",
+        "heading_size": 30,
+        "text": "<p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p><p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p><p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p><p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p><p>Use this section to create some callout text on your page, or add more details about your shop, services, promotions, etc. If you have a large amount of text, you can opt to have it display in <strong>two columns<\/strong> instead so that it's much easier to read.<\/p><p><\/p><p>This section also includes the option to add a button in primary or secondary style, and also control the colors, including the option for a gradient background. Since this is rich text, you can also <em>format it as you wish<\/em> and <a href=\"\/collections\/all\" title=\"All Products\">include links<\/a>.<\/p>",
+        "text_font": "open_sans_n4",
+        "text_color": "rgba(0,0,0,0)",
+        "text_alignment": "left",
+        "text_size": 14,
+        "columns": 2,
+        "button_label": "",
+        "button_link": "",
+        "button_alignment": "center",
+        "button_style": "button--primary",
+        "background": "#ffffff",
+        "gradient": "#ffffff",
+        "gradient_rotation": 180,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "a8d46179-5684-4821-80a5-226be5e18256": {
+      "type": "index__divider",
+      "disabled": true,
+      "settings": {
+        "divider_style": "short",
+        "divider_width": 2,
+        "divider_color": "rgba(0,0,0,0)",
+        "alignment": "center",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16582492089a0e8546": {
+      "type": "index__contact-form",
+      "blocks": {
+        "1658249208aa06138d-0": {
+          "type": "textfield",
+          "settings": {
+            "label": "Name",
+            "required": true
+          }
+        },
+        "1658249208aa06138d-1": {
+          "type": "email",
+          "settings": {
+            "label": "Email"
+          }
+        },
+        "1658249208aa06138d-2": {
+          "type": "textarea",
+          "settings": {
+            "label": "Message",
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "1658249208aa06138d-0",
+        "1658249208aa06138d-1",
+        "1658249208aa06138d-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Looking to get in touch?",
+        "content_text": "<p>We're always happy to chat and help answer any questions you may have!<br\/><br\/>Please note, we try our best to respond to all inquiries within 48 hours, Monday - Friday. <\/p>",
+        "social_enable": true,
+        "text_alignment": "left",
+        "background": "#000000",
+        "text_color": "#ffffff",
+        "form_position": "right",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "animation": "fadeIn",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_content_page_qeUt8K": {
+      "type": "index__content-page",
+      "settings": {
+        "content_page": "about-us",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "56d3cb5c-5955-47c6-9058-9c39a43aabde",
+    "c7702c79-330b-4a37-9b90-8b3180780a62",
+    "a8d46179-5684-4821-80a5-226be5e18256",
+    "16582492089a0e8546",
+    "index_content_page_qeUt8K"
+  ]
+}

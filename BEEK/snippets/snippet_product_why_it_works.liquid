@@ -1,0 +1,16 @@
+<div class="row wiw__section">
+  <div class="col-12 col-md-4 content__wrap">
+    {% if product.metafields.accentuate.wiw_image_mob %}
+      <img src="{{ product.metafields.accentuate.wiw_image_mob }}" alt="{{ product.metafields.accentuate.title }}" class="d-md-none"/>
+    {% endif %}
+    <h2>{{ product.metafields.accentuate.wiw_title }}</h2>
+    <p>{{ product.metafields.accentuate.wiw_text }}</p>
+    <h3>{{ product.metafields.accentuate.wiw_subtitle }}</h3>
+    <p class="last">{{ product.metafields.accentuate.wiw_subtext }}</p>
+  </div>
+  {% if product.metafields.accentuate.wiw_image_mob %}
+    <div class="col-12 col-md-5 d-none d-md-block image__wrap">
+      <img src="{{ product.metafields.accentuate.wiw_image }}" alt="{{ product.metafields.accentuate.title }}"/>
+    </div>
+  {% endif %}
+</div>

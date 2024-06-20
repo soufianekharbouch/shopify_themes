@@ -1,0 +1,425 @@
+<div class="container" id="order">
+  <div class="account_section">
+    <div class="row">
+      <div class="col-12 text-center">
+          <h1>WELCOME NEIGHBOR</h1>
+          <h2>{{ customer.first_name }}'s Account</h2>
+      </div>
+    </div>
+
+    <div class="row customer_info">
+      <div class="col-12 col-md-4">
+        {% assign activeTab="order_history"  %}
+        {% include 'account-sidebar' with activeTab %}
+      </div>
+
+      <div class="col-12 col-md-8 customer_info_right">
+        <div class="row">
+          <div class="col-10 align-self-center">
+            <h3 class="list_item_heading grow">Order Details: <span class="bold">{{ order.order_number }}</span></h3>
+          </div>
+          <div class="col-2 text-right align-self-start">
+            <p>
+              <a href="/account?view=order_history" class="bold light">BACK</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- DESKTOP LAYOUT -->
+        <div class="d-none d-md-block">
+            <div class="row">
+                <div class="col-3">
+                    <h3 class="list_item_heading type_2">
+                        Order Date
+                    </h3>
+                </div>
+                <div class="col-5">
+                    <h3 class="list_item_heading type_2">
+                        Products Ordered
+                    </h3>
+                </div>
+                <div class="col-4 text-right align-self-center">
+                    <h3 class="list_item_heading type_2">
+                        Price
+                    </h3>
+                </div>
+            </div>
+            <hr/>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            {% if order.cancelled %}
+              {%- assign cancelled_at = order.cancelled_at | date: "%D" -%}
+              <p>{{ 'customer.order.cancelled' | t: date: cancelled_at }}</p>
+              <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <hr/>
+            <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%D" }}</p>
+          </div>
+        </div>
+
+        <div class="d-md-none">
+          {% for line_item in order.line_items %}
+            <div class="line_item">
+              <div class="row">
+                <div class="col-4 align-self-start">
+                  <div class="grey-background">
+                    {% include 'responsive-image-aspect-ratio' with
+                      image: line_item.product.featured_image,
+                      hero_aspect_ratio: 130,
+                      bgPosition: 'cover',
+                      max_width: 600,
+                      max_height: 800,
+                      image_attributes: "data-product-featured-image",
+                      wrapper_attributes: "data-product-image-wrapper",
+                    %}
+                  </div>
+                </div>
+                <div class="col-6 align-self-start text">
+                  <a href="{{ line_item.product.url }}">
+                    <h3 class="line_item_title text">
+                      {{ line_item.product.title }}
+                      {% if line_item.quantity > 1 %}
+                        x
+                        {{ line_item.quantity}}
+                      {% endif %}
+                    </h3>
+                  </a>
+                  <p class="line_item_tagline">{{ line_item.product.metafields.accentuate.short_description }}</p>
+                </div>
+                <div class="col-2 text-right align-self-start">
+                 <p class="font-normal-secondary">{{ line_item.product.price | times: line_item.quantity | money }}</p>
+                                                           </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="d-none d-md-block">
+          <div class="line_item">
+            <div class="row">
+              <div class="col-3">
+                <p>{{ 'customer.order.date' | t: date: order.created_at | date: "%D" }}</p>
+              </div>
+              <div class="col-9">
+               {% assign i = 0 %}
+                {% for line_item in order.line_items %}
+                  <div class="row">
+                    <div class="col-3 align-self-start">
+                      <div class="grey-background">
+                        {% include 'responsive-image-aspect-ratio' with
+                          image: line_item.product.featured_image,
+                          hero_aspect_ratio: 130,
+                          bgPosition: 'contain',
+                          max_width: 600,
+                          max_height: 800,
+                          image_attributes: "data-product-featured-image",
+                          wrapper_attributes: "data-product-image-wrapper",
+                        %}
+                      </div>
+                    </div>
+                    <div class="col-5 align-self-start text">
+                      <a href="{{ line_item.product.url }}">
+                        <h3 class="line_item_title text">
+                          {{ line_item.product.title }}
+                          {% if line_item.quantity > 1 %}
+                            x
+                            {{ line_item.quantity}}
+                          {% endif %}
+                        </h3>
+                      </a>
+                      <p class="line_item_tagline">{{ line_item.product.metafields.accentuate.short_description }}</p>
+                    </div>
+                    <div class="col-4 text-right align-self-start">
+                      <p class="font-normal-secondary">{{ line_item.product.price | times: line_item.quantity | money }}</p>
+                      <form action="/cart/add" data-productid="{{ line_item.variant_id }}" method="post" enctype="multipart/form-data" id="AddToCartForm{{ i }}" class="form-vertical">
+                      <input type="hidden" name="id" data-productid="{{ line_item.variant_id }}" value="{{ line_item.variant_id }}" >
+                      <input type="hidden" name="quantity" value="1" class="quantity-selector">
+ 
+                      {% if line_item.product.available %}
+                        <button type="submit" name="add" id="AddToCart" class="btn add-btn">
+                         <span id="AddToCartText">Buy Again</span>
+                       </button>
+                          
+                           {% else %}
+   Out Of Stock
+                          {% endif %}
+                               </form>
+     
+</div>
+<div class="spacing">      
+  <style>
+    .btn.btn {
+        display: flex;
+        float: right;
+        border: none;
+        background: #4a5761;
+        color: #fff;
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+        width: 170px;
+        font-weight: 600;
+        text-transform: uppercase;
+        visibility: visible!important;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 65px;
+    }
+</style>           
+                         </div>
+                        </div>
+{% assign i = i  | plus: 1 %} 
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="spacing"></div>
+              <hr/>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOBILE LAYOUT -->
+        <div class="row d-md-none">
+          <div class="col-12">
+            <hr/>
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <div class="spacing"></div>
+            <h3 class="list_item_heading">Shipping Address</h3>
+            <hr/>
+          </div>
+          <div class="col-12 font-normal-secondary">
+            <p>
+              {{ order.shipping_address | format_address }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <div class="spacing"></div>
+            <h3 class="list_item_heading">Billing Address</h3>
+            <hr/>
+          </div>
+          <div class="col-12 font-normal-secondary">
+            <p>
+              {{ order.billing_address | format_address }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <div class="spacing"></div>
+            <h3 class="list_item_heading">Payment Method</h3>
+            <hr/>
+          </div>
+          <div class="col-12 font-normal-secondary">
+            {% for transaction in order.transactions %}
+              <p>
+                {{ transaction.payment_details.credit_card_company }} {{ transaction.payment_details.credit_card_number }}
+              </p>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <div class="spacing"></div>
+            <h3 class="list_item_heading">Order Summary</h3>
+            <hr/>
+          </div>
+          <div class="col-8 font-normal-secondary">
+            <p>Subtotal</p>
+          </div>
+          <div class="col-4 text-right font-normal-secondary faded">
+            <p>{{ order.line_items_subtotal_price | money }}</p>
+          </div>
+          {% if order.discount_applications %}
+            {% for discount_application in order.discount_applications %}
+              <div class="col-8 font-normal-secondary">
+                <p> Discount: {{ discount_application.title }} </p>
+              </div>
+              <div class="col-4 text-right font-normal-secondary faded">
+                <p>-{{ discount_application.total_allocated_amount | money }} </p>
+              </div>
+            {% endfor %}
+          {% endif %}
+          <div class="col-8 font-normal-secondary">
+            <p>Shipping</p>
+          </div>
+          <div class="col-4 text-right font-normal-secondary faded">
+            <p>{{ order.shipping_price | money }}</p>
+          </div>
+          <div class="col-8 font-normal-secondary">
+            <p>Taxes</p>
+          </div>
+          <div class="col-4 text-right font-normal-secondary faded">
+            <p>{{ order.tax_price | money }}</p>
+          </div>
+        </div>
+
+        <div class="row d-md-none">
+          <div class="col-12">
+            <div class="spacing"></div>
+            <hr/>
+          </div>
+          <div class="col-8">
+            <h3 class="line_item_title text">TOTAL</h3>
+          </div>
+          <div class="col-4 text-right font-normal-secondary">
+            <p>{{ order.total_price | money }}</p>
+          </div>
+        </div>
+        <div class="spacing"></div>
+
+        {% if order.fulfillment_status == "fulfilled" %}
+          <div class="row d-md-none">
+            <div class="col-12">
+              <a target="_blank" href='{{order.line_items.first.fulfillment.tracking_url}}' class="boxed-btn"> Track Package </a>
+            </div>
+          </div>
+          {% else %}
+          <div class="row d-md-none">
+            <div class="col-12">
+              <p class="font-italic-secondary faded"> Tracking is not available for this order. </p>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="d-none d-md-block">
+          <div class="row">
+            <div class="col-4">
+              <h3 class="list_item_heading type_2">
+                shipping address
+              </h3>
+              <hr/>
+              <div class="font-normal-secondary">
+                <span class="big">
+                  {{ order.shipping_address | format_address }}
+                </span>
+              </div>
+              <div class="spacing"></div>
+              <br/>
+              <h3 class="list_item_heading type_2">
+                payment method
+              </h3>
+              <hr/>
+              <div class="font-normal-secondary">
+                {% for transaction in order.transactions %}
+                  <p>
+                    {{ transaction.payment_details.credit_card_company }} {{ transaction.payment_details.credit_card_number }}
+                  </p>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="col-4">
+              <h3 class="list_item_heading type_2">
+                billing address
+              </h3>
+              <hr/>
+              <div class="font-normal-secondary">
+                <span class="big">
+                  {{ order.billing_address | format_address }}
+                </span>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <h3 class="list_item_heading type_2">
+                order summary
+              </h3>
+              <hr/>
+
+              <div class="row">
+                <div class="col-8 font-normal-secondary">
+                  <p class="small">Subtotal</p>
+                </div>
+                <div class="col-4 text-right font-normal-secondary faded">
+                  <p>{{ order.line_items_subtotal_price | money }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                {% if order.discount_applications %}
+                  {% for discount_application in order.discount_applications %}
+                    <div class="col-8 font-normal-secondary">
+                      <p> Discount: {{ discount_application.title }} </p>
+                    </div>
+                    <div class="col-4 text-right font-normal-secondary faded">
+                      <p>-{{ discount_application.total_allocated_amount | money }} </p>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="row">
+                <div class="col-8 font-normal-secondary">
+                  <p class="small">Shipping</p>
+                </div>
+                <div class="col-4 text-right font-normal-secondary faded">
+                  <p>{{ order.shipping_price | money }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-8 font-normal-secondary">
+                  <p class="small">Taxes</p>
+                </div>
+                <div class="col-4 text-right font-normal-secondary faded">
+                  <p>{{ order.tax_price | money }}</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="spacing"></div>
+                    <hr/>
+                </div>
+                <div class="col-8">
+                  <h3 class="line_item_title text">TOTAL</h3>
+                </div>
+                <div class="col-4 text-right font-normal-secondary">
+                  <p>{{ order.total_price | money }}</p>
+                </div>
+              </div>
+              <div class="spacing"></div>
+              {% if order.fulfillment_status == "fulfilled" %}
+                <div class="row">
+                  <div class="col-12">
+                    <a target="_blank" href='{{order.line_items.first.fulfillment.tracking_url}}' class="boxed-btn"> Track Package </a>
+                  </div>
+                </div>
+                {% else %}
+                <div class="row">
+                  <div class="col-12">
+                    <p class="font-italic-secondary faded"> Tracking is not available for this order. </p>
+                  </div>
+                </div>
+              {% endif %}
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<br/>

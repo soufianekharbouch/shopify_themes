@@ -1,0 +1,97 @@
+<section class="mercantile-section"
+  {% if section.settings.bkg_image %}
+    style="background-image:url({{ section.settings.bkg_image | img_url: '375x' }})"
+  {% endif %}
+>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 text-center mercantile_content">
+        <div class="icon-wrap">
+            {% include 'icon-mercantile' %}
+        </div>
+
+        {%- if section.settings.title != blank -%}
+            <h2>{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+            <div class="text">
+            {{ section.settings.text }}
+            </div>
+        {%- endif -%}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center mercantile_content">
+            {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+              <a class="view__more" href="{{ section.settings.button_link }}">
+                {{ section.settings.button_label | escape }}
+              </a>
+            {% endif %}
+        </div>
+    </div>
+
+    </div>
+</section>
+<script>
+  var $mercantile = $('.mercantile-section').find('.icon-wrap');
+
+  var element = document.querySelector('.newsletter');
+  var in_dom = document.body.contains(element);
+  var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(mutation => {
+      if (mutation.removedNodes.length) {
+        $mercantile.addClass('active');
+        observer.disconnect();
+      }
+    })
+  });
+  function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  $(document).on('click', '.newsletter button', function() {
+    var mail = $('.newsletter input[type="email"]').val();
+
+    if (validateEmail(mail)) {
+      observer.observe(element, {childList: true, subtree: true});
+    }
+  });
+
+</script>
+{% schema %}
+  {
+  "name": "Mercantile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Story"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Story content"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "CTA Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "CTA Link"
+    }],
+    "presets": [
+      {
+        "name": "Mercantile",
+        "category": "Text"
+      }
+  	]
+  }
+{% endschema %}

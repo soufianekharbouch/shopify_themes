@@ -1,0 +1,95 @@
+<div id="account_order_history">
+    <h2 class="section_heading">ORDER HISTORY</h2>
+    <span class="font-normal-secondary">
+        <div class="d-none d-md-block">
+            <div class="row">
+                <div class="col-3">
+                    <h3 class="list_item_heading type_2">
+                        Order Date
+                    </h3>
+                </div>
+                <div class="col-4">
+                    <h3 class="list_item_heading type_2">
+                        Order Number
+                    </h3>
+                </div>
+                    <div class="col-3">
+                    <h3 class="list_item_heading type_2">
+                        Status
+                    </h3>
+                </div>
+                <div class="col-2 text-right align-self-center">
+                    <h3 class="list_item_heading type_2">
+                        Total
+                    </h3>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        {% paginate customer.orders by 5 %}
+            {% if customer.orders.size != 0 %}
+                {% for order in customer.orders %}
+                    <hr class="d-block d-md-none"/>
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="order">
+                                    {{ order.created_at | date: "%D" }}
+                                    <br/>
+                                    <a class="order-link" href="{{ order.customer_url }}">
+                                        {{ order.id }}
+                                    </a>
+                                    <br/>
+                                    {% if order.metafields.accentuate.order_status %}
+                                        {{ order.metafields.accentuate.order_status }}
+                                    {% else %}
+                                        {{ order.fulfillment_status_label }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="col-4 text-right align-self-center">
+                                <p class="font-secondary faded">{{ order.total_price | money }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <div class="row">
+                            <div class="col-3 my-auto">
+                                <p class="order my-auto">
+                                    {{ order.created_at | date: "%D" }}
+                                </p>
+                            </div>
+                            <div class="col-4 my-auto">
+                                <p class="order my-auto">
+                                    <a class="order-link my-auto" href="{{ order.customer_url }}">
+                                        {{ order.id }}
+                                    </a>
+                                </p>
+                            </div>
+                             <div class="col-3 my-auto">
+                                <p class="order my-auto">
+                                    {% if order.metafields.accentuate.order_status %}
+                                        {{ order.metafields.accentuate.order_status }}
+                                    {% else %}
+                                        {{ order.fulfillment_status_label }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="col-2 text-right my-auto">
+                                <p class="font-secondary faded my-auto">{{ order.total_price | money }}</p>
+                            </div>
+                        </div>
+                        <hr class="d-none d-md-block"/>
+                    </div>                    
+                {% endfor %}
+            {% else %}
+                <p>You haven't placed any orders yet.</p>
+            {% endif %}
+            <div class="row text-center">
+                <div class="col-12">
+                    <div class="pagination_wrap">{{ paginate | default_pagination: next: '>', previous: '<'}}</div>
+                </div>
+            </div>
+        {% endpaginate %}
+    </span>
+</div>

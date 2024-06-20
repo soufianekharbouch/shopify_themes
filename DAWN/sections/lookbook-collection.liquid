@@ -1,0 +1,70 @@
+<div class="section-spacing section-spacing--tight section_lookbook">
+  <div class="container">
+    <div class="section_lookbook-stack">
+      <div class="section_lookbook-header">
+        <h2>{{ section.settings.section_title  }}</h2>
+      </div>
+      <div class="lookbook-stack">
+        <div class="lookbook_collection-list">
+          {% for block in section.blocks %}
+            <a href="{{ block.settings.collection_link }}" class="lookbook-card">
+              <div class="lookbook_content-over-media">
+              <img class="lookbook_image" data-src="" data-widths="[180, 360, 540, 720, 900, 1080]" data-aspectratio="" data-sizes="auto" src="{{ block.settings.collection_image | img_url:"master" }}" alt="" sizes="523px">
+              <div class="lookbook__content">
+                <p class="h3">{{ block.settings.collection_text }}</p>
+              </div> 
+              </div>   
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Lookbook Collection",
+    "settings":[
+      {
+      "type":"text",
+      "id":"section_title",
+      "label":"Section Title"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"Collection-Repeter",
+        "name":"Repeter",
+        "settings":[
+        {
+           "type": "image_picker",
+           "id": "collection_image",
+           "label": "Image"
+        },
+        {
+          "type":"text",
+          "id":"collection_text",
+          "label":"Collection Name"
+        },
+        {
+          "type":"url",
+          "id":"collection_link",
+          "label":"Collection Link"
+        }
+      ]
+      }
+    ],
+    "presets":[{
+      "name":"Lookbook-Collection"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

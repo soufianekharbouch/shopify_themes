@@ -1,0 +1,26 @@
+<div class="category-landing-content collection__wrap">
+    <div class="container">
+    {% for item in search.results %}
+  {%- comment %}<locksmith:baa1>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:baa1>{% endcomment -%}
+  <input type="hidden" id="selected_or_first_available_variant_{{item.handle}}" value="{{item.selected_or_first_available_variant.available}}"> 
+{% endfor %}
+        <div class="row collection-featured-image__wrap no--image">
+            <div class="col-12 d-flex justify-content-end count_products_block">
+                <div class="boost-pfs-filter-toolbar-item boost-pfs-filter-toolbar-count">
+                    <span class="boost-pfs-filter-total-product">{%- render 'boost-pfs-filter-skeleton', width: 1 -%}</span>
+                </div>
+            </div>
+            <div class="col-12 d-flex flex-column align-items-center title_product_block">
+                <h1 class="boost-pfs-search-result-header">{{ 'general.search.title' | t }}</h1>
+            </div>
+        </div>
+        <div class="row most__loved-wrap">
+            {% section 'search-template-boost-pfs-filter' %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  var ___PRIVATE_APP_URL = {{ settings.private_app_url | json }}
+</script>

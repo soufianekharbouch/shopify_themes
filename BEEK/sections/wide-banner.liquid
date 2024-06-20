@@ -1,0 +1,145 @@
+
+
+{% assign urll= page.metafields.accentuate.widebanner[0].src %}
+{% assign url_mobile= page.metafields.accentuate.widebannermobile[0].src %}
+<div class="wide-banner-container">
+  <div class="wide-banner-hero-content-area">
+        <div class="text-center">
+          <div class="hero__ttl"><h2>{{section.settings.text1}}</h2></div>
+          <div class="wide-banner-hero__text">
+              {{section.settings.text2}}
+            </div>
+        </div>
+  </div>
+</div>
+<div class="wide-banner-container_mobile">
+  <div class="wide-banner-hero-content-area">
+        <div class="text-center">
+          <div class="hero__ttl"><h2>{{section.settings.text1}}</h2></div>
+          <div class="wide-banner-hero__text">
+              {{section.settings.text2}}
+            </div>
+        </div>
+  </div>
+</div>
+
+<div class="wide-banner-content_container">
+{{ page.content }}
+</div>
+{% include 'kindness-course-experts' %}
+<style>
+.wide-banner-container{
+    width:100%;
+    margin-right:auto;
+    margin-left:auto;
+    height:432px;
+    background:url('{{urll}}');
+    background-size:100% 100%;
+}
+.wide-banner-container_mobile{
+    display:none;
+    width:100%;
+    margin-right:auto;
+    margin-left:auto;
+    height:320px;
+    background:url('{{url_mobile}}');
+    background-size:100% 100%;
+}
+.hero__ttl h2{
+    color:#6c757d;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: #4a5761;
+    font-size: 3.8rem;
+    margin-right:25px;
+    margin-left:25px;
+}
+
+.wide-banner-content_container{
+    width:96%;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:60px;
+    text-align:center;
+    max-width:768px;
+
+}
+.wide-banner-content_container p{
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5761;
+}
+.wide-banner-content_container h2{
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    color: #4a5761;
+    font-family: Avenir Next,Arial,Helvetica;
+
+}
+.ql-editor span{
+font-size:14px !important;
+}
+.wide-banner-hero-content-area{
+    width:45%;
+    background:white;
+    padding:45px;
+    position: relative; /* postulat de départ */   
+    top: 50%; 
+    left:auto; /* à 50%/50% du parent référent */
+    transform: translate(60%, -50%);
+}
+.wide-banner-hero__text{
+    font-family: Century OS,Arial,Helvetica;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #4a5761;
+}
+.kl-private-reset-css-Xuajs1{
+width:100%;
+}
+
+@media(max-width:1000px){
+    .wide-banner-container_mobile{
+        display:block;
+    }
+    .wide-banner-container{
+        display:none;
+    }
+    .hero__ttl h2{
+        font-size: 2.7rem;
+    }
+    .wide-banner-hero-content-area{
+        padding:18px;
+        width:90%;
+        max-width:320px;
+        transform: none;
+        margin-left:auto;
+        margin-right:auto;
+        top:50px;
+    }
+}
+</style>
+{% schema %}
+{
+  "name": "Hero landing page",
+  "settings": [ 
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Title text",
+      "default": "Kindness in Beauty Virtual Conversation"
+    },
+      {
+      "type": "text",
+      "id": "text2",
+      "label": "Content text",
+      "default": " We’re on a mission to make 2021 the kindest year yet, and we hope you’ll join us on this journey."
+    }
+    
+  ]
+}
+{% endschema %}

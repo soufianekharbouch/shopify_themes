@@ -1,0 +1,24 @@
+
+<div class="signup-field">
+    {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+        {% include 'popup-confirmation' %}
+        <p class="confirmation">{{ 'general.newsletter_form.confirmation' | t }}</p>
+    {% else %}
+        <span class="input-wrap">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email"
+            name="contact[email]"
+            id="Email"
+            value="{% if customer.email != blank %}{{ customer.email }}{% endif %}"
+            placeholder="{{ section.settings.newsletter_placeholder }}"
+            autocorrect="off"
+            autocapitalize="off">
+        </span>
+        <button type="submit" name="commit" id="Subscribe">
+            <span>{{ section.settings.button_label }}</span>
+        </button>
+    {% endif %}
+    {% endform %}
+</div>

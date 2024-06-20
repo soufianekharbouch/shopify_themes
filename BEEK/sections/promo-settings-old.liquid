@@ -1,0 +1,275 @@
+<script>
+  var gifts_promo=[];
+  var use_app={{section.settings.use_app}};
+  var free_shipping_ammount = {{section.settings.free_shipping_ammount}};
+</script>
+{%for block in section.blocks%} 
+<script>
+
+  var gift_promo=[];
+  gift_promo['variants_id']=[];
+  gift_promo['variant_qty']={{block.settings.variant_qty}};
+  gift_promo['gift_id']={{block.settings.gift_id}};
+  gift_promo['gift_qty']={{block.settings.gift_qty}};
+  gift_promo['keep_gift']={{block.settings.keep_gift}};
+  gift_promo['gift_every_time']={{block.settings.gift_every_time}};
+  gifts_promo.push(gift_promo);
+</script>
+{%assign variants_id = block.settings.variants_id |split: "," %}
+{%for variant_id in variants_id%}
+<script>
+gift_promo['variants_id'].push({{variant_id}}); 
+</script>
+{%endfor%}
+{%endfor%}
+
+
+
+<script>
+
+function GiftProcess(){
+
+var is_promo_gift=false;
+   if(gifts_promo.length > 0){
+      is_promo_gift =true
+   }
+
+    var variant_id='{{settings.free_gift_variant_id}}';
+    var ammount={{settings.free_gift_ammount}};
+    var Gquantity={{settings.free_gift_quantity}};
+
+  
+    $.ajax({
+    url: "{{shop.url}}/cart.js",
+        success: function(cart) {
+           if(use_app===true){
+              free_shipping_ammount=window.thresholdAmount;
+              if(free_shipping_ammount===undefined){
+                 GiftProcess();
+              return;
+            }
+             free_shipping_ammount=free_shipping_ammount.substring(1);
+            }
+          /*update progress bar*/
+          var pb_total=0;
+          try{
+            cartData=JSON.parse(cart)
+            pb_total=cartData.total_price
+          }catch(error){
+             console.log("ERROR11111"+error)
+          }
+          var pb_percent=Number(pb_total/free_shipping_ammount)
+          var pb_text=Number(free_shipping_ammount -(pb_total/100)).toFixed(2)
+          if(pb_text>0){
+            pb_text="You are missing $ "+pb_text+" for free shipping";
+            $('.ProgressBarLavel').css({width:pb_percent+"%"})
+          }else{
+            pb_text="Free shipping";
+            $('.ProgressBarLavel').css({width:"100%"})
+          }
+           $('.ProgressText').html(pb_text)
+          
+          /* /////////////// */  
+          if(!{{settings.free_gift_promo_enabled}} && is_promo_gift== false ){
+           return; 
+          } 
+          
+          var gift_exist=0;
+          var total=0;
+          var gift_ammount_eligible=true;
+          var remove_gift_ammount=false;
+          var update_gift_ammount=false;
+          var currentGiftQty=0;
+
+          for(item of cartData.items){
+            console.log("RRR"+item.discounted_price)
+              if(item.variant_id == variant_id || item.product_type==="Gift Card" || item.product_type==="Event" ){
+                total=Number(total+item.final_line_price);
+                if(item.variant_id == variant_id)
+                gift_exist=1;
+                currentGiftQty=currentGiftQty+item.quantity
+                }
+          }
+          console.log("currentQty"+currentGiftQty)
+          console.log("giftQty"+Gquantity)
+           if((cartData.item_count>0 && Number(cartData.total_price-total)<Number(ammount*100)) || cartData.item_count==0 ){
+            gift_ammount_eligible=false;
+           } 
+           var gift_to_remove=""; 
+           if(gift_ammount_eligible ==false && gift_exist==1 || currentGiftQty>Gquantity)
+           {
+                if(!{{settings.free_gift_keep}} && {{settings.free_gift_promo_enabled}} || currentGiftQty>Gquantity){
+                  gift_to_remove=gift_to_remove+'updates['+variant_id+']=0&';
+                  if(currentGiftQty>Gquantity){
+                    gift_exist==0;
+                  }
+                }
+           }
+          
+         if(gift_exist==1 && gift_ammount_eligible && remove_gift_ammount==false){
+              update_gift_ammount=true;
+         }
+         var items_to_add='';
+         if(gift_exist==0 && gift_ammount_eligible && {{settings.free_gift_promo_enabled}}){
+          items_to_add='{"id": '+variant_id+',"quantity": '+Gquantity+'}';
+         }
+            for(gift_promo of gifts_promo){
+              var x=0;
+              var qtyOfVariantsExist=0;
+              for(gift_id of gift_promo.variants_id){
+                for(item of cartData.items){
+                  if(gift_id == item.variant_id){
+                     qtyOfVariantsExist=Number(qtyOfVariantsExist+item.quantity);
+                  }
+                } 
+              }
+              var gift_already_exist=false;
+              var same_variant=false;
+              for(item of cartData.items ){
+                  if(item.variant_id == gift_promo.gift_id){
+                    gift_already_exist =true;
+                    var samevariant_exist=false
+                    var i=0;
+                    for(Subitem of cartData.items ){
+                        if(Subitem.variant_id==gift_promo.gift_id){
+                          i=i+1
+                        }
+                    }
+                    if(i>1){
+                      samevariant_exist=true;
+                    }
+                    if(gift_promo.variants_id.includes(item.variant_id) && item.quantity==1 && !samevariant_exist){
+                      var same_variant=true;
+                    }
+                  }
+                      
+              }
+              if(Number(qtyOfVariantsExist)>=Number(gift_promo.variant_qty) && (!gift_already_exist || same_variant)){
+                if(same_variant && qtyOfVariantsExist == 1){
+                  qtyOfVariantsExist=Number(qtyOfVariantsExist+1)
+                }
+                var comma="";
+                if(x==0 && gift_exist==0 &&  {{settings.free_gift_promo_enabled}} ){
+                  comma=",";
+                } 
+                for(item of cartData.items ){
+                  if(item.variant_id == gift_promo.gift_id){
+                    gift_already_exist =true;
+                  }    
+                }
+                if(gift_promo.gift_every_time){
+                  items_to_add=items_to_add+comma+'{"id": '+gift_promo.gift_id+',"quantity": '+qtyOfVariantsExist+'}'; 
+                }else{
+                  items_to_add=items_to_add+comma+'{"id": '+gift_promo.gift_id+',"quantity": '+gift_promo.gift_qty+'}'; 
+                }
+                
+                
+              }
+              if(gift_already_exist && Number(qtyOfVariantsExist)<Number(gift_promo.variant_qty) && !gift_promo.keep_gift){
+                gift_to_remove=gift_to_remove+'updates['+gift_promo.gift_id+']=0&';
+              }
+              if(gift_already_exist && Number(qtyOfVariantsExist)>=Number(gift_promo.variant_qty)&& gift_promo.gift_every_time){
+                gift_to_remove=gift_to_remove+'updates['+gift_promo.gift_id+']='+qtyOfVariantsExist+'&';
+              }
+              x=x+1;
+            }
+         gift_to_remove=gift_to_remove.slice(0, -1);
+         console.log("Gift to remove"+gift_to_remove)
+         if(gift_to_remove !=""){
+          jQuery.post('{{shop.url}}/cart/update.js',
+          gift_to_remove
+           );
+         }
+         var $addToCartBtn=$('.close-btn-cart')
+         var $addToCartForm=$('.cart__form')
+         var data_to_add='{"items": ['+items_to_add+']}';
+         console.log(data_to_add)
+         if(items_to_add!="")
+          {
+           data_to_add=JSON.parse(data_to_add);
+             $.ajax({
+          url: '{{shop.url}}/cart/add.js',
+          dataType: 'json',
+          type: 'post',
+          data: data_to_add
+       }); 
+          }
+       },
+          error: function(XMLHttpRequest) {
+
+        
+          }
+        });
+      }
+</script>
+{% schema %}
+{
+  "name": "Promo,progressbar setti",
+  "settings":[
+       {
+          "type": "range",
+          "id": "free_shipping_ammount",
+          "label": "Free shipping amount",
+          "max":100,
+          "min":0,
+          "step":1,
+          "default":70
+        },
+                {
+          "type": "checkbox",
+          "id": "use_app",
+          "label": "Use app to get Free Shipping amount",
+          "default":true
+        }
+  ],
+  "blocks": [
+    {
+      "type": "FreeGift",
+      "name": "Free Gift",
+      "settings": [
+        {
+          "type": "text",
+          "id": "variants_id",
+          "label": "variants id"
+        },
+        {
+          "type": "text",
+          "id": "gift_id",
+          "label": "Gift ID",
+          "info": "variant ID for the Gift "
+        },
+        {
+          "type": "range",
+          "id": "gift_qty",
+          "label": "Gift Quantity",
+          "max":10,
+          "min":0,
+          "step":1,
+          "default":1
+        },
+        {
+          "type": "range",
+          "id": "variant_qty",
+          "label": "Quantity to add",
+          "max":10,
+          "min":0,
+          "step":1,
+          "default":1
+        },
+        {
+          "type": "checkbox",
+          "id": "keep_gift",
+          "label": "Keep the Gift in the cart",
+          "default":false
+        },
+        {
+          "type": "checkbox",
+          "id": "gift_every_time",
+          "label": "gift with every item",
+          "default":true
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

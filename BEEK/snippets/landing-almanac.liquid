@@ -1,0 +1,49 @@
+<div class="almanac-section">
+  <div class="image-wrap">
+    <div class="row no-gutters">
+      <div class="d-block col-12 d-lg-none">
+        <div class="hero-section__image">
+          {% if block.settings.mobile_image != blank %}
+            <img src="{{ block.settings.mobile_image | img_url: 'master' }}" alt="" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="d-none d-lg-block">
+      <div class="hero-section__image">
+        {% if block.settings.desktop_image != blank %}
+          <img src="{{ block.settings.desktop_image | img_url: 'master' }}" alt="" />
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="hero-content-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            {%- if block.settings.almanacTitle != blank -%}
+              <h2>{{ block.settings.almanacTitle | escape }}</h2>
+            {%- endif -%}
+          </div>
+
+          <div class="col-12">
+            {%- if block.settings.almanacContent != blank -%}
+              <div class="text">
+                {{ block.settings.almanacContent }}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="col-12 shop__all-wrap">
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a href="{{ block.settings.button_link }}" class="shop-all-item">
+                {{ block.settings.button_label | escape }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

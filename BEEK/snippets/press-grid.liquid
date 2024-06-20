@@ -1,0 +1,17 @@
+{% if block.settings.press_grid_enabled %}
+  {% assign articles = page.metafields.accentuate.article_title %}
+  <script>
+    window.articlesList = [];
+    {% for article in articles %}
+      window.articlesList[{{ forloop.index0 }}] = {
+        "name": "{{ page.metafields.accentuate.article_title[forloop.index0] }}",
+        "img": "{{ page.metafields.accentuate.article_image[forloop.index0][0].cloudinary_src }}",
+        "logo": "{{ page.metafields.accentuate.publisher_logo[forloop.index0][0].cloudinary_src }}",
+        "url": "{{ page.metafields.accentuate.article_url[forloop.index0] }}",
+        "tag": "{{ page.metafields.accentuate.article_tag[forloop.index0] }}",
+        "date": "{{ page.metafields.accentuate.article_date[forloop.index0] }}",
+      };
+    {% endfor %}
+  </script>
+  <div class="press__grid container"></div>
+{% endif %}

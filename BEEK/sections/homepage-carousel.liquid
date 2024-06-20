@@ -1,0 +1,356 @@
+<style>
+  .owl-carousel {
+    display: block;    
+  } 
+  .owl-carousel .image-wrap:not(:first-child) {
+    display: none;
+  } 
+  .owl-carousel img {
+    width: 100%;
+  }
+  .owl-carousel .slide__item.overlay:first-child {
+    min-height: 555px;
+    padding: 0;
+    margin: 0;
+    aspect-ratio: auto 2.23 / 1;
+  }
+  @media (max-width: 767px) {  
+    .owl-carousel .slide__item.overlay:first-child {
+      min-height: auto;  
+      padding: 0;
+      margin: 0;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  
+  .slider_nav {
+    display: none;
+  }
+</style>
+<section class="homepage__carousel hero-section">
+  <div class="carousel__wrap owl-carousel">
+    {% for block in section.blocks %}
+      {% case block.settings.homegrown_slide_type %}
+        {% when "image" %}
+        
+          <div class="slide__item overlay">
+            <div class="image-wrap">
+              <div class="row no-gutters">
+                <div class="d-block col-12 d-lg-none"> 
+                  <div class="hero-section__image" >
+        
+                    {% if block.settings.mobile_image != blank %}
+                      {% include 'responsive-image-aspect-ratio' with
+                              image: block.settings.mobile_image,
+                              hero_aspect_ratio: 100,
+                              max_width: 1110, %}
+                    {% endif %}
+                  </div>
+                
+                </div>
+              </div>
+              <div class="d-none d-lg-block">
+                <div class="hero-section__image" >
+                  {% if block.settings.desktop_image != blank %}
+                    {% include 'responsive-image-aspect-ratio' with
+                            image: block.settings.desktop_image,
+                            hero_aspect_ratio: 45,
+                            max_height: 615px,
+                            max_width: 2560,
+                            image_class: "desktop",
+                            imageInitialSize: "1000x" %}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <a class="down-arrow d-none d-lg-block" href="#">
+                      {% include 'icon-chevron-bottom' %}
+                    </a>
+                  </div>
+                </div>
+              </div>
+        {% when "youtube" %}
+          <div class="slide__item overlay yt-overlay">
+            <div class="image-wrap yt-img-wrap">
+              {% if block.settings.youtube_video_url.id != blank %}
+            {% include 'youtube-embed' with
+                    video_id: block.settings.youtube_video_url.id,
+                    autoplay: block.settings.youtube_autoplay,
+                    controls: block.settings.youtube_player_controls, %}
+          {% endif %}
+              <div class="hero-content-area text-center youtube-heading-container">
+            <div class="container header__container">
+              <div class="row">
+                <div class="col-12">
+                  {%- if block.settings.title != blank -%}
+                    <h2 class="d-block text-center yt-heading"
+                        style="color: {{ block.settings.text_color_mobile }}">{{ block.settings.title | escape }}</h2>
+                  {%- endif -%}
+                </div>
+                <div class="col-12">
+                  {%- if block.settings.text != blank -%}
+                    <div class="text-center d-block yt-text" style="color: {{ block.settings.text_color_desktop }}">
+                      {{ block.settings.text | escape }}
+                    </div>
+                  {%- endif -%}
+                </div>
+                <div class="col-12 hero_link_row text-center">
+                  {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                  <a class="btn d-none d-inline-block yt-btn" href="{{ block.settings.button_link }}"
+                     style="color: {{ block.settings.text_color_desktop }}; border-color: {{ block.settings.text_color_desktop }};">
+                    {{ block.settings.button_label | escape }}
+                  </a>
+                {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+
+              {% if block.settings.homegrown_slide_type == "image" %}
+                <div class="hero-content-area text-lg-left" {{ block.settings.button_link }}>
+                  <div class="container header__container">
+                    <div class="row">
+                      <div class="col-12">
+                        {%- if block.settings.title != blank -%}
+                          <h2 class="d-lg-none"
+                              style="color: {{ block.settings.text_color_mobile }}">{{ block.settings.title | escape }}</h2>
+                          <h2 class="d-none d-lg-block"
+                              style="color: {{ block.settings.text_color_desktop }}">{{ block.settings.title | escape }}</h2>
+                        {%- endif -%}
+                      </div>
+                      <div class="col-12">
+                        {%- if block.settings.text != blank -%}
+                          <div class="text d-lg-none" style="color: {{ block.settings.text_color_mobile }}">
+                            {{ block.settings.text }}
+                          </div>
+                          <div class="text d-none d-lg-block" style="color: {{ block.settings.text_color_desktop }}">
+                            {{ block.settings.text }}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                      <div class="col-12 hero_link_row">
+                        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                          <a class="btn d-lg-none" href="{{ block.settings.button_link }}"
+                             style="color: {{ block.settings.text_color_mobile }}; border-color: {{ block.settings.text_color_mobile }};">
+                            {{ block.settings.button_label | escape }}
+                          </a>
+                          <a class="btn d-none d-lg-inline-block" href="{{ block.settings.button_link }}"
+                             style="color: {{ block.settings.text_color_desktop }}; border-color: {{ block.settings.text_color_desktop }};">
+                            {{ block.settings.button_label | escape }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+    {% endfor %}
+  </div>
+  <div class="slider_nav">
+    <button class="hero__slider__next">{% include 'icon-angle-right' %}</button>
+    <button class="hero__slider__prev">{% include 'icon-angle-left' %}</button>
+  </div>
+</section>
+
+<script type="lazyload2" data-src="{{ 'owl.carousel.min.js' | asset_url }}" defer></script>
+
+<script type="lazyload2">
+  $(document)
+    .ready(function() {
+      $('.homepage__carousel .carousel__wrap')
+        .addClass('owl-carousel')
+        .owlCarousel({
+          dots: {{ section.settings.show_dots }},
+          nav: {{ section.settings.show_arrows }},
+          margin: 0,
+          autoplay: {{ section.settings.autoplay }},
+          autoplayTimeout: {{ section.settings.autoplay_speed | times: 1000 }},
+          autoplaySpeed: {{ section.settings.nav_speed }},
+          navSpeed: {{ section.settings.nav_speed }},
+          dotsSpeed: {{ section.settings.nav_speed }},
+          navText: [$('.hero__slider__prev'), $('.hero__slider__next')],
+          dotsEach: 1,
+          items: 1,
+          rewind: true,
+          loop: {{ section.settings.infinite_loop }},
+          lazyLoad:true
+        });
+
+      $(document)
+        .on('click', 'a.down-arrow', function(e) {
+          e.preventDefault();
+          setTimeout(function() {
+            $('html, body')
+              .stop();
+          }, 800);
+          $('html, body')
+            .animate({
+              scrollTop: $('#featured-products')
+                .offset().top - 100,
+            }, 800, 'linear');
+        });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Homegrown Slider",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show nav arrows",
+        "info": "Show next/prev buttons (visible on desktop view)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_dots",
+        "label": "Show dots",
+        "info": "Show dots navigation (visible on mobile view)",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "infinite_loop",
+        "label": "Enable infinite loop",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Enable Autoplay",
+        "default": true
+      },
+      {
+        "type":      "range",
+        "id":        "autoplay_speed",
+        "min":       1,
+        "max":        10,
+        "step":       0.5,
+        "unit":       "s",
+        "label":     "Autoplay Timeout",
+        "default":   5
+      },
+      {
+        "type":      "range",
+        "id":        "nav_speed",
+        "min":       200,
+        "max":        1000,
+        "step":       50,
+        "unit":       "ms",
+        "label":     "Transition Speed",
+        "default":   500
+      }
+    ],
+    "blocks": [
+      {
+        "type": "carousel_slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "select",
+            "id": "homegrown_slide_type",
+            "options": [
+              { "value": "image", "label": "Image"},
+              { "value": "youtube", "label": "YouTube"}
+            ],
+          "default": "image",
+          "label": "Slide Type:"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Hero Statement"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "default": "Hero statement content here."
+          },
+          {
+          "type": "checkbox",
+          "id": "show_heading_text",
+          "default": false,
+          "label": "Mobile View - Show Heading And Text"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          },
+          {
+            "type": "color",
+            "id": "text_color_mobile",
+            "label": "Text",
+            "default": "#000000",
+            "info":  "Text Color - Mobile"
+          },
+          {
+            "type": "color",
+            "id": "text_color_desktop",
+            "label": "Text",
+            "default": "#000000",
+            "info":  "Text Color - Desktop"
+          },
+          {
+            "type": "header",
+            "content": "YouTube related slide settings:"
+          },
+          {
+            "id": "youtube_video_url",
+            "type": "video_url",
+            "label": "YouTube Video URL:",
+            "accept": ["youtube"]
+          },
+          {
+            "type": "checkbox",
+            "id": "youtube_autoplay",
+            "default": false,
+            "label": "Enable YouTube Autoplay Video"
+          },
+          {
+            "type": "select",
+            "id": "youtube_player_controls",
+            "options": [
+              { "value": "1", "label": "On"},
+              { "value": "0", "label": "Off"}
+            ],
+            "default": "0",
+            "label": "YouTube Player Controls"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homegrown Slider",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

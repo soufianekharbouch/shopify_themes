@@ -1,0 +1,274 @@
+{{ 'matric_code.js' | asset_url | script_tag }}
+{% assign msgs_biome = shop.metafields.global.goat_msg | json %}
+{% assign msgs_biome = msgs_biome | replace: "'", "{10}" %}
+<script>
+    window.is_press=1414;
+var msgs_biome='{{msgs_biome}}';
+window.msgs_biome=msgs_biome.replaceAll('{10}',"\'");
+var facialAppMap ={{page.metafields.accentuate.facial_app_scores_map | json }};
+    (function (d, k) {
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://plugins-media.makeupar.com/c42639/sdk.js?apiKey=' + k;
+        var x = d.getElementsByTagName('script')[ 0 ];
+        x.parentNode.insertBefore(s, x);
+    })(document, 'gWzpBm95sUnhegmSL1uRTg');
+
+    var listeners = [];
+
+    function registerEvents() {
+        var l = YMK.addEventListener("loading", function (data) {
+            window.loading=true;
+            $('#announcement__bar_text').css({display:"none"})
+            $("#shopify-section-facial-header").css({ display: "none" })
+            $("#shopify-section-goat-sec").css({ display: "none" })
+            $(".new-facial-discover").css({ display: "none" })
+        });
+        var l2 = YMK.addEventListener("closed", function () {
+            window.location="/pages/skin-biome-analysis"  
+        });
+        var l3 = YMK.addEventListener("skinAnalysisUpdated", function (data) {
+            $('.FlowerHeader').css({ display: 'block' });
+            $('.goatieMsg2').css({ display: 'block' });
+            $('.Header1').css({ display: 'block' });
+            $('.SocialIcons').css({ display: 'flex' });
+            getMatric(data.skinHealth, data.wrinkles, data.texture, data.moisture, data.ageSpots, data.redness);
+				$('.goatieMsg').insertBefore($("#YMK-module-iframe").contents().find('body'))
+                if(window.loading){
+                   get_msg_goatie(data.skinHealth,0);
+                   window.loading=false;
+                }
+
+                $("#YMK-module-iframe").contents().find('img').parent().off()
+                $("#YMK-module-iframe").contents().find('img').parent().click(function(){
+                   if(!isNaN(Number($(this).find('img').next('div').html()))){
+                     var currentItem=$(this).parent().parent().parent().next('div').find('div').eq(0).html()
+                       if(currentItem =='Skin Biome'){
+                         get_msg_goatie(data.skinHealth,0);
+                        // update_recommended_products(data,1212)
+                       }
+                       if(currentItem =='Wrinkles'){
+                        get_msg_goatie(data.wrinkles,2);
+                        //update_recommended_products(data,0)
+                       }
+                       if(currentItem =='Texture'){
+                        get_msg_goatie(data.texture,3);
+                        //update_recommended_products(data,1)
+                       }
+                       if(currentItem =='Hydration'){
+                        get_msg_goatie(data.moisture,5);
+                        //update_recommended_products(data,2)
+                       }
+                       if(currentItem =='Dark Spots'){
+                        get_msg_goatie(data.ageSpots,1);
+                        //update_recommended_products(data,3)
+                       }
+                       if(currentItem =='Redness'){
+                        get_msg_goatie(data.redness,4);
+                        //update_recommended_products(data,4)
+                       }
+                       window.is_press=1010;
+                   }
+                })
+                
+            getMatric(data.skinHealth, data.wrinkles, data.texture, data.moisture, data.ageSpots, data.redness);
+            $('.url_twitter').attr("href","https://twitter.com/intent/tweet?text=I%20scanned%20my%20face%20with%20Beekman%201802!%20Check%20out%20my%20scores%20and%20try%20it%20out%20yourself&url={{shop.url}}/pages/facial-app-result/?result="+data.skinHealth+"-"+data.wrinkles+"-"+data.texture+"-"+data.moisture+"-"+data.ageSpots+"-"+data.redness+"")
+            $('.fb__share').attr("data-href","{{shop.url}}/pages/facial-app-result/?result="+data.skinHealth+"-"+data.wrinkles+"-"+data.texture+"-"+data.moisture+"-"+data.ageSpots+"-"+data.redness);
+            $('.container').css({display:"block"})
+            if(window.is_press==1414){
+               update_recommended_products(data,1414) 
+            }
+            
+
+
+        });
+
+        var l4 = YMK.addEventListener("consentUIShowed", function () {
+            $("#shopify-section-facial-header").css({ display: "none" })
+            $("#shopify-section-goat-sec").css({ display: "none" })
+            $(".new-facial-discover").css({ display: "none" })
+        });
+
+        var l5 = YMK.addEventListener("opened", function () {
+            gtag('event', 'facial_app_scan_started', {
+                'event_category': 'facial_app',
+                'event_label': 'Facial App Scan Started',
+            });
+        })
+
+        listeners.push(l, l2, l3, l4, l5);
+    }
+
+    window.ymkAsyncInit = function () {
+        registerEvents();
+        YMK.init({
+          height: 720
+        });
+    };
+    function startYmk() {
+        $('.btnGetStarted').html("LOADING ...")
+        $('#shopify-section-header').css({height:"7.6rem !important"})
+        YMK.openSkincare();
+    }
+
+    function closeYMKModule() {
+        YMK.close();
+        for (var l in listeners) {
+            YMK.removeEventListener(l);
+        }
+    }
+
+    function get_msg_goatie(skinHealth, circle) {
+        var cr = '';
+        if (circle == 0)
+            cr = "msgs_biome";
+        if (circle == 1)
+            cr = "msgs_spots";
+        if (circle == 2)
+            cr = "msgs_wrinkles";
+        if (circle == 3)
+            cr = "msgs_texture";
+        if (circle == 4)
+            cr = "msgs_redness";
+        if (circle == 5)
+            cr = "msgs_moisture";
+
+        try {
+            var intervals=JSON.parse(msgs_biome)[cr];
+        } catch (error) {
+            alert("Check your JSON syntax")
+        }
+        for (var interval in intervals) {
+            var intervalItems = interval.split("-")
+            if (skinHealth >= Number(intervalItems[ 0 ]) && skinHealth <= Number(intervalItems[ 1 ]))
+                msg = intervals[ interval ];
+
+        }
+        $("#YMK-module-iframe").contents().find('.goatieMsg').css({ display: "block" });
+        $("#YMK-module-iframe").contents().find("#goatieMsgContent").html(msg);
+        $("#YMK-module-iframe").contents().find("#goatieMsgContent").css({
+            color: "#4D5B65",
+            fontFamily: "Avenir Next",
+            fontWeight: "Normal",
+        })
+    }
+
+    function update_recommended_products(data,is_press){
+      
+        if (!$('body').hasClass('klaviyo__processed') || is_press!=1414) {
+           
+                jQuery('#recommendedProducts .product__grid').html('');
+                var points = ['wrinkles', 'texture', 'moisture', 'ageSpots', 'redness'];
+                var recommendedProducts = [];
+                if(is_press==1414 || is_press==1212){
+                    points.forEach(function (point) {
+                    if (facialAppMap[point].length) {
+                        facialAppMap[ point ].forEach(function (pt) {
+                            var ranges = pt[ 'score_range' ].split('_');
+                            if (data[ point ] >= ranges[ 0 ] && data[ point ] <= ranges[ 1 ]) {
+                                recommendedProducts.push(pt[ 'product_handle' ]);
+                            }
+                        })
+                    }
+                    }); 
+                }    
+                else{
+                 
+                     var point=points[is_press];
+                    if (facialAppMap[point].length) {
+                        facialAppMap[ point ].forEach(function (pt) {
+                            var ranges = pt[ 'score_range' ].split('_');
+                            if (data[ point ] >= ranges[ 0 ] && data[ point ] <= ranges[ 1 ]) {
+                                recommendedProducts.push(pt[ 'product_handle' ]);
+                            }
+                        })
+                    }
+                    
+                }    
+                
+              if(is_press==1414){
+                 jQuery('body').addClass('facial__popup_open'); 
+              }
+                
+                var uniqueProducts = Array.from(new Set(recommendedProducts));
+                var productsForKlaviyo = [];
+                if (uniqueProducts.length) {
+                    uniqueProducts.forEach(function (product) {
+                        jQuery.getJSON("/products/" + product + ".js", function (item) {
+                            productsForKlaviyo.push({
+                                ProductUrl: item.url,
+                                ProductImage: item.images[ 0 ],
+                                ProductName: item.title,
+                                ProductPrice: item.price / 100,
+                                ProductDescription: item.description,
+                            });
+                        });
+                    });
+                }
+
+                KlaviyoSubscribe.attachToForms('#facial_signup', {
+                    hide_form_on_success: true,
+                    extra_properties: {
+                        $source: 'Facial App',
+                        WrinklesScore: data[ 'wrinkles' ],
+                        TextureScore: data[ 'texture' ],
+                        HydrationScore: data[ 'moisture' ],
+                        AgeSpotsScore: data[ 'ageSpots' ],
+                        RednessScore: data[ 'redness' ],
+                        SkinBiomeScore: data[ 'skinHealth' ],
+                    },
+                    success: function ($form) {
+                        var email = $form.find('[name="email"]').val();
+					    _learnq.push(['identify', { $email: email }]);
+                        jQuery('body').addClass('klaviyo__processed').removeClass('facial__popup_open');
+                        setTimeout(function() {
+                        	_learnq.push(['track', 'Got Facial App Results', {
+                            WrinklesScore: data[ 'wrinkles' ],
+                            TextureScore: data[ 'texture' ],
+                            HydrationScore: data[ 'moisture' ],
+                            AgeSpotsScore: data[ 'ageSpots' ],
+                            RednessScore: data[ 'redness' ],
+                            SkinBiomeScore: data[ 'skinHealth' ],
+                            Items: productsForKlaviyo,
+                        }]);
+                      }, 700);
+                      gtag('event', 'facial_app_klaviyo_subscribe', {
+                        'event_category': 'facial_app',
+                        'event_label': 'Facial App Klaviyo Subscribe',
+                      });
+                      gtag('event', 'facial_app_results', {
+                        'event_category': 'facial_app',
+                        'event_label': 'Facial App Results',
+                      });
+                    },
+                });
+		
+		console.log("After learnq push");
+
+                if (uniqueProducts.length) {
+                    jQuery('#recommendedProducts .product__grid')
+                        .append('<h2 class="section__title col-12">Your Product Recommendations</h2>')
+                }
+                uniqueProducts.forEach(function (product) {
+                    jQuery.ajax({
+                        type: "GET",
+                        url: "/products/" + product + "?view=recommended-in-js.json",
+                    }).done(function (html) {
+                        jQuery('#recommendedProducts .product__grid').append(html);
+                    });
+                });
+              }
+    }
+
+    //get_msg_goatie(50,'msgs_biome')
+    //getMatric(50,65,38,70,20,90);
+
+    jQuery(document).ready(function (){
+        gtag('event', 'facial_app_page_view', {
+            'event_category': 'facial_app',
+            'event_label': 'Facial App Page View',
+        });
+    })
+
+</script>

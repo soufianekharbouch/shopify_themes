@@ -1,0 +1,407 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+This is a required section for the Shopify Theme Store.
+It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+
+    {% when 'clinically-hero' %}
+      {% include 'clinicallykind-hero' %}
+
+    {% when 'clinically-certified' %}
+      {% include 'clinicallykind-certified' %}
+
+    {% when 'clinically-not-so-fine' %}
+      {% include 'clinicallykind-not-so-fine' %}
+
+    {% when 'clinically-sensitive' %}
+      {% include 'clinically-sensitive' %}
+
+    {% when 'clinically-bt-hero' %}
+      {% include 'clinically-bottom-hero' %}
+
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+    "name": "Clinically Kind Landing",
+    "blocks": [
+      {
+        "type": "clinically-hero",
+        "name": "Clinically Kind Hero",
+        "settings": [
+          {
+            "id":"desktop_hero_image",
+            "type":"image_picker",
+            "label":"Desktop Hero Image"
+          },
+          {
+            "id":"mobile_hero_image",
+            "type":"image_picker",
+            "label":"Mobile Hero Image"
+          },
+          {
+            "id":"hero_heading",
+            "type":"text",
+            "label":"Hero Heading",
+            "default":"Let’s talk about sensitive skin"
+          },
+          {
+            "type":"color",
+            "id":"hero_heading_color",
+            "label":"Hero Heading Color",
+            "default":"#4A5761"
+          },
+          {
+            "type":"color",
+            "id":"heading_underline_color",
+            "label":"Hero Heading Underline Color",
+            "default":"#FFE900"
+          },
+          {
+            "id":"hero_text",
+            "type":"text",
+            "label":"Hero Text",
+            "default":"Did you know 60-70% of Americans have sensitive skin?"
+          },
+          {
+            "type":"color",
+            "id":"hero_text_color",
+            "label":"Hero Text Color",
+            "default":"#4a5761"
+          }
+        ]
+      },
+      {
+        "type": "clinically-certified",
+        "name": "Clinically Kind Certified",
+        "settings": [
+          {
+            "id":"certified_image",
+            "type":"image_picker",
+            "label":"Clinically Kind Certified Image"
+          },
+          {
+            "type": "richtext",
+            "id": "certified_text",
+            "label": "Clinically Kind Certified Text",
+            "default": "<p>Clinically Kind products are free of the harsh ingredients known to irritate sensitive skin. But you don’t have to take our word for it. Our formulations meet the clean beauty standards of every major retailer and have received numerous third-party certifications. They’ve also undergone rigorous clinical testing to ensure that they’re highly effective and safe for sensitive skin—the best of both worlds.</p>"
+          },
+          {
+            "type":"color",
+            "id":"certified_text_color",
+            "label":"Clinically Kind Text Color",
+            "default":"#4A5761"
+          }
+        ]
+      },
+      {
+        "type": "clinically-not-so-fine",
+        "name": "Clinically Not So Fine",
+        "settings": [
+          {
+            "id": "sectionHeading",
+            "type": "richtext",
+            "label": "Section Heading",
+            "default": "<p>The not-so-kind <br>factors of sensitive skin</p>"
+          },
+          {
+            "id":"tile1Image",
+            "type":"image_picker",
+            "label":"Image for Tile 1",
+            "info": "If image is not added then '1' will be displayed. The image should be like 100x100."
+          },
+          {
+            "type": "richtext",
+            "id": "tile1Text",
+            "label": "Text for Tile 1",
+            "default": "<p>If you have sensitive skin you may experience uncomfortable sensations like redness or itchiness</p>"
+          },
+          {
+            "id":"tile2Image",
+            "type":"image_picker",
+            "label":"Image for Tile 2",
+            "info": "If image is not added then '2' will be displayed. The image should be like 100x100."
+          },
+          {
+            "type": "richtext",
+            "id": "tile2Text",
+            "label": "Text for Tile 2",
+            "default": "<p>The most common things that cause a sensitive skin reaction are heat, cold, stress, sun exposure, pollution, wind, chemicals, and fragrances</p>"
+          },
+          {
+            "id":"tile3Image",
+            "type":"image_picker",
+            "label":"Image for Tile 3",
+            "info": "If image is not added then '3' will be displayed. The image should be like 100x100."
+          },
+          {
+            "type": "richtext",
+            "id": "tile3Text",
+            "label": "Text for Tile 3",
+            "default": "<p>The most common places to have sensitive skin are the face due to the number of products used there</p>"
+          }
+        ]
+      },
+      {
+        "type": "clinically-sensitive",
+        "name": "Clinically Sensitive",
+        "settings": [
+          {
+            "type": "header",
+            "content": "General Settings"
+          },
+          {
+            "type": "text",
+            "id": "title_heading",
+            "label": "Heading Title",
+            "default": "The solution to sensitive skin?"
+          },
+          {
+            "type": "text",
+            "id": "title_desc",
+            "label": "Heading Description",
+            "default": "Click below to learn more about our 3 solutions for sensitive skin."
+          },
+          {
+            "type": "header",
+            "content": "Section 1"
+          },
+          {
+            "type": "text",
+            "id": "title_section1",
+            "label": "Title",
+            "default": "Beyond Clean",
+            "info": "If no title is specified, the section will not be shown."
+          },
+          {
+            "id": "left_image_section1",
+            "type": "image_picker",
+            "label": "Left Image",
+            "info": "The image should be like 450x450."
+          },
+          {
+            "type": "richtext",
+            "id": "main_text_section1",
+            "label": "Main Text",
+            "default": "<p>Clinically Kind products are free of the harsh ingredients known to irritate sensitive skin. But you don’t have to take our word for it. Our formulations meet the clean beauty standards of every major retailer and have received numerous third-party certifications. They’ve also undergone rigorous clinical testing to ensure that they’re highly effective and safe for sensitive skin—the best of both worlds.</p>"
+          },
+          {
+            "id": "bottom_image_section1",
+            "type": "image_picker",
+            "label": "Bottom Image"
+          },
+          {
+            "type": "text",
+            "id": "title_desc1_section1",
+            "label": "Title Description 1",
+            "default": "Here’s what you won’t find in any Clinically Kind formula:"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc1_section1",
+            "label": "Text Description 1",
+            "default": "<p>parabens, sulfates, phthalates, synthetic colors and fragrances, abrasive exfoliant particles or microplastics, and severe actives like retinol and benzoyl peroxide.</p>"
+          },
+                    {
+            "type": "text",
+            "id": "title_desc2_section1",
+            "label": "Title Description 2",
+            "default": "HERE’S WHY IT MATTERS:"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc2_section1",
+            "label": "Text Description 2",
+            "default": "<p>Such ingredients do more than trigger allergic reactions; they also strip skin of its natural defenses, causing an ongoing cycle of damage.</p>"
+          },
+                    {
+            "type": "text",
+            "id": "title_desc3_section1",
+            "label": "Title Description 3",
+            "default": "HERE’S THE PROOF:"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc3_section1",
+            "label": "Text Description 3",
+            "default": "<p>The proof is in the results of our 8-week scientific and consumer trials, which yielded ZERO allergic reactions or sensitivity flareups—and real results. Nearly all (90% or more) participants reported that their skin was softer, smoother, healthier, and more radiant after using a Clinically Kind product.</p>"
+          },
+          {
+            "type": "header",
+            "content": "Section 2"
+          },
+          {
+            "type": "text",
+            "id": "title_section2",
+            "label": "Title",
+            "default": "Kind Ingredients",
+            "info": "If no title is specified, the section will not be shown."
+          },
+          {
+            "id": "left_image_section2",
+            "type": "image_picker",
+            "label": "Left Image",
+            "info": "The image should be like 450x450."
+          },
+          {
+            "type": "richtext",
+            "id": "main_text_section2",
+            "label": "Main Text",
+            "default": "<p>Instead of quick chemical fixes that can compromise sensitive complexions, our Clinically Kind line relies on nourishing goat milk and active probiotic cultures to ensure skin’s long-term health. Think of our gentle formulas as yogurt for your skin.</p>"
+          },
+          {
+            "id": "bottom_image_section2",
+            "type": "image_picker",
+            "label": "Bottom Image"
+          },
+          {
+            "type": "text",
+            "id": "title_desc1_section2",
+            "label": "Title Description 1",
+            "default": "Though most people have heard..."
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc1_section2",
+            "label": "Text Description 1",
+            "default": "<p>Though most people have heard that probiotics promote gut health, few are aware that these “good bacteria” benefit skin, too—by restoring the natural microbiome which serves as skin’s first defense against external irritants, and also encourages collagen synthesis and cell turnover.</p>"
+          },
+          {
+            "type": "text",
+            "id": "title_desc2_section2",
+            "label": "Title Description 2",
+            "default": "Our Bloom Cream Moisturizer,"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc2_section2",
+            "label": "Text Description 2",
+            "default": "<p>Our Bloom Cream Moisturizer, Milk Drops Ceramide Serum, Dewy Eyed Depuffing Eye Serum, and Pure Face Wipes are the ONLY products at Ulta—of more than 25,000 products by 500-plus brands—to be certified “microbiome friendly” by MyMicrobiomeAG.</p>"
+          },
+          {
+            "type": "text",
+            "id": "title_desc3_section2",
+            "label": "Title Description 3",
+            "default": "The ideal delivery system for these"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc3_section2",
+            "label": "Text Description 3",
+            "default": "<p>The ideal delivery system for these microbiome-balancing probiotics? Goat milk, of course. Beekman 1802’s signature ingredient has the same pH as human skin and is also high in lactic acid, a gentle exfoliator that prepares pores to receive the microbiome-balancing benefits of probiotics.</p>"
+          },
+          {
+            "type": "header",
+            "content": "Section 3"
+          },
+          {
+            "type": "text",
+            "id": "title_section3",
+            "label": "Title",
+            "default": "SKINCARE SIMPLIFIED",
+            "info": "If no title is specified, the section will not be shown."
+          },
+          {
+            "id": "left_image_section3",
+            "type": "image_picker",
+            "label": "Left Image",
+            "info": "The image should be like 450x450."
+          },
+          {
+            "type": "richtext",
+            "id": "main_text_section3",
+            "label": "Main Text",
+            "default": "<p>Instead of quick chemical fixes that can compromise sensitive complexions, our Clinically Kind line relies on nourishing goat milk and active probiotic cultures to ensure skin’s long-term health. Think of our gentle formulas as yogurt for your skin.</p>"
+          },
+          {
+            "id": "bottom_image_section3",
+            "type": "image_picker",
+            "label": "Bottom Image"
+          },
+          {
+            "type": "text",
+            "id": "title_desc1_section3",
+            "label": "Title Description 1",
+            "default": "Though most people have heard..."
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc1_section3",
+            "label": "Text Description 1",
+            "default": "<p>Though most people have heard that probiotics promote gut health, few are aware that these “good bacteria” benefit skin, too—by restoring the natural microbiome which serves as skin’s first defense against external irritants, and also encourages collagen synthesis and cell turnover.</p>"
+          },
+          {
+            "type": "text",
+            "id": "title_desc2_section3",
+            "label": "Title Description 2",
+            "default": "Our Bloom Cream Moisturizer,"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc2_section3",
+            "label": "Text Description 2",
+            "default": "<p>Our Bloom Cream Moisturizer, Milk Drops Ceramide Serum, Dewy Eyed Depuffing Eye Serum, and Pure Face Wipes are the ONLY products at Ulta—of more than 25,000 products by 500-plus brands—to be certified “microbiome friendly” by MyMicrobiomeAG.</p>"
+          },
+          {
+            "type": "text",
+            "id": "title_desc3_section3",
+            "label": "Title Description 3",
+            "default": "The ideal delivery system for these"
+          },
+          {
+            "type": "richtext",
+            "id": "text_desc3_section3",
+            "label": "Text Description 3",
+            "default": "<p>The ideal delivery system for these microbiome-balancing probiotics? Goat milk, of course. Beekman 1802’s signature ingredient has the same pH as human skin and is also high in lactic acid, a gentle exfoliator that prepares pores to receive the microbiome-balancing benefits of probiotics.</p>"
+          }
+        ]
+      },
+      {
+        "type": "clinically-bt-hero",
+        "name": "Clinically Bottom Hero",
+        "settings": [
+          {
+            "id": "desktop_hero_image",
+            "type": "image_picker",
+            "label": "Desktop Hero Image"
+          },
+          {
+            "id": "mobile_hero_image",
+            "type": "image_picker",
+            "label": "Mobile Hero Image"
+          },
+          {
+            "id": "hero_heading",
+            "type": "text",
+            "label": "Hero Heading",
+            "default": "Clinically Kind™ Skincare For Sensitive Skin"
+          },
+          {
+            "type": "color",
+            "id": "hero_heading_color",
+            "label": "Hero Heading Color",
+            "default": "#4A5761"
+          },
+          {
+            "type": "url",
+            "label": "Hero Button",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Hero Button Text1",
+            "default": "Shop Now"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'clinically-kind.js' | asset_url | script_tag }}

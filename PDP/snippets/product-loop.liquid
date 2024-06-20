@@ -1,0 +1,98 @@
+{% assign collection_group = products | map: 'id' %}
+{% assign collection_group_thumb = collection_group | append : 'thumb' %}
+{% assign collection_group_mobile = collection_group | append : 'mobile' %}
+
+{% if related_products == true %}
+  {% assign hover_enabled = block.settings.show_related_products_title_on_hover %}
+{% else %}
+  {% assign hover_enabled = settings.thumbnail_hover_enabled %}
+{% endif %}
+
+{% if related_products == true %}
+  {% assign related_items = true %}
+{% else %}
+  {% assign related_items = false %}
+{% endif %}
+
+{% assign for_limit = limit %}
+
+{% comment %} loop through product list {% endcomment %}
+{% for product in products limit: limit %}
+
+  {% comment %} if product display is in the loop of products increase limit by one {% endcomment %}
+  {% if product.id == skip_product.id  %}
+    {% assign for_limit = limit | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% for product in products limit: for_limit %}
+
+  {% comment %} Skip product if we're on its product page {% endcomment %}
+  {% if product.id != skip_product.id %}
+    {% render 'product-thumbnail',
+            product: product,
+            limit: limit,
+            products_per_row: products_per_row,
+            mobile_products_per_row: mobile_products_per_row,
+            align_height: align_height,
+            height: height,
+            collection_group_thumb: collection_group_thumb,
+            collection_group_mobile: collection_group_mobile,
+            related_products: related_items
+    %}
+  {% endif %}
+{% endfor %}
+<style>
+.collection__content .thumbnail-overlay__container {
+  justify-content: end;
+}
+.collection__content button.button.button--add-to-cart.action_button--secondary.view-options a {
+  color: #fff;
+}
+
+
+.collection__content .quick-shop__buttons .quantity {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 150px;
+}
+
+.collection__content .quick-shop__buttons .quantity button.quantity-button {
+  padding: 4px 7px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  line-height: 1;
+}
+
+.collection__content .quick-shop__buttons.animated.fadeInUp {padding-top: 10px;display: flex;gap: 20px;width: 100%;}
+
+.collection__content .quick-shop__buttons .quantity input#Quantity {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 7px 6px;
+  border-radius: 0;
+  border: 0;
+  background-color: #e1e1e1;
+  font-size: 14px;
+  line-height: 1;
+}
+@media only screen and (max-width: 798px) {
+.thumbnail__caption .quick-shop__buttons form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+  .collection__content .quick-shop__buttons .quantity {
+    max-width: 86px;
+  }
+  .collection__content .quick-shop__buttons .quantity input#Quantity {
+    padding: 12px 6px;
+  }
+}
+</style>

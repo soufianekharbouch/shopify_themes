@@ -1,0 +1,110 @@
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Gifts Collection list" section in the Theme Editor.
+
+  Theme Store required settings
+  - Heading: title of the collection list section
+  - Collection
+{%- endcomment -%}
+<section class="gift-collection collection-list container">
+    <div class="row">
+        {% for block in section.blocks %}
+            <div class="collection-list-item-container">
+                <a href="{{ block.settings.button_link }}" class="collection-list-item" {{ block.shopify_attributes }}>
+                    <div class="img-wrap">
+                        {% if block.settings.image != blank %}
+                            <div class="collection-list__image">
+                                <img src="{{ block.settings.image | img_url: '440x440' }}" alt="" loading="lazy">
+                            </div>
+                        {% endif %}
+                    </div>
+                    {%- assign default_label = 'homepage.onboarding.collection_title' | t -%}
+                    <p class="gift-collection-title">{{ block.settings.title }}</p>
+
+                    <span class="divider"></span>
+
+                    <p class="tags"><span>{{ block.settings.paragraph }}</span></p>
+
+                    {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+                        <button href="{{ block.settings.button_link }}">
+                            {{ block.settings.button_label | escape }}
+                        </button>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+
+        {% if section.blocks.size == 0 %}
+            {% include 'no-blocks' %}
+        {% endif %}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Gifts collections list",
+    "max_blocks": 3,
+    "settings": [
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Gifts collections list"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection",
+            "name": "Collection",
+            "settings": [
+                {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+                },
+                {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Block title"
+                },
+                {
+                "type": "text",
+                "id": "paragraph",
+                "label": "Paragraph",
+                "default": "Block paragraph"
+                },
+                {
+                "type": "text",
+                "id": "button_label",
+                "label": "Button label",
+                "default": "Shop now"
+                },
+                {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Gifts Collections list",
+            "category": "Collection",
+            "blocks": [
+                {
+                "type": "collection"
+                },
+                {
+                "type": "collection"
+                },
+                {
+                "type": "collection"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
+

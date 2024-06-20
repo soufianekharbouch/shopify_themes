@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="microbiome-kind animated" id="kind">
+                <strong>{{ block.settings.section_ttl }}</strong>
+                <div class="yellow-bar"></div>
+                <div class="mobile-grid flex-wrap">
+                    {% for i in (1..3) %}
+                        {% capture currentImg %}mobile_img_{{ i }}{% endcapture %}
+                        <div class="image-wrapper">
+                            <img src="{{ block.settings[currentImg] | img_url: 'master' }}" />
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="desktop-row">
+                    {% for i in (1..3) %}
+                        {% capture currentImg %}desktop_img_{{ i }}{% endcapture %}
+                        <div class="image-wrapper">
+                            <img src="{{ block.settings[currentImg] | img_url: 'master' }}" />
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row testimonials">
+  {% if product.metafields.accentuate.testimonial_label_1 and product.metafields.accentuate.testimonial_image_1 %}
+    <div class="col-12 col-md-4">
+      <div class="inner__wrap">
+        <div class="testim_l">
+          <span>{{ product.metafields.accentuate.testimonial_label_1 }}</span>
+        </div>
+        <div class="img_wrap">
+          <img src="{{ product.metafields.accentuate.testimonial_image_1 }}"
+               alt="{{ product.metafields.accentuate.testimonial_label_1 }}"/>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.accentuate.testimonial_label_2 and product.metafields.accentuate.testimonial_image_2 %}
+    <div class="col-12 col-md-4">
+      <div class="inner__wrap">
+        <div class="testim_l">
+          <span>{{ product.metafields.accentuate.testimonial_label_2 }}</span>
+        </div>
+        <div class="img_wrap">
+          <img src="{{ product.metafields.accentuate.testimonial_image_2 }}"
+               alt="{{ product.metafields.accentuate.testimonial_label_2 }}"/>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if product.metafields.accentuate.testimonial_label_3 and product.metafields.accentuate.testimonial_image_3 %}
+    <div class="col-12 col-md-4">
+      <div class="inner__wrap">
+        <div class="testim_l">
+          <span>{{ product.metafields.accentuate.testimonial_label_3 }}</span>
+        </div>
+        <div class="img_wrap">
+          <img src="{{ product.metafields.accentuate.testimonial_image_3 }}"
+               alt="{{ product.metafields.accentuate.testimonial_label_3 }}"/>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>

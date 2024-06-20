@@ -1,0 +1,313 @@
+{% comment %}
+----------------
+Optional values
+product_recommendations: <boolean>
+{% endcomment %}
+
+{% comment %}Check for related products and increase limit by one (to offset the currently selected product that is removed from the product loop){% endcomment %}
+{% if related_products == true %}
+  {%- assign limit = limit | plus: 0 -%}
+  {%- assign loop_limit = limit | plus: 1 -%}
+  {%- assign hover_enabled = block.settings.show_related_products_title_on_hover -%}
+{% else %}
+  {%- assign limit = limit | plus: 0 -%}
+  {%- assign loop_limit = limit | plus: 0 -%}
+  {%- assign hover_enabled = false -%}
+{% endif %}
+
+{% if per_slide != blank %}
+  {%- assign visible_products = per_slide -%}
+{% else %}
+  {% if products_per != blank %}
+    {%- assign visible_products = products_per | plus: 0 -%}
+  {% else %}
+    {%- assign visible_products = products_per | plus: 0 -%}
+  {% endif %}
+{% endif %}
+
+{% if template.name == 'product' %}
+  {% if limit <= visible_products %}
+    {%- assign products_length = limit -%}
+  {% else %}
+    {%- assign products_length = products.size | minus: 1 -%}
+  {% endif %}
+{% elsif featured_collection %}
+  {%- assign products_length = collections[featured_collection].products.size -%}
+{% elsif section.settings.show_product_recommendations %}
+  {%- assign products_length = limit -%}
+{% else %}
+  {%- assign products_length = products.size -%}
+{% endif %}
+
+{% if product_recommendations == true %}
+  {%- assign hover_enabled = settings.thumbnail_hover_enabled -%}
+{% endif %}
+
+<div class="slider-gallery
+    {% if show_gutter == false %}has-no-side-gutter{% endif %}
+    products-slider products-length-{{ products_length }}
+    transparentBackground--{{ settings.slideshow_button_style }}"
+    data-products-per-slide="{{ visible_products }}"
+    data-products-limit="{{ limit }}"
+    data-products-available="{{ products_length }}">
+  {% for product in products limit: loop_limit %}
+    {%- assign collection_handles = product.collections | map: 'handle' -%}
+
+    {% if product.id != skip_product.id %}
+      {%- assign feature_image = product.featured_image -%}
+      <div class="gallery-cell thumbnail visible-{{ visible_products }}
+          {%
+            render 'column-width',
+            value: per_slide
+          %}
+          medium-down--one-half column has-thumbnail-sticker
+          {% if product.media[1] != blank and settings.show_secondary_image == true %}has-secondary-image-swap{% endif %}">
+        <div class="product-wrap">
+          <div class="product-image__wrapper">
+            <div class="image__container product__imageContainer">
+              <a href="{{ product.url | within: collection }}">
+                {% if settings.stickers_enabled == true %}
+                  {%
+                    render 'product-thumbnail__sticker',
+                    product: product,
+                    context: 'product',
+                    collection_handles: collection_handles
+                  %}
+                {% endif %}
+
+                {% comment %} Primary image {% endcomment %}
+                {%
+                  render 'image-element',
+                  image: product.featured_media.preview_image,
+                  alt: alt_text,
+                  object_fit: align_height,
+                  max_height: height,
+                %}
+
+                {% comment %} Secondary image {% endcomment %}
+                {% if product.media[1] != blank and settings.show_secondary_image == true %}
+                  {%
+                    render 'image-element',
+                    image: product.media[1],
+                    alt: alt_text,
+                    object_fit: align_height,
+                    max_height: height,
+                    additional_classes: 'secondary swap--visible',
+                  %}
+                {% endif %}
+              </a>
+            </div>
+
+            {% if hover_enabled or settings.enable_quickshop %}
+             
+                <div class="thumbnail-overlay__container">
+                  {% if hover_enabled %}                    
+                    <div class="quick-shop__info animated fadeInDown"> 
+                      <div class="thumbnail-overlay">
+                        <div class="info text-align-{{ settings.thumbnail_text_alignment }}">
+                          {%
+                            render 'product-thumbnail__product-info',
+                            product: product,
+                            hover_enabled: hover_enabled,
+                            collection_handles: collection_handles
+                          %}
+                        </div>
+                      </div>                      
+                    </div>
+                  {% endif %}
+                
+                  {% if settings.enable_quickshop %}
+                    {%- liquid
+                        assign product_form_id = 'quick-add-' | append: section_id | append: product.id
+                        assign qty_rules = false
+                        if product.selected_or_first_available_variant.quantity_rule.min > 1 or product.selected_or_first_available_variant.quantity_rule.max != null or product.selected_or_first_available_variant.quantity_rule.increment > 1
+                          assign qty_rules = true
+                        endif
+                      -%}
+                    <div class="quick-shop__buttons animated  fadeInUp">
+                      {%- if product.variants.size > 1 or qty_rules -%}                        
+                         <button class="button button--add-to-cart action_button--secondary view-options"><a href={{product.url  }}>View Options</a></button>
+                       {% else %}
+                          <form method="post" action="/cart/add">
+                            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                            <div class="quantity">
+                              <input
+                                type="number"
+                                name="quantity"
+                                id="Quantity"
+                                min="1"
+                                value="1"
+                                class="quantity-input"
+                              >
+                            </div>
+                            <button type="submit" class="button button--add-to-cart action_button--secondary">Add to Cart</button>
+                         </form>
+                       {% endif %}
+                      </div>
+                   {% comment %}
+                    {%
+                      render 'product-thumbnail__quick-shop-button',
+                      product: product
+                    %}
+                    {% endcomment %}
+                  {% endif %}
+
+                  {% if hover_enabled %}
+                    {% if settings.enable_shopify_collection_badges and product.metafields.reviews.rating.value != blank %}
+                      <div class="product__rating rating">
+                        {%
+                          render 'rating-stars',
+                          value: product.metafields.reviews.rating.value.rating,
+                          scale_max: product.metafields.reviews.rating.value.scale_max,
+                        %}
+
+                        <p class="rating__text">
+                          <span aria-hidden="true">
+                            {{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}
+                          </span>
+                        </p>
+
+                        <p class="rating__count">
+                          <span aria-hidden="true">
+                            {{ product.metafields.reviews.rating_count }}
+                            {% if product.metafields.reviews.rating_count > 1 %}
+                              {{ "general.accessibility.star_reviews_text" | t }}
+                            {% else %}
+                              {{ "general.accessibility.star_review_text" | t }}
+                            {% endif %}
+                          </span>
+                        </p>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                </div>
+            {% endif %}
+          </div>
+
+          {% if hover_enabled == false %}
+            <div class="thumbnail__caption text-align-{{ settings.thumbnail_text_alignment }}">
+              {%
+                render 'product-thumbnail__product-info',
+                product: product,
+                collection_handles: collection_handles
+              %}
+             <div class="quick-shop__buttons animated  fadeInUp">
+                {%- if product.variants.size > 1 or qty_rules -%}                        
+                   <button class="button button--add-to-cart action_button--secondary view-options"><a href={{product.url  }}>View Options</a></button>
+                 {% else %}
+                    <form method="post" action="/cart/add">
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                      <div class="quantity">
+                        <input
+                          type="number"
+                          name="quantity"
+                          id="Quantity"
+                          min="1"
+                          value="1"
+                          class="quantity-input"
+                        >
+                      </div>
+                      <button type="submit" class="button button--add-to-cart action_button--secondary">
+                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30" height="30" viewBox="0 0 256 256" xml:space="preserve">
+                        
+                        <defs>
+                        </defs>
+                        <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                        	<path d="M 73.713 65.44 H 27.689 c -3.566 0 -6.377 -2.578 -6.686 -6.13 c -0.21 -2.426 0.807 -4.605 2.592 -5.939 L 16.381 21.07 c -0.199 -0.889 0.017 -1.819 0.586 -2.53 s 1.431 -1.124 2.341 -1.124 H 87 c 0.972 0 1.884 0.471 2.446 1.263 c 0.563 0.792 0.706 1.808 0.386 2.725 l -7.798 22.344 c -1.091 3.13 -3.798 5.429 -7.063 5.999 l -47.389 8.281 c -0.011 0.001 -0.021 0.003 -0.032 0.005 c -0.228 0.04 -0.623 0.126 -0.568 0.759 c 0.056 0.648 0.48 0.648 0.708 0.648 h 46.024 c 1.657 0 3 1.343 3 3 S 75.37 65.44 73.713 65.44 z M 23.053 23.416 l 6.301 28.211 l 44.583 -7.79 c 1.124 -0.197 2.057 -0.988 2.432 -2.065 l 6.406 -18.356 H 23.053 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #fff; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                        	<circle cx="28.25" cy="75.8" r="6.5" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #fff; fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                        	<circle cx="68.28999999999999" cy="75.8" r="6.5" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #fff; fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+                        	<path d="M 19.306 23.417 c -1.374 0 -2.613 -0.95 -2.925 -2.347 l -1.375 -6.155 c -0.554 -2.48 -2.716 -4.212 -5.258 -4.212 H 3 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 6.749 c 5.372 0 9.942 3.662 11.113 8.904 l 1.375 6.155 c 0.361 1.617 -0.657 3.221 -2.274 3.582 C 19.742 23.393 19.522 23.417 19.306 23.417 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: #fff; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+                        </g>
+                        </svg>
+                        <span class="small-hide-custom">Add to cart</span>
+                      </button>
+                   </form>
+                 {% endif %}
+                </div>
+            </div>
+          {% endif %}
+        </div>
+        {% comment %}
+          {% render 'product-thumbnail__swatch', product: product %}
+        {% endcomment %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+<style>
+.home-latest-collocation .thumbnail-overlay__container {
+  justify-content: end;
+}
+.home-latest-collocation button.button.button--add-to-cart.action_button--secondary.view-options a {
+  color: #fff;
+}
+
+
+.home-latest-collocation .quick-shop__buttons .quantity {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 150px;
+}
+
+.home-latest-collocation .quick-shop__buttons .quantity button.quantity-button {
+  padding: 4px 7px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  line-height: 1;
+}
+
+.home-latest-collocation .quick-shop__buttons.animated.fadeInUp {padding-top: 10px;display: flex;gap: 20px;width: 100%;}
+
+.home-latest-collocation .quick-shop__buttons .quantity input#Quantity {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  padding: 7px 6px;
+  border-radius: 0;
+  border: 0;
+  background-color: #e1e1e1;
+  font-size: 14px;
+  line-height: 1;
+}
+@media only screen and (min-width: 476px) {
+}
+@media only screen and (max-width: 798px) {
+.thumbnail__caption .quick-shop__buttons form {
+display: flex;
+gap: 10px;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+  .home-latest-collocation .quick-shop__buttons .quantity {
+  max-width: 86px;
+}
+  .home-latest-collocation .quick-shop__buttons .quantity input#Quantity {
+    padding: 12px 6px;
+  }
+}
+@media only screen and (min-width: 476px) {
+  .home-latest-collocation .quick-shop__buttons button svg {
+    display: none;
+  }
+  .home-latest-collocation .quick-shop__buttons button .small-hide-custom {
+    display: block;
+  }
+}
+@media only screen and (max-width: 475px) {
+.thumbnail__caption .quick-shop__buttons form {
+  max-width: 140px;
+}
+  .home-latest-collocation .quick-shop__buttons button svg {
+    display: block;
+  }
+  .home-latest-collocation .quick-shop__buttons button .small-hide-custom {
+    display: none;
+  }
+}
+</style>

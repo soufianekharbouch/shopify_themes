@@ -1,0 +1,90 @@
+<div class="page-width conmtainer {{ section.settings.cls }}">
+  <div class="section">
+  <div id="review-div" class="review-section">
+    <div class="review-col-left">
+      <div class="left-cont-div" href="{{ section.settings.urlrating }}">
+       {{ section.settings.Fantastisktext }}
+        {{ section.settings.reviewicon }}
+        
+      {{ section.settings.reviewdescription }}
+        {{ section.settings.trustlogoicon }}
+       
+      </div>
+    </div>
+    <div class="review-col-right">
+      <div class="review-col-right-slider img_slidrs">
+
+        {% for block in section.blocks %}
+        <div class="right-cont-div">
+          <div class="reivew-icon-main-div">
+         <a href="{{ section.settings.urlrating }}">   <img src="{{ block.settings.img | img_url : 'master' }}"></a>
+          </div>
+         
+        </div>
+{% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% schema %}
+{
+"name": "Review with Image",
+"settings": [
+
+
+    {
+         "type": "text",
+         "id": "cls",
+         "label": "Extra class"
+      }, {
+         "type": "html",
+         "id": "Fantastisktext",
+         "label": "heading"
+      },
+      {
+        "type": "html",
+        "id": "reviewicon",
+        "label": "start icon"
+      },
+      {
+         "type": "html",
+         "id": "reviewdescription",
+         "label": "review description"
+      },
+   {
+        "type": "html",
+        "id": "trustlogoicon",
+        "label": "trust logo icon"
+      }, {
+         "type": "url",
+         "id": "urlrating",
+         "label": "URL left grid"
+      }
+  
+
+],
+    "blocks": [
+    {
+      "type": "Reviewbox",
+      "name": "Review Box",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        }
+        
+      ]
+    }
+  ],
+  
+
+"presets": [
+{
+"name": "Review with Image"
+}
+]
+}
+{% endschema %}

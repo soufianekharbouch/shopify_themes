@@ -1,0 +1,701 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+{% comment %}
+  This is a required section for the Shopify Theme Store.
+  It is available when you add "Collection list" section in the Theme Editor.
+{% endcomment %}
+
+<div class="container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+
+    {% when 'hero' %}
+      {% include 'landing-hero' %}
+
+    {% when 'newsletter' %}
+      {% include 'snippet_newsletter' %}
+
+    {% when 'shop-by-category' %}
+      {% include 'landing-shop-by-category' %}
+
+    {% when 'shop-by-concern' %}
+      {% include 'landing-shop-by-concern' %}
+
+    {% when 'most-loved' %}
+      {% include 'landing-most-loved' %}
+
+    {% when 'benefit' %}
+      {% include 'landing-benefit' %}
+
+    {% when 'duo-featured-collection' %}
+      {% include 'landing-featured-collection' %}
+
+    {% when 'featured-artisan' %}
+      {% include 'landing-featured-artisan' %}
+
+    {% when 'artisans' %}
+      {% include 'landing-artisans' %}
+
+    {% when 'featured-events' %}
+      {% include 'landing-events' %}
+
+    {% endcase %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Body Landing",
+    "blocks": [
+      {
+        "type": "hero",
+        "name": "Hero Block",
+        "settings": [
+          {
+            "id": "heroImage",
+            "type": "image_picker",
+            "label": "Hero Image"
+          },
+          {
+            "id": "heroLayout",
+            "type": "select",
+            "label": "Image Position",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ]
+          },
+          {
+            "id": "heroAspectRatio_mobile",
+            "type": "select",
+            "label": "Mobile Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"}
+            ]
+          },
+          {
+            "id": "heroAspectRatio_desktop",
+            "type": "select",
+            "label": "Desktop Aspect Ratio",
+            "default": "100",
+            "options": [
+              {"value": "100", "label": "1:1"},
+              {"value": "75", "label": "3:4"},
+              {"value": "56.25", "label": "9:16"},
+              {"value": "42.86", "label": "21:9"}
+            ]
+          },
+          {
+            "id": "heroTitle",
+            "type": "text",
+            "label": "Hero Title",
+            "default": "Hero Title"
+          },
+          {
+            "id": "showDivider",
+            "type": "checkbox",
+            "label": "Show Divider?",
+            "default": false
+          },
+          {
+            "id": "heroContent",
+            "type": "textarea",
+            "label": "Hero Content",
+            "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+          },
+          {
+            "type": "url",
+            "label": "More Info Link",
+            "id": "button_link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "More Info Link Text",
+            "default": "Learn More"
+          }
+        ]
+      },
+      {
+        "type": "power_reviews_irl",
+        "name": "Power Reviews IRL"
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter",
+        "settings": [
+          {
+            "type": "text",
+            "id": "newsletterTitle",
+            "label": "Newsletter Title",
+            "default": "Join Our Community"
+          }
+        ]
+      },
+      {
+        "type": "shop-by-category",
+        "name": "Shop By Category",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Shop By Category"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      },
+      {
+        "type": "most-loved",
+        "name": "Most Loved Products",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "most-loved-enabled",
+            "label": "Enable this section?",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "most-loved-title",
+            "label": "Heading",
+            "default": "Most Loved"
+          },
+          {
+            "type": "product",
+            "id": "product1",
+            "label": "Product 1"
+          },
+          {
+            "type": "product",
+            "id": "product2",
+            "label": "Product 2"
+          },
+          {
+            "type": "product",
+            "id": "product3",
+            "label": "Product 3"
+          },
+          {
+            "type": "product",
+            "id": "product4",
+            "label": "Product 4"
+          },
+          {
+            "type": "product",
+            "id": "product5",
+            "label": "Product 5"
+          },
+          {
+            "type": "product",
+            "id": "product6",
+            "label": "Product 6"
+          },
+          {
+            "type": "product",
+            "id": "product7",
+            "label": "Product 7"
+          },
+          {
+            "type": "product",
+            "id": "product8",
+            "label": "Product 8"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text",
+            "default": "Shop All"
+          },
+          {
+            "type": "url",
+            "label": "Select Destination",
+            "id": "url"
+          }
+        ]
+      },
+      {
+        "type": "duo-featured-collection",
+        "name": "Featured DUO block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "collection-title",
+            "label": "Block Heading",
+            "default": "Featured Collection"
+          },
+          {
+            "type": "text",
+            "id": "left-block-title",
+            "label": "Left Block Heading",
+            "default": "Honey & Orange Blossom Hand Care Duo Caddy Set"
+          },
+          {
+            "type": "text",
+            "id": "left-block-text",
+            "label": "Left Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "featured-photo",
+            "label": "Featured Collection Photo"
+          },
+          {
+            "type": "text",
+            "id": "right-block-title",
+            "label": "Right Block Heading",
+            "default": "What's In The Duo"
+          },
+          {
+            "type": "text",
+            "id": "right-block-text",
+            "label": "Right Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "duo-image1",
+            "label": "DUO First Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "duo-image2",
+            "label": "DUO Second Image"
+          },
+          {
+            "type": "url",
+            "label": "DUO Product Link",
+            "id": "duo-link"
+          },
+          {
+            "type": "text",
+            "id": "duo-link-text",
+            "label": "DUO Link Text",
+            "default": "Shop The Duo"
+          }
+        ]
+      },
+      {
+        "type": "benefit",
+        "name": "Benefits",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "closeup-image",
+            "label": "Close Up Image"
+          },
+          {
+            "type": "text",
+            "id": "benefit_heading",
+            "label": "Heading",
+            "default": "Benefit Heading"
+          },
+          {
+            "type": "text",
+            "id": "benefit_title1",
+            "label": "Benefit 1 Title",
+            "default": "Benefit 1"
+          },
+          {
+            "type": "text",
+            "id": "benefit_text1",
+            "label": "Benefit 1 Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "text",
+            "id": "benefit_title2",
+            "label": "Benefit 2 Title",
+            "default": "Benefit 2"
+          },
+          {
+            "type": "text",
+            "id": "benefit_text2",
+            "label": "Benefit 2 Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "text",
+            "id": "benefit_title3",
+            "label": "Benefit 3 Title",
+            "default": "Benefit 3"
+          },
+          {
+            "type": "text",
+            "id": "benefit_text3",
+            "label": "Benefit 3 Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          }
+        ]
+      },
+      {
+        "type": "shop-by-concern",
+        "name": "Shop By Concern",
+        "settings": [
+          {
+            "type": "text",
+            "id": "concern-title",
+            "label": "Heading",
+            "default": "Shop By Concern"
+          },
+          {
+            "type": "checkbox",
+            "id": "items_centered",
+            "label": "Centered Items?",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Concern 1 Label",
+            "default": "Concern 1"
+          },
+          {
+            "id": "concern_image1",
+            "type": "image_picker",
+            "label": "Concern 1 Image"
+          },
+          {
+            "type": "url",
+            "label": "Concern 1 Link",
+            "id": "url1"
+          },
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "Concern 2 Label",
+            "default": "Concern 2"
+          },
+          {
+            "id": "concern_image2",
+            "type": "image_picker",
+            "label": "Concern 2 Image"
+          },
+          {
+            "type": "url",
+            "label": "Concern 2 Link",
+            "id": "url2"
+          },
+          {
+            "type": "text",
+            "id": "title3",
+            "label": "Concern 3 Label",
+            "default": "Concern 3"
+          },
+          {
+            "id": "concern_image3",
+            "type": "image_picker",
+            "label": "Concern 3 Image"
+          },
+          {
+            "type": "url",
+            "label": "Concern 3 Link",
+            "id": "url3"
+          },
+          {
+            "type": "text",
+            "id": "title4",
+            "label": "Concern 4 Label",
+            "default": "Concern 4"
+          },
+          {
+            "id": "concern_image4",
+            "type": "image_picker",
+            "label": "Concern 4 Image"
+          },
+          {
+            "type": "url",
+            "label": "Concern 4 Link",
+            "id": "url4"
+          }
+        ]
+      },
+      {
+        "type": "featured-artisan",
+        "name": "Featured Artisan",
+        "settings": [
+          {
+            "type": "text",
+            "id": "artisan-title",
+            "label": "Block Heading",
+            "default": "Featured Artisan"
+          },
+          {
+            "type": "text",
+            "id": "left-block-title",
+            "label": "Left Block Heading",
+            "default": "Artisan"
+          },
+          {
+            "type": "text",
+            "id": "left-block-text",
+            "label": "Left Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "featured-photo",
+            "label": "Featured Artisan Photo"
+          },
+          {
+            "type": "text",
+            "id": "right-block-title",
+            "label": "Right Block Heading",
+            "default": "Products"
+          },
+          {
+            "type": "text",
+            "id": "right-block-text",
+            "label": "Right Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "type": "image_picker",
+            "id": "artisan-image1",
+            "label": "Artisan First Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "artisan-image2",
+            "label": "Artisan Second Image"
+          },
+          {
+            "type": "url",
+            "label": "Artisan Shop Link",
+            "id": "artisan-link"
+          },
+          {
+            "type": "text",
+            "id": "artisan-link-text",
+            "label": "Artisan Link Text",
+            "default": "Shop Now"
+          }
+        ]
+      },
+      {
+        "type": "artisans",
+        "name": "Artisans List",
+        "settings": [
+          {
+            "type": "text",
+            "id": "list-title",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Artisan 1 Label",
+            "default": "Artisan 1"
+          },
+          {
+            "id": "artisan_image1",
+            "type": "image_picker",
+            "label": "Artisan 1 Image"
+          },
+          {
+            "type": "url",
+            "label": "Artisan 1 Link",
+            "id": "url1"
+          },
+          {
+            "type": "text",
+            "id": "author1",
+            "label": "Artisan 1 Author"
+          },
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "Artisan 2 Label",
+            "default": "Artisan 2"
+          },
+          {
+            "id": "artisan_image2",
+            "type": "image_picker",
+            "label": "Artisan 2 Image"
+          },
+          {
+            "type": "url",
+            "label": "Artisan 2 Link",
+            "id": "url2"
+          },
+          {
+            "type": "text",
+            "id": "author2",
+            "label": "Artisan 2 Author"
+          },
+          {
+            "type": "text",
+            "id": "title3",
+            "label": "Artisan 3 Label",
+            "default": "Artisan 3"
+          },
+          {
+            "id": "artisan_image3",
+            "type": "image_picker",
+            "label": "Artisan 3 Image"
+          },
+          {
+            "type": "url",
+            "label": "Artisan 3 Link",
+            "id": "url3"
+          },
+          {
+            "type": "text",
+            "id": "author3",
+            "label": "Artisan 3 Author"
+          },
+          {
+            "type": "text",
+            "id": "title4",
+            "label": "Artisan 4 Label",
+            "default": "Artisan 4"
+          },
+          {
+            "id": "artisan_image4",
+            "type": "image_picker",
+            "label": "Artisan 4 Image"
+          },
+          {
+            "type": "url",
+            "label": "Artisan 4 Link",
+            "id": "url4"
+          },
+          {
+            "type": "text",
+            "id": "author4",
+            "label": "Artisan 4 Author"
+          }
+        ]
+      },
+      {
+        "type": "featured-events",
+        "name": "Featured Events",
+        "settings": [
+          {
+            "type": "text",
+            "id": "events-title",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "events-text",
+            "label": "Featured Events Info",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          },
+          {
+            "id": "event_image1",
+            "type": "image_picker",
+            "label": "Event 1 Image"
+          },
+          {
+            "type": "url",
+            "label": "Event 1 Link",
+            "id": "url1"
+          },
+          {
+            "type": "text",
+            "id": "date1",
+            "label": "Event 1 Date"
+          },
+          {
+            "type": "text",
+            "id": "location1",
+            "label": "Event 1 Location"
+          },
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Event 2 Label",
+            "default": "Event 2"
+          },
+          {
+            "type": "text",
+            "id": "cost1",
+            "label": "Event 1 Cost",
+            "default": "FREE"
+          },
+          {
+            "id": "event_image2",
+            "type": "image_picker",
+            "label": "Event 2 Image"
+          },
+          {
+            "type": "url",
+            "label": "Event 2 Link",
+            "id": "url2"
+          },
+          {
+            "type": "text",
+            "id": "date2",
+            "label": "Event 2 Date"
+          },
+          {
+            "type": "text",
+            "id": "location2",
+            "label": "Event 2 Location"
+          },
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "Event 2 Label",
+            "default": "Event 2"
+          },
+          {
+            "type": "text",
+            "id": "cost2",
+            "label": "Event 2 Cost",
+            "default": "FREE"
+          },
+          {
+            "id": "event_image3",
+            "type": "image_picker",
+            "label": "Event 3 Image"
+          },
+          {
+            "type": "url",
+            "label": "Event 3 Link",
+            "id": "url3"
+          },
+          {
+            "type": "text",
+            "id": "date3",
+            "label": "Event 3 Date"
+          },
+          {
+            "type": "text",
+            "id": "location3",
+            "label": "Event 3 Location"
+          },
+          {
+            "type": "text",
+            "id": "title3",
+            "label": "Event 3 Label",
+            "default": "Event 3"
+          },
+          {
+            "type": "text",
+            "id": "cost3",
+            "label": "Event 3 Cost",
+            "default": "FREE"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{{ 'category-landing.js' | asset_url | script_tag }}

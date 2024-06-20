@@ -1,0 +1,65 @@
+<div class="row f__collection-wrap">
+  {% if block.settings.collection-title != blank %}
+    <h2 class="section__title offset-1 col-10">{{ block.settings.collection-title | escape }}</h2>
+  {% endif %}
+
+  <div class="col-12 col-md-7">
+    <div class="inner_wrap _left">
+      <div class="content_wrp">
+        {% if block.settings.left-block-title != blank %}
+          <h2 class="inner__title col-12">{{ block.settings.left-block-title | escape }}</h2>
+        {% endif %}
+        {% if block.settings.left-block-text != blank %}
+          <p class="f__col-text">{{ block.settings.left-block-text | escape }}</p>
+        {% endif %}
+      </div>
+      <div class="img_wrp">
+        {% if block.settings.featured-photo != blank %}
+          {% include 'responsive-image' with
+            image: block.settings.featured-photo,
+            max_width: 800,
+            max_height: 600 %}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-5">
+    <div class="inner_wrap _right">
+      {% if block.settings.right-block-title != blank %}
+        <h2 class="inner__title col-12">{{ block.settings.right-block-title | escape }}</h2>
+      {% endif %}
+      {% if block.settings.right-block-text != blank %}
+        <p class="f__col-text">{{ block.settings.right-block-text | escape }}</p>
+      {% endif %}
+
+      <div class="carousel__wrap">
+        <div class="slide">
+          {% if block.settings.duo-image1 != blank %}
+            <img src="{{ block.settings.duo-image1 | img_url: '564x752' }}" alt="shop the duo" />
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+        <div class="slide">
+          {% if block.settings.duo-image2 != blank %}
+            <img src="{{ block.settings.duo-image2 | img_url: '564x752' }}" alt="shop the duo" />
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="{{ block.settings.duo-link | default: "#" }}" class="shop-all-item">
+          {% if block.settings.duo-link-text != blank %}
+            <p>{{ block.settings.duo-link-text | escape }}</p>
+          {% else %}
+            <p>Shop The Duo</p>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

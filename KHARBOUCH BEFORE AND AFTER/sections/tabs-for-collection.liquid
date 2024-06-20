@@ -1,0 +1,262 @@
+
+
+<div class="tab-teasers {{ section.settings.c-class }}">
+  <div class="tab-headers">
+    <div class="tab-head-contents">
+       {%- if section.settings.custom-Heading != blank -%} 
+          <h2>{{ section.settings.custom-Heading }}</h2>
+       {%- endif -%}
+    </div>
+    <div class="tab-teasers-menu">
+        <ul>
+          {% for block in section.blocks %}
+             {%- if block.settings.custom-tab != blank -%}
+                <li><a href="#" class="{%- if forloop.index == 1 -%}active{% endif %}" data-rel="tabs-{{ forloop.index }}">{{ block.settings.custom-tab }}</a></li>
+             {%- endif -%}
+           {% endfor %}
+        </ul>
+    </div>
+  </div>
+  <div class="tab-main-boxs">
+      {% for block in section.blocks %}
+      <div class="tab-boxs" id="tabs-{{ forloop.index }}" {%- if forloop.index == 1 -%}style="display:block;"{% endif %}>
+          <ul
+        id="Slider-{{ section.id }}"
+        class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+        role="list"
+        aria-label="{{ 'general.slider.name' | t }}"
+      >
+        {%- for product in block.settings.collection.products limit: block.settings.products_to_show -%}
+          <li  {%  if product.id == 8840914174279 %}style="display:none"{% endif %}
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+          >
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: section.settings.image_ratio,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              show_quick_add: section.settings.enable_quick_add,
+              section_id: section.id
+            %}
+          </li>
+        {%- else -%}
+          {%- for i in (1..4) -%}
+            <li class="grid__item">
+              {% render 'card-product', show_vendor: section.settings.show_vendor %}
+            </li>
+          {%- endfor -%}
+        {%- endfor -%}
+      </ul>
+      </div>
+     {% endfor %}
+  </div>
+</div>
+
+<script>
+  $('.tab-teasers-menu li a').on('click', function(){
+      var target = $(this).attr('data-rel');
+      $('.tab-teasers-menu li a').removeClass('active');
+      $(this).addClass('active');
+      $("#"+target).fadeIn('slow').siblings(".tab-boxs").hide();
+      return false;
+  });
+</script>
+<style>
+
+
+
+
+.tab-teasers { max-width:1200px; width:100%; margin:0 auto; display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-top: 50px;
+    margin-bottom: 50px;}
+.tab-headers {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.tab-teasers-menu,
+.tab-head-contents {
+  width:48%;
+}
+.tab-head-contents h2 {
+  font-size:40px;
+  line-height:51px;
+  font-weight:400;
+  color:#000;
+  margin-top:0px;
+}
+.tab-teasers-menu{
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 10PX;
+}
+.tab-boxs { 
+  display:none; 
+}
+.tab-boxs img,
+.tab-boxs figure,
+.tab-boxs video {
+  width:100%;
+  border-radius: 25px; 
+}
+.tab-boxs p {
+  color:#000;
+  font-size:16px;
+  line-height:29px;
+  font-weight:400;
+} 
+.tab-main-boxs { 
+  background:transparent;   
+  width: 100%; 
+  overflow:hidden;
+  
+}
+
+.tab-teasers-menu ul {
+  margin:0; 
+  padding:5px; 
+  list-style:none; 
+  display: -webkit-box; 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+}
+.tab-teasers-menu ul li {
+  -ms-flex-preferred-size: 0;  
+  -ms-flex-positive: 1; 
+  max-width: 100%; 
+  text-align:center;
+  margin-right:5px;
+}
+.tab-teasers-menu ul li a { 
+  color: #000; 
+  text-transform: uppercase; 
+  letter-spacing: 0.44px;  
+  font-weight:bold; 
+  display:inline-block; 
+  padding: 6px 20px; 
+  display:block; 
+  text-decoration:none; 
+  transition:0.5s all; 
+  background: transparent; 
+  border-radius:10px;
+  width:max-content;
+}
+.tab-teasers-menu ul li:last-child {
+  margin-right:0px;
+}
+.tab-teasers-menu ul li a:hover { 
+  background:#5b4c87; 
+  color:#fff; 
+  text-decoration:none; 
+  border-radius:10px; 
+}
+.tab-teasers-menu ul li a.active { 
+  background:#5b4c87; 
+  color:#fff; 
+  text-decoration:none; 
+  border-radius:10px;  
+}
+@media screen and (max-width:749px){
+  .tab-headers {
+    flex-wrap: wrap;
+    flex-direction:column;
+    gap:unset;
+    margin-bottom:10px;
+  }
+  
+  .tab-teasers {
+    padding: 0 20px;
+    gap:unset;
+  }
+  
+  .tab-teasers-menu,
+  .tab-head-contents {
+    width:100%;
+  }
+  .tab-head-contents h2 {
+    text-align:center;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+  .tab-teasers-menu ul {
+    margin:0 auto;
+  }
+  .tab-boxs img,
+  .tab-boxs figure,
+  .tab-boxs video {
+    border-radius:10px;
+  }
+}
+@media screen and (min-width: 750px){
+.tab-teasers {
+    padding: 0 5rem;
+}
+
+</style>
+
+
+{% schema %}
+  {
+    "name": "Tab custom Collection",
+    "tag": "section",
+    "settings": [
+            {
+              "type": "html",
+              "id": "custom-Heading",
+              "label": "Heading"
+            },
+            {
+              "type": "text",
+              "id": "c-class",
+              "label": "Class"
+            }
+          ],
+    "blocks": [
+            {
+              "type": "text",
+              "name": "Custom Tabs",
+              "limit": 6,
+              "settings": [
+                  {
+                    "type": "text",
+                    "id": "custom-tab",
+                    "label": "Tab Name"
+                  },
+                {
+                    "type": "number",
+                    "id": "products_to_show",
+                    "label": "Show Product",
+                  "default":4
+                  },
+                 {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    }
+                ]
+            }
+        ],
+      "presets": [
+        		{ 
+                  "name": "Tab custom Collection",
+                  "blocks": [
+                        {
+                          "type": "text"
+                        }
+                     ]
+                  }
+            	]
+  }
+{% endschema %}

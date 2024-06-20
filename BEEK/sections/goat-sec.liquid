@@ -1,0 +1,59 @@
+<style>
+  .fix-circle{
+  display:none;
+  }
+  .qrc-active{
+    position: fixed !important;
+    top: calc(100% - 220px) !important;
+    bottom: 50px !important;
+    z-index: 99999999;
+    right: 50px !important;
+  }
+  
+  </style>
+
+
+<section class="gotie-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+      	<img src="https://cdn.shopify.com/s/files/1/0223/7461/files/Group_4598.png?v=1645024827">
+      </div>
+      <div class="col-md-5 col-sm-12">
+        <p>{{section.settings.parah}}</p>
+        <div class="gotie-img" id="qr-circle"> 
+          <h4>SCAN HERE</h4>
+          <img src="https://cdn.shopify.com/s/files/1/0223/7461/files/QRtiger_3_1.png?v=1649868288">
+          <h4>GET STARTED</h4>
+       </div>
+      </div>
+
+     
+    </div>
+  </div>
+
+</section>
+
+
+{% schema %}
+  {
+    "name": "Goatie",
+    "settings": [
+	{
+	"type": "text",
+	"id": "parah",
+	"label": "Parah",
+	"default": "Hi! I’m Goatie, your skin biome expert. I’ll be lorem ipsum dollar copy here about goatie appearing within the app copy here."
+	},
+  {
+    "type": "text",
+    "id": "parah_mobile",
+    "label": "Parah (mobile)",
+    "default": "Hi! I’m Goatie, your skin biome expert. I’ll be lorem ipsum dollar copy here about goatie appearing within the app copy here."
+    }
+	]
+  }
+{% endschema %}
+
+
+

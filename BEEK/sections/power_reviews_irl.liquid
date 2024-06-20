@@ -1,0 +1,155 @@
+<script src='//ui.powerreviews.com/stable/4.0/ui.js'></script>
+
+<script>
+  POWERREVIEWS.display.render({
+    api_key: "e85b3292-f0e0-41d8-acc2-b7b423889c34",
+    locale: "en_US",
+    merchant_id: "1433387162",
+    IRL_SHOWNATIVE: false,
+    components: {
+      IRLSnippet: "pr-irlsnippet",
+    }
+  });
+</script>
+
+<section id="P-R-IRL" class="container">
+  <style>
+    #P-R-IRL {
+      padding: 5.8rem 0 0 0;
+    }
+    @media (min-width: 1200px){
+      #P-R-IRL {
+        padding: 5.8rem 15px 0;
+        max-width: 137.6rem;
+      }
+    }
+    section#P-R-IRL h2 {
+      padding: 1.35rem 0 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      letter-spacing: .88px;
+      color: #4a5761;
+      text-align: center;
+    }
+    section#P-R-IRL p {
+      font-family: Century OS,Arial,Helvetica;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: #4a5761;
+      text-align: center;
+      margin-bottom: 3.7rem;
+    }
+    section#P-R-IRL div::-webkit-scrollbar {
+      height: 6px;
+      width: 10px;
+    }
+    section#P-R-IRL div::-webkit-scrollbar-track {
+      background: #AAA;
+    }
+    section#P-R-IRL div::-webkit-scrollbar-thumb {
+      background: #444;
+    }
+    section#P-R-IRL div::-webkit-scrollbar-thumb:hover {
+      background: #667;
+    }
+
+    .pr-irlsnippet {
+      height: 150px  !important;
+    }
+    .p-w-r .pr-irlsnippet-leftbtn, .p-w-r .pr-irlsnippet-rightbtn {
+      display: none;
+    }
+    .pr-irlsnippet-images {
+      height: calc(150px + 2rem) !important;
+      padding-bottom: 2rem !important;
+    }
+    .pr-irlsnippet-images .pr-irlsnippet-image-container {
+      margin-right: 2.2rem !important;
+    }
+    .pr-irlsnippet-images .pr-irlsnippet-image-container img {
+      width: 150px !important;
+    }
+    .pr-irlsnippet-images .pr-irlsnippet-image-container img.pr-irlsnippet-play-btn {
+      width: 50px !important;
+    }
+
+    /* Modal */
+    .p-w-r .pr-media-carousel--light .button {
+      display: none;
+    }
+
+    @media (min-width: 768px){
+      .pr-irlsnippet {
+        height: 276px  !important;
+      }
+      .p-w-r .pr-irlsnippet-leftbtn, .p-w-r .pr-irlsnippet-rightbtn {
+        display: initial;
+        position: absolute;
+        height: 80%;
+        top: 0;
+        z-index: 1;
+      }
+      .p-w-r .pr-irlsnippet-leftbtn {
+        left: 0;
+      }
+      .p-w-r .pr-irlsnippet-rightbtn {
+        right: 0;
+      }
+      .p-w-r .pr-irlsnippet-leftbtn span, .p-w-r .pr-irlsnippet-rightbtn span {
+        background-color: #f7f7f7;
+        padding: 1rem;
+      }
+      .pr-irlsnippet-images {
+        height: calc(206px + 3rem) !important;
+        padding-bottom: 3rem !important;
+      }
+      .pr-irlsnippet-images .pr-irlsnippet-image-container img {
+        width: 206px !important;
+      }
+
+      /* Modal */
+      .p-w-r .pr-media-carousel--light .button {
+        display: initial;
+      }
+    }
+
+    @media (min-width: 1200px){
+      .pr-irlsnippet {
+        height: 373px  !important;
+      }
+      .pr-irlsnippet-images {
+        height: calc(303px + 6rem) !important;
+        padding-bottom: 6rem !important;
+      }
+      .pr-irlsnippet-images .pr-irlsnippet-image-container img {
+        width: 303px !important;
+      }
+    }
+  </style>
+  <h2>{{ section.settings.power_reviews_irl_title }}</h2>
+  <p>{{ section.settings.power_reviews_irl_subtitle }}</p>
+  <div id="pr-irlsnippet"></div>
+</section>
+
+{% schema %}
+  {
+    "name": "Power Reviews IRL",
+    "settings": [
+      {
+        "type": "text",
+        "id": "power_reviews_irl_title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "power_reviews_irl_subtitle",
+        "label": "Subtitle"
+      }
+    ],
+    "presets": [{
+      "name": "Power Reviews IRL",
+      "category": "Promotional"
+    }]
+  }
+{% endschema %}

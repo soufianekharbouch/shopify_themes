@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="account_section">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>WELCOME NEIGHBOR</h1>
+        <h2>{{ customer.first_name }}'s Account</h2>
+      </div>
+    </div>
+    <div class="row customer_info">
+      <div class="col-12 col-md-4">
+        {% assign activeTab="rewards"  %}
+        
+        {% include 'account-sidebar' with activeTab %}
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="customer_info_right">
+          {% include 'account-rewards' %}
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<script>
+
+  setInterval(function(){
+$('[aria-label="REDEEM NOW"]').off()
+$('[aria-label="REDEEM NOW"]').click(function(){
+  window.location.href = "{{shop.url}}/pages/rewards?go_to_rewards=true";
+//$('body').scrollTop(Number($('[yotpo-instance-id="165720"]').offset().top +$('[yotpo-instance-id="165720"]').height()/2))
+});
+
+},1000)
+</script>
+<!-- <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165717"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165718"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165720"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="167497"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165716"></div> -->
+<style>
+  .yotpo-widget-my-rewards-widget .yotpo-action-buttons-tile .yotpo-inactive-button{
+    pointer-events: all !important;
+  }
+</style>

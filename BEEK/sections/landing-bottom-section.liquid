@@ -1,0 +1,123 @@
+
+
+
+<div class="landing-bottom-container">
+<div class="container-bottom-carousel">
+<div class="btn_bottom_carousel">NEIGHBORLY LOVE</div>
+<div class="owl-three owl-carousel owl-theme">
+ {% for block in section.blocks %}
+  <div class="item itemm">
+       <div class="landing-citation">
+         {{block.settings.quote }}
+       </div>
+       <div class="landing-citation-author">
+         -{{block.settings.author }}
+      </div>
+   </div>   
+{% endfor %}
+</div>
+</div>
+
+  <div class="landing-btm-left">
+    <div class="landing-bottom-headerTitle">
+    bloom with us
+    </div>
+    <div class="landing_logo_text_content">
+          {{section.settings.form_text}}
+    </div>
+   
+<div class="{{section.settings.script_code}}"></div>
+      
+  </div>
+   
+
+  <div class="landing-btm-right">
+  
+  
+  </div>
+</div>
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:false,
+    dots:false,
+    autoplay:true,
+     autoplayHoverPause:true,
+    autoplayTimeout:3500,
+    smartSpeed: 1000,
+    navText:["<div class='nav-btn prev-slide'><svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z'/></svg></div>","<div class='nav-btn next-slide'><svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z'/></svg></div>"],
+    responsive:{
+        0:{
+            items:1
+        },
+         375:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+         768:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+</script>
+{% schema %}
+{
+  "name": "BOTTOM SECTION SETTINGS",
+ 
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Quote",
+      "settings": [
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Quote",
+          "info": "Only 53 characters"
+        },
+         {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+    
+      ]
+    }
+  ],
+   "settings": [
+        {
+          "type": "text",
+          "id": "script_code",
+          "label": "ID script",
+          "default": "klaviyo-form-XJeEMH"
+        },
+         {
+          "type": "text",
+          "id": "form_text",
+          "label": "Form text",
+          "default": "Don't miss a near. Sign up for sneak peeks and remiders about the show!"
+        },
+         {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+    
+      ]
+}
+{% endschema %} 
+
+  <style>
+
+
+.landing-btm-right {
+  background:url("{{section.settings.image | img_url: '2000x'}}");
+}
+
+</style>

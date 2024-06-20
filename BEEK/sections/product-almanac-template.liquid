@@ -1,0 +1,580 @@
+<div class="product-wrap"
+	itemscope
+	itemtype="http://schema.org/Product"
+	data-product="{{ product | json | escape }}"
+	{% if hasFeaturedImage %}
+	data-initial-image-position="{{ product.selected_or_first_available_variant.featured_image.position | json | minus: 1 }}"
+	{% endif %}
+	data-money-format="{{ shop.money_with_currency_format }}"
+	data-shop-default-currency="{{ shop.currency }}"
+	data-product-options-size="{{ product.options.size }}"
+	data-product-options-first="{{ product.options.first }}"
+	data-product-variants-size="{{ product.variants.size }}"
+	data-product-variants-first="{{ product.variants.first.title }}"
+    data-shop-domain="{{ shop.permanent_domain }}"
+    data-customer_id="{{customer.id}}"
+    data-customer_email="{{customer.email}}">
+
+	<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+	<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+	{% comment %}
+	Get first variant, or deep linked one
+	{% endcomment %}
+	{% assign current_variant = product.selected_or_first_available_variant %}
+
+  <div class="details">
+    
+    <div class="border">
+      
+      <div class="title">
+        
+        <img src="{{ 'almanac-header.svg' | asset_url }}" />
+        <h1 itemprop="name">{{ product.title }}</h1>
+        
+      </div>
+      
+      <div class="content">
+        
+        <p>Hi Neighbor,</p>
+        
+        <p>Launching a new magazine in this day and age is a rare thing, but we were inspired by a copy of the Farmer’s Almanac from the year 1802 that we found on eBay. In the margins, the owner had scribbled everything from the number of eggs obtained each day to the birth of a child–as if they were all of equal importance.</p>
+
+        <p>We thought how wonderful it would be to create a Beekman 1802 magazine to help you get the most out of each season and “cultivate a better life” with dozens of recipes, projects and inspiration.</p>
+
+        <p>We’ve created a magazine with minimal advertising, designed by Team Beekman, printed in the USA, with paper from a mill in Maine and soy-based ink from the USA. A truly Made in America heirloom!</p>
+                        
+        <p>Join all the neighbors who keep each copy as a book that they treasure, and refer to it over and over again.</p>
+
+        <p class="signatures">
+          <img src="{{ 'brent-signature.png' | asset_url }}" />
+          <img src="{{ 'josh-signature.png' | asset_url }}" />
+        </p>
+
+        <p>p.s. CLICK HERE  to download a printable gift note that you can give your recipient before their first issue arrives.</p>
+
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="order">
+    
+    <div class="border">
+
+		<div class="current-member">
+          <a href="#">Already a subscriber? Click here to renew!</a>
+		</div>
+      
+      	<form action="/cart/add" data-productid="{{ product.id }}" data-productid="{{product.id}}" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical"> 
+          {% if product.available %}{% include 'subscription-product' %}{% endif %} 
+          <p class="medium-down--text-center price-wrap" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <span itemprop="priceCurrency" content="USD">$</span><span id="ProductPrice" class='faded medium-down--text-center' itemprop="price">
+              {{ current_variant.price | money_without_currency }}
+            </span>
+            <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+            {% if product.compare_at_price_max > product.price %}
+            <span id="ComparePrice" class='strikethrough faded medium-down--text-center'>
+              {{ current_variant.compare_at_price | money }}
+            </span>
+            {% endif %}
+          </p>
+
+          {% comment %}
+          Add product variants as a dropdown.
+          - By default, each variant (or combination of variants) will display as its own <option>
+          - To separate these into multiple steps, which we suggest, use option_selection.js (see below)
+
+          You can leverage jQuery to add a callback on page load and each time the select element changes:
+          - Include option_selection.js (as seen at the bottom of this file)
+          - This allows you to use JavaScript anytime the variant dropdown changes
+          - This also separates out your variant options (ie. size, color, etc.) to separate select elements
+
+          For more information on products with multiple options, visit:
+          - http://docs.shopify.com/support/your-website/themes/can-i-make-my-theme-use-products-with-multiple-options#update-product-liquid
+          {% endcomment %}
+
+			<div class="product-selectors">
+              <div class="variants">
+                
+                <select name="id" data-productid="{{ product.id }}" data-productid="{{product.id }}" id="productSelect" class="product-single__variants">
+                  {% for variant in product.variants %}
+                    {% if variant.available %}
+
+                      {% comment %}
+                        Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                      {% endcomment %}
+
+                      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+                    {% else %}
+                      <option disabled="disabled">
+                        {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                      </option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+                  
+                {% for variant in product.variants %}
+                <div class="variant{% if variant == product.selected_or_first_available_variant %} checked{% endif %}">
+                  <label for="{{ variant.id }}">{{ variant.title }}</label>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="w3-product-options" data-product-id="{{product.id}}" data-tags="{{ product.tags | join: ", " }}"></div>
+                
+              <!-- Quantity -->
+              <input type="hidden" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+
+                
+                <div class="delivery-information">
+                  
+                  <h2>Delivery Information</h2>
+                
+                  <p class="line-item-property__field">
+                    <label for="country">Country</label>
+                    <input required class="required" id="country" type="text" name="properties[Country]" placeholder="Country" value="United States" />
+                  </p>
+                  <p class="line-item-property__field half half-left">
+                    <label for="first-name">First Name</label>
+                    <input required class="required" id="first_name" type="text" name="properties[First Name]" placeholder="First Name" />
+                  </p>
+                  <p class="line-item-property__field half half-right">
+                    <label for="last-name">Last Name</label>
+                    <input required class="required" id="last_name" type="text" name="properties[Last Name]" placeholder="Last Name" />
+                  </p>
+                  <p class="line-item-property__field">
+                    <label for="street-address1">Street Address 1</label>
+                    <input required class="required" id="street_address1" type="text" name="properties[Street Address 1]" placeholder="Street Address 1" />
+                  </p>
+                  <p class="line-item-property__field">
+                    <label for="street-address2">Street Address 2</label>
+                    <input class="" id="street_address2" type="text" name="properties[Street Address 2]" placeholder="Street Address 2" />
+                  </p>
+                  <p class="line-item-property__field half half-left">
+                    <label for="state">State</label>
+                    <select required class="required" id="state" name="properties[State]">
+                      <option value="">Choose one...</option>
+                      <option value="NY">New York</option>
+                    </select>
+                  </p>
+                  <p class="line-item-property__field half half-right">
+                    <label for="postal-code">Postal Code</label>
+                    <input required class="required" id="postal_code" type="text" name="properties[Postal Code]" placeholder="Postal Code" />
+                  </p>
+
+                </div>
+
+              <button type="submit" name="add" id="AddToCart" class="btn add-btn" style="display: none;">
+                <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+              </button>
+
+              <button type="button" name="add" id="AddToCartButton" class="btn add-btn">
+                <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
+              </button>
+			</div>
+
+		</form>
+          
+        <div class="renewal-features">
+
+          <div class="the-boys">
+	          <img src="{{ 'brent-headshot.png' | asset_url }}" />
+	          <img src="{{ 'josh-headshot.png' | asset_url }}" />
+          </div>
+
+          <div class="content">
+          
+            <em>Subscriber’s Automatic Renewal Feature</em><br />
+			Your subscription will be automatically renewed unless you tell us to stop. Before the start of each renewal, you will be sent a reminder notice stating the term and rate then in effect. If you do nothing, your credit/debit card or payment account will be charged or you will be sent an invoice for your subscription. You may cancel at any time during your subscription and receive a full refund for all unserved issues.
+            
+		  </div>
+          
+        </div>
+
+    </div>
+      
+  </div>
+  
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet 'scss' %}
+	.product-wrap {
+		display: flex;
+		flex-direction: column;
+        justify-content: center;
+        align-items: center;
+		padding: 40px 20px;
+		background-image: url('//cdn.shopify.com/s/files/1/0223/7461/t/113/assets/BB1802_ALM_covergroupings.jpg?12743584383934893541');
+	}
+    .details, .order {
+		padding: 16px;
+		background-color: #EFEFEF;
+		width: 100%;
+  		max-width: 600px;
+	}
+	.details {
+  		margin-bottom: 20px;
+  	}
+
+	.border {
+		border: 7.5px solid;
+		border-color: black;
+		padding: 16px;
+	}
+
+  	/* DETAILS ============================ */
+      .title {
+        text-align: center;
+        padding: 20px;
+  		h1 {
+  			display: none;
+  		}
+        img {
+            width: 100%;
+            max-width: 540px;
+        }
+      }
+      .content {}
+      .signatures {
+        display: flex;
+  		flex-direction: column;
+        align-items: center;
+        justify-content: left;
+        img {
+          width: 100%;
+          max-width: 130px;
+          &:first-of-type {
+              margin-bottom: 20px;
+          }
+        }
+      }
+
+  	/* ORDER ============================== */
+	  .current-member {
+  		text-align: center;
+  	  }
+
+  	  .price-wrap {
+  		display: none;
+  	  }
+  
+	  #productSelect {
+		position: absolute;
+  		width: 1px;
+  		height: 1px;
+  		opacity: 0;
+  	  }
+  
+  	  .variants {
+  		display: flex;
+  		flex-wrap: wrap;
+        .variant {
+          width: 50%;
+  		  text-align: center;
+		  padding: 10px 0;
+		  &.checked {
+			border: 2px dotted;
+			border-color: black;
+		  	padding: 8px 0;
+		  }
+        }
+  		input[type='radio'] {
+  			display: none;
+		}
+  	  }
+
+  	  .delivery-information {
+  		h2 {
+          font-size: 16px;
+          text-transform: uppercase;
+          text-align: center;
+          margin: 20px 0;
+  		}
+  		input, select {
+  		  &.required { background-color: #FFFFFF; }
+  		  &.invalid { background-color: rgba( #FF0000, 0.15 ); }
+  		}
+  	  }
+  
+  	  .add-btn {
+  		width: 100%;
+	  }
+  
+  	  .half {
+  		float: left;
+  		width: 49%;
+        &.half-left {
+          margin-right: 1%;
+        }
+        &.half-right {
+          margin-left: 1%;
+        }
+  	  }
+  
+  	  .line-item-property__field label {
+  		display: none;
+  	  }
+  
+  
+  
+  	  .renewal-features {
+  		display: flex;
+  		flex-direction: column;
+        .the-boys {
+          width: 150px;
+          margin: 0 auto;
+          img {
+            width: 45%;
+          }
+        }
+        .content {
+          font-size: 9px;
+          em {
+            font-size: 11px;
+          }
+        }
+	  }
+
+
+  @media only screen and ( min-width: 400px ){
+  
+      .signatures {
+        flex-direction: row;
+      	img:first-of-type {
+          margin-bottom: 0;
+  		  margin-right: 20px;
+  		}
+      }
+  
+  }
+
+
+  @media only screen and ( min-width: 460px ){
+    
+  	  .renewal-features {
+  		flex-direction: row;
+        .the-boys {
+      		margin: 0;
+        }
+  	  	.content {
+  			width: 75%;
+  	 	}
+	  }
+  
+  }
+  
+  @media only screen and ( min-width: 768px ){
+  	.product-wrap {
+		flex-direction: row;  
+  	}
+	.details, .order {
+  	  max-width: none;
+	}
+	.details {
+		width: 60%;
+		margin-right: 2.5%;
+  		margin-bottom: 0;
+	}
+    .order {
+		width: 40%;
+  		
+	}
+    
+  	  .renewal-features {
+  		flex-direction: column;
+        .the-boys {
+          margin: 0 auto;
+        }
+        .content {
+          width: 100%;
+        }
+	  }
+  
+  }
+  
+  @media only screen and ( min-width: 1030px ){
+    
+  	  .renewal-features {
+  		flex-direction: row;
+        .the-boys {
+          margin: 0;
+        }
+        .content {
+          width: 75%;
+        }
+	  }
+
+  	
+  }
+  
+  
+	.test { content: '20180503-1745'; }
+{% endstylesheet %}
+
+{% javascript %}
+// functions go here --------------------------------------
+// detect change in the variant radio buttons
+function changeVariantChoice($){
+  
+  	$('.variant label').on( 'click', function(evt) {
+
+  		var isChecked = $(this).parent().hasClass('checked');
+		console.log( 'isChecked', isChecked );
+		$('.variant').removeClass('checked');
+		if( isChecked ){
+			// don't do anything
+			$(this).parent().addClass('checked');
+  		}else{
+			$(this).parent().addClass('checked');
+  			var forID = $( this ).attr( 'for' );
+  			console.log( 'forID', forID );
+  			$('#productSelect').val( forID );
+
+  		}
+
+  	});
+  
+}	// end changeVariantChoice()
+
+function addToCart($){
+
+	console.log( 'ready - 015' );
+  	// fill the fields for testing
+//	$('#first_name').val( 'John' );
+//	$('#last_name').val( 'Smith' );
+// 	$('#street_address1').val( '123 Main Street' );
+//	$('#state').val( 'NY' );
+//	$('#postal_code').val( '12208' );
+
+	$('.add-btn').on('click', function(e) {
+		e.preventDefault();
+		console.log( 'click' );
+  
+		var form = $('#AddToCartForm');
+		$("input.required, select.required").removeClass("invalid");
+
+        var emptyFields = $('input.required').filter(function() {
+        	return $(this).val() === "";
+      	}).length;
+
+		// check for value from the "state" selectbox
+		var stateSelected = $('#state').val();
+		if( !stateSelected )
+			emptyFields++;
+
+		// if there are no empty requied fields, build and push the used to the checkout URL
+		if( emptyFields > 0 ){
+
+			// check the required inputs and select boxes and if empty, change BG color
+			$("input.required, select.required").each( function() {
+  				var value = $(this).val();
+				if( value === '' )
+					$(this).addClass("invalid");
+  			});
+        	return false;
+
+        }else{
+
+  			// get some values from the form
+  			var productSelect = $('#productSelect').val();
+  			var quantity = $('#Quantity').val();
+  			var subscriptionID = $('input[name="properties[subscription_id]"]').val();
+  			var shipping_interval_frequency = $('input[name="properties[shipping_interval_frequency]"]').val();
+  			var shipping_interval_unit_type = $('input[name="properties[shipping_interval_unit_type]"]').val();
+
+  			addItemToCart( productSelect, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscriptionID );
+  
+		}
+
+	})
+  
+}	// end addToCart()
+
+function addItemToCart( variant_id, quantity, shipping_interval_frequency, shipping_interval_unit_type, subscription_id ){
+
+	var first_name = $('#first_name').val();
+  	var last_name = $('#last_name').val();
+  	var street_address1 = $('#street_address1').val();
+  	var street_address2 = $('#street_address2').val();
+  	var state = $('#state').val();
+  	var postal_code = $('#postal_code').val();
+	var country = $('#country').val();
+
+	data = {
+		"quantity": quantity,
+		"id": variant_id,
+		"properties[shipping_interval_frequency]": shipping_interval_frequency, 
+		"properties[shipping_interval_unit_type]": shipping_interval_unit_type,            
+		"properties[subscription_id]": subscription_id,
+		"properties[First Name]": first_name,
+		"properties[Last Name]": last_name,
+		"properties[Street Address 1]": street_address1,
+		"properties[Street Address 2]": street_address2,
+		"properties[State]": state,
+		"properties[Postal Code]": postal_code,
+		"properties[Country]": country
+    }
+	console.log( data );
+
+	jQuery.ajax({
+		type: 'POST',
+		url: '/cart/add.js',
+		data: data,
+		dataType: 'json',
+		success: function() {
+		//	window.location.href = '/cart';
+  			reChargeProcessCart();
+		}
+	});
+
+
+}	// end addItemToCart()
+
+function reChargeProcessCart(){
+
+	console.log('reChargeProcessCart');
+
+	function get_cookie(name){ return( document.cookie.match('(^|; )'+name+'=([^;]*)')||0 )[2] }
+	do {
+		token=get_cookie('cart');
+	}
+	while(token == undefined);
+
+	var myshopify_domain = $('.product-wrap').data('shop-domain');
+	console.log( 'myshopify_domain', myshopify_domain );
+
+	try { var ga_linker = ga.getAll()[0].get('linkerParam') } catch(err) { var ga_linker ='' }
+
+	var customer_id = $('.product-wrap').data('customer_id');
+	var customer_email = $('.product-wrap').data('customer_email');
+	var customer_param = '';
+  	if( customer_id != '' ) customer_param += 'customer_id='+customer_id;
+	if( customer_id != '' && customer.email != '' ) customer_param += '&';
+  	if( customer_id != '' ) customer_param += 'customer_email='+customer_email;
+	console.log( 'customer_param', customer_param );
+
+	var checkout_url = "https://checkout.rechargeapps.com/r/checkout?myshopify_domain="+myshopify_domain+"&cart_token="+token+"&"+ga_linker+"&"+customer_param;
+	console.log( 'checkout_url', checkout_url );
+
+	window.location.href = checkout_url;
+
+}	// end reChargeProcessCart()
+
+// call functions from here
+(function($){
+
+  	changeVariantChoice($);
+  	addToCart($);
+
+})(jQuery);
+{% endjavascript %}

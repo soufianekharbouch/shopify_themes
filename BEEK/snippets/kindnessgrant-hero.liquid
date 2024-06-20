@@ -1,0 +1,38 @@
+<div class="kindnessgrant-hero-section">
+  {%- assign line1Color = block.settings.color_line1 -%}
+  {%- assign line2Color = block.settings.color_line2 -%}
+  {%- assign descriptionColor = block.settings.color_description -%}
+
+  <div class="hero__video_wrap">
+    {% if block.settings.heroVideo %}
+      <video playsinline autoplay loop muted id="heroVideo">
+        <source src="{{ block.settings.heroVideo }}" type="video/mp4"/>
+      </video>
+    {% endif %}
+    <div class="hero__text">
+      {%- if block.settings.heroLine1 != blank -%}
+        <p style="color: {{ line1Color }}">{{ block.settings.heroLine1 | escape }}</p>
+      {%- endif -%}
+      {%- if block.settings.heroLine2 != blank -%}
+        <p style="color: {{ line2Color }}">{{ block.settings.heroLine2 | escape }}</p>
+      {%- endif -%}
+      <div class="hero__description">
+        {%- if block.settings.heroDescription != blank -%}
+          <span style="color: {{ descriptionColor }}">{{ block.settings.heroDescription | escape }}</span>
+        {%- endif -%}
+      </div>
+      <a href="{{ block.settings.button_link | default: "#" }}" class="get__started">
+        {{ block.settings.button_label | default: "Get Started" }}
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  $(document)
+    .ready(function() {
+      var video = document.getElementById('heroVideo');
+      if (video.paused) {
+        video.play();
+      }
+    });
+</script>

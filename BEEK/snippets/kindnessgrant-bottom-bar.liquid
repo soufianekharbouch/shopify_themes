@@ -1,0 +1,7 @@
+{%- assign bkgColor = block.settings.bottom_bar_bkg -%}
+
+{% if block.settings.kindness-bottom-bar %}
+  <div style="background: {{ bkgColor }}" class="kindnessgrant-bottom-bar">
+    {% include 'icon-goat-bkind' %}
+  </div>
+{% endif %}

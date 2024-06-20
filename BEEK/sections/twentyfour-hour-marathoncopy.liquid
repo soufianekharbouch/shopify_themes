@@ -1,0 +1,125 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<section id="beekman_the_goats">
+
+    <div class="container marathon_video">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <h1>{{ section.settings.video_heading }}</h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 col-lg-8 text-center">
+                <p>{{ section.settings.video_text }}</p>
+            </div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <!--<div class="col-12 text-center">
+                <a class="contact_link" href="{{ section.settings.video_button_link }}" target="_blank">{{ section.settings.video_button_label }}</a>
+            </div>-->
+            <div class="d-none d-lg-block col-lg-2"></div>
+            <div class="col-12 col-lg-8">
+                <div class="vimeo-embed-wrapper">
+                  <iframe width="560" height="315" src="{{ section.settings.livefeed_link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="d-none d-lg-block col-lg-2"></div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+    "name": "The Goats",
+    "settings": [
+    {
+    "id": "hero_mobile",
+    "type": "image_picker",
+    "label": "Mobile Hero Image"
+    },
+    {
+    "id": "hero_desktop",
+    "type": "image_picker",
+    "label": "Desktop Hero Image"
+    },
+    {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text",
+    "default": "#4a5761",
+    "info":  "Text Color"
+    },
+    {
+    "id": "hero_heading",
+    "type": "text",
+    "label": "Hero Heading",
+    "default": "Meet The Goats"
+    },
+    {
+    "id": "hero_text",
+    "type": "text",
+    "label": "Hero Text",
+    "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+    },
+    {
+    "type": "url",
+    "id": "livefeed_link",
+    "label": "Nest Live Stream Link"
+    },
+    {
+    "id": "video_heading",
+    "type": "text",
+    "label": "Video Heading",
+    "default": "Book A Tour"
+    },
+    {
+    "id": "video_text",
+    "type": "text",
+    "label": "Video Text",
+    "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+    },
+    {
+    "id": "video_button_label",
+    "type": "text",
+    "label": "Button - Label",
+    "default": "CONTACT US"
+    },
+    {
+    "id": "video_button_link",
+    "type": "url",
+    "label": "Button - Link"
+    },
+    {
+    "id": "benefits_heading",
+    "type": "text",
+    "label": "Benefits Heading",
+    "default": "Goat Milk Benefits"
+    },
+    {
+    "id": "benefits_banner",
+    "type": "image_picker",
+    "label": "Benefits Banner Image"
+    }
+    ],
+    "blocks": [
+    {
+    "type": "benefits_carousel",
+    "name": "The Goats - Benefits",
+    "settings": [
+    {
+    "id": "carousel_title",
+    "type": "text",
+    "label": "Benefits - Title"
+    },
+    {
+    "id": "carousel_text",
+    "type": "textarea",
+    "label": "Benefits - Text"
+    }
+    ]
+    }
+    ]
+    }
+{% endschema %}
+
+{{ 'about_goats.js' | asset_url | script_tag }}

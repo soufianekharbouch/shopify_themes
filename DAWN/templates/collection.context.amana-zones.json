@@ -1,0 +1,13 @@
+{
+  "parent": "collection.json",
+  "context": {
+    "market": "amana-zones"
+  },
+  "sections": {
+    "featured_collection_4T3aHV": {
+      "settings": {
+        "description": "The World Harmony collection highlights cultural synergy by celebrating Moroccan design and paying homage to the peaceful aspirations of the Palestinian Keffieh. Each piece in this collection embodies 190 years of tradition and innovation in Moroccan craftsmanship\nhighlighting the importance of the ancestral know-how of Moroccan pottery with a unique partner: Poteries Serghini.\nThese exclusive creations symbolize unity, diversity and the global quest for peace.\n<br>\n <a href=\"https:\/\/poterieserghini.com\/fabrication\/\" target=\"_blank\">Find out more about Poteries Serghini's ancestral know-how<\/a>\n"
+      }
+    }
+  }
+}

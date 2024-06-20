@@ -1,0 +1,164 @@
+<div class="mb-md-5 desktop-view" id="dt-our-story">
+    <div class="row section full">
+        <div class="col-12">
+
+            {% if section.settings.hero_desktop %}
+            <div class="dt-embed-wrapper">
+                <div id="hero_desktop"></div>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <script>
+                var options = {
+                    url: "{{ section.settings.hero_desktop }}",
+                    background: true,
+                    width: window.innerWidth - 30,
+                };
+
+                var videoPlayer = new Vimeo.Player('hero_desktop', options);
+            </script>
+
+            {% endif %}
+
+            <div class="static-content">
+                <h1 class="section_heading text-white">{{ section.settings.hero_text_primary }}</h1>
+                <p class="section_text text-white">{{ section.settings.hero_text_secondary }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row section">
+        <div class="col-12 text-center">
+            <h2 class="slogan">{{ section.settings.slogan }}</h2>
+            <div id="yellow-bar"></div>
+        </div>
+    </div>
+
+    {% if section.settings.farm_hero_desktop %}
+    <div class="row section full">
+        <div class="col-12">
+            <img src="{{ section.settings.farm_hero_desktop | img_url: 'master' }}" />
+            <div class="content left">
+                <h3 class="tagline text-white">{{ section.settings.farm_tagline }}</h3>
+                <h2 class="secondary_heading text-white">{{ section.settings.farm_title }}</h2>
+                <p class="text text-white">{{ section.settings.farm_text }}</p>
+                <a href="{{ section.settings.farm_CTA_link }}" class="btn text-white">{{ section.settings.farm_CTA_label }}</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if section.settings.founders_hero_desktop %}
+    <div class="row section full">
+        <div class="col-12">
+            {% if section.settings.hero_desktop %}
+            <div class="dt-embed-wrapper">
+                <div id="founders_hero_desktop" class="video-hero-wrap"></div>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <script>
+                var options = {
+                    url: "{{ section.settings.founders_hero_desktop }}",
+                    background: true,
+                    width: window.innerWidth,
+                };
+
+                var videoPlayer = new Vimeo.Player('founders_hero_desktop', options);
+            </script>
+
+            {% endif %}
+            <div class="content center">
+                <h3 class="tagline text-white">{{ section.settings.founders_tagline }}</h3>
+                <h2 class="secondary_heading text-white">{{ section.settings.founders_title }}</h2>
+                <p class="text text-white">{{ section.settings.founders_text }}</p>
+                <a href="{{ section.settings.founders_CTA_link }}" class="btn text-white">{{ section.settings.founders_CTA_label }}</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row section half">
+        <div class="col-12">
+            <div id="goats-desktop" class="bg h-100" style="display: flex; align-items: center; justify-content: flex-end; ">
+                <div class="carousel-container" style="width: 50%;">
+                    <div class="ourStory_carousel_wrap_dt">
+                        {% for block in section.blocks %}
+                            <div class="slide">
+                                <div class="carousel_img_wrap">
+                                    {% include 'responsive-image-aspect-ratio' with
+                                    image: block.settings.carousel_img,
+                                    hero_aspect_ratio: 100,
+                                    max_width: 2000,
+                                    max_height: 2000,
+                                    %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="content left">
+                <h3 class="tagline">{{ section.settings.goats_tagline }}</h3>
+                <h2 class="secondary_heading">{{ section.settings.goats_title }}</h2>
+                <p class="text">{{ section.settings.goats_text }}</p>
+                <a href="{{ section.settings.goats_CTA_link }}" class="btn">{{ section.settings.goats_CTA_label }}</a>
+            </div>
+        </div>
+    </div>
+
+    {% if section.settings.milkmaidens_hero_desktop %}
+    <div class="row section full">
+        <div class="col-12">
+            {% if section.settings.hero_desktop %}
+            <div class="dt-embed-wrapper">
+                <div id="milkmaidens_hero_desktop" class="video-hero-wrap"></div>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <script>
+                var options = {
+                    url: "{{ section.settings.milkmaidens_hero_desktop }}",
+                    background: true,
+                    width: window.innerWidth,
+                };
+
+                var videoPlayer = new Vimeo.Player('milkmaidens_hero_desktop', options);
+            </script>
+
+            {% endif %}
+            <div class="content center">
+                <h3 class="tagline">{{ section.settings.milkmaidens_tagline }}</h3>
+                <h2 class="secondary_heading">{{ section.settings.milkmaidens_title }}</h2>
+                <p class="text">{{ section.settings.milkmaidens_text }}</p>
+                <a href="{{ section.settings.milkmaidens_CTA_link }}" class="btn">{{ section.settings.milkmaidens_CTA_label }}</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if section.settings.vimeo_link_desktop %}
+    <div class="row section full" id="our_story_neighbor_wrap">
+        <div class="col-12 d-none d-md-block bg">
+            <div class="vimeo-embed-wrapper-dt" id="finish_animationdt">
+                <div class="rounded-wrapper">
+                    <div id='our_story_neighbor'></div>
+                </div>
+                <img alt="hi-neighbor-gif" src="https://cdn.shopify.com/s/files/1/0078/7945/8863/files/hi-neighbor-noloop.gif?v=1580224412" />
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+            <script>
+                var options = {
+                    url: "{{ section.settings.vimeo_link_desktop }}",
+                    height: window.innerHeight * 0.66,
+                    muted: true,
+                    preload: true,
+                };
+
+                var neighborVideo = new Vimeo.Player('our_story_neighbor', options);
+
+                neighborVideo.on('ended', function() {
+                    document.getElementById('finish_animationdt').classList.add('triggered');
+                });
+            </script>
+        </div>
+    </div>
+    {% endif %}
+</div>

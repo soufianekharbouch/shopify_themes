@@ -1,0 +1,19 @@
+{% assign section_name=section.id %}
+<script>
+$(document).ready(() => {
+    document.getElementById("{{section_name}}-confirmation_modal").classList.remove('hide');
+    setTimeout(() => { 
+        document.getElementById("{{section_name}}-confirmation-message").classList.add('invisible');
+        document.getElementById("{{section_name}}-confirmation_modal").classList.add('invisible');  
+    }, 3000);
+    setTimeout(() => { 
+        document.getElementById("{{section_name}}-confirmation_modal").classList.add('hide'); 
+    }, 3500);
+});
+</script>
+
+<div id="{{section_name}}-confirmation_modal" class="confirmation_modal">
+    <div class="message-box" id="{{section_name}}-confirmation-message">
+        <p>{{ section.settings.confirmation_message }}</p>
+    </div>
+</div>

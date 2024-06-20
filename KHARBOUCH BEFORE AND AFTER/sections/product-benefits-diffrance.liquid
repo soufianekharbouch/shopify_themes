@@ -1,0 +1,347 @@
+
+<div class="progress-step page-width">
+    <div class="progress__item">
+      {% if section.settings.custom-Heading != blank %}
+          <h2>{{ section.settings.custom-Heading }}</h2>
+      {% endif %}
+      {% for block in section.blocks %}
+      <div class="progress__content {% if forloop.index == 1 %} pad-0 {% endif %}">
+         {% if block.settings.diff-by != blank %}
+        <div class="progress__number">
+            <span>{{ block.settings.diff-by }}</span>
+        </div>
+          {% endif %}
+        <div class="progress-top-content">
+         <div class="progress__description">
+           {% if forloop.index == 1 %}
+             <h2 class="diff-headings">{{ section.settings.main-Heading }}</h2>
+            {% endif %}
+           <div class="progress__description_image">
+                {% if block.settings.step-image != blank %}
+                    <img  src="{{ block.settings.step-image | img_url: 'master' }}">
+                 {% endif %}
+           </div>
+           <div class="progress__description_content">
+                {% if block.settings.step-head != blank %}
+                    <h2>{{ block.settings.step-head }}</h2>
+                 {% endif %}
+                {% if block.settings.step-para != blank %}
+                    <p>{{ block.settings.step-para }}</p>
+                 {% endif %}
+            </div>
+         </div>
+          <div class="progress__description">
+          {% if forloop.index == 1 %}
+             <h2 class="diff-headings">{{ section.settings.diffrenciate-Heading }}</h2>
+            {% endif %}
+           <div class="progress__description_image">
+                {% if block.settings.step-image2 != blank %}
+                    <img  src="{{ block.settings.step-image2 | img_url: 'master' }}">
+                 {% endif %}
+           </div>
+           <div class="progress__description_content">
+                {% if block.settings.step-head2 != blank %}
+                    <h2>{{ block.settings.step-head2 }}</h2>
+                 {% endif %}
+                {% if block.settings.step-para2 != blank %}
+                    <p>{{ block.settings.step-para2 }}</p>
+                 {% endif %}
+            </div>
+         </div>
+      </div>
+        </div>
+      {% endfor %}
+    </div>
+ </div>
+
+<style>
+.progress-top-content {
+  display:flex; 
+  align-items:start;
+  background: #bca0e914;
+  width: 100%;
+  padding: 0px 10px;
+}
+.diff-headings {
+  font-size:28px !important;
+  font-weight:600 !important;
+  line-height:34px !important;
+  margin-bottom:30px !important;
+  color: #5b4c87 !important;
+}
+ 
+.pad-0 {
+    margin:0px !important;
+}
+.progress-step {
+    max-width:1200px;
+    background:transparent;
+    margin:50px auto;
+}
+.progress-step .progress__item > h2 {
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 700;
+    color: #000;
+    margin-top:0px;
+    margin-bottom:50px;
+    text-align: left;
+}
+.progress__content .progress__number {
+    position:relative;
+  background: #5b4c87;
+  justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* .progress-step .progress__number:before {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 2px;
+    background: transparent;
+    height: calc(100% + 55px);
+    content: '';
+    transform: translateX(-50%);
+    border: 2px dotted #5b4c87;
+    border-right: thick;
+} */
+.progress-step .progress__number span {
+    width: fit-content;
+    position: relative;
+    font-size: 21px;
+    font-weight:600;
+    line-height:28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 0px 15px;
+}
+.progress-step .progress__content {
+    display:flex;
+    position:relative;
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-step .progress__content:first-child {
+    padding-top:0px !important;
+}
+ .progress-step .progress__content:last-child .progress__number:before{
+    display:none;
+}
+ .progress-step .progress__description{
+    display: flex;
+    align-items: start;
+    flex-direction:column;
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(50%);
+   padding: 30px 20px 20px 20px;
+}
+.progress__description_image {
+    width: 100%;
+  }
+.progress-step .progress__description img {
+    width: 100% !important;
+    max-width: 100%;
+    height:100%;
+    border-radius: 10px;
+    object-fit: cover;
+    padding-top:0px;
+    object-position: center;
+    max-height: 300px;
+}
+.progress__description_content {
+  width: 100%;
+}
+.progress-step .progress__description h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color:#000;
+    text-align:left;
+}
+.progress-step .progress__description p {
+    font-size: 16px;
+    line-height: 29px;
+    font-weight: 400;
+    color: #121212bf; 
+    margin: 0;
+    text-align:left;
+}
+
+@media screen and (max-width:749px) {
+  .progress-step {
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+  .progress-step .progress__content {
+    margin-top:30px;
+  }
+  .progress-step .progress__number {
+    padding: 5px 0px;
+  }
+  .progress-step .progress__description {
+     flex-direction:column;
+     width:50%;
+    padding: 20px 15px 15px 15px;
+   }
+  .progress-step .progress__number span {
+    width: 100%;
+    position: relative;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+  }
+  .progress-step .progress__description h2 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700; 
+  }
+  .progress-step .progress__item > h2 {
+      font-weight: 700;
+      text-align: left;
+      font-size: 28px;
+      line-height: 38px;
+      margin-bottom: 30px;
+  }
+  /* .progress-step .progress__content {
+    padding-top: 30px;
+  } */
+}
+@media screen and (max-width:500px) {
+  .diff-headings {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    line-height: 34px !important;
+    margin-bottom: 20px !important;
+    color: #5b4c87 !important;
+  }
+  .progress-step .progress__content {
+    flex-direction:column;
+  }
+  .progress-step .progress__description {
+     flex-direction:column;
+     width:50%;
+    padding: 20px 15px 15px 15px;
+   }
+  .progress-step .progress-top-content {
+    padding-left:0px;
+  }
+  .progress-step .progress__number span {
+    writing-mode: unset;
+    text-orientation: unset;
+  }
+  .progress-step .progress__description_image {
+    margin-bottom:20px;
+    margin-right:0px;
+    width: 100%;
+  }
+  .progress-step .progress__description img {
+    width:100%;
+  }
+  .progress-step .progress__number { 
+    padding: 10px 0px;
+  }
+}
+</style>
+
+{% schema %}
+{
+	"name": "Product diffrence",
+	"tag": "section",
+			"settings": [
+                {
+                  "type": "html",
+                  "id": "custom-Heading",
+                  "label": "Heading"
+                },
+              {
+                  "type": "html",
+                  "id": "main-Heading",
+                  "label": "Main Product Name"
+                },
+              {
+                  "type": "html",
+                  "id": "diffrenciate-Heading",
+                  "label": "Diffrenciate Product Name"
+                }
+            ],
+   "blocks": [
+            {
+              "type": "heading",
+              "name": "Steps",
+              "limit": 5,
+              "settings": [
+                  {
+                    "type": "text",
+                    "id": "diff-by",
+                    "default": "tab",
+                    "label": "Diffrence By(weekly, daily, Week1 etc)"
+                    
+                  },  
+                  {
+                    "type": "text",
+                    "id": "step-head",
+                    "default": "tab",
+                    "label": "block Heading"
+                    
+                  },
+                  {
+                    "type": "html",
+                    "id": "step-para",
+                    "default": "tab",
+                    "label": "block description"
+                    
+                  },
+                  {
+                     "type": "image_picker",
+                     "id": "step-image",
+                     "label": "Image use "
+                },
+                 {
+                    "type": "text",
+                    "id": "step-head2",
+                    "default": "tab",
+                    "label": "block Heading"
+                    
+                  },
+                  {
+                    "type": "html",
+                    "id": "step-para2",
+                    "default": "tab",
+                    "label": "block description"
+                    
+                  },
+                  {
+                     "type": "image_picker",
+                     "id": "step-image2",
+                     "label": "Image use "
+                }
+              ]
+            }
+        ],
+
+
+"presets": [
+    		{ 
+          "name": "Product Benefits",
+          "blocks": [
+            {
+              "type": "heading"
+            }
+          ]
+      }
+  ]
+}
+{% endschema %}

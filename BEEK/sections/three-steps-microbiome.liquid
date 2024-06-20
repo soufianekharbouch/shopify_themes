@@ -1,0 +1,107 @@
+<div class="three-steps-microbiome" id="steps">
+  <div class="container_steps">
+    {%- if section.settings.above_title != blank -%}
+      <p>{{ section.settings.above_title | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.main_title != blank -%}
+      <h2>{{ section.settings.main_title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="wrapper_steps">
+        {% for block in section.blocks %}
+          <div class="single_step">
+            <a class="step_link" href="{{ block.settings.link }}">
+              <span>{{ block.settings.title }}</span>
+              <div class="inner_step">
+                <div class="img_wrap">
+                  {% include 'responsive-image-aspect-ratio' with
+                    image: block.settings.img,
+                    hero_aspect_ratio: 115,
+                    max_width: 880,
+                    max_height: 1000,
+                    bgPosition: 'cover'
+                  %}
+                </div>
+                <div class="step_desc">
+                  <h3>{{ block.settings.subtitle }}</h3>
+                  <p>{{ block.settings.desc }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {%- endif -%}
+    {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+      <a href="{{ section.settings.link_url }}" class="shop_btn">
+        {{ section.settings.link_text | escape }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Microbiome steps",
+    "settings": [
+      {
+        "id": "above_title",
+        "type": "text",
+        "label": "Text Above Title",
+        "default": "3 simple steps to"
+      },
+      {
+        "id": "main_title",
+        "type": "text",
+        "label": "Title",
+        "default": "Cultivate Beautiful Skin"
+      },
+      {
+        "id": "link_text",
+        "type": "text",
+        "label": "Shop Now button text",
+        "default": "Shop Now"
+      },
+      {
+        "id": "link_url",
+        "type": "url",
+        "label": "Shop Now Url"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "microbiome_step",
+        "name": "Microbiome Step",
+        "settings": [
+          {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Microbiome step image"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": "Microbiome step link"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Microbiome step title"
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Microbiome step subtitle"
+          },
+          {
+          "id": "desc",
+          "type": "textarea",
+          "label": "Microbiome step description"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+

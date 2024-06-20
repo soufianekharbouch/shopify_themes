@@ -1,0 +1,83 @@
+<div class="img-wrap d-block d-md-none">
+        {% include 'responsive-image-aspect-ratio' with
+            image: section.settings.hero,
+            hero_aspect_ratio: 62,
+            max_width: 2000,
+            max_height: 2000,
+        %}
+    </div>
+    <div class="img-wrap d-none d-md-block">
+        {% include 'responsive-image-aspect-ratio' with
+            image: section.settings.hero,
+            hero_aspect_ratio: 20,
+            max_width: 10000,
+            max_height: 10000,
+        %}
+    </div>
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ml-md-n3 shift-up">
+                <div class="row">
+                    <div class="col-12 col-md-4 text-center">
+                        <h1> {{ section.settings.hero_heading }}</h1>
+                    </div>
+                    <div class="d-none d-md-block col-md-8"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="row mx-md-5">
+                    <div class="col-12">
+                        {% unless section.settings.hero_subheading == '' %}
+                            <p class="subheading d-md-none">{{ section.settings.hero_subheading }}</p>
+                        {% endunless %}
+                        {% unless section.settings.hero_text == '' %}
+                            <p class="hero_text">{{ section.settings.hero_text }}</p>
+                        {% endunless %}
+                        <div class="fat_divider"></div>
+                    </div>
+                </div>
+                <div class="row mx-md-5">
+                    <div class="col-12">
+                        {% for block in section.blocks %}
+                            <button class="collapsible">
+                                {{ block.settings.item_heading }}
+                                {% include 'icon-chevron-down' %}
+                            </button>
+                            <div id="{{ block.id }}" class="content">
+                                <p>{{ block.settings.item_text }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="contact_block">
+                    <div class="row align-items-baseline">
+                        <div class="col-12">
+                            <h3>{{ section.settings.contact_block_heading }}</h3>
+                            <hr>
+                        </div>
+                        <div class="col-12">
+                            <p>{{ section.settings.contact_block_content }}</p>
+                        </div>
+                        <div class="col-12">
+                            <div class="row no-gutters align-items-baseline">
+                                <div class="col">
+                                    <a href="{{ section.settings.contact_block_button_link }}" class="btn">{{ section.settings.contact_block_button_label }}</a>
+                                </div>
+                                {% unless section.settings.contact_block_message == '' %}
+                                    <div class="col col-sm-12 pt-sm-4 pt-xl-0 col-xl-5 text-center">
+                                        <p class="bold">{{ section.settings.contact_block_message }}</p>
+                                    </div>
+                                    <div class="col-12 d-none d-md-block">
+                                        <p class="subheading">{{ section.settings.hero_subheading }}</p>
+                                    </div>
+                                {% endunless %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,122 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar-2",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "993feafb-a185-4c3a-8ffd-6bd30de364f1": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "4b5b2a1d-28ef-48da-b64e-a84e51e6a387": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "announcement_WCEzpk": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "05ea8e68-eec7-46b1-ba29-88a42a439c7c": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "5a903abf-8e9d-430f-bc02-f327fd93b833": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "1cbb9707-90ce-4d03-8145-35c3bcb27a12": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        },
+        "e7f013fc-2f72-45df-9a85-c5b512d80528": {
+          "type": "announcement",
+          "settings": {
+            "text": "3 TAIES ACHETÉES = 4 ÈME OFFERTE 🎁 (dernier jour)"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "993feafb-a185-4c3a-8ffd-6bd30de364f1",
+        "4b5b2a1d-28ef-48da-b64e-a84e51e6a387",
+        "announcement_WCEzpk",
+        "05ea8e68-eec7-46b1-ba29-88a42a439c7c",
+        "5a903abf-8e9d-430f-bc02-f327fd93b833",
+        "1cbb9707-90ce-4d03-8145-35c3bcb27a12",
+        "e7f013fc-2f72-45df-9a85-c5b512d80528"
+      ],
+      "settings": {
+        "text": "#fae8cf",
+        "text1": "#121212"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "220f0815-3853-4649-8751-3cb35e573278": {
+          "type": "quote",
+          "settings": {
+            "metaarea": "<p>GARANTIE REMBOURSEMENT 100 JOURS<\/p>"
+          }
+        },
+        "2f8f2d0b-5dcc-43c1-948e-c974c82c1d8a": {
+          "type": "quote",
+          "settings": {
+            "metaarea": "<p>3 TAIES ACHETÉES= UNE OFFERTE 🎁<\/p>"
+          }
+        },
+        "6381f8fd-e0b1-4862-a004-38c11c3afba7": {
+          "type": "quote",
+          "settings": {
+            "metaarea": "<p>+17,500 CLIENTES SATISFAITES 💕<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "220f0815-3853-4649-8751-3cb35e573278",
+        "2f8f2d0b-5dcc-43c1-948e-c974c82c1d8a",
+        "6381f8fd-e0b1-4862-a004-38c11c3afba7"
+      ],
+      "settings": {
+        "logo_position": "middle-left",
+        "bestseller": "",
+        "collection": "",
+        "show_collection": false,
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

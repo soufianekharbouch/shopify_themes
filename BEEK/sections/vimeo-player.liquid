@@ -1,0 +1,46 @@
+<section class="vimeo-player">
+    <div id="myVideo"></div>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        var options = {
+            url: "https://vimeo.com/347783520",
+            width: 800,
+            title: false,
+            byline: false
+        };
+
+        var videoPlayer = new Vimeo.Player('myVideo', options);
+
+        videoPlayer.on('play', function() {
+            console.log('Played the video');
+        });
+    </script>
+</div>
+
+{% schema %}
+{
+    "name": "Vimeo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "video_url",
+        "id": "vimeo_link",
+        "label": "Video link",
+        "accept": [
+            "vimeo"
+        ],
+        "default": "https://vimeo.com/280815263"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Vimeo",
+        "category": "Video"
+      }
+    ]
+  }
+{% endschema %}

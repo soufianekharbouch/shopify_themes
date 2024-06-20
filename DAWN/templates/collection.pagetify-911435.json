@@ -1,0 +1,21 @@
+{
+  "layout": "theme.pagetify",
+  "sections": {
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {}
+    },
+    "pagetify-template": {
+      "type": "pagetify-template",
+      "settings": {
+        "type": "collection",
+        "width": "boxed",
+        "templateId": "911435"
+      }
+    }
+  },
+  "order": [
+    "product-grid",
+    "pagetify-template"
+  ]
+}

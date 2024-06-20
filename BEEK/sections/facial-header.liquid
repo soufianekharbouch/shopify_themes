@@ -1,0 +1,161 @@
+<style>
+.fh-content a{
+  background: #4A5761;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 40px;
+  display: none;
+  width: 50%;
+}
+.fa-discover a{
+   background: #4A5761;
+  color: #fff;
+  text-decoration: none; 
+  padding: 10px 40px;
+  display: none;
+  width: 50%;
+  margin-top: 30px;
+}
+  .qr-box {
+    width: 30%;
+    margin: auto;
+  }
+
+  
+
+
+
+</style>
+
+ 
+<header class="facial-header">
+	<div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+           <div class="fh-content">
+             {%if section.settings.use_text %}
+            <h1 class="desktopContent">{{section.settings.title}}</h1>
+            <h1 class="mobileContent">{{section.settings.title_mobile}}</h1>
+            {%else%}
+            <div class="headerFacialImage">
+            </div>
+            {%endif%}
+
+          <p class="desktopContent">{{section.settings.parah}}</p>
+          <p class="mobileContent">{{section.settings.parah_mobile}}</p>
+             <a  class="btnGetStarted" href="#" onclick="startYmk();">
+        	      GET STARTED
+             </a>
+             
+          <div class="qr-box">
+          	<img src="https://cdn.shopify.com/s/files/1/0223/7461/files/QRtiger_3_1.png?v=1649868288">
+            <ul>
+              <li>SCAN HERE TO GET STARTED</li>
+              <li>SCROLL DOWN TO LEARN MORE</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="fh-img">
+            <ul class="header-left-ul">
+              <li>
+                <span>80</span>
+                <p>Skin Biome</p>
+              </li>
+              <li>
+                <span>90</span>
+                <p>Wrinkles</p>
+              </li>
+              <li>
+                <span>98</span>
+                <p>Texture</p>
+              </li>
+            </ul>
+            <img src="https://cdn.shopify.com/s/files/1/0223/7461/files/Sophia.jpg?v=1653402341">
+          <ul class="header-right-ul">
+              <li>
+                <span>80</span>
+                <p>Hydration</p>
+              </li>
+              <li>
+                <span>80</span>
+                <p>Dark Spots</p>
+              </li>
+              <li>
+                <span>80</span>
+                <p>Redness</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+	</div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Section1",
+    "settings": [
+  {
+      "type": "checkbox",
+      "id": "use_text",
+      "label": "Use Text",
+      "default": false
+  },
+	{
+	"type": "text",
+	"id": "title",
+	"label": "Title",
+	"default": "YOUR Personalized SKIN BIOME Assessment"
+	},
+	{
+	"type": "text", 
+	"id": "parah",
+	"label": "Parah",
+	"default": "Scan the QR code below with your mobile device to get started. Snap your photo and within 30 seconds you will receive your analysis."
+	},
+  {
+	"type": "text",
+	"id": "title_mobile",
+	"label": "Title (Mobile)",
+	"default": "YOUR Personalized SKIN BIOME Assessment"
+	},
+	{
+	"type": "text",
+	"id": "parah_mobile",
+	"label": "Parah (Mobile)",
+	"default": "Scan the QR code below with your mobile device to get started. Snap your photo and within 30 seconds you will receive your analysis."
+	}
+
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+
+
+

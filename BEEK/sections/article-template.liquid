@@ -1,0 +1,224 @@
+{{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+<div class="container back">
+  <div class="row">
+    <div class="col-12">
+      <a class="back" href="{{blog.url}}">
+        < Back
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container content">
+  <div class="row">
+    {% if article.metafields.accentuate.hero_image %}
+    <div class="col-12">
+      <div class="hero_wrap">
+        <img src="{{ article.metafields.accentuate.hero_image }}"/>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="row">
+          <div class="col-8 offset-2">
+            <div class="tags">{{ article.tags | first }}</div>
+          </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="col-12 text-center">
+      <br/><br/><br/>
+      <div class="tags">{{ article.tags | first }}</div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="row text-center">
+    <div class="col-12">
+      <h1 class="article__title">{{ article.title }}</h1>
+    </div>
+    <div class="col-12">
+      {% if section.settings.blog_show_author %}
+        <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+      {% endif %}
+    </div>
+    <div class="col-12">
+      <span class="excerpt">{{ article.excerpt }}</span>
+    </div>
+    <div class="col-12">
+      {% if section.settings.blog_show_date %}
+        <div class="article__date">
+          {{ article.published_at | time_tag: '%B %d, %Y | %I: %M%P' }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text center">
+      <div class="rte">
+        {% assign article_content = article.content | newline_to_br | split: '<br />'%}
+        <div class="c__item first">{{ article.content }}</div>
+        <div class="mx-md-5 my-md-5">
+          <div class="article_carousel_wrap">
+            {% for image in article.metafields.accentuate.carousel_images %}
+              <div class="image_wrap">
+                <img src="{{ image }}"/>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="slider_nav">
+            <button class="customNextBtn">{% include 'icon-chevron-right' %}</button>
+            <button class="customPrevBtn">{% include 'icon-chevron-left' %}</button>
+          </div>
+        </div>
+        {% if article.metafields.accentuate.quote_field %}
+          <div class="article_quote_container">
+            <p>{{ article.metafields.accentuate.quote_field }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.article-related-products %}
+    {% if article.metafields.accentuate.related_products.size > 0 %}
+    <div class="row shop__story">
+      <div class="col-12 text-center">
+        <h2 class="mt-5 mb-3">Shop this story</h2>
+      </div>
+        {% assign related_products=article.metafields.accentuate.related_products | split: '|' %}
+        {% for product in  related_products %}
+          {%- comment %}<locksmith:b337>{% endcomment -%}
+            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+          {%- comment %}</locksmith:b337>{% endcomment -%}
+          {% assign product_item = all_products[product] %}
+          <div class="col-6 col-md-4 text-center">
+            <div class="product_preview">
+              <div class="row">
+                <div class="col-12">
+                  <div class="product_img_wrap">
+                    {% include 'responsive-image-aspect-ratio' with
+                      image: product_item.featured_image,
+                      hero_aspect_ratio: 133,
+                      bgPosition: 'contain',
+                      max_width: 2000,
+                      max_height: 2000,
+                    %}
+                  </div>
+                </div>
+                <div class="col-12">
+                  <h4 class="product_title">{{ product_item.title }}</h4>
+                  <p class="product_short_description">{{ product_item.metafields.accentuate.short_description }}</p>
+                  <p class="product_price">{{ product_item.price | money }}</p>
+                  {% form 'product', product_item, data-productid: product_item.id, data-product-form: '', data-product-handle: product_item.handle, data-enable-history-state: 'true' %}
+                    <input type="hidden" name="id" value="{{ product_item.variants.first.id }}" data-productid="{{product_item.id}}" />
+                    <button type="submit" name="add" data-add-to-cart class="add-to-cart">add to cart</button>
+                  {% endform %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+  {% endif %}
+  <div class="row no-gutters">
+    <div class="col-12">
+      <hr/>
+    </div>
+    <div class="col-6 col-sm-3 col-lg-6 order-2 order-sm-1 order-lg-2 text-left">
+      <a class="paginate_links" href="{{ blog.previous_article }}">previous</a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-12 order-1 order-sm-2 order-lg-1 py-2 py-sm-0 py-lg-2">
+      {% if section.settings.show_share_buttons %}
+        {%- assign social_accounts = 'Facebook, Twitter, Pinterest,' | split: ', ' -%}
+        <div class="social-links">
+          <div>
+            <h3>Share post</h3>
+          </div>
+          {% include 'social-sharing' %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-6 col-sm-3 col-lg-6 order-3 order-sm-2 order-lg-3 text-right">
+      <a class="paginate_links" href="{{ blog.next_article }}">next story</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "de": "Posts",
+    "en": "Posts",
+    "es": "Publicaciones",
+    "fr": "Articles",
+    "it": "Articoli",
+    "ja": "投稿",
+    "nl": "Berichten",
+    "pt-BR": "Posts",
+    "zh-CN": "文章",
+    "zh-TW": "貼文"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fr": "Afficher l'auteur",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "nl": "Auteur weergeven",
+        "pt-BR": "Exibir autor(a)",
+        "zh-CN": "显示作者",
+        "zh-TW": "顯示作者"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "nl": "Datum weergeven",
+        "pt-BR": "Exibir data",
+        "zh-CN": "显示日期",
+        "zh-TW": "顯示日期"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": {
+        "de": "Buttons für Social Media anzeigen",
+        "en": "Show social sharing buttons",
+        "es": "Mostrar botones para compartir en redes sociales",
+        "fr": "Afficher les boutons de partage sur les médias sociaux",
+        "it": "Mostra i pulsanti per la condivisione sui social",
+        "ja": "ソーシャル共有ボタンを表示する",
+        "nl": "Knoppen voor sociaal delen weergeven",
+        "pt-BR": "Exibir botões de compartilhamento em redes sociais",
+        "zh-CN": "显示社交分享按钮",
+        "zh-TW": "顯示社群分享按鈕"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "article-related-products",
+      "label": "Show Article related products?",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'article.js' | asset_url | script_tag }}

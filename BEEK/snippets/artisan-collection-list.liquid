@@ -1,0 +1,473 @@
+<div class="collection-list artisans">
+  <div class="row">
+    {% if block.settings.collection1 != blank %}
+      {%- assign collection1 = collections[block.settings.collection1] -%}
+
+      <div class="col-6 col-sm-4 artisan__wrap order-1">
+        <div class="img-wrap">
+          {% if collection1.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection1.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection1.image != blank or collection1.products.first != blank %}
+            {%- assign image_object = collection1.image | default: collection1.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection1.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection1.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection1.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection1.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection1.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection1.title }}
+          {% endif %}
+        </span>
+        {% if collection1.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-3 order-md-4" style="display: none">
+        <div class="inner_content xs_left _left">
+          <span class="artisan__author">
+            {% if collection1.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection1.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection1.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection1.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection1.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection1.title }}
+            {% endif %}
+          </span>
+          {% if collection1.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection1.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection1.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection1.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:7470>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:7470>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection1.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection2 != blank %}
+      {%- assign collection2 = collections[block.settings.collection2] -%}
+      <div class="col-6 col-sm-4 artisan__wrap order-2">
+        <div class="img-wrap">
+          {% if collection2.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection2.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection2.image != blank or collection2.products.first != blank %}
+            {%- assign image_object = collection2.image | default: collection2.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection2.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection2.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection2.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection2.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection2.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection2.title }}
+          {% endif %}
+        </span>
+        {% if collection2.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-3 order-md-4" style="display: none">
+        <div class="inner_content xs_right _center">
+          <span class="artisan__author">
+            {% if collection2.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection2.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection2.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection2.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection2.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection2.title }}
+            {% endif %}
+          </span>
+
+          {% if collection2.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection2.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection2.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection2.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:7803>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:7803>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection2.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection3 != blank %}
+      {%- assign collection3 = collections[block.settings.collection3] -%}
+      <div class="col-6 col-sm-4 artisan__wrap order-4 order-md-3">
+        <div class="img-wrap">
+          {% if collection3.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection3.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection3.image != blank or collection3.products.first != blank %}
+            {%- assign image_object = collection3.image | default: collection3.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection3.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection3.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection3.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection3.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection3.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection3.title }}
+          {% endif %}
+        </span>
+        {% if collection3.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-6 order-md-4" style="display: none">
+        <div class="inner_content xs_left _right">
+          <span class="artisan__author">
+            {% if collection3.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection3.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection3.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection3.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection3.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection3.title }}
+            {% endif %}
+          </span>
+          {% if collection3.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection3.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection3.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection3.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:ebb3>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:ebb3>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection3.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection4 != blank %}
+      {%- assign collection4 = collections[block.settings.collection4] -%}
+      <div class="col-6 col-sm-4 artisan__wrap order-5">
+        <div class="img-wrap">
+          {% if collection4.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection4.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection4.image != blank or collection4.products.first != blank %}
+            {%- assign image_object = collection4.image | default: collection4.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection4.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection4.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection4.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection4.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection4.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection4.title }}
+          {% endif %}
+        </span>
+        {% if collection4.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-6 order-md-8" style="display: none">
+        <div class="inner_content xs_right _left">
+          <span class="artisan__author">
+            {% if collection4.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection4.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection4.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection4.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection4.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection4.title }}
+            {% endif %}
+          </span>
+          {% if collection4.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection4.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection4.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection4.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:44ab>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:44ab>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection4.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection5 != blank %}
+      {%- assign collection5 = collections[block.settings.collection5] -%}
+      <div class="col-6 col-sm-4 artisan__wrap order-6 mobile-hidden">
+        <div class="img-wrap">
+          {% if collection5.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection5.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection5.image != blank or collection5.products.first != blank %}
+            {%- assign image_object = collection5.image | default: collection5.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection5.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection5.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection5.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection5.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection5.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection5.title }}
+          {% endif %}
+        </span>
+        {% if collection5.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-3 order-md-8 mobile-hidden" style="display: none">
+        <div class="inner_content xs_left _center">
+          <span class="artisan__author">
+            {% if collection5.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection5.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection5.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection5.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection5.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection5.title }}
+            {% endif %}
+          </span>
+          {% if collection5.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection5.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection5.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection5.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:6bd4>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:6bd4>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection5.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.collection6 != blank %}
+      {%- assign collection6 = collections[block.settings.collection6] -%}
+      <div class="col-6 col-sm-4 artisan__wrap order-7 mobile-hidden">
+        <div class="img-wrap">
+          {% if collection6.metafields.accentuate.merc_artisan_image != blank %}
+            <div class="collection-list__image">
+              <img src="{{ collection6.metafields.accentuate.merc_artisan_image }}" alt="" loading="lazy">
+            </div>
+          {% else if collection6.image != blank or collection6.products.first != blank %}
+            {%- assign image_object = collection6.image | default: collection6.products.first.featured_image -%}
+            <div class="collection-list__image">
+              {% include 'responsive-image' with
+                image: image_object,
+                max_width: 480,
+                max_height: 480 %}
+            </div>
+          {% else %}
+            <img src="https://via.placeholder.com/300"/>
+          {% endif %}
+        </div>
+        <span class="artisan__author">
+          {% if collection6.metafields.accentuate.merc_artisan_author_name != blank %}
+            {{ collection6.metafields.accentuate.merc_artisan_author_name }}
+          {% else %}
+            {{ collection6.title }}
+          {% endif %}
+        </span>
+        <span class="artisan__name">
+          {% if collection6.metafields.accentuate.merc_landing_artisan_name != blank %}
+            {{ collection6.metafields.accentuate.merc_landing_artisan_name }}
+          {% else %}
+            {{ collection6.title }}
+          {% endif %}
+        </span>
+        {% if collection6.metafields.accentuate.artisan_collection_products != blank %}
+          <a href="" class="view__products">View Products</a>
+        {% endif %}
+      </div>
+      <div class="products-wrap col-12 order-3 order-md-8 mobile-hidden" style="display: none">
+        <div class="inner_content xs_right _right">
+          <span class="artisan__author">
+            {% if collection6.metafields.accentuate.merc_artisan_author_name != blank %}
+              {{ collection6.metafields.accentuate.merc_artisan_author_name }}
+            {% else %}
+              {{ collection6.title }}
+            {% endif %}
+          </span>
+          <span class="artisan__name">
+            {% if collection6.metafields.accentuate.merc_landing_artisan_name != blank %}
+              {{ collection6.metafields.accentuate.merc_landing_artisan_name }}
+            {% else %}
+              {{ collection6.title }}
+            {% endif %}
+          </span>
+          {% if collection6.metafields.accentuate.merc_artisan_author_profile != blank %}
+            <a href="/pages/{{ collection6.metafields.accentuate.merc_artisan_author_profile }}" class="profile__link">View Profile</a>
+          {% endif %}
+
+          {% if collection6.metafields.accentuate.artisan_collection_products != blank %}
+            <div class="product__list">
+              {% assign products = collection6.metafields.accentuate.artisan_collection_products | split: "|" %}
+              <div class="product__carousel row">
+                {% for product in products %}
+                  {%- comment %}<locksmith:8764>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:8764>{% endcomment -%}
+                  <div class="product__item col-12 col-sm-4">
+                    {% include 'artisan-collection-product-item' with product: all_products[product] %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+          <a href="{{ collection6.url | default: "#" }}" class="shop_all__btn">Shop All</a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

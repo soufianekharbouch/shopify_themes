@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="account_section">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>WELCOME NEIGHBOR</h1>
+        <h2>{{ customer.first_name }}'s Account</h2>
+      </div>
+    </div>
+    <div class="row customer_info">
+      <div class="col-12 col-md-4">
+        {% assign activeTab="dashboard"  %}
+        
+        {% include 'account-sidebar' with activeTab %}
+      </div>
+      <div class="col-12 col-md-8">
+        <div class="customer_info_right">
+          {% include 'account-dashboard' %}
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+<!-- <script src="https://cdn-widgetsrepository.yotpo.com/v1/loader/OK9L0As1R_-3LEvenwdpsQ" async></script>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165717"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165718"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165720"></div>
+
+      <!-- Start Retextion Customer Login -->
+      {% render 'rtxn_customer_login_btn', customer: customer %}
+      <!-- End Retextion Customer Login -->
+      
+<div class="yotpo-widget-instance" data-yotpo-instance-id="167497"></div>
+<div class="yotpo-widget-instance" data-yotpo-instance-id="165716"></div> --> 

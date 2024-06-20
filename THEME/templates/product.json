@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_type": "block",
+            "color_selector_type": "color",
+            "size_chart_page": ""
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "show_below_gallery": false
+          }
+        },
+        "7cc891b6-97b8-4c78-a3f4-a31bb788f20e": {
+          "type": "complementary_products",
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "payment_terms",
+        "quantity_selector",
+        "separator",
+        "buy_buttons",
+        "description",
+        "7cc891b6-97b8-4c78-a3f4-a31bb788f20e"
+      ],
+      "settings": {
+        "container_size": "lg",
+        "product_info_size": 45,
+        "show_sticky_add_to_cart": false,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_dots",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "ship_info": "<p>We aim to dispatch all orders within 24 business hours.<\/p><h4>UAE<br\/><\/h4><ul><li>FREE shipping on all orders above AED 399 (Credit Card). AED 30 on orders below AED 399. 1-2 Workings Days.<\/li><\/ul><h4>KSA<br\/><\/h4><ul><li>3-4 Working Days - 40 AED (Credit Card). some other international shipments may have tax and duties applied at the destination country. Customs duties are non refundable once charged.<\/li><\/ul><h4>All Other GCC Countries<br\/><\/h4><ul><li>3-4 Working Days - 50 AED (Credit Card). some other international shipments may have tax and duties applied at the destination country. Customs duties are non refundable once charged.<\/li><\/ul><h4>Rest of the world<br\/><\/h4><ul><li>Express Delivery (Credit Card): 5-7 Working Days - 50 AED Unless stated above, some other international shipments may have tax and duties applied at the destination country. Customs duties are non refundable once charged.<\/li><\/ul>",
+        "ship_info_ar": "<p>نهدف إلى إرسال جميع الطلبات في غضون 24 ساعة عمل.<\/p><h4>الإمارات العربية المتحدة<\/h4><ul><li>شحن مجاني لجميع الطلبات التي تزيد عن 399 درهم إماراتي (بطاقة الائتمان). 30 درهم للطلبات التي تقل عن 399 درهم. التوصيل خلال 1-2 يوم عمل توصيل السريع (البطاقة الائتمانية): 5-7 أيام عمل - 50 درهم ما لم يذكر أعلاه ، قد تفرض ضرائب ورسوم على بعض الشحنات الدولية الأخرى في بلد المقصد. الرسوم الجمركية غير قابلة للاسترداد بمجرد تحصيلها.<\/li><\/ul>"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": true,
+        "recommendations_count": 4,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 0.2,
+        "vertical_spacing_factor": 0.2,
+        "subheading": "",
+        "title": "Related products",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}

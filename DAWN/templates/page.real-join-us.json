@@ -1,0 +1,202 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ba76d21f-586e-4af6-b779-2ac41493a033": {
+      "type": "custom-content",
+      "blocks": {
+        "template--17166550696158__ba76d21f-586e-4af6-b779-2ac41493a033-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Join Us",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17166550696158__ba76d21f-586e-4af6-b779-2ac41493a033-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 100,
+        "padding_bottom": 30,
+        "custom_class": ""
+      }
+    },
+    "93fcf8d6-8098-40df-9859-5161a9222e02": {
+      "type": "custom-content",
+      "blocks": {
+        "template--17166550696158__93fcf8d6-8098-40df-9859-5161a9222e02-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "Nous sommes une équipe animée par le courage de rêver, l’envie de créer et le désir de partager.",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17166550696158__93fcf8d6-8098-40df-9859-5161a9222e02-text-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "custom_class": ""
+      }
+    },
+    "2dd94120-69cd-4f64-a109-35f764960a53": {
+      "type": "custom-content",
+      "blocks": {
+        "36e5111b-93e6-49cb-9787-d994d25ff525": {
+          "type": "text",
+          "settings": {
+            "title": "Notre aventure ne fait que commencer, si vous souhaitez y apporter votre touche, \ncontactez-nous, nous serions ravis d’échanger avec vous !",
+            "subheading": "",
+            "text": "",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "36e5111b-93e6-49cb-9787-d994d25ff525"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "custom_class": ""
+      }
+    },
+    "27478831-9044-4663-a5c5-862bd9c1a704": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "link": "",
+        "layout": "left",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Nous sommes une équipe animée par le courage de rêver, l’envie de créer et le désir de partager.",
+        "sub_title": "",
+        "text": "",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Contactez-Nous",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "685a04b0-ff60-4c34-b3bf-42281d517c86": {
+      "type": "image-with-text",
+      "disabled": true,
+      "custom_css": [
+        ".mlekfzemlzkfmz h1,h2,h3,h4,h5,h6 {font-size: 40px !important;}"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/N_F_Photo_Lyn.webp",
+        "link": "",
+        "layout": "right",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Notre aventure ne fait que commencer, si vous souhaitez y apportez votre touche, \ncontactez-nous, nous serions ravis d’échanger avec vous !",
+        "sub_title": "",
+        "text": "",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Contactez-Nous",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "mlekfzemlzkfmz"
+      }
+    },
+    "ff83f0ad-740f-445f-a40e-3878dbca7366": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "ba76d21f-586e-4af6-b779-2ac41493a033",
+    "93fcf8d6-8098-40df-9859-5161a9222e02",
+    "2dd94120-69cd-4f64-a109-35f764960a53",
+    "27478831-9044-4663-a5c5-862bd9c1a704",
+    "685a04b0-ff60-4c34-b3bf-42281d517c86",
+    "ff83f0ad-740f-445f-a40e-3878dbca7366"
+  ]
+}

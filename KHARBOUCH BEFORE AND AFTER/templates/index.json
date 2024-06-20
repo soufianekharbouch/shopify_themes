@@ -1,0 +1,1023 @@
+{
+  "sections": {
+    "2fa16129-bd8f-4581-b2c4-22dc0a6255f7": {
+      "type": "image-with-text",
+      "blocks": {
+        "2bb452c4-c3ec-4740-98b5-6040f77140e6": {
+          "type": "caption",
+          "settings": {
+            "caption": "TAIE OREILLER ARGIE SILVTECH™️",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "86757528-da4d-4964-9a7f-417e4fba4262": {
+          "type": "heading",
+          "settings": {
+            "heading": "Un soin beauté 8h\/jour sans efforts !",
+            "heading_size": "h1"
+          }
+        },
+        "c22e1603-abb8-48bd-8ab9-902a0c99c327": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>La routine d'épilation mondialement connue dont des millions de personnes font l'éloge<\/p>",
+            "text_style": "body"
+          }
+        },
+        "19c1d0ac-8908-456e-a588-fdd1568ac1c7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir Argie →",
+            "button_link": "shopify:\/\/products\/argie"
+          }
+        },
+        "d8df4c9f-5b54-418d-94f7-59a1d0227849": {
+          "type": "liquid",
+          "settings": {
+            "text": "<div style=\"text-align: center !important; float: left !important; margin-left: 0px !important;\">\n\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0268\/2519\/5600\/files\/Stars_4.9_green_74e161a4-3773-4632-9cf1-7d70b7963d65.svg?v=1684972820\" alt=\"\" class=\"gf_image\" data-gemlang=\"en\" data-width=\"100%\" data-height=\"auto\" title=\"\" width=\"120\" style=\"margin: auto; margin-left: 0px !important;\">\n\n\n<span style=\"font-size: 18px; margin-top: 0px; display: block;\n  clear: both; color: #1a1a1a;\">Noté <strong>4.8<\/strong> | 278  avis vérifiés<span>\n\n<\/span><\/span><\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "2bb452c4-c3ec-4740-98b5-6040f77140e6",
+        "86757528-da4d-4964-9a7f-417e4fba4262",
+        "c22e1603-abb8-48bd-8ab9-902a0c99c327",
+        "19c1d0ac-8908-456e-a588-fdd1568ac1c7",
+        "d8df4c9f-5b54-418d-94f7-59a1d0227849"
+      ],
+      "settings": {
+        "im-class": "cust_home1 home-banner2",
+        "fullwidth": true,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/mobile_hero_af04fe2d-635e-4c9e-a170-d4060501fb7d_1.webp",
+        "mob-head": "",
+        "mob-txt": "Un soin beauté 8h\/jour sans efforts !",
+        "mob_button_label": "DÉCOUVRIR ARGIE 🤍",
+        "mob_button_link": "shopify:\/\/products\/argie",
+        "image": "shopify:\/\/shop_images\/mobile_hero_af04fe2d-635e-4c9e-a170-d4060501fb7d_1.webp",
+        "height": "medium",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    },
+    "a9d65660-8a45-45b3-9dc3-e768eedabbb5": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/essence.png",
+            "title": "\" Pour la 5ème fois, Argie est victime de son succès et annonce la rupture de stock des taies d'oreiller en soie anti-acné\".",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ELLE_THIS_ONE.png",
+            "title": "\" Les taies d'oreiller en soie Argie élimine 99.7% des bactéries à l'origine de l'acné et des infections bactérienne de la peau \"",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/instyle.png",
+            "title": "\" Les taies d'oreiller Argie ont impressionné tous les participants à notre test\".",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-1",
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-2",
+        "template--19407842148679__a9d65660-8a45-45b3-9dc3-e768eedabbb5-column-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "cclass": "quotes",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "db2bab05-9de7-4f81-88fd-3ae4c120de40": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>UNE TAIE D’OREILLER EN COTON ABRITERAIT 17.000 FOIS PLUS DE BACTÉRIES QUE DES TOILETTES EN UNE SEMAINE<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><strong>Les taies d'oreiller en coton peuvent aggraver les cas d'acn￩, d'irritation et d'allergies<\/strong>.ﾠ<\/p>"
+          }
+        },
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-heading-1",
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-text-1",
+        "template--21009577541976__db2bab05-9de7-4f81-88fd-3ae4c120de40-button-1"
+      ],
+      "settings": {
+        "class-name": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Les taies d'oreiller en coton peuvent aggraver les cas d'acné, d'irritation et d'allergies<\/strong>. ",
+            "heading_size": "h1"
+          }
+        },
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Un nid à micro-organismes insoupçonné. Une taie d'oreiller abriterait trois millions de bactéries au bout d'une semaine sans lavage, soit précisément 17.442 fois plus qu'un siège de toilette.<\/strong><\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-heading-1",
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-text-1",
+        "template--21009577541976__6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba-button-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/Add_a_heading_1_18.07.28.png",
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "image": "shopify:\/\/shop_images\/Add_a_heading_1_18.07.28.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2b83a4b9-72d2-477b-8c6d-faf0183fb007": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nucleus.svg",
+            "title": "<strong>Anti-acné & Anti-âge<\/strong>",
+            "text": "<p>Naturellement enrichie de 18 acides aminés, la soie réduit les signes de vieillissement, les plis du sommeil et hydrate la peau.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bacteria_46ab4e38-78f7-46d5-8967-41efd66d1581.svg",
+            "title": "<strong>Hypoallergénique<\/strong>",
+            "text": "<p>Anti-bactérienne et hypoallergénique , la soie est le tissu le plus hygiénique au monde. Elle limite les inflammations, allergies, eczéma et psioriasis.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/verified.svg",
+            "title": "<strong>Essai 100 jours: Satisfait ou Remboursé<\/strong>",
+            "text": "<p>Si ça te convient, tu les gardes.<br\/>Sinon, tu as <strong>100 Jours <\/strong>pour  recevoir ton <strong>remboursement intégral <\/strong><em>(sans aucune justification)<\/em><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-1",
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-2",
+        "template--21009577541976__2b83a4b9-72d2-477b-8c6d-faf0183fb007-column-3"
+      ],
+      "settings": {
+        "cclass": "",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "IHRE GESUNDHEIT IST UNSERE LEIDENSCHAFT!",
+            "heading_size": "h2"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "cclass": "new_banner",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "6837bcde-cdae-4757-bfb1-363027415f32": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-1": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-2": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "83f2b53c-7a4c-4020-9835-eb867e9a5dc4": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-0",
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-1",
+        "template--19252731904327__6837bcde-cdae-4757-bfb1-363027415f32-1689652112cbd727d1-2",
+        "83f2b53c-7a4c-4020-9835-eb867e9a5dc4"
+      ],
+      "disabled": true,
+      "settings": {
+        "cclass": "feat-img feat-img-home",
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "ec42176c-3e6b-42d4-898e-2e2c74cb8f44": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "meilleures-ventes"
+          }
+        },
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "reelup-do-not-delete"
+          }
+        },
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "meilleures-ventes"
+          }
+        }
+      },
+      "block_order": [
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-0",
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-1",
+        "template--19147413881178__ec42176c-3e6b-42d4-898e-2e2c74cb8f44-16877715131dd7fdbc-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "css": "",
+        "fullwidth": false,
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "160dde8c-6f6f-428a-80d7-2d2da0f22064": {
+      "type": "image-banner",
+      "blocks": {
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "UNSER TEAM",
+            "heading_size": "h1"
+          }
+        },
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-1": {
+          "type": "text",
+          "settings": {
+            "text": "Refitter ist ein fanatisches Team aus spezialisierten Unternehmern, die alles daran setzen, ihren Kunden den bestmöglichen Service zu bieten! Service, Qualität und Integrität stehen bei uns an erster Stelle. Willkommen bei Refitter!",
+            "text_style": "body"
+          }
+        },
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-0",
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-1",
+        "template--19147413881178__160dde8c-6f6f-428a-80d7-2d2da0f22064-168777636785744d60-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "cclass": "new_banner-1",
+        "image_overlay_opacity": 50,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "196d9d02-40c5-49da-a191-31167f9b99ca": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Le Sérum Hydratant Anti-Repousse<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Idéal pour retarder la repousse jusqu'à 4 semaines sans poils, pour une peau douce et éclatante sans impuretés.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "je découvre",
+            "button_link": "shopify:\/\/products\/bloomie-epilateur-ultra-cristal-®️"
+          }
+        }
+      },
+      "block_order": [
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-heading-1",
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-text-1",
+        "template--19407842148679__196d9d02-40c5-49da-a191-31167f9b99ca-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "im-class": "cust_home1 side-sec",
+        "fullwidth": true,
+        "mob-sec": false,
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "shopify:\/\/products\/bloomie-2",
+        "height": "medium",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 20,
+        "padding_bottom": 8
+      }
+    },
+    "aa8269f5-af8f-45e2-a91a-492aab31d1bd": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "body-care"
+          }
+        },
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-2": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        },
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-3": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-1",
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-2",
+        "template--19557710987591__aa8269f5-af8f-45e2-a91a-492aab31d1bd-featured_collection-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "css": "cust_home2 top-collection-sec",
+        "fullwidth": true,
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 1,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    },
+    "fb5ef4b7-78e6-4814-b0be-ebc01d5db802": {
+      "type": "collection-list",
+      "blocks": {
+        "template--19407842148679__fb5ef4b7-78e6-4814-b0be-ebc01d5db802-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "meilleures-ventes"
+          }
+        },
+        "template--19407842148679__fb5ef4b7-78e6-4814-b0be-ebc01d5db802-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "reelup-do-not-delete"
+          }
+        }
+      },
+      "block_order": [
+        "template--19407842148679__fb5ef4b7-78e6-4814-b0be-ebc01d5db802-featured_collection-1",
+        "template--19407842148679__fb5ef4b7-78e6-4814-b0be-ebc01d5db802-featured_collection-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "css": "cust_home2 two-col-mobile",
+        "fullwidth": true,
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ffa7f13e-6f01-457c-a86e-5adeed0a041a": {
+      "type": "images-with-slider",
+      "blocks": {
+        "template--19407842148679__ffa7f13e-6f01-457c-a86e-5adeed0a041a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "head-title": "\"Un seul mot : J'adore! j'ai une peau vraiment sensible, j'ai essayé Bloomie, elle est à la fois efficace et douce pour la peau\"",
+            "head-author": "- Joanna. B <span>Acheteur Vérifié<span><\/span><\/span>",
+            "button-label": "DÉCOUVRIR BLOOMIE",
+            "button-link": "shopify:\/\/products\/bloomie"
+          }
+        },
+        "ef6b9348-68fd-476e-a235-2e23f03eb162": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "head-title": "The softest smoothest legs of my life! A permanent part of my routine!",
+            "head-author": "Ashley <span>Verified Buyer<span><\/span><\/span>",
+            "button-label": "Shop Save",
+            "button-link": "\/products\/bloomie-epilateur-originals"
+          }
+        }
+      },
+      "block_order": [
+        "template--19407842148679__ffa7f13e-6f01-457c-a86e-5adeed0a041a-heading-1",
+        "ef6b9348-68fd-476e-a235-2e23f03eb162"
+      ],
+      "disabled": true,
+      "settings": {
+        "im-class": "images-w-slider",
+        "fullwidth": false,
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4": {
+      "type": "featured-product",
+      "blocks": {
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-title-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-price-1": {
+          "type": "price",
+          "settings": {}
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-variant_picker-1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-quantity_selector-1": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-buy_buttons-1": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-share-1": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-text-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-title-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-price-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-variant_picker-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-quantity_selector-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-buy_buttons-1",
+        "template--20002255438162__84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4-share-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "diamondsmile",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "463dc2ce-a21a-4f4f-87a6-14134d94a223": {
+      "type": "custom-image-with-range-slider",
+      "blocks": {
+        "template--19252731904327__463dc2ce-a21a-4f4f-87a6-14134d94a223-168966332870d2cea1-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Un sourire plus blanc, tu le mérites ! 💜",
+            "heading_size": "h1"
+          }
+        },
+        "template--19252731904327__463dc2ce-a21a-4f4f-87a6-14134d94a223-168966332870d2cea1-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ont déclaré que l'apparence de leurs jambes en<br\/>forme de fraise s'était améliorée<\/p>",
+            "range-value": "95",
+            "text_style": "body"
+          }
+        },
+        "9bc83256-3163-41c8-8488-81378c188c9b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>ont remarqué une réduction de l'apparence des poils incarnés<\/p>",
+            "range-value": "94",
+            "text_style": "body"
+          }
+        },
+        "8c9ee182-d02a-439e-843f-ed7e54da9f1d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>constaté une amélioration de l'aspect de la fermeté de la peau.<\/p>",
+            "range-value": "90",
+            "text_style": "body"
+          }
+        },
+        "2f66acb7-b9ac-4059-bdd5-3b04107a5f2b": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>* Résultats selon des études cliniques\/consommateurs. Pour plus d'informations, se référer à la page de chaque produit.<\/em><\/p>",
+            "range-value": "",
+            "text_style": "body"
+          }
+        },
+        "4ce9c791-f878-4825-9418-8d081d3d3976": {
+          "type": "button",
+          "settings": {
+            "button_label": "Je profite de mon essai gratuit !",
+            "button_link": "shopify:\/\/products\/diamondsmile",
+            "btn_add_cart": false,
+            "btn_cart_name": "Ajouter au panier"
+          }
+        }
+      },
+      "block_order": [
+        "template--19252731904327__463dc2ce-a21a-4f4f-87a6-14134d94a223-168966332870d2cea1-0",
+        "template--19252731904327__463dc2ce-a21a-4f4f-87a6-14134d94a223-168966332870d2cea1-1",
+        "9bc83256-3163-41c8-8488-81378c188c9b",
+        "8c9ee182-d02a-439e-843f-ed7e54da9f1d",
+        "2f66acb7-b9ac-4059-bdd5-3b04107a5f2b",
+        "4ce9c791-f878-4825-9418-8d081d3d3976"
+      ],
+      "disabled": true,
+      "settings": {
+        "im-class": "image-range-slider sl-btn-click",
+        "custom-tab-video2": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/eea2ebf662d3482c835d0a31b60c1d54.mp4",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5c8f7a94-65a5-4ed8-b807-684baadb5f5c": {
+      "type": "new-multi-bfr",
+      "disabled": true,
+      "settings": {
+        "component-class": "home-new-after-before",
+        "heads": "+17,500 clientes ont retrouvé confiance en elles",
+        "befores": "",
+        "afters": "",
+        "peras": "The Ultimate EMS Massager provides a unique combination of focused massage and vibration that can help alleviate and prevent any type of muscle complexion",
+        "heading1": "Efficace contre poils épais !",
+        "html": "\" Ravie à 100% de Bloomie, surtout je suis de base très poilue. sans douleur, très facile et super pratique. \"<strong> - Eline T.<\/strong>",
+        "heading2": "Peau super douce sans poils incarnés",
+        "html2": "\" Fini le rasoir pour moi ! je l'utilise depuis quelques semaines, et je recommande, je n'ai plus de poils incarnés et ça repousse plus fin, pas aussi dur et foncé qu'avec les rasoirs.\"<strong> - Myriam B.<\/strong>",
+        "heading3": "Super pour zones sensibles 👍",
+        "html3": "\" Ça marche même pour les aisselles et maillot, super satisfaite merci ! \"<strong> - Sylvie K.<\/strong>"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "class-rich": "feat-products",
+        "title": "Nos meilleures ventes",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "meilleures-ventes",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "ed0478c0-1acc-4a0a-bf54-16211016c2a2": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "“Easily my best purchase of the year.It was painless and didn't cause any friction even when it was rubbed on the skin. I highly recommend.”",
+            "heading_size": "h1"
+          }
+        },
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Jane M. -<strong>Verified Buyer<\/strong><\/p>"
+          }
+        },
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-0",
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-1",
+        "template--19252731904327__ed0478c0-1acc-4a0a-bf54-16211016c2a2-16896725528960ca3f-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "class-name": "cust-view",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "c165f438-4945-41ae-8b84-880deb0c5f6b": {
+      "type": "tabs-for-collection",
+      "blocks": {
+        "template--19557710987591__c165f438-4945-41ae-8b84-880deb0c5f6b-text-1": {
+          "type": "text",
+          "settings": {
+            "custom-tab": "Best seller",
+            "products_to_show": 4,
+            "collection": "meilleures-ventes"
+          }
+        },
+        "ec21cfde-01c7-44a0-a644-3b15c45c6a18": {
+          "type": "text",
+          "settings": {
+            "custom-tab": "Body care",
+            "products_to_show": 4,
+            "collection": "body-care"
+          }
+        }
+      },
+      "block_order": [
+        "template--19557710987591__c165f438-4945-41ae-8b84-880deb0c5f6b-text-1",
+        "ec21cfde-01c7-44a0-a644-3b15c45c6a18"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom-Heading": "Vous aimeriez peu être..",
+        "c-class": "tab-collection featprods"
+      }
+    },
+    "9a10a946-c98e-4f8d-9a7e-f2359692e929": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Élimine 99.7% des bactéries<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nos taies d'oreiller en soie sont enrichie des <strong>particules d'argent antibactériennes<\/strong>. Elle limite les <strong>inflammations, allergies, eczéma et psioriasis.<\/strong><\/p><p><strong>La soie est naturellement antibactérienne et empêche la prolifération de bactéries dans le tissu de votre taie<\/strong>. Elle permet ainsi de réduire et d'éviter l'apparition d'inflammation et d'imperfections sur la peau.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Je profite de mon essai 100 jours →",
+            "button_link": "shopify:\/\/products\/argie"
+          }
+        }
+      },
+      "block_order": [
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-heading-1",
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-text-1",
+        "template--21009577541976__9a10a946-c98e-4f8d-9a7e-f2359692e929-button-1"
+      ],
+      "settings": {
+        "im-class": "",
+        "fullwidth": false,
+        "mob-sec": false,
+        "mob-image": "shopify:\/\/shop_images\/Enrichi_avec.png",
+        "mob-head": "",
+        "mob-txt": "",
+        "mob_button_label": "Button label",
+        "mob_button_link": "",
+        "image": "shopify:\/\/shop_images\/Enrichi_avec.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1709802875a3767f6a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_homepage_CYbWVG": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "argie"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_homepage_CYbWVG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "2fa16129-bd8f-4581-b2c4-22dc0a6255f7",
+    "a9d65660-8a45-45b3-9dc3-e768eedabbb5",
+    "db2bab05-9de7-4f81-88fd-3ae4c120de40",
+    "6a0e5834-0111-42ef-b2c8-9f9b87f4f1ba",
+    "2b83a4b9-72d2-477b-8c6d-faf0183fb007",
+    "image_banner",
+    "6837bcde-cdae-4757-bfb1-363027415f32",
+    "ec42176c-3e6b-42d4-898e-2e2c74cb8f44",
+    "160dde8c-6f6f-428a-80d7-2d2da0f22064",
+    "196d9d02-40c5-49da-a191-31167f9b99ca",
+    "aa8269f5-af8f-45e2-a91a-492aab31d1bd",
+    "fb5ef4b7-78e6-4814-b0be-ebc01d5db802",
+    "ffa7f13e-6f01-457c-a86e-5adeed0a041a",
+    "84ffeefc-5e83-40c0-ab6e-20ec4bc3e4f4",
+    "463dc2ce-a21a-4f4f-87a6-14134d94a223",
+    "5c8f7a94-65a5-4ed8-b807-684baadb5f5c",
+    "featured_collection",
+    "ed0478c0-1acc-4a0a-bf54-16211016c2a2",
+    "c165f438-4945-41ae-8b84-880deb0c5f6b",
+    "9a10a946-c98e-4f8d-9a7e-f2359692e929",
+    "1709802875a3767f6a"
+  ]
+}

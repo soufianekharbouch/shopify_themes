@@ -1,0 +1,238 @@
+
+<!--
+<div class="container">
+  <div class="hav-fun-text">
+    <h2 id="example"></h2>
+  </div>-->
+
+<h1 id="demo2">{{section.settings.section_title}}</h1>
+
+<div class="lth_container">
+   <div class="mth_video">
+        <div class="mth_play">
+        </div>
+     <div class="mth_current_video">
+
+     </div>
+   </div>
+
+
+    <div class="mth_links">
+      <div class="mth_links_table">
+        <div class="mth_cells h_mtc">
+        <div class="mth_links_items">
+          <div class="mth_puce"></div>
+          <div class="mth_links_title">
+            {{section.settings.item1_title}}
+          </div>
+          <div class="mth_links_content h_mlc">
+           {{section.settings.item1_text}}
+          </div>
+        </div>
+
+        <div class="mth_links_items">
+          <div class="mth_puce"></div>
+          <div class="mth_links_title">
+            {{section.settings.item2_title}}
+          </div>
+          <div class="mth_links_content h_mlc"> 
+           {{section.settings.item2_text}}
+          </div>
+        </div>
+
+        <div class="mth_links_items">
+          <div class="mth_puce"></div>
+          <div class="mth_links_title">
+             {{section.settings.item3_title}}
+          </div>
+          <div class="mth_links_content h_mlc">
+          {{section.settings.item3_text}}
+          </div>
+        </div>
+     </div>
+        
+      </div>
+   </div>
+
+   <a href="{{section.settings.button_url}}">
+    <div class="mth_btn h_mb">
+         <button>{{section.settings.button_text}}</button>
+   </div>
+   </a>
+</div>
+
+
+<style>
+
+.mth_video{
+    background:url('{{section.settings.video_thumb | img_url: '1500x'}}'); 
+}
+
+
+
+</style>
+
+<script>
+  $('.mth_play').click(function(){
+      $(this).css({display:"none"});
+       $('.mth_current_video').css({display:"block"});
+       var cont='<iframe style="background:white;" src="{{section.settings.id_video}}" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+       $('.mth_current_video').html(cont);
+  });
+</script>
+
+<script src="circletype.min.js"></script>
+
+
+<script>
+new CircleType(document.getElementById('demo2'))
+  .dir(1)
+  .radius(700);
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/warpjs@1.0.8/dist/warp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/opentype.js/1.1.0/opentype.min.js"></script>
+
+<script>
+    opentype.load(
+  'https://fonts.gstatic.com/s/montserrat/v13/JTURjIg1_i6t8kCHKm45_c5H3gnD-A.woff',
+  (err, font) => {
+    const glyphs = font.stringToGlyphs('We like to have fun');
+    const { width, yValues, svgPath } = glyphs.reduce(
+      (prev, glyph) => {
+        const d = glyph.path.commands.map(({ type, x1, y1, x, y }) => {
+          switch (type) {
+            case 'M':
+            case 'L':
+              return `${type} ${x + prev.width} ${y}`;
+            case 'Q':
+              return `${type} ${x1 + prev.width} ${y1} ${x +
+                prev.width} ${y}`;
+            default:
+              return type;
+          }
+        });
+        return {
+          svgPath: `${prev.svgPath}<path d="${d.join('')}" />`,
+          width: prev.width + glyph.advanceWidth,
+          yValues:
+            typeof glyph.yMax !== 'number'
+              ? prev.yValues
+              : [...prev.yValues, glyph.yMax, glyph.yMin],
+        };
+      },
+      { svgPath: '', width: 0, yValues: [] },
+    );
+    const yMax = Math.max(...yValues);
+    const yMin = Math.min(...yValues);
+    const height = yMax - yMin;
+
+    const period = width;
+    const amplitude = height / 2;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', `0 0 ${width} ${height + amplitude * 2}`);
+    svg.innerHTML = `<g transform="translate(0,${yMax +
+      amplitude}) scale(1 -1)">${svgPath}</g>`;
+
+    const warp = new Warp(svg);
+    warp.transform(([x, y]) => [
+      x,
+      y + amplitude * Math.sin((x / period) * Math.PI * 2),
+    ]);
+    
+  //  document.getElementById('example').appendChild(svg);
+  },
+);
+</script>
+
+
+{% schema %}
+{
+  "name": "LIKE TO HAVE FUN",
+  "settings": [
+ {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "like to have fun"
+    },  
+   {
+      "type": "text",
+      "id": "id_video",
+      "label": "ID Video",
+      "default": "f1v0fUl70Rs"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_thumb",
+      "label": "Video Thumbnail" 
+    },
+    {
+        "type": "header",
+        "content": "FIRST ITEM (TOP)"
+    },
+      {
+      "type": "text",
+      "id": "item1_title",
+      "label": "Title",
+      "default": "exclusive deals"
+    },
+     {
+      "type": "text",
+      "id": "item1_text",
+      "label": "Text",
+      "default": "Free shipping all show and never-before-seen delas!"
+    },
+    {
+        "type": "header",
+        "content": "SECOND ITEM (MIDDLE)"
+    },
+      {
+      "type": "text",
+      "id": "item2_title",
+      "label": "Title",
+      "default": "product launches"
+    },
+     {
+      "type": "text",
+      "id": "item2_text",
+      "label": "Text",
+      "default": "Get first dibs on the latest product drops."
+    },
+    {
+        "type": "header",
+        "content": "3RD ITEM (BOTTOM)"
+    },
+      {
+      "type": "text",
+      "id": "item3_title",
+      "label": "Title",
+      "default": "education"
+    },
+     {
+      "type": "text",
+      "id": "item3_text",
+      "label": "Text",
+      "default": "We're sharing tips and tricks to help your skin Bloom!"
+    },
+    {
+        "type": "header",
+        "content": "BUTTON"
+    },
+      {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text",
+      "default": "SET A REMINDER"
+    },
+     {
+      "type": "url",
+      "id": "button_url",
+      "label": "URL"
+    }
+    
+  ]
+}
+{% endschema %}

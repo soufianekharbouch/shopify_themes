@@ -1,0 +1,652 @@
+<script>
+    function findGetParameter(parameterName) {
+        var result = null,
+        tmp = [];
+        location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
+    }
+    if (findGetParameter("utm_campaign")){
+      if(sessionStorage.getItem('usrc')!="PDS"){
+        sessionStorage.setItem('usrc', findGetParameter("utm_campaign"));
+      }
+      
+    }
+</script>
+{%for item in cart.items%}
+  {% assign tgs = "" %}
+ {%for tg in item.product.tags%}
+  {% assign tgs = tgs | append: tg |append :"|"  %}
+ {%endfor%}
+ <input class="product_tag_{{item.product.id}}" type="hidden" value="{{tgs}}">
+{%endfor%}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"></script>
+<script>
+  var gifts_promo = [];
+  var gifts_amount = [];
+  var gifts_utm = [];
+  var x2abs = [];
+</script>
+{% for block in section.blocks %}
+  {% if block.type == "x2ab" %}
+    <script>
+      var x2ab = [];
+      var combinsG='{{block.settings.any_items}}';
+      x2ab['combins']=combinsG.split(',');
+      x2ab['id']='{{block.settings.id}}';
+      x2ab['qty']='{{block.settings.qty}}';
+      x2ab['gift_id']='{{block.settings.gift_id}}';
+      x2abs.push(x2ab);
+    </script>
+  {% endif %}
+{% endfor %}
+
+
+{% for block in section.blocks %}
+  {% if block.type == "FreeGift" %}
+    <script>
+      var gift_promo = [];
+      gift_promo['variants_id'] = [];
+      gift_promo['tags'] = [];
+      gift_promo['variant_qty'] = {{block.settings.variant_qty}};
+      gift_promo['gift_id'] = {{block.settings.gift_id}};
+      gift_promo['gift_qty'] = {{block.settings.gift_qty}};
+      gift_promo['keep_gift'] = {{block.settings.keep_gift}};
+      gift_promo['gift_every_time'] = {{block.settings.gift_every_time}};    
+
+      var variants_id = '{{block.settings.variants_id}}';
+      variants_id=variants_id.split(',')
+      var tags = "{{block.settings.tags}}";
+      tags=tags.split(',')
+      for ( tag of tags ){
+        if(tag != ""){
+           gift_promo['tags'].push(tag);
+        }
+
+      }
+     for ( variant_id of variants_id){
+        gift_promo['variants_id'].push(variant_id);
+      }
+      gifts_promo.push(gift_promo);
+
+    </script>
+  {% endif %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% if block.type == "thrshold" %}
+    <script>
+      var gift_amount = [];
+      gift_amount['free_gift_promo_enabled'] = {{block.settings.free_gift_promo_enabled}};
+      gift_amount['free_gift_variant_id'] = {{block.settings.free_gift_variant_id}};
+      gift_amount['free_gift_ammount'] = {{block.settings.free_gift_ammount}};
+      gift_amount['free_gift_quantity'] = {{block.settings.free_gift_quantity}};
+      gift_amount['free_gift_keep'] = {{block.settings.free_gift_keep}};
+      gifts_amount.push(gift_amount);
+    </script>
+  {% endif %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% if block.type == "utm" %}
+    <script>
+      
+      var gift_amount = [];
+      gift_amount['utm'] = '{{block.settings.utm}}';
+      gift_amount['utm_gift_id'] = "{{block.settings.utm_gift_id}}";
+      gift_amount['utm_buy_product'] = "{{block.settings.utm_buy_product}}";
+      gift_amount['utm_product_id'] = "{{block.settings.utm_product_id}}";
+      gift_amount['is_threshold'] = "{{block.settings.is_threshold}}";
+      gift_amount['threshold_amount'] = "{{block.settings.threshold}}";
+      gifts_utm.push(gift_amount);
+    </script>
+  {% endif %}
+{% endfor %}
+
+<script>
+
+  /*
+  for (gift_promo of gifts_promo) {
+    for(tg of gift_promo.tags){
+      alert(tg+"111")
+    }
+  }*/
+  function update_shippement_bar(cart) {
+
+    var use_app = {{section.settings.use_app}};
+    var free_shipping_ammount = {{section.settings.free_shipping_ammount}};
+    if (use_app === true) {
+      free_shipping_ammount = window.thresholdAmount;
+      if (free_shipping_ammount === undefined) {
+        return;
+      }
+      free_shipping_ammount = free_shipping_ammount.substring(1);
+    }
+
+/*update progress bar*/
+    var pb_total = 0;
+    try {
+      cartData = cart
+      pb_total = cartData.total_price
+    } catch (error) {
+      console.log("ERROR11111" + error)
+    }
+    var pb_percent = Number(pb_total / free_shipping_ammount)
+    var pb_text = Number(free_shipping_ammount - (pb_total / 100)).toFixed(2)
+    if (pb_text > 0) {
+      pb_text = "You are missing $ " + pb_text + " for free shipping";
+      $('.ProgressBarLavel').css({
+        width: pb_percent + "%"
+      })
+    } else {
+      pb_text = "Free shipping";
+      $('.ProgressBarLavel').css({width: "100%"})
+    }
+    $('.ProgressText').html(pb_text)
+
+/* /////////////// */
+  }
+  async function AjaxAdd(data_to_add) {
+    data_to_add = JSON.parse(data_to_add);
+    return $.ajax({
+      url: '{{shop.url}}/cart/add.js',
+      dataType: 'json',
+      type: 'post',
+      data: data_to_add, // $addToCartForm.serialize()+'&shipstocountry=US',
+      success: function(Data) {}
+    });
+  }
+
+  async function AjaxUpdate(gift_to_remove) {
+    console.log(gift_to_remove);
+    return jQuery.post('{{shop.url}}/cart/update.js', {updates:gift_to_remove});
+  }
+  async function cartData1() {
+    return $.getJSON("{{shop.url}}/cart.js", function(cart) {});
+  }
+  async function cartData2() {
+    return $.getJSON("{{shop.url}}/cart.js", function(cart) {});
+  }
+
+  function update_properties_utm(){
+  if(sessionStorage.getItem('usrc')=="PDS"){
+  $.ajax({
+    url: "{{shop.url}}/cart.js"
+  }).done(function(cart) {
+    cart=JSON.parse(cart)
+    items=cart.items;
+    j=0;
+    for(item of items){
+      if(j==0){
+        jQuery.post('{{shop.url}}/cart/change.js',{"id":item.key,properties:{"UTM":true}})
+      }
+      j=j+1;
+    }
+
+  });
+}
+}
+  async function GiftProcess() {
+    update_properties_utm();
+
+
+    var is_promo_gift = false;
+    if (gifts_promo.length > 0) { 
+      is_promo_gift = true
+    }
+    var free_gift_promo_enabled = false;
+    for (gift_amount of gifts_amount) {
+      if (gift_amount.free_gift_promo_enabled) { 
+        free_gift_promo_enabled = true;
+      }
+    }
+
+    if (! free_gift_promo_enabled && is_promo_gift == false && gifts_utm.length == 0 && x2abs.length == 0) {
+      return "0";
+    }
+
+
+    return cartData1().then(function(cart) {
+      if(cart.items.length==0 && gifts_utm.length == 0){
+        return cart;
+      }
+      var items_to_add = '';
+      var cartData = cart;
+      var gift_to_remove = {};
+      for (gift_amount of gifts_amount) {
+        var variant_id = gift_amount.free_gift_variant_id;
+        var ammount = gift_amount.free_gift_ammount;
+        var Gquantity = gift_amount.free_gift_quantity;
+        var gift_exist = 0;
+        var total = 0;
+        var gift_ammount_eligible = true;
+        var remove_gift_ammount = false;
+        var update_gift_ammount = false;
+        var current_Gqty = 0;
+
+        for (item of cartData.items) {
+          if (item.variant_id == variant_id || item.product_type === "Gift Card" || item.product_type === "Event") {
+            total = Number(total + item.final_line_price);
+            if (item.variant_id == variant_id) {
+              current_Gqty = current_Gqty + item.quantity;
+            }
+            gift_exist = 1;
+          }
+        }
+        if ((cartData.item_count > 0 && Number(cartData.total_price - total) < Number(ammount * 100)) || cartData.item_count == 0) {
+          gift_ammount_eligible = false;
+        }
+        
+        if (gift_ammount_eligible == false && gift_exist == 1 ) {
+          if (! gift_amount.free_gift_keep ) {
+            gift_to_remove[''+variant_id ] = 0;
+            if (current_Gqty > Gquantity) {
+              gift_exist = 0;
+            }
+          }
+        }
+
+        if (gift_exist == 1 && gift_ammount_eligible && remove_gift_ammount == false) {
+          update_gift_ammount = true;
+        }
+
+        if (gift_exist == 0 && gift_ammount_eligible && gift_amount.free_gift_promo_enabled) {
+          //if (Cookies.get('deleted_' + variant_id) == undefined) {
+            items_to_add = '{"id": ' + variant_id + ',"quantity": ' + Gquantity + '}';
+          //}
+
+        }
+        if (gift_exist == 1 && gift_ammount_eligible && gift_amount.free_gift_promo_enabled) {
+          items_to_add = "";
+        }
+      }
+
+
+      for (gift_promo of gifts_promo) {
+       
+        var x = 0;
+        var qtyOfVariantsExist = 0;
+        var item_checked = [];
+        for (gift_id of gift_promo.variants_id) {
+          for (item of cartData.items) {
+            if (gift_id == item.variant_id) {
+              qtyOfVariantsExist = Number(qtyOfVariantsExist + item.quantity);
+              item_checked.push(item.variant_id);
+            }
+          }
+        }
+        for (gift_tag of gift_promo.tags) {
+          for (item of cartData.items) {
+            var tags=""+$('.product_tag_'+item.product_id).val();
+            if(tags.includes(gift_tag) && !item_checked.includes(item.variant_id)){
+              qtyOfVariantsExist = Number(qtyOfVariantsExist + item.quantity);
+            }
+          }
+        }
+        var gift_already_exist = false;
+        for (item of cartData.items) {
+          if (item.variant_id == gift_promo.gift_id) {
+            gift_already_exist = true;
+          }
+
+        }
+        if (Number(qtyOfVariantsExist) >= Number(gift_promo.variant_qty) && ! gift_already_exist) {
+          var comma = "";
+          if (x == 0 && gift_exist == 0 && free_gift_promo_enabled) {
+            comma = ",";
+          }
+          for (item of cartData.items) {
+            if (item.variant_id == gift_promo.gift_id) {
+              gift_already_exist = true;
+            }
+          }
+          if (gift_promo.gift_every_time) {
+            items_to_add = items_to_add + comma + '{"id": ' + gift_promo.gift_id + ',"quantity": ' + Number(gift_promo.gift_qty * qtyOfVariantsExist) + ',"properties":{"is_free_gift":"true"}}';
+          } else {     
+                items_to_add = items_to_add + comma + '{"id": ' + gift_promo.gift_id + ',"quantity": ' + gift_promo.gift_qty + ',"properties":{"is_free_gift":"true"}}';
+          }
+
+
+        }
+        if (gift_already_exist && Number(qtyOfVariantsExist) < Number(gift_promo.variant_qty) && ! gift_promo.keep_gift) {
+          gift_to_remove[''+gift_promo.gift_id]="0";
+        }
+        if (gift_already_exist && Number(qtyOfVariantsExist) >= Number(gift_promo.variant_qty)) {
+          if (gift_promo.gift_every_time) {  
+            gift_to_remove[''+gift_promo.gift_id] = ""+Number(gift_promo.gift_qty * qtyOfVariantsExist);
+          }
+        }
+        x = x + 1;
+      }
+
+
+
+
+      for (gift_utm of gifts_utm) {
+        if(sessionStorage.getItem('usrc') != gift_utm.utm){
+          continue;
+        }
+        var utm_gift_already_exist = false;
+        var utm_buy_product_exist = false;
+        if(gift_utm.utm_product_id !="ANY"){
+            for (item of cartData.items) {
+              if (item.variant_id == gift_utm.utm_gift_id && item.properties['is_utm_gift'] == 'true') {
+                utm_gift_already_exist = true;
+              }
+              if (item.variant_id == gift_utm.utm_product_id) {
+                utm_buy_product_exist = true;
+              }
+            }
+        }else{
+          var k=0;
+          var threshold_amount_utm=Number(gift_utm.threshold_amount);
+          var is_threshold=gift_utm.is_threshold;
+          var CartTotal=0;
+          for (item of cartData.items) {
+            if (item.variant_id != gift_utm.utm_gift_id) {
+             k=k+1;
+             CartTotal=CartTotal+item.final_line_price;
+            }
+            if (item.variant_id == gift_utm.utm_gift_id && item.properties['is_utm_gift'] == 'true') {
+              utm_gift_already_exist = true;
+            }
+          }
+          CartTotal=Number(CartTotal)/100;
+          if(k>0){
+            utm_buy_product_exist = true;
+          }
+        }
+        var is_threshold_valid=true;
+        if(is_threshold=='true' && CartTotal<threshold_amount_utm){
+          is_threshold_valid=false
+        }
+        if (!utm_gift_already_exist && utm_buy_product_exist && is_threshold_valid ){
+          
+          if(items_to_add!=""){
+            items_to_add = items_to_add + comma
+          }
+            items_to_add = items_to_add + '{"id": ' + gift_utm.utm_gift_id + ',"quantity":"1","properties":{"is_utm_gift":"true"}}';
+        }
+        if (utm_gift_already_exist && !utm_buy_product_exist || !is_threshold_valid ){
+          var TempQty=0;
+          for (item of cartData.items) {
+            if( item.variant_id == gift_utm.utm_gift_id && item.properties['is_utm_gift'] == 'true'){
+              TempQty=item.quantity;
+              gift_to_remove[""+item.key]="0";
+              if(items_to_add!=""){
+                items_to_add = items_to_add + comma
+              }
+                items_to_add = items_to_add + '{"id": ' + gift_utm.utm_gift_id + ',"quantity":"'+TempQty+'"}';
+            }
+          }
+
+        }
+      }
+
+
+       for (x2ab of x2abs) {
+        var combins=x2ab['combins'];
+        var x2ab_id=x2ab['id'];
+        var x2ab_qty=Number(x2ab['qty']);
+        var x2ab_gift_id=x2ab['gift_id'];
+        var is_x2ab_product_exist=false;
+        var is_x2ab_items_exist=false;
+        var is_x2ab_gift_exist=false;
+        var cartIDs=[];
+        for (item of cartData.items) {
+          cartIDs.push(""+item.variant_id)
+        }
+        if (cartIDs.includes(""+x2ab_id)) {
+          is_x2ab_product_exist=true;
+        }
+
+
+        for (item of cartData.items) {
+          if(item.variant_id==x2ab_gift_id && item.properties['is_2xab_gift'] == "true"){
+            is_x2ab_gift_exist=true;
+          }
+        }
+        var k=0;
+        for(combin of combins){
+          for (item of cartData.items) {
+            if(item.variant_id==combin){
+              k=k+item.quantity;
+            }
+          }
+       
+        }
+        if(k>=x2ab_qty){
+          is_x2ab_items_exist=true;
+        }
+        if (!is_x2ab_gift_exist && is_x2ab_items_exist && is_x2ab_product_exist){
+          if(items_to_add!=""){
+            items_to_add = items_to_add + comma
+          }
+            items_to_add = items_to_add + '{"id": ' + x2ab_gift_id + ',"quantity":"1","properties":{"is_2xab_gift":"true"}}';
+        }
+      
+        if (is_x2ab_gift_exist && !is_x2ab_items_exist || !is_x2ab_product_exist){
+          for (item of cartData.items) {
+            if(item.variant_id==x2ab_gift_id && item.properties['is_2xab_gift'] == "true"){
+              gift_to_remove [""+item.key]="0";
+            }
+          }
+        }
+       }
+
+
+      var data_to_add = '{"items": [' + items_to_add + ']}';
+      if (items_to_add != "") {
+        return AjaxAdd(data_to_add).then(function() {
+          if (gift_to_remove != "") {
+            return AjaxUpdate(gift_to_remove).then(function() {
+              return cartData2().then();
+            })
+          } else {
+            return cartData2().then();
+          }
+
+        });
+      } else {
+        if (gift_to_remove != "") {
+          return AjaxUpdate(gift_to_remove).then(function() {
+            return cartData2().then();
+          })
+        } else {
+          return cart;
+        }
+      }
+
+    })
+
+
+  }
+</script>
+{% schema %}
+  {
+    "name": "Promo settings",
+    "settings": [
+      {
+        "type": "range",
+        "id": "free_shipping_ammount",
+        "label": "Free shipping amount",
+        "max": 100,
+        "min": 0,
+        "step": 1,
+        "default": 70
+      }, {
+        "type": "checkbox",
+        "id": "use_app",
+        "label": "Use app to get Free Shipping amount",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "FreeGift",
+        "name": "Free Gift",
+        "settings": [
+          {
+            "type": "text",
+            "id": "variants_id",
+            "label": "variants id"
+          },
+          {
+          "type": "text",
+            "id": "tags",
+            "label": "Product Tags",
+            "default":"Handcreams,HandSale2021"
+          },
+          {
+            "type": "text",
+            "id": "gift_id",
+            "label": "Gift ID",
+            "info": "variant ID for the Gift "
+          },
+          {
+            "type": "range",
+            "id": "gift_qty",
+            "label": "Gift Quantity",
+            "max": 10,
+            "min": 0,
+            "step": 1,
+            "default": 1
+          },
+          {
+            "type": "range",
+            "id": "variant_qty",
+            "label": "Quantity to add",
+            "max": 10,
+            "min": 0,
+            "step": 1,
+            "default": 1
+          }, {
+            "type": "checkbox",
+            "id": "keep_gift",
+            "label": "Keep the Gift in the cart",
+            "default": false
+          }, {
+            "type": "checkbox",
+            "id": "gift_every_time",
+            "label": "gift with every item",
+            "default": true
+          }
+        ]
+      }, {
+        "type": "thrshold",
+        "name": "thrshold",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "free_gift_promo_enabled",
+            "label": "Turn ON the Promo",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "free_gift_variant_id",
+            "label": "variant id",
+            "default": "32865669447715"
+          },
+          {
+            "type": "number",
+            "id": "free_gift_ammount",
+            "label": "threshold",
+            "default": 50
+          },
+          {
+            "type": "number",
+            "id": "free_gift_quantity",
+            "label": "quantity",
+            "default": 1
+          }, {
+            "type": "checkbox",
+            "id": "free_gift_keep",
+            "label": "Keep Gift after adding",
+            "default": true
+          }
+      
+    ]
+}  ,  {
+        "type": "utm",
+        "name": "utm",
+        "settings": [
+          {
+            "type": "text",
+            "id": "utm",
+            "label": "campaign",
+            "default": "test"
+          },
+          {
+            "type": "text",
+            "id": "utm_gift_id",
+            "label": "utm gift id",
+            "default": "50"
+          },
+          {
+            "type": "text",
+            "id": "utm_product_id",
+            "label": "id of product to buy",
+            "default": "00000000000"
+          },
+          {
+            "type":"checkbox",
+            "id":"is_threshold",
+            "label":"Use Threshold",
+            "default": true
+          },
+          {
+            "type":"text",
+            "id":"threshold",
+            "label":"Threshold Amount",
+            "default": "75"
+          }
+        ]
+      }
+      ,
+      {
+        "type": "x2ab",
+        "name": "x2ab",
+        "settings": [
+          {
+            "type": "text",
+            "id": "id",
+            "label": "X variannt ID",
+            "default": "39917310017571"
+          },
+          {
+            "type": "text",
+            "id": "any_items",
+            "label": "Any items ID",
+            "default": "39894066331683,32865673936931,33038741930019,39643548483619,39915143888931"
+          },
+          {
+            "type": "range",
+            "id": "qty",
+            "label": "Any items Qty",
+            "step":1,
+            "min":1,
+            "max":10,
+            "default": 2
+          },
+          {
+            "type": "text",
+            "id": "gift_id",
+            "label": "Free Gift ID",
+            "default": "13602086322211"
+          }
+        ]
+      }
+
+]
+  }
+{% endschema %}

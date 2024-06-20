@@ -1,0 +1,259 @@
+{
+  "sections": {
+    "1c5cbe68-6caf-4fa1-b0e2-20764118759c": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "custom_css": [
+        ".sf-breadcrumb {margin-top: 60px; margin-bottom: -50px;}"
+      ],
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false
+      }
+    },
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "f08bd171-3feb-46c9-81ab-fc68f5fa1d05": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/DSC06298.webp",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "3",
+        "hover_effect": false,
+        "title": "NOTRE UNIVERS",
+        "sub_title": "",
+        "text": "<h5>Avec ses meubles inspirés de ce que les cultures du monde ont de plus beau, Lyn Home Harmony vous propose de faire de chez vous un espace d'évasion, où le confort de l'intimité se mêle à des pièces d'art intérieur uniques. Fabriqués par des artisans marocains, héritiers d'un savoir-faire réputé à travers le monde pour sa finesse, les meubles Lyn Home Harmony sont des pièces rares, robustes et fonctionnelles destinées à illuminer les espaces du quotidien d'une douce touche d'audace. <\/h5>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "custom_class": ""
+      }
+    },
+    "cac67360-800d-47da-98a0-3d86f4fd39ec": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/IMG_1408.jpg",
+        "link": "",
+        "layout": "right",
+        "image_column_size": "3",
+        "hover_effect": false,
+        "title": "NOTRE HISTOIRE",
+        "sub_title": "",
+        "text": "<h5>L'histoire des Ateliers Lyn commence il y a 20 ans, dans un petit magasin de la médina de Salé. Spécialistes de l’ébénisterie, ils fabriquent des meubles sur-mesure destinés à durer, pour le compte de clients attirés par les créations uniques du fondateur, Lahcen.<br\/>Au fil du temps, la passion de Lahcen pour son métier et la méticulosité de ses créations lui forgent une réputation grandissante. Il continue à fabriquer, sans relâche, des meubles toujours plus beaux, plus solides et plus audacieux à des clients de plus en plus nombreux et comblés.<br\/>Les Ateliers Lyn sont aujourd'hui un véritable bijou rassemblant les techniques d'un savoir-faire marocain ancestral et précieux.<\/h5>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 40,
+        "padding_bottom": 50,
+        "custom_class": ""
+      }
+    },
+    "8443aff1-46c8-4c0e-ad39-cd5e07f38999": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/histoire-driyat.jpg",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "3",
+        "hover_effect": false,
+        "title": "LES CRÉATRICES",
+        "sub_title": "",
+        "text": "<h5>Bienvenue dans l'univers de Lyn, une marque créative fondée par deux esprits passionnés : Nada et Amina.<br\/><br\/>Nada, la petite-fille de l'ébéniste Lahcen de la ville de X au Maroc, a grandi dans l'atmosphère envoûtante de l'artisanat, absorbant la richesse de cet héritage familial. Animée par cette expérience, elle apporte à Lyn son amour pour la création.<br\/><br\/>Amina, citoyenne du monde, rejoint cette aventure avec une passion inébranlable pour l'humanité. Sa curiosité et son enthousiasme pour la diversité culturelle sont des piliers inspirants pour Lyn.<br\/><\/h5>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "custom_content_ym7zhC": {
+      "type": "custom-content",
+      "blocks": {
+        "text_3XUPrn": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "<h5>Guidées par une passion commune et un désir de célébrer les différences, Nada et Amina ambitionnent d'insuffler à Lyn une créativité sans frontières. La marque vise à transcender les limites culturelles à travers la conception de meubles uniques, invitant ainsi chacun à explorer et à apprécier la richesse du design mondial.<br\/><br\/>Chez Lyn, l'histoire de Nada et Amina s'entrelace avec la créativité et l'innovation, offrant une expérience unique où l'héritage artisanal se marie harmonieusement avec une vision contemporaine. Nous vous invitons à découvrir notre monde, où chaque pièce raconte une histoire captivante et incarne notre passion partagée pour l'art et le design.<\/h5>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_3XUPrn"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 46,
+        "padding_bottom": 46,
+        "custom_class": ""
+      }
+    },
+    "41d46ccc-f751-409c-8482-e0d7bd55e560": {
+      "type": "image-with-text",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 100,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/geometrics.jpg",
+        "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/GEOMETRICS_BY_LYN_HOME_HARMONY_compressed.pdf?v=1704701487",
+        "layout": "right",
+        "image_column_size": "6",
+        "hover_effect": false,
+        "title": "Visualisez toute la brochure",
+        "sub_title": "Geometrics By Lyn",
+        "text": "<p>Tout ce dont vous avez besoin, en un seul document ! Visualisez toute la collection sur notre brochure disponible en ligne.<\/p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "Voir la brochure",
+        "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/GEOMETRICS_BY_LYN_HOME_HARMONY_compressed.pdf?v=1704701487",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "custom_class": ""
+      }
+    },
+    "bf0153e7-e180-423f-ba0f-c52f853e7574": {
+      "type": "custom-content",
+      "blocks": {
+        "html_8ATteC": {
+          "type": "html",
+          "settings": {
+            "code": "<center><h1 style=\"font-family:'JustSignature', sans-serif!important;\">\"Lyn, célébrons les différences.\"<\/h1><\/center>\n<br><br>\n<center><h2 style=\"font-family:'JustSignature', sans-serif!important;\">Nada et Amina<\/h2><\/center>\n<style>\n@font-face {\n  font-family: 'JustSignature';\n  src: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0678\/7910\/8830\/files\/JustSignature-92w7.ttf') format('woff');\n  font-weight: normal;\n  font-style: normal;\n}\n<\/style>",
+            "width": "100%",
+            "block_custom_class": ""
+          }
+        },
+        "template--17161609314526__bf0153e7-e180-423f-ba0f-c52f853e7574-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "<p>Nada & Amina<\/p>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        },
+        "ee6234e0-132b-490f-bd5f-a28f834906ba": {
+          "type": "html",
+          "settings": {
+            "code": "<br>\n<br>",
+            "width": "100%",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "html_8ATteC",
+        "template--17161609314526__bf0153e7-e180-423f-ba0f-c52f853e7574-text-1",
+        "ee6234e0-132b-490f-bd5f-a28f834906ba"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": ""
+      }
+    },
+    "ecom_notrehistoire_lyn_section_zRi3jx": {
+      "type": "ecom-notrehistoire-lyn-section",
+      "settings": {}
+    },
+    "d472c1ef-084c-40a7-aa3e-1e30ea4019d2": {
+      "type": "ecom-footer-lyn-section",
+      "settings": {}
+    }
+  },
+  "order": [
+    "1c5cbe68-6caf-4fa1-b0e2-20764118759c",
+    "main",
+    "f08bd171-3feb-46c9-81ab-fc68f5fa1d05",
+    "cac67360-800d-47da-98a0-3d86f4fd39ec",
+    "8443aff1-46c8-4c0e-ad39-cd5e07f38999",
+    "custom_content_ym7zhC",
+    "41d46ccc-f751-409c-8482-e0d7bd55e560",
+    "bf0153e7-e180-423f-ba0f-c52f853e7574",
+    "ecom_notrehistoire_lyn_section_zRi3jx",
+    "d472c1ef-084c-40a7-aa3e-1e30ea4019d2"
+  ]
+}

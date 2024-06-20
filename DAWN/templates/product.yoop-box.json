@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "text_alignment": "center",
+        "hide_current": false,
+        "hide_on_mb": false
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_saving": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_atc_button": false,
+            "show_dynamic_checkout": true
+          }
+        },
+        "fdfc3e52-1c9d-4c1a-a8d1-1f0e8b12a4d9": {
+          "type": "text",
+          "settings": {
+            "text": "Items included at the box (As picture Shown)",
+            "text_style": "subtitle"
+          }
+        },
+        "addons": {
+          "type": "addons",
+          "disabled": true,
+          "settings": {
+            "show_atcp": true,
+            "show_ask_a_question": true,
+            "show_social": true
+          }
+        },
+        "4bfa577c-994e-416d-b8ce-6238412a3d24": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "fdfc3e52-1c9d-4c1a-a8d1-1f0e8b12a4d9",
+        "addons",
+        "4bfa577c-994e-416d-b8ce-6238412a3d24"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": false,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": true,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": false,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "header": "About this Yoop Box"
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "header": "Shipping & Return",
+            "content": "<p>Shipping cost is based on weight. Just add products to your cart and use the Shipping Calculator to see the shipping price.<\/p><p>We want you to be 100% satisfied with your purchase. Items can be returned or exchanged within 30 days of delivery.<\/p>",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (max-width: 720px) {.sf-product__section-tabs {display: none; }}"
+      ],
+      "settings": {
+        "container": "container",
+        "bg_color": "",
+        "default_open": true
+      }
+    },
+    "54591ddf-46bc-45f2-a802-e49371d5b0f0": {
+      "type": "custom-content",
+      "blocks": {
+        "template--20276546568497__54591ddf-46bc-45f2-a802-e49371d5b0f0-text-1": {
+          "type": "text",
+          "settings": {
+            "title": "The perfect way to treat your pet.",
+            "subheading": "",
+            "text": "",
+            "width": "25%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": "cuscnthd"
+          }
+        },
+        "521f09e0-1cb2-4016-852d-a6344be7269c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cat_by_box.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "cuscntcat"
+          }
+        },
+        "template--20276546568497__54591ddf-46bc-45f2-a802-e49371d5b0f0-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/dog_by_box.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "cuscntcat"
+          }
+        }
+      },
+      "block_order": [
+        "template--20276546568497__54591ddf-46bc-45f2-a802-e49371d5b0f0-text-1",
+        "521f09e0-1cb2-4016-852d-a6344be7269c",
+        "template--20276546568497__54591ddf-46bc-45f2-a802-e49371d5b0f0-image-1"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": true,
+        "gap_mobile": 7,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "custom_class": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container",
+        "heading": "You Might Also Like",
+        "text_align": "left",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "settings": {
+        "container": "container",
+        "heading": "Recently Viewed Products",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "product-details-tabs",
+    "54591ddf-46bc-45f2-a802-e49371d5b0f0",
+    "product-recommendations",
+    "recent-viewed-products"
+  ]
+}

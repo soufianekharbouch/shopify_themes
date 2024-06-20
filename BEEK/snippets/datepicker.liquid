@@ -1,0 +1,27 @@
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker 
+    ( {
+        dateFormat:  "mm/dd/yy"
+    });
+  })
+
+ </script>
+
+<div class="col-12 col-md-6">
+    <label for="datepicker" class="hide">
+        customer birthday
+    </label>
+    <input type="text"
+        style="background: url('{{ 'icon-calendar.png' | asset_url }}');"
+        name="metafield[Birthday.Birthday]"
+        id="datepicker"
+        size="30"
+        value="{{ customer.metafields.Birthday.Birthday }}"
+        placeholder="Your Birthday*"
+        >
+</div>
+

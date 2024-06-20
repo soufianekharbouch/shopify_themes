@@ -1,0 +1,33 @@
+{% unless product.metafields.accentuate.meet_the_artisan_picture == null and
+  product.metafields.accentuate.artisan_name == null %}
+  <div class="artisan__wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 image__wrap">
+          <img src="{{ product.metafields.accentuate.meet_the_artisan_picture }}" alt="">
+        </div>
+        <div class="col-12 col-md-6 artisan__info">
+          <div class="inner_wrap">
+
+            {% if product.metafields.accentuate.artisan_title != blank %}
+            	<h4>{{ product.metafields.accentuate.artisan_title }}</h4>
+            {% endif %}
+            {% if product.metafields.accentuate.artisan_title == blank %}
+            	<h4>Meet the Artisan</h4>
+            {% endif %}
+
+            <h3>{{ product.metafields.accentuate.artisan_name }}</h3>
+            {% if product.metafields.accentuate.artisan_section_description != blank %}
+              <p class="description">
+                {{ product.metafields.accentuate.artisan_section_description }}
+              </p>
+            {% endif %}
+            {% if product.metafields.accentuate.artisan_profile_page != blank %}
+              <a href="/pages/{{ product.metafields.accentuate.artisan_profile_page }}" class="profile__link">Learn More</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endunless %}

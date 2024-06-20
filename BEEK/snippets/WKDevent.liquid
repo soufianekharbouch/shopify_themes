@@ -1,0 +1,31 @@
+<div class="skincare-consultant-section container">
+  <div class="row content__wrap no-gutters">
+    <div class="col-12 col-md-5 text__wrap">
+      <div class="section__ttl">
+        {%- if block.settings.cons_section_ttl != blank -%}
+          <h2>{{ block.settings.cons_section_ttl | escape }}</h2>
+        {%- endif -%}
+      </div>
+
+      {%- if block.settings.cons_section_info != blank -%}
+        <div class="section__info">
+          {{ block.settings.cons_section_info }}
+        </div>
+      {%- endif -%}
+
+      {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+        <a href="{{ block.settings.button_link }}" class="shop__all">
+          {{ block.settings.button_label | escape }}
+        </a>
+      {% endif %}
+    </div>
+    <div class="col-12 col-md-10 section__image">
+      {% if block.settings.cons_mob_image != blank %}
+        <img src="{{ block.settings.cons_mob_image | img_url: 'master' }}" class="d-block d-md-none" alt="" />
+      {% endif %}
+      {% if block.settings.cons_desk_image != blank %}
+        <img src="{{ block.settings.cons_desk_image | img_url: 'master' }}" class="d-none d-md-block" alt="" />
+      {% endif %}
+    </div>
+  </div>
+</div>

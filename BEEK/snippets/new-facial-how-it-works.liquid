@@ -1,0 +1,81 @@
+<div class="new-facial-hiw-section">
+    <div class="container pt-5 new-facial-container">
+        <div class="row justify-content-center">
+            {%- if block.settings.hiw_section_heading != blank -%}
+                <div class="col-12 text-center">
+                    <h2 class="text-uppercase">{{ block.settings.hiw_section_heading | escape }}</h2>
+                </div>
+            {%- endif -%}
+        </div>
+        <div class="row justify-content-center text-center new-facial-heading-p">
+            {%- if block.settings.hiw_section_desc != blank -%}
+                <div class="col-12">
+                    <p>{{ block.settings.hiw_section_desc | escape }}</p>
+                </div>
+            {%- endif -%}
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-lg-4">
+                <img src="{{ block.settings.hiw_step1_image | img_url: 'master' }}">
+                <div class="new-facial-step-desc">
+                    <div class="new-facial-step-title text-uppercase">
+                        {%- if block.settings.hiw_step1_title != blank -%}
+                            <span class="h4 list-heading">{{ block.settings.hiw_step1_title | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                    <div class="new-facial-step-desc-text text-left mb-4">
+                        {%- if block.settings.hiw_step1_text1 != blank -%}
+                            <img src="{{ 'new_facial_cross.png' | asset_url }}">
+                            <span class="h4">{{ block.settings.hiw_step1_text1 | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                    <div class="new-facial-step-desc-text text-left mb-4">
+                        {%- if block.settings.hiw_step1_text2 != blank -%}
+                            <img src="{{ 'new_facial_cross.png' | asset_url }}">
+                            <span class="h4">{{ block.settings.hiw_step1_text2 | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+          <div class="col-12 col-lg-4">
+                <img src="{{ block.settings.hiw_step2_image | img_url: 'master' }}">
+                <div class="new-facial-step-desc">
+                    <div class="new-facial-step-title text-uppercase">
+                        {%- if block.settings.hiw_step2_title != blank -%}
+                            <span class="h4 list-heading">{{ block.settings.hiw_step2_title | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                    <div class="new-facial-step-desc-text text-left mb-4">
+                        {%- if block.settings.hiw_step2_text1 != blank -%}
+                            <img src="{{ 'new_facial_cross.png' | asset_url }}">
+                            <span class="h4">{{ block.settings.hiw_step2_text1 | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                    <div class="new-facial-step-desc-text text-left mb-4">
+                        {%- if block.settings.hiw_step2_text2 != blank -%}
+                            <img src="{{ 'new_facial_cross.png' | asset_url }}">
+                            <span class="h4">{{ block.settings.hiw_step2_text2 | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+          <div class="col-12 col-lg-4">
+                <img src="{{ block.settings.hiw_step3_image | img_url: 'master' }}">
+                <div class="new-facial-step-desc">
+                    <div class="new-facial-step-title text-uppercase">
+                        {%- if block.settings.hiw_step3_title != blank -%}
+                            <span class="h4 list-heading">{{ block.settings.hiw_step3_title | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                    <div class="new-facial-step-desc-text text-left mb-4">
+                        {%- if block.settings.hiw_step3_text1 != blank -%}
+                            <img src="{{ 'new_facial_cross.png' | asset_url }}">
+                            <span class="h4">{{ block.settings.hiw_step3_text1 | escape }}</span>
+                        {%- endif -%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div style="clear:both;"></div>
+</div>
