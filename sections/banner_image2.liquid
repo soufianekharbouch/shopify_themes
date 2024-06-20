@@ -1,0 +1,78 @@
+{% for block in section.blocks %}
+  <div class="BannerImage2Container"><img src="{{ block.settings.image | img_url:'1200x' }}" alt="{{ block.settings.image.alt }}" />
+    <img class="BannerLogo" src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/white_logo.png?v=1711127767">  
+    <a class="SubBannerContainer" href="{{ block.settings.url }}">{{ block.settings.label}} <div>&#8594;</div></a>
+  </div>
+{% endfor %}
+<style>
+  .BannerImage2Container{
+    position:relative;
+    width:100%;
+  }
+  .BannerImage2Container img{
+    width:100%;
+    margin-bottom:-12px;
+  }
+  .BannerLogo{
+    position:absolute;
+    top:15px;
+    left:25px;
+    max-width:60px;
+  }
+
+  .SubBannerContainer{
+    position:absolute;
+    bottom:20px;
+    left:15px;
+    padding:8px 20px;
+    color:white;
+    border-radius:18px;
+    text-decoration:none;
+    font-size:22px;
+    display:flex;
+    flex-wrap:nowrap;
+    font-weight:bold;
+    
+  }
+  .SubBannerContainer div{
+    margin-top:2px;
+    margin-left:6px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Banner image 2",
+  "settings": [
+
+  ],
+  "blocks":[
+    {
+      "type":"image",
+      "name":"image",
+      "settings": [
+        {
+        "type":"image_picker",
+        "id":"image",
+        "label":"image"
+        },
+        {
+          "type":"text",
+          "id":"label",
+          "label":"btn label"
+        },
+        {
+          "type":"url",
+          "id":"url",
+          "label":"btn url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner Image 2"
+    }
+  ]
+}
+{% endschema %} 

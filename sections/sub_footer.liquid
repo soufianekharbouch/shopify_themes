@@ -1,0 +1,87 @@
+
+<div  class="sub_footerContainer">
+   <div class="FColumn">
+      <span>Follow us</span>
+      <div class="SocialsIcons">
+      <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+  </div>
+
+
+
+  <div class="FColumn">
+    <span>Contact us</span>
+    <div class="Contacts">
+    All inquiries: <b>info@tryhaif.com</b><br>
+    PR: <b>bandar@tryhaif.com</b>
+   </div>
+  </div>
+
+  <div class="FColumn Legal">
+    <span>Legal</span>
+      <a href="{{ shop.url }}/pages/privacy-policy">Privacy Policy</a>
+      <a href="{{ shop.url }}/pages/terms-conditions">Terms & Conditions</a>
+      <a href="{{ shop.url }}/pages/delivery">Delivery</a>
+   
+  </div>
+  <div class="FColumn Help">
+    <span>Help</span>
+    <a href="{{ shop.url }}/pages/faqs">Take a look at our FAQs.</a>
+   
+  </div>
+</div>
+<style>
+.Addresse, .Contacts, .Legal a, .Help a{
+  font-size:14px;
+}
+.SocialsIcons{
+  display:flex;
+  gap:10px;
+}
+.SocialsIcons a, .FColumn a{
+  color:#441317;
+  text-decoration:none;
+}
+.sub_footerContainer{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  background-color:#EADDD1;
+  padding:15px 25px;
+  color:#441317;
+}
+.FColumn{
+  display:flex;
+  flex-direction:column;
+  width:18%;
+  padding:8px 10px;
+}
+.FColumn ul{
+  justify-content:flex-start;
+}
+.FColumn span{
+  font-weight:bold;
+  font-size:15px;
+}
+@media(max-width:900px){
+  .FColumn{
+    width:100%;
+    }
+}
+</style>
+{% schema %}
+{
+  "name": "sub footer",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "sub footer"
+    }
+  ]
+}
+{% endschema %}

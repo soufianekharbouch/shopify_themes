@@ -1,0 +1,56 @@
+
+<div class="section5">
+<div class="Section5Img1"><img src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/asala.png?v=1710010847"></div>
+<div class="Section5Img2"><img src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/alfakhr.png?v=1710010847"></div>
+<div class="Section5Img3"><img src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/intimae.png?v=1710010847"></div>
+</div>
+<style>
+    .section5{
+        display:flex;
+        flex-direction:column;
+        padding:20px 2%;
+        background:white;
+    }
+    .Section5Img1, .Section5Img2, .Section5Img3{
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        padding-top:3%;
+    }
+    .Section5Img1 img, .Section5Img2 img, .Section5Img3 img{
+        width:100%;
+        max-width:600px;
+    }
+    .Section5Img1{
+        justify-content:flex-end;
+        
+    }
+    .Section5Img2{
+        justify-content:center;
+        background:white;
+
+    }
+    .Section5Img3{
+        justify-content:flex-start;
+        background:white;
+    }
+    @media(max-width:900px){
+        .Section5Img1 img, .Section5Img2 img, .Section5Img3 img{
+            width:100%;
+            max-width:45%;
+        }
+    }
+</style>
+{% schema %}
+{
+  "name": "section5",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "section5"
+    }
+  ]
+}
+{% endschema %}

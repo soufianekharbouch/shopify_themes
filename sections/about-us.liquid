@@ -1,0 +1,95 @@
+<div class="aboutUsHeading">
+    <img src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/header_about_us.png?v=1710079952">
+</div>
+<div class="aboutUsContainer">
+   <!-- <img src="https://cdn.shopify.com/s/files/1/0572/0480/1602/files/background2.png?v=1710071015"> -->
+    <div class="AboutEnglishContainer">
+        <h3>Haif | The Story behind First Cup.</h3>
+
+        The Idea
+        Embark on a journey into the authenticity of the past, starting in an old Arab house consisting of a coffee roastery filled with Arabian coffee beans, emanating the fragrance of our civilization and Arab culture, to revolutionize the world of coffee, beans, and hospitality. The story of the first cup is a journey that enhances the concept of Arabian coffee, its preparation method, and quality by using the latest technologies in roasting, grinding, and brewing. Alongside, we showcase the landmarks of Arab hospitality with vessels adorned with Islamic patterns, creating another path that achieves one of the goals of the story. Traditional attire and Arab visual art will serve as the inspiration from which we derive creativity and evolution, reflecting both the present and the future.
+        
+        Thus, we become an unforgettable sensory and artistic experience in a comprehensive Arab world that combines coffee and Arab hospitality, presented in cups and adorned vessels within an environment of art and traditional attire with a contemporary touch, where the scents of oud and aged incense mingle harmoniously.
+    </div>
+
+    <div class="AboutArabicContainer" dir="rtl"><h3>
+        هيف | قصة أول فنجال.</h3>
+
+    رحلة في أصالة الماضي تبدأ في بيت عربي قديم يتكون من محمصة قهوة مختصة تحتوي على بن عربي تفوح منه عبق حضارتنا وثقافتنا العربية ليصنع ثورة في عالم القهوة و البن والضيافة. 
+    
+    قصة أول فنجان هي رحلة تعزز مفهوم القهوة العربية وطريقة تحضيرها وجودتها عن طريق استخدام أحدث التقنيات والمكونات في الحمص والطحن والتقطير. نظهر معها معالم الضيافة العربية بالأواني المنقوشة بالزخرفة الأسلامية لنخلق مسار آخر يحقق لنا هدف من أهداف هذه الرحلة. 
+    
+    أما الأزياء التراثية والفن العربي التشكيلي ستكون هي الإلهام الذي نستمد منه الإبداع والتطور ونعكس فيه الحاضر والمستقبل.
+    
+    وبذلك نُكَون تجربة حسية وفنية لاتنسى لعالم عربي متكامل يجمع بين القهوة والضيافة العربية ويقدم بالفناجيل والاواني المزخرفة في بيئة من الفن والأزياء التراثية بلمسة معاصرة تطيب فيها روائح العود والبخور المعتقة.</div>
+</div>
+<style>
+.aboutUsContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    padding:0px 1.5%;
+    background:white;
+    color:#480F16;
+    font-size:20px;
+    flex-wrap:wrap;
+    position:relative;
+}
+.aboutUsContainer h3{
+    color:#480F16;
+    font-size:22px;
+}
+.AboutEnglishContainer, .AboutArabicContainer{
+    width:47%;
+
+}
+.AboutEnglishContainer{
+line-height:1.3;
+}
+.AboutArabicContainer{
+    font-family: "Manchette", sans-serif;
+    font-weight:500;
+    line-height:2;
+}
+.aboutUsHeading{
+    background:white;
+}
+.aboutUsHeading img{
+    width:100%;
+}
+@media(max-width:900px){
+    .aboutUsContainer{
+        padding:0px 0px;
+        font-size:16px;
+
+    }
+    .AboutEnglishContainer{
+        order:1;
+    }
+    .AboutArabicContainer{
+        order:0;
+    }
+    .AboutEnglishContainer, .AboutArabicContainer{
+        width:90%;
+        padding: 10px 0px;
+        line-height:1.4;
+        font-size:16px;
+    }
+    .aboutUsHeading{
+        text-align:center;
+    }
+}
+</style>
+{% schema %}
+{
+  "name": "Abous us",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "Abous us"
+    }
+  ]
+}
+{% endschema %}

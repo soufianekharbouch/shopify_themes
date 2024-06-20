@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "about_us_ekRLnb": {
+      "type": "about-us",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section5_mrT4A4": {
+      "type": "section5",
+      "settings": {}
+    }
+  },
+  "order": [
+    "about_us_ekRLnb",
+    "main",
+    "section5_mrT4A4"
+  ]
+}

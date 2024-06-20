@@ -1,0 +1,46 @@
+<div class="CustomMenuContainer">
+    <div class="CustomMenuItem">
+        <a href="#" class="CustomItemHeader">Coffee</a>
+        <a href="{{shop.url}}/products/haif-blend">Haif Blend</a>
+        <a href="{{shop.url}}/products/haif-blond-shargah">Haif Blond (Shargah)</a>
+        <a href="{{shop.url}}/products/haif-mid-najdeya">Haif Mid (Najdeya)</a>
+   </div>
+   <div class="CustomMenuItem">
+        <a href="#" class="CustomItemHeader">Bundle</a>
+        <a href="{{shop.url}}/products/3-coffee-mix-box">3 Coffee mix box</a>
+        <a href="{{shop.url}}/products/2-flavor-with-spices">2 Flavor with spices</a>
+    </div>
+    <div class="CustomMenuItem">
+        <a href="#" class="CustomItemHeader">Gifts</a>
+        <a href="{{shop.url}}/products/1-coffee-with-spices-and-story">1 Coffee with spices and story</a>
+        <a href="{{shop.url}}/products/2-coffee-with-dates">2 Coffee with Dates</a>
+    </div>
+    <div class="CustomMenuItem">
+        <a href="#" class="CustomItemHeader">How We Are?</a>     
+    </div>
+</div>
+
+<style>
+.CustomMenuContainer, .CustomMenuItem{
+    display:flex;
+    flex-direction:column;
+    align-items:left;
+}
+.CustomMenuContainer{
+    padding:20px;
+    gap:15px;
+}
+
+.CustomItemHeader{
+    font-size:26px;
+    font-weight:bold;
+}
+.CustomMenuContainer a{
+    text-decoration:none;
+    color:#441317;
+    font-size:22px;
+}
+.CustomMenuItem a{
+    margin-left:15px;
+}
+</style>

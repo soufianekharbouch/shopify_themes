@@ -1,0 +1,127 @@
+
+<div class="owl-two owl-carousel owl-theme">
+  {% for block in section.blocks %}
+    <div class="item">
+            <div class="reviewImageContainer">
+                <img src="{{ block.settings.image | img_url :'300x' }}">
+            </div>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .owl-two img{
+    border:solid 1px  #CE5628;
+    border-radius:14px;
+  }
+  .owl-dot span{
+    background:#8c7779 !important;
+  }
+  .owl-dot.active span{
+    background:#441317 !important;
+  }
+  .owl-next, .owl-prev{
+    font-size:55px !important;
+    position:absolute;
+    top:30% !important;
+    height:0px;
+
+  }
+  .owl-next{
+    right:0px;
+  }
+  .owl-prev{
+    left:0px;
+  }
+  .reviewCustomer{
+    font-size:18px;
+    font-weight:bold;
+  }
+  .owl-carousel{
+    padding:25px;
+    background:white;
+    color:#441317;
+
+  }
+  .owl-carousel .item{
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+  }
+  .reviewHEading{
+    font-size:28px;
+    font-weight:bold;
+  }
+  .reviewDetails{
+    max-width:350px;
+    font-size:22px;
+    margin:auto;
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $(".owl-one").owlCarousel({
+      loop:true,
+      margin:10,
+      nav:false,
+      dots:true,
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:1
+        },
+        1000:{
+          items:1
+        }
+      }
+    });
+
+    $(".owl-two").owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      dots:false,
+      responsive:{
+        0:{
+          items:2
+        },
+        600:{
+          items:2
+        },
+        1000:{
+          items:2
+        }
+      }
+    });
+
+  });
+</script>
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+
+  ],
+  "blocks":[
+    {
+      "type":"image",
+      "name":"image",
+      "settings": [
+        {
+        "type":"image_picker",
+        "id":"image",
+        "label":"image"
+        }
+      ]
+  }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %} 

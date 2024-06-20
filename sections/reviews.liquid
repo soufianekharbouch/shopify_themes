@@ -1,0 +1,184 @@
+
+
+<div class="owl-one owl-carousel owl-theme">
+{% for block in section.blocks %}
+  {% if block.type =="review" %}
+  <div class="item">
+          <div class="reviewContainer">
+                <div class="Starts">
+                  {% for i in (1..block.settings.starts) %}
+                    <i class="fa-solid fa-star"></i>
+                  {% endfor %}
+                </div>
+                <div class="reviewHEading">"{{block.settings.heading}}"</div>
+                <div class="reviewDetails">
+                  {{block.settings.details}}
+                </div>
+                <div class="reviewCustomer">-{{block.settings.customer}}-</div>
+          </div>
+  </div>
+{% endif %}
+{% endfor %}
+</div>
+{% comment %}
+<div class="owl-two owl-carousel owl-theme">
+  {% for block in section.blocks %}
+    {% if block.type =="image" %}
+    <div class="item">
+            <div class="reviewImageContainer">
+                <img src="{{ block.settings.image | img_url :'300x' }}">
+            </div>
+    </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endcomment %}
+<style>
+  .owl-two img{
+    border:solid 1px  #CE5628;
+    border-radius:14px;
+  }
+  .owl-dot span{
+    background:#8c7779 !important;
+  }
+  .owl-dot.active span{
+    background:#441317 !important;
+  }
+  .owl-next, .owl-prev{
+    font-size:55px !important;
+    position:absolute;
+    top:30% !important;
+    height:0px;
+
+  }
+  .owl-next{
+    right:0px;
+  }
+  .owl-prev{
+    left:0px;
+  }
+  .reviewCustomer{
+    font-size:18px;
+    font-weight:bold;
+  }
+  .owl-carousel{
+    padding:25px;
+    background:white;
+    color:#441317;
+
+  }
+  .owl-carousel .item{
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+  }
+  .reviewHEading{
+    font-size:28px;
+    font-weight:bold;
+  }
+  .reviewDetails{
+    max-width:350px;
+    font-size:22px;
+    margin:auto;
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $(".owl-one").owlCarousel({
+      loop:true,
+      margin:10,
+      nav:false,
+      dots:true,
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:1
+        },
+        1000:{
+          items:1
+        }
+      }
+    });
+
+    $(".owl-two").owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      dots:false,
+      responsive:{
+        0:{
+          items:2
+        },
+        600:{
+          items:4
+        },
+        1000:{
+          items:6
+        }
+      }
+    });
+
+  });
+</script>
+{% schema %}
+{
+  "name": "Reviews",
+  "settings": [
+
+  ],
+  "blocks":[
+    {
+    "type":"review",
+    "name":"review",
+    "settings": [
+      {
+      "type":"text",
+      "id":"heading",
+      "label":"heading",
+      "default": "العنوان"
+      },
+      {
+        "type":"richtext", 
+        "id":"details",
+        "label":"details",
+        "default": "<p>التفاصيل المتعلقة برأي الزبون في المنتوج</p>"
+      },
+      {
+        "type": "range",
+        "min":0,
+        "max":5,
+        "step":1,
+        "id":"starts",
+        "label":"starts",
+        "default": 5
+      },
+      {
+        "type":"text",
+        "id":"customer",
+        "label":"Customer name",
+        "default": "زبون1"
+      }
+    ]
+    },
+    {
+      "type":"image",
+      "name":"image",
+      "settings": [
+        {
+        "type":"image_picker",
+        "id":"image",
+        "label":"image"
+        }
+      ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Reviews"
+    }
+  ]
+}
+{% endschema %} 

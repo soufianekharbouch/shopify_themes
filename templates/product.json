@@ -1,0 +1,272 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 52,
+        "padding_bottom": 24
+      }
+    },
+    "featured_product_QPNdEY": {
+      "type": "featured-product",
+      "blocks": {
+        "title_f4PQef": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_dtVxdB": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_WgGK9d": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_BgNAdB": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_7mweyG": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "title_f4PQef",
+        "price_dtVxdB",
+        "variant_picker_WgGK9d",
+        "quantity_selector_BgNAdB",
+        "buy_buttons_7mweyG"
+      ],
+      "settings": {
+        "product": "{{ product }}",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "imagewithtext2_AL7wgU": {
+      "type": "Imagewithtext2",
+      "blocks": {
+        "image_text_ebdh7W": {
+          "type": "image_text",
+          "settings": {
+            "heading": "القهوة",
+            "details": "<p>تم اختيار اجود انواع البن من المحاصيل الفاخرة لدى مزارع القهوة المعتمدة.<\/p>",
+            "image": "shopify:\/\/shop_images\/icone1.png",
+            "image_first": true
+          }
+        },
+        "image_text_JDAnYT": {
+          "type": "image_text",
+          "settings": {
+            "heading": "البهارات",
+            "details": "<p>تشكيلة من أجود انواع البهارات التي تم اختياراها بعناية من جنوب الهند وسريلانكا وأسبانيا.<\/p>",
+            "image": "shopify:\/\/shop_images\/icone2.png",
+            "image_first": false
+          }
+        },
+        "image_text_kygNCQ": {
+          "type": "image_text",
+          "settings": {
+            "heading": "الطعم",
+            "details": "<p>قهوة تأخذك الى اصالة الماضي بنكهة إستثنائية محضرة بطريقة تقليدية أصلية.<\/p>",
+            "image": "shopify:\/\/shop_images\/icone3.png",
+            "image_first": true
+          }
+        }
+      },
+      "block_order": [
+        "image_text_ebdh7W",
+        "image_text_JDAnYT",
+        "image_text_kygNCQ"
+      ],
+      "settings": {}
+    },
+    "image_banner_L69i6T": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.17.14_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_R6NAWT": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.17.14.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_PpwANB": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.17.15.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "how_its_works_jXgkhA": {
+      "type": "how-its-works",
+      "settings": {}
+    },
+    "image_banner_xWnHrw": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/FIRSTV9.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "text1_wy4KM8": {
+      "type": "text1",
+      "settings": {}
+    },
+    "reviews_UFLz6A": {
+      "type": "reviews",
+      "blocks": {
+        "review_NYiWnR": {
+          "type": "review",
+          "settings": {
+            "heading": "العنوان",
+            "details": "<p>التفاصيل المتعلقة برأي الزبون في المنتوج<\/p>",
+            "starts": 5,
+            "customer": "زبون1"
+          }
+        },
+        "review_Lc6WLm": {
+          "type": "review",
+          "settings": {
+            "heading": "العنوان",
+            "details": "<p>التفاصيل المتعلقة برأي الزبون في المنتوج<\/p>",
+            "starts": 5,
+            "customer": "زبون1"
+          }
+        },
+        "review_UfKkWg": {
+          "type": "review",
+          "settings": {
+            "heading": "العنوان",
+            "details": "<p>التفاصيل المتعلقة برأي الزبون في المنتوج<\/p>",
+            "starts": 5,
+            "customer": "زبون1"
+          }
+        },
+        "image_djBrzy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.40.39_e75c209a-4f54-4bfb-9786-57cd49792155.jpg"
+          }
+        },
+        "image_Tirjxf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.40.39_1.jpg"
+          }
+        },
+        "image_CpzJYk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.40.39_e75c209a-4f54-4bfb-9786-57cd49792155.jpg"
+          }
+        },
+        "image_xEwB3A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.40.40.jpg"
+          }
+        },
+        "image_hQDB8k": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-03-12_at_12.40.39_e75c209a-4f54-4bfb-9786-57cd49792155.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "review_NYiWnR",
+        "review_Lc6WLm",
+        "review_UfKkWg",
+        "image_djBrzy",
+        "image_Tirjxf",
+        "image_CpzJYk",
+        "image_xEwB3A",
+        "image_hQDB8k"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "featured_product_QPNdEY",
+    "imagewithtext2_AL7wgU",
+    "image_banner_L69i6T",
+    "image_banner_R6NAWT",
+    "image_banner_PpwANB",
+    "how_its_works_jXgkhA",
+    "image_banner_xWnHrw",
+    "text1_wy4KM8",
+    "reviews_UFLz6A"
+  ]
+}

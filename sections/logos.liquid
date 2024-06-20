@@ -1,0 +1,72 @@
+{% comment %}
+  Section pour afficher une galerie d'images provenant des paramètres de la section
+{% endcomment %}
+
+
+
+<div class="owl-carousel owl-carousel1">
+  {% for block in section.blocks %}
+    <div class="item">
+      <a href="{{ block.settings.url }}">
+        <img src="{{ block.settings.logo | img_url: '400x' }}" alt="{{ block.settings.logo.alt }}" />
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:60,
+      nav:true,
+      slideTransition: 'linear',
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:4
+        },
+        1000:{
+          items:6.5
+        }
+      }
+    });
+  });
+
+</script>
+
+{% schema %}
+{
+  "name": "Galerie d'images",
+  "settings": [
+
+  ],
+  "blocks":[
+    {
+    "type":"logo",
+    "name":"logo",
+    "settings": [
+        {
+        "type": "url",
+        "id": "url",
+        "label": "Logo URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ]
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "Logos"
+    }
+  ]
+}
+{% endschema %}
